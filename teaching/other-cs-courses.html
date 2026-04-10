@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="../shared/unified-theme.css">
   <link rel="stylesheet" href="../shared/cards.css">
   <link rel="stylesheet" href="../shared/card-types/course.css">
+  <link rel="stylesheet" href="../shared/other-cs-courses.css">
 </head>
 <body class="apartsin-shell-active" data-site-section="teaching" data-card-type="course">
   <div class="apartsin-shell">
@@ -26,67 +27,78 @@
     </aside>
     <div class="apartsin-shell__content">
       <main class="apartsin-shell__main">
-        <section class="apartsin-page-header apartsin-page-header--standard" id="other-cs-courses-overview">
-          <h1 class="apartsin-sr-only">Other CS Courses</h1>
-          <div class="apartsin-page-header__top">
-            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
-              <a href="../index.html">Home</a>
-              <span aria-hidden="true">/</span>
-              <a href="./overview.html">Teaching</a>
-              <span aria-hidden="true">/</span>
-              <strong>Other CS Courses</strong>
-            </nav>
-          </div>
-          <p class="apartsin-page-header__lede">Beyond the hands-on AI stream, I taught additional courses across core computer science and software product topics.</p>
+        <section class="other-cs-switch" aria-label="Filter courses by institution">
+          <button type="button" class="other-cs-switch__item is-active" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="other-cs-switch__item" data-filter="hit" aria-pressed="false">Holon Institute of Technology</button>
+          <button type="button" class="other-cs-switch__item" data-filter="mta" aria-pressed="false">The Academic College of Tel Aviv-Yafo</button>
+          <button type="button" class="other-cs-switch__item" data-filter="tau" aria-pressed="false">Tel Aviv University</button>
         </section>
 
-        <section class="cards-shell cards-shell--text-grid" aria-label="Other CS course cards">
+        <section class="cards-shell cards-shell--collection other-cs-cards" aria-label="Other CS course cards" data-disable-toolbar="true">
           <div class="cards-grid">
-            <article class="content-card content-card--text">
+            <article class="content-card content-card--collection other-cs-card" data-institution="hit">
+              <div class="content-card__media other-cs-card__media">
+                <img src="../assets/teaching/other-cs-courses/logos/hit.png" alt="Holon Institute of Technology logo" loading="lazy" decoding="async">
+              </div>
               <div class="content-card__body">
-                <p class="content-card__eyebrow">HIT CS</p>
+                <p class="content-card__eyebrow">Holon Institute of Technology</p>
                 <h2 class="content-card__title">Introduction to Computer Science</h2>
-                <p class="content-card__meta">Holon Institute of Technology, 2024F</p>
+                <p class="content-card__meta">2024</p>
               </div>
             </article>
 
-            <article class="content-card content-card--text">
+            <article class="content-card content-card--collection other-cs-card" data-institution="hit">
+              <div class="content-card__media other-cs-card__media">
+                <img src="../assets/teaching/other-cs-courses/logos/hit.png" alt="Holon Institute of Technology logo" loading="lazy" decoding="async">
+              </div>
               <div class="content-card__body">
-                <p class="content-card__eyebrow">HIT CS</p>
+                <p class="content-card__eyebrow">Holon Institute of Technology</p>
                 <h2 class="content-card__title">Computer Networking</h2>
-                <p class="content-card__meta">Holon Institute of Technology, 2024F</p>
+                <p class="content-card__meta">2024</p>
               </div>
             </article>
 
-            <article class="content-card content-card--text">
+            <article class="content-card content-card--collection other-cs-card" data-institution="mta">
+              <div class="content-card__media other-cs-card__media">
+                <img src="../assets/teaching/other-cs-courses/logos/mta.jpg" alt="The Academic College of Tel Aviv-Yafo logo" loading="lazy" decoding="async">
+              </div>
               <div class="content-card__body">
-                <p class="content-card__eyebrow">MTA</p>
-                <h2 class="content-card__title">Software Product Management and Requirements Engineering</h2>
-                <p class="content-card__meta">The Academic College of Tel Aviv-Yafo, 2013</p>
+                <p class="content-card__eyebrow">The Academic College of Tel Aviv-Yafo</p>
+                <h2 class="content-card__title">Sofwtare Requirements Engineering</h2>
+                <p class="content-card__meta">2013</p>
               </div>
             </article>
 
-            <article class="content-card content-card--text">
+            <article class="content-card content-card--collection other-cs-card" data-institution="mta">
+              <div class="content-card__media other-cs-card__media">
+                <img src="../assets/teaching/other-cs-courses/logos/mta.jpg" alt="The Academic College of Tel Aviv-Yafo logo" loading="lazy" decoding="async">
+              </div>
               <div class="content-card__body">
-                <p class="content-card__eyebrow">MTA</p>
+                <p class="content-card__eyebrow">The Academic College of Tel Aviv-Yafo</p>
                 <h2 class="content-card__title">Machine Learning</h2>
-                <p class="content-card__meta">The Academic College of Tel Aviv-Yafo, 2012</p>
+                <p class="content-card__meta">2012</p>
               </div>
             </article>
 
-            <article class="content-card content-card--text">
+            <article class="content-card content-card--collection other-cs-card" data-institution="mta">
+              <div class="content-card__media other-cs-card__media">
+                <img src="../assets/teaching/other-cs-courses/logos/mta.jpg" alt="The Academic College of Tel Aviv-Yafo logo" loading="lazy" decoding="async">
+              </div>
               <div class="content-card__body">
-                <p class="content-card__eyebrow">MTA</p>
+                <p class="content-card__eyebrow">The Academic College of Tel Aviv-Yafo</p>
                 <h2 class="content-card__title">Cellular Communications</h2>
-                <p class="content-card__meta">The Academic College of Tel Aviv-Yafo, 2011</p>
+                <p class="content-card__meta">2011</p>
               </div>
             </article>
 
-            <article class="content-card content-card--text">
+            <article class="content-card content-card--collection other-cs-card" data-institution="tau">
+              <div class="content-card__media other-cs-card__media">
+                <img src="../assets/teaching/other-cs-courses/logos/tau.png" alt="Tel Aviv University logo" loading="lazy" decoding="async">
+              </div>
               <div class="content-card__body">
-                <p class="content-card__eyebrow">TAU</p>
+                <p class="content-card__eyebrow">Tel Aviv University</p>
                 <h2 class="content-card__title">Operating Systems</h2>
-                <p class="content-card__meta">Tel Aviv University, 2007-2009</p>
+                <p class="content-card__meta">2007-2009</p>
               </div>
             </article>
           </div>
@@ -96,5 +108,6 @@
   </div>
   <script defer src="../shared/unified-enhance.js"></script>
   <script defer src="../shared/site-shell.js"></script>
+  <script defer src="./other-cs-courses.js"></script>
 </body>
 </html>
