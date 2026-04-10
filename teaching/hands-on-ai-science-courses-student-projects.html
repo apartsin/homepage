@@ -7,8 +7,11 @@
   <title>Hands-On AI Science - Student Projects | Sasha Apartsin</title>
   <link rel="stylesheet" href="../shared/site-shell.css">
   <link rel="stylesheet" href="../shared/unified-theme.css">
+  <link rel="stylesheet" href="../shared/cards.css">
+  <link rel="stylesheet" href="../shared/card-types/student-project.css">
+  <link rel="stylesheet" href="../shared/student-projects-catalog.css">
 </head>
-<body class="apartsin-shell-active" data-site-section="teaching">
+<body class="apartsin-shell-active" data-site-section="teaching" data-card-type="student-project">
   <div class="apartsin-shell">
     <aside class="apartsin-shell__sidebar">
       <a class="apartsin-shell__brand" href="../index.html">Sasha Apartsin</a>
@@ -27,29 +30,21 @@
         <section class="hub-page">
           <p class="hub-page__kicker">Teaching</p>
           <h1 class="hub-page__title">Hands-On AI Science - Student Projects</h1>
-          <p class="hub-page__lede">Project outputs from hands-on courses and practical assignments executed by student teams.</p>
+          <p class="hub-page__lede">A unified catalog of student projects across course offerings, workshops, and institutions.</p>
         </section>
-        <section class="hub-grid">
-          <article class="hub-card">
-            <h2>Project Hubs</h2>
-            <ul class="hub-links">
-              <li><a href="../courses/hos/projects.html">HoS Student Projects</a></li>
-              <li><a href="../courses/hit-cs/llmhit-cs-2025f.html">LLM HIT CS Projects</a></li>
-              <li><a href="../courses/hit-cs/genaihit-cs-2025f.html">GenAI HIT CS Projects</a></li>
-            </ul>
-          </article>
-          <article class="hub-card">
-            <h2>Related Teaching Pages</h2>
-            <ul class="hub-links">
-              <li><a href="../teaching/current-students.html">Current Students</a></li>
-              <li><a href="../teaching/undergrad-ai-projects.html">Open B.Sc. Projects</a></li>
-            </ul>
-          </article>
+        <section class="student-projects-toolbar" aria-label="Project filters">
+          <div class="student-projects-toolbar__chips" id="student-project-filter"></div>
+          <p class="student-projects-toolbar__status" id="student-project-status">Loading projects...</p>
+        </section>
+        <section class="cards-shell cards-shell--collection student-projects-shell" aria-label="All student project cards" data-disable-toolbar="true">
+          <div class="cards-grid" id="student-projects-grid"></div>
         </section>
       </main>
     </div>
   </div>
   <script defer src="../shared/unified-enhance.js"></script>
   <script defer src="../shared/site-shell.js"></script>
+  <script defer src="./hands-on-ai-science-courses-student-projects.data.js"></script>
+  <script defer src="./hands-on-ai-science-courses-student-projects.js"></script>
 </body>
 </html>
