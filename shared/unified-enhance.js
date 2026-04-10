@@ -232,7 +232,8 @@
           return;
         }
 
-        const withHash = url.hash ? `${mapped}${url.hash}` : mapped;
+        const localHref = toOnesiteHref(mapped);
+        const withHash = url.hash ? `${localHref}${url.hash}` : localHref;
         anchor.setAttribute('href', withHash);
       } catch (_) {
         // ignore malformed URLs

@@ -90,22 +90,6 @@
       .replace(/\s+/g, ' ');
   }
 
-  function extractHost(href) {
-    try {
-      const parsed = new URL(href, window.location.href);
-      return String(parsed.hostname || '').replace(/^www\./i, '').toLowerCase();
-    } catch (_) {
-      return '';
-    }
-  }
-
-  function venueIconUrl(hostname) {
-    if (!hostname) {
-      return '';
-    }
-    return `https://www.google.com/s2/favicons?sz=64&domain_url=${encodeURIComponent(`https://${hostname}`)}`;
-  }
-
   function enhanceVenueMeta(cards) {
     cards.forEach((card) => {
       const meta = card.querySelector('.blog-post-card__meta');
@@ -116,8 +100,7 @@
 
       const venue = String(meta.textContent || '').trim();
       const venueToken = normalizeVenue(venue);
-      const host = extractHost(link.getAttribute('href') || '');
-      const iconSrc = LOCAL_VENUE_ICONS[venueToken] || venueIconUrl(host);
+      const iconSrc = LOCAL_VENUE_ICONS[venueToken] || '';
       if (!venue || !iconSrc) {
         return;
       }

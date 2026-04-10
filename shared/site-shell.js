@@ -184,7 +184,7 @@
           { label: 'Former Students', path: 'teaching/former-students.html' },
           { label: 'Current Students', path: 'teaching/current-students.html' },
           { label: 'Innovation-First Learning', path: 'work/innovation-first-learning.html' },
-          { label: 'Curriculum Development', path: 'teaching/overview.html#curriculum-development' },
+          { label: 'Curriculum Development', path: 'teaching/curriculum-development.html' },
         ],
       ),
       link(
