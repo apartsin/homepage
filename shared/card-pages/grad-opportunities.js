@@ -92,7 +92,7 @@
 
     const eyebrow = document.createElement('p');
     eyebrow.className = 'grad-opps-card__eyebrow';
-    eyebrow.textContent = 'Open Research Project';
+    eyebrow.textContent = 'Open M.Sc. Project';
     body.appendChild(eyebrow);
 
     const title = document.createElement('h2');

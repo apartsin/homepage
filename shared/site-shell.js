@@ -146,7 +146,7 @@
         [
           { label: 'Recent Publications', path: 'research/recent-publications.html' },
           { label: 'Current Research Projects', path: 'research/research-projects.html' },
-          { label: 'Open Research Projects For Students', path: 'research/grad-opportunities.html' },
+          { label: 'Open M.Sc. Projects', path: 'research/grad-opportunities.html' },
           { label: 'Former Students', path: 'teaching/former-students.html' },
           { label: 'Current Students', path: 'teaching/current-students.html' },
         ],
@@ -180,7 +180,7 @@
             ],
           },
           { label: 'Other CS Courses', path: 'teaching/other-cs-courses.html' },
-          { label: 'Open AI Engineering Projects for Students', path: 'teaching/undergrad-ai-projects.html' },
+          { label: 'Open B.Sc. Projects', path: 'teaching/undergrad-ai-projects.html' },
           { label: 'Former Students', path: 'teaching/former-students.html' },
           { label: 'Current Students', path: 'teaching/current-students.html' },
           { label: 'Innovation-First Learning', path: 'work/innovation-first-learning.html' },
