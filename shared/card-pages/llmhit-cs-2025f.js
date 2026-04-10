@@ -1,0 +1,72 @@
+(function () {
+  window.ApartsinCards.registerPage('llmhit-cs-2025f', {
+      keepSections: 2,
+      tailSections: 1,
+      cards: [
+        {
+          eyebrow: 'Student project',
+          title: 'SkillSight',
+          meta: 'Yonatan Elman, Michael Kovalchuk, Roni Fadlon',
+          description: 'Uncovering hidden talent through contextual résumé intelligence.',
+          image: '/onesite/assets/courses/hit-cs/llmhit-cs-2025f/img-003-66677cb0fc.jpg',
+          links: [{ label: 'GitHub', href: 'https://github.com/RoniF24/explicit-implicit-skill-extraction' }],
+        },
+        {
+          eyebrow: 'Student project',
+          title: 'AnySys Triage',
+          meta: 'Amit Hazan, Lior Mizrahi, Abed Haj',
+          description: 'One model. Any system. Accurate triage.',
+          image: '/onesite/assets/courses/hit-cs/llmhit-cs-2025f/img-004-3b8a39a478.png',
+          links: [{ label: 'GitHub', href: 'https://github.com/AbedHaj/HIT-NLP-Course-2025F-Project' }],
+        },
+        {
+          eyebrow: 'Student project',
+          title: 'RegUl AI tion',
+          meta: 'Ohad Biton, Michael Naftalishen, Yossi Okropiridze',
+          description: 'Clarity in every decision, confidence in every action.',
+          image: '/onesite/assets/courses/hit-cs/llmhit-cs-2025f/img-005-51803eb15e.png',
+          links: [{ label: 'GitHub', href: 'https://github.com/ohadbitton1/Banking-Regulation-QA' }],
+        },
+        {
+          eyebrow: 'Student project',
+          title: 'CriteriaGradeLLM',
+          meta: 'Uriel Coehn, Natan Bar, Tomer Bengaev',
+          description: 'Structured evaluation for open-question CS assessments.',
+          image: '/onesite/assets/courses/hit-cs/llmhit-cs-2025f/img-006-2ed7923a02.png',
+          links: [{ label: 'GitHub', href: 'https://github.com/OrelCohenTech/Automated_Feedback' }],
+        },
+        {
+          eyebrow: 'Student project',
+          title: 'SOCIOSCOPE',
+          meta: 'Uriel Cohen, Natan Bar, Tomer Bengaev',
+          description: 'Real-time insight into society’s shifting sentiments.',
+          image: '/onesite/assets/courses/hit-cs/llmhit-cs-2025f/img-007-046d49bf47.png',
+          links: [{ label: 'GitHub', href: 'https://github.com/IsraelPeled/Project_SocioScope' }],
+        },
+        {
+          eyebrow: 'Student project',
+          title: 'SEA ALERT',
+          meta: 'Tomer Atia, Ilana Estrin',
+          description: 'Understanding maritime urgency through text.',
+          image: '/onesite/assets/courses/hit-cs/llmhit-cs-2025f/img-008-161b65c748.png',
+          links: [{ label: 'GitHub', href: 'https://github.com/Tomeratia/SeaAlert' }],
+        },
+        {
+          eyebrow: 'Student project',
+          title: 'EmotiSupport',
+          meta: 'Lior Tsvieli, Yoni Libman, Yuval Reznik',
+          description: 'Detecting customer emotions to improve support interactions.',
+          image: '/onesite/assets/courses/hit-cs/llmhit-cs-2025f/img-009-f38ae4fee0.png',
+          links: [{ label: 'GitHub', href: 'https://github.com/tomeratia11/medsum-presentation/tree/main' }],
+        },
+        {
+          eyebrow: 'Student project',
+          title: 'CaterExtract',
+          meta: 'Arkady Doktorovich, Guy Yogev, Hen Mandelbaum',
+          description: 'From negotiation emails to structured catering deals.',
+          image: '/onesite/assets/courses/hit-cs/llmhit-cs-2025f/img-010-1303a2164d.png',
+          links: [{ label: 'GitHub', href: 'https://github.com/ArkadiDoktor/NLP-project' }],
+        },
+      ],
+    });
+})();

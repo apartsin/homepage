@@ -1,0 +1,5 @@
+body[data-card-type="student-project"] {
+  --apartsin-card-accent: #4d7a58;
+  --apartsin-card-accent-soft: rgba(77, 122, 88, 0.12);
+  --apartsin-card-media-fit: contain;
+}

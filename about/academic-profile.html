@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="About Sasha Apartsin: faculty role, AI research focus, education, employment, teaching, and writing.">
+  <title>About | Sasha Apartsin</title>
+  <link rel="stylesheet" href="../shared/site-shell.css">
+  <link rel="stylesheet" href="../shared/unified-theme.css">
+  <style>
+    .about-hero__panel {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: clamp(18px, 3vw, 30px);
+      padding: clamp(14px, 2vw, 22px);
+      border: 1px solid var(--site-border);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 14px 28px rgba(44, 33, 22, 0.08);
+    }
+    .about-hero__image {
+      margin: 0;
+      border-radius: 14px;
+      overflow: hidden;
+      background: rgba(139, 107, 61, 0.08);
+      aspect-ratio: 4 / 5;
+      max-width: 260px;
+    }
+    .about-hero__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .about-hero__content {
+      display: grid;
+      gap: 10px;
+      align-content: start;
+    }
+    .about-hero__name {
+      margin: 0;
+      color: var(--site-text);
+      font: 800 clamp(1.15rem, 2.1vw, 1.5rem)/1.2 "Manrope", "Segoe UI", sans-serif;
+      letter-spacing: -0.01em;
+    }
+    .about-hero__summary {
+      margin: 0;
+      font: 600 0.95rem/1.68 "Manrope", "Segoe UI", sans-serif;
+      color: var(--site-muted);
+    }
+    .about-hero__summary a {
+      color: #1d4ed8;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-thickness: 1.5px;
+      font-weight: 700;
+    }
+    .about-hero__summary a:hover {
+      color: #1e40af;
+    }
+    .about-hero__links {
+      margin-top: 4px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 9px;
+    }
+    .about-hero__links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      border: 1px solid var(--site-border);
+      border-radius: 11px;
+      background: #fff;
+      color: #1d4ed8;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-thickness: 1.2px;
+      font: 700 0.82rem/1.2 "Manrope", "Segoe UI", sans-serif;
+      text-align: center;
+      padding: 6px 8px;
+    }
+    .about-hero__links a:hover {
+      color: #1e40af;
+      border-color: rgba(30, 64, 175, 0.28);
+      background: rgba(29, 78, 216, 0.04);
+    }
+    @media (max-width: 880px) {
+      .about-hero__panel {
+        grid-template-columns: 220px 1fr;
+      }
+      .about-hero__image {
+        max-width: 220px;
+      }
+    }
+    @media (max-width: 720px) {
+      .about-hero__panel {
+        grid-template-columns: 1fr;
+      }
+      .about-hero__image {
+        max-width: 240px;
+      }
+      .about-hero__links {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="about">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar">
+      <a class="apartsin-shell__brand" href="../index.html">Sasha Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <div class="apartsin-shell__menu-item">
+          <a href="../about/academic-profile.html" class="apartsin-shell__home-nav-link">About</a>
+          <div class="apartsin-shell__menu-dropdown">
+            <a href="../about/education.html">Education</a>
+            <a href="../about/industry-experience.html">Industry Experience</a>
+            <a href="../about/phd-thesis.html">PhD Thesis</a>
+          </div>
+        </div>
+        <a href="../research/interests.html">Research</a>
+        <a href="../teaching/overview.html">Teaching</a>
+        <a href="../work/overview.html">Building</a>
+        <a href="../work/innovation-overview.html">Innovating</a>
+        <a href="../writing/overview.html">Writings</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="about-overview">
+          <h1 class="apartsin-sr-only">About</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <strong>About</strong>
+            </nav>
+          </div>
+          <p class="apartsin-page-header__lede">Faculty member at Holon Institute of Technology (HIT), School of Computer Science, focused on applied AI research and education.</p>
+
+          <div class="about-hero__panel">
+            <figure class="about-hero__image">
+              <img src="../shared-media/www-apartsin-com/assets/home/img-001-25abe63564-5677768a55.jpg" alt="Portrait of Sasha Apartsin">
+            </figure>
+            <div class="about-hero__content">
+              <h2 class="about-hero__name">Sasha Apartsin</h2>
+              <p class="about-hero__summary">I teach applied AI and data science courses at HIT. You can start from <a href="../teaching/overview.html#hands-on-ai-science-courses">teaching</a>.</p>
+              <p class="about-hero__summary">My primary research focus is AI, with practical work across language, vision, and real-world intelligent systems. Current directions are listed in <a href="../research/interests.html">research</a>.</p>
+              <p class="about-hero__summary">Before joining academia, I spent over 30 years developing intelligent systems. See <a href="../about/industry-experience.html">industry experience</a>, <a href="../about/education.html">education</a>, and the <a href="../about/phd-thesis.html">PhD thesis</a>.</p>
+              <p class="about-hero__summary">Occasionally, I write <a href="../writing/overview.html#blog-posts">blog posts</a> and continue authoring <a href="../writing/overview.html#books">books</a> to document ongoing work and lessons learned.</p>
+              <nav class="about-hero__links" aria-label="About section links">
+                <a href="../about/education.html">Education</a>
+                <a href="../about/industry-experience.html">Industry Experience</a>
+                <a href="../about/phd-thesis.html">PhD Thesis</a>
+              </nav>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script defer src="../shared/unified-enhance.js"></script>
+  <script defer src="../shared/site-shell.js"></script>
+</body>
+</html>

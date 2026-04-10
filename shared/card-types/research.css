@@ -1,0 +1,5 @@
+body[data-card-type="research"] {
+  --apartsin-card-accent: #af4f37;
+  --apartsin-card-accent-soft: rgba(175, 79, 55, 0.12);
+  --apartsin-card-media-fit: contain;
+}

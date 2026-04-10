@@ -1,0 +1,7 @@
+{
+  "batch_name": "batches/59p8tdew6w219uf3lf4eiv48kl1p27zjxm73",
+  "initial_state": "JOB_STATE_PENDING",
+  "model": "gemini-3-pro-image-preview",
+  "input_file": "files/0k7umizopaku",
+  "created_at_utc": "2026-04-09T11:18:34Z"
+}

@@ -1,0 +1,5 @@
+body[data-card-type="timeline"] {
+  --apartsin-card-accent: #6c7a8a;
+  --apartsin-card-accent-soft: rgba(108, 122, 138, 0.12);
+  --apartsin-card-media-fit: contain;
+}

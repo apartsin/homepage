@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Research overview with publications, projects, and student opportunities.">
+  <title>Research | Sasha Apartsin</title>
+  <link rel="stylesheet" href="../shared/site-shell.css">
+  <link rel="stylesheet" href="../shared/unified-theme.css">
+  <style>
+    .research-hero__panel {
+      margin-top: 14px;
+      display: grid;
+      gap: 12px;
+      padding: clamp(14px, 2vw, 22px);
+      border: 1px solid var(--site-border);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 14px 28px rgba(44, 33, 22, 0.08);
+    }
+    .research-hero__summary {
+      margin: 0;
+      font: 600 0.95rem/1.68 "Manrope", "Segoe UI", sans-serif;
+      color: var(--site-muted);
+    }
+    .research-hero__links {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 9px;
+      margin-top: 2px;
+    }
+    .research-hero__links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      border: 1px solid var(--site-border);
+      border-radius: 11px;
+      background: #fff;
+      color: #1d4ed8;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-thickness: 1.2px;
+      font: 700 0.82rem/1.2 "Manrope", "Segoe UI", sans-serif;
+      text-align: center;
+      padding: 6px 8px;
+    }
+    .research-hero__links a:hover {
+      color: #1e40af;
+      border-color: rgba(30, 64, 175, 0.28);
+      background: rgba(29, 78, 216, 0.04);
+    }
+    @media (max-width: 900px) {
+      .research-hero__links {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 640px) {
+      .research-hero__links {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="research">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar">
+      <a class="apartsin-shell__brand" href="../index.html">Sasha Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../about/academic-profile.html">About</a>
+        <a href="../research/interests.html">Research</a>
+        <a href="../teaching/overview.html">Teaching</a>
+        <a href="../work/overview.html">Building</a>
+        <a href="../work/innovation-overview.html">Innovating</a>
+        <a href="../writing/overview.html">Writings</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="research-overview">
+          <h1 class="apartsin-sr-only">Research</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <strong>Research</strong>
+            </nav>
+          </div>
+          <p class="apartsin-page-header__lede">Applied AI research across language, vision, and multimodal systems, with emphasis on deployable methods and student-driven projects.</p>
+
+          <div class="research-hero__panel">
+            <p class="research-hero__summary">This section provides direct entry points to publications, research projects, graduate opportunities, and supervised student work.</p>
+            <nav class="research-hero__links" aria-label="Research subpages">
+              <a href="../research/recent-publications.html">Recent Publications</a>
+              <a href="../research/research-projects.html">Research Projects</a>
+              <a href="../research/grad-opportunities.html">Open 4 Grad Students</a>
+              <a href="../teaching/former-students.html">Former Students</a>
+              <a href="../teaching/current-students.html">Current Students</a>
+            </nav>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script defer src="../shared/unified-enhance.js"></script>
+  <script defer src="../shared/site-shell.js"></script>
+</body>
+</html>

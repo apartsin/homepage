@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ph.D. thesis overview, publications, and award of Sasha Apartsin.">
+  <title>Ph.D. Thesis | Sasha Apartsin</title>
+  <link rel="stylesheet" href="../shared/site-shell.css">
+  <link rel="stylesheet" href="../shared/unified-theme.css">
+  <style>
+    .thesis-hero__wrap {
+      display: grid;
+      grid-template-columns: minmax(180px, 260px) minmax(0, 1fr);
+      gap: clamp(16px, 2.4vw, 26px);
+      align-items: start;
+    }
+    .thesis-hero__media {
+      margin: 0;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--site-border);
+      background: linear-gradient(180deg, #ffffff 0%, #f8f7f4 100%);
+      box-shadow: 0 10px 28px rgba(48, 41, 30, 0.08);
+    }
+    .thesis-hero__media img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+    .thesis-hero__content {
+      min-width: 0;
+    }
+    .thesis-hero__topic {
+      margin: 0;
+      color: var(--site-muted);
+      font: 800 0.96rem/1.45 "Manrope", "Segoe UI", sans-serif;
+      letter-spacing: 0.01em;
+    }
+    .thesis-hero__body {
+      margin: 10px 0 0;
+      color: var(--site-text);
+      font: 580 0.94rem/1.7 "Manrope", "Segoe UI", sans-serif;
+    }
+    .thesis-meta {
+      margin: 12px 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .thesis-meta__tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--site-border);
+      background: rgba(133, 114, 81, 0.08);
+      color: var(--site-text);
+      font: 700 0.73rem/1.2 "Manrope", "Segoe UI", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+    .thesis-actions {
+      margin: 14px 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+    .thesis-actions a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 11px;
+      border-radius: 10px;
+      border: 1px solid var(--site-border);
+      background: rgba(255, 255, 255, 0.94);
+      color: var(--site-text);
+      text-decoration: none;
+      font: 700 0.78rem/1.2 "Manrope", "Segoe UI", sans-serif;
+    }
+    .thesis-actions a:hover {
+      background: rgba(133, 114, 81, 0.1);
+    }
+    .thesis-section {
+      margin-top: 12px;
+      padding: clamp(15px, 2.3vw, 22px);
+      border: 1px solid var(--site-border);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.9);
+      scroll-margin-top: 90px;
+    }
+    .thesis-section h2 {
+      margin: 0;
+      font-size: 1.1rem;
+      line-height: 1.25;
+    }
+    .thesis-publications {
+      margin: 10px 0 0;
+      padding-left: 0;
+      display: grid;
+      gap: 12px;
+      list-style: none;
+      color: var(--site-text);
+      font: 580 0.9rem/1.58 "Manrope", "Segoe UI", sans-serif;
+      counter-reset: pub-counter;
+    }
+    .thesis-publications li {
+      counter-increment: pub-counter;
+      border: 1px solid var(--site-border);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.86);
+      padding: 11px 12px;
+    }
+    .thesis-publications li::before {
+      content: counter(pub-counter, decimal) ".";
+      display: inline-block;
+      margin-right: 8px;
+      color: var(--site-accent);
+      font-weight: 800;
+    }
+    .thesis-publication__links {
+      margin-top: 8px;
+      display: flex;
+      gap: 8px;
+    }
+    .thesis-publication__links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px 9px;
+      border-radius: 9px;
+      border: 1px solid var(--site-border);
+      background: rgba(133, 114, 81, 0.08);
+      color: var(--site-text);
+      text-decoration: none;
+      font: 700 0.72rem/1.2 "Manrope", "Segoe UI", sans-serif;
+    }
+    .thesis-award {
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--site-text);
+      font: 700 0.9rem/1.56 "Manrope", "Segoe UI", sans-serif;
+    }
+    @media (max-width: 720px) {
+      .thesis-hero__wrap {
+        grid-template-columns: 1fr;
+      }
+      .thesis-hero__media {
+        max-width: 290px;
+      }
+    }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="about">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar">
+      <a class="apartsin-shell__brand" href="../index.html">Sasha Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../about/academic-profile.html">About</a>
+        <a href="../research/interests.html">Research</a>
+        <a href="../teaching/overview.html">Teaching</a>
+        <a href="../work/overview.html">Building</a>
+        <a href="../work/innovation-overview.html">Innovating</a>
+        <a href="../writing/overview.html">Writings</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header thesis-hero apartsin-page-header--standard" id="thesis-overview">
+          <h1 class="apartsin-sr-only">Ph.D. Thesis</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="./academic-profile.html">About</a>
+              <span aria-hidden="true">/</span>
+              <strong>Ph.D. Thesis</strong>
+            </nav>
+          </div>
+          <p class="apartsin-page-header__lede">Research on detection of underground installations in hostile environments, combining machine-learning with robust signal processing in low signal-to-noise regimes.</p>
+        </section>
+
+        <section class="thesis-section" id="thesis-project">
+          <div class="thesis-hero__wrap">
+            <figure class="thesis-hero__media">
+              <img src="../shared-media/www-apartsin-com/assets/phd-thesis/img-001-d3e1e0d962-c909ab89f0.png" alt="PhD thesis visual">
+            </figure>
+            <div class="thesis-hero__content">
+              <p class="thesis-hero__topic">Detection of underground installations in hostile environments.</p>
+              <p class="thesis-hero__body">
+                During my PhD studies, I had the privilege of working on a project funded by the U.S. Army Research Office
+                (<a href="https://en.wikipedia.org/wiki/Army_Research_Office" target="_blank" rel="noopener noreferrer">ARO</a>)
+                and led by my adviser, Prof.
+                <a href="https://www.cs.tau.ac.il/~nin/" target="_blank" rel="noopener noreferrer">Nathan Intrator</a>,
+                together with Nobel laureate Prof.
+                <a href="https://en.wikipedia.org/wiki/Leon_Cooper" target="_blank" rel="noopener noreferrer">Leon N. Cooper</a>.
+                The project combined machine-learning techniques with a bank of unmatched filters to estimate object distance
+                from time-of-arrival in signal-to-noise-ratio regimes below the classical detection threshold. This approach enabled
+                the use of low-power acoustic pulses to detect underground installations while remaining covert.
+              </p>
+              <div class="thesis-meta" aria-label="Research Areas">
+                <span class="thesis-meta__tag">Machine Learning</span>
+                <span class="thesis-meta__tag">Signal Processing</span>
+                <span class="thesis-meta__tag">Time-of-Arrival</span>
+                <span class="thesis-meta__tag">Low SNR</span>
+              </div>
+              <div class="thesis-actions">
+                <a href="https://apps.dtic.mil/sti/tr/pdf/ADA597037.pdf" target="_blank" rel="noopener noreferrer">Project report (PDF)</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="thesis-section" id="thesis-publications">
+          <h2>Publications</h2>
+          <ol class="thesis-publications">
+            <li>
+              Apartsin, A., &amp; Intrator, N. (2008). A data fusion and multiple ping method for improving the resolution of low-power acoustic and seismic sensing. The Journal of the Acoustical Society of America, 124(4_Supplement), 2597-259.
+              <div class="thesis-publication__links">
+                <a href="https://doi.org/10.1121/1.4783265" target="_blank" rel="noopener noreferrer">DOI</a>
+              </div>
+            </li>
+            <li>
+              Apartsin, A., Cooper, L. N., &amp; Intrator, N. (2010, August). SNR-dependent filtering for Time Of Arrival estimation in high noise. In 2010 IEEE International Workshop on Machine Learning for Signal Processing (pp. 427-431). IEEE.
+              <div class="thesis-publication__links">
+                <a href="https://doi.org/10.1109/MLSP.2010.5588848" target="_blank" rel="noopener noreferrer">DOI</a>
+              </div>
+            </li>
+            <li>
+              Apartsin, A., Cooper, L. N., &amp; Intrator, N. (2011, January). Biosonar-inspired source localization in low SNR. In International Conference on Bio-inspired Systems and Signal Processing (Vol. 2, pp. 399-404). SCITEPRESS.
+              <div class="thesis-publication__links">
+                <a href="https://doi.org/10.5220/0003126803990404" target="_blank" rel="noopener noreferrer">DOI</a>
+              </div>
+            </li>
+            <li>
+              Apartsin, A., Cooper, L. N., &amp; Intrator, N. (2012). Semi-coherent time of arrival estimation using regression. The Journal of the Acoustical Society of America, 132(2), 832-837.
+              <div class="thesis-publication__links">
+                <a href="https://doi.org/10.1121/1.4730885" target="_blank" rel="noopener noreferrer">DOI</a>
+              </div>
+            </li>
+            <li>
+              Apartsin, A., Cooper, L. N., &amp; Intrator, N. (2013). Time-of-flight estimation in the presence of outliers. Part I-Single echo processing. IEEE Transactions on Geoscience and Remote Sensing, 52(6), 3382-3392.
+              <div class="thesis-publication__links">
+                <a href="https://doi.org/10.1109/TGRS.2013.2272737" target="_blank" rel="noopener noreferrer">DOI</a>
+              </div>
+            </li>
+            <li>
+              Apartsin, A., Cooper, L. N., &amp; Intrator, N. (2013). Time-of-flight estimation in the presence of outliers. Part II-Multiple echo processing. IEEE Transactions on Geoscience and Remote Sensing, 52(7), 3843-3850.
+              <div class="thesis-publication__links">
+                <a href="https://doi.org/10.1109/TGRS.2013.2276919" target="_blank" rel="noopener noreferrer">DOI</a>
+              </div>
+            </li>
+            <li>
+              Apartsin, A., Cooper, L. N., &amp; Intrator, N. (2014). Energy-Efficient Time-of-Flight Estimation in the Presence of Outliers: A Machine Learning Approach. IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, 7(4), 1306-1313.
+              <div class="thesis-publication__links">
+                <a href="https://doi.org/10.1109/JSTARS.2013.2295324" target="_blank" rel="noopener noreferrer">DOI</a>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <section class="thesis-section" id="thesis-award">
+          <h2>Award</h2>
+          <ul class="thesis-award">
+            <li>2011: The Don and Sara Marejn Foundation award for outstanding achievements in Ph.D. studies.</li>
+          </ul>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script defer src="../shared/unified-enhance.js"></script>
+  <script defer src="../shared/site-shell.js"></script>
+</body>
+</html>

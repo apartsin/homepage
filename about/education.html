@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Education background of Sasha Apartsin.">
+  <title>Education | Sasha Apartsin</title>
+  <link rel="stylesheet" href="../shared/site-shell.css">
+  <link rel="stylesheet" href="../shared/unified-theme.css">
+  <style>
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: clamp(16px, 2.5vw, 24px);
+      padding: 24px 0;
+    }
+    .edu-card {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: clamp(18px, 2.5vw, 24px);
+      border: 1px solid var(--apartsin-shell-border);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.6);
+      transition: box-shadow 180ms ease, transform 180ms ease;
+    }
+    .edu-card:hover {
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+      transform: translateY(-2px);
+    }
+    .edu-card__year {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--apartsin-shell-accent);
+    }
+    .edu-card__logo-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 58px;
+      margin: 2px 0 4px;
+    }
+    .edu-card__logo {
+      display: block;
+      width: auto;
+      max-width: min(190px, 100%);
+      max-height: 52px;
+      object-fit: contain;
+      object-position: left center;
+    }
+    .edu-card__degree {
+      font-size: 1.16rem;
+      font-weight: 700;
+      color: var(--apartsin-shell-text);
+      margin: 0;
+    }
+    .edu-card__school {
+      font-size: 0.96rem;
+      color: var(--apartsin-shell-muted);
+      margin: 0;
+    }
+    .edu-card__faculty {
+      font-size: 0.92rem;
+      color: var(--apartsin-shell-text);
+      margin: 1px 0 0;
+      font-weight: 600;
+    }
+    .edu-card__school-link {
+      color: #1c4fb6;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+    .edu-card__school-link:hover {
+      color: #153d8b;
+    }
+    .edu-card__note {
+      font-size: 0.9rem;
+      color: var(--apartsin-shell-muted);
+      font-style: italic;
+      margin: 4px 0 0;
+    }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="about">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar">
+      <a class="apartsin-shell__brand" href="../index.html">Sasha Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../about/academic-profile.html">About</a>
+        <a href="../research/interests.html">Research</a>
+        <a href="../teaching/overview.html">Teaching</a>
+        <a href="../work/overview.html">Building</a>
+        <a href="../work/innovation-overview.html">Innovating</a>
+        <a href="../writing/overview.html">Writings</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="edu-hero apartsin-page-header apartsin-page-header--standard" id="education-overview">
+          <h1 class="apartsin-sr-only">Education</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="./academic-profile.html">About</a>
+              <span aria-hidden="true">/</span>
+              <strong>Education</strong>
+            </nav>
+          </div>
+          <p class="apartsin-page-header__lede">In parallel with my industry work, I completed my computer science degrees, focusing on machine learning, computer vision, and signal processing. I also completed graduate studies and obtained professional certifications in technology, software, and product management, and I continuously stay up to date with current technologies through ongoing learning.</p>
+        </section>
+        <section class="edu-grid">
+          <article class="edu-card">
+            <p class="edu-card__year">1989-1990</p>
+            <div class="edu-card__logo-wrap">
+              <img class="edu-card__logo" src="../assets/about/education/logos/spbu-mathmech-wikipedia.png" alt="Mathematics and Mechanics Faculty, St. Petersburg State University logo">
+            </div>
+            <h3 class="edu-card__degree">B.Sc. in Computer Science</h3>
+            <p class="edu-card__school"><a class="edu-card__school-link" href="https://english.spbu.ru" target="_blank" rel="noopener">St. Petersburg State University</a></p>
+            <p class="edu-card__faculty">Mathematics and Mechanics Faculty</p>
+            <p class="edu-card__note">Transferred to Technion</p>
+          </article>
+          <article class="edu-card">
+            <p class="edu-card__year">1991-1995</p>
+            <div class="edu-card__logo-wrap">
+              <img class="edu-card__logo" src="../assets/about/education/logos/technion.png" alt="Technion logo">
+            </div>
+            <h3 class="edu-card__degree">B.Sc. in Computer Science</h3>
+            <p class="edu-card__school"><a class="edu-card__school-link" href="https://www.technion.ac.il" target="_blank" rel="noopener">Technion, Israeli Institute of Technology</a></p>
+            <p class="edu-card__faculty">Faculty of Computer Science</p>
+            <p class="edu-card__note">Machine Learning</p>
+          </article>
+          <article class="edu-card">
+            <p class="edu-card__year">2001-2004</p>
+            <div class="edu-card__logo-wrap">
+              <img class="edu-card__logo" src="../assets/about/education/logos/weizmann.png" alt="Weizmann Institute of Science logo">
+            </div>
+            <h3 class="edu-card__degree">M.Sc. in Computer Science</h3>
+            <p class="edu-card__school"><a class="edu-card__school-link" href="https://www.weizmann.ac.il" target="_blank" rel="noopener">Weizmann Institute of Science</a></p>
+            <p class="edu-card__faculty">Faculty of Mathematics and Computer Science</p>
+            <p class="edu-card__note">Computer Vision</p>
+          </article>
+          <article class="edu-card">
+            <p class="edu-card__year">2005-2006</p>
+            <div class="edu-card__logo-wrap">
+              <img class="edu-card__logo" src="../assets/about/education/logos/nyu.svg" alt="New York University logo">
+            </div>
+            <h3 class="edu-card__degree">M.Sc. in Management</h3>
+            <p class="edu-card__school"><a class="edu-card__school-link" href="https://www.poly.edu" target="_blank" rel="noopener">Polytechnic Institute of NYU</a></p>
+            <p class="edu-card__faculty">Israel Extension</p>
+            <p class="edu-card__note">Technology Management and Innovations</p>
+          </article>
+          <article class="edu-card">
+            <p class="edu-card__year">2008-2012</p>
+            <div class="edu-card__logo-wrap">
+              <img class="edu-card__logo" src="../assets/about/education/logos/tau.png" alt="Tel Aviv University logo">
+            </div>
+            <h3 class="edu-card__degree">Ph.D. in Computer Science</h3>
+            <p class="edu-card__school"><a class="edu-card__school-link" href="https://www.tau.ac.il" target="_blank" rel="noopener">Tel Aviv University</a></p>
+            <p class="edu-card__faculty">School of Computer Science</p>
+            <p class="edu-card__note">Machine Learning and Signal Processing, <a class="edu-card__school-link" href="./phd-thesis.html">thesis</a></p>
+          </article>
+          <article class="edu-card">
+            <p class="edu-card__year">2012-2013</p>
+            <div class="edu-card__logo-wrap">
+              <img class="edu-card__logo" src="../assets/about/education/logos/weizmann.png" alt="Weizmann Institute of Science logo">
+            </div>
+            <h3 class="edu-card__degree">Postdoctoral Fellowship</h3>
+            <p class="edu-card__school"><a class="edu-card__school-link" href="https://www.weizmann.ac.il" target="_blank" rel="noopener">Weizmann Institute of Science</a></p>
+            <p class="edu-card__faculty">Faculty of Mathematics and Computer Science</p>
+            <p class="edu-card__note">Computer Vision and Machine Learning</p>
+          </article>
+          <article class="edu-card">
+            <p class="edu-card__year">2006</p>
+            <div class="edu-card__logo-wrap">
+              <img class="edu-card__logo" src="../assets/about/education/logos/pmi.png" alt="Project Management Institute logo">
+            </div>
+            <h3 class="edu-card__degree">PMP: Project Management Technologies</h3>
+            <p class="edu-card__school"><a class="edu-card__school-link" href="https://www.pmi.org/certifications/project-management-pmp" target="_blank" rel="noopener">PMI</a></p>
+            <p class="edu-card__faculty">Project Management Institute</p>
+          </article>
+          <article class="edu-card">
+            <p class="edu-card__year">2006</p>
+            <div class="edu-card__logo-wrap">
+              <img class="edu-card__logo" src="../assets/about/education/logos/pdma.png" alt="Product Development and Management Association logo">
+            </div>
+            <h3 class="edu-card__degree">NPDP: Product Development Methodologies</h3>
+            <p class="edu-card__school"><a class="edu-card__school-link" href="https://www.pdma.org/page/NPDP_certification" target="_blank" rel="noopener">PDMA</a></p>
+            <p class="edu-card__faculty">Product Development and Management Association</p>
+          </article>
+          <article class="edu-card">
+            <p class="edu-card__year">2008</p>
+            <div class="edu-card__logo-wrap">
+              <img class="edu-card__logo" src="../assets/about/education/logos/ieee.svg" alt="IEEE logo">
+            </div>
+            <h3 class="edu-card__degree">CSDP: Software Development Methodologies</h3>
+            <p class="edu-card__school"><a class="edu-card__school-link" href="https://www.computer.org/product/education/professional-software-developer-certification" target="_blank" rel="noopener">IEEE Computer Society</a></p>
+            <p class="edu-card__faculty">Institute of Electrical and Electronics Engineers</p>
+          </article>
+          <article class="edu-card">
+            <p class="edu-card__year">2018</p>
+            <div class="edu-card__logo-wrap">
+              <img class="edu-card__logo" src="../assets/about/education/logos/coursera.svg" alt="Coursera logo">
+            </div>
+            <h3 class="edu-card__degree">Deep Learning Specialization</h3>
+            <p class="edu-card__school"><a class="edu-card__school-link" href="https://www.coursera.org" target="_blank" rel="noopener">Coursera</a></p>
+            <p class="edu-card__faculty">Online Specialization Program</p>
+          </article>
+          <article class="edu-card">
+            <p class="edu-card__year">2019</p>
+            <div class="edu-card__logo-wrap">
+              <img class="edu-card__logo" src="../assets/about/education/logos/deeplearningai.png" alt="DeepLearning.AI logo">
+            </div>
+            <h3 class="edu-card__degree">TensorFlow Developer Specialization</h3>
+            <p class="edu-card__school"><a class="edu-card__school-link" href="https://www.deeplearning.ai" target="_blank" rel="noopener">DeepLearning.AI</a></p>
+            <p class="edu-card__faculty">Online Specialization Program</p>
+          </article>
+          <article class="edu-card">
+            <p class="edu-card__year">2024</p>
+            <div class="edu-card__logo-wrap">
+              <img class="edu-card__logo" src="../assets/about/education/logos/activeloop.svg" alt="ActiveLoop logo">
+            </div>
+            <h3 class="edu-card__degree">GenAI 360 Certification</h3>
+            <p class="edu-card__school"><a class="edu-card__school-link" href="https://www.activeloop.ai" target="_blank" rel="noopener">ActiveLoop</a></p>
+            <p class="edu-card__faculty">Certification Program</p>
+          </article>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script defer src="../shared/unified-enhance.js"></script>
+  <script defer src="../shared/site-shell.js"></script>
+</body>
+</html>

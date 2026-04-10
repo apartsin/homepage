@@ -1,0 +1,5 @@
+body[data-card-type="companies"] {
+  --apartsin-card-accent: #395e92;
+  --apartsin-card-accent-soft: rgba(57, 94, 146, 0.12);
+  --apartsin-card-media-fit: contain;
+}

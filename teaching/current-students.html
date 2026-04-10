@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Current students and active supervision topics.">
+  <title>Current Students | Sasha Apartsin</title>
+  <link rel="stylesheet" href="../shared/site-shell.css">
+  <link rel="stylesheet" href="../shared/unified-theme.css">
+  <style>
+    .student-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+    }
+    .student-card {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      overflow: hidden;
+    }
+    .student-card__media {
+      display: block;
+      aspect-ratio: 16 / 10;
+      background: rgba(247, 250, 255, 0.92);
+      border-bottom: 1px solid var(--site-border);
+    }
+    .student-card__media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      background: rgba(247, 250, 255, 0.92);
+    }
+    .student-card__body {
+      display: grid;
+      gap: 8px;
+      padding: 13px 14px 14px;
+    }
+    .student-card__project {
+      margin: 0;
+      color: var(--site-text);
+      font: 800 0.98rem/1.3 "Manrope", "Segoe UI", sans-serif;
+    }
+    .student-card__name {
+      margin: 0;
+      color: var(--site-muted);
+      font: 700 0.78rem/1.35 "Manrope", "Segoe UI", sans-serif;
+      letter-spacing: 0.02em;
+    }
+    .student-card__text {
+      margin: 0;
+      color: var(--site-muted);
+      font: 600 0.86rem/1.58 "Manrope", "Segoe UI", sans-serif;
+    }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="teaching">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar">
+      <a class="apartsin-shell__brand" href="../index.html">Sasha Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../about/academic-profile.html">About</a>
+        <a href="../research/interests.html">Research</a>
+        <a href="../teaching/overview.html">Teaching</a>
+        <a href="../work/overview.html">Building</a>
+        <a href="../work/innovation-overview.html">Innovating</a>
+        <a href="../writing/overview.html">Writings</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="current-students-overview">
+          <h1 class="apartsin-sr-only">Current Students</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="../research/interests.html">Research</a>
+              <span aria-hidden="true">/</span>
+              <strong>Current Students</strong>
+            </nav>
+          </div>
+          <p class="apartsin-page-header__lede">Current supervision projects in the M.Sc. Intelligent Systems track. Each card includes a short project focus and a direct GitHub entry point.</p>
+        </section>
+        <section class="student-grid">
+          <article class="hub-card student-card" id="eden-moran">
+            <div class="student-card__media">
+              <img src="../assets/teaching/current-students/img-001-0eae3c6824-cee5ba1e66.png" alt="Project image for Eden Moran">
+            </div>
+            <div class="student-card__body">
+              <h2 class="student-card__project">Implicit Entity Recognition In Text</h2>
+              <p class="student-card__name">Eden Moran</p>
+              <p class="student-card__text">Implicit entity recognition in text using contextual inference and discourse-level cues.</p>
+            </div>
+          </article>
+          <article class="hub-card student-card" id="omri-sasson">
+            <div class="student-card__media">
+              <img src="../assets/teaching/current-students/img-002-8fba22da5d.png" alt="Project image for Omri Sasson">
+            </div>
+            <div class="student-card__body">
+              <h2 class="student-card__project">Imperfect Student Simulations using LLMs</h2>
+              <p class="student-card__name">Omri Sasson</p>
+              <p class="student-card__text">Imperfect student simulations with LLMs to model realistic misunderstandings and learning gaps.</p>
+            </div>
+          </article>
+          <article class="hub-card student-card" id="niv-cohen">
+            <div class="student-card__media">
+              <img src="../assets/teaching/current-students/img-003-bbb86d2fc4.png" alt="Project image for Niv Cohen">
+            </div>
+            <div class="student-card__body">
+              <h2 class="student-card__project">Adaptive Diagnostic Questioning with Large Language Models</h2>
+              <p class="student-card__name">Niv Cohen</p>
+              <p class="student-card__text">Adaptive diagnostic questioning with LLMs for high-value information acquisition in clinical settings.</p>
+            </div>
+          </article>
+          <article class="hub-card student-card" id="yigal-meshulam">
+            <div class="student-card__media">
+              <img src="../assets/teaching/current-students/img-004-ee314172bc.png" alt="Project image for Yigal Meshulam">
+            </div>
+            <div class="student-card__body">
+              <h2 class="student-card__project">Decentralized Multi-Robot Task Allocation under the Zero-Knowledge</h2>
+              <p class="student-card__name">Yigal Meshulam</p>
+              <p class="student-card__text">Decentralized multi-robot task allocation under zero-knowledge constraints and minimal signal sharing.</p>
+            </div>
+          </article>
+          <article class="hub-card student-card" id="matan-chazanovitz">
+            <div class="student-card__media">
+              <img src="../assets/teaching/current-students/img-005-efcf14eafa.png" alt="Project image for Matan Chazanovitz">
+            </div>
+            <div class="student-card__body">
+              <h2 class="student-card__project">Degradation-Aware Selective Super-Resolution (DASSR)</h2>
+              <p class="student-card__name">Matan Chazanovitz</p>
+              <p class="student-card__text">Selective super-resolution that boosts degraded regions while preserving clean image areas.</p>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script defer src="../shared/unified-enhance.js"></script>
+  <script defer src="../shared/site-shell.js"></script>
+</body>
+</html>

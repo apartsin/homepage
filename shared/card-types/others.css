@@ -1,0 +1,5 @@
+body[data-card-type="others"] {
+  --apartsin-card-accent: #56616a;
+  --apartsin-card-accent-soft: rgba(86, 97, 106, 0.12);
+  --apartsin-card-media-fit: contain;
+}
