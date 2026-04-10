@@ -3,10 +3,77 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Entrepreneurship-oriented innovation work.">
+  <meta name="description" content="Entrepreneurship initiatives including SearchNG and CloudTuner.">
   <title>Entrepreneurship | Sasha Apartsin</title>
   <link rel="stylesheet" href="../shared/site-shell.css">
   <link rel="stylesheet" href="../shared/unified-theme.css">
+  <style>
+    .venture-grid {
+      margin-top: 12px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 12px;
+    }
+    .venture-card {
+      display: grid;
+      gap: 10px;
+      padding: 12px;
+      border: 1px solid var(--site-border);
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 10px 22px rgba(35, 30, 23, 0.06);
+      scroll-margin-top: 90px;
+    }
+    .venture-card__media {
+      margin: 0;
+      border: 1px solid var(--site-border);
+      border-radius: 12px;
+      background: #fff;
+      overflow: hidden;
+    }
+    .venture-card__media img {
+      display: block;
+      width: 100%;
+      height: 190px;
+      object-fit: contain;
+      object-position: center;
+      background: #f9fafb;
+    }
+    .venture-card__title {
+      margin: 0;
+      color: var(--site-text);
+      font: 800 1rem/1.35 "Manrope", "Segoe UI", sans-serif;
+    }
+    .venture-card__text {
+      margin: 0;
+      color: var(--site-muted);
+      font: 600 0.87rem/1.62 "Manrope", "Segoe UI", sans-serif;
+    }
+    .venture-card__links {
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .venture-card__link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 32px;
+      padding: 6px 10px;
+      border: 1px solid var(--site-border);
+      border-radius: 10px;
+      background: #fff;
+      color: #164a83;
+      text-decoration: none;
+      font: 700 0.77rem/1.2 "Manrope", "Segoe UI", sans-serif;
+    }
+    .venture-card__link:hover {
+      border-color: rgba(24, 101, 168, 0.45);
+      background: rgba(24, 101, 168, 0.06);
+      color: #123a67;
+    }
+  </style>
 </head>
 <body class="apartsin-shell-active" data-site-section="work">
   <div class="apartsin-shell">
@@ -24,19 +91,41 @@
     </aside>
     <div class="apartsin-shell__content">
       <main class="apartsin-shell__main">
-        <section class="hub-page">
-          <p class="hub-page__kicker">Innovations</p>
-          <h1 class="hub-page__title">Entrepreneurship</h1>
-          <p class="hub-page__lede">Entrepreneurial dimensions of innovation work, from experimentation to product-oriented direction.</p>
+        <section class="apartsin-page-header apartsin-page-header--standard" id="entrepreneurship-overview">
+          <h1 class="apartsin-sr-only">Entrepreneurship</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="./innovation-overview.html">Innovations</a>
+              <span aria-hidden="true">/</span>
+              <strong>Entrepreneurship</strong>
+            </nav>
+          </div>
+          <p class="apartsin-page-header__lede">I’ve founded startups and helped turn early ideas into practical products.</p>
         </section>
-        <section class="hub-grid">
-          <article class="hub-card">
-            <h2>Reference Pages</h2>
-            <ul class="hub-links">
-              <li><a href="../work/innovation-and-entrepreneurship.html">Innovation and Entrepreneurship</a></li>
-              <li><a href="../work/innovation-overview.html">Innovation Overview</a></li>
-              <li><a href="../work/recent-projects.html">Recent Projects</a></li>
-            </ul>
+
+        <section class="venture-grid" aria-label="Entrepreneurship initiatives">
+          <article class="venture-card" id="searchng">
+            <figure class="venture-card__media">
+              <img src="../shared-media/www-apartsin-com/assets/innovation-and-entrepreneurship/img-001-b5c8311395-787f312d14.png" alt="SearchNG concept visual">
+            </figure>
+            <h2 class="venture-card__title">SearchNG: Distributed Search Hub</h2>
+            <p class="venture-card__text">I founded a startup based on the idea of creating a distributed search infrastructure powered by a market-based rating mechanism. The venture received funding from the Jerusalem Software Incubator and the Israel Innovation Authority (formerly the Office of the Chief Scientist).</p>
+            <p class="venture-card__links">
+              <a class="venture-card__link" href="https://web.archive.org/web/20000821175240/http://sng.co.il/" target="_blank" rel="noopener noreferrer">Archived site</a>
+            </p>
+          </article>
+
+          <article class="venture-card" id="cloudtuner">
+            <figure class="venture-card__media">
+              <img src="../assets/work/innovation-and-entrepreneurship/img-003-4ffd892c96.jpg" alt="CloudTuner interface visual">
+            </figure>
+            <h2 class="venture-card__title">CloudTuner: Visual Interface for Search</h2>
+            <p class="venture-card__text">I co-founded a startup that created a WYSIWYG-style visual search interface based on a tag-cloud paradigm. The project received positive reviews in Search Engine Magazine.</p>
+            <p class="venture-card__links">
+              <a class="venture-card__link" href="https://youtu.be/RHu2iScWA4M?si=CDUG0zQGgqFb1hh0" target="_blank" rel="noopener noreferrer">Watch video</a>
+            </p>
           </article>
         </section>
       </main>

@@ -1,13 +1,101 @@
 (function () {
   const pageConfigs = {};
+  const APP_ROOT_SEGMENTS = new Set([
+    'about',
+    'research',
+    'teaching',
+    'work',
+    'writing',
+    'courses',
+    'index.html',
+  ]);
 
   function isExternalHref(href) {
     return /^https?:\/\//i.test(href);
   }
 
+  function getFileAppRelativePath() {
+    const decoded = decodeURIComponent(location.pathname || '').replace(/\\/g, '/');
+    const marker = '/onesite/';
+    const idx = decoded.toLowerCase().lastIndexOf(marker);
+    if (idx >= 0) {
+      return decoded.slice(idx + marker.length) || 'index.html';
+    }
+    return decoded.replace(/^\/+/, '') || 'index.html';
+  }
+
+  function relativePath(fromFilePath, targetPath) {
+    const fromParts = (fromFilePath || 'index.html').split('/').filter(Boolean);
+    const toParts = (targetPath || 'index.html').replace(/^\/+/, '').split('/').filter(Boolean);
+
+    if (fromParts.length > 0 && /\.[a-z0-9]+$/i.test(fromParts[fromParts.length - 1])) {
+      fromParts.pop();
+    }
+
+    while (
+      fromParts.length > 0 &&
+      toParts.length > 0 &&
+      fromParts[0].toLowerCase() === toParts[0].toLowerCase()
+    ) {
+      fromParts.shift();
+      toParts.shift();
+    }
+
+    const up = '../'.repeat(fromParts.length);
+    const down = toParts.join('/');
+    return `${up}${down}` || './';
+  }
+
+  function getHttpBasePath() {
+    const pathname = (location.pathname || '/').split('?')[0].split('#')[0];
+    const segments = pathname.replace(/^\/+/, '').split('/').filter(Boolean);
+    if (segments.length === 0) {
+      return '/';
+    }
+
+    const rootIndex = segments.findIndex((segment) => APP_ROOT_SEGMENTS.has(segment.toLowerCase()));
+    if (rootIndex < 0) {
+      if (segments.length === 1 && !/\.[a-z0-9]+$/i.test(segments[0])) {
+        return `/${segments[0]}/`;
+      }
+      return '/';
+    }
+
+    return rootIndex === 0 ? '/' : `/${segments.slice(0, rootIndex).join('/')}/`;
+  }
+
+  function resolveSiteHref(href) {
+    const raw = String(href || '').trim();
+    if (
+      !raw ||
+      raw.startsWith('#') ||
+      /^data:/i.test(raw) ||
+      /^mailto:/i.test(raw) ||
+      /^tel:/i.test(raw) ||
+      /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(raw)
+    ) {
+      return raw;
+    }
+
+    let clean = raw;
+    if (clean.startsWith('/onesite/')) {
+      clean = clean.slice('/onesite/'.length);
+    } else if (clean.startsWith('/')) {
+      clean = clean.replace(/^\/+/, '');
+    } else {
+      return clean;
+    }
+
+    if (location.protocol === 'file:') {
+      return relativePath(getFileAppRelativePath(), clean);
+    }
+
+    return `${getHttpBasePath()}${clean}`.replace(/\/{2,}/g, '/');
+  }
+
   function fallbackLinkLabel(href) {
     try {
-      const url = new URL(href, location.href);
+      const url = new URL(resolveSiteHref(href), location.href);
       if (isExternalHref(url.href)) {
         return url.hostname.replace(/^www\./i, '');
       }
@@ -19,11 +107,12 @@
   }
 
   function createLink(link) {
+    const resolvedHref = resolveSiteHref(link.href);
     const anchor = document.createElement('a');
     anchor.className = 'content-card__link';
-    anchor.href = link.href;
-    anchor.textContent = link.label || fallbackLinkLabel(link.href);
-    if (isExternalHref(link.href)) {
+    anchor.href = resolvedHref;
+    anchor.textContent = link.label || fallbackLinkLabel(resolvedHref);
+    if (isExternalHref(resolvedHref)) {
       anchor.target = '_blank';
       anchor.rel = 'noopener noreferrer';
     }
@@ -486,7 +575,7 @@
       media.className = 'content-card__media';
 
       const img = document.createElement('img');
-      img.src = card.image;
+      img.src = resolveSiteHref(card.image);
       img.alt = card.imageAlt || card.title;
       media.appendChild(img);
       article.appendChild(media);

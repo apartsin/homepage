@@ -7,6 +7,176 @@
   <title>Innovation-First Learning (Innovation) | Sasha Apartsin</title>
   <link rel="stylesheet" href="../shared/site-shell.css">
   <link rel="stylesheet" href="../shared/unified-theme.css">
+  <style>
+    .apartsin-page-header__lede a {
+      color: #1b4fd8;
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-thickness: 1.2px;
+    }
+    .apartsin-page-header__lede a:hover,
+    .apartsin-page-header__lede a:focus-visible {
+      color: #1e40af;
+    }
+    .ifl-content {
+      border: 1px solid var(--site-border);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.93);
+      padding: clamp(14px, 2vw, 22px);
+      display: grid;
+      gap: 14px;
+    }
+    .ifl-intro {
+      margin: 0;
+      padding: clamp(12px, 2.2vw, 18px);
+      border: 1px solid rgba(24, 101, 168, 0.2);
+      border-radius: 14px;
+      background:
+        radial-gradient(140% 120% at 0% 0%, rgba(24, 101, 168, 0.14), rgba(24, 101, 168, 0) 58%),
+        linear-gradient(180deg, rgba(24, 101, 168, 0.08), rgba(24, 101, 168, 0.03));
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: center;
+      gap: 12px;
+    }
+    .ifl-intro__count {
+      width: clamp(36px, 4.3vw, 46px);
+      height: clamp(36px, 4.3vw, 46px);
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(24, 101, 168, 0.36);
+      background: rgba(24, 101, 168, 0.12);
+      color: #164a83;
+      font: 800 clamp(0.95rem, 1.8vw, 1.18rem)/1 "Manrope", "Segoe UI", sans-serif;
+      letter-spacing: 0.01em;
+    }
+    .ifl-intro__title {
+      margin: 0;
+      display: grid;
+      gap: 2px;
+      color: #1d2f42;
+    }
+    .ifl-intro__title-main {
+      display: block;
+      font: 900 clamp(1.02rem, 2vw, 1.32rem)/1.2 "Manrope", "Segoe UI", sans-serif;
+      letter-spacing: 0.005em;
+      color: #163f70;
+    }
+    .ifl-intro__title-sub {
+      display: block;
+      font: 700 clamp(0.9rem, 1.55vw, 1.04rem)/1.35 "Manrope", "Segoe UI", sans-serif;
+      color: #2a3f57;
+    }
+    .ifl-principle-panels {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .ifl-subpanel {
+      border: 1px solid rgba(24, 101, 168, 0.16);
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(247, 250, 255, 0.86), rgba(255, 255, 255, 0.94));
+      padding: 10px;
+    }
+    .ifl-principles {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .ifl-principle {
+      border: 1px solid var(--site-border);
+      border-radius: 12px;
+      border-top: 3px solid var(--ifl-accent, #1b4fd8);
+      background:
+        linear-gradient(160deg, var(--ifl-accent-soft, rgba(27, 79, 216, 0.08)), rgba(255, 255, 255, 0) 44%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 251, 255, 0.94));
+      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
+      padding: 11px 12px 38px;
+      display: grid;
+      gap: 8px;
+      align-content: start;
+      position: relative;
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+    }
+    .ifl-principle:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 28px rgba(15, 23, 42, 0.12);
+    }
+    .ifl-principle__head {
+      display: grid;
+      grid-template-columns: 28px minmax(0, 1fr);
+      gap: 8px;
+      align-items: center;
+    }
+    .ifl-principle__icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 9px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--ifl-accent-border, rgba(27, 79, 216, 0.3));
+      background: var(--ifl-accent-soft, rgba(27, 79, 216, 0.12));
+      color: var(--ifl-accent, #1b4fd8);
+    }
+    .ifl-principle__icon svg {
+      width: 16px;
+      height: 16px;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      stroke: currentColor;
+    }
+    .ifl-principle h2 {
+      margin: 0;
+      color: var(--site-text);
+      font: 800 0.9rem/1.35 "Manrope", "Segoe UI", sans-serif;
+    }
+    .ifl-principle h2 .ifl-key {
+      color: var(--ifl-accent, #1b4fd8);
+    }
+    .ifl-principle p {
+      margin: 0;
+      color: var(--site-muted);
+      font: 600 0.84rem/1.58 "Manrope", "Segoe UI", sans-serif;
+    }
+    .ifl-principle__num {
+      position: absolute;
+      right: 10px;
+      bottom: 8px;
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--ifl-accent-border, rgba(27, 79, 216, 0.35));
+      background: var(--ifl-accent-soft, rgba(27, 79, 216, 0.12));
+      color: var(--ifl-accent, #1b4fd8);
+      font: 800 0.72rem/1 "Manrope", "Segoe UI", sans-serif;
+      letter-spacing: 0.01em;
+    }
+    .ifl-principle:nth-child(2n) { --ifl-accent: #1f6f8b; --ifl-accent-soft: rgba(31, 111, 139, 0.12); --ifl-accent-border: rgba(31, 111, 139, 0.32); }
+    .ifl-principle:nth-child(3n) { --ifl-accent: #8f5a18; --ifl-accent-soft: rgba(143, 90, 24, 0.12); --ifl-accent-border: rgba(143, 90, 24, 0.3); }
+    .ifl-principle:nth-child(4n) { --ifl-accent: #2f7d4e; --ifl-accent-soft: rgba(47, 125, 78, 0.12); --ifl-accent-border: rgba(47, 125, 78, 0.3); }
+    .ifl-principle:nth-child(5n) { --ifl-accent: #7a3fa0; --ifl-accent-soft: rgba(122, 63, 160, 0.12); --ifl-accent-border: rgba(122, 63, 160, 0.3); }
+    @media (max-width: 960px) {
+      .ifl-principle-panels {
+        grid-template-columns: 1fr;
+      }
+      .ifl-intro {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+    }
+  </style>
 </head>
 <body class="apartsin-shell-active" data-site-section="work">
   <div class="apartsin-shell">
@@ -24,20 +194,117 @@
     </aside>
     <div class="apartsin-shell__content">
       <main class="apartsin-shell__main">
-        <section class="hub-page">
-          <p class="hub-page__kicker">Innovations</p>
-          <h1 class="hub-page__title">Innovation-First Learning</h1>
-          <p class="hub-page__lede">Bridge page connecting innovation outcomes with the teaching methodology built around practical innovation-first learning.</p>
+        <section class="apartsin-page-header apartsin-page-header--standard" id="innovation-first-learning-overview">
+          <h1 class="apartsin-sr-only">Innovation-First Learning</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="./innovation-overview.html">Innovations</a>
+              <span aria-hidden="true">/</span>
+              <strong>Innovation-First Learning</strong>
+            </nav>
+          </div>
+          <p class="apartsin-page-header__lede">I developed Innovation-First Learning by combining my experience building systems, training teams, and hiring talent, then adapting this approach to the recent changes in the AI landscape. See the <a href="../teaching/hands-on-ai-science-courses-courses.html">courses</a> I teach using this approach.</p>
         </section>
-        <section class="hub-grid">
-          <article class="hub-card">
-            <h2>Connected Pages</h2>
-            <ul class="hub-links">
-              <li><a href="../teaching/innovation-first-learning.html">Teaching: Innovation-First Learning</a></li>
-              <li><a href="../teaching/innovation.html">Legacy Teaching Innovation Page</a></li>
-              <li><a href="../work/innovation-overview.html">Innovation Overview</a></li>
-            </ul>
-          </article>
+        <section class="ifl-content" aria-label="Innovation-first learning principles">
+          <div class="ifl-intro" role="group" aria-label="The 10 Commandments of Innovation-First Learning">
+            <span class="ifl-intro__count" aria-hidden="true">10</span>
+            <h2 class="ifl-intro__title">
+              <span class="ifl-intro__title-main">The 10 Commandments</span>
+              <span class="ifl-intro__title-sub">of Innovation-First Learning</span>
+            </h2>
+          </div>
+          <div class="ifl-principle-panels">
+            <section class="ifl-subpanel" aria-label="Commandments one to five">
+              <div class="ifl-principles">
+                <article class="ifl-principle">
+                  <div class="ifl-principle__head">
+                    <span class="ifl-principle__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 14l6-6 4 4 6-6"></path><path d="M14 6h6v6"></path></svg></span>
+                    <h2>Thou Shalt Learn by <span class="ifl-key">Building</span></h2>
+                  </div>
+                  <p>Introduce advanced tools and concepts early so projects can start immediately, then revisit the same subject later for deeper understanding.</p>
+                  <span class="ifl-principle__num" aria-hidden="true">1</span>
+                </article>
+                <article class="ifl-principle">
+                  <div class="ifl-principle__head">
+                    <span class="ifl-principle__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 8l-4 4 4 4"></path><path d="M16 8l4 4-4 4"></path><path d="M10 19l4-14"></path></svg></span>
+                    <h2>Thou Shalt Unite <span class="ifl-key">Theory with Code</span></h2>
+                  </div>
+                  <p>Teach theory through code examples, treating code as a first-class citizen tightly connected to concepts, with practice and theory fully interwoven.</p>
+                  <span class="ifl-principle__num" aria-hidden="true">2</span>
+                </article>
+                <article class="ifl-principle">
+                  <div class="ifl-principle__head">
+                    <span class="ifl-principle__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.5 5.5L20 11l-5.5 2.5L12 19l-2.5-5.5L4 11l5.5-2.5z"></path></svg></span>
+                    <h2>Thou Shalt Follow the <span class="ifl-key">State of the Art</span></h2>
+                  </div>
+                  <p>Teach state-of-the-art models and tools rather than yesterday’s curricula or waiting for a consensus syllabus.</p>
+                  <span class="ifl-principle__num" aria-hidden="true">3</span>
+                </article>
+                <article class="ifl-principle">
+                  <div class="ifl-principle__head">
+                    <span class="ifl-principle__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v5"></path><path d="M7 10a5 5 0 0 1 10 0c0 2-1 3.2-2.2 4.2A3 3 0 0 0 13.8 17H10.2a3 3 0 0 0-1-2.8C8 13.2 7 12 7 10z"></path><path d="M10 21h4"></path></svg></span>
+                    <h2>Thou Shalt <span class="ifl-key">Innovate</span></h2>
+                  </div>
+                  <p>Encourage students to invent and build new things; innovation is mandatory, while standard tasks are delegated to AI.</p>
+                  <span class="ifl-principle__num" aria-hidden="true">4</span>
+                </article>
+                <article class="ifl-principle">
+                  <div class="ifl-principle__head">
+                    <span class="ifl-principle__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7h18"></path><path d="M6 7v11h12V7"></path><path d="M9 7V4h6v3"></path></svg></span>
+                    <h2>Thou Shalt Be Armed with <span class="ifl-key">Many Tools</span></h2>
+                  </div>
+                  <p>Teach a broad, practical toolkit for solving real problems instead of deep-diving into only a few isolated concepts.</p>
+                  <span class="ifl-principle__num" aria-hidden="true">5</span>
+                </article>
+              </div>
+            </section>
+            <section class="ifl-subpanel" aria-label="Commandments six to ten">
+              <div class="ifl-principles">
+                <article class="ifl-principle">
+                  <div class="ifl-principle__head">
+                    <span class="ifl-principle__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h5v8H4z"></path><path d="M15 4h5v8h-5z"></path><path d="M9 16l6-8"></path></svg></span>
+                    <h2>Thou Shalt <span class="ifl-key">Reuse</span> Freely, Yet <span class="ifl-key">Own</span> the Result</h2>
+                  </div>
+                  <p>Students are encouraged to reuse components and delegate coding or writing to AI, while remaining fully responsible for every design decision and outcome.</p>
+                  <span class="ifl-principle__num" aria-hidden="true">6</span>
+                </article>
+                <article class="ifl-principle">
+                  <div class="ifl-principle__head">
+                    <span class="ifl-principle__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h16v10H7l-3 3z"></path><path d="M8 10h8"></path></svg></span>
+                    <h2>Thou Shalt <span class="ifl-key">Tell the Story</span> Clearly</h2>
+                  </div>
+                  <p>Teach students to explain ideas and innovations clearly in words, so both people and AI can understand and act on them.</p>
+                  <span class="ifl-principle__num" aria-hidden="true">7</span>
+                </article>
+                <article class="ifl-principle">
+                  <div class="ifl-principle__head">
+                    <span class="ifl-principle__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-2.6-6.4"></path><path d="M21 3v6h-6"></path></svg></span>
+                    <h2>Thou Shalt <span class="ifl-key">Evolve</span> through <span class="ifl-key">Feedback</span></h2>
+                  </div>
+                  <p>Provide continuous feedback to guide projects toward clearer problem definitions, better scope, and stronger implementations.</p>
+                  <span class="ifl-principle__num" aria-hidden="true">8</span>
+                </article>
+                <article class="ifl-principle">
+                  <div class="ifl-principle__head">
+                    <span class="ifl-principle__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"></path><path d="M8 9h8"></path><path d="M8 13h5"></path></svg></span>
+                    <h2>Thou Shalt Deliver <span class="ifl-key">Tangible Outcomes</span></h2>
+                  </div>
+                  <p>Ensure students leave with a demonstrable portfolio project, including a code repository and presentation artifacts.</p>
+                  <span class="ifl-principle__num" aria-hidden="true">9</span>
+                </article>
+                <article class="ifl-principle">
+                  <div class="ifl-principle__head">
+                    <span class="ifl-principle__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 6a4 4 0 0 1 4 4"></path><path d="M8 16a4 4 0 0 1 8 0"></path><path d="M9 10h.01"></path><path d="M15 10h.01"></path></svg></span>
+                    <h2>Thou Shalt <span class="ifl-key">Enjoy the Craft</span></h2>
+                  </div>
+                  <p>Have fun making complex ideas clear.</p>
+                  <span class="ifl-principle__num" aria-hidden="true">10</span>
+                </article>
+              </div>
+            </section>
+          </div>
         </section>
       </main>
     </div>

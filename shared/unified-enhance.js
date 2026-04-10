@@ -1,4 +1,14 @@
 (function () {
+  const APP_ROOT_SEGMENTS = new Set([
+    'about',
+    'research',
+    'teaching',
+    'work',
+    'writing',
+    'courses',
+    'index.html',
+  ]);
+
   function normalizePath(pathname) {
     return (pathname || '/').split('?')[0].split('#')[0];
   }
@@ -68,11 +78,26 @@
     const pathname = normalizePath(location.pathname || '/');
     const marker = '/onesite/';
     const markerIndex = pathname.toLowerCase().indexOf(marker);
-    if (markerIndex === -1) {
-      return './';
+    let afterRoot = '';
+    if (markerIndex >= 0) {
+      afterRoot = pathname.slice(markerIndex + marker.length);
+    } else {
+      const segments = pathname.replace(/^\/+/, '').split('/').filter(Boolean);
+      if (segments.length === 0) {
+        return './';
+      }
+
+      const rootIndex = segments.findIndex((segment) => APP_ROOT_SEGMENTS.has(segment.toLowerCase()));
+      if (rootIndex < 0) {
+        if (segments.length === 1 && !/\.[a-z0-9]+$/i.test(segments[0])) {
+          return './';
+        }
+        afterRoot = segments.join('/');
+      } else {
+        afterRoot = segments.slice(rootIndex).join('/');
+      }
     }
 
-    const afterRoot = pathname.slice(markerIndex + marker.length);
     const parts = afterRoot.split('/').filter(Boolean);
     if (parts.length <= 1) {
       return './';
@@ -243,6 +268,13 @@
   }
 
   function buildCardsToolbar(cardsShell) {
+    if (
+      cardsShell.dataset.disableToolbar === 'true' ||
+      document.body.dataset.disableCardsToolbar === 'true'
+    ) {
+      return;
+    }
+
     const cards = Array.from(cardsShell.querySelectorAll('.content-card'));
     if (cards.length < 4 || cardsShell.querySelector('.cards-toolbar')) {
       return;

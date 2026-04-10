@@ -98,25 +98,14 @@
       color: #164a83;
       font: 700 0.79rem/1.45 "Manrope", "Segoe UI", sans-serif;
     }
-    .pub-card__link {
-      margin-top: 4px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 31px;
-      width: fit-content;
-      padding: 6px 10px;
-      border-radius: 10px;
-      border: 1px solid var(--site-border);
-      background: #fff;
+    .pub-card__venue a {
       color: #164a83;
-      text-decoration: none;
-      font: 700 0.76rem/1.2 "Manrope", "Segoe UI", sans-serif;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-thickness: 1.2px;
     }
-    .pub-card__link:hover {
+    .pub-card__venue a:hover {
       color: #123a67;
-      border-color: rgba(24, 101, 168, 0.45);
-      background: rgba(24, 101, 168, 0.05);
     }
   </style>
 </head>
@@ -152,6 +141,24 @@
 
         <section aria-label="Publication list">
           <ol class="pub-list">
+            <li class="pub-card" id="pub-2026-headline-rewriting">
+              <div class="pub-card__top">
+                <span class="pub-card__year">2026</span>
+                <span class="pub-card__type">Preprint</span>
+              </div>
+              <h2 class="pub-card__title">LLM-guided headline rewriting for clickability enhancement without clickbait</h2>
+              <p class="pub-card__meta">Y Aperstein, L Halifa, S Bar, <span class="pub-card__author-self">A Apartsin</span></p>
+              <p class="pub-card__venue"><a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&sortby=pubdate&citation_for_view=-5He5joAAAAJ:Mojj43d5GZwC" target="_blank" rel="noopener noreferrer">arXiv preprint (arXiv:2603.22459)</a></p>
+            </li>
+            <li class="pub-card" id="pub-2026-diagnostic-questioning">
+              <div class="pub-card__top">
+                <span class="pub-card__year">2026</span>
+                <span class="pub-card__type">Journal</span>
+              </div>
+              <h2 class="pub-card__title">A benchmark for evaluating diagnostic questioning efficiency of LLMs in patient conversations</h2>
+              <p class="pub-card__meta">M Werthaim, M Kimhi, <span class="pub-card__author-self">A Apartsin</span>, Y Aperstein</p>
+              <p class="pub-card__venue"><a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&sortby=pubdate&citation_for_view=-5He5joAAAAJ:WA5NYHcadZ8C" target="_blank" rel="noopener noreferrer">Scientific Reports</a></p>
+            </li>
             <li class="pub-card" id="pub-2025-semantic-text-relations">
               <div class="pub-card__top">
                 <span class="pub-card__year">2025</span>
@@ -159,8 +166,7 @@
               </div>
               <h2 class="pub-card__title">Explainable Semantic Text Relations: A Question-Answering Framework for Comparing Document Content</h2>
               <p class="pub-card__meta">Y Aperstein, A Gottlib, G Benita, <span class="pub-card__author-self">A Apartsin</span></p>
-              <p class="pub-card__venue">Information (MDPI)</p>
-              <a class="pub-card__link" href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:HE397vMXCloC" target="_blank" rel="noopener noreferrer">Scholar entry</a>
+              <p class="pub-card__venue"><a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:HE397vMXCloC" target="_blank" rel="noopener noreferrer">Information (MDPI)</a></p>
             </li>
             <li class="pub-card" id="pub-2025-teaching-practice-platform">
               <div class="pub-card__top">
@@ -169,8 +175,7 @@
               </div>
               <h2 class="pub-card__title">Generative AI-Based Platform for Deliberate Teaching Practice: A Review and a Suggested Framework</h2>
               <p class="pub-card__meta">Y Aperstein, Y Cohen, <span class="pub-card__author-self">A Apartsin</span></p>
-              <p class="pub-card__venue">Education Sciences (MDPI)</p>
-              <a class="pub-card__link" href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:VOx2b1Wkg3QC" target="_blank" rel="noopener noreferrer">Scholar entry</a>
+              <p class="pub-card__venue"><a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:VOx2b1Wkg3QC" target="_blank" rel="noopener noreferrer">Education Sciences (MDPI)</a></p>
             </li>
             <li class="pub-card" id="pub-2025-chest-xray-rejection">
               <div class="pub-card__top">
@@ -179,8 +184,7 @@
               </div>
               <h2 class="pub-card__title">Multi-pathology Chest X-ray Classification with Rejection Mechanisms</h2>
               <p class="pub-card__meta">Y Aperstein, A Tzahar, A Gottlib, T Verber, S Damti, Ravit, <span class="pub-card__author-self">A Apartsin</span></p>
-              <p class="pub-card__venue">arXiv preprint</p>
-              <a class="pub-card__link" href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:BrmTIyaxlBUC" target="_blank" rel="noopener noreferrer">Scholar entry</a>
+              <p class="pub-card__venue"><a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:BrmTIyaxlBUC" target="_blank" rel="noopener noreferrer">arXiv preprint</a></p>
             </li>
             <li class="pub-card" id="pub-2025-panoramic-incident-summaries">
               <div class="pub-card__top">
@@ -189,8 +193,7 @@
               </div>
               <h2 class="pub-card__title">Stitching the Story: Creating Panoramic Incident Summaries from Body-Worn Footage</h2>
               <p class="pub-card__meta">D Cohen, I Efrosman, Y Aperstein, <span class="pub-card__author-self">A Apartsin</span></p>
-              <p class="pub-card__venue">arXiv preprint</p>
-              <a class="pub-card__link" href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:eflP2zaiRacC" target="_blank" rel="noopener noreferrer">Scholar entry</a>
+              <p class="pub-card__venue"><a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:eflP2zaiRacC" target="_blank" rel="noopener noreferrer">arXiv preprint</a></p>
             </li>
             <li class="pub-card" id="pub-2025-interjection-classification">
               <div class="pub-card__top">
@@ -199,8 +202,7 @@
               </div>
               <h2 class="pub-card__title">Beyond Words: Interjection Classification for Improved Human-Computer Interaction</h2>
               <p class="pub-card__meta">Y Goren, Y Cohen, <span class="pub-card__author-self">A Apartsin</span>, Y Aperstein</p>
-              <p class="pub-card__venue">arXiv preprint</p>
-              <a class="pub-card__link" href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:q3oQSFYPqjQC" target="_blank" rel="noopener noreferrer">Scholar entry</a>
+              <p class="pub-card__venue"><a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:q3oQSFYPqjQC" target="_blank" rel="noopener noreferrer">arXiv preprint</a></p>
             </li>
             <li class="pub-card" id="pub-2025-lightweight-early-exits">
               <div class="pub-card__top">
@@ -209,8 +211,7 @@
               </div>
               <h2 class="pub-card__title">Boosted Training of Lightweight Early Exits for Optimizing CNN Image Classification Inference</h2>
               <p class="pub-card__meta">Y Aperstein, <span class="pub-card__author-self">A Apartsin</span></p>
-              <p class="pub-card__venue">arXiv preprint</p>
-              <a class="pub-card__link" href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:wbdj-CoPYUoC" target="_blank" rel="noopener noreferrer">Scholar entry</a>
+              <p class="pub-card__venue"><a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:wbdj-CoPYUoC" target="_blank" rel="noopener noreferrer">arXiv preprint</a></p>
             </li>
             <li class="pub-card" id="pub-2025-review-recommendation">
               <div class="pub-card__top">
@@ -219,8 +220,7 @@
               </div>
               <h2 class="pub-card__title">Code Review Without Borders: Evaluating Synthetic vs. Real Data for Review Recommendation</h2>
               <p class="pub-card__meta">Y Cohen, D Ohayon, R Somkin, Y Aperstein, <span class="pub-card__author-self">A Apartsin</span></p>
-              <p class="pub-card__venue">arXiv preprint</p>
-              <a class="pub-card__link" href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:1qzjygNMrQYC" target="_blank" rel="noopener noreferrer">Scholar entry</a>
+              <p class="pub-card__venue"><a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:1qzjygNMrQYC" target="_blank" rel="noopener noreferrer">arXiv preprint</a></p>
             </li>
             <li class="pub-card" id="pub-2025-resume-seniority">
               <div class="pub-card__top">
@@ -229,8 +229,7 @@
               </div>
               <h2 class="pub-card__title">Reading Between the Lines: Classifying Resume Seniority with Large Language Models</h2>
               <p class="pub-card__meta">M Cohen, S Shani, E Menahem, Y Aperstein, <span class="pub-card__author-self">A Apartsin</span></p>
-              <p class="pub-card__venue">arXiv preprint</p>
-              <a class="pub-card__link" href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:5ugPr518TE4C" target="_blank" rel="noopener noreferrer">Scholar entry</a>
+              <p class="pub-card__venue"><a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:5ugPr518TE4C" target="_blank" rel="noopener noreferrer">arXiv preprint</a></p>
             </li>
           </ol>
         </section>

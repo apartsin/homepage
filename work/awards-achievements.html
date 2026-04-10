@@ -3,10 +3,117 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Awards and achievements related to innovation work.">
+  <meta name="description" content="Awards and achievements extracted from the original innovation and entrepreneurship source page.">
   <title>Awards and Achievements | Sasha Apartsin</title>
   <link rel="stylesheet" href="../shared/site-shell.css">
   <link rel="stylesheet" href="../shared/unified-theme.css">
+  <style>
+    .achievement-grid {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 14px;
+    }
+    .achievement-card {
+      position: relative;
+      padding: 12px;
+      border: 1px solid var(--site-border);
+      border-radius: 16px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(249, 251, 255, 0.94) 100%);
+      box-shadow: 0 12px 24px rgba(35, 30, 23, 0.08);
+      display: grid;
+      gap: 10px;
+      scroll-margin-top: 90px;
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+    .achievement-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(24, 101, 168, 0.22);
+      box-shadow: 0 16px 30px rgba(35, 30, 23, 0.12);
+    }
+    .achievement-card::before {
+      content: "";
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      top: 0;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(24, 101, 168, 0.72), rgba(156, 90, 46, 0.58));
+    }
+    .achievement-card__media {
+      margin: 0;
+      border: 1px solid var(--site-border);
+      border-radius: 12px;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(247, 250, 255, 0.95) 0%, rgba(243, 246, 252, 0.92) 100%);
+    }
+    .achievement-card__media img {
+      display: block;
+      width: 100%;
+      height: 178px;
+      object-fit: contain;
+      object-position: center;
+      background: transparent;
+    }
+    .achievement-card__title {
+      margin: 0;
+      color: var(--site-text);
+      font: 800 1.02rem/1.34 "Manrope", "Segoe UI", sans-serif;
+    }
+    .achievement-card__text {
+      margin: 0;
+      color: var(--site-muted);
+      font: 600 0.85rem/1.58 "Manrope", "Segoe UI", sans-serif;
+    }
+    .achievement-card__badge {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      min-height: 27px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(24, 101, 168, 0.35);
+      background: rgba(24, 101, 168, 0.12);
+      color: #164a83;
+      font: 800 0.67rem/1.2 "Manrope", "Segoe UI", sans-serif;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .achievement-card__links {
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .achievement-card__link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 32px;
+      padding: 6px 10px;
+      border: 1px solid var(--site-border);
+      border-radius: 10px;
+      background: #fff;
+      color: #164a83;
+      text-decoration: none;
+      font: 700 0.77rem/1.2 "Manrope", "Segoe UI", sans-serif;
+    }
+    .achievement-card__link:hover {
+      border-color: rgba(24, 101, 168, 0.45);
+      background: rgba(24, 101, 168, 0.06);
+      color: #123a67;
+    }
+    @media (max-width: 700px) {
+      .achievement-grid {
+        grid-template-columns: 1fr;
+      }
+      .achievement-card__media img {
+        height: 168px;
+      }
+    }
+  </style>
 </head>
 <body class="apartsin-shell-active" data-site-section="work">
   <div class="apartsin-shell">
@@ -24,18 +131,59 @@
     </aside>
     <div class="apartsin-shell__content">
       <main class="apartsin-shell__main">
-        <section class="hub-page">
-          <p class="hub-page__kicker">Innovations</p>
-          <h1 class="hub-page__title">Awards and Achievements</h1>
-          <p class="hub-page__lede">Recognitions, outcomes, and concrete innovation milestones.</p>
+        <section class="apartsin-page-header apartsin-page-header--standard" id="awards-overview">
+          <h1 class="apartsin-sr-only">Awards and Achievements</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="./innovation-overview.html">Innovations</a>
+              <span aria-hidden="true">/</span>
+              <strong>Awards and Achievements</strong>
+            </nav>
+          </div>
+          <p class="apartsin-page-header__lede">Selected milestones and recognized outcomes from the original innovation-and-entrepreneurship track.</p>
         </section>
-        <section class="hub-grid">
-          <article class="hub-card">
-            <h2>Reference Pages</h2>
-            <ul class="hub-links">
-              <li><a href="../work/innovation-and-entrepreneurship.html">Innovation and Entrepreneurship</a></li>
-              <li><a href="../work/innovation-overview.html">Innovation Overview</a></li>
-            </ul>
+
+        <section class="achievement-grid" aria-label="Awards and achievements cards">
+          <article class="achievement-card" id="amdocs-achievement">
+            <figure class="achievement-card__media">
+              <img src="../assets/work/innovation-and-entrepreneurship/img-002-648941b496.jpg" alt="Amdocs project visual">
+            </figure>
+            <h2 class="achievement-card__title">Amdocs: Model-Based Capacity Planning</h2>
+            <p class="achievement-card__text">I designed a statistical model used to predict load on large distributed billing systems. It supported more accurate sizing of system installations and ultimately saved the company $100 million in unnecessary hardware costs.</p>
+            <span class="achievement-card__badge">Impact: $100M savings</span>
+          </article>
+
+          <article class="achievement-card" id="citibank-achievement">
+            <figure class="achievement-card__media">
+              <img src="../assets/work/innovation-and-entrepreneurship/img-004-c3c883859a.png" alt="Citibank platform visual">
+            </figure>
+            <h2 class="achievement-card__title">Citibank: Financial Data Science Platform</h2>
+            <p class="achievement-card__text">While at Citibank TLV lab, I proposed creating a corporate platform for sharing and collaborating on data science insights across the organization. The project was awarded a corporate LabLink grant to support its development.</p>
+            <span class="achievement-card__badge">Recognition: LabLink grant</span>
+          </article>
+
+          <article class="achievement-card" id="motorola-achievement">
+            <figure class="achievement-card__media">
+              <img src="../assets/work/innovation-and-entrepreneurship/img-005-6a9ec86d63.jpg" alt="Motorola Solutions AI visual">
+            </figure>
+            <h2 class="achievement-card__title">Motorola Solutions: AI for Public Safety</h2>
+            <p class="achievement-card__text">I led the research team at the first AI lab at Motorola Solutions' Innovation Center, designed the lab’s roadmap, and proposed multiple initiatives across video, text, and speech use cases. I also led several industry-academia collaboration projects, securing grants from the Israel Innovation Authority (IIA) to support their development.</p>
+            <span class="achievement-card__badge">Recognition: IIA grants</span>
+          </article>
+
+          <article class="achievement-card" id="saferide-achievement">
+            <figure class="achievement-card__media">
+              <img src="../assets/work/innovation-and-entrepreneurship/img-006-a4e672ad16.jpg" alt="SafeRide automotive AI visual">
+            </figure>
+            <h2 class="achievement-card__title">SafeRide: AI for Automotive Telematics</h2>
+            <p class="achievement-card__text">I established a data science team and helped define a big-data-driven AI product for no-code creation of onboard models that monitor signal anomalies. The product was recognized as Automotive AI Product of the Year. The company was acquired by Questar Automotive.</p>
+            <span class="achievement-card__badge">Recognition: AI Product of the Year</span>
+            <p class="achievement-card__links">
+              <a class="achievement-card__link" href="https://youtu.be/fmjDr7BKi4A?si=4Pvx_B0V17dP950n" target="_blank" rel="noopener noreferrer">Product video</a>
+              <a class="achievement-card__link" href="https://youtu.be/XsNe2T8JDVw?si=ECpRQPj8dHetNwXi" target="_blank" rel="noopener noreferrer">Team video</a>
+            </p>
           </article>
         </section>
       </main>

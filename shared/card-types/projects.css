@@ -3,3 +3,24 @@ body[data-card-type="projects"] {
   --apartsin-card-accent-soft: rgba(139, 107, 61, 0.12);
   --apartsin-card-media-fit: contain;
 }
+
+body[data-card-type="projects"] .content-card__links {
+  gap: 6px;
+  padding-top: 2px;
+}
+
+body[data-card-type="projects"] .content-card__link {
+  padding: 0.42rem 0.64rem;
+  border-radius: 10px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+@media (max-width: 560px) {
+  body[data-card-type="projects"] .content-card__link {
+    padding: 0.4rem 0.58rem;
+    font-size: 0.72rem;
+  }
+}

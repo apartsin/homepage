@@ -3,12 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Recent practical AI and software projects.">
+  <meta name="description" content="Recent practical software and AI projects from active build tracks.">
   <title>Recent Projects | Sasha Apartsin</title>
   <link rel="stylesheet" href="../shared/site-shell.css">
   <link rel="stylesheet" href="../shared/unified-theme.css">
+  <link rel="stylesheet" href="../shared/cards.css">
+  <link rel="stylesheet" href="../shared/card-types/projects.css">
+  <style>
+    .apartsin-page-header__lede a {
+      color: #1d4ed8;
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-thickness: 1.2px;
+    }
+    .apartsin-page-header__lede a:hover,
+    .apartsin-page-header__lede a:focus-visible {
+      color: #1e40af;
+    }
+  </style>
 </head>
-<body class="apartsin-shell-active" data-site-section="work">
+<body class="apartsin-shell-active" data-site-section="work" data-card-type="projects" data-disable-cards-toolbar="true">
   <div class="apartsin-shell">
     <aside class="apartsin-shell__sidebar">
       <a class="apartsin-shell__brand" href="../index.html">Sasha Apartsin</a>
@@ -24,20 +39,98 @@
     </aside>
     <div class="apartsin-shell__content">
       <main class="apartsin-shell__main">
-        <section class="hub-page">
-          <p class="hub-page__kicker">Building</p>
-          <h1 class="hub-page__title">Recent Projects</h1>
-          <p class="hub-page__lede">Current and near-term practical projects in AI engineering, experimentation, and deployment.</p>
+        <section class="apartsin-page-header apartsin-page-header--standard" id="recent-projects-overview">
+          <h1 class="apartsin-sr-only">Recent Projects</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="./overview.html">Building</a>
+              <span aria-hidden="true">/</span>
+              <strong>Recent Projects</strong>
+            </nav>
+          </div>
+          <p class="apartsin-page-header__lede">A focused set of recent build projects from the original projects source, with emphasis on practical tooling and applied AI workflows. You can also browse related work under <a href="../research/research-projects.html">current research projects</a>.</p>
         </section>
-        <section class="hub-grid">
-          <article class="hub-card">
-            <h2>Current Project Sources</h2>
-            <ul class="hub-links">
-              <li><a href="../work/projects.html">Projects Page</a></li>
-              <li><a href="../teaching/ai-engineering-projects-open-for-students.html">AI Engineering Projects</a></li>
-              <li><a href="../work/innovation-overview.html">Innovation Overview</a></li>
-            </ul>
-          </article>
+
+        <section class="cards-shell cards-shell--stacked" aria-label="Recent project cards">
+          <div class="cards-grid">
+            <article class="content-card content-card--stacked">
+              <div class="content-card__media">
+                <img src="../assets/work/projects/img-002-4f4f54c1cc.jpg" alt="Web2Comics project visual">
+              </div>
+              <div class="content-card__body">
+                <p class="content-card__eyebrow">Building</p>
+                <h2 class="content-card__title">Web2Comics Chrome Extension and Bot</h2>
+                <p class="content-card__desc">Converts web pages into comic-style visual summaries to make dense information faster to absorb and easier to share.</p>
+                <div class="content-card__links">
+                  <a class="content-card__link" href="https://github.com/ApartsinProjects/Web2Comics" target="_blank" rel="noopener noreferrer">GitHub</a>
+                  <a class="content-card__link" href="https://chromewebstore.google.com/detail/web2comics/ejdckmefpilmfjelpebamjjjcghbbemc" target="_blank" rel="noopener noreferrer">Chrome Web Store</a>
+                  <a class="content-card__link" href="https://medium.com/design-bootcamp/from-scroll-to-storyboard-generative-ai-and-the-comic-first-browser-b8eeef3c169a" target="_blank" rel="noopener noreferrer">Blog Post</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="content-card content-card--stacked">
+              <div class="content-card__media">
+                <img src="../assets/work/projects/img-003-3518939917.jpg" alt="AutoWebMCP project visual">
+              </div>
+              <div class="content-card__body">
+                <p class="content-card__eyebrow">Building</p>
+                <h2 class="content-card__title">AutoWebMCP</h2>
+                <p class="content-card__desc">Automation layer for web app interaction flows that helps agents learn repeatable UI operations once and reuse them reliably.</p>
+                <div class="content-card__links">
+                  <a class="content-card__link" href="https://github.com/ApartsinProjects/AutoWebMCP" target="_blank" rel="noopener noreferrer">GitHub</a>
+                  <a class="content-card__link" href="https://medium.com/design-bootcamp/turning-web-apps-into-reusable-tools-with-autowebmcp-20df82dc6d7d?source=list---------0-------3d7275b1f11b----------------------------" target="_blank" rel="noopener noreferrer">Blog Post</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="content-card content-card--stacked">
+              <div class="content-card__media">
+                <img src="../assets/work/projects/img-004-588a8cb27d.png" alt="PyTrace Autopsy project visual">
+              </div>
+              <div class="content-card__body">
+                <p class="content-card__eyebrow">Building</p>
+                <h2 class="content-card__title">PyTrace Autopsy</h2>
+                <p class="content-card__desc">Python runtime tracing tool for debugging and post-mortem analysis, designed to expose execution behavior that is usually hidden from agents.</p>
+                <div class="content-card__links">
+                  <a class="content-card__link" href="https://github.com/ApartsinProjects/pytrace-autopsy" target="_blank" rel="noopener noreferrer">GitHub</a>
+                  <a class="content-card__link" href="https://pub.towardsai.net/pytrace-autopsy-teaching-ai-to-debug-like-a-human-4341352d1aad" target="_blank" rel="noopener noreferrer">Blog Post</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="content-card content-card--stacked">
+              <div class="content-card__media">
+                <img src="../assets/work/projects/img-005-d899c3be44.png" alt="ModelMesh project visual">
+              </div>
+              <div class="content-card__body">
+                <p class="content-card__eyebrow">Building</p>
+                <h2 class="content-card__title">ModelMesh</h2>
+                <p class="content-card__desc">A unified integration point across AI model providers, aimed at simplifying multi-provider routing, evaluation, and product integration.</p>
+                <div class="content-card__links">
+                  <a class="content-card__link" href="https://github.com/ApartsinProjects/ModelMesh" target="_blank" rel="noopener noreferrer">GitHub</a>
+                  <a class="content-card__link" href="https://medium.com/towards-artificial-intelligence/modelmesh-a-free-open-source-library-for-easy-integration-with-external-ai-apis-680281ea3bbe?source=list---------2-------3d7275b1f11b----------------------------" target="_blank" rel="noopener noreferrer">Blog Post</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="content-card content-card--stacked">
+              <div class="content-card__media">
+                <img src="../assets/work/projects/img-006-edgelang-banner.png" alt="EdgeLang project banner">
+              </div>
+              <div class="content-card__body">
+                <p class="content-card__eyebrow">Building</p>
+                <h2 class="content-card__title">EdgeLang</h2>
+                <p class="content-card__desc">Chrome extension that turns regular web pages into contextual language practice with adaptive cues, passive/active modes, and multi-provider AI routing through ModelMesh.</p>
+                <div class="content-card__links">
+                  <a class="content-card__link" href="https://github.com/ApartsinProjects/edgelang" target="_blank" rel="noopener noreferrer">GitHub</a>
+                  <a class="content-card__link" href="https://medium.com/design-bootcamp/from-scroll-to-storyboard-generative-ai-and-the-comic-first-browser-b8eeef3c169a" target="_blank" rel="noopener noreferrer">Blog Post</a>
+                </div>
+              </div>
+            </article>
+          </div>
         </section>
       </main>
     </div>

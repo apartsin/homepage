@@ -409,7 +409,7 @@ body.apartsin-shell-active .apartsin-shell__content {
   position: relative;
   display: inline-flex;
   align-items: center;
-  padding-bottom: 8px;
+  padding-bottom: 10px;
 }
 
 .apartsin-shell__menu-item.is-active > .apartsin-shell__home-nav-link {
@@ -423,13 +423,13 @@ body.apartsin-shell-active .apartsin-shell__content {
   left: 0;
   right: 0;
   top: calc(100% - 2px);
-  height: 12px;
+  height: 18px;
 }
 
 .apartsin-shell__menu-dropdown {
   position: absolute;
   left: 0;
-  top: calc(100% + 2px);
+  top: calc(100% - 1px);
   z-index: 520;
   min-width: 220px;
   max-width: min(320px, calc(100vw - 24px));
@@ -510,6 +510,16 @@ body.apartsin-shell-active .apartsin-shell__content {
 .apartsin-shell__menu-subitem:hover > .apartsin-shell__menu-subitem-dropdown,
 .apartsin-shell__menu-subitem:focus-within > .apartsin-shell__menu-subitem-dropdown,
 .apartsin-shell__menu-subitem.is-active > .apartsin-shell__menu-subitem-dropdown {
+  display: grid;
+}
+
+.apartsin-shell__menu-subitem.is-easy-open > .apartsin-shell__menu-subitem-dropdown {
+  display: grid;
+}
+
+/* Keep nested groups open while the parent popup is open to prevent hover/focus jumps. */
+.apartsin-shell__menu-item:hover .apartsin-shell__menu-subitem > .apartsin-shell__menu-subitem-dropdown,
+.apartsin-shell__menu-item:focus-within .apartsin-shell__menu-subitem > .apartsin-shell__menu-subitem-dropdown {
   display: grid;
 }
 

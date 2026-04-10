@@ -65,11 +65,11 @@
           },
           {
             label: 'In the Age of AI, Higher Education Is Grading the Wrong Skill',
-            href: 'https://ai.plainenglish.io/in-the-age-of-ai-higher-education-is-grading-the-wrong-skill-8f1edbeb8595',
+            href: 'https://medium.com/educreation/in-the-age-of-ai-higher-education-is-grading-the-wrong-skill-8f1edbeb8595',
           },
           {
             label: 'AI Is Changing How Research Gets Done. It May Also Change How Researchers Are Made.',
-            href: 'https://medium.com/@sashaapartsin/ai-is-changing-how-research-gets-done-it-may-also-change-how-researchers-are-made-6129a9dd3af3',
+            href: 'https://medium.com/ai-in-plain-english/ai-is-changing-how-research-gets-done-it-may-also-change-how-researchers-are-made-6129a9dd3af3',
           },
         ],
       },

@@ -1,18 +1,53 @@
 (function () {
+  const APP_ROOT_SEGMENTS = new Set([
+    'about',
+    'research',
+    'teaching',
+    'work',
+    'writing',
+    'courses',
+    'index.html',
+  ]);
+
   function normalizePath(pathname) {
     const raw = (pathname || '/').split('?')[0].split('#')[0] || '/';
     return raw.replace(/\\/g, '/').replace(/\/{2,}/g, '/').replace(/\/$/, '') || '/';
   }
 
+  function getHttpAppPathInfo() {
+    const normalized = normalizePath(location.pathname);
+    const segments = normalized.replace(/^\/+/, '').split('/').filter(Boolean);
+
+    if (segments.length === 0) {
+      return { basePath: '/', relativePath: 'index.html' };
+    }
+
+    let rootIndex = segments.findIndex((segment) => APP_ROOT_SEGMENTS.has(segment.toLowerCase()));
+
+    if (rootIndex < 0) {
+      if (segments.length === 1 && !/\.[a-z0-9]+$/i.test(segments[0])) {
+        return { basePath: `/${segments[0]}/`, relativePath: 'index.html' };
+      }
+      return { basePath: '/', relativePath: segments.join('/') || 'index.html' };
+    }
+
+    const baseSegments = segments.slice(0, rootIndex);
+    const relativeSegments = segments.slice(rootIndex);
+    const basePath = baseSegments.length ? `/${baseSegments.join('/')}/` : '/';
+    const relativePath = relativeSegments.join('/') || 'index.html';
+    return { basePath, relativePath };
+  }
+
+  function appBasePath() {
+    if (location.protocol === 'file:') {
+      return '/onesite/';
+    }
+    return getHttpAppPathInfo().basePath;
+  }
+
   function getAppRelativePath() {
     if (location.protocol !== 'file:') {
-      const normalized = normalizePath(location.pathname);
-      const marker = '/onesite/';
-      const idx = normalized.toLowerCase().indexOf(marker);
-      if (idx >= 0) {
-        return normalized.slice(idx + marker.length) || 'index.html';
-      }
-      return normalized.replace(/^\//, '') || 'index.html';
+      return getHttpAppPathInfo().relativePath;
     }
 
     const decoded = decodeURIComponent(location.pathname || '').replace(/\\/g, '/');
@@ -25,7 +60,7 @@
   }
 
   function appPathname() {
-    return `/onesite/${getAppRelativePath()}`;
+    return normalizePath(`${appBasePath()}${getAppRelativePath()}`);
   }
 
   function relativePath(fromFilePath, targetPath) {
@@ -51,13 +86,17 @@
   }
 
   function sitePath(path) {
+    if (/^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(path || '')) {
+      return path;
+    }
+
     const clean = (path || '').replace(/^\/+/, '');
 
     if (location.protocol === 'file:') {
       return relativePath(getAppRelativePath(), clean);
     }
 
-    return `/onesite/${clean}`;
+    return normalizePath(`${appBasePath()}${clean}`);
   }
 
   function link(label, path, matches, secondary) {
@@ -106,8 +145,8 @@
         ],
         [
           { label: 'Recent Publications', path: 'research/recent-publications.html' },
-          { label: 'Research Projects', path: 'research/research-projects.html' },
-          { label: 'Open 4 Grad Students', path: 'research/grad-opportunities.html' },
+          { label: 'Current Research Projects', path: 'research/research-projects.html' },
+          { label: 'Open Research Projects For Students', path: 'research/grad-opportunities.html' },
           { label: 'Former Students', path: 'teaching/former-students.html' },
           { label: 'Current Students', path: 'teaching/current-students.html' },
         ],
@@ -140,9 +179,11 @@
               { label: 'Student Projects', path: 'teaching/overview.html#hands-on-student-projects' },
             ],
           },
-          { label: 'Other CS Courses', path: 'teaching/overview.html#other-cs-courses' },
-          { label: 'Available AI Projects for Undergrads', path: 'teaching/overview.html#undergrad-projects' },
-          { label: 'Innovation-First Learning', path: 'teaching/overview.html#innovation-first-learning' },
+          { label: 'Other CS Courses', path: 'teaching/other-cs-courses.html' },
+          { label: 'Open AI Engineering Projects for Students', path: 'teaching/undergrad-ai-projects.html' },
+          { label: 'Former Students', path: 'teaching/former-students.html' },
+          { label: 'Current Students', path: 'teaching/current-students.html' },
+          { label: 'Innovation-First Learning', path: 'work/innovation-first-learning.html' },
           { label: 'Curriculum Development', path: 'teaching/overview.html#curriculum-development' },
         ],
       ),
@@ -152,13 +193,39 @@
         [
           /\/writing\/overview\.html$/i,
           /\/writing\/blog-posts\.html$/i,
+          /\/writing\/blog-vibe-coding\.html$/i,
+          /\/writing\/blog-ai-product-strategy\.html$/i,
+          /\/writing\/blog-ai-in-academia\.html$/i,
+          /\/writing\/blog-projects\.html$/i,
           /\/writing\/books-overview\.html$/i,
           /\/writing\/essays-and-writings\.html$/i,
           /\/writing\/books\.html$/i,
         ],
         [
-          { label: 'Blog Posts', path: 'writing/overview.html#blog-posts' },
-          { label: 'Books', path: 'writing/overview.html#books' },
+          {
+            label: 'Blog Posts',
+            path: 'writing/blog-posts.html',
+            secondary: [
+              { label: 'Vibe-Coding', path: 'writing/blog-posts.html?theme=vibe-coding' },
+              { label: 'AI Product Strategy', path: 'writing/blog-posts.html?theme=ai-product-strategy' },
+              { label: 'AI in Academia', path: 'writing/blog-posts.html?theme=ai-in-academia' },
+              { label: 'Project Brief', path: 'writing/blog-posts.html?theme=project-brief' },
+            ],
+          },
+          {
+            label: 'Online Books Drafts',
+            path: 'writing/books-overview.html',
+            secondary: [
+              {
+                label: 'Building Conversational AI with LLMs and Agents',
+                path: 'http://llmbook.apartsin.com/',
+              },
+              {
+                label: 'From AI-Assisted Software Development to AI-Powered Software Products',
+                path: 'http://vibebook.apartsin.com/',
+              },
+            ],
+          },
         ],
       ),
       link(
@@ -174,9 +241,10 @@
           /\/work\/consulting\.html$/i,
         ],
         [
-          { label: 'Past Projects', path: 'work/overview.html#past-projects' },
-          { label: 'Recent Projects', path: 'work/overview.html#recent-projects' },
-          { label: 'Tech Stack Over Years', path: 'work/overview.html#tech-stack-over-years' },
+          { label: 'Industry Experience', path: 'about/industry-experience.html' },
+          { label: 'Past Projects', path: 'work/past-projects.html' },
+          { label: 'Recent Projects', path: 'work/recent-projects.html' },
+          { label: 'Tech Stack Over Years', path: 'work/tech-stack-over-years.html' },
         ],
       ),
       link(
@@ -191,10 +259,10 @@
           /\/work\/innovation-and-entrepreneurship\.html$/i,
         ],
         [
-          { label: 'Awards & Achievements', path: 'work/innovation-overview.html#awards-achievements' },
+          { label: 'Awards & Achievements', path: 'work/awards-achievements.html' },
           { label: 'Patents', path: 'work/patents.html' },
-          { label: 'Entrepreneurship', path: 'work/innovation-overview.html#entrepreneurship' },
-          { label: 'Innovation-First Learning', path: 'work/innovation-overview.html#innovation-first-learning' },
+          { label: 'Entrepreneurship', path: 'work/entrepreneurship.html' },
+          { label: 'Innovation-First Learning', path: 'work/innovation-first-learning.html' },
         ],
       ),
     ],
@@ -234,16 +302,42 @@
       .toLowerCase();
   }
 
+  function normalizeQuery(queryValue) {
+    const raw = String(queryValue || '').trim().replace(/^\?/, '');
+    if (!raw) {
+      return '';
+    }
+    const params = new URLSearchParams(raw);
+    const entries = [];
+    params.forEach((value, key) => {
+      entries.push([key, value]);
+    });
+    entries.sort((a, b) => {
+      if (a[0] === b[0]) {
+        return a[1].localeCompare(b[1]);
+      }
+      return a[0].localeCompare(b[0]);
+    });
+    return entries.map(([key, value]) => `${key}=${value}`).join('&');
+  }
+
   function linkMatchesCurrent(path) {
     const raw = String(path || '').trim();
     const hashIndex = raw.indexOf('#');
-    const rawPath = hashIndex >= 0 ? raw.slice(0, hashIndex) : raw;
+    const rawPathWithQuery = hashIndex >= 0 ? raw.slice(0, hashIndex) : raw;
     const rawHash = hashIndex >= 0 ? raw.slice(hashIndex + 1) : '';
+    const queryIndex = rawPathWithQuery.indexOf('?');
+    const rawPath = queryIndex >= 0 ? rawPathWithQuery.slice(0, queryIndex) : rawPathWithQuery;
+    const rawQuery = queryIndex >= 0 ? rawPathWithQuery.slice(queryIndex + 1) : '';
 
-    const target = normalizePath(`/onesite/${rawPath.replace(/^\/+/, '')}`);
+    const target = normalizePath(`${appBasePath()}${rawPath.replace(/^\/+/, '')}`);
     const current = normalizePath(appPathname());
     if (target !== current) {
       return false;
+    }
+
+    if (rawQuery) {
+      return normalizeQuery(rawQuery) === normalizeQuery(window.location.search);
     }
 
     const targetHash = normalizeHash(rawHash);
@@ -321,12 +415,13 @@
     config.primaryNav.forEach((entry) => {
       const item = document.createElement('div');
       item.className = 'apartsin-shell__menu-item';
+      const isPrimaryActive = entry === activePrimary || (!activePrimary && linkMatchesCurrent(entry.path));
 
       const anchor = document.createElement('a');
       anchor.className = 'apartsin-shell__home-nav-link';
       anchor.href = sitePath(entry.path);
       anchor.textContent = entry.label;
-      if (entry === activePrimary || linkMatchesCurrent(entry.path)) {
+      if (isPrimaryActive) {
         anchor.setAttribute('aria-current', 'page');
         item.classList.add('is-active');
       }
@@ -350,7 +445,7 @@
             subAnchor.href = sitePath(secondaryEntry.path);
             subAnchor.textContent = secondaryEntry.label;
             subAnchor.setAttribute('role', 'menuitem');
-            if (linkMatchesCurrent(secondaryEntry.path)) {
+            if (isPrimaryActive && linkMatchesCurrent(secondaryEntry.path)) {
               subAnchor.setAttribute('aria-current', 'page');
               item.classList.add('is-active');
             }
@@ -360,6 +455,12 @@
 
           const nestedItem = document.createElement('div');
           nestedItem.className = 'apartsin-shell__menu-subitem';
+          if (
+            secondaryEntry.secondary.length === 1 ||
+            /online books drafts/i.test(secondaryEntry.label || '')
+          ) {
+            nestedItem.classList.add('is-easy-open');
+          }
 
           const nestedAnchor = document.createElement('a');
           nestedAnchor.href = sitePath(secondaryEntry.path);
@@ -374,7 +475,7 @@
           nestedDropdown.setAttribute('role', 'menu');
           nestedDropdown.setAttribute('aria-label', `${secondaryEntry.label} submenu`);
 
-          if (linkMatchesCurrent(secondaryEntry.path)) {
+          if (isPrimaryActive && linkMatchesCurrent(secondaryEntry.path)) {
             nestedAnchor.setAttribute('aria-current', 'page');
             item.classList.add('is-active');
             nestedItem.classList.add('is-active');
@@ -385,7 +486,7 @@
             thirdAnchor.href = sitePath(thirdLevelEntry.path);
             thirdAnchor.textContent = thirdLevelEntry.label;
             thirdAnchor.setAttribute('role', 'menuitem');
-            if (linkMatchesCurrent(thirdLevelEntry.path)) {
+            if (isPrimaryActive && linkMatchesCurrent(thirdLevelEntry.path)) {
               thirdAnchor.setAttribute('aria-current', 'page');
               item.classList.add('is-active');
               nestedItem.classList.add('is-active');

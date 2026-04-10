@@ -3,10 +3,50 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Curriculum development and course design activity.">
+  <meta name="description" content="Curriculum development initiatives in computer science and AI teaching.">
   <title>Curriculum Development | Sasha Apartsin</title>
   <link rel="stylesheet" href="../shared/site-shell.css">
   <link rel="stylesheet" href="../shared/unified-theme.css">
+  <style>
+    .curriculum-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 14px;
+    }
+    .curriculum-card {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 0;
+      overflow: hidden;
+    }
+    .curriculum-card__body {
+      padding: 14px;
+    }
+    .curriculum-card h2 {
+      margin: 0;
+      font-size: 1.04rem;
+      line-height: 1.25;
+    }
+    .curriculum-card p {
+      margin: 8px 0 0;
+      color: var(--site-muted);
+      font: 600 0.87rem/1.58 "Manrope", "Segoe UI", sans-serif;
+    }
+    .curriculum-card__media {
+      display: block;
+      border-bottom: 1px solid var(--site-border);
+      background: rgba(255, 255, 255, 0.98);
+    }
+    .curriculum-card__media img {
+      display: block;
+      width: 100%;
+      max-height: 240px;
+      object-fit: contain;
+      object-position: center;
+      background: #fff;
+    }
+  </style>
 </head>
 <body class="apartsin-shell-active" data-site-section="teaching">
   <div class="apartsin-shell">
@@ -24,26 +64,40 @@
     </aside>
     <div class="apartsin-shell__content">
       <main class="apartsin-shell__main">
-        <section class="hub-page">
-          <p class="hub-page__kicker">Teaching</p>
-          <h1 class="hub-page__title">Curriculum Development</h1>
-          <p class="hub-page__lede">Curriculum planning, syllabus design, and learning structures across AI and computer science teaching tracks.</p>
+        <section class="apartsin-page-header apartsin-page-header--standard" id="curriculum-development-overview">
+          <h1 class="apartsin-sr-only">Curriculum Development</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="./overview.html">Teaching</a>
+              <span aria-hidden="true">/</span>
+              <strong>Curriculum Development</strong>
+            </nav>
+          </div>
+          <p class="apartsin-page-header__lede">This section summarizes core curriculum initiatives that align computer science education with current AI practice and graduate readiness.</p>
         </section>
-        <section class="hub-grid">
-          <article class="hub-card">
-            <h2>Curriculum Pages</h2>
-            <ul class="hub-links">
-              <li><a href="../teaching/index.html">Legacy Teaching and Curriculum Page</a></li>
-              <li><a href="../teaching/hands-on-ai-science-courses.html">Hands-On AI Science Structure</a></li>
-              <li><a href="../teaching/other-cs-courses.html">Other CS Course Paths</a></li>
-            </ul>
+        <section class="curriculum-grid">
+          <article class="hub-card curriculum-card" id="cs-degree-curriculum-design">
+            <div class="curriculum-card__body">
+              <h2>CS Degree Curriculum Design</h2>
+              <p>While leading the Software Engineering track at HIT School of Computer Science, I prepared a proposal for an updated CS degree curriculum centered on Innovation-First Learning principles.</p>
+            </div>
           </article>
-          <article class="hub-card">
-            <h2>Connected Areas</h2>
-            <ul class="hub-links">
-              <li><a href="../teaching/innovation-first-learning.html">Innovation-First Learning</a></li>
-              <li><a href="../research/research-projects.html">Research-Course Integration</a></li>
-            </ul>
+          <article class="hub-card curriculum-card" id="cs-graduate-readiness-profile">
+            <div class="curriculum-card__body">
+              <h2>CS Graduate Readiness Profile</h2>
+              <p>I established and led an industry advisory board of hiring professionals and alumni to define clear readiness profiles for key graduate roles, including AI engineer and full-stack developer tracks.</p>
+            </div>
+          </article>
+          <article class="hub-card curriculum-card" id="innovation-first-learning">
+            <figure class="curriculum-card__media">
+              <img src="../shared-media/www-apartsin-com/assets/teaching-and-curriculum-development/img-001-3c6acfccd1-771d325ff5.png" alt="Innovation-First Learning visual">
+            </figure>
+            <div class="curriculum-card__body">
+              <h2>Innovation-First Learning</h2>
+              <p>Innovation-First Learning addresses the gap between traditional curricula and real AI practice by combining theory, modern tools, and substantial projects from the start of the learning process.</p>
+            </div>
           </article>
         </section>
       </main>

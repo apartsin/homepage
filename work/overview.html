@@ -3,10 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Building overview: project tracks and practical delivery work.">
+  <meta name="description" content="Building overview with personal context and links to project tracks.">
   <title>Building Overview | Sasha Apartsin</title>
   <link rel="stylesheet" href="../shared/site-shell.css">
   <link rel="stylesheet" href="../shared/unified-theme.css">
+  <style>
+    .apartsin-page-header__lede a {
+      color: #1d4ed8;
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-thickness: 1.2px;
+    }
+    .apartsin-page-header__lede a:hover,
+    .apartsin-page-header__lede a:focus-visible {
+      color: #1e40af;
+    }
+  </style>
 </head>
 <body class="apartsin-shell-active" data-site-section="work">
   <div class="apartsin-shell">
@@ -24,42 +37,16 @@
     </aside>
     <div class="apartsin-shell__content">
       <main class="apartsin-shell__main">
-        <section class="hub-page">
-          <p class="hub-page__kicker">Building</p>
-          <h1 class="hub-page__title">Building Overview</h1>
-          <p class="hub-page__lede">Practical project work across historical tracks and current implementations in software and applied AI.</p>
-          <nav class="hub-anchor-nav" aria-label="Building sections">
-            <a href="#past-projects">Past Projects</a>
-            <a href="#recent-projects">Recent Projects</a>
-            <a href="#tech-stack-over-years">Tech Stack Over Years</a>
-          </nav>
-        </section>
-        <section class="hub-grid">
-          <article class="hub-card" id="past-projects">
-            <h2>Past Projects</h2>
-            <p>Historical projects across earlier engineering, architecture, and applied AI phases.</p>
-            <ul class="hub-links">
-              <li><a href="../work/past-projects.html">Past Projects</a></li>
-              <li><a href="../work/projects.html">Legacy Projects Page</a></li>
-            </ul>
-          </article>
-          <article class="hub-card" id="recent-projects">
-            <h2>Recent Projects</h2>
-            <p>Current and recently completed projects with stronger alignment to ongoing teaching and research directions.</p>
-            <ul class="hub-links">
-              <li><a href="../work/recent-projects.html">Recent Projects</a></li>
-              <li><a href="../work/innovation-overview.html">Innovation Overview</a></li>
-              <li><a href="../work/entrepreneurship.html">Entrepreneurship</a></li>
-            </ul>
-          </article>
-          <article class="hub-card" id="tech-stack-over-years">
-            <h2>Tech Stack Over Years</h2>
-            <p>A timeline view of tools, platforms, and engineering stacks used across different career stages and project types.</p>
-            <ul class="hub-links">
-              <li><a href="../work/tech-stack-over-years.html">Tech Stack Over Years</a></li>
-              <li><a href="../about/industry-experience.html">Related Industry Timeline</a></li>
-            </ul>
-          </article>
+        <section class="apartsin-page-header apartsin-page-header--standard" id="building-overview">
+          <h1 class="apartsin-sr-only">Building</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <strong>Building</strong>
+            </nav>
+          </div>
+          <p class="apartsin-page-header__lede">Building has been the constant thread of my work, from early engineering roles to recent AI tooling. You can browse <a href="../work/past-projects.html">past projects</a>, see the latest work in <a href="../work/recent-projects.html">recent projects</a>, and follow evolution across the <a href="../work/tech-stack-over-years.html">tech stack over years</a>.</p>
         </section>
       </main>
     </div>

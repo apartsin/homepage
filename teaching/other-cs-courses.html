@@ -7,8 +7,10 @@
   <title>Other CS Courses | Sasha Apartsin</title>
   <link rel="stylesheet" href="../shared/site-shell.css">
   <link rel="stylesheet" href="../shared/unified-theme.css">
+  <link rel="stylesheet" href="../shared/cards.css">
+  <link rel="stylesheet" href="../shared/card-types/course.css">
 </head>
-<body class="apartsin-shell-active" data-site-section="teaching">
+<body class="apartsin-shell-active" data-site-section="teaching" data-card-type="course">
   <div class="apartsin-shell">
     <aside class="apartsin-shell__sidebar">
       <a class="apartsin-shell__brand" href="../index.html">Sasha Apartsin</a>
@@ -24,27 +26,70 @@
     </aside>
     <div class="apartsin-shell__content">
       <main class="apartsin-shell__main">
-        <section class="hub-page">
-          <p class="hub-page__kicker">Teaching</p>
-          <h1 class="hub-page__title">Other CS Courses</h1>
-          <p class="hub-page__lede">Additional computer science offerings, workshops, and institution-specific courses beyond the main hands-on program.</p>
+        <section class="apartsin-page-header apartsin-page-header--standard" id="other-cs-courses-overview">
+          <h1 class="apartsin-sr-only">Other CS Courses</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="./overview.html">Teaching</a>
+              <span aria-hidden="true">/</span>
+              <strong>Other CS Courses</strong>
+            </nav>
+          </div>
+          <p class="apartsin-page-header__lede">Beyond the hands-on AI stream, I taught additional courses across core computer science and software product topics.</p>
         </section>
-        <section class="hub-grid">
-          <article class="hub-card">
-            <h2>Course Indexes</h2>
-            <ul class="hub-links">
-              <li><a href="../courses/index.html">Combined Courses Catalog</a></li>
-              <li><a href="../courses/workshops/computer-vision-workshophit-cs-2025-26.html">Computer Vision Workshop</a></li>
-              <li><a href="../courses/workshops/genai-workshophit-cs-2025-26.html">Generative AI Workshop</a></li>
-            </ul>
-          </article>
-          <article class="hub-card">
-            <h2>Main Teaching Program</h2>
-            <ul class="hub-links">
-              <li><a href="../teaching/hands-on-ai-science-courses.html">Hands-On AI Science Courses</a></li>
-              <li><a href="../teaching/curriculum-development.html">Curriculum Development</a></li>
-            </ul>
-          </article>
+
+        <section class="cards-shell cards-shell--text-grid" aria-label="Other CS course cards">
+          <div class="cards-grid">
+            <article class="content-card content-card--text">
+              <div class="content-card__body">
+                <p class="content-card__eyebrow">HIT CS</p>
+                <h2 class="content-card__title">Introduction to Computer Science</h2>
+                <p class="content-card__meta">Holon Institute of Technology, 2024F</p>
+              </div>
+            </article>
+
+            <article class="content-card content-card--text">
+              <div class="content-card__body">
+                <p class="content-card__eyebrow">HIT CS</p>
+                <h2 class="content-card__title">Computer Networking</h2>
+                <p class="content-card__meta">Holon Institute of Technology, 2024F</p>
+              </div>
+            </article>
+
+            <article class="content-card content-card--text">
+              <div class="content-card__body">
+                <p class="content-card__eyebrow">MTA</p>
+                <h2 class="content-card__title">Software Product Management and Requirements Engineering</h2>
+                <p class="content-card__meta">The Academic College of Tel Aviv-Yafo, 2013</p>
+              </div>
+            </article>
+
+            <article class="content-card content-card--text">
+              <div class="content-card__body">
+                <p class="content-card__eyebrow">MTA</p>
+                <h2 class="content-card__title">Machine Learning</h2>
+                <p class="content-card__meta">The Academic College of Tel Aviv-Yafo, 2012</p>
+              </div>
+            </article>
+
+            <article class="content-card content-card--text">
+              <div class="content-card__body">
+                <p class="content-card__eyebrow">MTA</p>
+                <h2 class="content-card__title">Cellular Communications</h2>
+                <p class="content-card__meta">The Academic College of Tel Aviv-Yafo, 2011</p>
+              </div>
+            </article>
+
+            <article class="content-card content-card--text">
+              <div class="content-card__body">
+                <p class="content-card__eyebrow">TAU</p>
+                <h2 class="content-card__title">Operating Systems</h2>
+                <p class="content-card__meta">Tel Aviv University, 2007-2009</p>
+              </div>
+            </article>
+          </div>
         </section>
       </main>
     </div>
