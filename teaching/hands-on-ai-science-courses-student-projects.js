@@ -326,53 +326,33 @@
     topRow.appendChild(institutionTag);
     body.appendChild(topRow);
 
-    const headerBlock = document.createElement('div');
-    headerBlock.className = 'student-project-card__section student-project-card__section--header';
-
+    /* Title */
     const title = document.createElement('h2');
     title.className = 'content-card__title';
     title.textContent = project.t;
-    headerBlock.appendChild(title);
+    body.appendChild(title);
 
+    /* Course name */
     const courseTag = document.createElement('p');
     courseTag.className = 'student-project-card__course-name';
     courseTag.textContent = courseMeta.instanceTitle || courseMeta.courseInstance;
-    headerBlock.appendChild(courseTag);
-    body.appendChild(headerBlock);
+    body.appendChild(courseTag);
 
+    /* Description (no label, flows naturally) */
     const shortDescription = normalizeDescription(project.d, project.a);
     if (shortDescription) {
-      const summaryBlock = document.createElement('section');
-      summaryBlock.className = 'student-project-card__section student-project-card__section--summary';
-
-      const summaryLabel = document.createElement('p');
-      summaryLabel.className = 'student-project-card__section-label';
-      summaryLabel.textContent = 'Project Summary';
-      summaryBlock.appendChild(summaryLabel);
-
       const desc = document.createElement('p');
       desc.className = 'content-card__desc student-project-card__desc';
       desc.textContent = shortDescription;
-      summaryBlock.appendChild(desc);
-
-      body.appendChild(summaryBlock);
+      body.appendChild(desc);
     }
 
+    /* Students (inline, no label) */
     if (project.a) {
-      const studentsBlock = document.createElement('section');
-      studentsBlock.className = 'student-project-card__section student-project-card__section--students';
-
-      const studentsLabel = document.createElement('p');
-      studentsLabel.className = 'student-project-card__section-label';
-      studentsLabel.textContent = 'Students';
-      studentsBlock.appendChild(studentsLabel);
-
       const meta = document.createElement('p');
       meta.className = 'content-card__meta student-project-card__students';
       meta.textContent = project.a;
-      studentsBlock.appendChild(meta);
-
-      body.appendChild(studentsBlock);
+      body.appendChild(meta);
     }
 
     const links = (project.l || [])

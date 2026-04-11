@@ -726,17 +726,18 @@
   /* #15 Scroll-reveal: staggered fade-in for cards */
   function initScrollReveal() {
     var selectors = '.content-card, .prt-card, .industry-card, .student-project-card, .book-card, .bot-card, .hub-card, .syllabus-card';
-    var cards = document.querySelectorAll(selectors);
-    if (!cards.length || !('IntersectionObserver' in window)) {
-      /* If no IntersectionObserver, just reveal everything */
-      for (var i = 0; i < cards.length; i++) cards[i].classList.add('is-revealed');
+
+    if (!('IntersectionObserver' in window)) {
+      /* Fallback: reveal everything immediately */
+      var all = document.querySelectorAll(selectors);
+      for (var i = 0; i < all.length; i++) all[i].classList.add('is-revealed');
       return;
     }
+
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           var el = entry.target;
-          /* Stagger siblings: find index among visible grid children */
           var parent = el.parentElement;
           var siblings = parent ? Array.prototype.slice.call(parent.children) : [];
           var idx = siblings.indexOf(el);
@@ -747,7 +748,27 @@
         }
       });
     }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-    cards.forEach(function (card) { observer.observe(card); });
+
+    /* Observe existing cards */
+    function observeAll() {
+      var cards = document.querySelectorAll(selectors);
+      cards.forEach(function (card) {
+        if (!card.classList.contains('is-revealed') && !card.dataset.revealObserved) {
+          card.dataset.revealObserved = '1';
+          observer.observe(card);
+        }
+      });
+    }
+
+    observeAll();
+
+    /* Watch for dynamically added cards (JS-rendered pages) */
+    if ('MutationObserver' in window) {
+      var mutObs = new MutationObserver(function () { observeAll(); });
+      mutObs.observe(document.body, { childList: true, subtree: true });
+      /* Stop watching after 5 seconds to avoid overhead */
+      setTimeout(function () { mutObs.disconnect(); }, 5000);
+    }
   }
 
   /* #12 Inject social meta + favicon */
