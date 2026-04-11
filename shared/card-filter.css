@@ -1,0 +1,184 @@
+/* ═══════════════════════════════════════════
+   Shared Card Filter Bar
+   Standardized layout for all filter patterns
+   ═══════════════════════════════════════════ */
+
+/* ── Container ── */
+.card-filter {
+  margin-bottom: 14px;
+  padding: 12px 14px;
+  border: 1px solid var(--site-border, rgba(24,32,42,0.14));
+  border-radius: 14px;
+  background: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ── Label ── */
+.card-filter__label {
+  margin: 0;
+  color: var(--site-muted, #586271);
+  font: 800 0.72rem/1.2 "Manrope", sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ── Select dropdown ── */
+.card-filter__select {
+  appearance: none;
+  height: 36px;
+  padding: 0 28px 0 10px;
+  border: 1px solid var(--site-border, rgba(24,32,42,0.14));
+  border-radius: 999px;
+  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23586271'/%3E%3C/svg%3E") no-repeat right 10px center;
+  color: var(--site-text, #18202a);
+  font: 700 0.8rem/1.2 "Manrope", sans-serif;
+  cursor: pointer;
+  transition: border-color 150ms ease;
+}
+
+.card-filter__select:focus {
+  border-color: var(--site-accent, #9c5a2e);
+  outline: none;
+}
+
+/* ── Chip button ── */
+.card-filter__chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 11px;
+  min-height: 30px;
+  border: 1px solid var(--site-border, rgba(24,32,42,0.14));
+  border-radius: 999px;
+  background: #fff;
+  color: var(--site-muted, #586271);
+  font: 700 0.76rem/1.2 "Manrope", sans-serif;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 150ms ease, border-color 150ms ease, color 150ms ease;
+}
+
+.card-filter__chip:hover {
+  border-color: rgba(156, 90, 46, 0.35);
+  color: var(--site-accent, #9c5a2e);
+}
+
+.card-filter__chip[aria-pressed="true"],
+.card-filter__chip[aria-selected="true"],
+.card-filter__chip.is-active {
+  background: var(--site-accent-soft, rgba(156,90,46,0.12));
+  border-color: rgba(156, 90, 46, 0.4);
+  color: var(--site-accent-deep, #7a3f16);
+  box-shadow: inset 0 -2px 0 var(--site-accent, #9c5a2e);
+}
+
+/* ── Toggle button group ── */
+.card-filter__toggle-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px;
+  border: 1px solid var(--site-border);
+  border-radius: 999px;
+  background: var(--site-bg-2, #fbfaf6);
+}
+
+.card-filter__toggle {
+  border: 0;
+  border-radius: 999px;
+  padding: 5px 10px;
+  background: transparent;
+  color: var(--site-muted, #586271);
+  font: 800 0.74rem/1.2 "Manrope", sans-serif;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.card-filter__toggle[aria-selected="true"],
+.card-filter__toggle.is-active {
+  background: #fff;
+  color: var(--site-text, #18202a);
+  box-shadow: 0 2px 6px rgba(35, 30, 23, 0.1);
+}
+
+/* ── Reset button ── */
+.card-filter__reset {
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--site-border);
+  border-radius: 999px;
+  background: var(--site-bg-2, #fbfaf6);
+  color: var(--site-muted);
+  font: 700 0.76rem/1 "Manrope", sans-serif;
+  cursor: pointer;
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.card-filter__reset:hover {
+  background: var(--site-accent-soft, rgba(156,90,46,0.12));
+  color: var(--site-accent);
+}
+
+/* ── Count / status ── */
+.card-filter__count {
+  margin: 0 0 0 auto;
+  color: var(--site-muted, #586271);
+  font: 700 0.8rem/1.2 "Manrope", sans-serif;
+  white-space: nowrap;
+}
+
+.card-filter__status {
+  width: 100%;
+  margin: 4px 0 0;
+  padding: 6px 10px;
+  border-left: 3px solid var(--site-accent, #9c5a2e);
+  background: rgba(156, 90, 46, 0.04);
+  border-radius: 0 6px 6px 0;
+  color: var(--site-muted);
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+/* ── Empty state ── */
+.card-filter__empty {
+  width: 100%;
+  margin: 6px 0 0;
+  color: var(--site-muted);
+  font: 700 0.82rem/1.5 "Manrope", sans-serif;
+}
+
+/* ── Grid layout for labeled fields ── */
+.card-filter--grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+  align-items: end;
+}
+
+.card-filter__field {
+  display: grid;
+  gap: 4px;
+}
+
+.card-filter__field-label {
+  color: var(--site-muted);
+  font: 700 0.68rem/1.2 "Manrope", sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .card-filter {
+    padding: 10px 12px;
+  }
+  .card-filter--grid {
+    grid-template-columns: 1fr;
+  }
+}
