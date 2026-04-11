@@ -1151,6 +1151,30 @@ summary:focus-visible {
   background: var(--site-accent);
 }
 
+/* Global card hover lift */
+.hub-card,
+.edu-card,
+.former-card,
+.curriculum-card,
+.achievement-card,
+.venture-card,
+.patent-card,
+.pub-card {
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.hub-card:hover,
+.edu-card:hover,
+.former-card:hover,
+.curriculum-card:hover,
+.achievement-card:hover,
+.venture-card:hover,
+.patent-card:hover,
+.pub-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.1);
+}
+
 /* ── Responsive ── */
 @media (max-width: 960px) {
   .apartsin-shell__main section.yaqOZd {
