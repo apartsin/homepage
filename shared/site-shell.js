@@ -171,11 +171,11 @@
         ],
         [
           {
-            label: 'Hands-On AI Science Series',
-            path: 'teaching/hands-on-ai-science-courses.html',
+            label: 'Hands-On AI Science Course Series',
+            path: 'teaching/hands-on-ai-science-courses-courses.html',
             secondary: [
               { label: 'Courses', path: 'teaching/hands-on-ai-science-courses-courses.html' },
-              { label: 'Past Offerings', path: 'teaching/hands-on-ai-science-courses-past-offerings.html' },
+              { label: 'Offerings', path: 'teaching/hands-on-ai-science-courses-past-offerings.html' },
               { label: 'Student Projects', path: 'teaching/hands-on-ai-science-courses-student-projects.html' },
             ],
           },

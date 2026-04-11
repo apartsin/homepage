@@ -33,7 +33,27 @@
           <p class="hub-page__lede">A unified catalog of student projects across course offerings, workshops, and institutions.</p>
         </section>
         <section class="student-projects-toolbar" aria-label="Project filters">
-          <div class="student-projects-toolbar__chips" id="student-project-filter"></div>
+          <div class="student-projects-toolbar__controls">
+            <label class="student-projects-toolbar__field">
+              <span class="student-projects-toolbar__field-label">Type</span>
+              <select id="student-project-filter-type">
+                <option value="all">All types</option>
+              </select>
+            </label>
+            <label class="student-projects-toolbar__field">
+              <span class="student-projects-toolbar__field-label">Institution</span>
+              <select id="student-project-filter-institution">
+                <option value="all">All institutions</option>
+              </select>
+            </label>
+            <label class="student-projects-toolbar__field">
+              <span class="student-projects-toolbar__field-label">Year</span>
+              <select id="student-project-filter-year">
+                <option value="all">All years</option>
+              </select>
+            </label>
+            <button type="button" class="student-projects-toolbar__reset" id="student-project-filter-reset">Reset Filters</button>
+          </div>
           <p class="student-projects-toolbar__status" id="student-project-status">Loading projects...</p>
         </section>
         <section class="cards-shell cards-shell--collection student-projects-shell" aria-label="All student project cards" data-disable-toolbar="true">

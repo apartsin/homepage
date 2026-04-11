@@ -442,7 +442,7 @@
         { label: 'Current Students', href: '/onesite/teaching/current-students.html' },
       ],
       courses: [
-        { label: 'Hands-On AI Science Series', href: '/onesite/courses/hos/series/index.html' },
+        { label: 'Hands-On AI Science Course Series', href: '/onesite/courses/hos/series/index.html' },
         { label: 'AI Engineering Projects', href: '/onesite/teaching/ai-engineering-projects-open-for-students.html' },
       ],
       writing: [
