@@ -225,7 +225,6 @@
           /\/work\/overview\.html$/i,
           /\/work\/past-projects\.html$/i,
           /\/work\/recent-projects\.html$/i,
-          /\/work\/tech-stack-over-years\.html$/i,
           /\/about\/industry-experience\.html$/i,
         ],
         [

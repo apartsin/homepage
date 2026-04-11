@@ -3,18 +3,95 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Syllabus for Building Conversational Systems with LLMs and Agents, a Hands-on AI Science course.">
+  <meta name="description" content="Syllabus for Building Language AI with Large Language Models and Agents, a Hands-on AI Science course.">
   <title>Building Language AI: LLM Course Syllabus | Sasha Apartsin</title>
   <link rel="stylesheet" href="../../../shared/site-shell.css">
   <link rel="stylesheet" href="../../../shared/unified-theme.css">
   <style>
-    .syllabus-concepts { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-top: 16px; }
-    .syllabus-card { padding: 20px; border: 1px solid var(--site-border, rgba(24,32,42,0.1)); border-radius: 14px; background: rgba(255,255,255,0.9); }
-    .syllabus-card h2 { margin: 0 0 8px; font: 700 1.05rem/1.3 "Manrope", sans-serif; color: var(--site-text, #18202a); }
-    .syllabus-card p { margin: 0; font-size: 0.92rem; line-height: 1.55; color: var(--site-muted, #586271); }
-    .syllabus-links { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; }
-    .syllabus-links a { display: inline-flex; padding: 8px 14px; border: 1px solid var(--site-border); border-radius: 999px; font: 700 0.82rem/1.2 "Manrope", sans-serif; color: var(--site-text); text-decoration: none; }
-    .syllabus-links a:hover { background: rgba(133,114,81,0.08); }
+    .syllabus-hero-img {
+      margin-top: 16px;
+      border: 1px solid var(--site-border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .syllabus-hero-img img {
+      display: block;
+      width: 100%;
+      max-height: 280px;
+      object-fit: cover;
+      background: var(--site-bg-2);
+    }
+    .syllabus-grid {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+    }
+    .syllabus-card {
+      padding: 16px 18px;
+      border: 1px solid var(--site-border);
+      border-radius: 12px;
+      background: #fff;
+    }
+    .syllabus-card h2 {
+      margin: 0 0 6px;
+      font: 800 0.92rem/1.3 "Manrope", sans-serif;
+      color: var(--site-text);
+    }
+    .syllabus-card p {
+      margin: 0;
+      font: 400 0.86rem/1.58 "Source Serif 4", Georgia, serif;
+      color: var(--site-muted);
+    }
+    .syllabus-tools {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border: 1px solid var(--site-border);
+      border-radius: 12px;
+      background: #fff;
+    }
+    .syllabus-tools h2 {
+      margin: 0 0 8px;
+      font: 800 0.78rem/1.2 "Manrope", sans-serif;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--site-muted);
+    }
+    .syllabus-tools__list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .syllabus-tools__list li {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--site-border);
+      background: var(--site-bg-2);
+      font: 700 0.76rem/1.2 "Manrope", sans-serif;
+      color: var(--site-text);
+    }
+    .syllabus-links {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .syllabus-links a {
+      display: inline-flex;
+      padding: 8px 14px;
+      border: 1px solid var(--site-border);
+      border-radius: 999px;
+      font: 700 0.8rem/1.2 "Manrope", sans-serif;
+      color: var(--site-text);
+      text-decoration: none;
+      transition: background 150ms ease;
+    }
+    .syllabus-links a:hover {
+      background: rgba(133,114,81,0.08);
+    }
   </style>
 </head>
 <body class="apartsin-shell-active" data-site-section="courses">
@@ -23,14 +100,7 @@
       <a class="apartsin-shell__brand" href="../../../index.html">Sasha Apartsin</a>
       <div class="apartsin-shell__divider"></div>
       <nav class="apartsin-shell__nav">
-        <div class="apartsin-shell__menu-item">
-          <a href="../../../about/academic-profile.html" class="apartsin-shell__home-nav-link">About</a>
-          <div class="apartsin-shell__menu-dropdown">
-            <a href="../../../about/education.html">Education</a>
-            <a href="../../../about/industry-experience.html">Industry Experience</a>
-            <a href="../../../about/phd-thesis.html">PhD Thesis</a>
-          </div>
-        </div>
+        <a href="../../../about/academic-profile.html">About</a>
         <a href="../../../research/interests.html">Research</a>
         <a href="../../../teaching/overview.html">Teaching</a>
         <a href="../../../work/overview.html">Building</a>
@@ -54,47 +124,45 @@
               <strong>Building Language AI</strong>
             </nav>
           </div>
-          <p class="apartsin-page-header__lede">Syllabus for the LLM course in the Hands-on AI Science series. The course takes a code-first approach using OpenAI, LangChain, Hugging Face Transformers, and LangGraph.</p>
+          <p class="apartsin-page-header__lede">A code-first course on building conversational and agentic systems with large language models. Part of the <a href="../../../teaching/hands-on-ai-science-courses-courses.html">Hands-on AI Science series</a>, designed around <a href="../../../work/innovation-first-learning.html">Innovation-First Learning</a> principles.</p>
         </section>
 
-        <section id="concept-overview">
-          <div class="syllabus-concepts">
-            <div class="syllabus-card">
-              <h2>Conversational Systems</h2>
-              <p>Natural Language Processing (NLP) enables computers to understand, analyze, and generate language. Conversational systems build on NLP to create agents capable of coherent, goal-oriented dialogue that spans multiple turns. These systems track context and maintain memory, allowing them to adapt to user intent over time. Modern conversational agents can also invoke external tools and APIs, using language as a control interface to retrieve information, perform actions, and solve tasks interactively.</p>
-            </div>
-            <div class="syllabus-card">
-              <h2>Large Language Models</h2>
-              <p>Large Language Models are pretrained on vast quantities of language data, enabling them to understand and generate human-like text and power applications like ChatGPT. Many NLP tasks that once required complex, dedicated algorithms and models are now effectively solved by pretrained and fine-tuned LLMs.</p>
-            </div>
-          </div>
+        <figure class="syllabus-hero-img">
+          <img src="../../../assets/courses/hos-series/llm-course/img-006-language-ai-gemini.png" alt="Building Language AI with Large Language Models and Agents">
+        </figure>
+
+        <section class="syllabus-grid" aria-label="Course topics">
+          <article class="syllabus-card">
+            <h2>Conversational Systems</h2>
+            <p>Agents capable of coherent, multi-turn dialogue that track context, maintain memory, and invoke external tools and APIs.</p>
+          </article>
+          <article class="syllabus-card">
+            <h2>Large Language Models</h2>
+            <p>Pretrained models that understand and generate language, replacing many task-specific algorithms with a single fine-tunable architecture.</p>
+          </article>
+          <article class="syllabus-card">
+            <h2>Guided Projects</h2>
+            <p>Students begin projects early and enrich them with new concepts throughout the course, with iterative in-class presentations and feedback.</p>
+          </article>
         </section>
 
-        <section id="teaching-approach">
-          <div class="syllabus-concepts" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
-            <div class="syllabus-card">
-              <h2>Innovation Through Tools Mastery</h2>
-              <p>As standard tasks are increasingly handled by AI and existing mature libraries, expectations of professional developers shift toward innovation and rapid integration. Accordingly, a key requirement for student course projects is to tackle new use cases by generating unique data and training or fine-tuning task-specific language models.</p>
-            </div>
-            <div class="syllabus-card">
-              <h2>Code-First Teaching</h2>
-              <p>The course takes a code-first approach, pairing each concept with extensive, hands-on examples that use modern libraries, including OpenAI, LangChain, Hugging Face Transformers, and LangGraph. The course equips students with a practical toolbox of ideas and tools for rapidly building LLM-based models and applications.</p>
-            </div>
-            <div class="syllabus-card">
-              <h2>Guided Student Projects</h2>
-              <p>The course syllabus is designed to enable students to begin their projects while learning the material. As the course continues, they will enrich their projects with the concepts they acquire. Each team will give several in-class presentations for discussion and feedback.</p>
-            </div>
-          </div>
+        <section class="syllabus-tools">
+          <h2>Tools and Libraries</h2>
+          <ul class="syllabus-tools__list">
+            <li>OpenAI</li>
+            <li>LangChain</li>
+            <li>Hugging Face Transformers</li>
+            <li>LangGraph</li>
+          </ul>
         </section>
 
-        <section id="related-links">
-          <nav class="syllabus-links" aria-label="Related links">
-            <a href="../../../teaching/hands-on-ai-science-courses-past-offerings.html?type=language-ai">Course Offerings</a>
-            <a href="../../../teaching/hands-on-ai-science-courses-student-projects.html?type=language-ai">Student Course Projects</a>
-            <a href="../../../teaching/hands-on-ai-science-courses-courses.html">All Course Syllabi</a>
-            <a href="http://llmbook.apartsin.com/">Book</a>
-          </nav>
-        </section>
+        <nav class="syllabus-links" aria-label="Related links">
+          <a href="../../../teaching/hands-on-ai-science-courses-past-offerings.html?type=language-ai">Course Offerings</a>
+          <a href="../../../teaching/hands-on-ai-science-courses-student-projects.html?type=language-ai">Student Projects</a>
+          <a href="../../../teaching/hands-on-ai-science-courses-courses.html">All Courses</a>
+          <a href="../../../work/innovation-first-learning.html">Innovation-First Learning</a>
+          <a href="http://llmbook.apartsin.com/" target="_blank" rel="noopener noreferrer" class="external-indicator">Companion Book</a>
+        </nav>
 
       </main>
     </div>
