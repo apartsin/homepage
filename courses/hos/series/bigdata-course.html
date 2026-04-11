@@ -7,15 +7,7 @@
   <title>Building Scalable AI: BigData Course Syllabus | Sasha Apartsin</title>
   <link rel="stylesheet" href="../../../shared/site-shell.css">
   <link rel="stylesheet" href="../../../shared/unified-theme.css">
-  <style>
-    .syllabus-concepts { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-top: 16px; }
-    .syllabus-card { padding: 20px; border: 1px solid var(--site-border, rgba(24,32,42,0.1)); border-radius: 14px; background: rgba(255,255,255,0.9); }
-    .syllabus-card h2 { margin: 0 0 8px; font: 700 1.05rem/1.3 "Manrope", sans-serif; color: var(--site-text, #18202a); }
-    .syllabus-card p { margin: 0; font-size: 0.92rem; line-height: 1.55; color: var(--site-muted, #586271); }
-    .syllabus-links { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; }
-    .syllabus-links a { display: inline-flex; padding: 8px 14px; border: 1px solid var(--site-border); border-radius: 999px; font: 700 0.82rem/1.2 "Manrope", sans-serif; color: var(--site-text); text-decoration: none; }
-    .syllabus-links a:hover { background: rgba(133,114,81,0.08); }
-  </style>
+  <link rel="stylesheet" href="../../../shared/syllabus.css">
 </head>
 <body class="apartsin-shell-active" data-site-section="courses">
   <div class="apartsin-shell">
@@ -23,14 +15,7 @@
       <a class="apartsin-shell__brand" href="../../../index.html">Sasha Apartsin</a>
       <div class="apartsin-shell__divider"></div>
       <nav class="apartsin-shell__nav">
-        <div class="apartsin-shell__menu-item">
-          <a href="../../../about/academic-profile.html" class="apartsin-shell__home-nav-link">About</a>
-          <div class="apartsin-shell__menu-dropdown">
-            <a href="../../../about/education.html">Education</a>
-            <a href="../../../about/industry-experience.html">Industry Experience</a>
-            <a href="../../../about/phd-thesis.html">PhD Thesis</a>
-          </div>
-        </div>
+        <a href="../../../about/academic-profile.html">About</a>
         <a href="../../../research/interests.html">Research</a>
         <a href="../../../teaching/overview.html">Teaching</a>
         <a href="../../../work/overview.html">Building</a>
@@ -54,45 +39,42 @@
               <strong>Building Scalable AI</strong>
             </nav>
           </div>
-          <p class="apartsin-page-header__lede">Syllabus for the big data course in the Hands-on AI Science series. The course takes a code-first approach using PySpark, Spark SQL, and stream-processing frameworks.</p>
+          <p class="apartsin-page-header__lede">A code-first course on building scalable data systems with distributed algorithms. Part of the <a href="../../../teaching/hands-on-ai-science-courses-courses.html">Hands-on AI Science series</a>, designed around <a href="../../../work/innovation-first-learning.html">Innovation-First Learning</a> principles.</p>
         </section>
 
-        <section id="concept-overview">
-          <div class="syllabus-concepts">
-            <div class="syllabus-card">
-              <h2>Big Data Algorithms</h2>
-              <p>Big data algorithms are designed to process massive datasets that cannot fit into the memory or storage of a single computer. They rely on distributed computing models such as MapReduce and its successors, which decompose tasks such as sorting, aggregation, joins, and matrix multiplication into parallel subtasks executed across multiple machines.</p>
-            </div>
-            <div class="syllabus-card">
-              <h2>Data-Intensive Systems</h2>
-              <p>Data-intensive systems are designed to store, process, and analyze large volumes of data that cannot be handled by a single computer, typically using distributed architectures.</p>
-            </div>
-          </div>
+        <figure class="syllabus-hero-img">
+          <img src="../../../assets/courses/hos-series/bigdata-course/img-012-scalable-ai-gemini.png" alt="Building Scalable AI with Big Data Algorithms">
+        </figure>
+
+        <section class="syllabus-grid" aria-label="Course topics">
+          <article class="syllabus-card">
+            <h2>Big Data Algorithms</h2>
+            <p>Distributed computing models that decompose tasks such as sorting, aggregation, and joins into parallel subtasks executed across multiple machines.</p>
+          </article>
+          <article class="syllabus-card">
+            <h2>Data-Intensive Systems</h2>
+            <p>Architectures designed to store, process, and analyze large volumes of data that cannot be handled by a single computer.</p>
+          </article>
+          <article class="syllabus-card">
+            <h2>Guided Projects</h2>
+            <p>Students begin projects early and enrich them with new concepts throughout the course, with iterative in-class presentations and feedback.</p>
+          </article>
         </section>
 
-        <section id="teaching-approach">
-          <div class="syllabus-concepts" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
-            <div class="syllabus-card">
-              <h2>Innovation Through Tools Mastery</h2>
-              <p>As everyday tasks are increasingly automated by AI and mature libraries, professional developers are expected to innovate and integrate solutions quickly. Reflecting this shift, course projects emphasize exploring new use cases by thoughtfully combining multiple learned components in fresh and original ways.</p>
-            </div>
-            <div class="syllabus-card">
-              <h2>Code-First Teaching</h2>
-              <p>The course takes a code-first approach, pairing each algorithmic concept with hands-on implementations using modern big data libraries and platforms, including PySpark, Spark SQL, and stream-processing frameworks. It equips students with a practical toolbox for designing and implementing scalable big data algorithms that solve problems such as large-scale sorting, aggregation, and matrix multiplication on datasets that cannot fit within the memory of a single machine.</p>
-            </div>
-            <div class="syllabus-card">
-              <h2>Guided Student Projects</h2>
-              <p>The course syllabus is designed to enable students to begin their projects while learning the material. As the course continues, they will enrich their projects with the concepts they acquire. Each team will give several in-class presentations for discussion and feedback.</p>
-            </div>
-          </div>
+        <section class="syllabus-tools">
+          <h2>Tools and Libraries</h2>
+          <ul class="syllabus-tools__list">
+            <li>PySpark</li>
+            <li>Spark SQL</li>
+            <li>Stream Processing</li>
+          </ul>
         </section>
 
-        <section id="related-links">
-          <nav class="syllabus-links" aria-label="Related links">
-            <a href="../../../teaching/hands-on-ai-science-courses-past-offerings.html?type=scalable-ai">Course Offerings</a>
-            <a href="../../../teaching/hands-on-ai-science-courses-courses.html">All Course Syllabi</a>
-          </nav>
-        </section>
+        <nav class="syllabus-links" aria-label="Related links">
+          <a href="../../../teaching/hands-on-ai-science-courses-past-offerings.html?type=scalable-ai">Course Offerings</a>
+          <a href="../../../teaching/hands-on-ai-science-courses-courses.html">All Courses</a>
+          <a href="../../../work/innovation-first-learning.html">Innovation-First Learning</a>
+        </nav>
 
       </main>
     </div>
