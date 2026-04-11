@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-labelledby="title desc">
+  <title id="title">AppiVision</title>
+  <desc id="desc">AppiVision wordmark placeholder logo</desc>
+  <rect width="320" height="200" fill="#ffffff"/>
+  <rect x="12" y="12" width="296" height="176" rx="18" fill="#f4f8ff" stroke="#d6e2f6" stroke-width="4"/>
+  <circle cx="84" cy="100" r="40" fill="#1f4a8c"/>
+  <path d="M84 70l17 42h-12l-3-9H72l-3 9H57l17-42h10zm-1 12l-7 13h14l-7-13z" fill="#ffffff"/>
+  <text x="132" y="106" font-family="Segoe UI, Arial, sans-serif" font-size="32" font-weight="700" fill="#1f4a8c">AppiVision</text>
+</svg>

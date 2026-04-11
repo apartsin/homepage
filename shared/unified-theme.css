@@ -1,36 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap');
 
 :root {
-  --site-bg-1: #f6f3ec;
+  --site-bg-1: #f8f5ef;
   --site-bg-2: #fbfaf6;
   --site-text: #18202a;
   --site-muted: #586271;
   --site-accent: #9c5a2e;
+  --site-accent-deep: #7a3f16;
   --site-accent-soft: rgba(156, 90, 46, 0.12);
-  --site-border: rgba(24, 32, 42, 0.1);
+  --site-border: rgba(24, 32, 42, 0.14);
   --site-radius: 18px;
 }
 
+/* #11 Simplified body background */
 body {
   color: var(--site-text);
   font-family: "Source Serif 4", Georgia, serif;
-  background:
-    radial-gradient(circle at 8% 8%, rgba(156, 90, 46, 0.12), transparent 30%),
-    radial-gradient(circle at 92% 92%, rgba(46, 111, 156, 0.08), transparent 30%),
-    linear-gradient(180deg, var(--site-bg-1) 0%, var(--site-bg-2) 100%);
+  background: var(--site-bg-1);
 }
 
-h1,
-h2,
-h3,
-h4 {
+h1, h2, h3, h4 {
   color: #111827;
   font-family: "Manrope", "Segoe UI", sans-serif;
   letter-spacing: -0.01em;
 }
 
-p,
-li {
+p, li {
   line-height: 1.7;
 }
 
@@ -38,12 +33,40 @@ a {
   color: var(--site-accent);
 }
 
-body[data-site-section="about"] .apartsin-shell__main a {
+/* Content links use blue for clear clickability */
+.apartsin-shell__main a,
+.apartsin-page-header__lede a,
+.hub-page__lede a,
+.home-welcome-text a {
   color: #1d4ed8;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1.2px;
 }
 
-body[data-site-section="about"] .apartsin-shell__main a:hover {
+.apartsin-shell__main a:hover,
+.apartsin-page-header__lede a:hover,
+.hub-page__lede a:hover,
+.home-welcome-text a:hover {
   color: #1e40af;
+}
+
+/* Exclude nav/UI elements from blue override */
+.apartsin-shell__nav a,
+.apartsin-shell__subnav a,
+.apartsin-shell__crossnav a,
+.apartsin-shell__brand,
+.apartsin-page-header__crumbs a,
+.hub-anchor-nav a,
+.hub-links a,
+.hub-card__cta,
+.content-card__link,
+.home-quick-link,
+.home-cta,
+.home-hero-switcher a,
+.apartsin-backtotop {
+  color: inherit;
+  text-decoration: none;
 }
 
 a:focus-visible,
@@ -135,6 +158,7 @@ summary:focus-visible {
   line-height: 1.25;
 }
 
+/* #6 Restore serif for card descriptions */
 .cards-shell .content-card__desc,
 .cards-shell .content-card__meta,
 .cards-shell .content-card__rich p {
@@ -145,12 +169,24 @@ summary:focus-visible {
   grid-template-columns: 1fr;
 }
 
+/* #9 Deeper accent for CTA links */
 .cards-shell .content-card--wide-text,
 .cards-shell .content-card--feature {
   border-color: rgba(156, 90, 46, 0.2);
   background:
     linear-gradient(180deg, rgba(156, 90, 46, 0.08), rgba(255, 255, 255, 0) 38%),
     #fff;
+}
+
+.content-card__link {
+  background: rgba(122, 63, 22, 0.1) !important;
+  color: var(--site-accent-deep) !important;
+}
+
+.content-card__link:hover {
+  background: rgba(255, 255, 255, 0.78) !important;
+  border-color: var(--site-accent-deep) !important;
+  color: var(--site-accent-deep) !important;
 }
 
 .cards-toolbar {
@@ -216,6 +252,7 @@ summary:focus-visible {
   display: none !important;
 }
 
+/* ── Page header (compact variant) ── */
 .apartsin-page-header {
   position: relative;
   margin: 0 0 14px;
@@ -302,7 +339,7 @@ summary:focus-visible {
 
 .apartsin-page-header--title-crumbs .apartsin-page-header__lede {
   margin: 12px auto 0;
-  max-width: 74ch;
+  max-width: 68ch;
   text-align: center;
 }
 
@@ -318,16 +355,24 @@ summary:focus-visible {
   border: 0 !important;
 }
 
+/* ── Page header (standard/hero variant) ── */
+/* #3 Remove heavy border/shadow; #13 Add decorative accent */
 .apartsin-page-header--standard {
   margin-bottom: clamp(18px, 2.4vw, 30px);
-  padding: clamp(26px, 3.2vw, 40px) clamp(24px, 4.4vw, 56px) clamp(30px, 4vw, 52px);
-  border-radius: 20px;
-  border: 1px solid rgba(24, 32, 42, 0.14);
+  padding: clamp(30px, 3.6vw, 48px) clamp(24px, 4.4vw, 56px) clamp(34px, 4.4vw, 56px);
+  border-radius: 22px;
+  border: none;
   background:
-    radial-gradient(120% 120% at 0% 0%, rgba(28, 79, 182, 0.12) 0%, rgba(28, 79, 182, 0) 50%),
-    linear-gradient(120deg, rgba(156, 90, 46, 0.12), rgba(46, 111, 156, 0.09) 45%, rgba(255, 255, 255, 0.96) 74%),
-    rgba(255, 255, 255, 0.95);
-  box-shadow: 0 22px 40px rgba(15, 23, 42, 0.09);
+    url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1' cy='1' r='0.8' fill='rgba(156,90,46,0.07)'/%3E%3C/svg%3E") repeat,
+    radial-gradient(120% 120% at 0% 0%, rgba(28, 79, 182, 0.1) 0%, rgba(28, 79, 182, 0) 50%),
+    linear-gradient(135deg, rgba(156, 90, 46, 0.08), rgba(46, 111, 156, 0.06) 50%, rgba(255, 255, 255, 0.98) 75%),
+    rgba(255, 255, 255, 0.97);
+  box-shadow: none;
+}
+
+.apartsin-page-header--standard::after {
+  height: 4px;
+  background: linear-gradient(90deg, var(--site-accent) 0%, rgba(46, 111, 156, 0.6) 60%, transparent 100%);
 }
 
 .apartsin-page-header--standard .apartsin-page-header__top {
@@ -346,14 +391,15 @@ summary:focus-visible {
   line-height: 1.3;
 }
 
+/* #7 Larger heading scale */
 .apartsin-page-header--standard .apartsin-page-header__crumbs strong {
   display: block;
   flex-basis: 100%;
-  margin: clamp(16px, 2.2vw, 22px) 0 0;
+  margin: clamp(20px, 2.8vw, 28px) 0 0;
   color: var(--site-text);
-  font-size: clamp(1.55rem, 3vw, 2.45rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.04;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   text-transform: none;
   font-weight: 800;
 }
@@ -370,14 +416,21 @@ summary:focus-visible {
   border: 0;
 }
 
+/* #6 Serif lede text; #20 Max-width for readability */
 .apartsin-page-header--standard .apartsin-page-header__lede {
   margin: clamp(24px, 3vw, 36px) auto 0;
-  max-width: 100%;
+  max-width: 68ch;
   text-align: left;
-  line-height: 1.72;
-  font-size: clamp(1.02rem, 1.05vw + 0.64rem, 1.2rem);
+  line-height: 1.78;
+  font-size: clamp(1.04rem, 1.05vw + 0.64rem, 1.2rem);
+  font-family: "Source Serif 4", Georgia, serif;
   color: #334155;
   text-wrap: pretty;
+}
+
+/* Lede link weight boost */
+.apartsin-page-header--standard .apartsin-page-header__lede a {
+  font-weight: 600;
 }
 
 .apartsin-legacy-title-hidden {
@@ -388,6 +441,7 @@ summary:focus-visible {
   display: none !important;
 }
 
+/* ── About section ── */
 .about-portrait {
   margin: 0 0 12px;
   padding: 12px;
@@ -465,6 +519,7 @@ summary:focus-visible {
     ) !important;
 }
 
+/* ── Back to top ── */
 .apartsin-backtotop {
   position: fixed;
   right: 16px;
@@ -492,32 +547,11 @@ summary:focus-visible {
 
 .related-links {
   display: none !important;
-  margin-top: 20px;
-  padding: 14px 16px;
-  border: 1px solid var(--site-border);
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.8);
 }
 
-.related-links h2 {
-  margin: 0 0 8px;
-  font-size: 1.05rem;
-}
-
-.related-links ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 6px;
-}
-
-.related-links a {
-  text-decoration: none;
-}
-
+/* ── Homepage ── */
 .home-hero {
-  padding: clamp(20px, 4vw, 36px);
+  padding: clamp(24px, 4.4vw, 44px);
 }
 
 .home-kicker {
@@ -530,16 +564,28 @@ summary:focus-visible {
 
 .home-hero h1 {
   margin: 0;
-  font-size: clamp(1.8rem, 4.8vw, 2.8rem);
-  line-height: 1.1;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
 }
 
 .home-hero p {
-  max-width: 72ch;
+  max-width: 68ch;
 }
 
 .home-welcome-text {
-  margin: 10px 0 0;
+  margin: 14px 0 0;
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 1.06rem;
+  line-height: 1.78;
+  color: #334155;
+}
+
+.home-welcome-text a {
+  color: var(--site-accent-deep);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .home-hero-switcher {
@@ -598,12 +644,13 @@ summary:focus-visible {
 .home-hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: 12px;
+  gap: 16px;
   align-items: start;
 }
 
+/* ── Hub pages ── */
 .hub-page {
-  padding: clamp(16px, 3vw, 26px);
+  padding: clamp(18px, 3.2vw, 30px);
 }
 
 .hub-page__kicker {
@@ -616,15 +663,16 @@ summary:focus-visible {
 
 .hub-page__title {
   margin: 8px 0 0;
-  font-size: clamp(1.35rem, 2.8vw, 2.1rem);
-  line-height: 1.15;
+  font-size: clamp(1.45rem, 3vw, 2.2rem);
+  line-height: 1.12;
 }
 
+/* #6 Serif hub lede */
 .hub-page__lede {
   margin: 10px 0 0;
-  max-width: 78ch;
+  max-width: 68ch;
   color: var(--site-muted);
-  font: 600 0.95rem/1.6 "Manrope", "Segoe UI", sans-serif;
+  font: 600 0.98rem/1.7 "Source Serif 4", Georgia, serif;
 }
 
 .hub-page__visual {
@@ -743,7 +791,7 @@ summary:focus-visible {
 .home-hero-visual {
   margin: 0;
   border: 1px solid var(--site-border);
-  border-radius: 14px;
+  border-radius: 16px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.92);
   box-shadow: 0 16px 30px rgba(15, 23, 42, 0.1);
@@ -807,8 +855,8 @@ summary:focus-visible {
   justify-content: center;
   padding: 11px 14px;
   border-radius: 10px;
-  background: var(--site-accent);
-  border: 1px solid var(--site-accent);
+  background: var(--site-accent-deep);
+  border: 1px solid var(--site-accent-deep);
   color: #fff;
   text-decoration: none;
   font: 700 0.9rem/1 "Manrope", "Segoe UI", sans-serif;
@@ -816,7 +864,7 @@ summary:focus-visible {
 
 .home-cta--ghost {
   background: rgba(255, 255, 255, 0.92);
-  color: var(--site-accent);
+  color: var(--site-accent-deep);
 }
 
 .home-featured {
@@ -852,6 +900,207 @@ summary:focus-visible {
   color: var(--site-accent);
 }
 
+/* #19 Card image logo variant */
+.content-card__media--logo {
+  aspect-ratio: auto !important;
+  padding: 20px;
+  background: var(--site-bg-2);
+}
+
+.content-card__media--logo img {
+  object-fit: contain !important;
+  max-height: 120px;
+}
+
+/* #15 Scroll-reveal animations */
+.content-card,
+.prt-card,
+.industry-card,
+.student-project-card,
+.book-card,
+.bot-card,
+.hub-card,
+.syllabus-card {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 320ms ease, transform 320ms ease, box-shadow 180ms ease;
+}
+
+.is-revealed {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* #17 Filter transition (grid-level fade) */
+.prt-grid,
+.industry-grid,
+.cards-grid,
+.student-projects-shell .cards-grid {
+  transition: opacity 120ms ease;
+}
+
+/* ── Page-specific improvements (Wave 2) ── */
+
+/* Publication cards: stronger left border (#6) */
+.pub-card {
+  border-left-width: 4px !important;
+  border-left-color: #164a83 !important;
+}
+
+/* Achievement cards: taller accent bar (#25) */
+.achievement-card::before {
+  height: 4px !important;
+}
+
+/* Past projects: decade heading spacing (#23) */
+.prt-decade-heading {
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+/* Student projects toolbar status: styled (#13) */
+.student-projects-toolbar__status {
+  padding: 6px 10px;
+  border-left: 3px solid var(--site-accent, #9c5a2e);
+  background: rgba(156, 90, 46, 0.04);
+  border-radius: 0 6px 6px 0;
+}
+
+/* Blog filter: active chip bottom accent (#31) */
+.blog-filter-chip[aria-selected="true"],
+.cards-toolbar__chip[aria-pressed="true"] {
+  box-shadow: inset 0 -2px 0 var(--site-accent);
+}
+
+/* External link indicator (#32, #26, #20) */
+.external-indicator::after {
+  content: " \2197";
+  font-size: 0.75em;
+  opacity: 0.6;
+}
+
+/* Hub card with CTA button (#14) */
+.hub-card__cta {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 8px;
+  padding: 6px 12px;
+  border: 1px solid var(--site-border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--site-accent-deep, #7a3f16);
+  font: 700 0.78rem/1 "Manrope", sans-serif;
+  text-decoration: none;
+  transition: background 150ms ease;
+}
+
+.hub-card__cta:hover {
+  background: var(--site-accent-soft);
+}
+
+/* Stat badge for hero headers */
+.hero-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--site-border);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--site-muted);
+  font: 700 0.76rem/1.2 "Manrope", sans-serif;
+}
+
+.hero-stat__number {
+  color: var(--site-accent-deep, #7a3f16);
+  font-weight: 800;
+}
+
+/* Category/status badge for cards */
+.card-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font: 700 0.64rem/1.3 "Manrope", sans-serif;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.card-badge--blue {
+  background: rgba(24, 101, 168, 0.1);
+  color: #164a83;
+}
+
+.card-badge--green {
+  background: rgba(46, 125, 90, 0.1);
+  color: #1e5e3a;
+}
+
+.card-badge--amber {
+  background: rgba(156, 90, 46, 0.1);
+  color: var(--site-accent-deep);
+}
+
+.card-badge--gold {
+  background: rgba(180, 140, 20, 0.12);
+  color: #7a6200;
+}
+
+/* Context badge for disambiguating duplicate pages (#17) */
+.context-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: rgba(24, 101, 168, 0.08);
+  color: #164a83;
+  font: 800 0.62rem/1.2 "Manrope", sans-serif;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+/* Era badge for tech-stack cards (#29) */
+.era-badge {
+  display: inline-flex;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--site-border);
+  background: rgba(133, 114, 81, 0.08);
+  color: var(--site-text);
+  font: 800 0.7rem/1.2 "Manrope", sans-serif;
+  letter-spacing: 0.02em;
+  margin-bottom: 6px;
+}
+
+/* Empty state for filters (#15) */
+.filter-empty-state {
+  grid-column: 1 / -1;
+  padding: 24px;
+  text-align: center;
+  color: var(--site-muted);
+  font: 600 0.9rem/1.5 "Manrope", sans-serif;
+}
+
+/* Intro callout section (#20, #27) */
+.intro-callout {
+  margin-bottom: 16px;
+  padding: 16px 18px;
+  border: 1px solid var(--site-border);
+  border-radius: 14px;
+  border-left: 4px solid var(--site-accent);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.intro-callout p {
+  margin: 0;
+  color: var(--site-muted);
+  font: 600 0.9rem/1.6 "Source Serif 4", Georgia, serif;
+}
+
+/* ── Responsive ── */
 @media (max-width: 960px) {
   .apartsin-shell__main section.yaqOZd {
     border-radius: 14px;
@@ -860,7 +1109,7 @@ summary:focus-visible {
 
 @media (min-width: 961px) {
   .home-hero-grid {
-    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
     align-items: center;
   }
 }
@@ -872,7 +1121,7 @@ summary:focus-visible {
 
   .home-hero,
   .home-featured {
-    padding: 14px;
+    padding: 16px;
   }
 
   .home-hero-grid {
@@ -902,18 +1151,18 @@ summary:focus-visible {
   }
 
   .apartsin-page-header--standard {
-    padding: 18px 16px 20px;
-    border-radius: 16px;
+    padding: 22px 18px 24px;
+    border-radius: 18px;
   }
 
   .apartsin-page-header--standard .apartsin-page-header__crumbs strong {
-    margin-top: 12px;
-    font-size: clamp(1.22rem, 6vw, 1.58rem);
+    margin-top: 14px;
+    font-size: clamp(1.4rem, 7vw, 1.8rem);
   }
 
   .apartsin-page-header--standard .apartsin-page-header__lede {
     margin-top: 16px;
-    line-height: 1.62;
+    line-height: 1.65;
     font-size: 1rem;
   }
 

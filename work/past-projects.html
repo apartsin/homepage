@@ -68,6 +68,21 @@
     .prt-card[hidden] {
       display: none !important;
     }
+    .prt-decade-heading {
+      grid-column: 1 / -1;
+      margin: 20px 0 4px;
+      padding: 0 0 6px;
+      border-bottom: 2px solid var(--site-accent, #9c5a2e);
+      color: var(--site-text, #18202a);
+      font: 800 1.2rem/1.2 "Manrope", sans-serif;
+      letter-spacing: -0.01em;
+    }
+    .prt-decade-heading:first-child {
+      margin-top: 0;
+    }
+    .prt-decade-heading[hidden] {
+      display: none !important;
+    }
 
     /* ── card grid ── */
     .prt-grid {
@@ -204,7 +219,7 @@
               <strong>Past Projects</strong>
             </nav>
           </div>
-          <p class="apartsin-page-header__lede">Applied research and engineering projects spanning three decades (1992 to 2024), across signals, vision, text, voice, and video domains.</p>
+          <p class="apartsin-page-header__lede">Applied research and engineering projects spanning three decades (1992 to 2024), across signals, vision, text, voice, and video domains. These projects grew out of roles documented in <a href="../about/industry-experience.html">industry experience</a>; for current work, see <a href="../work/recent-projects.html">recent projects</a> and <a href="../research/research-projects.html">active research</a>.</p>
         </section>
 
         <section class="prt-filter" id="prt-filter" aria-label="Project filters">
@@ -218,7 +233,7 @@
           <select class="prt-filter__select" id="prt-filter-type" aria-label="Filter by data type">
             <option value="all">All Data Types</option>
           </select>
-          <p class="prt-filter__count" id="prt-filter-count"></p>
+          <p class="prt-filter__count" id="prt-filter-count" style="font-size: 1rem; font-weight: 800; color: var(--site-accent-deep, #7a3f16)"></p>
           <p class="prt-filter__empty" id="prt-filter-empty" hidden>No projects match this combination of filters.</p>
         </section>
 

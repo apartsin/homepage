@@ -3,22 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Innovation-first learning from the innovation perspective.">
-  <title>Innovation-First Learning (Innovation) | Sasha Apartsin</title>
+  <meta name="description" content="The 10 principles of Innovation-First Learning: a teaching methodology that puts building and experimentation before formalization, shaped by patterns from startup engineering and industry R&D.">
+  <title>Innovation-First Learning | Sasha Apartsin</title>
   <link rel="stylesheet" href="../shared/site-shell.css">
   <link rel="stylesheet" href="../shared/unified-theme.css">
   <style>
-    .apartsin-page-header__lede a {
-      color: #1b4fd8;
-      font-weight: 700;
-      text-decoration: underline;
-      text-underline-offset: 2px;
-      text-decoration-thickness: 1.2px;
-    }
-    .apartsin-page-header__lede a:hover,
-    .apartsin-page-header__lede a:focus-visible {
-      color: #1e40af;
-    }
     .ifl-content {
       border: 1px solid var(--site-border);
       border-radius: 14px;
@@ -73,13 +62,20 @@
     .ifl-principle-panels {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
+      gap: 16px;
     }
     .ifl-subpanel {
-      border: 1px solid rgba(24, 101, 168, 0.16);
-      border-radius: 12px;
-      background: linear-gradient(180deg, rgba(247, 250, 255, 0.86), rgba(255, 255, 255, 0.94));
-      padding: 10px;
+      border: 1px solid rgba(24, 101, 168, 0.12);
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(247, 250, 255, 0.7), rgba(255, 255, 255, 0.92));
+      padding: 12px;
+    }
+    .ifl-subpanel__label {
+      margin: 0 0 10px 4px;
+      color: rgba(24, 101, 168, 0.5);
+      font: 800 0.66rem/1.2 "Manrope", sans-serif;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
     }
     .ifl-principles {
       display: grid;
@@ -204,8 +200,9 @@
               <span aria-hidden="true">/</span>
               <strong>Innovation-First Learning</strong>
             </nav>
+            <span class="context-badge">Building Perspective</span>
           </div>
-          <p class="apartsin-page-header__lede">I developed Innovation-First Learning by combining my experience building systems, training teams, and hiring talent, then adapting this approach to the recent changes in the AI landscape. See the <a href="../teaching/hands-on-ai-science-courses-courses.html">courses</a> I teach using this approach.</p>
+          <p class="apartsin-page-header__lede">A teaching methodology shaped by patterns from <a href="../about/industry-experience.html">startup engineering</a> and <a href="./innovation-overview.html">industry R&D leadership</a>: build first, formalize later. These 10 principles guide the design of the <a href="../teaching/hands-on-ai-science-courses-courses.html">Hands-on AI Science courses</a>, <a href="../teaching/undergrad-ai-projects.html">B.Sc. projects</a>, and <a href="../teaching/current-students.html">M.Sc. supervision</a>.</p>
         </section>
         <section class="ifl-content" aria-label="Innovation-first learning principles">
           <div class="ifl-intro" role="group" aria-label="The 10 Commandments of Innovation-First Learning">
@@ -217,6 +214,7 @@
           </div>
           <div class="ifl-principle-panels">
             <section class="ifl-subpanel" aria-label="Commandments one to five">
+              <p class="ifl-subpanel__label">Foundation</p>
               <div class="ifl-principles">
                 <article class="ifl-principle">
                   <div class="ifl-principle__head">
@@ -261,6 +259,7 @@
               </div>
             </section>
             <section class="ifl-subpanel" aria-label="Commandments six to ten">
+              <p class="ifl-subpanel__label">Practice</p>
               <div class="ifl-principles">
                 <article class="ifl-principle">
                   <div class="ifl-principle__head">

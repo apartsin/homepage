@@ -719,6 +719,87 @@
     ensureDeepLinkAnchors();
     softenLegacyTopHeading();
     addBackToTop();
+    initScrollReveal();
+    injectSocialMeta();
+  }
+
+  /* #15 Scroll-reveal: staggered fade-in for cards */
+  function initScrollReveal() {
+    var selectors = '.content-card, .prt-card, .industry-card, .student-project-card, .book-card, .bot-card, .hub-card, .syllabus-card';
+    var cards = document.querySelectorAll(selectors);
+    if (!cards.length || !('IntersectionObserver' in window)) {
+      /* If no IntersectionObserver, just reveal everything */
+      for (var i = 0; i < cards.length; i++) cards[i].classList.add('is-revealed');
+      return;
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var el = entry.target;
+          /* Stagger siblings: find index among visible grid children */
+          var parent = el.parentElement;
+          var siblings = parent ? Array.prototype.slice.call(parent.children) : [];
+          var idx = siblings.indexOf(el);
+          var delay = Math.min(idx * 50, 300);
+          el.style.transitionDelay = delay + 'ms';
+          el.classList.add('is-revealed');
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    cards.forEach(function (card) { observer.observe(card); });
+  }
+
+  /* #12 Inject social meta + favicon */
+  function injectSocialMeta() {
+    var head = document.head;
+    if (!head) return;
+    var pageTitle = document.title || 'Sasha Apartsin';
+    var descMeta = document.querySelector('meta[name="description"]');
+    var pageDesc = descMeta ? descMeta.getAttribute('content') : '';
+    var pageUrl = location.href;
+
+    function addMeta(prop, content) {
+      if (!content) return;
+      if (document.querySelector('meta[property="' + prop + '"]')) return;
+      var m = document.createElement('meta');
+      m.setAttribute('property', prop);
+      m.setAttribute('content', content);
+      head.appendChild(m);
+    }
+    function addMetaName(name, content) {
+      if (!content) return;
+      if (document.querySelector('meta[name="' + name + '"]')) return;
+      var m = document.createElement('meta');
+      m.setAttribute('name', name);
+      m.setAttribute('content', content);
+      head.appendChild(m);
+    }
+
+    addMeta('og:title', pageTitle);
+    addMeta('og:description', pageDesc);
+    addMeta('og:type', 'website');
+    addMeta('og:url', pageUrl);
+    addMetaName('twitter:card', 'summary');
+    addMetaName('twitter:title', pageTitle);
+    addMetaName('twitter:description', pageDesc);
+
+    /* Favicon */
+    if (!document.querySelector('link[rel="icon"]')) {
+      var link = document.createElement('link');
+      link.rel = 'icon';
+      link.type = 'image/svg+xml';
+      link.href = (function () {
+        /* Generate inline SVG favicon with accent-colored "A" */
+        return 'data:image/svg+xml,' + encodeURIComponent(
+          '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">' +
+          '<rect width="32" height="32" rx="6" fill="%239c5a2e"/>' +
+          '<text x="16" y="24" font-family="sans-serif" font-weight="800" font-size="22" fill="white" text-anchor="middle">A</text>' +
+          '</svg>'
+        );
+      })();
+      head.appendChild(link);
+    }
   }
 
   if (document.readyState === 'loading') {

@@ -5,8 +5,18 @@
   var grid = document.getElementById("past-research-tasks-grid");
   if (!grid || cards.length === 0) return;
 
-  /* ── build cards ── */
+  /* ── build cards with decade headings ── */
+  var lastDecade = "";
   cards.forEach(function (card) {
+    var decade = Math.floor(parseInt(card.year, 10) / 10) * 10 + "s";
+    if (decade !== lastDecade) {
+      var heading = document.createElement("h3");
+      heading.className = "prt-decade-heading";
+      heading.textContent = decade;
+      heading.dataset.decade = decade;
+      grid.appendChild(heading);
+      lastDecade = decade;
+    }
     var article = document.createElement("article");
     article.className = "prt-card";
     article.dataset.year = card.year;
@@ -128,6 +138,19 @@
 
       el.hidden = !show;
       if (show) visible++;
+    }
+
+    /* Hide decade headings with no visible cards */
+    var headings = grid.querySelectorAll(".prt-decade-heading");
+    for (var h = 0; h < headings.length; h++) {
+      var hDecade = headings[h].dataset.decade;
+      var nextSibling = headings[h].nextElementSibling;
+      var hasVisible = false;
+      while (nextSibling && !nextSibling.classList.contains("prt-decade-heading")) {
+        if (!nextSibling.hidden) { hasVisible = true; break; }
+        nextSibling = nextSibling.nextElementSibling;
+      }
+      headings[h].hidden = !hasVisible;
     }
 
     if (emptyMsg) emptyMsg.hidden = visible > 0;
