@@ -1151,6 +1151,25 @@ summary:focus-visible {
   background: var(--site-accent);
 }
 
+/* ── HoS brand accent ── */
+.hos-brand {
+  font-weight: 800;
+  color: #164a83;
+  letter-spacing: -0.01em;
+}
+
+a .hos-brand,
+a.hos-brand {
+  color: #164a83;
+  text-decoration-color: rgba(22, 74, 131, 0.3);
+}
+
+.section-quick-links__title .hos-brand,
+.hub-page__title .hos-brand,
+.apartsin-page-header__crumbs .hos-brand {
+  color: #164a83;
+}
+
 /* Global card hover lift */
 .hub-card,
 .edu-card,
