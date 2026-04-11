@@ -141,8 +141,8 @@
       '/innovation-and-entrepreneurship.html': '/onesite/work/innovation-overview.html',
       '/patents': '/onesite/work/patents.html',
       '/patents.html': '/onesite/work/patents.html',
-      '/teaching/innovation': '/onesite/teaching/innovation.html',
-      '/teaching/innovation.html': '/onesite/teaching/innovation.html',
+      '/teaching/innovation': '/onesite/teaching/innovation-first-learning.html',
+      '/teaching/innovation.html': '/onesite/teaching/innovation-first-learning.html',
       '/projects': '/onesite/work/overview.html',
       '/projects.html': '/onesite/work/overview.html',
       '/teaching-and-curriculum-development': '/onesite/teaching/overview.html',
@@ -157,8 +157,8 @@
       '/research-projects-open-for-students.html': '/onesite/research/grad-opportunities.html',
       '/essays-and-writings': '/onesite/writing/blog-posts.html',
       '/essays-and-writings.html': '/onesite/writing/blog-posts.html',
-      '/highschool': '/onesite/about/highschool.html',
-      '/highschool.html': '/onesite/about/highschool.html',
+      '/highschool': '/onesite/about/education.html',
+      '/highschool.html': '/onesite/about/education.html',
     };
 
     const coursesMap = {
@@ -430,24 +430,24 @@
     const section = document.body.dataset.siteSection || 'home';
     const map = {
       about: [
-        { label: 'Innovation and Entrepreneurship', href: '/onesite/work/innovation-and-entrepreneurship.html' },
-        { label: 'Teaching and Curriculum', href: '/onesite/teaching/index.html' },
+        { label: 'Innovations', href: '/onesite/work/innovation-overview.html' },
+        { label: 'Teaching', href: '/onesite/teaching/overview.html' },
       ],
       work: [
-        { label: 'Projects', href: '/onesite/work/projects.html' },
-        { label: 'Essays and Writings', href: '/onesite/writing/essays-and-writings.html' },
+        { label: 'Recent Projects', href: '/onesite/work/recent-projects.html' },
+        { label: 'Blog Posts', href: '/onesite/writing/blog-posts.html' },
       ],
       teaching: [
-        { label: 'Course Catalog', href: '/onesite/courses/index.html' },
+        { label: 'Course Syllabi', href: '/onesite/teaching/hands-on-ai-science-courses-courses.html' },
         { label: 'Current Students', href: '/onesite/teaching/current-students.html' },
       ],
       courses: [
-        { label: 'Hands-On AI Science Course Series', href: '/onesite/courses/hos/series/index.html' },
-        { label: 'AI Engineering Projects', href: '/onesite/teaching/ai-engineering-projects-open-for-students.html' },
+        { label: 'Course Syllabi', href: '/onesite/teaching/hands-on-ai-science-courses-courses.html' },
+        { label: 'Student Projects', href: '/onesite/teaching/hands-on-ai-science-courses-student-projects.html' },
       ],
       writing: [
-        { label: 'Innovation and Entrepreneurship', href: '/onesite/work/innovation-and-entrepreneurship.html' },
-        { label: 'Projects', href: '/onesite/work/projects.html' },
+        { label: 'Innovations', href: '/onesite/work/innovation-overview.html' },
+        { label: 'Recent Projects', href: '/onesite/work/recent-projects.html' },
       ],
     };
 

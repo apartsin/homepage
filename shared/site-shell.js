@@ -117,7 +117,6 @@
         [
           /\/about\/academic-profile\.html$/i,
           /\/about\/education\.html$/i,
-          /\/about\/employment\.html$/i,
           /\/about\/industry-experience\.html$/i,
           /\/about\/phd-thesis\.html$/i,
         ],
@@ -135,18 +134,14 @@
           /\/research\/recent-publications\.html$/i,
           /\/research\/research-projects\.html$/i,
           /\/research\/grad-opportunities\.html$/i,
-          /\/research\/index\.html$/i,
           /\/about\/phd-thesis\.html$/i,
-          /\/teaching\/research-projects-open-for-students\.html$/i,
-          /\/teaching\/former-students-overview\.html$/i,
-          /\/teaching\/current-students-overview\.html$/i,
           /\/teaching\/former-students\.html$/i,
           /\/teaching\/current-students\.html$/i,
         ],
         [
           { label: 'Recent Publications', path: 'research/recent-publications.html' },
           { label: 'Current Research Projects', path: 'research/research-projects.html' },
-          { label: 'Open M.Sc. Projects', path: 'research/grad-opportunities.html' },
+          { label: 'Research Projects for M.Sc. Students', path: 'research/grad-opportunities.html' },
           { label: 'Former Students', path: 'teaching/former-students.html' },
           { label: 'Current Students', path: 'teaching/current-students.html' },
         ],
@@ -164,9 +159,8 @@
           /\/teaching\/hands-on-ai-science-courses-past-offerings\.html$/i,
           /\/teaching\/hands-on-ai-science-courses-student-projects\.html$/i,
           /\/teaching\/innovation-first-learning\.html$/i,
-          /\/teaching\/index\.html$/i,
-          /\/teaching\/innovation\.html$/i,
           /\/teaching\/ai-engineering-projects-open-for-students\.html$/i,
+          /\/teaching\/course-bots\.html$/i,
           /\/courses\//i,
         ],
         [
@@ -174,13 +168,14 @@
             label: 'Hands-On AI Science Course Series',
             path: 'teaching/hands-on-ai-science-courses-courses.html',
             secondary: [
-              { label: 'Courses', path: 'teaching/hands-on-ai-science-courses-courses.html' },
-              { label: 'Offerings', path: 'teaching/hands-on-ai-science-courses-past-offerings.html' },
-              { label: 'Student Projects', path: 'teaching/hands-on-ai-science-courses-student-projects.html' },
+              { label: 'Course Syllabi', path: 'teaching/hands-on-ai-science-courses-courses.html' },
+              { label: 'Course Offerings', path: 'teaching/hands-on-ai-science-courses-past-offerings.html' },
+              { label: 'Student Course Projects', path: 'teaching/hands-on-ai-science-courses-student-projects.html' },
+              { label: 'Course Bots', path: 'teaching/course-bots.html' },
             ],
           },
           { label: 'Computer Science Courses', path: 'teaching/other-cs-courses.html' },
-          { label: 'Open B.Sc. Projects', path: 'teaching/undergrad-ai-projects.html' },
+          { label: 'Projects for B.Sc. Students', path: 'teaching/undergrad-ai-projects.html' },
           { label: 'Former Students', path: 'teaching/former-students.html' },
           { label: 'Current Students', path: 'teaching/current-students.html' },
           { label: 'Innovation-First Learning', path: 'work/innovation-first-learning.html' },
@@ -193,12 +188,7 @@
         [
           /\/writing\/overview\.html$/i,
           /\/writing\/blog-posts\.html$/i,
-          /\/writing\/blog-vibe-coding\.html$/i,
-          /\/writing\/blog-ai-product-strategy\.html$/i,
-          /\/writing\/blog-ai-in-academia\.html$/i,
-          /\/writing\/blog-projects\.html$/i,
           /\/writing\/books-overview\.html$/i,
-          /\/writing\/essays-and-writings\.html$/i,
           /\/writing\/books\.html$/i,
         ],
         [
@@ -217,7 +207,7 @@
             path: 'writing/books-overview.html',
             secondary: [
               {
-                label: 'Building Conversational AI with LLMs and Agents',
+                label: 'Building Language AI with LLMs and Agents',
                 path: 'http://llmbook.apartsin.com/',
               },
               {
@@ -236,13 +226,12 @@
           /\/work\/past-projects\.html$/i,
           /\/work\/recent-projects\.html$/i,
           /\/work\/tech-stack-over-years\.html$/i,
-          /\/work\/projects\.html$/i,
           /\/about\/industry-experience\.html$/i,
-          /\/work\/consulting\.html$/i,
         ],
         [
           { label: 'Industry Experience', path: 'about/industry-experience.html' },
           { label: 'Recent Projects', path: 'work/recent-projects.html' },
+          { label: 'Past Projects', path: 'work/past-projects.html' },
         ],
       ),
       link(
@@ -254,7 +243,6 @@
           /\/work\/patents\.html$/i,
           /\/work\/entrepreneurship\.html$/i,
           /\/work\/innovation-first-learning\.html$/i,
-          /\/work\/innovation-and-entrepreneurship\.html$/i,
         ],
         [
           { label: 'Awards & Achievements', path: 'work/awards-achievements.html' },
@@ -284,12 +272,12 @@
       { label: 'Teaching Innovation', path: 'teaching/innovation-first-learning.html' },
     ],
     'teaching/hands-on-ai-science-courses.html': [
-      { label: 'Course List', path: 'teaching/hands-on-ai-science-courses-courses.html' },
-      { label: 'Student Projects', path: 'teaching/hands-on-ai-science-courses-student-projects.html' },
+      { label: 'Course Syllabi', path: 'teaching/hands-on-ai-science-courses-courses.html' },
+      { label: 'Student Course Projects', path: 'teaching/hands-on-ai-science-courses-student-projects.html' },
     ],
     'teaching/hands-on-ai-science-courses-past-offerings.html': [
       { label: 'Computer Science Courses', path: 'teaching/other-cs-courses.html' },
-      { label: 'Course List', path: 'teaching/hands-on-ai-science-courses-courses.html' },
+      { label: 'Course Syllabi', path: 'teaching/hands-on-ai-science-courses-courses.html' },
     ],
   };
 

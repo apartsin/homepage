@@ -132,6 +132,65 @@
 
   function init() {
     const chips = Array.from(document.querySelectorAll('.blog-filter-chip'));
+    const grid = document.querySelector('.blog-post-grid');
+    if (grid && Array.isArray(window.BLOG_POSTS_DATA) && window.BLOG_POSTS_DATA.length > 0) {
+      grid.innerHTML = '';
+      window.BLOG_POSTS_DATA.forEach((post) => {
+        const tags = Array.isArray(post.tags) ? post.tags.map(normalizeTheme).filter(Boolean) : [];
+        const article = document.createElement('article');
+        article.className = 'blog-post-card';
+        article.setAttribute('data-tags', tags.join(','));
+
+        const figure = document.createElement('figure');
+        figure.className = 'blog-post-card__media';
+        const image = document.createElement('img');
+        image.src = post.image || '';
+        image.alt = post.imageAlt || post.title || 'Blog post visual';
+        image.loading = 'lazy';
+        image.decoding = 'async';
+        figure.appendChild(image);
+        article.appendChild(figure);
+
+        const body = document.createElement('div');
+        body.className = 'blog-post-card__body';
+
+        const venue = document.createElement('p');
+        venue.className = 'blog-post-card__meta';
+        venue.textContent = post.venue || '';
+        body.appendChild(venue);
+
+        const heading = document.createElement('h2');
+        heading.className = 'blog-post-card__title';
+        const anchor = document.createElement('a');
+        anchor.href = post.href || '#';
+        anchor.textContent = post.title || '';
+        if (/^https?:\/\//i.test(post.href || '')) {
+          anchor.target = '_blank';
+          anchor.rel = 'noopener noreferrer';
+        }
+        heading.appendChild(anchor);
+        body.appendChild(heading);
+
+        const desc = document.createElement('p');
+        desc.className = 'blog-post-card__desc';
+        desc.textContent = post.description || '';
+        body.appendChild(desc);
+
+        const tagsWrap = document.createElement('div');
+        tagsWrap.className = 'blog-post-card__tags';
+        tags.forEach((tag) => {
+          const tagNode = document.createElement('span');
+          tagNode.className = 'blog-post-card__tag';
+          tagNode.textContent = THEME_LABELS[tag] || tag;
+          tagsWrap.appendChild(tagNode);
+        });
+        body.appendChild(tagsWrap);
+
+        article.appendChild(body);
+        grid.appendChild(article);
+      });
+    }
+
     const cards = Array.from(document.querySelectorAll('.blog-post-card'));
     if (!chips.length || !cards.length) {
       return;

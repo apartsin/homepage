@@ -7,6 +7,65 @@
   <title>Sasha Apartsin | Personal Website</title>
   <link rel="stylesheet" href="./shared/site-shell.css">
   <link rel="stylesheet" href="./shared/unified-theme.css">
+  <style>
+    .home-quick-links {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+    .home-quick-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 16px;
+      border: 1px solid var(--site-border, rgba(24,32,42,0.1));
+      border-radius: 14px;
+      background: rgba(255,255,255,0.92);
+      text-decoration: none;
+      color: var(--site-text, #18202a);
+      font: 700 0.88rem/1.3 "Manrope", sans-serif;
+      transition: box-shadow 180ms ease, transform 180ms ease;
+    }
+    .home-quick-link:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(24,32,42,0.08);
+    }
+    .home-quick-link__icon {
+      flex: 0 0 32px;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 0.04em;
+    }
+    .home-quick-link__icon--book { background: var(--site-accent, #9c5a2e); }
+    .home-quick-link__icon--course { background: #164a83; }
+    .home-quick-link__icon--msc { background: #2e7d5a; }
+    .home-quick-link__icon--bsc { background: #6c5aa0; }
+    .home-quick-panel {
+      margin-top: 24px;
+      padding: 18px 20px 20px;
+      border: 1px solid var(--site-border, rgba(24,32,42,0.1));
+      border-radius: 18px;
+      background: rgba(255,255,255,0.92);
+    }
+    .home-quick-panel__title {
+      margin: 0 0 14px;
+      color: var(--site-text, #18202a);
+      font: 800 0.82rem/1.2 "Manrope", sans-serif;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    @media (max-width: 640px) {
+      .home-quick-links { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body class="apartsin-shell-active apartsin-home" data-site-section="home">
   <div class="apartsin-shell">
@@ -25,28 +84,40 @@
     <div class="apartsin-shell__content">
       <main class="apartsin-shell__main">
         <section class="home-hero">
-          <p class="home-kicker">Welcome Message</p>
+          <p class="home-kicker">Welcome</p>
           <div class="home-hero-grid">
             <div class="home-hero-copy">
               <h1>Hello, I'm Sasha Apartsin.</h1>
               <p class="home-welcome-text">
-                For more than three decades, I have worked across software and AI in engineering, architecture, product, and research leadership roles.
-                Today, I focus on applied AI research and education.
-                I currently teach and supervise students, develop courses and curriculum, and work on practical AI projects and innovation collaborations.
-                I occasionally write blog posts and try to summarize what I've learned in online books.
+                Over three decades I have led applied AI and software work across <a href="./about/industry-experience.html">industry</a>, <a href="./research/interests.html">research</a>, and <a href="./teaching/overview.html">education</a>.
+                Today, as a faculty member at HIT's School of Computer Science, I <a href="./teaching/hands-on-ai-science-courses-courses.html">teach hands-on AI courses</a>, <a href="./teaching/current-students.html">supervise graduate research</a>, <a href="./work/recent-projects.html">build practical AI tools</a>, and <a href="./research/recent-publications.html">publish</a> at the intersection of language, vision, and signal processing.
+                I also write on <a href="./writing/blog-posts.html">AI product strategy, vibe-coding, and academia</a> and maintain <a href="./writing/books-overview.html">two open online books</a>.
               </p>
             </div>
             <figure class="home-hero-visual">
               <img src="./shared-media/www-apartsin-com/assets/home/img-008-84fa6154fb-dc11552f96.jpg" alt="Site overview across research, teaching, building, innovations, and writings">
             </figure>
           </div>
-          <nav class="home-hero-switcher" aria-label="Section switcher">
-            <a href="./about/academic-profile.html">About</a>
-            <a href="./research/interests.html">Research</a>
-            <a href="./teaching/overview.html">Teaching</a>
-            <a href="./work/overview.html">Building</a>
-            <a href="./work/innovation-overview.html">Innovations</a>
-            <a href="./writing/overview.html">Writing</a>
+        </section>
+        <section class="home-quick-panel">
+          <h2 class="home-quick-panel__title">Quick Links</h2>
+          <nav class="home-quick-links" aria-label="Quick links">
+            <a class="home-quick-link" href="./writing/books-overview.html">
+              <span class="home-quick-link__icon home-quick-link__icon--book">B</span>
+              Online Books
+            </a>
+            <a class="home-quick-link" href="./teaching/hands-on-ai-science-courses-past-offerings.html?year=2026">
+              <span class="home-quick-link__icon home-quick-link__icon--course">C</span>
+              Current Course Offerings
+            </a>
+            <a class="home-quick-link" href="./research/grad-opportunities.html">
+              <span class="home-quick-link__icon home-quick-link__icon--msc">M</span>
+              Open Projects for M.Sc.
+            </a>
+            <a class="home-quick-link" href="./teaching/undergrad-ai-projects.html">
+              <span class="home-quick-link__icon home-quick-link__icon--bsc">U</span>
+              Open Projects for B.Sc.
+            </a>
           </nav>
         </section>
       </main>

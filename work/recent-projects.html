@@ -9,19 +9,7 @@
   <link rel="stylesheet" href="../shared/unified-theme.css">
   <link rel="stylesheet" href="../shared/cards.css">
   <link rel="stylesheet" href="../shared/card-types/projects.css">
-  <style>
-    .apartsin-page-header__lede a {
-      color: #1d4ed8;
-      font-weight: 700;
-      text-decoration: underline;
-      text-underline-offset: 2px;
-      text-decoration-thickness: 1.2px;
-    }
-    .apartsin-page-header__lede a:hover,
-    .apartsin-page-header__lede a:focus-visible {
-      color: #1e40af;
-    }
-  </style>
+  <link rel="stylesheet" href="../shared/recent-projects.css">
 </head>
 <body class="apartsin-shell-active" data-site-section="work" data-card-type="projects" data-disable-cards-toolbar="true">
   <div class="apartsin-shell">
@@ -33,8 +21,8 @@
         <a href="../research/interests.html">Research</a>
         <a href="../teaching/overview.html">Teaching</a>
         <a href="../work/overview.html">Building</a>
-        <a href="../work/innovation-overview.html">Innovating</a>
-        <a href="../writing/overview.html">Writings</a>
+        <a href="../work/innovation-overview.html">Innovations</a>
+        <a href="../writing/overview.html">Writing</a>
       </nav>
     </aside>
     <div class="apartsin-shell__content">
@@ -54,87 +42,13 @@
         </section>
 
         <section class="cards-shell cards-shell--stacked" aria-label="Recent project cards">
-          <div class="cards-grid">
-            <article class="content-card content-card--stacked">
-              <div class="content-card__media">
-                <img src="../assets/work/projects/img-002-4f4f54c1cc.jpg" alt="Web2Comics project visual">
-              </div>
-              <div class="content-card__body">
-                <p class="content-card__eyebrow">Building</p>
-                <h2 class="content-card__title">Web2Comics Chrome Extension and Bot</h2>
-                <p class="content-card__desc">Converts web pages into comic-style visual summaries to make dense information faster to absorb and easier to share.</p>
-                <div class="content-card__links">
-                  <a class="content-card__link" href="https://github.com/ApartsinProjects/Web2Comics" target="_blank" rel="noopener noreferrer">GitHub</a>
-                  <a class="content-card__link" href="https://chromewebstore.google.com/detail/web2comics/ejdckmefpilmfjelpebamjjjcghbbemc" target="_blank" rel="noopener noreferrer">Chrome Web Store</a>
-                  <a class="content-card__link" href="https://medium.com/design-bootcamp/from-scroll-to-storyboard-generative-ai-and-the-comic-first-browser-b8eeef3c169a" target="_blank" rel="noopener noreferrer">Blog Post</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="content-card content-card--stacked">
-              <div class="content-card__media">
-                <img src="../assets/work/projects/img-003-3518939917.jpg" alt="AutoWebMCP project visual">
-              </div>
-              <div class="content-card__body">
-                <p class="content-card__eyebrow">Building</p>
-                <h2 class="content-card__title">AutoWebMCP</h2>
-                <p class="content-card__desc">Automation layer for web app interaction flows that helps agents learn repeatable UI operations once and reuse them reliably.</p>
-                <div class="content-card__links">
-                  <a class="content-card__link" href="https://github.com/ApartsinProjects/AutoWebMCP" target="_blank" rel="noopener noreferrer">GitHub</a>
-                  <a class="content-card__link" href="https://medium.com/design-bootcamp/turning-web-apps-into-reusable-tools-with-autowebmcp-20df82dc6d7d?source=list---------0-------3d7275b1f11b----------------------------" target="_blank" rel="noopener noreferrer">Blog Post</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="content-card content-card--stacked">
-              <div class="content-card__media">
-                <img src="../assets/work/projects/img-004-588a8cb27d.png" alt="PyTrace Autopsy project visual">
-              </div>
-              <div class="content-card__body">
-                <p class="content-card__eyebrow">Building</p>
-                <h2 class="content-card__title">PyTrace Autopsy</h2>
-                <p class="content-card__desc">Python runtime tracing tool for debugging and post-mortem analysis, designed to expose execution behavior that is usually hidden from agents.</p>
-                <div class="content-card__links">
-                  <a class="content-card__link" href="https://github.com/ApartsinProjects/pytrace-autopsy" target="_blank" rel="noopener noreferrer">GitHub</a>
-                  <a class="content-card__link" href="https://pub.towardsai.net/pytrace-autopsy-teaching-ai-to-debug-like-a-human-4341352d1aad" target="_blank" rel="noopener noreferrer">Blog Post</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="content-card content-card--stacked">
-              <div class="content-card__media">
-                <img src="../assets/work/projects/img-005-d899c3be44.png" alt="ModelMesh project visual">
-              </div>
-              <div class="content-card__body">
-                <p class="content-card__eyebrow">Building</p>
-                <h2 class="content-card__title">ModelMesh</h2>
-                <p class="content-card__desc">A unified integration point across AI model providers, aimed at simplifying multi-provider routing, evaluation, and product integration.</p>
-                <div class="content-card__links">
-                  <a class="content-card__link" href="https://github.com/ApartsinProjects/ModelMesh" target="_blank" rel="noopener noreferrer">GitHub</a>
-                  <a class="content-card__link" href="https://medium.com/towards-artificial-intelligence/modelmesh-a-free-open-source-library-for-easy-integration-with-external-ai-apis-680281ea3bbe?source=list---------2-------3d7275b1f11b----------------------------" target="_blank" rel="noopener noreferrer">Blog Post</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="content-card content-card--stacked">
-              <div class="content-card__media">
-                <img src="../assets/work/projects/img-006-edgelang-banner.png" alt="EdgeLang project banner">
-              </div>
-              <div class="content-card__body">
-                <p class="content-card__eyebrow">Building</p>
-                <h2 class="content-card__title">EdgeLang</h2>
-                <p class="content-card__desc">Chrome extension that turns regular web pages into contextual language practice with adaptive cues, passive/active modes, and multi-provider AI routing through ModelMesh.</p>
-                <div class="content-card__links">
-                  <a class="content-card__link" href="https://github.com/ApartsinProjects/edgelang" target="_blank" rel="noopener noreferrer">GitHub</a>
-                  <a class="content-card__link" href="https://medium.com/design-bootcamp/from-scroll-to-storyboard-generative-ai-and-the-comic-first-browser-b8eeef3c169a" target="_blank" rel="noopener noreferrer">Blog Post</a>
-                </div>
-              </div>
-            </article>
-          </div>
+          <div class="cards-grid" id="recent-projects-grid"></div>
         </section>
       </main>
     </div>
   </div>
+  <script defer src="./recent-projects.data.js"></script>
+  <script defer src="./recent-projects.js"></script>
   <script defer src="../shared/unified-enhance.js"></script>
   <script defer src="../shared/site-shell.js"></script>
 </body>

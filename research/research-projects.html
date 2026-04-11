@@ -7,55 +7,7 @@
   <title>Research Projects | Sasha Apartsin</title>
   <link rel="stylesheet" href="../shared/site-shell.css">
   <link rel="stylesheet" href="../shared/unified-theme.css">
-  <style>
-    .repo-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 14px;
-    }
-    .repo-card {
-      padding: 0;
-      overflow: hidden;
-    }
-    .repo-card__media {
-      display: block;
-      aspect-ratio: 16 / 9;
-      background: rgba(255, 255, 255, 0.92);
-      border-bottom: 1px solid var(--site-border);
-    }
-    .repo-card__media img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-      object-position: center;
-    }
-    .repo-card__body {
-      padding: 13px 14px 14px;
-    }
-    .repo-card__title {
-      margin: 0;
-      font-size: 1.02rem;
-      line-height: 1.25;
-    }
-    .repo-card__desc {
-      margin: 9px 0 0;
-      color: var(--site-muted);
-      font: 600 0.86rem/1.56 "Manrope", "Segoe UI", sans-serif;
-    }
-    .repo-card__link {
-      margin: 10px 0 0;
-      font: 700 0.82rem/1.3 "Manrope", "Segoe UI", sans-serif;
-    }
-    .repo-card__link a {
-      color: #1b4fd8;
-      text-decoration: none;
-    }
-    .repo-card__link a:hover,
-    .repo-card__link a:focus-visible {
-      text-decoration: underline;
-    }
-  </style>
+  <link rel="stylesheet" href="../shared/research-projects-cards.css">
 </head>
 <body class="apartsin-shell-active" data-site-section="research">
   <div class="apartsin-shell">
@@ -67,8 +19,8 @@
         <a href="../research/interests.html">Research</a>
         <a href="../teaching/overview.html">Teaching</a>
         <a href="../work/overview.html">Building</a>
-        <a href="../work/innovation-overview.html">Innovating</a>
-        <a href="../writing/overview.html">Writings</a>
+        <a href="../work/innovation-overview.html">Innovations</a>
+        <a href="../writing/overview.html">Writing</a>
       </nav>
     </aside>
     <div class="apartsin-shell__content">
@@ -86,41 +38,12 @@
           </div>
           <p class="apartsin-page-header__lede">I am currently working on several research projects that explore how AI can be applied to diverse real-world problems, with direct links to source code and project documentation.</p>
         </section>
-        <section class="repo-grid">
-          <article class="hub-card repo-card">
-            <div class="repo-card__media">
-              <img src="../assets/research/research-projects/coreason-readme-hero.png" alt="CoReason README hero visual">
-            </div>
-            <div class="repo-card__body">
-              <h2 class="repo-card__title">CoReason</h2>
-              <p class="repo-card__desc">AI-native learning platform for reasoning with LLMs, where students practice Framing, Judging, and Steering through iterative critique-and-improvement loops. Includes structured assessment modes, multilingual content, analytics, and PDF reporting for course workflows.</p>
-              <p class="repo-card__link"><a href="https://github.com/ApartsinProjects/CoReason" target="_blank" rel="noopener">GitHub Repository</a></p>
-            </div>
-          </article>
-          <article class="hub-card repo-card">
-            <div class="repo-card__media">
-              <img src="../assets/research/research-projects/coeval-banner.jpg" alt="CoEval project visual">
-            </div>
-            <div class="repo-card__body">
-              <h2 class="repo-card__title">CoEval</h2>
-              <p class="repo-card__desc">Ensemble-based LLM evaluation framework where models rotate through teacher, student, and judge roles to build synthetic benchmarks, score responses, and generate interactive analysis reports. Includes multi-provider support, cost planning, and resumable experiment runs.</p>
-              <p class="repo-card__link"><a href="https://github.com/ApartsinProjects/CoEval" target="_blank" rel="noopener">GitHub Repository</a></p>
-            </div>
-          </article>
-          <article class="hub-card repo-card">
-            <div class="repo-card__media">
-              <img src="../assets/research/research-projects/stablesteering-banner.png" alt="StableSteering project visual">
-            </div>
-            <div class="repo-card__body">
-              <h2 class="repo-card__title">StableSteering</h2>
-              <p class="repo-card__desc">Interactive diffusion steering system for image generation that moves from a text prompt into preference-guided refinement loops. Ships with a FastAPI MVP, GPU-backed Diffusers runtime, session tracing, and practical docs for research and implementation workflows.</p>
-              <p class="repo-card__link"><a href="https://github.com/ApartsinProjects/StableSteering" target="_blank" rel="noopener">GitHub Repository</a></p>
-            </div>
-          </article>
-        </section>
+        <section class="repo-grid" id="research-projects-grid" aria-label="Research project cards"></section>
       </main>
     </div>
   </div>
+  <script defer src="./research-projects.data.js"></script>
+  <script defer src="./research-projects.js"></script>
   <script defer src="../shared/unified-enhance.js"></script>
   <script defer src="../shared/site-shell.js"></script>
 </body>

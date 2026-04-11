@@ -7,6 +7,17 @@
     return;
   }
 
+  function normalizeAuthors(value) {
+    return String(value || '')
+      .replace(/[;|]/g, ',')
+      .replace(/\s+and\s+/gi, ', ')
+      .replace(/\s*&\s*/g, ', ')
+      .replace(/\s*,\s*/g, ', ')
+      .replace(/\s+/g, ' ')
+      .replace(/^,\s*|\s*,$/g, '')
+      .trim();
+  }
+
   function normalizeProject(project) {
     if (!project || typeof project !== 'object') {
       return null;
@@ -22,10 +33,15 @@
       ? project.l
       : (Array.isArray(project.links) ? project.links : []);
 
+    let normalizedTitle = String(title).trim();
+    if (/^RegUl AI tion$/i.test(normalizedTitle)) {
+      normalizedTitle = 'RegulAItion';
+    }
+
     return {
-      t: String(title).trim(),
+      t: normalizedTitle,
       c: String(course).trim(),
-      a: String(project.a || project.authors || '').trim(),
+      a: normalizeAuthors(project.a || project.authors || ''),
       d: String(project.d || project.description || '').trim(),
       i: String(project.i || project.image || '').trim(),
       l: links.map((link) => ({
@@ -35,15 +51,19 @@
     };
   }
 
-  const projects = sourceProjects.map(normalizeProject).filter((project) => project && project.t && project.c);
+  const projects = sourceProjects
+    .map(normalizeProject)
+    .filter((project) => project && project.t && project.c)
+    .filter((project) => !/^LLM EvalSphere$/i.test(project.t));
   const grid = document.getElementById('student-projects-grid');
   const typeSelect = document.getElementById('student-project-filter-type');
   const institutionSelect = document.getElementById('student-project-filter-institution');
   const yearSelect = document.getElementById('student-project-filter-year');
+  const semesterSelect = document.getElementById('student-project-filter-semester');
   const resetBtn = document.getElementById('student-project-filter-reset');
   const status = document.getElementById('student-project-status');
 
-  if (!grid || !typeSelect || !institutionSelect || !yearSelect || !resetBtn || !status) {
+  if (!grid || !typeSelect || !institutionSelect || !yearSelect || !semesterSelect || !resetBtn || !status) {
     return;
   }
 
@@ -102,6 +122,20 @@
     return value || 'Not specified';
   }
 
+  function parseSemesterToken(token, dateText) {
+    const rawToken = String(token || '').trim();
+    if (/^\d{4}[Ff]$/.test(rawToken) || /\bFall\b/i.test(dateText)) {
+      return 'Fall';
+    }
+    if (/^\d{4}[Ss]$/.test(rawToken) || /\bSpring\b/i.test(dateText)) {
+      return 'Spring';
+    }
+    if (/^\d{4}\/\d{2}$/.test(rawToken)) {
+      return 'Fall-Spring';
+    }
+    return 'Not specified';
+  }
+
   function yearFromDate(dateText) {
     const match = String(dateText || '').match(/\b(19|20)\d{2}\b/);
     return match ? match[0] : 'Not specified';
@@ -143,10 +177,21 @@
     return '';
   }
 
+  function normalizeCourseInstanceName(value) {
+    const text = String(value || '').replace(/\s+/g, ' ').trim();
+    const canonical = {
+      'LLMs & Agents': 'LLMs and Agents',
+      'Workshop: LLM Applications': 'Workshop in Applied LLM Systems',
+      'Workshop: GenAI Applications': 'Workshop in Generative Vision Models',
+      'Workshop: Computer Vision': 'Workshop in Computer Vision',
+    };
+    return canonical[text] || text.replace(/\s*&\s*/g, ' and ');
+  }
+
   function parseCourseMeta(courseLabel) {
     const raw = String(courseLabel || '').trim();
     const [instancePartRaw, rightPartRaw] = raw.split(/\s-\s(.+)/);
-    const instancePart = String(instancePartRaw || raw).trim();
+    const instancePart = normalizeCourseInstanceName(String(instancePartRaw || raw).trim());
     const rightPart = String(rightPartRaw || '').trim();
     let institution = 'Not specified';
     let courseInstance = rightPart || raw;
@@ -159,6 +204,11 @@
       if (tokens.length >= 1) {
         institution = parseInstitutionToken(tokens[0]);
       }
+      var semester = parseSemesterToken(dateToken, date);
+    }
+
+    if (typeof semester === 'undefined') {
+      semester = parseSemesterToken('', date);
     }
 
     const type = inferType(instancePart);
@@ -168,6 +218,7 @@
       courseInstance,
       date,
       year: yearFromDate(date),
+      semester,
       type,
       typeSlug: typeSlugFromLabel(type),
     };
@@ -227,6 +278,7 @@
     article.dataset.type = courseMeta.typeSlug;
     article.dataset.institution = courseMeta.institution;
     article.dataset.year = courseMeta.year;
+    article.dataset.semester = courseMeta.semester;
 
     if (project.i) {
       const media = document.createElement('div');
@@ -243,26 +295,21 @@
     const body = document.createElement('div');
     body.className = 'content-card__body';
 
-    const title = document.createElement('h2');
-    title.className = 'content-card__title';
-    title.textContent = project.t;
-    body.appendChild(title);
+    const topRow = document.createElement('div');
+    topRow.className = 'student-project-card__top';
 
-    const tags = document.createElement('div');
-    tags.className = 'student-project-card__tags';
-    [
-      { text: courseMeta.year, cls: 'student-project-card__tag--year' },
-      { text: courseMeta.instanceTitle, cls: 'student-project-card__tag--course' },
-      { text: courseMeta.type, cls: 'student-project-card__tag--type' },
-    ].forEach((item) => {
-      const tag = document.createElement('span');
-      tag.className = `student-project-card__tag ${item.cls}`;
-      tag.textContent = item.text;
-      tags.appendChild(tag);
-    });
+    const yearTag = document.createElement('span');
+    yearTag.className = 'student-project-card__chip student-project-card__chip--year';
+    yearTag.textContent = courseMeta.year;
+    topRow.appendChild(yearTag);
+
+    const typeTag = document.createElement('span');
+    typeTag.className = 'student-project-card__chip student-project-card__chip--type';
+    typeTag.textContent = courseMeta.type;
+    topRow.appendChild(typeTag);
 
     const institutionTag = document.createElement('span');
-    institutionTag.className = 'student-project-card__tag student-project-card__tag--institution-logo';
+    institutionTag.className = 'student-project-card__institution';
     institutionTag.setAttribute('aria-label', courseMeta.institution);
     institutionTag.title = courseMeta.institution;
     const logo = institutionLogos[courseMeta.institution];
@@ -276,36 +323,82 @@
     } else {
       institutionTag.textContent = institutionAbbrev(courseMeta.institution);
     }
-    tags.appendChild(institutionTag);
-    body.appendChild(tags);
+    topRow.appendChild(institutionTag);
+    body.appendChild(topRow);
 
-    if (project.a) {
-      const meta = document.createElement('p');
-      meta.className = 'content-card__meta';
-      meta.textContent = project.a;
-      body.appendChild(meta);
-    }
+    const headerBlock = document.createElement('div');
+    headerBlock.className = 'student-project-card__section student-project-card__section--header';
+
+    const title = document.createElement('h2');
+    title.className = 'content-card__title';
+    title.textContent = project.t;
+    headerBlock.appendChild(title);
+
+    const courseTag = document.createElement('p');
+    courseTag.className = 'student-project-card__course-name';
+    courseTag.textContent = courseMeta.instanceTitle || courseMeta.courseInstance;
+    headerBlock.appendChild(courseTag);
+    body.appendChild(headerBlock);
 
     const shortDescription = normalizeDescription(project.d, project.a);
     if (shortDescription) {
+      const summaryBlock = document.createElement('section');
+      summaryBlock.className = 'student-project-card__section student-project-card__section--summary';
+
+      const summaryLabel = document.createElement('p');
+      summaryLabel.className = 'student-project-card__section-label';
+      summaryLabel.textContent = 'Project Summary';
+      summaryBlock.appendChild(summaryLabel);
+
       const desc = document.createElement('p');
-      desc.className = 'content-card__desc';
+      desc.className = 'content-card__desc student-project-card__desc';
       desc.textContent = shortDescription;
-      body.appendChild(desc);
+      summaryBlock.appendChild(desc);
+
+      body.appendChild(summaryBlock);
+    }
+
+    if (project.a) {
+      const studentsBlock = document.createElement('section');
+      studentsBlock.className = 'student-project-card__section student-project-card__section--students';
+
+      const studentsLabel = document.createElement('p');
+      studentsLabel.className = 'student-project-card__section-label';
+      studentsLabel.textContent = 'Students';
+      studentsBlock.appendChild(studentsLabel);
+
+      const meta = document.createElement('p');
+      meta.className = 'content-card__meta student-project-card__students';
+      meta.textContent = project.a;
+      studentsBlock.appendChild(meta);
+
+      body.appendChild(studentsBlock);
     }
 
     const links = (project.l || [])
       .filter((link) => link && link.u)
       .filter((link) => !/^course page$/i.test(String(link.k || '').trim()));
+
+    const bottomRow = document.createElement('div');
+    bottomRow.className = 'student-project-card__bottom';
+
     if (links.length > 0) {
       const linksWrap = document.createElement('div');
-      linksWrap.className = 'content-card__links';
-      const hasGithub = links.some((link) => /github/i.test(link.k || '') || /github\.com/i.test(link.u || ''));
-      const hasPaper = links.some((link) => /^paper$/i.test(link.k || ''));
+      linksWrap.className = 'content-card__links student-project-card__links';
+      const rankLink = (link) => {
+        const key = String(link.k || '').toLowerCase();
+        const href = String(link.u || '').toLowerCase();
+        if (key.includes('github') || href.includes('github.com')) return 0;
+        if (key === 'paper') return 1;
+        return 2;
+      };
+      const orderedLinks = links.slice().sort((a, b) => rankLink(a) - rankLink(b));
+      const hasGithub = orderedLinks.some((link) => /github/i.test(link.k || '') || /github\.com/i.test(link.u || ''));
+      const hasPaper = orderedLinks.some((link) => /^paper$/i.test(link.k || ''));
       if (hasGithub && hasPaper) {
-        linksWrap.classList.add('content-card__links--dual');
+        linksWrap.classList.add('content-card__links--dual', 'student-project-card__links--paired');
       }
-      links.forEach((link) => {
+      orderedLinks.forEach((link) => {
         const anchor = document.createElement('a');
         anchor.className = 'content-card__link';
         anchor.href = link.u;
@@ -323,7 +416,8 @@
         }
         linksWrap.appendChild(anchor);
       });
-      body.appendChild(linksWrap);
+      bottomRow.appendChild(linksWrap);
+      body.appendChild(bottomRow);
     }
 
     article.appendChild(body);
@@ -340,15 +434,29 @@
       if (b === 'Not specified') return -1;
       return Number(b) - Number(a);
     });
+  const semesterOrder = ['Fall', 'Spring', 'Fall-Spring', 'Not specified'];
+  const allSemesters = Array.from(new Set(cards.map((card) => card.dataset.semester).filter(Boolean)))
+    .sort((a, b) => {
+      const aIndex = semesterOrder.indexOf(a);
+      const bIndex = semesterOrder.indexOf(b);
+      const safeA = aIndex === -1 ? semesterOrder.length : aIndex;
+      const safeB = bIndex === -1 ? semesterOrder.length : bIndex;
+      if (safeA !== safeB) {
+        return safeA - safeB;
+      }
+      return String(a).localeCompare(String(b));
+    });
 
   appendOptions(typeSelect, allTypes, optionLabelFromSlug);
   appendOptions(institutionSelect, allInstitutions, (v) => v);
   appendOptions(yearSelect, allYears, (v) => v);
+  appendOptions(semesterSelect, allSemesters, (v) => v);
 
   const params = new URLSearchParams(window.location.search);
   const presetType = String(params.get('type') || '').trim().toLowerCase();
   const presetInstitution = String(params.get('institution') || '').trim();
   const presetYear = String(params.get('year') || '').trim();
+  const presetSemester = String(params.get('semester') || '').trim();
 
   if (presetType && allTypes.includes(presetType)) {
     typeSelect.value = presetType;
@@ -359,18 +467,23 @@
   if (presetYear && allYears.includes(presetYear)) {
     yearSelect.value = presetYear;
   }
+  if (presetSemester && allSemesters.includes(presetSemester)) {
+    semesterSelect.value = presetSemester;
+  }
 
   function applyFilters() {
     const type = typeSelect.value;
     const institution = institutionSelect.value;
     const year = yearSelect.value;
+    const semester = semesterSelect.value;
     let visible = 0;
 
     cards.forEach((card) => {
       const typeMatch = type === 'all' || card.dataset.type === type;
       const institutionMatch = institution === 'all' || card.dataset.institution === institution;
       const yearMatch = year === 'all' || card.dataset.year === year;
-      const match = typeMatch && institutionMatch && yearMatch;
+      const semesterMatch = semester === 'all' || card.dataset.semester === semester;
+      const match = typeMatch && institutionMatch && yearMatch && semesterMatch;
       card.hidden = !match;
       if (match) {
         visible += 1;
@@ -380,7 +493,7 @@
     status.textContent = `Showing ${visible} of ${cards.length} projects`;
   }
 
-  [typeSelect, institutionSelect, yearSelect].forEach((selectEl) => {
+  [typeSelect, institutionSelect, yearSelect, semesterSelect].forEach((selectEl) => {
     selectEl.addEventListener('change', applyFilters);
   });
 
@@ -388,6 +501,7 @@
     typeSelect.value = 'all';
     institutionSelect.value = 'all';
     yearSelect.value = 'all';
+    semesterSelect.value = 'all';
     applyFilters();
   });
 

@@ -1,0 +1,12 @@
+.apartsin-page-header__lede a {
+  color: #1d4ed8;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1.2px;
+}
+
+.apartsin-page-header__lede a:hover,
+.apartsin-page-header__lede a:focus-visible {
+  color: #1e40af;
+}

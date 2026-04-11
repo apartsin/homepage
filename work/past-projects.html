@@ -3,10 +3,179 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Past project history and industry milestones.">
+  <meta name="description" content="Past applied research and engineering projects spanning 1992 to 2024 across signals, vision, text, voice, and video.">
   <title>Past Projects | Sasha Apartsin</title>
   <link rel="stylesheet" href="../shared/site-shell.css">
   <link rel="stylesheet" href="../shared/unified-theme.css">
+  <style>
+    /* ── filter bar ── */
+    .prt-filter {
+      margin-top: 12px;
+      padding: 12px 14px;
+      border: 1px solid var(--site-border);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.92);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+    .prt-filter__label {
+      margin: 0;
+      color: var(--site-muted, #586271);
+      font: 800 0.76rem/1.2 "Manrope", "Segoe UI", sans-serif;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .prt-filter__select {
+      appearance: none;
+      padding: 6px 28px 6px 10px;
+      border: 1px solid var(--site-border);
+      border-radius: 999px;
+      background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23586271'/%3E%3C/svg%3E") no-repeat right 10px center;
+      color: var(--site-text, #18202a);
+      font: 700 0.8rem/1.2 "Manrope", "Segoe UI", sans-serif;
+      cursor: pointer;
+      min-width: 0;
+    }
+    .prt-filter__select:focus {
+      outline: 2px solid var(--site-accent, #9c5a2e);
+      outline-offset: 1px;
+    }
+    .prt-filter__count {
+      margin: 0 0 0 auto;
+      color: var(--site-muted, #586271);
+      font: 600 0.78rem/1.2 "Manrope", "Segoe UI", sans-serif;
+      white-space: nowrap;
+    }
+    .prt-filter__empty {
+      width: 100%;
+      margin: 6px 0 0;
+      color: var(--site-muted);
+      font: 700 0.82rem/1.5 "Manrope", "Segoe UI", sans-serif;
+    }
+    @media (max-width: 600px) {
+      .prt-filter {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .prt-filter__count {
+        margin-left: 0;
+      }
+    }
+
+    .prt-card[hidden] {
+      display: none !important;
+    }
+
+    /* ── card grid ── */
+    .prt-grid {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    @media (max-width: 1100px) {
+      .prt-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 680px) {
+      .prt-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── card ── */
+    .prt-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      padding: 16px 17px 14px;
+      border: 1px solid var(--site-border, rgba(24,32,42,0.1));
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.9);
+      transition: box-shadow 0.15s ease;
+    }
+    .prt-card:hover {
+      box-shadow: 0 4px 18px rgba(24,32,42,0.08);
+    }
+
+    /* year badge */
+    .prt-card__year {
+      position: absolute;
+      top: 14px;
+      right: 15px;
+      margin: 0;
+      padding: 3px 9px;
+      border-radius: 8px;
+      background: var(--site-accent, #9c5a2e);
+      color: #fff;
+      font: 800 0.72rem/1.3 "Manrope", "Segoe UI", sans-serif;
+      letter-spacing: 0.04em;
+    }
+
+    /* company row */
+    .prt-card__org-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 8px;
+      padding-right: 54px;
+    }
+    .prt-card__logo-wrap {
+      flex: 0 0 48px;
+      width: 48px;
+      height: 30px;
+      border: 1px solid var(--site-border, rgba(24,32,42,0.1));
+      border-radius: 6px;
+      background: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2px;
+      overflow: hidden;
+    }
+    .prt-card__logo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+    }
+    .prt-card__org {
+      margin: 0;
+      color: var(--site-muted, #586271);
+      font: 700 0.78rem/1.2 "Manrope", "Segoe UI", sans-serif;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    /* project title */
+    .prt-card__title {
+      margin: 0 0 10px;
+      color: var(--site-text, #18202a);
+      font: 700 0.96rem/1.35 "Manrope", "Segoe UI", sans-serif;
+    }
+
+    /* data-type tags */
+    .prt-card__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: auto;
+    }
+    .prt-card__tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 9px;
+      border-radius: 999px;
+      border: 1px solid var(--site-border, rgba(24,32,42,0.1));
+      background: rgba(133, 114, 81, 0.08);
+      color: var(--site-text, #18202a);
+      font: 700 0.7rem/1.2 "Manrope", "Segoe UI", sans-serif;
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+    }
+  </style>
 </head>
 <body class="apartsin-shell-active" data-site-section="work">
   <div class="apartsin-shell">
@@ -18,30 +187,47 @@
         <a href="../research/interests.html">Research</a>
         <a href="../teaching/overview.html">Teaching</a>
         <a href="../work/overview.html">Building</a>
-        <a href="../work/innovation-overview.html">Innovating</a>
-        <a href="../writing/overview.html">Writings</a>
+        <a href="../work/innovation-overview.html">Innovations</a>
+        <a href="../writing/overview.html">Writing</a>
       </nav>
     </aside>
     <div class="apartsin-shell__content">
       <main class="apartsin-shell__main">
-        <section class="hub-page">
-          <p class="hub-page__kicker">Building</p>
-          <h1 class="hub-page__title">Past Projects</h1>
-          <p class="hub-page__lede">Earlier project phases and long-term industry contributions across software and data-driven systems.</p>
+        <section class="apartsin-page-header apartsin-page-header--standard">
+          <h1 class="apartsin-sr-only">Past Projects</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="./overview.html">Building</a>
+              <span aria-hidden="true">/</span>
+              <strong>Past Projects</strong>
+            </nav>
+          </div>
+          <p class="apartsin-page-header__lede">Applied research and engineering projects spanning three decades (1992 to 2024), across signals, vision, text, voice, and video domains.</p>
         </section>
-        <section class="hub-grid">
-          <article class="hub-card">
-            <h2>Historical Sources</h2>
-            <ul class="hub-links">
-              <li><a href="../about/industry-experience.html">Industry Experience</a></li>
-              <li><a href="../work/projects.html">Projects Archive</a></li>
-              <li><a href="../work/consulting.html">Consulting</a></li>
-            </ul>
-          </article>
+
+        <section class="prt-filter" id="prt-filter" aria-label="Project filters">
+          <p class="prt-filter__label">Filter</p>
+          <select class="prt-filter__select" id="prt-filter-decade" aria-label="Filter by decade">
+            <option value="all">All Decades</option>
+          </select>
+          <select class="prt-filter__select" id="prt-filter-org" aria-label="Filter by organization">
+            <option value="all">All Organizations</option>
+          </select>
+          <select class="prt-filter__select" id="prt-filter-type" aria-label="Filter by data type">
+            <option value="all">All Data Types</option>
+          </select>
+          <p class="prt-filter__count" id="prt-filter-count"></p>
+          <p class="prt-filter__empty" id="prt-filter-empty" hidden>No projects match this combination of filters.</p>
         </section>
+
+        <section class="prt-grid" id="past-research-tasks-grid" aria-label="Past research task cards"></section>
       </main>
     </div>
   </div>
+  <script defer src="./past-research-tasks.data.js"></script>
+  <script defer src="./past-research-tasks.js"></script>
   <script defer src="../shared/unified-enhance.js"></script>
   <script defer src="../shared/site-shell.js"></script>
 </body>

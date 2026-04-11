@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AI-powered course bots that help students build project proposals for Hands-on AI Science courses.">
+  <title>Course Bots | Sasha Apartsin</title>
+  <link rel="stylesheet" href="../shared/site-shell.css">
+  <link rel="stylesheet" href="../shared/unified-theme.css">
+  <style>
+    .bots-grid {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 16px;
+    }
+    .bot-card {
+      display: flex;
+      flex-direction: column;
+      padding: 22px 22px 20px;
+      border: 1px solid var(--site-border, rgba(24,32,42,0.1));
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(24,101,168,0.05), rgba(255,255,255,0) 30%), rgba(255,255,255,0.95);
+      box-shadow: 0 12px 28px rgba(15,23,42,0.06);
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+    .bot-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 36px rgba(15,23,42,0.1);
+    }
+    .bot-card__eyebrow {
+      margin: 0 0 6px;
+      color: #164a83;
+      font: 800 0.72rem/1.2 "Manrope", sans-serif;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .bot-card__title {
+      margin: 0 0 10px;
+      color: var(--site-text, #18202a);
+      font: 700 1.1rem/1.3 "Manrope", sans-serif;
+    }
+    .bot-card__desc {
+      margin: 0 0 14px;
+      color: var(--site-muted, #586271);
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+    .bot-card__link {
+      display: inline-flex;
+      align-items: center;
+      margin-top: auto;
+      padding: 9px 16px;
+      border: 1px solid rgba(24,101,168,0.3);
+      border-radius: 999px;
+      background: rgba(24,101,168,0.08);
+      color: #164a83;
+      font: 700 0.85rem/1.2 "Manrope", sans-serif;
+      text-decoration: none;
+      width: fit-content;
+      transition: background 180ms ease;
+    }
+    .bot-card__link:hover {
+      background: rgba(24,101,168,0.15);
+    }
+    @media (max-width: 640px) {
+      .bots-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="teaching">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar">
+      <a class="apartsin-shell__brand" href="../index.html">Sasha Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../about/academic-profile.html">About</a>
+        <a href="../research/interests.html">Research</a>
+        <a href="../teaching/overview.html">Teaching</a>
+        <a href="../work/overview.html">Building</a>
+        <a href="../work/innovation-overview.html">Innovations</a>
+        <a href="../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard">
+          <h1 class="apartsin-sr-only">Course Bots</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="./overview.html">Teaching</a>
+              <span aria-hidden="true">/</span>
+              <a href="./hands-on-ai-science-courses-courses.html">Course Syllabi</a>
+              <span aria-hidden="true">/</span>
+              <strong>Course Bots</strong>
+            </nav>
+          </div>
+          <p class="apartsin-page-header__lede">AI-powered advisers that help students develop and refine project proposals for the <a href="./hands-on-ai-science-courses-courses.html">Hands-on AI Science courses</a>. Each bot is tailored to a specific course, guiding students through topic selection, scope definition, data sourcing, and proposal structure to produce a well-formed project plan ready for instructor review.</p>
+        </section>
+
+        <section class="bots-grid" aria-label="Course bot cards">
+          <article class="bot-card">
+            <p class="bot-card__eyebrow">Language AI Course</p>
+            <h2 class="bot-card__title">LLM Project Adviser</h2>
+            <p class="bot-card__desc">Helps students brainstorm, scope, and structure project proposals for the <a href="../courses/hos/series/llm-course.html">Building Language AI</a> course. Covers topic selection around LLMs, conversational agents, retrieval-augmented generation, and tool-use pipelines.</p>
+            <a class="bot-card__link" href="https://chatgpt.com/g/g-69201c57ada48191bf28f6e74f51b4b0-llm-project-adviser" target="_blank" rel="noopener noreferrer">Open Bot</a>
+          </article>
+          <article class="bot-card">
+            <p class="bot-card__eyebrow">GenAI Course</p>
+            <h2 class="bot-card__title">GenAI Project Adviser</h2>
+            <p class="bot-card__desc">Guides students through project proposal development for generative AI courses. Covers topic selection around image generation, style transfer, multimodal synthesis, and creative AI applications.</p>
+            <a class="bot-card__link" href="https://chatgpt.com/g/g-692081fc6a008191a20769ed5f9d7b6b-genai-project-adviser" target="_blank" rel="noopener noreferrer">Open Bot</a>
+          </article>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script defer src="../shared/unified-enhance.js"></script>
+  <script defer src="../shared/site-shell.js"></script>
+</body>
+</html>

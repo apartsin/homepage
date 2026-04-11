@@ -3,102 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Hands-On AI Science Course Series course lineup.">
-  <title>Hands-On AI Science Course Series - Courses | Sasha Apartsin</title>
+  <meta name="description" content="Hands-On AI Science Course Series syllabi lineup.">
+  <title>Hands-On AI Science Course Series - Course Syllabi | Sasha Apartsin</title>
   <link rel="stylesheet" href="../shared/site-shell.css">
   <link rel="stylesheet" href="../shared/unified-theme.css">
   <link rel="stylesheet" href="../shared/cards.css">
   <link rel="stylesheet" href="../shared/card-types/course.css">
-  <style>
-    .hos-course-title {
-      display: grid;
-      gap: 2px;
-      line-height: 1.15;
-      min-height: 3.9em;
-      text-align: center;
-      justify-items: center;
-    }
-    .hos-course-title__line {
-      display: block;
-    }
-    .hos-course-title__line--with {
-      color: #4f5f73;
-      font-size: 0.72em;
-      font-weight: 700;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-    }
-    .hos-course-title__focus {
-      color: #114b7a;
-      font-weight: 800;
-    }
-    .hos-course-title__detail {
-      color: #7b2f66;
-      font-weight: 800;
-      font-size: 0.88em;
-    }
-    .cards-grid .content-card {
-      border-radius: 16px;
-      border-color: rgba(17, 52, 84, 0.14);
-      box-shadow: 0 12px 22px rgba(16, 32, 54, 0.1);
-    }
-    .cards-grid.cards-grid--2x2 {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-    }
-    .cards-grid .content-card__media {
-      aspect-ratio: 16 / 8.4;
-    }
-    .cards-grid .content-card__media img {
-      object-fit: cover;
-    }
-    .cards-grid .content-card__body {
-      gap: 12px;
-      padding: 14px 14px 15px;
-    }
-    .cards-grid .content-card__links {
-      display: flex;
-      flex-wrap: nowrap;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      margin-top: auto;
-    }
-    .cards-grid .content-card__link {
-      flex: 0 0 auto;
-      justify-content: center;
-      text-align: center;
-      min-height: 34px;
-      padding: 6px 10px;
-      min-width: 92px;
-      font-size: 0.76rem;
-      line-height: 1.2;
-      letter-spacing: 0.03em;
-      white-space: nowrap;
-      border: 1px solid rgba(17, 75, 122, 0.38);
-      background: rgba(17, 75, 122, 0.14);
-      color: #0f4d7d;
-      font-weight: 800;
-      border-radius: 10px;
-      box-shadow: 0 1px 6px rgba(17, 75, 122, 0.14);
-    }
-    .cards-grid .content-card__link:hover {
-      background: rgba(17, 75, 122, 0.22);
-      border-color: rgba(17, 75, 122, 0.55);
-      color: #0b4169;
-    }
-    @media (max-width: 760px) {
-      .cards-grid.cards-grid--2x2 {
-        grid-template-columns: 1fr;
-      }
-      .cards-grid .content-card__link {
-        min-height: 32px;
-        padding: 5px 9px;
-        min-width: 88px;
-        font-size: 0.72rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="../shared/hos-courses.css">
 </head>
 <body class="apartsin-shell-active" data-site-section="teaching" data-card-type="course">
   <div class="apartsin-shell">
@@ -110,97 +21,34 @@
         <a href="../research/interests.html">Research</a>
         <a href="../teaching/overview.html">Teaching</a>
         <a href="../work/overview.html">Building</a>
-        <a href="../work/innovation-overview.html">Innovating</a>
-        <a href="../writing/overview.html">Writings</a>
+        <a href="../work/innovation-overview.html">Innovations</a>
+        <a href="../writing/overview.html">Writing</a>
       </nav>
     </aside>
     <div class="apartsin-shell__content">
       <main class="apartsin-shell__main">
         <section class="apartsin-page-header apartsin-page-header--standard" id="hands-on-courses-overview">
-          <h1 class="apartsin-sr-only">Hands-On AI Science Course Series Courses</h1>
+          <h1 class="apartsin-sr-only">Hands-On AI Science Course Series Course Syllabi</h1>
           <div class="apartsin-page-header__top">
             <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
               <a href="../index.html">Home</a>
               <span aria-hidden="true">/</span>
               <a href="./overview.html">Teaching</a>
               <span aria-hidden="true">/</span>
-              <strong>Hands-On AI Science Course Series</strong>
+              <strong>Course Syllabi</strong>
             </nav>
           </div>
-          <p class="apartsin-page-header__lede">Current and in-development courses in the Hands-On AI Science Course Series.</p>
+          <p class="apartsin-page-header__lede">Current and in-development course syllabi in the Hands-On AI Science Course Series.</p>
         </section>
 
         <section class="cards-shell cards-shell--collection" aria-label="Hands-On AI Science course cards" data-disable-toolbar="true">
-          <div class="cards-grid cards-grid--2x2">
-            <article class="content-card content-card--collection">
-              <div class="content-card__media">
-                <img src="../assets/courses/hos-series/llm-course/img-006-conversational-ai-gemini.png" alt="Building Conversational AI with Large Language Models and Agents">
-              </div>
-              <div class="content-card__body">
-                <h2 class="content-card__title hos-course-title">
-                  <span class="hos-course-title__line">Building <span class="hos-course-title__focus">Conversational AI</span> with</span>
-                  <span class="hos-course-title__line"><span class="hos-course-title__detail">Large Language Models and Agents</span></span>
-                </h2>
-                <div class="content-card__links">
-                  <a class="content-card__link" href="../courses/hos/series/llm-course.html">Syllabus</a>
-                  <a class="content-card__link" href="../teaching/hands-on-ai-science-courses-past-offerings.html?type=language-ai">Offerings</a>
-                  <a class="content-card__link" href="../teaching/hands-on-ai-science-courses-student-projects.html?type=language-ai">Student Projects</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="content-card content-card--collection">
-              <div class="content-card__media">
-                <img src="../assets/courses/hos-series/embvision-course/img-008-vision-ai-gemini.png" alt="Building Vision AI with Foundation and Generative Models">
-              </div>
-              <div class="content-card__body">
-                <h2 class="content-card__title hos-course-title">
-                  <span class="hos-course-title__line">Building <span class="hos-course-title__focus">Vision AI</span> with</span>
-                  <span class="hos-course-title__line"><span class="hos-course-title__detail">Foundation and Generative Models</span></span>
-                </h2>
-                <div class="content-card__links">
-                  <a class="content-card__link" href="../courses/hos/series/embvision-course.html">Syllabus</a>
-                  <a class="content-card__link" href="../teaching/hands-on-ai-science-courses-past-offerings.html?type=vision-ai">Offerings</a>
-                  <a class="content-card__link" href="../teaching/hands-on-ai-science-courses-student-projects.html?type=vision-ai">Student Projects</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="content-card content-card--collection">
-              <div class="content-card__media">
-                <img src="../assets/courses/hos-series/bigdata-course/img-012-scalable-ai-gemini.png" alt="Building Scalable AI with Big Data and Distributed AI">
-              </div>
-              <div class="content-card__body">
-                <h2 class="content-card__title hos-course-title">
-                  <span class="hos-course-title__line">Building <span class="hos-course-title__focus">Scalable AI</span> with</span>
-                  <span class="hos-course-title__line"><span class="hos-course-title__detail">Big Data and Distributed Intelligence</span></span>
-                </h2>
-                <div class="content-card__links">
-                  <a class="content-card__link" href="../courses/hos/series/bigdata-course.html">Syllabus</a>
-                  <a class="content-card__link" href="../teaching/hands-on-ai-science-courses-past-offerings.html?type=scalable-ai">Offerings</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="content-card content-card--collection">
-              <div class="content-card__media">
-                <img src="../assets/courses/hos-series/temporalai-course/img-008-temporal-ai-gemini.png" alt="Building Temporal AI with Reinforcement Learning and Sequential Intelligence">
-              </div>
-              <div class="content-card__body">
-                <h2 class="content-card__title hos-course-title">
-                  <span class="hos-course-title__line">Building <span class="hos-course-title__focus">Temporal AI</span> with</span>
-                  <span class="hos-course-title__line"><span class="hos-course-title__detail">Sequential Intelligence and Reinforcement Learning</span></span>
-                </h2>
-                <div class="content-card__links">
-                  <a class="content-card__link" href="../courses/hos/series/temporalai-course.html">Syllabus</a>
-                </div>
-              </div>
-            </article>
-          </div>
+          <div class="cards-grid cards-grid--2x2" id="hos-course-syllabi-grid"></div>
         </section>
       </main>
     </div>
   </div>
+  <script defer src="./hands-on-ai-science-courses-courses.data.js"></script>
+  <script defer src="./hands-on-ai-science-courses-courses.js"></script>
   <script defer src="../shared/unified-enhance.js"></script>
   <script defer src="../shared/site-shell.js"></script>
 </body>
