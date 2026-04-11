@@ -1,5 +1,5 @@
 (function () {
-  window.ApartsinCards.registerPage('temporalai-course', {
+  window.ApartsinCards.registerPage('temporal-ai', {
     blocks: [
       {
         start: 1,

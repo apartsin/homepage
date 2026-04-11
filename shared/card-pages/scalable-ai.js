@@ -1,17 +1,17 @@
 (function () {
-  window.ApartsinCards.registerPage('embvision-course', {
+  window.ApartsinCards.registerPage('scalable-ai', {
     blocks: [
       {
         start: 1,
-        end: 7,
+        end: 6,
         anchor: 0,
         mode: 'course',
         cardEyebrow: 'Course',
       },
       {
-        start: 9,
-        end: 11,
-        anchor: 8,
+        start: 8,
+        end: 10,
+        anchor: 7,
         mode: 'section-grid',
         cardEyebrow: 'Student project',
       },

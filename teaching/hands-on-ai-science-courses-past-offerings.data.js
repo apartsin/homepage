@@ -9,7 +9,7 @@ window.HOS_PAST_OFFERINGS = [
     title: "Deep Generative Models",
     meta: "M.Sc. in Data Science",
     desc: "2026, Spring",
-    trackHref: "../courses/hos/series/embvision-course.html",
+    trackHref: "../courses/hos/series/vision-ai.html",
     trackLabel: "Vision AI",
     links: [{ label: "Moodle", href: "https://lemida.biu.ac.il/course/view.php?id=110002" }]
   },
@@ -23,7 +23,7 @@ window.HOS_PAST_OFFERINGS = [
     title: "Modern Image Processing",
     meta: "B.Sc. in Electrical Engineering",
     desc: "2026, Spring",
-    trackHref: "../courses/hos/series/embvision-course.html",
+    trackHref: "../courses/hos/series/vision-ai.html",
     trackLabel: "Vision AI",
     links: [{ label: "Moodle", href: "https://lemida.biu.ac.il/course/view.php?id=107928" }]
   },
@@ -37,7 +37,7 @@ window.HOS_PAST_OFFERINGS = [
     title: "LLMs in Healthcare",
     meta: "B.Sc. in Digital Medicine",
     desc: "2026, Spring",
-    trackHref: "../courses/hos/series/llm-course.html",
+    trackHref: "../courses/hos/series/language-ai.html",
     trackLabel: "Language AI",
     links: [{ label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=26698" }]
   },
@@ -51,7 +51,7 @@ window.HOS_PAST_OFFERINGS = [
     title: "LLMs and Agents",
     meta: "B.Sc. in Computer Science",
     desc: "2026, Spring",
-    trackHref: "../courses/hos/series/llm-course.html",
+    trackHref: "../courses/hos/series/language-ai.html",
     trackLabel: "Language AI",
     links: [{ label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=26295" }]
   },
@@ -65,7 +65,7 @@ window.HOS_PAST_OFFERINGS = [
     title: "Workshop in Applied LLM Systems",
     meta: "B.Sc. in Computer Science",
     desc: "2025-2026, Fall-Spring",
-    trackHref: "../courses/hos/series/llm-course.html",
+    trackHref: "../courses/hos/series/language-ai.html",
     trackLabel: "Language AI",
     links: [
       { label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=26092" },
@@ -82,7 +82,7 @@ window.HOS_PAST_OFFERINGS = [
     title: "Workshop in Generative Vision Models",
     meta: "B.Sc. in Computer Science",
     desc: "2025-2026, Fall-Spring",
-    trackHref: "../courses/hos/series/embvision-course.html",
+    trackHref: "../courses/hos/series/vision-ai.html",
     trackLabel: "Vision AI",
     links: [
       { label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=26092" },
@@ -99,7 +99,7 @@ window.HOS_PAST_OFFERINGS = [
     title: "Workshop in Computer Vision",
     meta: "B.Sc. in Computer Science",
     desc: "2025-2026, Fall-Spring",
-    trackHref: "../courses/hos/series/embvision-course.html",
+    trackHref: "../courses/hos/series/vision-ai.html",
     trackLabel: "Vision AI",
     links: [
       { label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=26188" },
@@ -116,7 +116,7 @@ window.HOS_PAST_OFFERINGS = [
     title: "LLMs in Healthcare",
     meta: "B.Sc. in Digital Medicine",
     desc: "2025, Spring",
-    trackHref: "../courses/hos/series/llm-course.html",
+    trackHref: "../courses/hos/series/language-ai.html",
     trackLabel: "Language AI",
     links: [
       { label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=23950" },
@@ -133,7 +133,7 @@ window.HOS_PAST_OFFERINGS = [
     title: "LLMs and Agents",
     meta: "M.Sc. in Data Science",
     desc: "2025, Fall",
-    trackHref: "../courses/hos/series/llm-course.html",
+    trackHref: "../courses/hos/series/language-ai.html",
     trackLabel: "Language AI",
     links: [
       { label: "Moodle", href: "https://lemida.biu.ac.il/course/view.php?id=106612" },
@@ -150,7 +150,7 @@ window.HOS_PAST_OFFERINGS = [
     title: "Deep Generative Models",
     meta: "B.Sc. in Computer Science",
     desc: "2025, Fall",
-    trackHref: "../courses/hos/series/embvision-course.html",
+    trackHref: "../courses/hos/series/vision-ai.html",
     trackLabel: "Vision AI",
     links: [
       { label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=25773" },
@@ -167,7 +167,7 @@ window.HOS_PAST_OFFERINGS = [
     title: "LLMs and Agents",
     meta: "B.Sc. in Computer Science",
     desc: "2025, Fall",
-    trackHref: "../courses/hos/series/llm-course.html",
+    trackHref: "../courses/hos/series/language-ai.html",
     trackLabel: "Language AI",
     links: [
       { label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=25328" },
@@ -184,7 +184,7 @@ window.HOS_PAST_OFFERINGS = [
     title: "LLMs and Agents",
     meta: "B.Sc. in Computer Science",
     desc: "2025, Spring",
-    trackHref: "../courses/hos/series/llm-course.html",
+    trackHref: "../courses/hos/series/language-ai.html",
     trackLabel: "Language AI",
     links: [
       { label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=24324" },
@@ -201,7 +201,7 @@ window.HOS_PAST_OFFERINGS = [
     title: "Data Science and Big Data Algorithms",
     meta: "B.Sc./M.Sc. in Computer Science",
     desc: "2015, Spring",
-    trackHref: "../courses/hos/series/bigdata-course.html",
+    trackHref: "../courses/hos/series/scalable-ai.html",
     trackLabel: "Scalable AI",
     links: [{ label: "Syllabus", href: "https://www30.tau.ac.il/yedion/syllabus.asp?course=0368331901&year=2014" }]
   },
@@ -215,7 +215,7 @@ window.HOS_PAST_OFFERINGS = [
     title: "Image Processing and Computer Vision",
     meta: "B.Sc. in Software Engineering",
     desc: "2020, Spring",
-    trackHref: "../courses/hos/series/embvision-course.html",
+    trackHref: "../courses/hos/series/vision-ai.html",
     trackLabel: "Vision AI",
     links: [{ label: "Syllabus", href: "https://courses.biu.ac.il/CourseSylabusView.aspx?lid=714406" }]
   },
@@ -229,7 +229,7 @@ window.HOS_PAST_OFFERINGS = [
     title: "Introduction to Image Processing",
     meta: "B.Sc. in Computer Science",
     desc: "2013, Spring",
-    trackHref: "../courses/hos/series/embvision-course.html",
+    trackHref: "../courses/hos/series/vision-ai.html",
     trackLabel: "Vision AI",
     links: [{ label: "Syllabus", href: "https://www30.tau.ac.il/yedion/syllabus.asp?year=2012&course=03683246" }]
   },
@@ -243,7 +243,7 @@ window.HOS_PAST_OFFERINGS = [
     title: "3D Computer Vision",
     meta: "B.Sc. in Computer Science",
     desc: "2012, Fall",
-    trackHref: "../courses/hos/series/embvision-course.html",
+    trackHref: "../courses/hos/series/vision-ai.html",
     trackLabel: "Vision AI",
     links: []
   }

@@ -1,17 +1,17 @@
 (function () {
-  window.ApartsinCards.registerPage('bigdata-course', {
+  window.ApartsinCards.registerPage('language-ai', {
     blocks: [
       {
         start: 1,
-        end: 6,
+        end: 7,
         anchor: 0,
         mode: 'course',
         cardEyebrow: 'Course',
       },
       {
-        start: 8,
-        end: 10,
-        anchor: 7,
+        start: 9,
+        end: 11,
+        anchor: 8,
         mode: 'section-grid',
         cardEyebrow: 'Student project',
       },

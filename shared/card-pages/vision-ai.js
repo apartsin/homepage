@@ -1,5 +1,5 @@
 (function () {
-  window.ApartsinCards.registerPage('llm-course', {
+  window.ApartsinCards.registerPage('vision-ai', {
     blocks: [
       {
         start: 1,

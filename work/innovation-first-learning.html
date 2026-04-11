@@ -18,46 +18,45 @@
     }
     .ifl-intro {
       margin: 0;
-      padding: clamp(12px, 2.2vw, 18px);
-      border: 1px solid rgba(24, 101, 168, 0.2);
-      border-radius: 14px;
+      padding: clamp(16px, 2.6vw, 24px) clamp(14px, 2.2vw, 20px);
+      border: none;
+      border-radius: 16px;
       background:
-        radial-gradient(140% 120% at 0% 0%, rgba(24, 101, 168, 0.14), rgba(24, 101, 168, 0) 58%),
-        linear-gradient(180deg, rgba(24, 101, 168, 0.08), rgba(24, 101, 168, 0.03));
-      display: grid;
-      grid-template-columns: auto minmax(0, 1fr);
+        linear-gradient(135deg, rgba(24, 101, 168, 0.1), rgba(24, 101, 168, 0.03) 60%),
+        rgba(255, 255, 255, 0.95);
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 12px;
+      text-align: center;
+      gap: 6px;
     }
     .ifl-intro__count {
-      width: clamp(36px, 4.3vw, 46px);
-      height: clamp(36px, 4.3vw, 46px);
+      width: clamp(44px, 5vw, 56px);
+      height: clamp(44px, 5vw, 56px);
       border-radius: 999px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid rgba(24, 101, 168, 0.36);
-      background: rgba(24, 101, 168, 0.12);
+      border: 2px solid rgba(24, 101, 168, 0.3);
+      background: rgba(24, 101, 168, 0.1);
       color: #164a83;
-      font: 800 clamp(0.95rem, 1.8vw, 1.18rem)/1 "Manrope", "Segoe UI", sans-serif;
-      letter-spacing: 0.01em;
+      font: 800 clamp(1.1rem, 2vw, 1.4rem)/1 "Manrope", sans-serif;
     }
     .ifl-intro__title {
       margin: 0;
-      display: grid;
-      gap: 2px;
       color: #1d2f42;
     }
     .ifl-intro__title-main {
       display: block;
-      font: 900 clamp(1.02rem, 2vw, 1.32rem)/1.2 "Manrope", "Segoe UI", sans-serif;
-      letter-spacing: 0.005em;
+      font: 900 clamp(1.2rem, 2.4vw, 1.6rem)/1.15 "Manrope", sans-serif;
+      letter-spacing: -0.01em;
       color: #163f70;
     }
     .ifl-intro__title-sub {
       display: block;
-      font: 700 clamp(0.9rem, 1.55vw, 1.04rem)/1.35 "Manrope", "Segoe UI", sans-serif;
-      color: #2a3f57;
+      font: 600 clamp(0.82rem, 1.3vw, 0.94rem)/1.4 "Source Serif 4", Georgia, serif;
+      color: #4a6a84;
+      margin-top: 2px;
     }
     .ifl-principle-panels {
       display: grid;

@@ -197,12 +197,12 @@
       '/index.html': '/onesite/courses/hos/index.html',
       '/hos-home': '/onesite/courses/hos/series/index.html',
       '/hos-home.html': '/onesite/courses/hos/series/index.html',
-      '/hos-home/bigdata-course.html': '/onesite/courses/hos/series/bigdata-course.html',
+      '/hos-home/bigdata-course.html': '/onesite/courses/hos/series/scalable-ai.html',
       '/hos-home/dai-course.html': '/onesite/courses/hos/series/dai-course.html',
-      '/hos-home/embvision-course.html': '/onesite/courses/hos/series/embvision-course.html',
+      '/hos-home/embvision-course.html': '/onesite/courses/hos/series/vision-ai.html',
       '/hos-home/genai-course.html': '/onesite/courses/hos/series/genai-course.html',
-      '/hos-home/llm-course.html': '/onesite/courses/hos/series/llm-course.html',
-      '/hos-home/temporalai-course.html': '/onesite/courses/hos/series/temporalai-course.html',
+      '/hos-home/llm-course.html': '/onesite/courses/hos/series/language-ai.html',
+      '/hos-home/temporalai-course.html': '/onesite/courses/hos/series/temporal-ai.html',
     };
 
     if (host === 'www.apartsin.com') {

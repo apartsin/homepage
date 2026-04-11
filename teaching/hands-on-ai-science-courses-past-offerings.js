@@ -59,10 +59,10 @@
     "temporal-ai": "../assets/courses/hos-series/temporalai-course/img-008-temporal-ai-gemini.png"
   };
   const syllabusByType = {
-    "language-ai": "../courses/hos/series/llm-course.html",
-    "vision-ai": "../courses/hos/series/embvision-course.html",
-    "scalable-ai": "../courses/hos/series/bigdata-course.html",
-    "temporal-ai": "../courses/hos/series/temporalai-course.html"
+    "language-ai": "../courses/hos/series/language-ai.html",
+    "vision-ai": "../courses/hos/series/vision-ai.html",
+    "scalable-ai": "../courses/hos/series/scalable-ai.html",
+    "temporal-ai": "../courses/hos/series/temporal-ai.html"
   };
   const normalizeSemester = (value) => {
     const normalized = (value || "").trim().toLowerCase().replace(/\s+/g, "-");
