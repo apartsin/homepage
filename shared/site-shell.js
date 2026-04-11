@@ -172,14 +172,14 @@
         [
           {
             label: 'Hands-On AI Science Series',
-            path: 'teaching/overview.html#hands-on-ai-science-courses',
+            path: 'teaching/hands-on-ai-science-courses.html',
             secondary: [
-              { label: 'Courses', path: 'teaching/overview.html#hands-on-courses' },
-              { label: 'Past Offerings', path: 'teaching/overview.html#hands-on-past-offerings' },
-              { label: 'Student Projects', path: 'teaching/overview.html#hands-on-student-projects' },
+              { label: 'Courses', path: 'teaching/hands-on-ai-science-courses-courses.html' },
+              { label: 'Past Offerings', path: 'teaching/hands-on-ai-science-courses-past-offerings.html' },
+              { label: 'Student Projects', path: 'teaching/hands-on-ai-science-courses-student-projects.html' },
             ],
           },
-          { label: 'Other CS Courses', path: 'teaching/other-cs-courses.html' },
+          { label: 'Computer Science Courses', path: 'teaching/other-cs-courses.html' },
           { label: 'Open B.Sc. Projects', path: 'teaching/undergrad-ai-projects.html' },
           { label: 'Former Students', path: 'teaching/former-students.html' },
           { label: 'Current Students', path: 'teaching/current-students.html' },
@@ -242,9 +242,7 @@
         ],
         [
           { label: 'Industry Experience', path: 'about/industry-experience.html' },
-          { label: 'Past Projects', path: 'work/past-projects.html' },
           { label: 'Recent Projects', path: 'work/recent-projects.html' },
-          { label: 'Tech Stack Over Years', path: 'work/tech-stack-over-years.html' },
         ],
       ),
       link(
@@ -290,7 +288,7 @@
       { label: 'Student Projects', path: 'teaching/hands-on-ai-science-courses-student-projects.html' },
     ],
     'teaching/hands-on-ai-science-courses-past-offerings.html': [
-      { label: 'Other CS Courses', path: 'teaching/other-cs-courses.html' },
+      { label: 'Computer Science Courses', path: 'teaching/other-cs-courses.html' },
       { label: 'Course List', path: 'teaching/hands-on-ai-science-courses-courses.html' },
     ],
   };
