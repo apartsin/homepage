@@ -66,6 +66,23 @@
     return map[value] || titleCase(token);
   }
 
+  const institutionLogos = {
+    'Holon Institute of Technology': '../assets/teaching/other-cs-courses/logos/hit.png',
+    'Bar-Ilan University': '../assets/teaching/other-cs-courses/logos/biu.png',
+    'Tel Aviv University': '../assets/teaching/other-cs-courses/logos/tau.png',
+    'The Academic College of Tel Aviv-Yafo': '../assets/teaching/other-cs-courses/logos/mta.jpg',
+  };
+
+  function institutionAbbrev(name) {
+    const map = {
+      'Holon Institute of Technology': 'HIT',
+      'Bar-Ilan University': 'BIU',
+      'Tel Aviv University': 'TAU',
+      'The Academic College of Tel Aviv-Yafo': 'MTA',
+    };
+    return map[name] || String(name || 'UNI').slice(0, 3).toUpperCase();
+  }
+
   function parseDateToken(token) {
     const value = String(token || '').trim();
     const termMatch = value.match(/^(\d{4})([FS])$/i);
@@ -156,6 +173,40 @@
     };
   }
 
+  function normalizeDescription(rawDescription, authors) {
+    let text = String(rawDescription || '').replace(/\s+/g, ' ').trim();
+    if (!text) {
+      return '';
+    }
+
+    text = text.replace(/\.{3,}\s*$/g, '').trim();
+
+    const authorText = String(authors || '').replace(/\s+/g, ' ').trim();
+    if (authorText && text.toLowerCase().startsWith(authorText.toLowerCase())) {
+      text = text.slice(authorText.length).trim();
+    }
+
+    text = text.replace(/^[A-Z][a-z]+(?:\s+[A-Z][a-z]+){0,5}\s+(?=(?:A|An|The|This|It)\s)/, '').trim();
+
+    const sentenceSplit = text.split(/(?<=[.!?])\s+/).filter(Boolean);
+    if (sentenceSplit.length > 1) {
+      const first = sentenceSplit[0].trim();
+      const second = sentenceSplit[1].trim();
+      if (first.length < 110) {
+        text = `${first} ${second}`;
+      } else {
+        text = first;
+      }
+    }
+
+    if (text.length > 210) {
+      const cutIndex = text.lastIndexOf(' ', 206);
+      text = `${text.slice(0, cutIndex > 80 ? cutIndex : 206).trim()}.`;
+    }
+
+    return text;
+  }
+
   function optionLabelFromSlug(slug) {
     return typeLabelFromSlug(slug) || String(slug || '');
   }
@@ -203,13 +254,29 @@
       { text: courseMeta.year, cls: 'student-project-card__tag--year' },
       { text: courseMeta.instanceTitle, cls: 'student-project-card__tag--course' },
       { text: courseMeta.type, cls: 'student-project-card__tag--type' },
-      { text: courseMeta.institution, cls: 'student-project-card__tag--institution' },
     ].forEach((item) => {
       const tag = document.createElement('span');
       tag.className = `student-project-card__tag ${item.cls}`;
       tag.textContent = item.text;
       tags.appendChild(tag);
     });
+
+    const institutionTag = document.createElement('span');
+    institutionTag.className = 'student-project-card__tag student-project-card__tag--institution-logo';
+    institutionTag.setAttribute('aria-label', courseMeta.institution);
+    institutionTag.title = courseMeta.institution;
+    const logo = institutionLogos[courseMeta.institution];
+    if (logo) {
+      const logoImg = document.createElement('img');
+      logoImg.src = logo;
+      logoImg.alt = `${courseMeta.institution} logo`;
+      logoImg.loading = 'lazy';
+      logoImg.decoding = 'async';
+      institutionTag.appendChild(logoImg);
+    } else {
+      institutionTag.textContent = institutionAbbrev(courseMeta.institution);
+    }
+    tags.appendChild(institutionTag);
     body.appendChild(tags);
 
     if (project.a) {
@@ -219,22 +286,37 @@
       body.appendChild(meta);
     }
 
-    if (project.d) {
+    const shortDescription = normalizeDescription(project.d, project.a);
+    if (shortDescription) {
       const desc = document.createElement('p');
       desc.className = 'content-card__desc';
-      desc.textContent = project.d;
+      desc.textContent = shortDescription;
       body.appendChild(desc);
     }
 
-    const links = (project.l || []).filter((link) => link && link.u);
+    const links = (project.l || [])
+      .filter((link) => link && link.u)
+      .filter((link) => !/^course page$/i.test(String(link.k || '').trim()));
     if (links.length > 0) {
       const linksWrap = document.createElement('div');
       linksWrap.className = 'content-card__links';
+      const hasGithub = links.some((link) => /github/i.test(link.k || '') || /github\.com/i.test(link.u || ''));
+      const hasPaper = links.some((link) => /^paper$/i.test(link.k || ''));
+      if (hasGithub && hasPaper) {
+        linksWrap.classList.add('content-card__links--dual');
+      }
       links.forEach((link) => {
         const anchor = document.createElement('a');
         anchor.className = 'content-card__link';
         anchor.href = link.u;
-        anchor.textContent = link.k || 'Open';
+        const isGithub = /github/i.test(link.k || '') || /github\.com/i.test(link.u || '');
+        const label = isGithub ? 'GitHub' : (link.k || 'Open');
+        if (isGithub) {
+          anchor.classList.add('content-card__link--github');
+          anchor.innerHTML = '<span class="student-link-icon" aria-hidden="true"></span><span>GitHub</span>';
+        } else {
+          anchor.textContent = label;
+        }
         if (/^https?:\/\//i.test(link.u)) {
           anchor.target = '_blank';
           anchor.rel = 'noopener noreferrer';
