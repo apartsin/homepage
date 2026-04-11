@@ -124,73 +124,49 @@
     }
     .industry-filter {
       margin-top: 12px;
-      padding: 12px 13px;
+      margin-bottom: 14px;
+      padding: 12px 14px;
       border: 1px solid var(--site-border);
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.92);
-      display: grid;
-      gap: 10px;
-    }
-    .industry-filter__mode {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      width: fit-content;
-      padding: 4px;
-      border: 1px solid var(--site-border);
-      border-radius: 999px;
-      background: var(--site-accent-soft, rgba(156, 90, 46, 0.12));
-    }
-    .industry-filter__mode-btn {
-      border: 0;
-      border-radius: 999px;
-      padding: 6px 10px;
-      background: transparent;
-      color: var(--site-muted);
-      font: 800 0.77rem/1.2 "Manrope", "Segoe UI", sans-serif;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      cursor: pointer;
-    }
-    .industry-filter__mode-btn[aria-selected="true"] {
+      border-radius: 14px;
       background: #fff;
-      color: var(--site-text);
-      box-shadow: 0 2px 7px rgba(35, 30, 23, 0.12);
-    }
-    .industry-filter__chips {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
+      align-items: center;
+      gap: 10px;
     }
-    .industry-filter__chip {
+    .industry-filter__select {
+      appearance: none;
+      height: 36px;
+      padding: 0 28px 0 10px;
       border: 1px solid var(--site-border);
       border-radius: 999px;
-      padding: 4px 9px;
-      background: #fff;
+      background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23586271'/%3E%3C/svg%3E") no-repeat right 10px center;
       color: var(--site-text);
-      font: 700 0.74rem/1.2 "Manrope", "Segoe UI", sans-serif;
-      letter-spacing: 0.01em;
+      font: 700 0.8rem/1.2 "Manrope", sans-serif;
       cursor: pointer;
-      white-space: nowrap;
     }
-    .industry-filter__chip[aria-selected="true"] {
-      border-color: rgba(24, 101, 168, 0.45);
-      background: rgba(24, 101, 168, 0.12);
-      color: #164a83;
+    .industry-filter__select:focus {
+      border-color: var(--site-accent);
+      outline: none;
+    }
+    .industry-filter__count {
+      margin: 0 0 0 auto;
+      color: var(--site-muted);
+      font: 700 0.8rem/1.2 "Manrope", sans-serif;
     }
     .industry-filter__empty {
-      margin: 0;
+      width: 100%;
+      margin: 6px 0 0;
       color: var(--site-muted);
-      font: 700 0.81rem/1.5 "Manrope", "Segoe UI", sans-serif;
+      font: 700 0.82rem/1.5 "Manrope", sans-serif;
     }
-    @media (max-width: 700px) {
-      .industry-filter__mode {
-        width: 100%;
+    .industry-card[hidden] { display: none !important; }
+    @media (max-width: 600px) {
+      .industry-filter {
+        flex-direction: column;
+        align-items: stretch;
       }
-      .industry-filter__mode-btn {
-        flex: 1 1 auto;
-        text-align: center;
-      }
+      .industry-filter__count { margin-left: 0; }
     }
   </style>
 </head>
@@ -224,11 +200,13 @@
           <p class="apartsin-page-header__lede">I bring over three decades of industry experience across technical and leadership roles, from software and algorithm development to architecture, research management, and executive AI leadership in both global enterprises and <a href="../work/entrepreneurship.html">startups</a>. Many of these roles produced tangible outputs documented under <a href="../work/past-projects.html">past projects</a> and <a href="../work/recent-projects.html">recent projects</a>.</p>
         </section>
         <section class="industry-filter" aria-label="Industry card filters">
-          <div class="industry-filter__mode" role="tablist" aria-label="Filter mode">
-            <button type="button" class="industry-filter__mode-btn" data-mode="data" role="tab" aria-selected="true">Data Type</button>
-            <button type="button" class="industry-filter__mode-btn" data-mode="industry" role="tab" aria-selected="false">Industry</button>
-          </div>
-          <div class="industry-filter__chips" id="industry-filter-chips"></div>
+          <select class="industry-filter__select" id="industry-filter-data" aria-label="Filter by data type">
+            <option value="all">All Data Types</option>
+          </select>
+          <select class="industry-filter__select" id="industry-filter-industry" aria-label="Filter by industry">
+            <option value="all">All Industries</option>
+          </select>
+          <p class="industry-filter__count" id="industry-filter-count"></p>
           <p class="industry-filter__empty" id="industry-filter-empty" hidden>No cards match this filter.</p>
         </section>
 
@@ -478,79 +456,48 @@
   </div>
   <script>
     (function () {
-      const cards = Array.from(document.querySelectorAll("#industry-timeline .industry-card"));
-      const modeButtons = Array.from(document.querySelectorAll(".industry-filter__mode-btn"));
-      const chipHost = document.getElementById("industry-filter-chips");
-      const empty = document.getElementById("industry-filter-empty");
-      if (!cards.length || !modeButtons.length || !chipHost || !empty) return;
+      var cards = Array.from(document.querySelectorAll("#industry-timeline .industry-card"));
+      var dataSel = document.getElementById("industry-filter-data");
+      var industrySel = document.getElementById("industry-filter-industry");
+      var countEl = document.getElementById("industry-filter-count");
+      var empty = document.getElementById("industry-filter-empty");
+      if (!cards.length || !dataSel || !industrySel) return;
 
-      const state = { mode: "data", tag: "all" };
-      const getSelector = (mode) => (mode === "industry" ? ".industry-card__industry-tag" : ".industry-card__domain-tag");
-      const normalize = (s) => s.trim().toLowerCase();
-      const titleCase = (s) => s.replace(/\b\w/g, (ch) => ch.toUpperCase());
+      var normalize = function (s) { return s.trim().toLowerCase(); };
+      var titleCase = function (s) { return s.replace(/\b\w/g, function (ch) { return ch.toUpperCase(); }); };
 
-      function cardTags(card, mode) {
-        return Array.from(card.querySelectorAll(getSelector(mode)))
-          .map((node) => normalize(node.textContent || ""))
-          .filter(Boolean);
-      }
+      var dataTypes = new Set();
+      var industries = new Set();
+      cards.forEach(function (card) {
+        card.querySelectorAll(".industry-card__domain-tag").forEach(function (el) { dataTypes.add(normalize(el.textContent)); });
+        card.querySelectorAll(".industry-card__industry-tag").forEach(function (el) { industries.add(normalize(el.textContent)); });
+      });
 
-      function allTags(mode) {
-        const set = new Set();
-        for (const card of cards) {
-          for (const tag of cardTags(card, mode)) {
-            set.add(tag);
-          }
-        }
-        return Array.from(set).sort((a, b) => a.localeCompare(b));
-      }
+      Array.from(dataTypes).sort().forEach(function (t) {
+        var o = document.createElement("option"); o.value = t; o.textContent = titleCase(t); dataSel.appendChild(o);
+      });
+      Array.from(industries).sort().forEach(function (t) {
+        var o = document.createElement("option"); o.value = t; o.textContent = titleCase(t); industrySel.appendChild(o);
+      });
 
-      function renderChips() {
-        chipHost.innerHTML = "";
-        const tags = ["all", ...allTags(state.mode)];
-        for (const raw of tags) {
-          const chip = document.createElement("button");
-          chip.type = "button";
-          chip.className = "industry-filter__chip";
-          chip.dataset.tag = raw;
-          chip.setAttribute("aria-selected", raw === state.tag ? "true" : "false");
-          chip.textContent = raw === "all" ? "All" : titleCase(raw);
-          chip.addEventListener("click", () => {
-            state.tag = raw;
-            renderChips();
-            applyFilter();
-          });
-          chipHost.appendChild(chip);
-        }
-      }
-
-      function applyFilter() {
-        let visible = 0;
-        for (const card of cards) {
-          const tags = cardTags(card, state.mode);
-          const show = state.tag === "all" || tags.includes(state.tag);
+      function apply() {
+        var dv = dataSel.value, iv = industrySel.value, vis = 0;
+        cards.forEach(function (card) {
+          var cardData = Array.from(card.querySelectorAll(".industry-card__domain-tag")).map(function (el) { return normalize(el.textContent); });
+          var cardInd = Array.from(card.querySelectorAll(".industry-card__industry-tag")).map(function (el) { return normalize(el.textContent); });
+          var show = true;
+          if (dv !== "all" && cardData.indexOf(dv) < 0) show = false;
+          if (iv !== "all" && cardInd.indexOf(iv) < 0) show = false;
           card.hidden = !show;
-          if (show) visible += 1;
-        }
-        empty.hidden = visible !== 0;
-      }
-
-      for (const button of modeButtons) {
-        button.addEventListener("click", () => {
-          const mode = button.dataset.mode || "data";
-          if (mode === state.mode) return;
-          state.mode = mode;
-          state.tag = "all";
-          for (const other of modeButtons) {
-            other.setAttribute("aria-selected", other === button ? "true" : "false");
-          }
-          renderChips();
-          applyFilter();
+          if (show) vis++;
         });
+        if (empty) empty.hidden = vis > 0;
+        if (countEl) countEl.textContent = vis + " of " + cards.length + " roles";
       }
 
-      renderChips();
-      applyFilter();
+      dataSel.addEventListener("change", apply);
+      industrySel.addEventListener("change", apply);
+      apply();
     })();
   </script>
   <script defer src="../shared/unified-enhance.js"></script>
