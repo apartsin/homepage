@@ -3,90 +3,189 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Academic collaboration and consulting: industry-academia research projects, curriculum design, AI strategy advisory, and student supervision.">
+  <meta name="description" content="AI consulting: from market opportunity through technological blueprint to tangible evidence. Strategy, architecture, and prototyping for AI-powered products.">
   <title>Consulting | Sasha Apartsin</title>
   <link rel="stylesheet" href="../shared/site-shell.css">
   <link rel="stylesheet" href="../shared/unified-theme.css">
   <style>
-    .consulting-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 14px;
-      margin-top: 16px;
+    /* ── Page-level layout ── */
+    .consult-page {
+      max-width: 820px;
+      margin: 0 auto;
     }
-    .consulting-card {
-      padding: 18px 20px;
-      border: 1px solid var(--site-border);
-      border-radius: 14px;
-      border-top: 3px solid var(--cc-color, var(--site-accent));
-      background: #fff;
+
+    /* ── Phase cards ── */
+    .phase {
+      position: relative;
+      margin-top: 48px;
+      padding: 0 20px 20px 20px;
+      border: 1px solid var(--site-border, #e5e0d8);
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--phase-tint, rgba(156,90,46,0.02)) 0%, #fff 60%);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .phase:nth-child(1) { --phase-tint: rgba(29,78,216,0.04); }
+    .phase:nth-child(2) { --phase-tint: rgba(46,125,90,0.04); }
+    .phase:nth-child(3) { --phase-tint: rgba(156,90,46,0.04); }
+    .phase + .phase { margin-top: 56px; }
+
+    /* Phase number + connector */
+    .phase__number {
+      position: absolute;
+      left: -18px;
+      top: 8px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
       display: flex;
-      flex-direction: column;
-      gap: 8px;
-      transition: transform 180ms ease, box-shadow 180ms ease;
+      align-items: center;
+      justify-content: center;
+      font: 800 0.82rem/1 "Manrope", sans-serif;
+      color: #fff;
+      z-index: 2;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
     }
-    .consulting-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.1);
+    .phase:nth-child(1) .phase__number { background: #1d4ed8; }
+    .phase:nth-child(2) .phase__number { background: #2e7d5a; }
+    .phase:nth-child(3) .phase__number { background: #9c5a2e; }
+
+    /* Vertical connector line between phases */
+    .phase + .phase::before {
+      content: "";
+      position: absolute;
+      left: 16px;
+      top: -40px;
+      width: 2px;
+      height: 34px;
+      background: linear-gradient(to bottom, rgba(156,90,46,0.12), rgba(156,90,46,0.06));
     }
-    .consulting-card:nth-child(1) { --cc-color: #1d4ed8; }
-    .consulting-card:nth-child(2) { --cc-color: #2e7d5a; }
-    .consulting-card:nth-child(3) { --cc-color: #9c5a2e; }
-    .consulting-card:nth-child(4) { --cc-color: #7a3fa0; }
-    .consulting-card h2 {
-      margin: 0;
-      font: 800 1rem/1.3 "Manrope", sans-serif;
-      color: var(--cc-color, var(--site-text));
-    }
-    .consulting-card p {
-      margin: 0;
-      font: 400 0.88rem/1.6 "Source Serif 4", Georgia, serif;
-      color: var(--site-muted);
-    }
-    .consulting-card ul {
-      margin: 0;
-      padding: 0 0 0 18px;
-      color: var(--site-muted);
-      font: 400 0.84rem/1.55 "Source Serif 4", Georgia, serif;
-    }
-    .consulting-card ul li {
-      margin-bottom: 4px;
-    }
-    .consulting-cta {
-      margin-top: 24px;
-      padding: 18px 20px;
-      border: 1px solid var(--site-border);
-      border-radius: 14px;
-      background: #fff;
+
+    .phase__header {
+      margin-bottom: 16px;
+      padding-top: 10px;
       text-align: center;
     }
-    .consulting-cta p {
-      margin: 0 0 12px;
-      font: 600 0.92rem/1.5 "Manrope", sans-serif;
-      color: var(--site-text);
+    .phase__title {
+      margin: 0;
+      font: 800 1.3rem/1.3 "Manrope", sans-serif;
+      color: var(--site-text, #1a1a1a);
+      letter-spacing: -0.015em;
     }
-    .consulting-cta__links {
+    .phase__title .gold {
+      color: #9c6b20;
+    }
+    .phase__subtitle { display: none; }
+
+    /* ── Step cards inside each phase ── */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .step {
+      padding: 12px 13px 13px;
+      border: 1px solid var(--site-border, #e5e0d8);
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,1);
+      transition: transform 200ms ease, box-shadow 200ms ease;
+    }
+    .step:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(15,23,42,0.1), inset 0 1px 0 rgba(255,255,255,1);
+    }
+    .step__header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .step__icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .phase:nth-child(1) .step__icon { background: rgba(29,78,216,0.08); color: #1d4ed8; }
+    .phase:nth-child(2) .step__icon { background: rgba(46,125,90,0.08); color: #2e7d5a; }
+    .phase:nth-child(3) .step__icon { background: rgba(156,90,46,0.08); color: #9c5a2e; }
+
+    .step__icon svg {
+      width: 15px;
+      height: 15px;
+      fill: currentColor;
+    }
+    .step__title {
+      margin: 0;
+      font: 700 0.8rem/1.3 "Manrope", sans-serif;
+      color: var(--site-text, #1a1a1a);
+      letter-spacing: 0.005em;
+    }
+    .step__desc {
+      margin: 0;
+      font: 400 0.78rem/1.6 "Source Serif 4", Georgia, serif;
+      color: var(--site-muted, #64605a);
+    }
+
+    /* ── CTA footer ── */
+    .consult-cta {
+      margin-top: 56px;
+      padding: 28px 24px;
+      border: 1px solid var(--site-border, #e5e0d8);
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(156,90,46,0.03) 0%, rgba(29,78,216,0.02) 100%);
+      text-align: center;
+    }
+    .consult-cta__heading {
+      margin: 0 0 6px;
+      font: 700 0.95rem/1.35 "Manrope", sans-serif;
+      color: var(--site-text, #1a1a1a);
+    }
+    .consult-cta__sub {
+      margin: 0 0 18px;
+      font: 400 0.82rem/1.55 "Source Serif 4", Georgia, serif;
+      color: var(--site-muted, #64605a);
+    }
+    .consult-cta__links {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 10px;
     }
-    .consulting-cta__link {
+    .consult-cta__link {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 8px 16px;
-      border: 1px solid var(--site-border);
+      gap: 7px;
+      padding: 9px 20px;
+      border: 1px solid var(--site-border, #e5e0d8);
       border-radius: 999px;
-      background: var(--site-bg-2, #fbfaf6);
-      color: var(--site-text);
-      font: 700 0.82rem/1.2 "Manrope", sans-serif;
+      background: #fff;
+      color: var(--site-text, #1a1a1a);
+      font: 700 0.8rem/1.2 "Manrope", sans-serif;
       text-decoration: none;
-      transition: background 150ms ease, border-color 150ms ease;
+      transition: background 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
     }
-    .consulting-cta__link:hover {
-      background: rgba(156, 90, 46, 0.08);
-      border-color: rgba(156, 90, 46, 0.3);
+    .consult-cta__link:hover {
+      background: rgba(156,90,46,0.06);
+      border-color: rgba(156,90,46,0.25);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .consult-cta__link svg {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .steps {
+        grid-template-columns: 1fr;
+      }
+      .phase + .phase { margin-top: 44px; }
+      .phase + .phase::before { height: 28px; top: -36px; }
     }
   </style>
 </head>
@@ -117,45 +216,125 @@
               <strong>Consulting</strong>
             </nav>
           </div>
-          <p class="apartsin-page-header__lede">I collaborate with companies and research groups on applied AI projects that bridge <a href="../about/industry-experience.html">industry practice</a> and <a href="../research/interests.html">academic research</a>. These engagements draw on three decades of building systems and the <a href="./innovation-first-learning.html">Innovation-First Learning</a> approach I developed through that experience.</p>
+          <p class="apartsin-page-header__lede">I help companies move from AI opportunity to working product, drawing on <a href="../about/industry-experience.html">three decades of building systems</a> across the full <a href="./tech-stack.html">technology stack</a> and <a href="../research/interests.html">active applied research</a> in language, vision, and signal processing.</p>
         </section>
 
-        <section class="consulting-grid" aria-label="Consulting services">
-          <article class="consulting-card">
-            <h2>Problem Framing &amp; Business-Technology Alignment</h2>
-            <p>AI creates value only when the right problem is being solved and the solution fits both business priorities and technical reality. That alignment is often difficult because strategy, product, and AI capability are rarely expressed in the same language. I help bring those perspectives together, sharpen the scope, and translate ambition into clear, actionable direction. The result is stronger decision-making, less wasted effort, and AI initiatives that are positioned to deliver real business value.</p>
-          </article>
-          <article class="consulting-card">
-            <h2>Technology &amp; Scientific Blueprint</h2>
-            <p>Promising AI products need more than a good idea. They need a clear technical and methodological foundation that can support credible execution. I help turn product goals into a focused blueprint covering models, architecture, evaluation criteria, data requirements, and implementation priorities. Drawing on experience across both innovation-driven environments and complex organizations, this approach helps reduce technical risk, avoid fragile early decisions, and create a more reliable path from concept to delivery.</p>
-          </article>
-          <article class="consulting-card">
-            <h2>Rapid Prototyping &amp; Demo</h2>
-            <p>AI-assisted development now makes it possible to test ideas far more quickly, but speed alone is not enough. Early prototypes need to answer the right questions, reveal technical feasibility, and explore product alternatives without creating false confidence. I design and build focused PoCs and demos that are guided by both product intent and technical depth, so rapid experimentation produces meaningful insight. This makes it easier to validate direction, reduce uncertainty, and support smarter product and investment decisions.</p>
-          </article>
-          <article class="consulting-card">
-            <h2>Industry-Academia Research</h2>
-            <p>Joint research projects connecting company problems with graduate-level research capacity, including M.Sc. student supervision on company-sponsored topics, publication-ready research with practical deliverables, and grant proposal support.</p>
-          </article>
-        </section>
+        <div class="consult-page">
 
-        <section class="consulting-cta">
-          <p>Interested in collaboration? Reach out through any of these channels.</p>
-          <nav class="consulting-cta__links">
-            <a class="consulting-cta__link" href="https://www.linkedin.com/in/apartsin/" target="_blank" rel="noopener noreferrer">
-              <svg style="width:16px;height:16px" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <!-- ─── Phase 1 ─── -->
+          <section class="phase" aria-label="Phase 1">
+            <div class="phase__number">1</div>
+            <div class="phase__header">
+              <h2 class="phase__title">From Market <span class="gold">Opportunity</span> to AI-Powered Value <span class="gold">Proposition</span></h2>
+              <p class="phase__subtitle">Align strategy, product, and engineering around a shared definition of what to build and why.</p>
+            </div>
+            <div class="steps">
+              <div class="step">
+                <div class="step__header">
+                  <div class="step__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 2l5 5h-5V4zM6 20V4h5v7h7v9H6z"/></svg></div>
+                  <h3 class="step__title">Define Scope</h3>
+                </div>
+                <p class="step__desc">Sharpen the problem into a shared language across strategy, product, engineering, and research.</p>
+              </div>
+              <div class="step">
+                <div class="step__header">
+                  <div class="step__icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1a2 2 0 0 0 2 2v1.93zm6.9-2.54A1.99 1.99 0 0 0 16 16h-1v-3a1 1 0 0 0-1-1H8v-2h2a1 1 0 0 0 1-1V7h2a2 2 0 0 0 2-2v-.41a8 8 0 0 1 2.9 12.8z"/></svg></div>
+                  <h3 class="step__title">Explore Opportunities</h3>
+                </div>
+                <p class="step__desc">Uncover high-value strategies that recent AI advances make possible.</p>
+              </div>
+              <div class="step">
+                <div class="step__header">
+                  <div class="step__icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></div>
+                  <h3 class="step__title">Resolve Blockers</h3>
+                </div>
+                <p class="step__desc">Workarounds for data gaps, running costs, and AI imperfections that stall real projects.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- ─── Phase 2 ─── -->
+          <section class="phase" aria-label="Phase 2">
+            <div class="phase__number">2</div>
+            <div class="phase__header">
+              <h2 class="phase__title">From <span class="gold">Vision</span> to AI Technological <span class="gold">Blueprint</span></h2>
+              <p class="phase__subtitle">Translate product goals into a concrete R&amp;D plan: what to prove, what to build first, which risks matter most.</p>
+            </div>
+            <div class="steps">
+              <div class="step">
+                <div class="step__header">
+                  <div class="step__icon"><svg viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm0 16H5V5h14v14zM7 12h2v5H7zm4-3h2v8h-2zm4-3h2v11h-2z"/></svg></div>
+                  <h3 class="step__title">Set the R&amp;D Agenda</h3>
+                </div>
+                <p class="step__desc">Turn high-level product goals into an R&amp;D plan: what to prove, what to build, which uncertainties matter most.</p>
+              </div>
+              <div class="step">
+                <div class="step__header">
+                  <div class="step__icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></div>
+                  <h3 class="step__title">Make the Right AI Stack Choices</h3>
+                </div>
+                <p class="step__desc">Select models, components, and tools; focus effort on what is unique while leveraging what already exists.</p>
+              </div>
+              <div class="step">
+                <div class="step__header">
+                  <div class="step__icon"><svg viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg></div>
+                  <h3 class="step__title">Sequence Execution</h3>
+                </div>
+                <p class="step__desc">Stage experiments to reduce uncertainty in the right order: validate before scaling, justify each step with evidence.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- ─── Phase 3 ─── -->
+          <section class="phase" aria-label="Phase 3">
+            <div class="phase__number">3</div>
+            <div class="phase__header">
+              <h2 class="phase__title">From AI Product <span class="gold">Concept</span> to Tangible <span class="gold">Evidence</span></h2>
+              <p class="phase__subtitle">Build working prototypes that prove the concept and package outcomes into decision-ready deliverables.</p>
+            </div>
+            <div class="steps">
+              <div class="step">
+                <div class="step__header">
+                  <div class="step__icon"><svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg></div>
+                  <h3 class="step__title">Fine-Tune and Evaluate</h3>
+                </div>
+                <p class="step__desc">Prototype core AI capabilities through model selection, prompting, fine-tuning, and realistic evaluation.</p>
+              </div>
+              <div class="step">
+                <div class="step__header">
+                  <div class="step__icon"><svg viewBox="0 0 24 24"><path d="M22 9V7h-2V5a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2h2v-2h-2v-2h2v-2h-2V9h2zM18 19H4V5h14v14zM6 13h5v4H6v-4zm6-6h4v3h-4V7zM6 7h5v5H6V7zm6 4h4v6h-4v-6z"/></svg></div>
+                  <h3 class="step__title">Build End-to-End Prototype</h3>
+                </div>
+                <p class="step__desc">Full solution prototype: workflows, orchestration, data flow, tool integration, and user interaction.</p>
+              </div>
+              <div class="step">
+                <div class="step__header">
+                  <div class="step__icon"><svg viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg></div>
+                  <h3 class="step__title">Package Evidence</h3>
+                </div>
+                <p class="step__desc">Turn prototype outcomes into a decision-ready package: results, figures, example outputs, and presentation slides.</p>
+              </div>
+            </div>
+          </section>
+
+        </div><!-- .consult-page -->
+
+        <!-- ─── Contact CTA ─── -->
+        <section class="consult-cta" style="max-width:820px; margin-left:auto; margin-right:auto;">
+          <p class="consult-cta__heading">Interested in collaboration?</p>
+          <p class="consult-cta__sub">Reach out through any of these channels to start a conversation.</p>
+          <nav class="consult-cta__links">
+            <a class="consult-cta__link" href="https://www.linkedin.com/in/apartsin/" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
               LinkedIn
             </a>
-            <a class="consulting-cta__link" href="mailto:apartsin@hit.ac.il">
-              <svg style="width:16px;height:16px" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <a class="consult-cta__link" href="mailto:apartsin@gmail.com">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
               Email
-            </a>
-            <a class="consulting-cta__link" href="https://scholar.google.co.il/citations?hl=en&user=-5He5joAAAAJ" target="_blank" rel="noopener noreferrer">
-              <svg style="width:16px;height:16px" viewBox="0 0 24 24" fill="#4285F4"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 100 14 7 7 0 000-14z"/></svg>
-              Google Scholar
             </a>
           </nav>
         </section>
+
       </main>
     </div>
   </div>
