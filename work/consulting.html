@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Academic collaboration and consulting: industry-academia research projects, curriculum design, AI strategy advisory, and student supervision.">
+  <title>Consulting | Sasha Apartsin</title>
+  <link rel="stylesheet" href="../shared/site-shell.css">
+  <link rel="stylesheet" href="../shared/unified-theme.css">
+  <style>
+    .consulting-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .consulting-card {
+      padding: 18px 20px;
+      border: 1px solid var(--site-border);
+      border-radius: 14px;
+      border-top: 3px solid var(--cc-color, var(--site-accent));
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+    .consulting-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.1);
+    }
+    .consulting-card:nth-child(1) { --cc-color: #1d4ed8; }
+    .consulting-card:nth-child(2) { --cc-color: #2e7d5a; }
+    .consulting-card:nth-child(3) { --cc-color: #9c5a2e; }
+    .consulting-card:nth-child(4) { --cc-color: #7a3fa0; }
+    .consulting-card h2 {
+      margin: 0;
+      font: 800 1rem/1.3 "Manrope", sans-serif;
+      color: var(--cc-color, var(--site-text));
+    }
+    .consulting-card p {
+      margin: 0;
+      font: 400 0.88rem/1.6 "Source Serif 4", Georgia, serif;
+      color: var(--site-muted);
+    }
+    .consulting-card ul {
+      margin: 0;
+      padding: 0 0 0 18px;
+      color: var(--site-muted);
+      font: 400 0.84rem/1.55 "Source Serif 4", Georgia, serif;
+    }
+    .consulting-card ul li {
+      margin-bottom: 4px;
+    }
+    .consulting-cta {
+      margin-top: 24px;
+      padding: 18px 20px;
+      border: 1px solid var(--site-border);
+      border-radius: 14px;
+      background: #fff;
+      text-align: center;
+    }
+    .consulting-cta p {
+      margin: 0 0 12px;
+      font: 600 0.92rem/1.5 "Manrope", sans-serif;
+      color: var(--site-text);
+    }
+    .consulting-cta__links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .consulting-cta__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border: 1px solid var(--site-border);
+      border-radius: 999px;
+      background: var(--site-bg-2, #fbfaf6);
+      color: var(--site-text);
+      font: 700 0.82rem/1.2 "Manrope", sans-serif;
+      text-decoration: none;
+      transition: background 150ms ease, border-color 150ms ease;
+    }
+    .consulting-cta__link:hover {
+      background: rgba(156, 90, 46, 0.08);
+      border-color: rgba(156, 90, 46, 0.3);
+    }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="work">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar">
+      <a class="apartsin-shell__brand" href="../index.html">Sasha Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../about/academic-profile.html">About</a>
+        <a href="../research/interests.html">Research</a>
+        <a href="../teaching/overview.html">Teaching</a>
+        <a href="../work/overview.html">Building</a>
+        <a href="../work/innovation-overview.html">Innovations</a>
+        <a href="../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard">
+          <h1 class="apartsin-sr-only">Consulting</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="./overview.html">Building</a>
+              <span aria-hidden="true">/</span>
+              <strong>Consulting</strong>
+            </nav>
+          </div>
+          <p class="apartsin-page-header__lede">I collaborate with companies and research groups on applied AI projects that bridge <a href="../about/industry-experience.html">industry practice</a> and <a href="../research/interests.html">academic research</a>. These engagements draw on three decades of building systems and the <a href="./innovation-first-learning.html">Innovation-First Learning</a> approach I developed through that experience.</p>
+        </section>
+
+        <section class="consulting-grid" aria-label="Consulting services">
+          <article class="consulting-card">
+            <h2>Problem Framing &amp; Business-Technology Alignment</h2>
+            <p>AI creates value only when the right problem is being solved and the solution fits both business priorities and technical reality. That alignment is often difficult because strategy, product, and AI capability are rarely expressed in the same language. I help bring those perspectives together, sharpen the scope, and translate ambition into clear, actionable direction. The result is stronger decision-making, less wasted effort, and AI initiatives that are positioned to deliver real business value.</p>
+          </article>
+          <article class="consulting-card">
+            <h2>Technology &amp; Scientific Blueprint</h2>
+            <p>Promising AI products need more than a good idea. They need a clear technical and methodological foundation that can support credible execution. I help turn product goals into a focused blueprint covering models, architecture, evaluation criteria, data requirements, and implementation priorities. Drawing on experience across both innovation-driven environments and complex organizations, this approach helps reduce technical risk, avoid fragile early decisions, and create a more reliable path from concept to delivery.</p>
+          </article>
+          <article class="consulting-card">
+            <h2>Rapid Prototyping &amp; Demo</h2>
+            <p>AI-assisted development now makes it possible to test ideas far more quickly, but speed alone is not enough. Early prototypes need to answer the right questions, reveal technical feasibility, and explore product alternatives without creating false confidence. I design and build focused PoCs and demos that are guided by both product intent and technical depth, so rapid experimentation produces meaningful insight. This makes it easier to validate direction, reduce uncertainty, and support smarter product and investment decisions.</p>
+          </article>
+          <article class="consulting-card">
+            <h2>Industry-Academia Research</h2>
+            <p>Joint research projects connecting company problems with graduate-level research capacity, including M.Sc. student supervision on company-sponsored topics, publication-ready research with practical deliverables, and grant proposal support.</p>
+          </article>
+        </section>
+
+        <section class="consulting-cta">
+          <p>Interested in collaboration? Reach out through any of these channels.</p>
+          <nav class="consulting-cta__links">
+            <a class="consulting-cta__link" href="https://www.linkedin.com/in/apartsin/" target="_blank" rel="noopener noreferrer">
+              <svg style="width:16px;height:16px" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+            <a class="consulting-cta__link" href="mailto:apartsin@hit.ac.il">
+              <svg style="width:16px;height:16px" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              Email
+            </a>
+            <a class="consulting-cta__link" href="https://scholar.google.co.il/citations?hl=en&user=-5He5joAAAAJ" target="_blank" rel="noopener noreferrer">
+              <svg style="width:16px;height:16px" viewBox="0 0 24 24" fill="#4285F4"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 100 14 7 7 0 000-14z"/></svg>
+              Google Scholar
+            </a>
+          </nav>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script defer src="../shared/unified-enhance.js"></script>
+  <script defer src="../shared/site-shell.js"></script>
+</body>
+</html>

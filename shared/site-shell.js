@@ -226,6 +226,7 @@
           /\/work\/past-projects\.html$/i,
           /\/work\/recent-projects\.html$/i,
           /\/work\/tech-stack\.html$/i,
+          /\/work\/consulting\.html$/i,
           /\/about\/industry-experience\.html$/i,
         ],
         [
@@ -233,6 +234,7 @@
           { label: 'Recent Projects', path: 'work/recent-projects.html' },
           { label: 'Selected Past Projects', path: 'work/past-projects.html' },
           { label: 'Tech Stack Evolution', path: 'work/tech-stack.html' },
+          { label: 'Consulting', path: 'work/consulting.html' },
         ],
       ),
       link(
