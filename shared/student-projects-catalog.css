@@ -129,6 +129,17 @@
   flex-direction: column;
   gap: 10px;
   padding: 14px 16px 16px;
+  flex: 1;
+}
+
+/* Ensure equal card heights */
+.student-project-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.student-project-card .content-card__desc {
+  flex: 1;
 }
 
 /* ── Chips Row ── */
