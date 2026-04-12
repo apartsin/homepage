@@ -109,7 +109,13 @@
   }
 
   const SITE_CONFIG = {
-    subtitle: 'Scientist | Educator | Innovator | Builder | Writer',
+    subtitle: [
+      { label: 'Scientist', path: 'research/interests.html' },
+      { label: 'Educator', path: 'teaching/overview.html' },
+      { label: 'Innovator', path: 'work/innovation-overview.html' },
+      { label: 'Builder', path: 'work/overview.html' },
+      { label: 'Writer', path: 'writing/overview.html' },
+    ],
     primaryNav: [
       link(
         'About',
@@ -355,6 +361,27 @@
     return;
   }
 
+  function renderSubtitle(container, items) {
+    container.innerHTML = '';
+    if (Array.isArray(items)) {
+      items.forEach(function (item, i) {
+        if (i > 0) {
+          var sep = document.createElement('span');
+          sep.className = 'apartsin-shell__subtitle-sep';
+          sep.textContent = ' | ';
+          container.appendChild(sep);
+        }
+        var a = document.createElement('a');
+        a.href = sitePath(item.path);
+        a.textContent = item.label;
+        a.className = 'apartsin-shell__subtitle-link';
+        container.appendChild(a);
+      });
+    } else {
+      container.textContent = items || '';
+    }
+  }
+
   function ensureSidebarStructure(sidebar, config) {
     let header = sidebar.querySelector('.apartsin-shell__sidebar-header');
     if (!header) {
@@ -372,10 +399,10 @@
       if (!subtitle) {
         const subtitleEl = document.createElement('div');
         subtitleEl.className = 'apartsin-shell__subtitle';
-        subtitleEl.textContent = config.subtitle || '';
+        renderSubtitle(subtitleEl, config.subtitle);
         header.appendChild(subtitleEl);
       } else {
-        subtitle.textContent = config.subtitle || '';
+        renderSubtitle(subtitle, config.subtitle);
         header.appendChild(subtitle);
       }
       if (divider) {
@@ -391,7 +418,7 @@
       subtitle.className = 'apartsin-shell__subtitle';
       header.appendChild(subtitle);
     }
-    subtitle.textContent = config.subtitle || '';
+    renderSubtitle(subtitle, config.subtitle);
 
     const brand = header.querySelector('.apartsin-shell__brand') || sidebar.querySelector('.apartsin-shell__brand');
     if (brand) {

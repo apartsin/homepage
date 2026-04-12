@@ -302,6 +302,15 @@ summary:focus-visible {
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
+.apartsin-page-header__crumbs a:first-child::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: url("../favicon-32x32.png") center/contain no-repeat;
+  vertical-align: -2px;
+  margin-right: 3px;
+}
 
 .apartsin-page-header__crumbs strong {
   color: var(--site-text);
