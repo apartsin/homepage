@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Capacity Analysis of Trends (CAT): how academic collaboration with Tel-Aviv University improved hardware capacity forecasting at Amdocs GSS, contributing to $10M savings.">
+  <title>Capacity Analysis of Trends (CAT) at Amdocs GSS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --text: #1a1a2e;
+      --muted: #5a6275;
+      --accent: #9c5a2e;
+      --accent-deep: #7a3f16;
+      --blue: #164a83;
+      --bg: #faf8f4;
+      --surface: #ffffff;
+      --border: rgba(24, 32, 42, 0.12);
+    }
+
+    body {
+      font-family: "Source Serif 4", Georgia, serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Page wrapper ── */
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    @media (max-width: 640px) {
+      .page { padding: 24px 16px 60px; }
+    }
+
+    /* ── Header ── */
+    .header {
+      text-align: center;
+      margin-bottom: 48px;
+      padding: 40px 32px 36px;
+      border-radius: 20px;
+      background:
+        linear-gradient(135deg, rgba(24,101,168,0.05), rgba(156,90,46,0.04) 50%, var(--surface) 80%),
+        var(--surface);
+      border: 1px solid var(--border);
+      position: relative;
+    }
+
+    .header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), rgba(24,101,168,0.5) 60%, transparent);
+      border-radius: 20px 20px 0 0;
+    }
+
+    .header__banner {
+      margin: 0 0 20px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .header__banner img {
+      display: block;
+      width: 100%;
+      max-height: 120px;
+      object-fit: contain;
+    }
+
+    .header__tags {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .tag {
+      display: inline-flex;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font: 700 0.62rem/1.3 "Inter", sans-serif;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .tag--warm { background: rgba(156,90,46,0.1); color: var(--accent-deep); }
+    .tag--cool { background: rgba(24,101,168,0.08); color: var(--blue); }
+
+    .header__title {
+      font: 900 clamp(1.5rem, 4vw, 2.2rem)/1.1 "Inter", sans-serif;
+      color: var(--text);
+      letter-spacing: -0.03em;
+    }
+
+    .header__subtitle {
+      margin-top: 12px;
+      font: 400 clamp(1rem, 2vw, 1.15rem)/1.5 "Source Serif 4", Georgia, serif;
+      color: var(--muted);
+    }
+
+    .header__meta {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      font: 500 0.78rem/1.3 "Inter", sans-serif;
+      color: var(--muted);
+    }
+
+    .header__author { font-weight: 800; color: var(--text); }
+    .header__dot { width: 4px; height: 4px; border-radius: 50%; background: var(--border); }
+
+    /* ── Body ── */
+    .body h2 {
+      margin: 48px 0 12px;
+      font: 800 clamp(1.15rem, 2.5vw, 1.4rem)/1.2 "Inter", sans-serif;
+      color: var(--text);
+      letter-spacing: -0.01em;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--accent);
+    }
+
+    .body h3 {
+      margin: 28px 0 8px;
+      font: 700 clamp(0.95rem, 2vw, 1.1rem)/1.3 "Inter", sans-serif;
+      color: var(--text);
+    }
+
+    .body p {
+      margin: 0 0 18px;
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: #334155;
+    }
+
+    .body > p:first-child {
+      font-size: 1.12rem;
+      color: var(--text);
+    }
+
+    /* ── Highlight ── */
+    .highlight {
+      margin: 32px 0;
+      padding: 20px 24px;
+      border-left: 4px solid var(--accent);
+      border-radius: 0 12px 12px 0;
+      background: rgba(156,90,46,0.04);
+    }
+
+    .highlight p { margin: 0; font-weight: 600; color: var(--text); }
+
+    .highlight .stat {
+      display: block;
+      margin-top: 8px;
+      font: 900 clamp(1.4rem, 3vw, 1.8rem)/1.1 "Inter", sans-serif;
+      color: var(--accent-deep);
+    }
+
+    /* ── Findings ── */
+    .findings {
+      margin: 24px 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+
+    .findings li {
+      padding: 12px 16px 12px 36px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--surface);
+      font-size: 0.98rem;
+      line-height: 1.65;
+      color: #334155;
+      position: relative;
+    }
+
+    .findings li::before {
+      content: "";
+      position: absolute;
+      left: 14px; top: 18px;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    /* ── Figure ── */
+    .fig {
+      margin: 32px 0;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    .fig img { display: block; width: 100%; object-fit: contain; }
+
+    .fig figcaption {
+      padding: 10px 14px;
+      border-top: 1px solid var(--border);
+      font: 500 0.76rem/1.4 "Inter", sans-serif;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    /* ── Quote ── */
+    .quote {
+      margin: 32px 0;
+      padding: 20px 24px;
+      border-radius: 14px;
+      background: rgba(24,101,168,0.04);
+      border: 1px solid rgba(24,101,168,0.1);
+    }
+
+    .quote blockquote {
+      font: 600 1.05rem/1.65 "Source Serif 4", Georgia, serif;
+      color: #1d2f42;
+      font-style: italic;
+    }
+
+    .quote cite {
+      display: block;
+      margin-top: 10px;
+      font: 700 0.78rem/1.3 "Inter", sans-serif;
+      color: var(--muted);
+      font-style: normal;
+    }
+
+    /* ── About box ── */
+    .about {
+      margin: 48px 0 0;
+      padding: 20px 24px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--surface);
+    }
+
+    .about h3 {
+      margin: 0 0 8px;
+      font: 800 0.76rem/1.2 "Inter", sans-serif;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: none;
+      padding: 0;
+    }
+
+    .about p {
+      margin: 0;
+      font-size: 0.92rem;
+      line-height: 1.65;
+      color: #334155;
+    }
+
+    /* ── Back link ── */
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 24px;
+      font: 700 0.78rem/1 "Inter", sans-serif;
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .back:hover { color: var(--accent); }
+    .back::before { content: "\2190"; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <a class="back" href="../work/awards-achievements.html">Back to Awards</a>
+
+    <header class="header">
+      <figure class="header__banner">
+        <img src="../assets/work/amdocs-cat-paper/img-001.png" alt="CAT Research, GSS, Innovation, Explore Academia">
+      </figure>
+      <div class="header__tags">
+        <span class="tag tag--warm">Research</span>
+        <span class="tag tag--warm">Innovation</span>
+        <span class="tag tag--cool">Capacity Planning</span>
+        <span class="tag tag--cool">Statistical Modeling</span>
+      </div>
+      <h1 class="header__title">Capacity Analysis of Trends</h1>
+      <p class="header__subtitle">How academic collaboration improved hardware capacity forecasting at Amdocs GSS, contributing to $10M in savings</p>
+      <div class="header__meta">
+        <span class="header__author">Sasha Apartsin</span>
+        <span class="header__dot"></span>
+        <span>Amdocs GSS</span>
+        <span class="header__dot"></span>
+        <span>Explore! Academia Program</span>
+      </div>
+    </header>
+
+    <div class="body">
+      <p>[Lead paragraph: opening context about the Explore! Academia program and the CAT research project]</p>
+
+      <div class="highlight">
+        <p>First implementation of this research contributed to</p>
+        <span class="stat">$10M hardware savings</span>
+      </div>
+
+      <h2>Background</h2>
+      <p>[Background section content]</p>
+
+      <h2>The Research</h2>
+      <p>[Description of the CAT model and collaboration]</p>
+
+      <figure class="fig">
+        <img src="../assets/work/amdocs-cat-paper/img-002.png" alt="CAT model: CPU utilization distribution and success rate prediction">
+        <figcaption>CPU utilization distribution follows a log-normal pattern where average growth is exponential</figcaption>
+      </figure>
+
+      <h2>Key Findings</h2>
+      <ul class="findings">
+        <li>[Finding 1: CPU utilization distribution]</li>
+        <li>[Finding 2: exponential growth prediction]</li>
+        <li>[Finding 3: success rate forecasting]</li>
+        <li>[Finding 4: penalty prediction and mitigation]</li>
+      </ul>
+
+      <h2>Impact</h2>
+      <p>[Impact description]</p>
+
+      <div class="quote">
+        <blockquote>[Quote about collaboration success]</blockquote>
+        <cite>[Attribution]</cite>
+      </div>
+
+      <h2>About Explore!</h2>
+      <p>[Program description]</p>
+
+      <div class="about">
+        <h3>About the Author</h3>
+        <p>Sasha Apartsin was a Computer Science PhD student at Tel-Aviv University during this project, bringing research expertise in statistical analysis combined with prior industry experience in telecom infrastructure.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

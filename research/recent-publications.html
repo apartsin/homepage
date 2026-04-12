@@ -97,6 +97,19 @@
     .pub-card__venue a:hover {
       color: #123a67;
     }
+    .pub-section-heading {
+      grid-column: 1 / -1;
+      margin: 24px 4px 8px;
+      padding: 4px 0 8px;
+      border-bottom: 2px solid var(--site-accent, #9c5a2e);
+      color: var(--site-text, #18202a);
+      font: 800 1.1rem/1.2 "Manrope", sans-serif;
+      letter-spacing: -0.01em;
+      list-style: none;
+    }
+    .pub-section-heading:first-child {
+      margin-top: 0;
+    }
   </style>
 </head>
 <body class="apartsin-shell-active" data-site-section="research">
@@ -131,15 +144,7 @@
 
         <section aria-label="Publication list">
           <ol class="pub-list">
-            <li class="pub-card" id="pub-2026-headline-rewriting">
-              <div class="pub-card__top">
-                <span class="pub-card__year">2026</span>
-                <span class="pub-card__type">Preprint</span>
-              </div>
-              <h2 class="pub-card__title">LLM-guided headline rewriting for clickability enhancement without clickbait</h2>
-              <p class="pub-card__meta">Y Aperstein, L Halifa, S Bar, <span class="pub-card__author-self">A Apartsin</span></p>
-              <p class="pub-card__venue"><a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&sortby=pubdate&citation_for_view=-5He5joAAAAJ:Mojj43d5GZwC" target="_blank" rel="noopener noreferrer">arXiv preprint (arXiv:2603.22459)</a></p>
-            </li>
+            <li class="pub-section-heading">Peer-Reviewed</li>
             <li class="pub-card" id="pub-2026-diagnostic-questioning">
               <div class="pub-card__top">
                 <span class="pub-card__year">2026</span>
@@ -166,6 +171,16 @@
               <h2 class="pub-card__title">Generative AI-Based Platform for Deliberate Teaching Practice: A Review and a Suggested Framework</h2>
               <p class="pub-card__meta">Y Aperstein, Y Cohen, <span class="pub-card__author-self">A Apartsin</span></p>
               <p class="pub-card__venue"><a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:VOx2b1Wkg3QC" target="_blank" rel="noopener noreferrer">Education Sciences (MDPI)</a></p>
+            </li>
+            <li class="pub-section-heading">Preprints</li>
+            <li class="pub-card" id="pub-2026-headline-rewriting">
+              <div class="pub-card__top">
+                <span class="pub-card__year">2026</span>
+                <span class="pub-card__type">Preprint</span>
+              </div>
+              <h2 class="pub-card__title">LLM-guided headline rewriting for clickability enhancement without clickbait</h2>
+              <p class="pub-card__meta">Y Aperstein, L Halifa, S Bar, <span class="pub-card__author-self">A Apartsin</span></p>
+              <p class="pub-card__venue"><a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&sortby=pubdate&citation_for_view=-5He5joAAAAJ:Mojj43d5GZwC" target="_blank" rel="noopener noreferrer">arXiv preprint (arXiv:2603.22459)</a></p>
             </li>
             <li class="pub-card" id="pub-2025-chest-xray-rejection">
               <div class="pub-card__top">
