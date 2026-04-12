@@ -10,71 +10,98 @@
   <style>
     .former-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px;
     }
     .former-card {
       display: flex;
       flex-direction: column;
-      min-height: 100%;
       padding: 0;
       overflow: hidden;
+      border-radius: 16px;
+      border: 1px solid var(--site-border);
+      box-shadow: none;
+      background: #fff;
+      transition: transform 220ms ease, box-shadow 220ms ease;
+    }
+    .former-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.1);
     }
     .former-card__media {
       display: block;
       aspect-ratio: 16 / 9;
-      background: rgba(247, 250, 255, 0.92);
+      overflow: hidden;
       border-bottom: 1px solid var(--site-border);
     }
     .former-card__media img {
       display: block;
       width: 100%;
       height: 100%;
-      object-fit: contain;
-      object-position: center;
-      background: rgba(247, 250, 255, 0.92);
+      object-fit: cover;
+      background: var(--site-bg-2, #fbfaf6);
+      transition: transform 300ms ease;
+    }
+    .former-card:hover .former-card__media img {
+      transform: scale(1.03);
     }
     .former-card__body {
-      display: grid;
-      align-content: start;
+      display: flex;
+      flex-direction: column;
       gap: 8px;
-      padding: 13px 14px 14px;
+      padding: 14px 16px 16px;
       flex: 1;
     }
     .former-card__title {
       margin: 0;
-      font: 800 1rem/1.2 "Manrope", "Segoe UI", sans-serif;
+      font: 800 clamp(0.96rem, 1.5vw, 1.12rem)/1.24 "Manrope", sans-serif;
       color: var(--site-text);
+      letter-spacing: -0.01em;
     }
     .former-card__meta {
       margin: 0;
       color: var(--site-muted);
-      font: 700 0.77rem/1.45 "Manrope", "Segoe UI", sans-serif;
-      letter-spacing: 0.02em;
+      font: 600 0.74rem/1.3 "Manrope", sans-serif;
     }
     .former-card__text {
       margin: 0;
       color: var(--site-muted);
-      font: 600 0.85rem/1.62 "Manrope", "Segoe UI", sans-serif;
+      font: 400 0.84rem/1.58 "Source Serif 4", Georgia, serif;
+    }
+    .former-card__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    .former-card__tag {
+      display: inline-flex;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font: 800 0.58rem/1.3 "Manrope", sans-serif;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: rgba(29, 78, 216, 0.08);
+      color: #1d4ed8;
     }
     .former-card__actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 2px;
+      gap: 6px;
+      margin-top: auto;
     }
     .former-card__link {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 30px;
-      padding: 5px 10px;
+      gap: 0.3rem;
+      padding: 7px 12px;
       border: 1px solid var(--site-border);
-      border-radius: 10px;
-      background: #fff;
+      border-radius: 999px;
+      background: var(--site-bg-2, #fbfaf6);
       color: var(--site-text);
       text-decoration: none;
-      font: 700 0.76rem/1.2 "Manrope", "Segoe UI", sans-serif;
+      font: 700 0.72rem/1.2 "Manrope", sans-serif;
+      transition: background 150ms ease;
     }
     .former-card__link:hover {
       border-color: rgba(156, 90, 46, 0.4);
