@@ -64,7 +64,7 @@ window.HOS_PAST_OFFERINGS = [
     trackLabel: "Language AI",
     links: [
       { label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=26092" },
-      { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=language-ai&course=Workshop%20in%20Applied%20LLM%20Systems" }
+      { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=language-ai&institution=Holon%20Institute%20of%20Technology" }
     ]
   },
   {
@@ -80,7 +80,7 @@ window.HOS_PAST_OFFERINGS = [
     trackLabel: "Vision AI",
     links: [
       { label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=26092" },
-      { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=vision-ai&course=Workshop%20in%20Generative%20Vision%20Models" }
+      { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=vision-ai&institution=Holon%20Institute%20of%20Technology" }
     ]
   },
   {
@@ -96,7 +96,7 @@ window.HOS_PAST_OFFERINGS = [
     trackLabel: "Vision AI",
     links: [
       { label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=26188" },
-      { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=vision-ai&course=Workshop%20in%20Computer%20Vision" }
+      { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=vision-ai&institution=Holon%20Institute%20of%20Technology" }
     ]
   },
   {
@@ -112,7 +112,7 @@ window.HOS_PAST_OFFERINGS = [
     trackLabel: "Language AI",
     links: [
       { label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=23950" },
-      { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=language-ai&course=LLMs%20in%20Healthcare" }
+      { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=language-ai&institution=Holon%20Institute%20of%20Technology&term=2025%20Spring" }
     ]
   },
   {
@@ -128,7 +128,7 @@ window.HOS_PAST_OFFERINGS = [
     trackLabel: "Language AI",
     links: [
       { label: "Moodle", href: "https://lemida.biu.ac.il/course/view.php?id=106612" },
-      { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=language-ai&course=LLMs%20and%20Agents" }
+      { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=language-ai&institution=Bar-Ilan%20University&term=2025%20Fall" }
     ]
   },
   {
@@ -144,7 +144,7 @@ window.HOS_PAST_OFFERINGS = [
     trackLabel: "Vision AI",
     links: [
       { label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=25773" },
-      { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=vision-ai&course=Deep%20Generative%20Models" }
+      { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=vision-ai&institution=Holon%20Institute%20of%20Technology&term=2025%20Fall" }
     ]
   },
   {
@@ -160,7 +160,7 @@ window.HOS_PAST_OFFERINGS = [
     trackLabel: "Language AI",
     links: [
       { label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=25328" },
-      { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=language-ai&course=LLMs%20and%20Agents" }
+      { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=language-ai&institution=Holon%20Institute%20of%20Technology&term=2025%20Fall" }
     ]
   },
   {
@@ -176,7 +176,7 @@ window.HOS_PAST_OFFERINGS = [
     trackLabel: "Language AI",
     links: [
       { label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=24324" },
-      { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=language-ai&course=LLMs%20and%20Agents" }
+      { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=language-ai&institution=Holon%20Institute%20of%20Technology&term=2025%20Spring" }
     ]
   },
   {
@@ -216,7 +216,7 @@ window.HOS_PAST_OFFERINGS = [
     desc: "2013, Spring",
     trackHref: "../courses/hos/series/vision-ai.html",
     trackLabel: "Vision AI",
-    links: [{ label: "Syllabus", href: "https://www30.tau.ac.il/yedion/syllabus.asp?year=2012&course=03683246" }]
+    links: [{ label: "Syllabus", href: "https://www30.tau.ac.il/yedion/syllabus.asp?year=2012" }]
   },
   {
     years: "2012",
