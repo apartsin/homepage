@@ -40,9 +40,17 @@
           <p class="apartsin-page-header__lede">Open project ideas for practical AI engineering experience, spanning LLM applications, computer vision, audio, interaction systems, and collaborative intelligence tools, building on material from the <a href="../teaching/hands-on-ai-science-courses-courses.html">Hands-on AI Science courses</a>. Graduate-level directions are listed under <a href="../research/grad-opportunities.html">research opportunities</a>.</p>
         </section>
 
-        <section class="cards-shell cards-shell--stacked" aria-label="Open AI engineering project cards">
-          <div class="cards-grid" id="undergrad-ai-projects-grid"></div>
+        <section class="cards-shell" aria-label="Open AI engineering project cards" data-disable-toolbar="true">
+          <div class="cards-grid" id="undergrad-ai-projects-grid" style="grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px;"></div>
         </section>
+        <style>
+          @media (max-width: 1100px) { #undergrad-ai-projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } }
+          @media (max-width: 640px) { #undergrad-ai-projects-grid { grid-template-columns: 1fr !important; } }
+          #undergrad-ai-projects-grid .content-card__media { aspect-ratio: 16/9; }
+          #undergrad-ai-projects-grid .content-card__media img { object-fit: cover; }
+          #undergrad-ai-projects-grid .content-card__title { font-size: 0.9rem; }
+          #undergrad-ai-projects-grid .content-card__desc { font-size: 0.82rem; line-height: 1.5; }
+        </style>
       </main>
     </div>
   </div>
