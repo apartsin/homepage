@@ -59,7 +59,10 @@
     title.textContent = card.title || "";
     article.appendChild(title);
 
-    /* data-type tags */
+    /* footer: tags left, links right */
+    var footer = document.createElement("div");
+    footer.className = "prt-card__footer";
+
     if (card.dataTypes && card.dataTypes.length) {
       var tagsWrap = document.createElement("div");
       tagsWrap.className = "prt-card__tags";
@@ -69,8 +72,27 @@
         tag.textContent = dt;
         tagsWrap.appendChild(tag);
       });
-      article.appendChild(tagsWrap);
+      footer.appendChild(tagsWrap);
     }
+
+    if (card.links && card.links.length) {
+      var linksWrap = document.createElement("div");
+      linksWrap.className = "prt-card__links";
+      card.links.forEach(function (lnk) {
+        var a = document.createElement("a");
+        a.className = "prt-card__link";
+        a.href = lnk.href;
+        a.textContent = lnk.label || "Link";
+        if (/^https?:\/\//i.test(lnk.href)) {
+          a.target = "_blank";
+          a.rel = "noopener noreferrer";
+        }
+        linksWrap.appendChild(a);
+      });
+      footer.appendChild(linksWrap);
+    }
+
+    article.appendChild(footer);
 
     grid.appendChild(article);
   });

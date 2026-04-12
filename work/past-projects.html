@@ -171,12 +171,18 @@
       font: 700 0.96rem/1.35 "Manrope", "Segoe UI", sans-serif;
     }
 
-    /* data-type tags */
+    /* footer row: tags left, links right */
+    .prt-card__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-top: auto;
+    }
     .prt-card__tags {
       display: flex;
       flex-wrap: wrap;
       gap: 5px;
-      margin-top: auto;
     }
     .prt-card__tag {
       display: inline-flex;
@@ -189,6 +195,27 @@
       font: 700 0.7rem/1.2 "Manrope", "Segoe UI", sans-serif;
       letter-spacing: 0.01em;
       white-space: nowrap;
+    }
+    .prt-card__links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-left: auto;
+    }
+    .prt-card__link {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(24,101,168,0.3);
+      background: rgba(24,101,168,0.06);
+      color: #164a83;
+      font: 700 0.68rem/1.2 "Manrope", sans-serif;
+      text-decoration: none;
+      transition: background 150ms ease;
+    }
+    .prt-card__link:hover {
+      background: rgba(24,101,168,0.14);
     }
   </style>
 </head>

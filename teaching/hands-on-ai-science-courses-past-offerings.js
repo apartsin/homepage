@@ -108,11 +108,53 @@
 
     const media = document.createElement("div");
     media.className = "content-card__media";
-    const image = document.createElement("img");
-    image.src = item.image || "";
+    var typeColors = {
+      "language-ai": { bg1: "#1d3557", bg2: "#457b9d", accent: "#a8dadc" },
+      "vision-ai":   { bg1: "#2d6a4f", bg2: "#52b788", accent: "#d8f3dc" },
+      "scalable-ai": { bg1: "#7a3f16", bg2: "#c2844a", accent: "#fde8d0" },
+      "temporal-ai": { bg1: "#5a189a", bg2: "#9d4edd", accent: "#e0aaff" }
+    };
+    var tc = typeColors[item.type] || typeColors["language-ai"];
+    var esc = function(s) { return (s || "").replace(/&/g, "&amp;").replace(/</g, "&lt;"); };
+    var rawTitle = esc(item.title || "Course");
+    var svgTrack = esc(item.trackLabel || "");
+    var svgDesc = esc(item.desc || "");
+    /* Word-wrap title into lines of ~24 chars */
+    var words = rawTitle.split(" ");
+    var lines = [];
+    var cur = "";
+    for (var w = 0; w < words.length; w++) {
+      if (cur && (cur + " " + words[w]).length > 24) {
+        lines.push(cur);
+        cur = words[w];
+      } else {
+        cur = cur ? cur + " " + words[w] : words[w];
+      }
+    }
+    if (cur) lines.push(cur);
+    var titleY = lines.length === 1 ? 95 : lines.length === 2 ? 80 : 70;
+    var titleSvg = "";
+    for (var li = 0; li < lines.length; li++) {
+      titleSvg += '<text x="240" y="' + (titleY + li * 30) + '" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="24" fill="#fff">' + lines[li] + '</text>';
+    }
+    var subtitleY = titleY + lines.length * 30 + 8;
+    var svgSrc = "data:image/svg+xml," + encodeURIComponent(
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 200">' +
+      '<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">' +
+      '<stop offset="0%" stop-color="' + tc.bg1 + '"/>' +
+      '<stop offset="100%" stop-color="' + tc.bg2 + '"/>' +
+      '</linearGradient></defs>' +
+      '<rect width="480" height="200" fill="url(#g)"/>' +
+      '<circle cx="420" cy="30" r="90" fill="' + tc.accent + '" opacity="0.1"/>' +
+      '<circle cx="50" cy="180" r="70" fill="' + tc.accent + '" opacity="0.07"/>' +
+      '<rect x="30" y="20" width="3" height="160" rx="2" fill="' + tc.accent + '" opacity="0.2"/>' +
+      titleSvg +
+      '<text x="240" y="' + subtitleY + '" text-anchor="middle" font-family="sans-serif" font-weight="600" font-size="13" fill="' + tc.accent + '" opacity="0.9">' + svgTrack + ' \u00b7 ' + svgDesc + '</text>' +
+      '</svg>'
+    );
+    var image = document.createElement("img");
+    image.src = svgSrc;
     image.alt = item.imageAlt || item.title || "Course offering visual";
-    image.loading = "lazy";
-    image.decoding = "async";
     media.appendChild(image);
     article.appendChild(media);
 

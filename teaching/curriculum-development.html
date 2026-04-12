@@ -16,12 +16,19 @@
     .curriculum-card {
       display: flex;
       flex-direction: column;
-      gap: 8px;
       padding: 0;
       overflow: hidden;
     }
     .curriculum-card__body {
       padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+    .curriculum-card__body .hub-anchor-nav {
+      margin-top: auto;
+      padding-top: 4px;
     }
     .curriculum-card h2 {
       margin: 0;
@@ -110,7 +117,9 @@
             <div class="curriculum-card__body">
               <h2>Innovation-First Learning</h2>
               <p>Innovation-First Learning bridges traditional CS education and current AI practice through deep theory, modern tools, and project work.</p>
-              <a class="hub-card__cta" href="../work/innovation-first-learning.html">Full Approach</a>
+              <nav class="hub-anchor-nav">
+                <a href="../work/innovation-first-learning.html">Full Approach</a>
+              </nav>
             </div>
           </article>
         </section>

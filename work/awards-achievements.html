@@ -11,7 +11,7 @@
     .achievement-grid {
       margin-top: 14px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
     }
     .achievement-card {
@@ -22,7 +22,8 @@
       background:
         linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(249, 251, 255, 0.94) 100%);
       box-shadow: 0 12px 24px rgba(35, 30, 23, 0.08);
-      display: grid;
+      display: flex;
+      flex-direction: column;
       gap: 10px;
       scroll-margin-top: 90px;
       transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
@@ -66,6 +67,14 @@
       margin: 0;
       color: var(--site-muted);
       font: 600 0.85rem/1.58 "Manrope", "Segoe UI", sans-serif;
+    }
+    .achievement-card__footer {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+      padding-top: 8px;
     }
     .achievement-card__badge {
       display: inline-flex;
@@ -152,7 +161,10 @@
             </figure>
             <h2 class="achievement-card__title">Amdocs: Model-Based Capacity Planning</h2>
             <p class="achievement-card__text">I designed a statistical model used to predict load on large distributed billing systems. It supported more accurate sizing of system installations and ultimately saved the company $10 million in unnecessary hardware costs.</p>
-            <span class="achievement-card__badge">Impact: Contributed to $10M savings</span>
+            <div class="achievement-card__footer">
+              <span class="achievement-card__badge">Recognition: Contributed to $10M savings</span>
+              <a class="achievement-card__link" href="../assets/work/amdocs-cat-article.pdf" target="_blank" rel="noopener noreferrer"><svg style="width:14px;height:14px;vertical-align:-2px;margin-right:4px" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>Article</a>
+            </div>
           </article>
 
           <article class="achievement-card" id="citibank-achievement">
@@ -161,7 +173,9 @@
             </figure>
             <h2 class="achievement-card__title">Citibank: Financial Data Science Platform</h2>
             <p class="achievement-card__text">While at Citibank TLV lab, I proposed creating a corporate platform for sharing and collaborating on data science insights across the organization. The project was awarded a corporate LabLink grant to support its development.</p>
-            <span class="achievement-card__badge">Recognition: LabLink grant</span>
+            <div class="achievement-card__footer">
+              <span class="achievement-card__badge">Recognition: LabLink grant</span>
+            </div>
           </article>
 
           <article class="achievement-card" id="motorola-achievement">
@@ -170,7 +184,10 @@
             </figure>
             <h2 class="achievement-card__title">Motorola Solutions: AI for Public Safety</h2>
             <p class="achievement-card__text">I led the research team at the first AI lab at Motorola Solutions' Innovation Center, designed the lab’s roadmap, and proposed multiple initiatives across video, text, and speech use cases. I also led several industry-academia collaboration projects, securing grants from the Israel Innovation Authority (IIA) to support their development.</p>
-            <span class="achievement-card__badge">Recognition: IIA grants</span>
+            <div class="achievement-card__footer">
+              <span class="achievement-card__badge">Recognition: IIA grants</span>
+              <a class="achievement-card__link" href="../assets/work/motorola-innovation-brochure.pdf" target="_blank" rel="noopener noreferrer"><svg style="width:14px;height:14px;vertical-align:-2px;margin-right:4px" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>Brochure</a>
+            </div>
           </article>
 
           <article class="achievement-card" id="saferide-achievement">
@@ -179,11 +196,11 @@
             </figure>
             <h2 class="achievement-card__title">SafeRide (Acquired by Questar Automotive): AI for Automotive Telematics</h2>
             <p class="achievement-card__text">I established a data science team and helped define a big-data-driven AI product for no-code creation of onboard models that monitor signal anomalies. The product was recognized as Automotive AI Product of the Year. The company was acquired by Questar Automotive.</p>
-            <span class="achievement-card__badge">Recognition: AI Product of the Year</span>
-            <p class="achievement-card__links">
-              <a class="achievement-card__link" href="https://youtu.be/fmjDr7BKi4A?si=4Pvx_B0V17dP950n" target="_blank" rel="noopener noreferrer"><svg style="width:14px;height:14px;vertical-align:-2px;margin-right:4px" viewBox="0 0 24 24" fill="currentColor"><path d="M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81zM10 15V9l5.2 3L10 15z"/></svg>Product Video</a>
-              <a class="achievement-card__link" href="https://youtu.be/XsNe2T8JDVw?si=ECpRQPj8dHetNwXi" target="_blank" rel="noopener noreferrer"><svg style="width:14px;height:14px;vertical-align:-2px;margin-right:4px" viewBox="0 0 24 24" fill="currentColor"><path d="M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81zM10 15V9l5.2 3L10 15z"/></svg>Team Video</a>
-            </p>
+            <div class="achievement-card__footer">
+              <span class="achievement-card__badge">Recognition: AI Product of the Year</span>
+              <a class="achievement-card__link" href="https://youtu.be/fmjDr7BKi4A?si=4Pvx_B0V17dP950n" target="_blank" rel="noopener noreferrer"><svg style="width:14px;height:14px;vertical-align:-2px;margin-right:4px" viewBox="0 0 24 24" fill="currentColor"><path d="M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81zM10 15V9l5.2 3L10 15z"/></svg>Demo 1</a>
+              <a class="achievement-card__link" href="https://youtu.be/XsNe2T8JDVw?si=ECpRQPj8dHetNwXi" target="_blank" rel="noopener noreferrer"><svg style="width:14px;height:14px;vertical-align:-2px;margin-right:4px" viewBox="0 0 24 24" fill="currentColor"><path d="M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81zM10 15V9l5.2 3L10 15z"/></svg>Demo 2</a>
+            </div>
           </article>
         </section>
       </main>
