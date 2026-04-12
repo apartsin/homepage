@@ -36,35 +36,62 @@
     article.className = "content-card content-card--collection other-cs-card";
     article.dataset.institution = course.institution || "";
 
-    /* SVG image with course name */
+    /* Inline SVG with course name */
     var tc = instColors[course.institution] || instColors["hit"];
-    var title = esc(course.title || "Course");
+    var title = course.title || "Course";
     var lines = wrapText(title, 20);
     var totalH = lines.length * 38;
     var startY = (270 - totalH) / 2 + 28;
-    var titleSvg = "";
+
+    var ns = "http://www.w3.org/2000/svg";
+    var cardId = "cg" + Math.random().toString(36).slice(2, 8);
+    var svg = document.createElementNS(ns, "svg");
+    svg.setAttribute("viewBox", "0 0 480 270");
+    svg.setAttribute("role", "img");
+    svg.setAttribute("aria-label", title);
+    svg.style.cssText = "width:100%;height:100%;display:block;";
+
+    var defs = document.createElementNS(ns, "defs");
+    var grad = document.createElementNS(ns, "linearGradient");
+    grad.id = cardId;
+    grad.setAttribute("x1", "0"); grad.setAttribute("y1", "0");
+    grad.setAttribute("x2", "1"); grad.setAttribute("y2", "1");
+    var s1 = document.createElementNS(ns, "stop");
+    s1.setAttribute("offset", "0%"); s1.setAttribute("stop-color", tc.bg1);
+    var s2 = document.createElementNS(ns, "stop");
+    s2.setAttribute("offset", "100%"); s2.setAttribute("stop-color", tc.bg2);
+    grad.appendChild(s1); grad.appendChild(s2);
+    defs.appendChild(grad); svg.appendChild(defs);
+
+    var bg = document.createElementNS(ns, "rect");
+    bg.setAttribute("width", "480"); bg.setAttribute("height", "270");
+    bg.setAttribute("fill", "url(#" + cardId + ")");
+    svg.appendChild(bg);
+
+    var c1 = document.createElementNS(ns, "circle");
+    c1.setAttribute("cx", "420"); c1.setAttribute("cy", "40"); c1.setAttribute("r", "100");
+    c1.setAttribute("fill", tc.accent); c1.setAttribute("opacity", "0.1");
+    svg.appendChild(c1);
+    var c2 = document.createElementNS(ns, "circle");
+    c2.setAttribute("cx", "40"); c2.setAttribute("cy", "240"); c2.setAttribute("r", "80");
+    c2.setAttribute("fill", tc.accent); c2.setAttribute("opacity", "0.07");
+    svg.appendChild(c2);
+
     for (var i = 0; i < lines.length; i++) {
-      titleSvg += '<text x="240" y="' + (startY + i * 38) + '" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="30" fill="#fff">' + lines[i] + '</text>';
+      var txt = document.createElementNS(ns, "text");
+      txt.setAttribute("x", "240"); txt.setAttribute("y", String(startY + i * 38));
+      txt.setAttribute("text-anchor", "middle");
+      txt.setAttribute("font-family", "sans-serif");
+      txt.setAttribute("font-weight", "800");
+      txt.setAttribute("font-size", "30");
+      txt.setAttribute("fill", "#fff");
+      txt.textContent = lines[i];
+      svg.appendChild(txt);
     }
-    var svgSrc = "data:image/svg+xml," + encodeURIComponent(
-      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 270">' +
-      '<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">' +
-      '<stop offset="0%" stop-color="' + tc.bg1 + '"/>' +
-      '<stop offset="100%" stop-color="' + tc.bg2 + '"/>' +
-      '</linearGradient></defs>' +
-      '<rect width="480" height="270" fill="url(#g)"/>' +
-      '<circle cx="420" cy="40" r="100" fill="' + tc.accent + '" opacity="0.1"/>' +
-      '<circle cx="40" cy="240" r="80" fill="' + tc.accent + '" opacity="0.07"/>' +
-      titleSvg +
-      '</svg>'
-    );
 
     var media = document.createElement("div");
     media.className = "content-card__media other-cs-card__media";
-    var image = document.createElement("img");
-    image.src = svgSrc;
-    image.alt = course.title || "Course";
-    media.appendChild(image);
+    media.appendChild(svg);
     article.appendChild(media);
 
     var body = document.createElement("div");
