@@ -78,6 +78,72 @@
   color: var(--site-text);
 }
 
+/* ── Weekly Schedule ── */
+.weekly-schedule {
+  margin-top: 24px;
+  border: 1px solid var(--site-border);
+  border-radius: 14px;
+  padding: 0 14px 14px;
+  background: var(--site-bg-2, #fbfaf6);
+}
+.weekly-schedule__title {
+  margin: 0;
+  padding: 16px 16px 10px;
+  font: 800 1.05rem/1.3 "Manrope", sans-serif;
+  color: var(--site-text);
+}
+.weekly-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  justify-items: center;
+}
+.weekly-grid > .week-card {
+  width: 100%;
+}
+.weekly-grid > .week-card:last-child:nth-child(3n+1) {
+  grid-column: 2;
+}
+@media (max-width: 560px) {
+  .weekly-grid { grid-template-columns: 1fr; }
+}
+.week-card {
+  padding: 12px 14px;
+  border: 1px solid var(--site-border);
+  border-radius: 10px;
+  background: #fff;
+}
+.week-card--milestone {
+  background: linear-gradient(135deg, rgba(29,78,216,0.06) 0%, rgba(122,63,160,0.04) 100%);
+  border-color: rgba(29,78,216,0.3);
+  border-left: 3px solid #1d4ed8;
+}
+.week-card__num {
+  display: inline-block;
+  margin: 0 0 6px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font: 800 0.68rem/1.3 "Manrope", sans-serif;
+  color: #fff;
+  background: var(--site-accent, #9c5a2e);
+}
+.week-card--milestone .week-card__num {
+  background: #1d4ed8;
+}
+.week-card--milestone .week-card__topic {
+  color: #1d4ed8;
+}
+.week-card__topic {
+  margin: 0 0 4px;
+  font: 700 0.78rem/1.3 "Manrope", sans-serif;
+  color: var(--site-text);
+}
+.week-card__tools {
+  margin: 0;
+  font: 400 0.72rem/1.5 "Source Serif 4", Georgia, serif;
+  color: var(--site-muted);
+}
+
 .syllabus-links {
   margin-top: 16px;
   display: flex;

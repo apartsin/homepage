@@ -145,7 +145,7 @@
       return 'Vision AI';
     }
     if (/llm|language|agent|convers/.test(value)) {
-      return 'Conversation AI';
+      return 'Language AI';
     }
     if (/scalable|big data|distributed|cloud|data science/.test(value)) {
       return 'Scalable AI';
@@ -158,7 +158,7 @@
 
   function typeSlugFromLabel(label) {
     const normalized = String(label || '').trim().toLowerCase();
-    if (normalized === 'conversation ai') return 'language-ai';
+    if (normalized === 'conversation ai' || normalized === 'language ai') return 'language-ai';
     if (normalized === 'vision ai') return 'vision-ai';
     if (normalized === 'scalable ai') return 'scalable-ai';
     if (normalized === 'temporal ai') return 'temporal-ai';
@@ -167,7 +167,7 @@
 
   function typeLabelFromSlug(slug) {
     const normalized = String(slug || '').trim().toLowerCase();
-    if (normalized === 'language-ai' || normalized === 'conversation-ai') return 'Conversation AI';
+    if (normalized === 'language-ai' || normalized === 'conversation-ai') return 'Language AI';
     if (normalized === 'vision-ai') return 'Vision AI';
     if (normalized === 'scalable-ai') return 'Scalable AI';
     if (normalized === 'temporal-ai') return 'Temporal AI';
