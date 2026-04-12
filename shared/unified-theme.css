@@ -425,11 +425,25 @@ summary:focus-visible {
   border: 0;
 }
 
+/* Hero image+lede flex layout */
+.apartsin-page-header--standard [style*="display: flex"] {
+  margin-top: clamp(20px, 2.8vw, 32px) !important;
+  gap: clamp(18px, 2.5vw, 28px) !important;
+  align-items: flex-start !important;
+  max-width: 68ch;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.apartsin-page-header--standard [style*="display: flex"] figure {
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
+}
+
 /* #6 Serif lede text; #20 Max-width for readability */
 .apartsin-page-header--standard .apartsin-page-header__lede {
   margin: clamp(24px, 3vw, 36px) auto 0;
   max-width: 68ch;
-  text-align: left;
+  text-align: justify;
+  text-align-last: left;
   line-height: 1.78;
   font-size: clamp(1.04rem, 1.05vw + 0.64rem, 1.2rem);
   font-family: "Source Serif 4", Georgia, serif;
@@ -1279,6 +1293,17 @@ a.hos-brand {
     margin-top: 16px;
     line-height: 1.65;
     font-size: 1rem;
+    text-align: left;
+    text-align-last: left;
+  }
+
+  .apartsin-page-header--standard [style*="display: flex"] {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .apartsin-page-header--standard [style*="display: flex"] figure {
+    flex: none !important;
+    width: clamp(100px, 30vw, 140px) !important;
   }
 
   .apartsin-backtotop {
