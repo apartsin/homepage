@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Patents and patent applications from Sasha Apartsin's innovation work.">
-  <title>Patents | Sasha Apartsin</title>
+  <title>Patents and Patent Applications | Sasha Apartsin</title>
   <link rel="stylesheet" href="../shared/site-shell.css">
   <link rel="stylesheet" href="../shared/unified-theme.css">
   <style>
@@ -137,6 +137,19 @@
     .patent-card__id a:hover {
       color: #123a67;
     }
+    .patent-section-heading {
+      grid-column: 1 / -1;
+      margin: 24px 4px 8px;
+      padding: 4px 0 8px;
+      border-bottom: 2px solid var(--site-accent, #9c5a2e);
+      color: var(--site-text);
+      font: 800 1.1rem/1.2 "Manrope", sans-serif;
+      letter-spacing: -0.01em;
+      list-style: none;
+    }
+    .patent-section-heading:first-child {
+      margin-top: 0;
+    }
   </style>
 </head>
 <body class="apartsin-shell-active" data-site-section="work">
@@ -156,14 +169,14 @@
     <div class="apartsin-shell__content">
       <main class="apartsin-shell__main">
         <section class="apartsin-page-header apartsin-page-header--standard" id="patents-overview">
-          <h1 class="apartsin-sr-only">Patents</h1>
+          <h1 class="apartsin-sr-only">Patents and Patent Applications</h1>
           <div class="apartsin-page-header__top">
             <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
               <a href="../index.html">Home</a>
               <span aria-hidden="true">/</span>
               <a href="./innovation-overview.html">Innovations</a>
               <span aria-hidden="true">/</span>
-              <strong>Patents</strong>
+              <strong>Patents and Patent Applications</strong>
             </nav>
           </div>
           <p class="apartsin-page-header__lede">I filed these patents across <a href="../about/industry-experience.html">industry roles</a>, covering content delivery, multimedia processing, and data science methods. Related innovations are tracked under <a href="./awards-achievements.html">awards</a> and <a href="./entrepreneurship.html">entrepreneurship</a>.</p>
@@ -174,7 +187,6 @@
             <li class="patent-card">
               <div class="patent-card__top">
                 <span class="patent-card__year">2025</span>
-                <span class="patent-card__kind">Application</span>
               </div>
               <h3 class="patent-card__title">System and method for determining a score for a driver of a vehicle as part of a fleet of vehicles</h3>
               <p class="patent-card__meta">Inventors: Y. Shalev, K. Henrichs, I. Kossaczky, <span class="patent-card__author-self">A. Apartsin</span></p>
@@ -187,33 +199,6 @@
             <li class="patent-card">
               <div class="patent-card__top">
                 <span class="patent-card__year">2024</span>
-                <span class="patent-card__kind">Application</span>
-              </div>
-              <h3 class="patent-card__title">DTC Rulebook generation system and method</h3>
-              <p class="patent-card__meta">Inventors: <span class="patent-card__author-self">A. Apartsin</span>, K. Henrichs, I. Kossaczky, S. Kovalets, Y. Mavliutov, I. Korchahin, ...</p>
-              <div class="patent-card__company">
-                <img class="patent-card__company-logo" src="../assets/about/industry-experience/img-016-5706a1c4bd.jpg" alt="SafeRide (Questar Automotive) logo">
-                <span class="patent-card__company-name">SafeRide (Questar Automotive)</span>
-              </div>
-              <p class="patent-card__id"><a class="external-indicator" href="https://patents.google.com/patent/US20240338980A1/en" target="_blank" rel="noopener noreferrer">US Patent App. US-20240338980-A1</a></p>
-            </li>
-            <li class="patent-card">
-              <div class="patent-card__top">
-                <span class="patent-card__year">2024</span>
-                <span class="patent-card__kind">Application</span>
-              </div>
-              <h3 class="patent-card__title">A system and method for the unification and optimization of machine learning inference pipelines</h3>
-              <p class="patent-card__meta">Inventors: Y. Stein, Y. Vardi, <span class="patent-card__author-self">A. Apartsin</span></p>
-              <div class="patent-card__company">
-                <img class="patent-card__company-logo" src="../assets/about/industry-experience/img-016-5706a1c4bd.jpg" alt="SafeRide (Questar Automotive) logo">
-                <span class="patent-card__company-name">SafeRide (Questar Automotive)</span>
-              </div>
-              <p class="patent-card__id"><a class="external-indicator" href="https://patents.google.com/?q=%2218%2F251%2C542%22+apartsin" target="_blank" rel="noopener noreferrer">US Patent App. 18/251,542</a></p>
-            </li>
-            <li class="patent-card">
-              <div class="patent-card__top">
-                <span class="patent-card__year">2024</span>
-                <span class="patent-card__kind">Patent</span>
               </div>
               <h3 class="patent-card__title">System and method for model configuration selection</h3>
               <p class="patent-card__meta">Inventors: S. Kovalets, S. Barabanov, Y. Shalev, <span class="patent-card__author-self">A. Apartsin</span></p>
@@ -225,8 +210,31 @@
             </li>
             <li class="patent-card">
               <div class="patent-card__top">
+                <span class="patent-card__year">2024</span>
+              </div>
+              <h3 class="patent-card__title">DTC Rulebook generation system and method</h3>
+              <p class="patent-card__meta">Inventors: <span class="patent-card__author-self">A. Apartsin</span>, K. Henrichs, I. Kossaczky, S. Kovalets, Y. Mavliutov, I. Korchahin, ...</p>
+              <div class="patent-card__company">
+                <img class="patent-card__company-logo" src="../assets/about/industry-experience/img-016-5706a1c4bd.jpg" alt="SafeRide (Questar Automotive) logo">
+                <span class="patent-card__company-name">SafeRide (Questar Automotive)</span>
+              </div>
+              <p class="patent-card__id"><a class="external-indicator" href="https://patents.google.com/patent/US20240338980A1/en" target="_blank" rel="noopener noreferrer">US Patent App. US20240338980A1</a></p>
+            </li>
+            <li class="patent-card">
+              <div class="patent-card__top">
+                <span class="patent-card__year">2024</span>
+              </div>
+              <h3 class="patent-card__title">A system and method for the unification and optimization of machine learning inference pipelines</h3>
+              <p class="patent-card__meta">Inventors: Y. Stein, Y. Vardi, <span class="patent-card__author-self">A. Apartsin</span></p>
+              <div class="patent-card__company">
+                <img class="patent-card__company-logo" src="../assets/about/industry-experience/img-016-5706a1c4bd.jpg" alt="SafeRide (Questar Automotive) logo">
+                <span class="patent-card__company-name">SafeRide (Questar Automotive)</span>
+              </div>
+              <p class="patent-card__id"><a class="external-indicator" href="https://patents.google.com/patent/US20240013095A1/en" target="_blank" rel="noopener noreferrer">US Patent App. US20240013095A1</a></p>
+            </li>
+            <li class="patent-card">
+              <div class="patent-card__top">
                 <span class="patent-card__year">2023</span>
-                <span class="patent-card__kind">Application</span>
               </div>
               <h3 class="patent-card__title">System and method for model training for a new signal based on metadata representations of known signals</h3>
               <p class="patent-card__meta">Inventors: K. Henrichs, S.M. Blanc, Y. Shalev, <span class="patent-card__author-self">A. Apartsin</span></p>
@@ -234,12 +242,23 @@
                 <img class="patent-card__company-logo" src="../assets/about/industry-experience/img-016-5706a1c4bd.jpg" alt="SafeRide (Questar Automotive) logo">
                 <span class="patent-card__company-name">SafeRide (Questar Automotive)</span>
               </div>
-              <p class="patent-card__id"><a class="external-indicator" href="https://patents.google.com/?q=%2218%2F297%2C661%22+apartsin" target="_blank" rel="noopener noreferrer">US Patent App. 18/297,661</a></p>
+              <p class="patent-card__id"><a class="external-indicator" href="https://patents.google.com/patent/EP4270251A1/en" target="_blank" rel="noopener noreferrer">EP Patent App. EP4270251A1</a></p>
             </li>
             <li class="patent-card">
               <div class="patent-card__top">
                 <span class="patent-card__year">2022</span>
-                <span class="patent-card__kind">Application</span>
+              </div>
+              <h3 class="patent-card__title">A system and method for feature selection recommendation</h3>
+              <p class="patent-card__meta">Inventors: R. Bakalo, <span class="patent-card__author-self">A. Apartsin</span></p>
+              <div class="patent-card__company">
+                <img class="patent-card__company-logo" src="../assets/about/industry-experience/img-016-5706a1c4bd.jpg" alt="SafeRide logo">
+                <span class="patent-card__company-name">SafeRide (Questar Automotive)</span>
+              </div>
+              <p class="patent-card__id"><a class="external-indicator" href="https://patents.google.com/patent/EP4099623A1/en" target="_blank" rel="noopener noreferrer">EP Patent EP4099623A1</a></p>
+            </li>
+            <li class="patent-card">
+              <div class="patent-card__top">
+                <span class="patent-card__year">2022</span>
               </div>
               <h3 class="patent-card__title">System and method for physical model based machine learning</h3>
               <p class="patent-card__meta">Inventors: <span class="patent-card__author-self">A. Apartsin</span>, Y. Stein, Y. Vardi</p>
@@ -247,25 +266,11 @@
                 <img class="patent-card__company-logo" src="../assets/about/industry-experience/img-016-5706a1c4bd.jpg" alt="SafeRide (Questar Automotive) logo">
                 <span class="patent-card__company-name">SafeRide (Questar Automotive)</span>
               </div>
-              <p class="patent-card__id"><a class="external-indicator" href="https://patents.google.com/?q=%2217%2F824%2C941%22+apartsin" target="_blank" rel="noopener noreferrer">US Patent App. 17/824,941</a></p>
-            </li>
-            <li class="patent-card">
-              <div class="patent-card__top">
-                <span class="patent-card__year">2022</span>
-                <span class="patent-card__kind">Patent</span>
-              </div>
-              <h3 class="patent-card__title">A system and method for feature selection recommendation</h3>
-              <p class="patent-card__meta">Inventors: R. Bakalo, <span class="patent-card__author-self">A. Apartsin</span></p>
-              <div class="patent-card__company">
-                <img class="patent-card__company-logo" src="../assets/about/industry-experience/img-014-6ac31e1063.png" alt="Motorola Solutions logo">
-                <span class="patent-card__company-name">Motorola Solutions</span>
-              </div>
-              <p class="patent-card__id"><a class="external-indicator" href="https://patents.google.com/patent/EP4099623A1/en" target="_blank" rel="noopener noreferrer">EP Patent EP4099623A1</a></p>
+              <p class="patent-card__id"><a class="external-indicator" href="https://patents.google.com/patent/US20220382939A1/en" target="_blank" rel="noopener noreferrer">US Patent App. US20220382939A1</a></p>
             </li>
             <li class="patent-card">
               <div class="patent-card__top">
                 <span class="patent-card__year">2018</span>
-                <span class="patent-card__kind">Patent</span>
               </div>
               <h3 class="patent-card__title">Methods and systems for providing a response to an audio query where the response is determined to have a public safety impact</h3>
               <p class="patent-card__meta">Inventors: H. Kahlon, <span class="patent-card__author-self">A. Apartsin</span>, D. Lev, T. Mordel</p>
@@ -278,7 +283,6 @@
             <li class="patent-card">
               <div class="patent-card__top">
                 <span class="patent-card__year">2008</span>
-                <span class="patent-card__kind">Application</span>
               </div>
               <h3 class="patent-card__title">Search User Interface</h3>
               <p class="patent-card__meta">Inventors: <span class="patent-card__author-self">A. Apartsin</span>, V. Tchemerisov, V. Cooperman</p>
@@ -286,12 +290,11 @@
                 <img class="patent-card__company-logo" src="../assets/about/industry-experience/img-011-e1554a8de6.png" alt="CloudTuner logo">
                 <span class="patent-card__company-name">CloudTuner</span>
               </div>
-              <p class="patent-card__id"><a class="external-indicator" href="https://patents.google.com/?q=%2212%2F194%2C550%22+apartsin" target="_blank" rel="noopener noreferrer">US Patent App. 12/194,550</a></p>
+              <p class="patent-card__id"><a class="external-indicator" href="https://patents.google.com/patent/US20090070321A1/en" target="_blank" rel="noopener noreferrer">US Patent App. US20090070321A1</a></p>
             </li>
             <li class="patent-card">
               <div class="patent-card__top">
                 <span class="patent-card__year">2005</span>
-                <span class="patent-card__kind">Application</span>
               </div>
               <h3 class="patent-card__title">Method and apparatus for matching portions of input images</h3>
               <p class="patent-card__meta">Inventors: R. Basri, C. Brestel, M. Galun, <span class="patent-card__author-self">A. Apartsin</span></p>
@@ -299,7 +302,7 @@
                 <img class="patent-card__company-logo" src="../assets/about/education/logos/weizmann.png" alt="Weizmann Institute of Science logo">
                 <span class="patent-card__company-name">Weizmann Institute of Science</span>
               </div>
-              <p class="patent-card__id"><a class="external-indicator" href="https://patents.google.com/patent/US8175412B2/en" target="_blank" rel="noopener noreferrer">US Patent App. 10/598,027</a></p>
+              <p class="patent-card__id"><a class="external-indicator" href="https://patents.google.com/patent/US8175412B2/en" target="_blank" rel="noopener noreferrer">US Patent US8175412B2</a></p>
             </li>
           </ol>
         </section>

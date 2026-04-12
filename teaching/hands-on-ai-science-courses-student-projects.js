@@ -58,12 +58,10 @@
   const grid = document.getElementById('student-projects-grid');
   const typeSelect = document.getElementById('student-project-filter-type');
   const institutionSelect = document.getElementById('student-project-filter-institution');
-  const yearSelect = document.getElementById('student-project-filter-year');
-  const semesterSelect = document.getElementById('student-project-filter-semester');
   const resetBtn = document.getElementById('student-project-filter-reset');
   const status = document.getElementById('student-project-status');
 
-  if (!grid || !typeSelect || !institutionSelect || !yearSelect || !semesterSelect || !resetBtn || !status) {
+  if (!grid || !typeSelect || !institutionSelect || !resetBtn || !status) {
     return;
   }
 
@@ -279,6 +277,9 @@
     article.dataset.institution = courseMeta.institution;
     article.dataset.year = courseMeta.year;
     article.dataset.semester = courseMeta.semester;
+    var termVal = (courseMeta.year || "") + (courseMeta.semester && courseMeta.semester !== "Not specified" ? " " + courseMeta.semester : "");
+    article.dataset.term = termVal.trim() || "Not specified";
+    article.dataset.courseTitle = courseMeta.instanceTitle || "";
 
     if (project.i) {
       const media = document.createElement('div');
@@ -324,6 +325,23 @@
     typeTag.className = 'student-project-card__chip student-project-card__chip--type';
     typeTag.textContent = courseMeta.type;
     topRow.appendChild(typeTag);
+
+    var courseIcons = {
+      'language-ai': '../assets/courses/hos-series/llm-course/img-006-language-ai-gemini.png',
+      'vision-ai': '../assets/courses/hos-series/embvision-course/img-008-vision-ai-gemini.png',
+      'scalable-ai': '../assets/courses/hos-series/bigdata-course/img-012-scalable-ai-gemini.png',
+      'temporal-ai': '../assets/courses/hos-series/temporalai-course/img-008-temporal-ai-gemini.png'
+    };
+    var courseIconSrc = courseIcons[courseMeta.typeSlug];
+    if (courseIconSrc) {
+      var cIcon = document.createElement('img');
+      cIcon.src = courseIconSrc;
+      cIcon.alt = (courseMeta.type || '') + ' course';
+      cIcon.loading = 'lazy';
+      cIcon.style.cssText = 'width:22px;height:22px;object-fit:cover;border-radius:4px;border:1px solid var(--site-border,rgba(24,32,42,0.14));';
+      topRow.appendChild(cIcon);
+    }
+
     body.appendChild(topRow);
 
     /* Title */
@@ -406,37 +424,29 @@
 
   cards.forEach((card) => grid.appendChild(card));
 
+  const termSelect = document.getElementById('student-project-filter-term');
+  const courseSelect = document.getElementById('student-project-filter-course');
+
   const allTypes = Array.from(new Set(cards.map((card) => card.dataset.type).filter(Boolean))).sort();
   const allInstitutions = Array.from(new Set(cards.map((card) => card.dataset.institution).filter(Boolean))).sort();
-  const allYears = Array.from(new Set(cards.map((card) => card.dataset.year).filter(Boolean)))
+  const allTerms = Array.from(new Set(cards.map((card) => card.dataset.term).filter(Boolean)))
     .sort((a, b) => {
       if (a === 'Not specified') return 1;
       if (b === 'Not specified') return -1;
-      return Number(b) - Number(a);
+      return b.localeCompare(a);
     });
-  const semesterOrder = ['Fall', 'Spring', 'Fall-Spring', 'Not specified'];
-  const allSemesters = Array.from(new Set(cards.map((card) => card.dataset.semester).filter(Boolean)))
-    .sort((a, b) => {
-      const aIndex = semesterOrder.indexOf(a);
-      const bIndex = semesterOrder.indexOf(b);
-      const safeA = aIndex === -1 ? semesterOrder.length : aIndex;
-      const safeB = bIndex === -1 ? semesterOrder.length : bIndex;
-      if (safeA !== safeB) {
-        return safeA - safeB;
-      }
-      return String(a).localeCompare(String(b));
-    });
+  const allCourses = Array.from(new Set(cards.map((card) => card.dataset.courseTitle).filter(Boolean))).sort();
 
   appendOptions(typeSelect, allTypes, optionLabelFromSlug);
   appendOptions(institutionSelect, allInstitutions, (v) => v);
-  appendOptions(yearSelect, allYears, (v) => v);
-  appendOptions(semesterSelect, allSemesters, (v) => v);
+  if (termSelect) appendOptions(termSelect, allTerms, (v) => v);
+  if (courseSelect) appendOptions(courseSelect, allCourses, (v) => v);
 
   const params = new URLSearchParams(window.location.search);
   const presetType = String(params.get('type') || '').trim().toLowerCase();
   const presetInstitution = String(params.get('institution') || '').trim();
-  const presetYear = String(params.get('year') || '').trim();
-  const presetSemester = String(params.get('semester') || '').trim();
+  const presetTerm = String(params.get('term') || '').trim();
+  const presetCourse = String(params.get('course') || '').trim();
 
   if (presetType && allTypes.includes(presetType)) {
     typeSelect.value = presetType;
@@ -444,26 +454,26 @@
   if (presetInstitution && allInstitutions.includes(presetInstitution)) {
     institutionSelect.value = presetInstitution;
   }
-  if (presetYear && allYears.includes(presetYear)) {
-    yearSelect.value = presetYear;
+  if (presetTerm && termSelect && allTerms.includes(presetTerm)) {
+    termSelect.value = presetTerm;
   }
-  if (presetSemester && allSemesters.includes(presetSemester)) {
-    semesterSelect.value = presetSemester;
+  if (presetCourse && courseSelect && allCourses.includes(presetCourse)) {
+    courseSelect.value = presetCourse;
   }
 
   function applyFilters() {
     const type = typeSelect.value;
     const institution = institutionSelect.value;
-    const year = yearSelect.value;
-    const semester = semesterSelect.value;
+    const term = termSelect ? termSelect.value : 'all';
+    const course = courseSelect ? courseSelect.value : 'all';
     let visible = 0;
 
     cards.forEach((card) => {
       const typeMatch = type === 'all' || card.dataset.type === type;
       const institutionMatch = institution === 'all' || card.dataset.institution === institution;
-      const yearMatch = year === 'all' || card.dataset.year === year;
-      const semesterMatch = semester === 'all' || card.dataset.semester === semester;
-      const match = typeMatch && institutionMatch && yearMatch && semesterMatch;
+      const termMatch = term === 'all' || card.dataset.term === term;
+      const courseMatch = course === 'all' || card.dataset.courseTitle === course;
+      const match = typeMatch && institutionMatch && termMatch && courseMatch;
       card.hidden = !match;
       if (match) {
         visible += 1;
@@ -473,15 +483,15 @@
     status.textContent = `Showing ${visible} of ${cards.length} projects`;
   }
 
-  [typeSelect, institutionSelect, yearSelect, semesterSelect].forEach((selectEl) => {
+  [typeSelect, institutionSelect, termSelect, courseSelect].filter(Boolean).forEach((selectEl) => {
     selectEl.addEventListener('change', applyFilters);
   });
 
   resetBtn.addEventListener('click', () => {
     typeSelect.value = 'all';
     institutionSelect.value = 'all';
-    yearSelect.value = 'all';
-    semesterSelect.value = 'all';
+    if (termSelect) termSelect.value = 'all';
+    if (courseSelect) courseSelect.value = 'all';
     applyFilters();
   });
 

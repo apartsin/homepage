@@ -114,8 +114,13 @@
     };
     var tc = typeColors[item.type] || typeColors["language-ai"];
     var rawTitle = (item.title || "Course");
-    var svgTrack = (item.trackLabel || "");
-    var svgDesc = (item.desc || "");
+    var courseSubtitles = {
+      "Language AI": "A HoS AI Course: Building Language AI with LLMs and Agents",
+      "Vision AI": "A HoS AI Course: Building Vision AI with Foundation and Generative Models",
+      "Scalable AI": "A HoS AI Course: Building Scalable AI with Big Data",
+      "Temporal AI": "A HoS AI Course: Building Temporal AI with RL and World Models"
+    };
+    var svgSubtitle = courseSubtitles[item.trackLabel] || item.trackLabel || "";
     /* Word-wrap title */
     var words = rawTitle.split(" ");
     var lines = [];
@@ -180,16 +185,108 @@
       svg.appendChild(txt);
     }
 
-    var subtitleY = titleY + lines.length * 30 + 8;
+    /* Institution logo top-left */
+    var instSlug = item.institution || "";
+    var logoUrl = {
+      "academic-college-of-tel-aviv-yafo": "../assets/teaching/other-cs-courses/logos/mta.jpg",
+      "bar-ilan-university": "../assets/teaching/other-cs-courses/logos/biu.png",
+      "holon-institute-of-technology": "../assets/teaching/other-cs-courses/logos/hit.png",
+      "tel-aviv-university": "../assets/teaching/other-cs-courses/logos/tau.png"
+    }[instSlug];
+    if (logoUrl) {
+      var logoBg = document.createElementNS(ns, "rect");
+      logoBg.setAttribute("x", "8"); logoBg.setAttribute("y", "8");
+      logoBg.setAttribute("width", "64"); logoBg.setAttribute("height", "64");
+      logoBg.setAttribute("rx", "12");
+      logoBg.setAttribute("fill", "#fff");
+      svg.appendChild(logoBg);
+      var logoImg = document.createElementNS(ns, "image");
+      logoImg.setAttribute("x", "14"); logoImg.setAttribute("y", "14");
+      logoImg.setAttribute("width", "52"); logoImg.setAttribute("height", "52");
+      logoImg.setAttributeNS("http://www.w3.org/1999/xlink", "href", logoUrl);
+      svg.appendChild(logoImg);
+    }
+
+    /* Program name below course title */
+    var programName = item.meta || "";
+    if (programName) {
+      var progTxt = document.createElementNS(ns, "text");
+      var progY = titleY + lines.length * 30 + 6;
+      progTxt.setAttribute("x", "240"); progTxt.setAttribute("y", String(progY));
+      progTxt.setAttribute("text-anchor", "middle");
+      progTxt.setAttribute("font-family", "sans-serif");
+      progTxt.setAttribute("font-weight", "500");
+      progTxt.setAttribute("font-size", "15");
+      progTxt.setAttribute("fill", "#fbbf24");
+      progTxt.textContent = programName;
+      svg.appendChild(progTxt);
+    }
+
+    /* Year+semester badge top-right */
+    var yearText = (item.desc || "").trim() || item.years || "";
+    var badgeWidth = Math.max(80, yearText.length * 8 + 20);
+    var yrBg = document.createElementNS(ns, "rect");
+    yrBg.setAttribute("x", String(470 - badgeWidth)); yrBg.setAttribute("y", "10");
+    yrBg.setAttribute("width", String(badgeWidth)); yrBg.setAttribute("height", "24");
+    yrBg.setAttribute("rx", "12");
+    yrBg.setAttribute("fill", "rgba(0,0,0,0.35)");
+    svg.appendChild(yrBg);
+    var yrTxt = document.createElementNS(ns, "text");
+    yrTxt.setAttribute("x", String(470 - badgeWidth / 2)); yrTxt.setAttribute("y", "27");
+    yrTxt.setAttribute("text-anchor", "middle");
+    yrTxt.setAttribute("font-family", "sans-serif");
+    yrTxt.setAttribute("font-weight", "800");
+    yrTxt.setAttribute("font-size", "14");
+    yrTxt.setAttribute("fill", "#fff");
+    yrTxt.textContent = yearText;
+    svg.appendChild(yrTxt);
+
+    /* Background bar for subtitle */
+    var bar = document.createElementNS(ns, "rect");
+    bar.setAttribute("x", "0"); bar.setAttribute("y", "170");
+    bar.setAttribute("width", "480"); bar.setAttribute("height", "30");
+    bar.setAttribute("fill", "rgba(0,0,0,0.3)");
+    svg.appendChild(bar);
+
+    /* Subtitle: "A HoS AI Course:" in accent color, then course name with colored focus */
+    var courseNames = {
+      "Language AI": { prefix: "Building ", focus: "Language AI", suffix: " with LLMs and Agents", color: "#60a5fa" },
+      "Vision AI": { prefix: "Building ", focus: "Vision AI", suffix: " with Foundation and Generative Models", color: "#4ade80" },
+      "Scalable AI": { prefix: "Building ", focus: "Scalable AI", suffix: " with Big Data", color: "#fb923c" },
+      "Temporal AI": { prefix: "Building ", focus: "Temporal AI", suffix: " with RL and World Models", color: "#c084fc" }
+    };
+    var cn = courseNames[item.trackLabel] || { prefix: "", focus: item.trackLabel || "", suffix: "", color: "#fff" };
+
     var sub = document.createElementNS(ns, "text");
-    sub.setAttribute("x", "240"); sub.setAttribute("y", String(subtitleY));
+    sub.setAttribute("x", "240"); sub.setAttribute("y", "190");
     sub.setAttribute("text-anchor", "middle");
     sub.setAttribute("font-family", "sans-serif");
-    sub.setAttribute("font-weight", "600");
-    sub.setAttribute("font-size", "13");
-    sub.setAttribute("fill", tc.accent);
-    sub.setAttribute("opacity", "0.9");
-    sub.textContent = svgTrack + " \u00b7 " + svgDesc;
+    sub.setAttribute("font-size", "12");
+
+    var span1 = document.createElementNS(ns, "tspan");
+    span1.setAttribute("font-weight", "800");
+    span1.setAttribute("fill", "#fbbf24");
+    span1.textContent = "A HoS AI Course: ";
+    sub.appendChild(span1);
+
+    var span2 = document.createElementNS(ns, "tspan");
+    span2.setAttribute("font-weight", "600");
+    span2.setAttribute("fill", "#fff");
+    span2.textContent = cn.prefix;
+    sub.appendChild(span2);
+
+    var span3 = document.createElementNS(ns, "tspan");
+    span3.setAttribute("font-weight", "800");
+    span3.setAttribute("fill", cn.color);
+    span3.textContent = cn.focus;
+    sub.appendChild(span3);
+
+    var span4 = document.createElementNS(ns, "tspan");
+    span4.setAttribute("font-weight", "600");
+    span4.setAttribute("fill", "rgba(255,255,255,0.6)");
+    span4.textContent = cn.suffix;
+    sub.appendChild(span4);
+
     svg.appendChild(sub);
 
     var media = document.createElement("div");
@@ -200,35 +297,11 @@
     const body = document.createElement("div");
     body.className = "content-card__body";
 
-    const eyebrow = document.createElement("p");
-    eyebrow.className = "content-card__eyebrow";
-    eyebrow.textContent = item.institutionLabel || institutionLabels[item.institution] || "";
-    body.appendChild(eyebrow);
-
-    const title = document.createElement("h2");
-    title.className = "content-card__title";
-    title.textContent = item.title || "";
-    body.appendChild(title);
-
-    const track = document.createElement("p");
-    track.className = "course-track-tag";
-    const trackLink = document.createElement("a");
-    trackLink.href = item.trackHref || "#";
-    trackLink.textContent = item.trackLabel || (typeLabels[item.type] || labelFromSlug(item.type || ""));
-    track.appendChild(trackLink);
-    body.appendChild(track);
-
-    const meta = document.createElement("p");
-    meta.className = "content-card__meta";
-    meta.textContent = item.meta || "";
-    body.appendChild(meta);
-
-    const desc = document.createElement("p");
-    desc.className = "content-card__desc";
-    desc.textContent = item.desc || "";
-    body.appendChild(desc);
-
-    const links = Array.isArray(item.links) ? item.links : [];
+    var allLinks = Array.isArray(item.links) ? item.links.slice() : [];
+    if (item.trackHref) {
+      allLinks.push({ label: "HoS AI Course", href: item.trackHref });
+    }
+    const links = allLinks;
     if (links.length > 0) {
       const linksWrap = document.createElement("div");
       linksWrap.className = "content-card__links";
@@ -237,7 +310,17 @@
         const anchor = document.createElement("a");
         anchor.className = "content-card__link";
         anchor.href = link.href;
-        anchor.textContent = link.label || "Open";
+        var lbl = link.label || "Open";
+        if (/moodle/i.test(lbl)) {
+          var mIcon = document.createElement("img");
+          mIcon.src = "../assets/icons/moodle.svg";
+          mIcon.alt = "Moodle";
+          mIcon.style.cssText = "width:14px;height:14px;vertical-align:-2px;margin-right:3px;";
+          anchor.appendChild(mIcon);
+          anchor.appendChild(document.createTextNode(lbl));
+        } else {
+          anchor.textContent = lbl;
+        }
         if (/^https?:\/\//i.test(link.href)) {
           anchor.target = "_blank";
           anchor.rel = "noopener noreferrer";
