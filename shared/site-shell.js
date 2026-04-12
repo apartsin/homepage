@@ -225,12 +225,14 @@
           /\/work\/overview\.html$/i,
           /\/work\/past-projects\.html$/i,
           /\/work\/recent-projects\.html$/i,
+          /\/work\/tech-stack\.html$/i,
           /\/about\/industry-experience\.html$/i,
         ],
         [
           { label: 'Industry Experience', path: 'about/industry-experience.html' },
           { label: 'Recent Projects', path: 'work/recent-projects.html' },
           { label: 'Selected Past Projects', path: 'work/past-projects.html' },
+          { label: 'Tech Stack Evolution', path: 'work/tech-stack.html' },
         ],
       ),
       link(
