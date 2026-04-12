@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <meta name="description" content="Research focus: applied AI for robust perception, reasoning, and decision making. Generative AI for evaluation, agentic intelligence, and dependable systems.">
+  <title>Research Focus | Alexander (Sasha) Apartsin</title>
+  <link rel="stylesheet" href="../shared/site-shell.css">
+  <link rel="stylesheet" href="../shared/unified-theme.css">
+  <style>
+    .focus-grid {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .focus-card {
+      padding: 18px 20px;
+      border: 1px solid var(--site-border);
+      border-radius: 14px;
+      background: #fff;
+      border-top: 3px solid var(--fc-color, var(--site-accent));
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+    .focus-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(15,23,42,0.08);
+    }
+    .focus-card:nth-child(1) { --fc-color: #1d4ed8; }
+    .focus-card:nth-child(2) { --fc-color: #2e7d5a; }
+    .focus-card:nth-child(3) { --fc-color: #7a3fa0; }
+    .focus-card:nth-child(4) { --fc-color: #9c5a2e; }
+    .focus-card h2 {
+      margin: 0 0 8px;
+      font: 800 1rem/1.3 "Manrope", sans-serif;
+      color: var(--fc-color, var(--site-text));
+    }
+    .focus-card p {
+      margin: 0;
+      font: 400 0.88rem/1.65 "Source Serif 4", Georgia, serif;
+      color: var(--site-muted);
+    }
+    .focus-card p a {
+      color: #1d4ed8;
+      text-decoration: underline;
+      text-decoration-color: rgba(29,78,216,0.3);
+      text-underline-offset: 2px;
+    }
+    .focus-card p a:hover {
+      text-decoration-color: rgba(29,78,216,0.7);
+    }
+    @media (max-width: 640px) {
+      .focus-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="research">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar">
+      <a class="apartsin-shell__brand" href="../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../about/academic-profile.html">About</a>
+        <a href="../research/interests.html">Research</a>
+        <a href="../teaching/overview.html">Teaching</a>
+        <a href="../work/overview.html">Building</a>
+        <a href="../work/innovation-overview.html">Innovations</a>
+        <a href="../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard">
+          <h1 class="apartsin-sr-only">Research Focus</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="./interests.html">Research</a>
+              <span aria-hidden="true">/</span>
+              <strong>Research Focus</strong>
+            </nav>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../assets/heroes/research-interests.png" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">My research focuses on applied AI for robust perception, reasoning, and decision making under real-world conditions, validated through <a href="./recent-publications.html">peer-reviewed publications</a>, <a href="./research-projects.html">open-source projects</a>, and <a href="../teaching/hands-on-ai-science-courses-student-projects.html">student-built systems</a>.</p>
+          </div>
+        </section>
+
+        <section class="focus-grid" aria-label="Research focus areas">
+          <article class="focus-card">
+            <h2>Robust Perception &amp; Reasoning</h2>
+            <p>Applied AI systems that maintain reliable performance under <a href="./research-projects.html">real-world conditions</a>: noisy inputs, incomplete data, distribution shifts, and adversarial edge cases across <a href="../courses/hos/series/language-ai.html">language</a>, <a href="../courses/hos/series/vision-ai.html">vision</a>, and multimodal sensory data.</p>
+          </article>
+          <article class="focus-card">
+            <h2>Generative AI for Evaluation</h2>
+            <p>Using generative models to create reliable training, testing, and evaluation settings when real data is limited, skewed toward ideal cases, or insufficient to cover the distribution of operational scenarios. Synthetic benchmarks and augmentation strategies for <a href="./recent-publications.html">rigorous validation</a>.</p>
+          </article>
+          <article class="focus-card">
+            <h2>Agentic &amp; Distributed Intelligence</h2>
+            <p>Systems that combine active information gathering, iterative refinement, and hybrid reasoning to support decision making in complex environments. This includes <a href="../courses/hos/series/scalable-ai.html">multi-agent coordination</a>, tool-using agents, and architectures that integrate perception with planning.</p>
+          </article>
+          <article class="focus-card">
+            <h2>Dependable AI Systems</h2>
+            <p>Bridging the gap between laboratory accuracy and operational reliability. AI systems that are not only precise under controlled conditions, but dependable in realistic deployment settings, informed by <a href="../about/industry-experience.html">three decades of industry practice</a> and <a href="../work/consulting.html">applied consulting</a>.</p>
+          </article>
+        </section>
+
+        <section class="section-quick-links">
+          <h2 class="section-quick-links__title">Quick Links</h2>
+          <nav class="section-quick-links__grid" aria-label="Quick links">
+            <a class="section-quick-link" href="./research-projects.html">
+              <span class="section-quick-link__badge" style="background: #1d4ed8;">R</span>
+              Research Projects
+            </a>
+            <a class="section-quick-link" href="./recent-publications.html">
+              <span class="section-quick-link__badge" style="background: #2e7d5a;">P</span>
+              Recent Publications
+            </a>
+            <a class="section-quick-link" href="./grad-opportunities.html">
+              <span class="section-quick-link__badge" style="background: #7a3fa0;">M</span>
+              M.Sc. Opportunities
+            </a>
+            <a class="section-quick-link" href="../teaching/current-students.html">
+              <span class="section-quick-link__badge" style="background: #9c5a2e;">C</span>
+              Current Students
+            </a>
+          </nav>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../shared/unified-enhance.js"></script>
+  <script defer src="../shared/site-shell.js"></script>
+</body>
+</html>

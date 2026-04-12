@@ -137,6 +137,7 @@
         'research/interests.html',
         [
           /\/research\/interests\.html$/i,
+          /\/research\/research-focus\.html$/i,
           /\/research\/recent-publications\.html$/i,
           /\/research\/research-projects\.html$/i,
           /\/research\/grad-opportunities\.html$/i,
@@ -145,6 +146,7 @@
           /\/teaching\/current-students\.html$/i,
         ],
         [
+          { label: 'Research Focus', path: 'research/research-focus.html' },
           { label: 'Recent Publications', path: 'research/recent-publications.html' },
           { label: 'Current Research Projects', path: 'research/research-projects.html' },
           { label: 'Research Projects for M.Sc. Students', path: 'research/grad-opportunities.html' },
