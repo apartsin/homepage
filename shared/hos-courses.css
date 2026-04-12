@@ -56,21 +56,21 @@
 
 .cards-grid .content-card__links {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
   margin-top: auto;
 }
 
 .cards-grid .content-card__link {
-  flex: 0 0 auto;
+  flex: 0 1 auto;
   justify-content: center;
   text-align: center;
-  min-height: 34px;
-  padding: 6px 10px;
-  min-width: 92px;
-  font-size: 0.76rem;
+  min-height: 32px;
+  padding: 6px 8px;
+  min-width: 0;
+  font-size: 0.72rem;
   line-height: 1.2;
   letter-spacing: 0.03em;
   white-space: nowrap;

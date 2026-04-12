@@ -303,11 +303,6 @@
     yearTag.textContent = courseMeta.year;
     topRow.appendChild(yearTag);
 
-    const typeTag = document.createElement('span');
-    typeTag.className = 'student-project-card__chip student-project-card__chip--type';
-    typeTag.textContent = courseMeta.type;
-    topRow.appendChild(typeTag);
-
     const institutionTag = document.createElement('span');
     institutionTag.className = 'student-project-card__institution';
     institutionTag.setAttribute('aria-label', courseMeta.institution);
@@ -324,6 +319,11 @@
       institutionTag.textContent = institutionAbbrev(courseMeta.institution);
     }
     topRow.appendChild(institutionTag);
+
+    const typeTag = document.createElement('span');
+    typeTag.className = 'student-project-card__chip student-project-card__chip--type';
+    typeTag.textContent = courseMeta.type;
+    topRow.appendChild(typeTag);
     body.appendChild(topRow);
 
     /* Title */
