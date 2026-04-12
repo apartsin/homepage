@@ -230,7 +230,7 @@
         [
           { label: 'Industry Experience', path: 'about/industry-experience.html' },
           { label: 'Recent Projects', path: 'work/recent-projects.html' },
-          { label: 'Past Projects', path: 'work/past-projects.html' },
+          { label: 'Selected Past Projects', path: 'work/past-projects.html' },
         ],
       ),
       link(
