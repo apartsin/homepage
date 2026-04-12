@@ -51,21 +51,19 @@
 }
 
 .other-cs-card__media {
-  aspect-ratio: 16 / 8;
-  display: grid;
-  place-items: center;
-  padding: 10px 14px;
-  background: var(--site-bg-2, #fbfaf6);
-  border-bottom: 1px solid var(--site-border);
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  padding: 0;
+  background: none;
 }
 
 .other-cs-card__media img {
-  width: auto;
-  max-width: min(70%, 160px);
-  max-height: 64px;
-  height: auto;
-  object-fit: contain;
-  background: transparent;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  display: block;
 }
 
 .other-cs-card .content-card__body {
