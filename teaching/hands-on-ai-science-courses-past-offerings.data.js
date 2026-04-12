@@ -64,7 +64,7 @@ window.HOS_PAST_OFFERINGS = [
     trackLabel: "Language AI",
     links: [
       { label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=26092" },
-      { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=language-ai" }
+      { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=language-ai&course=Workshop%20in%20Applied%20LLM%20Systems" }
     ]
   },
   {
@@ -80,7 +80,7 @@ window.HOS_PAST_OFFERINGS = [
     trackLabel: "Vision AI",
     links: [
       { label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=26092" },
-      { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=vision-ai" }
+      { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=vision-ai&course=Workshop%20in%20Generative%20Vision%20Models" }
     ]
   },
   {
@@ -96,7 +96,7 @@ window.HOS_PAST_OFFERINGS = [
     trackLabel: "Vision AI",
     links: [
       { label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=26188" },
-      { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=vision-ai" }
+      { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=vision-ai&course=Workshop%20in%20Computer%20Vision" }
     ]
   },
   {
@@ -112,7 +112,7 @@ window.HOS_PAST_OFFERINGS = [
     trackLabel: "Language AI",
     links: [
       { label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=23950" },
-      { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=language-ai" }
+      { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=language-ai&course=LLMs%20in%20Healthcare" }
     ]
   },
   {
@@ -128,7 +128,7 @@ window.HOS_PAST_OFFERINGS = [
     trackLabel: "Language AI",
     links: [
       { label: "Moodle", href: "https://lemida.biu.ac.il/course/view.php?id=106612" },
-      { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=language-ai" }
+      { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=language-ai&course=LLMs%20and%20Agents" }
     ]
   },
   {
@@ -144,7 +144,7 @@ window.HOS_PAST_OFFERINGS = [
     trackLabel: "Vision AI",
     links: [
       { label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=25773" },
-      { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=vision-ai" }
+      { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=vision-ai&course=Deep%20Generative%20Models" }
     ]
   },
   {
@@ -160,7 +160,7 @@ window.HOS_PAST_OFFERINGS = [
     trackLabel: "Language AI",
     links: [
       { label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=25328" },
-      { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=language-ai" }
+      { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=language-ai&course=LLMs%20and%20Agents" }
     ]
   },
   {
@@ -176,7 +176,7 @@ window.HOS_PAST_OFFERINGS = [
     trackLabel: "Language AI",
     links: [
       { label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=24324" },
-      { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=language-ai" }
+      { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=language-ai&course=LLMs%20and%20Agents" }
     ]
   },
   {
