@@ -173,7 +173,7 @@
         ],
         [
           {
-            label: 'Hands-on AI Science Course Series',
+            label: 'Hands-On AI Science Course Series',
             path: 'teaching/hands-on-ai-science-courses-courses.html',
             secondary: [
               { label: 'Course Syllabi', path: 'teaching/hands-on-ai-science-courses-courses.html' },
