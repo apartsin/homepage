@@ -32,6 +32,7 @@ window.HOS_COURSE_SYLLABI = [
   {
     image: "../assets/courses/hos-series/temporalai-course/img-008-temporal-ai-gemini.png",
     imageAlt: "Building Temporal AI with Reinforcement Learning and Sequential Intelligence",
+    badge: "New",
     titleHtml: "<span class=\"hos-course-title__line\">Building <span class=\"hos-course-title__focus\">Temporal AI</span> with</span><span class=\"hos-course-title__line\"><span class=\"hos-course-title__detail\">Sequential Intelligence and Reinforcement Learning</span></span>",
     links: [
       { label: "Syllabus", href: "../courses/hos/series/temporal-ai.html" }

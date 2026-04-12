@@ -13,12 +13,19 @@
 
     const media = document.createElement("div");
     media.className = "content-card__media";
+    media.style.position = "relative";
     const image = document.createElement("img");
     image.src = card.image;
     image.alt = card.imageAlt || "Course visual";
     image.loading = "lazy";
     image.decoding = "async";
     media.appendChild(image);
+    if (card.badge) {
+      const badge = document.createElement("span");
+      badge.className = "content-card__badge";
+      badge.textContent = card.badge;
+      media.appendChild(badge);
+    }
     article.appendChild(media);
 
     const body = document.createElement("div");
