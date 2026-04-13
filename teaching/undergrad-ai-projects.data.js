@@ -21,13 +21,6 @@ window.UNDERGRAD_AI_PROJECTS = [
     description: "Create multi-agent classroom simulations for deliberate teaching practice with realistic student behavior and pedagogical feedback loops."
   },
   {
-    image: "../assets/teaching/ai-engineering-projects-open-for-students/img-004-53a3c70937.png",
-    imageAlt: "Autonomous analytics dashboard generation visual",
-    eyebrow: "",
-    title: "LLM-Driven Autonomous Analytics Dashboard Generation",
-    description: "Transform SQL data into narrative dashboards automatically by combining schema understanding, query generation, and visual summarization."
-  },
-  {
     image: "../assets/teaching/ai-engineering-projects-open-for-students/img-005-e6a024cfc4.png",
     imageAlt: "Expert decision wizard platform visual",
     eyebrow: "",
