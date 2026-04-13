@@ -119,14 +119,19 @@
   min-width: 0;
   overflow: hidden;
 }
-.weekly-grid > .week-card:last-child:nth-child(3n+1) {
-  grid-column: 2;
+@media (min-width: 769px) {
+  .weekly-grid > .week-card:last-child:nth-child(3n+1) {
+    grid-column: 2;
+  }
 }
 @media (max-width: 768px) {
-  .weekly-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-@media (max-width: 480px) {
   .weekly-grid { grid-template-columns: 1fr; }
+  .weekly-schedule { padding: 0 10px 10px; }
+  .weekly-schedule__title { padding: 12px 10px 8px; font-size: 0.95rem; }
+  .week-card { padding: 10px 12px; }
+  .week-card__num { margin-bottom: 4px; }
+  .week-card__topic { font-size: 0.82rem; }
+  .week-card__tools { font-size: 0.74rem; }
 }
 .week-card {
   padding: 12px 14px;
