@@ -188,12 +188,18 @@
       .steps {
         grid-template-columns: 1fr;
       }
-      .phase + .phase { margin-top: 44px; }
-      .phase + .phase::before { height: 28px; top: -36px; }
-    }
-    @media (max-width: 480px) {
-      .phase { padding-left: 14px; padding-right: 14px; }
-      .phase__number { left: -6px; top: 6px; width: 30px; height: 30px; font-size: 0.72rem; }
+      .phase { padding: 0 16px 16px 16px; }
+      .phase__number {
+        position: static;
+        display: inline-flex;
+        margin-bottom: 8px;
+        width: 32px;
+        height: 32px;
+        font-size: 0.76rem;
+      }
+      .phase__header { text-align: left; }
+      .phase + .phase { margin-top: 36px; }
+      .phase + .phase::before { display: none; }
     }
   </style>
 </head>
