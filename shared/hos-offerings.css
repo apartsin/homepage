@@ -8,8 +8,8 @@
 }
 
 .past-offerings-filters__controls {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   align-items: end;
 }
@@ -17,6 +17,12 @@
 .past-offerings-filters__field {
   display: grid;
   gap: 6px;
+  flex: 1 1 140px;
+  min-width: 120px;
+}
+
+.past-offerings-filters__reset {
+  flex: 0 0 auto;
 }
 
 .past-offerings-filters__field-label {
@@ -38,13 +44,16 @@
 }
 
 .past-offerings-filters__field select {
+  width: 100%;
   height: 40px;
   border: 1px solid var(--site-border);
   border-radius: 10px;
   background: #fff;
   color: var(--site-text);
   padding: 0 10px;
-  font: 600 0.9rem/1 "Manrope", "Segoe UI", sans-serif;
+  font: 600 0.84rem/1 "Manrope", "Segoe UI", sans-serif;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .past-offerings-filters__reset {
@@ -242,19 +251,12 @@
 }
 
 @media (max-width: 980px) {
-  .past-offerings-filters__controls {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .past-offerings-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 620px) {
-  .past-offerings-filters__controls {
-    grid-template-columns: 1fr;
-  }
 
   .past-offerings-grid {
     grid-template-columns: 1fr;
