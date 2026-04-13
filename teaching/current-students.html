@@ -14,14 +14,23 @@
   <style>
     .student-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px;
     }
     .student-card {
       display: flex;
       flex-direction: column;
       padding: 0;
       overflow: hidden;
+      border-radius: 16px;
+      border: 1px solid var(--site-border);
+      box-shadow: none;
+      background: #fff;
+      transition: transform 220ms ease, box-shadow 220ms ease;
+    }
+    .student-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.1);
     }
     .student-card__media {
       display: block;
@@ -34,27 +43,34 @@
       width: 100%;
       object-fit: cover;
       object-position: center;
+      background: var(--site-bg-2, #fbfaf6);
+      transition: transform 300ms ease;
+    }
+    .student-card:hover .student-card__media img {
+      transform: scale(1.03);
     }
     .student-card__body {
-      display: grid;
+      display: flex;
+      flex-direction: column;
       gap: 8px;
-      padding: 13px 14px 14px;
+      padding: 14px 16px 16px;
+      flex: 1;
     }
     .student-card__project {
       margin: 0;
       color: var(--site-text);
-      font: 800 0.98rem/1.3 "Manrope", "Segoe UI", sans-serif;
+      font: 800 clamp(0.96rem, 1.5vw, 1.12rem)/1.24 "Manrope", sans-serif;
+      letter-spacing: -0.01em;
     }
     .student-card__name {
       margin: 0;
       color: var(--site-muted);
-      font: 700 0.78rem/1.35 "Manrope", "Segoe UI", sans-serif;
-      letter-spacing: 0.02em;
+      font: 600 0.74rem/1.3 "Manrope", sans-serif;
     }
     .student-card__text {
       margin: 0;
       color: var(--site-muted);
-      font: 600 0.86rem/1.58 "Manrope", "Segoe UI", sans-serif;
+      font: 400 0.84rem/1.58 "Source Serif 4", Georgia, serif;
     }
   </style>
 </head>
@@ -135,7 +151,7 @@
           </article>
           <article class="hub-card student-card" id="ofek-gayero">
             <div class="student-card__media">
-              <img src="../assets/teaching/current-students/img-006-ofek-gayero.png" alt="Project image for Ofek Gayero">
+              <img src="../assets/teaching/ai-engineering-projects-open-for-students/img-004-53a3c70937.png" alt="Project image for Ofek Gayero">
             </div>
             <div class="student-card__body">
               <h2 class="student-card__project">LLM-Driven Autonomous Analytics Dashboard Generation</h2>
