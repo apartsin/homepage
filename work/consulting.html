@@ -134,6 +134,99 @@
       color: var(--site-muted, #64605a);
     }
 
+    /* ── Featured step (final deliverable) ── */
+    .step--featured {
+      position: relative;
+      border: 2px solid #9c6b20;
+      background: linear-gradient(135deg, #fff8ea 0%, #fdecc8 100%);
+      box-shadow: 0 6px 18px rgba(156, 107, 32, 0.22), inset 0 1px 0 rgba(255,255,255,1);
+    }
+    .step--featured:hover {
+      box-shadow: 0 12px 30px rgba(156, 107, 32, 0.3), inset 0 1px 0 rgba(255,255,255,1);
+    }
+    .step--featured .step__title {
+      color: #7a531a;
+    }
+    .step--featured .step__icon {
+      background: #9c6b20 !important;
+      color: #fff !important;
+    }
+    .step--featured .step__badge {
+      position: absolute;
+      top: -10px;
+      right: 12px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: #9c6b20;
+      color: #fff;
+      font: 800 0.62rem/1.2 "Manrope", sans-serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      box-shadow: 0 2px 6px rgba(156, 107, 32, 0.35);
+    }
+
+    /* ── Featured step (starting anchor, blue variant) ── */
+    .step--anchor {
+      position: relative;
+      border: 2px solid #1d4ed8;
+      background: linear-gradient(135deg, #eff4ff 0%, #d8e4ff 100%);
+      box-shadow: 0 6px 18px rgba(29, 78, 216, 0.22), inset 0 1px 0 rgba(255,255,255,1);
+    }
+    .step--anchor:hover {
+      box-shadow: 0 12px 30px rgba(29, 78, 216, 0.3), inset 0 1px 0 rgba(255,255,255,1);
+    }
+    .step--anchor .step__title {
+      color: #153d8b;
+    }
+    .step--anchor .step__icon {
+      background: #1d4ed8 !important;
+      color: #fff !important;
+    }
+    .step--anchor .step__badge {
+      position: absolute;
+      top: -10px;
+      right: 12px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: #1d4ed8;
+      color: #fff;
+      font: 800 0.62rem/1.2 "Manrope", sans-serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      box-shadow: 0 2px 6px rgba(29, 78, 216, 0.35);
+    }
+
+    /* ── Featured step (pivot decision, green variant) ── */
+    .step--pivot {
+      position: relative;
+      border: 2px solid #2e7d5a;
+      background: linear-gradient(135deg, #edf7f1 0%, #cfe8d9 100%);
+      box-shadow: 0 6px 18px rgba(46, 125, 90, 0.22), inset 0 1px 0 rgba(255,255,255,1);
+    }
+    .step--pivot:hover {
+      box-shadow: 0 12px 30px rgba(46, 125, 90, 0.3), inset 0 1px 0 rgba(255,255,255,1);
+    }
+    .step--pivot .step__title {
+      color: #1f5a3f;
+    }
+    .step--pivot .step__icon {
+      background: #2e7d5a !important;
+      color: #fff !important;
+    }
+    .step--pivot .step__badge {
+      position: absolute;
+      top: -10px;
+      right: 12px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: #2e7d5a;
+      color: #fff;
+      font: 800 0.62rem/1.2 "Manrope", sans-serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      box-shadow: 0 2px 6px rgba(46, 125, 90, 0.35);
+    }
+
     /* ── CTA footer ── */
     .consult-cta {
       margin-top: 56px;
@@ -248,12 +341,13 @@
               <p class="phase__subtitle">Align strategy, product, and engineering around a shared definition of what to build and why.</p>
             </div>
             <div class="steps">
-              <div class="step">
+              <div class="step step--anchor">
+                <span class="step__badge">Starting Point</span>
                 <div class="step__header">
                   <div class="step__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 2l5 5h-5V4zM6 20V4h5v7h7v9H6z"/></svg></div>
-                  <h3 class="step__title">Define Scope</h3>
+                  <h3 class="step__title">Lock the Target</h3>
                 </div>
-                <p class="step__desc">Sharpen the problem into a shared language across strategy, product, engineering, and research.</p>
+                <p class="step__desc">Refine the product idea and align strategy, product, engineering, and research. The result is a concept document everyone signs off on.</p>
               </div>
               <div class="step">
                 <div class="step__header">
@@ -287,7 +381,8 @@
                 </div>
                 <p class="step__desc">Turn high-level product goals into an R&amp;D plan: what to prove, what to build, which uncertainties matter most.</p>
               </div>
-              <div class="step">
+              <div class="step step--pivot">
+                <span class="step__badge">Key Decision</span>
                 <div class="step__header">
                   <div class="step__icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></div>
                   <h3 class="step__title">Make the Right AI Stack Choices</h3>
@@ -297,9 +392,9 @@
               <div class="step">
                 <div class="step__header">
                   <div class="step__icon"><svg viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg></div>
-                  <h3 class="step__title">Sequence Execution</h3>
+                  <h3 class="step__title">Validate Before You Scale</h3>
                 </div>
-                <p class="step__desc">Stage experiments to reduce uncertainty in the right order: validate before scaling, justify each step with evidence.</p>
+                <p class="step__desc">Attack the biggest unknowns first and cheaply. Each step must earn the next with evidence.</p>
               </div>
             </div>
           </section>
@@ -315,9 +410,9 @@
               <div class="step">
                 <div class="step__header">
                   <div class="step__icon"><svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg></div>
-                  <h3 class="step__title">Fine-Tune and Evaluate</h3>
+                  <h3 class="step__title">Shape the AI to Fit</h3>
                 </div>
-                <p class="step__desc">Prototype core AI capabilities through model selection, prompting, fine-tuning, and realistic evaluation.</p>
+                <p class="step__desc">Select, adapt, and tune the models so they solve the real problem, verified on realistic data.</p>
               </div>
               <div class="step">
                 <div class="step__header">
@@ -326,10 +421,11 @@
                 </div>
                 <p class="step__desc">Full solution prototype: workflows, orchestration, data flow, tool integration, and user interaction.</p>
               </div>
-              <div class="step">
+              <div class="step step--featured">
+                <span class="step__badge">Final Deliverable</span>
                 <div class="step__header">
                   <div class="step__icon"><svg viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg></div>
-                  <h3 class="step__title">Package Evidence</h3>
+                  <h3 class="step__title">Produce Evidence Package</h3>
                 </div>
                 <p class="step__desc">Turn prototype outcomes into a decision-ready package: results, figures, example outputs, and presentation slides.</p>
               </div>

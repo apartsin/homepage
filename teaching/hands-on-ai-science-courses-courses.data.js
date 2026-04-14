@@ -23,6 +23,7 @@ window.HOS_COURSE_SYLLABI = [
   {
     image: "../assets/courses/hos-series/bigdata-course/img-012-scalable-ai-gemini.png",
     imageAlt: "Building Scalable AI with Big Data and Distributed AI",
+    badge: "Updated",
     titleHtml: "<span class=\"hos-course-title__line\">Building <span class=\"hos-course-title__focus\">Scalable AI</span> with</span><span class=\"hos-course-title__line\"><span class=\"hos-course-title__detail\">Big Data and Distributed Intelligence</span></span>",
     links: [
       { label: "Syllabus", href: "../courses/hos/series/scalable-ai.html" },
