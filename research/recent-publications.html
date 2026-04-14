@@ -21,6 +21,7 @@
       padding: 0;
     }
     .pub-card {
+      position: relative;
       border: 1px solid var(--site-border);
       border-radius: 15px;
       border-left: 4px solid rgba(24, 101, 168, 0.65);
@@ -29,6 +30,38 @@
       padding: 13px 16px 14px 18px;
       display: grid;
       gap: 6px;
+    }
+    .pub-card--with-publisher {
+      padding-bottom: 42px;
+    }
+    .pub-card__publisher {
+      position: absolute;
+      bottom: 10px;
+      right: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 26px;
+      padding: 0 8px;
+      border-radius: 6px;
+      background: #ffffff;
+      border: 1px solid var(--site-border);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      text-decoration: none;
+      transition: transform 150ms ease, box-shadow 150ms ease;
+    }
+    .pub-card__publisher:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+    }
+    .pub-card__publisher img {
+      display: block;
+      height: 18px;
+      width: auto;
+      object-fit: contain;
+    }
+    .pub-card__publisher img[alt="Nature"] {
+      height: 12px;
     }
     .pub-card__top {
       display: flex;
@@ -133,14 +166,14 @@
     <div class="apartsin-shell__content">
       <main class="apartsin-shell__main">
         <section class="apartsin-page-header apartsin-page-header--standard" id="recent-publications-overview">
-          <h1 class="apartsin-sr-only">Recent Publications: 2025-2026</h1>
+          <h1 class="apartsin-sr-only">Recent Publications</h1>
           <div class="apartsin-page-header__top">
             <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
               <a href="../index.html">Home</a>
               <span aria-hidden="true">/</span>
               <a href="./interests.html">Research</a>
               <span aria-hidden="true">/</span>
-              <strong>Recent Publications: 2025-2026</strong>
+              <strong>Recent Publications</strong>
             </nav>
           </div>
           <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">

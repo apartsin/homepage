@@ -2,6 +2,7 @@ window.HOS_COURSE_SYLLABI = [
   {
     image: "../assets/courses/hos-series/llm-course/img-006-language-ai-gemini.png",
     imageAlt: "Building Language AI with Large Language Models and Agents",
+    bookLink: "http://llmbook.apartsin.com/",
     titleHtml: "<span class=\"hos-course-title__line\">Building <span class=\"hos-course-title__focus\">Language AI</span> with</span><span class=\"hos-course-title__line\"><span class=\"hos-course-title__detail\">Large Language Models and Agents</span></span>",
     links: [
       { label: "Syllabus", href: "../courses/hos/series/language-ai.html" },

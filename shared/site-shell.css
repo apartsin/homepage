@@ -186,6 +186,32 @@ body.apartsin-shell-active a {
   text-decoration: none;
 }
 
+/* Flicker fix: hide the pre-enhanced top bar (brand, subtitle area, divider,
+   flat nav links) while the shell script mutates the sidebar structure and
+   replaces flat nav links with the decorated menu-item structure. Space is
+   still reserved (visibility:hidden, not display:none) so the top bar height
+   stays stable. If JS fails to run, a delayed keyframe reveals the fallback
+   layout so nothing stays permanently hidden. */
+@keyframes apartsinShellFallbackReveal {
+  to { visibility: visible; opacity: 1; }
+}
+body.apartsin-shell-active:not(.apartsin-shell-ready) .apartsin-shell__brand,
+body.apartsin-shell-active:not(.apartsin-shell-ready) .apartsin-shell__subtitle,
+body.apartsin-shell-active:not(.apartsin-shell-ready) .apartsin-shell__divider,
+body.apartsin-shell-active .apartsin-shell__nav:not([data-shell-enhanced="true"]) > a {
+  visibility: hidden;
+  opacity: 0;
+  animation: apartsinShellFallbackReveal 0.01s linear 0.6s forwards;
+}
+body.apartsin-shell-active.apartsin-shell-ready .apartsin-shell__brand,
+body.apartsin-shell-active.apartsin-shell-ready .apartsin-shell__subtitle,
+body.apartsin-shell-active.apartsin-shell-ready .apartsin-shell__divider,
+body.apartsin-shell-active .apartsin-shell__nav[data-shell-enhanced="true"] > a {
+  visibility: visible;
+  opacity: 1;
+  animation: none;
+}
+
 .apartsin-shell__nav a:hover {
   color: var(--apartsin-shell-accent);
 }

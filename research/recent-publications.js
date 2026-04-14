@@ -8,7 +8,7 @@
   }
 
   var sectionLabels = {
-    Journal: "Peer-Reviewed",
+    Journal: "Peer Reviewed: 2025-2026",
     Submitted: "Submitted",
     Preprint: "Preprints"
   };
@@ -88,6 +88,37 @@
         venue.textContent = pub.venue;
       }
       li.appendChild(venue);
+
+      var venueLower = (pub.venue || "").toLowerCase();
+      var publisher = null;
+      if (venueLower.indexOf("nature") !== -1) {
+        publisher = { src: "../assets/publishers/nature.svg", alt: "Nature" };
+      } else if (venueLower.indexOf("mdpi") !== -1) {
+        publisher = { src: "../assets/publishers/mdpi.png", alt: "MDPI" };
+      } else if (venueLower.indexOf("arxiv") !== -1) {
+        publisher = { src: "../assets/publishers/arxiv.jpg", alt: "arXiv" };
+      }
+      if (publisher) {
+        li.classList.add("pub-card--with-publisher");
+        var badge;
+        if (pub.venueHref) {
+          badge = document.createElement("a");
+          badge.href = pub.venueHref;
+          badge.target = "_blank";
+          badge.rel = "noopener noreferrer";
+        } else {
+          badge = document.createElement("span");
+        }
+        badge.className = "pub-card__publisher";
+        badge.setAttribute("aria-label", publisher.alt);
+        var img = document.createElement("img");
+        img.src = publisher.src;
+        img.alt = publisher.alt;
+        img.loading = "lazy";
+        img.decoding = "async";
+        badge.appendChild(img);
+        li.appendChild(badge);
+      }
 
       grid.appendChild(li);
     });

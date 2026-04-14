@@ -712,6 +712,10 @@
     ensureSecondaryNav(sidebar, activePrimary);
     ensureCrossNav(sidebar);
     ensureMobileToggle(sidebar, nav);
+
+    // Signal all shell mutations complete so CSS can reveal the shell
+    // without a reflow-driven flicker.
+    document.body.classList.add('apartsin-shell-ready');
   }
 
   if (document.readyState === 'loading') {

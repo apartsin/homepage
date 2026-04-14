@@ -108,6 +108,22 @@
   padding: 16px 16px 10px;
   font: 800 1.05rem/1.3 "Manrope", sans-serif;
   color: var(--site-text);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.weekly-schedule__syllabus-link {
+  font: 700 0.76rem/1.2 "Manrope", sans-serif;
+  color: var(--site-accent, #9c5a2e);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.weekly-schedule__syllabus-link:hover {
+  text-decoration: underline;
 }
 .weekly-grid {
   display: grid;
