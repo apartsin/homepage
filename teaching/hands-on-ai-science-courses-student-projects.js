@@ -44,6 +44,7 @@
       a: normalizeAuthors(project.a || project.authors || ''),
       d: String(project.d || project.description || '').trim(),
       i: String(project.i || project.image || '').trim(),
+      p: String(project.p || project.partner || '').trim(),
       l: links.map((link) => ({
         k: String(link && (link.k || link.label) ? (link.k || link.label) : '').trim(),
         u: String(link && (link.u || link.href) ? (link.u || link.href) : '').trim(),
@@ -321,9 +322,22 @@
     }
     topRow.appendChild(institutionTag);
 
-    const typeTag = document.createElement('span');
+    var syllabusHrefs = {
+      'language-ai': '../courses/hos/series/language-ai.html',
+      'vision-ai': '../courses/hos/series/vision-ai.html',
+      'scalable-ai': '../courses/hos/series/scalable-ai.html',
+      'temporal-ai': '../courses/hos/series/temporal-ai.html'
+    };
+    var syllabusHref = syllabusHrefs[courseMeta.typeSlug];
+
+    const typeTag = syllabusHref ? document.createElement('a') : document.createElement('span');
     typeTag.className = 'student-project-card__chip student-project-card__chip--type';
     typeTag.textContent = courseMeta.type;
+    if (syllabusHref) {
+      typeTag.href = syllabusHref;
+      typeTag.title = 'Open ' + courseMeta.type + ' syllabus';
+      typeTag.style.textDecoration = 'none';
+    }
     topRow.appendChild(typeTag);
 
     var courseIcons = {
@@ -339,7 +353,16 @@
       cIcon.alt = (courseMeta.type || '') + ' course';
       cIcon.loading = 'lazy';
       cIcon.style.cssText = 'width:22px;height:22px;object-fit:cover;border-radius:4px;border:1px solid var(--site-border,rgba(24,32,42,0.14));';
-      topRow.appendChild(cIcon);
+      if (syllabusHref) {
+        var cIconLink = document.createElement('a');
+        cIconLink.href = syllabusHref;
+        cIconLink.title = 'Open ' + courseMeta.type + ' syllabus';
+        cIconLink.style.cssText = 'display:inline-flex;line-height:0;';
+        cIconLink.appendChild(cIcon);
+        topRow.appendChild(cIconLink);
+      } else {
+        topRow.appendChild(cIcon);
+      }
     }
 
     body.appendChild(topRow);
@@ -363,6 +386,22 @@
       desc.className = 'content-card__desc student-project-card__desc';
       desc.textContent = shortDescription;
       body.appendChild(desc);
+    }
+
+    /* Partner badge (sits just above the divider that separates the students list) */
+    if (project.p) {
+      const partnerWrap = document.createElement('div');
+      partnerWrap.className = 'student-project-card__partner-wrap';
+      partnerWrap.style.cssText = 'margin: -2px 0 -2px; display: flex; justify-content: flex-end;';
+      const partner = document.createElement('img');
+      partner.src = project.p;
+      partner.alt = 'Partner logo';
+      partner.loading = 'lazy';
+      partner.decoding = 'async';
+      partner.className = 'student-project-card__partner';
+      partner.style.cssText = 'height:32px;width:auto;max-width:140px;object-fit:contain;display:block;';
+      partnerWrap.appendChild(partner);
+      body.appendChild(partnerWrap);
     }
 
     /* Students (inline, no label) */
