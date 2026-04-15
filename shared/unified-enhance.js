@@ -129,12 +129,12 @@
     const wwwMap = {
       '/': '/onesite/index.html',
       '/index.html': '/onesite/index.html',
-      '/home': '/onesite/about/academic-profile.html',
-      '/home.html': '/onesite/about/academic-profile.html',
+      '/home': '/onesite/index.html',
+      '/home.html': '/onesite/index.html',
       '/phd-thesis': '/onesite/about/phd-thesis.html',
       '/phd-thesis.html': '/onesite/about/phd-thesis.html',
-      '/research': '/onesite/research/interests.html',
-      '/research.html': '/onesite/research/interests.html',
+      '/research': '/onesite/research/research-focus.html',
+      '/research.html': '/onesite/research/research-focus.html',
       '/industry-experience': '/onesite/about/industry-experience.html',
       '/industry-experience.html': '/onesite/about/industry-experience.html',
       '/innovation-and-entrepreneurship': '/onesite/work/innovation-overview.html',
@@ -506,8 +506,8 @@
   function resolveSectionHref(sectionKey) {
     const map = {
       home: '/onesite/index.html',
-      about: '/onesite/about/academic-profile.html',
-      research: '/onesite/research/interests.html',
+      about: '/onesite/index.html',
+      research: '/onesite/research/research-focus.html',
       work: '/onesite/work/overview.html',
       teaching: '/onesite/teaching/overview.html',
       courses: '/onesite/courses/index.html',

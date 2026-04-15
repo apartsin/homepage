@@ -110,7 +110,7 @@
 
   const SITE_CONFIG = {
     subtitle: [
-      { label: 'Scientist', path: 'research/interests.html' },
+      { label: 'Scientist', path: 'research/research-focus.html' },
       { label: 'Educator', path: 'teaching/overview.html' },
       { label: 'Innovator', path: 'work/innovation-overview.html' },
       { label: 'Builder', path: 'work/overview.html' },
@@ -119,9 +119,8 @@
     primaryNav: [
       link(
         'About',
-        'about/academic-profile.html',
+        'index.html',
         [
-          /\/about\/academic-profile\.html$/i,
           /\/about\/education\.html$/i,
           /\/about\/industry-experience\.html$/i,
           /\/about\/phd-thesis\.html$/i,
@@ -134,9 +133,8 @@
       ),
       link(
         'Research',
-        'research/interests.html',
+        'research/research-focus.html',
         [
-          /\/research\/interests\.html$/i,
           /\/research\/research-focus\.html$/i,
           /\/research\/recent-publications\.html$/i,
           /\/research\/research-projects\.html$/i,
@@ -146,7 +144,6 @@
           /\/teaching\/current-students\.html$/i,
         ],
         [
-          { label: 'Research Focus', path: 'research/research-focus.html' },
           { label: 'Recent Publications', path: 'research/recent-publications.html' },
           { label: 'Current Research Projects', path: 'research/research-projects.html' },
           { label: 'Research Projects for M.Sc. Students', path: 'research/grad-opportunities.html' },
