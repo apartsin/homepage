@@ -166,6 +166,27 @@
       color: var(--site-muted);
       font: 700 0.82rem/1.5 "Manrope", sans-serif;
     }
+    .industry-segment {
+      margin-top: 28px;
+    }
+    .industry-segment:first-of-type {
+      margin-top: 8px;
+    }
+    .industry-segment__heading {
+      margin: 0 0 12px;
+      padding: 0 0 6px;
+      border-bottom: 2px solid var(--site-accent, #9c5a2e);
+      color: var(--site-text, #18202a);
+      font: 800 1.05rem/1.2 "Manrope", "Segoe UI", sans-serif;
+      letter-spacing: -0.01em;
+    }
+    .industry-segment__heading small {
+      display: inline-block;
+      margin-left: 8px;
+      color: var(--site-muted, #586271);
+      font: 600 0.82rem/1.2 "Manrope", "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
     .industry-card[hidden] { display: none !important; }
     @media (max-width: 600px) {
       .industry-filter {
@@ -210,18 +231,9 @@
             <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">Three decades of AI leadership across research, engineering, and product environments, spanning roles from technical <a href="../work/entrepreneurship.html">founder</a> to head of AI research and data science. Across industries, my work has consistently focused on translating ambitious technical ideas into robust <a href="../work/past-projects.html">intelligent systems</a>.</p>
           </div>
         </section>
-        <section class="industry-filter" aria-label="Industry card filters">
-          <select class="industry-filter__select" id="industry-filter-data" aria-label="Filter by data type">
-            <option value="all">All Data Types</option>
-          </select>
-          <select class="industry-filter__select" id="industry-filter-industry" aria-label="Filter by industry">
-            <option value="all">All Industries</option>
-          </select>
-          <p class="industry-filter__count" id="industry-filter-count"></p>
-          <p class="industry-filter__empty" id="industry-filter-empty" hidden>No cards match this filter.</p>
-        </section>
-
-        <section class="industry-grid" id="industry-timeline">
+        <div class="industry-segment">
+          <h2 class="industry-segment__heading">Data Science and AI Leadership <small>2012-2024</small></h2>
+          <section class="industry-grid" id="industry-timeline-top">
           <article class="industry-card" id="industry-2020-2024">
             <p class="industry-card__years">2020-2024</p>
             <h2 class="industry-card__role">Head of Data Science</h2>
@@ -229,7 +241,10 @@
               <span class="industry-card__logo-wrap">
                 <img class="industry-card__logo" src="../assets/about/industry-experience/img-016-5706a1c4bd.jpg" alt="Questar Automotive logo">
               </span>
-              <p class="industry-card__company-name">SafeRide (Acquired by Questar Automotive)</p>
+              <div style="min-width: 0;">
+                <p class="industry-card__company-name" style="margin: 0;">Questar</p>
+                <p class="industry-card__company-sub" style="margin: 1px 0 0; color: var(--site-muted, #586271); font: 500 italic 0.74rem/1.3 'Source Serif 4', Georgia, serif;">SafeRide Technologies (Acquired)</p>
+              </div>
             </div>
             <p class="industry-card__topic">AI for Vehicle Telematics</p>
             <div class="industry-card__domains"><span class="industry-card__domain-tag">Signals</span><span class="industry-card__domain-tag">Audio</span><span class="industry-card__domain-tag">Graphs</span></div>
@@ -255,7 +270,10 @@
               <span class="industry-card__logo-wrap">
                 <img class="industry-card__logo" src="../assets/about/industry-experience/img-014-6ac31e1063.png" alt="Motorola Solutions logo">
               </span>
-              <p class="industry-card__company-name">Motorola Solutions</p>
+              <div style="min-width: 0;">
+                <p class="industry-card__company-name" style="margin: 0;">Motorola Solutions</p>
+                <p class="industry-card__company-sub" style="margin: 1px 0 0; color: var(--site-muted, #586271); font: 500 italic 0.74rem/1.3 'Source Serif 4', Georgia, serif;">Israel Innovation Center</p>
+              </div>
             </div>
             <p class="industry-card__topic">AI for Public Safety</p>
             <div class="industry-card__domains">
@@ -272,7 +290,10 @@
               <span class="industry-card__logo-wrap">
                 <img class="industry-card__logo" src="../assets/about/industry-experience/img-013-e1e28ef95e.png" alt="Citi logo">
               </span>
-              <p class="industry-card__company-name">Citi</p>
+              <div style="min-width: 0;">
+                <p class="industry-card__company-name" style="margin: 0;">Citi</p>
+                <p class="industry-card__company-sub" style="margin: 1px 0 0; color: var(--site-muted, #586271); font: 500 italic 0.74rem/1.3 'Source Serif 4', Georgia, serif;">Israel Innovation Lab</p>
+              </div>
             </div>
             <p class="industry-card__topic">Data Science for Finance</p>
             <div class="industry-card__domains"><span class="industry-card__domain-tag">Signals</span></div>
@@ -291,16 +312,24 @@
             <div class="industry-card__domains"><span class="industry-card__domain-tag">Signals</span></div>
             <div class="industry-card__industries"><span class="industry-card__industry-tag">Telecom</span></div>
           </article>
-          <article class="industry-card" id="industry-2007-2012-appivision">
-            <p class="industry-card__years">2007-2012</p>
-            <h2 class="industry-card__role">Owner, Technology Consulting</h2>
+          </section>
+        </div>
+        <div class="industry-segment">
+          <h2 class="industry-segment__heading">Tech Leadership &amp; Entrepreneurship <small>2000 - 2011 (concurrent with my MSM and Ph.D. studies)</small></h2>
+          <section class="industry-grid" id="industry-timeline-middle">
+          <article class="industry-card" id="industry-2008-2011-appivision">
+            <p class="industry-card__years">2008-2011</p>
+            <h2 class="industry-card__role">Independent Consultant</h2>
             <div class="industry-card__company">
               <span class="industry-card__logo-wrap">
                 <img class="industry-card__logo" src="../assets/about/industry-experience/appivision-logo.svg" alt="AppiVision logo">
               </span>
-              <p class="industry-card__company-name">AppiVision</p>
+              <div style="min-width: 0;">
+                <p class="industry-card__company-name" style="margin: 0;">AppiVision</p>
+                <p class="industry-card__company-sub" style="margin: 1px 0 0; color: var(--site-muted, #586271); font: 500 italic 0.74rem/1.3 'Source Serif 4', Georgia, serif;">Owner</p>
+              </div>
             </div>
-            <p class="industry-card__topic">Financial Software</p>
+            <p class="industry-card__topic">Technology and Product Consulting</p>
             <div class="industry-card__domains">
               <span class="industry-card__domain-tag">Signals</span>
             </div>
@@ -308,12 +337,15 @@
           </article>
           <article class="industry-card" id="industry-2007-2008">
             <p class="industry-card__years">2007-2008</p>
-            <h2 class="industry-card__role">Founder and CTO</h2>
+            <h2 class="industry-card__role">CTO</h2>
             <div class="industry-card__company">
               <span class="industry-card__logo-wrap">
                 <img class="industry-card__logo" src="../assets/about/industry-experience/img-011-e1554a8de6.png" alt="CloudTuner logo">
               </span>
-              <p class="industry-card__company-name">CloudTuner</p>
+              <div style="min-width: 0;">
+                <p class="industry-card__company-name" style="margin: 0;">CloudTuner</p>
+                <p class="industry-card__company-sub" style="margin: 1px 0 0; color: var(--site-muted, #586271); font: 500 italic 0.74rem/1.3 'Source Serif 4', Georgia, serif;">Founder</p>
+              </div>
             </div>
             <p class="industry-card__topic">Visual Search Engine</p>
             <div class="industry-card__domains"><span class="industry-card__domain-tag">Text</span></div>
@@ -326,7 +358,10 @@
               <span class="industry-card__logo-wrap">
                 <img class="industry-card__logo" src="../assets/about/industry-experience/img-010-5f5c1adf4d.png" alt="Comverse Technology logo">
               </span>
-              <p class="industry-card__company-name">Comverse Technology</p>
+              <div style="min-width: 0;">
+                <p class="industry-card__company-name" style="margin: 0;">Comverse Technology</p>
+                <p class="industry-card__company-sub" style="margin: 1px 0 0; color: var(--site-muted, #586271); font: 500 italic 0.74rem/1.3 'Source Serif 4', Georgia, serif;">NeGeV Consortium</p>
+              </div>
             </div>
             <p class="industry-card__topic">Personalized Content Delivery</p>
             <div class="industry-card__domains"><span class="industry-card__domain-tag">Network</span><span class="industry-card__domain-tag">Video</span></div>
@@ -334,12 +369,15 @@
           </article>
           <article class="industry-card" id="industry-2001-2005">
             <p class="industry-card__years">2001-2005</p>
-            <h2 class="industry-card__role">Algo Developer &amp; Architect</h2>
+            <h2 class="industry-card__role">Algo Developer &amp; Team Lead</h2>
             <div class="industry-card__company">
               <span class="industry-card__logo-wrap">
                 <img class="industry-card__logo" src="../assets/about/industry-experience/img-009-5f2b278d0f.jpg" alt="Tegrity logo">
               </span>
-              <p class="industry-card__company-name">Tegrity (Acquired by McGraw-Hill Education)</p>
+              <div style="min-width: 0;">
+                <p class="industry-card__company-name" style="margin: 0;">Tegrity</p>
+                <p class="industry-card__company-sub" style="margin: 1px 0 0; color: var(--site-muted, #586271); font: 500 italic 0.74rem/1.3 'Source Serif 4', Georgia, serif;">Acquired by McGraw-Hill Education</p>
+              </div>
             </div>
             <p class="industry-card__topic">Intelligent Educational Multimedia</p>
             <div class="industry-card__domains">
@@ -368,17 +406,25 @@
           </article>
           <article class="industry-card" id="industry-1999-2000">
             <p class="industry-card__years">1999-2000</p>
-            <h2 class="industry-card__role">Founder and CTO</h2>
+            <h2 class="industry-card__role">CTO</h2>
             <div class="industry-card__company">
               <span class="industry-card__logo-wrap">
                 <img class="industry-card__logo" src="../assets/about/industry-experience/img-007-2ee7e9c5ec.png" alt="SearchNG logo">
               </span>
-              <p class="industry-card__company-name">SearchNG</p>
+              <div style="min-width: 0;">
+                <p class="industry-card__company-name" style="margin: 0;">SearchNG</p>
+                <p class="industry-card__company-sub" style="margin: 1px 0 0; color: var(--site-muted, #586271); font: 500 italic 0.74rem/1.3 'Source Serif 4', Georgia, serif;">Founder (Jerusalem Software Incubator)</p>
+              </div>
             </div>
             <p class="industry-card__topic">Distributed Search Engine</p>
             <div class="industry-card__domains"><span class="industry-card__domain-tag">Text</span></div>
             <div class="industry-card__industries"><span class="industry-card__industry-tag">Internet</span></div>
           </article>
+          </section>
+        </div>
+        <div class="industry-segment">
+          <h2 class="industry-segment__heading">Algorithm &amp; Software Engineering <small>1991 - 1999 (concurrent with my B.Sc. and M.Sc. studies)</small></h2>
+          <section class="industry-grid" id="industry-timeline-bottom">
           <article class="industry-card" id="industry-1997-1999">
             <p class="industry-card__years">1997-1999</p>
             <h2 class="industry-card__role">Software Team Lead</h2>
@@ -386,9 +432,12 @@
               <span class="industry-card__logo-wrap">
                 <img class="industry-card__logo" src="../assets/about/industry-experience/img-006-0329d07d85.png" alt="Moldat Wireless logo">
               </span>
-              <p class="industry-card__company-name">Moldat Wireless (Acquired by NTS)</p>
+              <div style="min-width: 0;">
+                <p class="industry-card__company-name" style="margin: 0;">Moldat Wireless Technologies</p>
+                <p class="industry-card__company-sub" style="margin: 1px 0 0; color: var(--site-muted, #586271); font: 500 italic 0.74rem/1.3 'Source Serif 4', Georgia, serif;">Acquired by NTS</p>
+              </div>
             </div>
-            <p class="industry-card__topic">Network Management and Optimization for Indoor Cellular Communications</p>
+            <p class="industry-card__topic">Indoor Cellular Communications</p>
             <div class="industry-card__domains"><span class="industry-card__domain-tag">Network</span></div>
             <div class="industry-card__industries"><span class="industry-card__industry-tag">Telecom</span></div>
           </article>
@@ -399,7 +448,10 @@
               <span class="industry-card__logo-wrap">
                 <img class="industry-card__logo" src="../assets/about/industry-experience/img-005-d90718f92f.png" alt="LanOptics logo">
               </span>
-              <p class="industry-card__company-name">LanOptics</p>
+              <div style="min-width: 0;">
+                <p class="industry-card__company-name" style="margin: 0;">LanOptics</p>
+                <p class="industry-card__company-sub" style="margin: 1px 0 0; color: var(--site-muted, #586271); font: 500 italic 0.74rem/1.3 'Source Serif 4', Georgia, serif;">Jasamba Project</p>
+              </div>
             </div>
             <p class="industry-card__topic">Push Web Advertising</p>
             <div class="industry-card__domains"><span class="industry-card__domain-tag">Network</span><span class="industry-card__domain-tag">Text</span></div>
@@ -455,13 +507,17 @@
               <span class="industry-card__logo-wrap">
                 <img class="industry-card__logo" src="../shared-media/www-apartsin-com/assets/industry-experience/img-001-8c0d8d54a0-f7f6515fae.png" alt="Solid State Institute logo">
               </span>
-              <p class="industry-card__company-name">Solid State Institute</p>
+              <div style="min-width: 0;">
+                <p class="industry-card__company-name" style="margin: 0;">Solid State Institute</p>
+                <p class="industry-card__company-sub" style="margin: 1px 0 0; color: var(--site-muted, #586271); font: 500 italic 0.74rem/1.3 'Source Serif 4', Georgia, serif;">Technion, Israel Institute of Technology</p>
+              </div>
             </div>
             <p class="industry-card__topic">Acquisition and Analysis of Sensory Data</p>
             <div class="industry-card__domains"><span class="industry-card__domain-tag">Signals</span></div>
             <div class="industry-card__industries"><span class="industry-card__industry-tag">Data Management</span></div>
           </article>
-        </section>
+          </section>
+        </div>
 
       <section class="section-quick-links">
         <h2 class="section-quick-links__title">Quick Links</h2>
@@ -488,52 +544,6 @@
       </main>
     </div>
   </div>
-  <script>
-    (function () {
-      var cards = Array.from(document.querySelectorAll("#industry-timeline .industry-card"));
-      var dataSel = document.getElementById("industry-filter-data");
-      var industrySel = document.getElementById("industry-filter-industry");
-      var countEl = document.getElementById("industry-filter-count");
-      var empty = document.getElementById("industry-filter-empty");
-      if (!cards.length || !dataSel || !industrySel) return;
-
-      var normalize = function (s) { return s.trim().toLowerCase(); };
-      var titleCase = function (s) { return s.replace(/\b\w/g, function (ch) { return ch.toUpperCase(); }); };
-
-      var dataTypes = new Set();
-      var industries = new Set();
-      cards.forEach(function (card) {
-        card.querySelectorAll(".industry-card__domain-tag").forEach(function (el) { dataTypes.add(normalize(el.textContent)); });
-        card.querySelectorAll(".industry-card__industry-tag").forEach(function (el) { industries.add(normalize(el.textContent)); });
-      });
-
-      Array.from(dataTypes).sort().forEach(function (t) {
-        var o = document.createElement("option"); o.value = t; o.textContent = titleCase(t); dataSel.appendChild(o);
-      });
-      Array.from(industries).sort().forEach(function (t) {
-        var o = document.createElement("option"); o.value = t; o.textContent = titleCase(t); industrySel.appendChild(o);
-      });
-
-      function apply() {
-        var dv = dataSel.value, iv = industrySel.value, vis = 0;
-        cards.forEach(function (card) {
-          var cardData = Array.from(card.querySelectorAll(".industry-card__domain-tag")).map(function (el) { return normalize(el.textContent); });
-          var cardInd = Array.from(card.querySelectorAll(".industry-card__industry-tag")).map(function (el) { return normalize(el.textContent); });
-          var show = true;
-          if (dv !== "all" && cardData.indexOf(dv) < 0) show = false;
-          if (iv !== "all" && cardInd.indexOf(iv) < 0) show = false;
-          card.hidden = !show;
-          if (show) vis++;
-        });
-        if (empty) empty.hidden = vis > 0;
-        if (countEl) countEl.textContent = vis + " of " + cards.length + " roles";
-      }
-
-      dataSel.addEventListener("change", apply);
-      industrySel.addEventListener("change", apply);
-      apply();
-    })();
-  </script>
   <script defer src="../shared/unified-enhance.js"></script>
   <script defer src="../shared/site-shell.js"></script>
 </body>
