@@ -3,7 +3,7 @@
     'vibe-coding': 'Vibe-Coding',
     'ai-product-strategy': 'AI Product Strategy',
     'ai-in-academia': 'AI in Academia',
-    'project-brief': 'Project Brief',
+    'project-brief': 'Project Write-Ups',
   };
 
   const THEME_ALIASES = {

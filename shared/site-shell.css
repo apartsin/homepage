@@ -563,6 +563,20 @@ body.apartsin-shell-active .apartsin-shell__content {
   font-weight: 600;
 }
 
+.apartsin-shell__menu-subitem-nested {
+  display: grid;
+  gap: 2px;
+  margin: 2px 0 4px 8px;
+  padding: 4px 0 2px 10px;
+  border-left: 2px solid rgba(139, 107, 61, 0.18);
+}
+
+.apartsin-shell__menu-subitem-nested a {
+  font-size: 0.76rem;
+  font-weight: 600;
+  opacity: 0.92;
+}
+
 .apartsin-shell__subnav a {
   display: inline-flex;
   align-items: center;

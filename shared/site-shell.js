@@ -176,7 +176,16 @@
             label: 'Hands-On AI Science Course Series',
             path: 'teaching/hands-on-ai-science-courses-courses.html',
             secondary: [
-              { label: 'Course Syllabi', path: 'teaching/hands-on-ai-science-courses-courses.html' },
+              {
+                label: 'Course Syllabi',
+                path: 'teaching/hands-on-ai-science-courses-courses.html',
+                secondary: [
+                  { label: 'Language AI', path: 'courses/hos/series/language-ai.html' },
+                  { label: 'Vision AI', path: 'courses/hos/series/vision-ai.html' },
+                  { label: 'Scalable AI', path: 'courses/hos/series/scalable-ai.html' },
+                  { label: 'Temporal AI', path: 'courses/hos/series/temporal-ai.html' },
+                ],
+              },
               { label: 'Course Offerings', path: 'teaching/hands-on-ai-science-courses-past-offerings.html' },
               { label: 'Student Course Projects', path: 'teaching/hands-on-ai-science-courses-student-projects.html' },
               { label: 'Course Bots', path: 'teaching/course-bots.html' },
@@ -207,7 +216,7 @@
               { label: 'Vibe-Coding', path: 'writing/blog-posts.html?theme=vibe-coding' },
               { label: 'AI Product Strategy', path: 'writing/blog-posts.html?theme=ai-product-strategy' },
               { label: 'AI in Academia', path: 'writing/blog-posts.html?theme=ai-in-academia' },
-              { label: 'Project Brief', path: 'writing/blog-posts.html?theme=project-brief' },
+              { label: 'Project Write-Ups', path: 'writing/blog-posts.html?theme=project-brief' },
             ],
           },
           {
@@ -465,6 +474,10 @@
             subAnchor.href = sitePath(secondaryEntry.path);
             subAnchor.textContent = secondaryEntry.label;
             subAnchor.setAttribute('role', 'menuitem');
+            if (/^https?:\/\//i.test(secondaryEntry.path)) {
+              subAnchor.target = '_blank';
+              subAnchor.rel = 'noopener noreferrer';
+            }
             if (isPrimaryActive && linkMatchesCurrent(secondaryEntry.path)) {
               subAnchor.setAttribute('aria-current', 'page');
               item.classList.add('is-active');
@@ -512,6 +525,26 @@
               nestedItem.classList.add('is-active');
             }
             nestedDropdown.appendChild(thirdAnchor);
+
+            if (Array.isArray(thirdLevelEntry.secondary) && thirdLevelEntry.secondary.length > 0) {
+              const fourthGroup = document.createElement('div');
+              fourthGroup.className = 'apartsin-shell__menu-subitem-nested';
+              fourthGroup.setAttribute('role', 'menu');
+              fourthGroup.setAttribute('aria-label', `${thirdLevelEntry.label} submenu`);
+              thirdLevelEntry.secondary.forEach((fourthLevelEntry) => {
+                const fourthAnchor = document.createElement('a');
+                fourthAnchor.href = sitePath(fourthLevelEntry.path);
+                fourthAnchor.textContent = fourthLevelEntry.label;
+                fourthAnchor.setAttribute('role', 'menuitem');
+                if (isPrimaryActive && linkMatchesCurrent(fourthLevelEntry.path)) {
+                  fourthAnchor.setAttribute('aria-current', 'page');
+                  item.classList.add('is-active');
+                  nestedItem.classList.add('is-active');
+                }
+                fourthGroup.appendChild(fourthAnchor);
+              });
+              nestedDropdown.appendChild(fourthGroup);
+            }
           });
 
           nestedItem.appendChild(nestedDropdown);
