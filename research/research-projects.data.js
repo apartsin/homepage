@@ -34,5 +34,17 @@ window.RESEARCH_PROJECT_CARDS = [
         href: "https://github.com/ApartsinProjects/StableSteering"
       }
     ]
+  },
+  {
+    image: "../assets/research/vigor-hero.png",
+    imageAlt: "VIGOR speculative code generation visual",
+    title: "VIGOR: Speculative Code Generation",
+    description: "Research framework for studying incremental code generation under a forward-only commit protocol. Each step proposes candidate lines, applies structured gating, commits exactly one line to an immutable prefix, and records machine-readable traces for process-level analysis and failure attribution.",
+    links: [
+      {
+        label: "GitHub Repository",
+        href: "https://github.com/ApartsinProjects/SpeculativeCodeGeneration"
+      }
+    ]
   }
 ];
