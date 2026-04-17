@@ -6,13 +6,19 @@
   if (!grid || cards.length === 0) return;
 
   /* ── build cards with decade headings ── */
+  var decadeLabels = {
+    "2020s": "2020-2024",
+    "2010s": "2010-2020",
+    "2000s": "2000-2010",
+    "1990s": "1990-2000"
+  };
   var lastDecade = "";
   cards.forEach(function (card) {
     var decade = Math.floor(parseInt(card.year, 10) / 10) * 10 + "s";
     if (decade !== lastDecade) {
       var heading = document.createElement("h3");
       heading.className = "prt-decade-heading";
-      heading.textContent = decade;
+      heading.textContent = decadeLabels[decade] || decade;
       heading.dataset.decade = decade;
       grid.appendChild(heading);
       lastDecade = decade;

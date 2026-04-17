@@ -34,7 +34,8 @@ window.ACHIEVEMENT_CARDS = [
     badge: "AI Product of the Year",
     links: [
       { label: "Demo 1", href: "https://youtu.be/fmjDr7BKi4A?si=4Pvx_B0V17dP950n", icon: "video" },
-      { label: "Demo 2", href: "https://youtu.be/XsNe2T8JDVw?si=ECpRQPj8dHetNwXi", icon: "video" }
+      { label: "Demo 2", href: "https://youtu.be/XsNe2T8JDVw?si=ECpRQPj8dHetNwXi", icon: "video" },
+      { label: "Patents", href: "./patents.html", icon: "doc" }
     ],
     logo: { src: "../assets/about/industry-experience/img-016-5706a1c4bd.jpg", alt: "SafeRide logo" }
   }
