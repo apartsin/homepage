@@ -42,6 +42,14 @@
     desc.textContent = s.description || "";
     body.appendChild(desc);
 
+    if (s.degree) {
+      var tag = document.createElement("span");
+      tag.className = "student-card__degree";
+      tag.textContent = s.degree;
+      tag.style.cssText = "display: inline-block; margin-top: auto; align-self: flex-end; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--site-border, rgba(24,32,42,0.14)); background: rgba(133, 114, 81, 0.08); color: var(--site-text, #18202a); font: 800 0.68rem/1.2 'Manrope', sans-serif; letter-spacing: 0.04em; text-transform: uppercase;";
+      body.appendChild(tag);
+    }
+
     article.appendChild(body);
     grid.appendChild(article);
   });

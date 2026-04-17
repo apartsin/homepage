@@ -5,6 +5,7 @@ window.CURRENT_STUDENTS = [
     imageAlt: "Project image for Eden Moran",
     project: "Implicit Entity Recognition In Text",
     name: "Eden Moran",
+    degree: "M.Sc.",
     description: "Implicit entity recognition in text using contextual inference and discourse-level cues."
   },
   {
@@ -13,6 +14,7 @@ window.CURRENT_STUDENTS = [
     imageAlt: "Project image for Niv Cohen",
     project: "Adaptive Diagnostic Questioning with Large Language Models",
     name: "Niv Cohen",
+    degree: "M.Sc.",
     description: "Adaptive diagnostic questioning with LLMs for high-value information acquisition in clinical settings."
   },
   {
@@ -21,6 +23,7 @@ window.CURRENT_STUDENTS = [
     imageAlt: "Project image for Yigal Meshulam",
     project: "Decentralized Multi-Robot Task Allocation under the Zero-Knowledge",
     name: "Yigal Meshulam",
+    degree: "M.Sc.",
     description: "Decentralized multi-robot task allocation under zero-knowledge constraints and minimal signal sharing."
   },
   {
@@ -29,6 +32,7 @@ window.CURRENT_STUDENTS = [
     imageAlt: "Project image for Matan Chazanovitz",
     project: "Degradation-Aware Selective Super-Resolution (DASSR)",
     name: "Matan Chazanovitz",
+    degree: "M.Sc.",
     description: "Selective super-resolution that boosts degraded regions while preserving clean image areas."
   },
   {
@@ -37,6 +41,7 @@ window.CURRENT_STUDENTS = [
     imageAlt: "Project image for Ofek Gayero",
     project: "LLM-Driven Autonomous Analytics Dashboard Generation",
     name: "Ofek Gayero",
+    degree: "B.Sc.",
     description: "Autonomous generation of analytics dashboards from natural language queries using large language models, data schema inference, and visualization planning."
   },
   {
@@ -45,6 +50,7 @@ window.CURRENT_STUDENTS = [
     imageAlt: "Project image for Ameen Assadi",
     project: "Interactive Career Analytics and Resume Intelligence System",
     name: "Ameen Assadi",
+    degree: "B.Sc.",
     description: "Turning static resumes into structured, queryable career profiles with grounded question answering and skill-based analytics."
   }
 ];
