@@ -1,12 +1,5 @@
 window.UNDERGRAD_AI_PROJECTS = [
   {
-    image: "../shared-media/www-apartsin-com/assets/ai-engineering-projects-open-for-students/img-001-5fdd85fe4a-7c202b62da.png",
-    imageAlt: "Interactive career analytics project visual",
-    eyebrow: "",
-    title: "Interactive Career Analytics and Resume Intelligence System",
-    description: "Build a system that turns static resumes into structured, queryable career profiles, with grounded question answering and skill-based analytics."
-  },
-  {
     image: "../assets/teaching/ai-engineering-projects-open-for-students/img-002-50bc9bc0fa.png",
     imageAlt: "LLM-backed applications platform visual",
     eyebrow: "",

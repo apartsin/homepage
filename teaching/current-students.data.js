@@ -38,5 +38,13 @@ window.CURRENT_STUDENTS = [
     project: "LLM-Driven Autonomous Analytics Dashboard Generation",
     name: "Ofek Gayero",
     description: "Autonomous generation of analytics dashboards from natural language queries using large language models, data schema inference, and visualization planning."
+  },
+  {
+    id: "ameen-assadi",
+    image: "../shared-media/www-apartsin-com/assets/ai-engineering-projects-open-for-students/img-001-5fdd85fe4a-7c202b62da.png",
+    imageAlt: "Project image for Ameen Assadi",
+    project: "Interactive Career Analytics and Resume Intelligence System",
+    name: "Ameen Assadi",
+    description: "Turning static resumes into structured, queryable career profiles with grounded question answering and skill-based analytics."
   }
 ];
