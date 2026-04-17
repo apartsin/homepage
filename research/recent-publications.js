@@ -9,7 +9,7 @@
 
   var sectionLabels = {
     Journal: "Peer Reviewed: 2025-2026",
-    Submitted: "Submitted",
+    Submitted: "Preprints (Submitted for Peer Review)",
     Preprint: "Reports"
   };
   var typeOrder = ["Journal", "Submitted", "Preprint"];
