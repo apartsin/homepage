@@ -41,6 +41,19 @@ window.RECENT_PUBLICATIONS = [
     venueHref: "https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:VOx2b1Wkg3QC"
   },
   {
+    id: "pub-2026-sea-alert",
+    year: 2026,
+    type: "Submitted",
+    title: "SeaAlert: Critical Information Extraction From Maritime Distress Communications with Large Language Models",
+    authors: [
+      { name: "T Atia", self: false },
+      { name: "Y Aperstein", self: false },
+      { name: "A Apartsin", self: true }
+    ],
+    venue: "arXiv preprint (arXiv:2604.14163)",
+    venueHref: "https://arxiv.org/abs/2604.14163"
+  },
+  {
     id: "pub-2026-headline-rewriting",
     year: 2026,
     type: "Submitted",
