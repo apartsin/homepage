@@ -64,5 +64,15 @@ window.RECENT_PROJECT_CARDS = [
     links: [
       { label: "GitHub", href: "https://github.com/ApartsinProjects/Music2World" }
     ]
+  },
+  {
+    image: "../assets/work/projects/autoanalytics-hero.png",
+    imageAlt: "AutoAnalytics dashboard generation visual",
+    eyebrow: "",
+    title: "AutoAnalytics",
+    description: "LLM-driven analytics platform that auto-generates SQL queries, KPIs, and visual dashboards from annotated data schemas. Built with FastHTML and OpenAI for rapid data exploration.",
+    links: [
+      { label: "GitHub", href: "https://github.com/ApartsinProjects/AutoAnalytics" }
+    ]
   }
 ];
