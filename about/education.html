@@ -12,11 +12,32 @@
   <link rel="stylesheet" href="../shared/site-shell.css">
   <link rel="stylesheet" href="../shared/unified-theme.css">
   <style>
+    .edu-segment {
+      margin-top: 28px;
+    }
+    .edu-segment:first-of-type {
+      margin-top: 8px;
+    }
+    .edu-segment__heading {
+      margin: 0 0 12px;
+      padding: 0 0 6px;
+      border-bottom: 2px solid var(--site-accent, #9c5a2e);
+      color: var(--site-text, #18202a);
+      font: 800 1.05rem/1.2 "Manrope", "Segoe UI", sans-serif;
+      letter-spacing: -0.01em;
+    }
+    .edu-segment__heading small {
+      display: inline-block;
+      margin-left: 8px;
+      color: var(--site-muted, #586271);
+      font: 600 0.82rem/1.2 "Manrope", sans-serif;
+      letter-spacing: 0;
+    }
     .edu-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: clamp(16px, 2.5vw, 24px);
-      padding: 24px 0;
+      padding: 14px 0;
     }
     .edu-card {
       display: flex;
@@ -116,6 +137,8 @@
             </figure>
             <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">I earned computer science degrees in machine learning, computer vision, and signal processing, plus a management degree, while working in <a href="../about/industry-experience.html">industry</a>. I keep my skills current through online courses and hands-on <a href="../work/recent-projects.html">experimentation</a>.</p>
           </div>        </section>
+        <div class="edu-segment">
+          <h2 class="edu-segment__heading">Academic Training</h2>
         <section class="edu-grid">
           <article class="edu-card">
             <p class="edu-card__year">1989-1990</p>
@@ -177,6 +200,11 @@
             <p class="edu-card__faculty">Faculty of Mathematics and Computer Science</p>
             <p class="edu-card__note">Computer Vision and Machine Learning</p>
           </article>
+        </section>
+        </div>
+        <div class="edu-segment">
+          <h2 class="edu-segment__heading">Courses &amp; Certificates</h2>
+        <section class="edu-grid">
           <article class="edu-card">
             <p class="edu-card__year">2006</p>
             <div class="edu-card__logo-wrap">
@@ -232,6 +260,7 @@
             <p class="edu-card__faculty">Certification Program</p>
           </article>
         </section>
+        </div>
 
       <section class="section-quick-links">
         <h2 class="section-quick-links__title">Quick Links</h2>
