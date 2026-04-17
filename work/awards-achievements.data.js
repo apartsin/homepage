@@ -28,7 +28,7 @@ window.ACHIEVEMENT_CARDS = [
     year: "2014",
     title: "Citibank: Financial Data Science Platform",
     text: "While at Citibank TLV lab, I proposed creating a corporate platform for sharing and collaborating on data science insights across the organization. The project was awarded a $250K corporate LabLink grant to support its development.",
-    image: { src: "../work-samples/citi-datatube/datatube-hero.png", alt: "Citi DataTube platform interface" },
+    image: { src: "../assets/work/citi-datatube-screenshot.png", alt: "Citi DataTube platform interface" },
     badge: "$250K LabLink Grant",
     links: [{ label: "Project Brief", href: "../assets/work/citi-datatube-brief.pdf", icon: "doc" }],
     logo: { src: "../assets/about/industry-experience/img-013-e1e28ef95e.png", alt: "Citi logo" }
