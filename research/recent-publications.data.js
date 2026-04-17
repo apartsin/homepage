@@ -152,5 +152,77 @@ window.RECENT_PUBLICATIONS = [
     ],
     venue: "arXiv preprint",
     venueHref: "https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:5ugPr518TE4C"
+  },
+  {
+    id: "pub-2025-health-crises-medication",
+    year: 2025,
+    type: "Preprint",
+    title: "When Curiosity Signals Danger: Predicting Health Crises Through Online Medication Inquiries",
+    authors: [
+      { name: "D Goncharok", self: false },
+      { name: "A Shifman", self: false },
+      { name: "A Apartsin", self: true },
+      { name: "Y Aperstein", self: false }
+    ],
+    venue: "arXiv preprint (arXiv:2509.11802)",
+    venueHref: "https://arxiv.org/abs/2509.11802"
+  },
+  {
+    id: "pub-2025-fuzzy-speech-medical",
+    year: 2025,
+    type: "Preprint",
+    title: "From Fuzzy Speech to Medical Insight: Benchmarking LLMs on Noisy Patient Narratives",
+    authors: [
+      { name: "E Mama", self: false },
+      { name: "L Sheri", self: false },
+      { name: "Y Aperstein", self: false },
+      { name: "A Apartsin", self: true }
+    ],
+    venue: "arXiv preprint (arXiv:2509.11803)",
+    venueHref: "https://arxiv.org/abs/2509.11803"
+  },
+  {
+    id: "pub-2025-clickbait-detection",
+    year: 2025,
+    type: "Preprint",
+    title: "An Interpretable Benchmark for Clickbait Detection and Tactic Attribution",
+    authors: [
+      { name: "L Nofar", self: false },
+      { name: "T Portal", self: false },
+      { name: "A Elbaz", self: false },
+      { name: "A Apartsin", self: true },
+      { name: "Y Aperstein", self: false }
+    ],
+    venue: "arXiv preprint (arXiv:2509.10937)",
+    venueHref: "https://arxiv.org/abs/2509.10937"
+  },
+  {
+    id: "pub-2025-emotion-pop-lyrics",
+    year: 2025,
+    type: "Preprint",
+    title: "From Joy to Fear: A Benchmark of Emotion Estimation in Pop Song Lyrics",
+    authors: [
+      { name: "S Dahary", self: false },
+      { name: "A Edana", self: false },
+      { name: "A Apartsin", self: true },
+      { name: "Y Aperstein", self: false }
+    ],
+    venue: "arXiv preprint (arXiv:2509.05617)",
+    venueHref: "https://arxiv.org/abs/2509.05617"
+  },
+  {
+    id: "pub-2025-llm-intent-service",
+    year: 2025,
+    type: "Preprint",
+    title: "Do Large Language Models Need Intent? Revisiting Response Generation Strategies for Service Assistant",
+    authors: [
+      { name: "I Bolshinsky", self: false },
+      { name: "S Kupiec", self: false },
+      { name: "A Sasson", self: false },
+      { name: "Y Aperstein", self: false },
+      { name: "A Apartsin", self: true }
+    ],
+    venue: "arXiv preprint (arXiv:2509.05006)",
+    venueHref: "https://arxiv.org/abs/2509.05006"
   }
 ];
