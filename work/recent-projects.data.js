@@ -54,5 +54,15 @@ window.RECENT_PROJECT_CARDS = [
       { label: "GitHub", href: "https://github.com/ApartsinProjects/edgelang" },
       { label: "Blog Post", href: "https://medium.com/design-bootcamp/from-scroll-to-storyboard-generative-ai-and-the-comic-first-browser-b8eeef3c169a" }
     ]
+  },
+  {
+    image: "../assets/work/projects/music2world-hero.png",
+    imageAlt: "Music2World research visual",
+    eyebrow: "",
+    title: "Music2World",
+    description: "Offline research system for generating music-synchronized visual augmentation embedded in existing video content. Detects scene structures and modulates them with audio-driven signals for minimally obstructive, scene-native visualizations.",
+    links: [
+      { label: "GitHub", href: "https://github.com/ApartsinProjects/Music2World" }
+    ]
   }
 ];
