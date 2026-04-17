@@ -46,9 +46,10 @@
       yearSpan.textContent = pub.year;
       top.appendChild(yearSpan);
 
+      var typeLabels = { Journal: "Journal", Submitted: "Preprint", Preprint: "Report" };
       var typeSpan = document.createElement("span");
       typeSpan.className = "pub-card__type";
-      typeSpan.textContent = pub.type;
+      typeSpan.textContent = typeLabels[pub.type] || pub.type;
       top.appendChild(typeSpan);
 
       li.appendChild(top);
