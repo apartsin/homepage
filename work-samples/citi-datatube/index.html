@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Citi DataTube: Project Brief</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap">
+  <style>
+    @page { size: A4; margin: 0; }
+    @media print { body { background: #fff; } .flyer { box-shadow: none; margin: 0; } }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Manrope", sans-serif; color: #18202a; background: #ddd; }
+    .flyer { width: 210mm; margin: 16px auto; background: #fff; box-shadow: 0 4px 20px rgba(0,0,0,0.15); overflow: hidden; }
+
+    .header { padding: 12px 28px; background: #0b2f50; display: flex; align-items: center; gap: 12px; }
+    .header__logo { width: 32px; height: 32px; object-fit: contain; border-radius: 6px; background: #fff; padding: 2px; }
+    .header__title { font: 800 1.3rem/1.1 "Manrope", sans-serif; color: #fff; }
+    .header__title span { color: #7db8f0; }
+    .header__sub { font: 600 0.68rem/1.2 "Manrope", sans-serif; color: rgba(255,255,255,0.65); }
+
+    .body { padding: 10px 28px 8px; }
+    .lead { font: 400 0.78rem/1.5 "Source Serif 4", Georgia, serif; color: #3a3a3a; margin-bottom: 10px; }
+
+    .screenshot { border: 1px solid rgba(24,32,42,0.14); border-radius: 6px; overflow: hidden; margin-bottom: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .screenshot img { display: block; width: 100%; }
+
+    .label { margin: 8px 0 5px; padding-bottom: 3px; border-bottom: 2px solid #0b2f50; font: 800 0.66rem/1.2 "Manrope", sans-serif; color: #0b2f50; text-transform: uppercase; letter-spacing: 0.07em; }
+
+    .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .problems { list-style: none; counter-reset: p; }
+    .problems li { counter-increment: p; display: flex; gap: 5px; margin-bottom: 3px; font: 500 0.64rem/1.35 "Manrope", sans-serif; color: #3a3a3a; }
+    .problems li::before { content: counter(p); flex: 0 0 14px; width: 14px; height: 14px; border-radius: 50%; background: #0b2f50; color: #fff; font: 800 0.5rem/14px "Manrope", sans-serif; text-align: center; }
+
+    .caps { display: grid; gap: 3px; }
+    .cap { padding: 4px 8px; border-radius: 5px; border-left: 3px solid var(--cc, #1d4ed8); background: #f7f8fa; }
+    .cap:nth-child(1){--cc:#1d4ed8;} .cap:nth-child(2){--cc:#0d9488;} .cap:nth-child(3){--cc:#2e7d5a;} .cap:nth-child(4){--cc:#9c5a2e;} .cap:nth-child(5){--cc:#7a3fa0;}
+    .cap h3 { font: 800 0.64rem/1.2 "Manrope", sans-serif; color: var(--cc); }
+    .cap p { font: 400 0.58rem/1.3 "Source Serif 4", Georgia, serif; color: #586271; }
+
+    .tech-list { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 2px; }
+    .tech-tag { padding: 2px 6px; border-radius: 999px; border: 1px solid rgba(24,32,42,0.1); background: #f0f4f8; color: #0b2f50; font: 700 0.56rem/1.2 "Manrope", sans-serif; }
+    .tech-tag--hl { background: rgba(29,78,216,0.1); border-color: rgba(29,78,216,0.25); color: #1d4ed8; }
+
+    .arch-svg { display: block; max-width: 100%; margin-top: 4px; }
+
+    .footer { padding: 6px 28px; border-top: 1px solid rgba(24,32,42,0.1); display: flex; align-items: center; justify-content: space-between; background: #f8f8f8; }
+    .footer__author { font: 700 0.68rem/1.3 "Manrope", sans-serif; }
+    .footer__role { font: 400 0.6rem/1.3 "Source Serif 4", Georgia, serif; color: #586271; }
+    .footer__logo { height: 18px; opacity: 0.5; }
+  </style>
+</head>
+<body>
+<div class="flyer">
+
+  <div class="header">
+    <img class="header__logo" src="citi-logo.png" alt="Citi">
+    <div><p class="header__title">Citi <span>DataTube</span></p><p class="header__sub">Enterprise Data Insight Platform &middot; Project Brief</p></div>
+  </div>
+
+  <div class="body">
+    <p class="lead">A web portal for publishing, discovering, and collaborating on data insights and visualizations across the enterprise. DataTube brings the simplicity of discovering and sharing video content to corporate data analytics.</p>
+
+    <div class="screenshot"><img src="datatube-hero.png" alt="DataTube platform interface"></div>
+
+    <div class="cols">
+      <div>
+        <h2 class="label">Problems Addressed</h2>
+        <ol class="problems">
+          <li>Data insights buried in email attachments and spreadsheets</li>
+          <li>Knowledge lost in scattered discussion threads</li>
+          <li>Limited collaboration across teams and departments</li>
+          <li>High cost of ad-hoc report generation and licensing</li>
+          <li>Months-long time-to-value for data dissemination</li>
+        </ol>
+
+        <h2 class="label">Key Capabilities</h2>
+        <div class="caps">
+          <div class="cap"><h3>Publish</h3><p>Upload datasets, connect to warehouses and streams, auto-generate visuals.</p></div>
+          <div class="cap"><h3>Discover</h3><p>Search, browse, and get personalized recommendations by role.</p></div>
+          <div class="cap"><h3>Collaborate</h3><p>Discuss, annotate, and share insights with preserved context.</p></div>
+          <div class="cap"><h3>Combine</h3><p>Mix-and-match datasets into composite dashboards.</p></div>
+          <div class="cap"><h3>Govern</h3><p>Enterprise access control, SSO, and compliance.</p></div>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="label">Core Technologies</h2>
+        <div class="tech-list">
+          <span class="tech-tag tech-tag--hl">Grammar of Graphics</span>
+          <span class="tech-tag">Declarative Visualization</span>
+          <span class="tech-tag">CEP / Real-Time Streams</span>
+          <span class="tech-tag">SQL &amp; CSV Connectors</span>
+          <span class="tech-tag">Enterprise SSO</span>
+          <span class="tech-tag">Annotation Engine</span>
+          <span class="tech-tag">Recommendation System</span>
+        </div>
+
+        <h2 class="label">Architecture</h2>
+        <svg class="arch-svg" viewBox="0 0 380 180" xmlns="http://www.w3.org/2000/svg" style="font-family:'Manrope',sans-serif;">
+          <rect x="2" y="2" width="376" height="176" rx="6" fill="#f0f4f8" stroke="#c8d0da"/>
+          <!-- UI layer -->
+          <rect x="10" y="10" width="150" height="26" rx="5" fill="#1d4ed8"/><text x="85" y="28" text-anchor="middle" fill="#fff" font-size="8.5" font-weight="800">CONSUMPTION WEB UI</text>
+          <rect x="168" y="10" width="90" height="26" rx="5" fill="#0d9488"/><text x="213" y="28" text-anchor="middle" fill="#fff" font-size="8" font-weight="800">PUBLISHING UI</text>
+          <rect x="266" y="10" width="104" height="26" rx="5" fill="#7a3fa0"/><text x="318" y="28" text-anchor="middle" fill="#fff" font-size="8" font-weight="800">COLLABORATE</text>
+          <!-- Engine layer -->
+          <rect x="10" y="44" width="110" height="24" rx="4" fill="#fff" stroke="#1d4ed8"/><text x="65" y="58" text-anchor="middle" fill="#1d4ed8" font-size="7" font-weight="700">Visualization Engine</text><text x="65" y="66" text-anchor="middle" fill="#586271" font-size="5.5">(Grammar of Graphics)</text>
+          <rect x="128" y="44" width="110" height="24" rx="4" fill="#fff" stroke="#2e7d5a"/><text x="183" y="60" text-anchor="middle" fill="#2e7d5a" font-size="7" font-weight="700">Annotation &amp; Metadata</text>
+          <rect x="246" y="44" width="124" height="24" rx="4" fill="#fff" stroke="#9c5a2e"/><text x="308" y="60" text-anchor="middle" fill="#9c5a2e" font-size="7" font-weight="700">User &amp; Preferences</text>
+          <!-- Data layer -->
+          <rect x="10" y="76" width="360" height="22" rx="4" fill="#e8edf3" stroke="#586271"/><text x="190" y="91" text-anchor="middle" fill="#0b2f50" font-size="8" font-weight="800">DATA LAYER</text>
+          <!-- Connectors -->
+          <rect x="10" y="106" width="68" height="20" rx="4" fill="#fff" stroke="#586271"/><text x="44" y="119" text-anchor="middle" fill="#3a3a3a" font-size="6" font-weight="700">Data Sources</text>
+          <rect x="84" y="106" width="52" height="20" rx="4" fill="#fff" stroke="#586271"/><text x="110" y="119" text-anchor="middle" fill="#3a3a3a" font-size="6" font-weight="700">Cache</text>
+          <rect x="142" y="106" width="52" height="20" rx="4" fill="#fff" stroke="#586271"/><text x="168" y="119" text-anchor="middle" fill="#3a3a3a" font-size="6" font-weight="700">SSO</text>
+          <rect x="200" y="106" width="52" height="20" rx="4" fill="#fff" stroke="#586271"/><text x="226" y="119" text-anchor="middle" fill="#3a3a3a" font-size="6" font-weight="700">E-mail</text>
+          <rect x="258" y="106" width="52" height="20" rx="4" fill="#fff" stroke="#586271"/><text x="284" y="119" text-anchor="middle" fill="#3a3a3a" font-size="6" font-weight="700">BI (future)</text>
+          <rect x="316" y="106" width="54" height="20" rx="4" fill="#fff" stroke="#586271"/><text x="343" y="119" text-anchor="middle" fill="#3a3a3a" font-size="6" font-weight="700">Collaborate</text>
+          <!-- External -->
+          <rect x="10" y="134" width="68" height="16" rx="3" fill="#0b2f50"/><text x="44" y="145" text-anchor="middle" fill="#fff" font-size="5.5" font-weight="700">SQL / OCEAN</text>
+          <rect x="84" y="134" width="68" height="16" rx="3" fill="#0b2f50"/><text x="118" y="145" text-anchor="middle" fill="#fff" font-size="5.5" font-weight="700">CSV / Excel</text>
+          <rect x="158" y="134" width="68" height="16" rx="3" fill="#0b2f50"/><text x="192" y="145" text-anchor="middle" fill="#fff" font-size="5.5" font-weight="700">CEP Streams</text>
+          <rect x="232" y="134" width="68" height="16" rx="3" fill="#0b2f50"/><text x="266" y="145" text-anchor="middle" fill="#fff" font-size="5.5" font-weight="700">Citi SSO</text>
+          <rect x="306" y="134" width="64" height="16" rx="3" fill="#0b2f50"/><text x="338" y="145" text-anchor="middle" fill="#fff" font-size="5.5" font-weight="700">Citi Collab</text>
+          <!-- Arrows -->
+          <defs><marker id="a" markerWidth="5" markerHeight="4" refX="4" refY="2" orient="auto"><polygon points="0 0,5 2,0 4" fill="#586271"/></marker></defs>
+          <line x1="65" y1="36" x2="65" y2="44" stroke="#586271" stroke-width="1" marker-end="url(#a)"/>
+          <line x1="213" y1="36" x2="213" y2="44" stroke="#586271" stroke-width="1" marker-end="url(#a)"/>
+          <line x1="318" y1="36" x2="318" y2="44" stroke="#586271" stroke-width="1" marker-end="url(#a)"/>
+          <line x1="65" y1="68" x2="65" y2="76" stroke="#586271" stroke-width="1" marker-end="url(#a)"/>
+          <line x1="183" y1="68" x2="183" y2="76" stroke="#586271" stroke-width="1" marker-end="url(#a)"/>
+          <line x1="308" y1="68" x2="308" y2="76" stroke="#586271" stroke-width="1" marker-end="url(#a)"/>
+          <line x1="44" y1="98" x2="44" y2="106" stroke="#586271" stroke-width="1" marker-end="url(#a)"/>
+          <line x1="110" y1="98" x2="110" y2="106" stroke="#586271" stroke-width="1" marker-end="url(#a)"/>
+          <line x1="168" y1="98" x2="168" y2="106" stroke="#586271" stroke-width="1" marker-end="url(#a)"/>
+          <line x1="226" y1="98" x2="226" y2="106" stroke="#586271" stroke-width="1" marker-end="url(#a)"/>
+          <line x1="284" y1="98" x2="284" y2="106" stroke="#586271" stroke-width="1" marker-end="url(#a)"/>
+          <line x1="343" y1="98" x2="343" y2="106" stroke="#586271" stroke-width="1" marker-end="url(#a)"/>
+          <line x1="44" y1="126" x2="44" y2="134" stroke="#586271" stroke-width="1" marker-end="url(#a)"/>
+          <line x1="118" y1="126" x2="118" y2="134" stroke="#586271" stroke-width="1" marker-end="url(#a)"/>
+          <line x1="192" y1="126" x2="192" y2="134" stroke="#586271" stroke-width="1" marker-end="url(#a)"/>
+          <line x1="266" y1="126" x2="266" y2="134" stroke="#586271" stroke-width="1" marker-end="url(#a)"/>
+          <line x1="338" y1="126" x2="338" y2="134" stroke="#586271" stroke-width="1" marker-end="url(#a)"/>
+          <!-- Layer labels -->
+          <text x="374" y="25" text-anchor="end" fill="#586271" font-size="5" font-weight="600" transform="rotate(-90,374,25)">USERS</text>
+          <text x="374" y="55" text-anchor="end" fill="#586271" font-size="5" font-weight="600" transform="rotate(-90,374,55)">SERVICES</text>
+          <text x="374" y="115" text-anchor="end" fill="#586271" font-size="5" font-weight="600" transform="rotate(-90,374,115)">CONNECTORS</text>
+          <text x="374" y="145" text-anchor="end" fill="#586271" font-size="5" font-weight="600" transform="rotate(-90,374,145)">EXTERNAL</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div><p class="footer__author">Alexander (Sasha) Apartsin</p><p class="footer__role">AVP Data Science, Citi Israel Innovation Lab</p></div>
+    <img class="footer__logo" src="citi-logo.png" alt="Citi">
+  </div>
+
+</div>
+</body>
+</html>

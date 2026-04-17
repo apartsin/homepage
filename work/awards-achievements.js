@@ -12,7 +12,8 @@
     art.id = c.id;
 
     var fig = '<figure class="achievement-card__media"><img src="' + c.image.src + '" alt="' + c.image.alt + '"></figure>';
-    var title = '<h2 class="achievement-card__title">' + c.title + '</h2>';
+    var eyebrow = c.year ? '<p class="achievement-card__year" style="margin: 0 0 4px; color: #9c5a2e; font: 800 0.78rem/1 \'Manrope\', sans-serif; letter-spacing: 0.06em; text-transform: uppercase;">' + c.year + '</p>' : '';
+    var title = eyebrow + '<h2 class="achievement-card__title">' + c.title + '</h2>';
     var text = '<p class="achievement-card__text">' + c.text + '</p>';
 
     var footerParts = '<span class="achievement-card__badge">' + c.badge + '</span>';
