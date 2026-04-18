@@ -74,5 +74,15 @@ window.RECENT_PROJECT_CARDS = [
     links: [
       { label: "GitHub", href: "https://github.com/ApartsinProjects/AutoAnalytics" }
     ]
+  },
+  {
+    image: "../assets/work/projects/promptart-hero.png",
+    imageAlt: "PromptArt content transformation graph visual",
+    eyebrow: "",
+    title: "PromptArt",
+    description: "Graph-native system for crowdsourced GenAI content transformation, attribution, and value circulation. Treats generation, provenance, and settlement as one integrated graph process.",
+    links: [
+      { label: "GitHub", href: "https://github.com/ApartsinProjects/promptart" }
+    ]
   }
 ];
