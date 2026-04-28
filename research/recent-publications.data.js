@@ -1,5 +1,31 @@
 window.RECENT_PUBLICATIONS = [
   {
+    id: "pub-2026-license-plate-recoverability",
+    year: 2026,
+    type: "Submitted",
+    title: "Mapping License Plate Recoverability Under Extreme Viewing Angles for Opportunistic Urban Sensing",
+    authors: [
+      { name: "I Adamenko", self: false },
+      { name: "O Ben Aharon", self: false },
+      { name: "Y Aperstein", self: false },
+      { name: "A Apartsin", self: true }
+    ],
+    venue: "arXiv preprint (arXiv:2604.23814)",
+    venueHref: "https://arxiv.org/abs/2604.23814"
+  },
+  {
+    id: "pub-2026-spine-benchmark",
+    year: 2026,
+    type: "Submitted",
+    title: "SPINE: A Benchmark for Measuring the Epistemic Backbone of Large Language Models",
+    authors: [
+      { name: "G Shapira", self: false },
+      { name: "A Apartsin", self: true }
+    ],
+    venue: "Harvard Dataverse (doi:10.7910/DVN/CG9X6D)",
+    venueHref: "https://doi.org/10.7910/DVN/CG9X6D"
+  },
+  {
     id: "pub-2026-diagnostic-questioning",
     year: 2026,
     type: "Journal",
