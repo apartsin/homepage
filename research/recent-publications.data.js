@@ -112,7 +112,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2025-lightweight-early-exits",
     year: 2025,
-    type: "Submitted",
+    type: "Preprint",
     title: "Boosted Training of Lightweight Early Exits for Optimizing CNN Image Classification Inference",
     authors: [
       { name: "Y Aperstein", self: false },
