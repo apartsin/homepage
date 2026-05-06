@@ -9,6 +9,25 @@ window.RESEARCH_PROJECT_CARDS = [
     ]
   },
   {
+    image: "https://raw.githubusercontent.com/ApartsinProjects/DGLD4Energetic/master/figures/readme_hero.png",
+    imageAlt: "Domain-gated latent diffusion: from a Gaussian latent cloud to the converged headline lead 3,4,5-trinitro-1,2-isoxazole",
+    title: "DGLD4Energetic",
+    description: "Domain-gated latent diffusion for discovering novel energetic materials. Produced 12 DFT-confirmed CHNO leads, with headline compound L1 (3,4,5-trinitro-1,2-isoxazole) at density 2.09 g/cm³ and detonation velocity 8.25 km/s, with max-Tanimoto similarity of 0.27 to all 65,980 training molecules. Fully reproducible end-to-end on commodity hardware; large checkpoints hosted on Zenodo.",
+    links: [
+      { label: "GitHub", href: "https://github.com/ApartsinProjects/DGLD4Energetic" },
+      { label: "Zenodo", href: "https://doi.org/10.5281/zenodo.19821953" }
+    ]
+  },
+  {
+    image: "https://raw.githubusercontent.com/ApartsinProjects/CalexNet/master/paper/figures/hero.png",
+    imageAlt: "CalexNet cascade: a CNN backbone with three early-exit branches; easy samples exit at branch 1, harder samples flow deeper",
+    title: "CalexNet",
+    description: "Training-recipe modification for CNN early-exit cascades that closes three train-inference mismatches: cascade-aligned importance weighting, cascade-aware CPM calibration, and a distilled classification target against the backbone's full softmax. Matches or improves the accuracy-FLOPs Pareto frontier over PTEEnet, ZTW, and BoostNet baselines on ResNet18/50 across CIFAR-100 and CINIC-10.",
+    links: [
+      { label: "GitHub", href: "https://github.com/ApartsinProjects/CalexNet" }
+    ]
+  },
+  {
     image: "../assets/research/research-projects/coreason-readme-hero.png",
     imageAlt: "CoReason README hero visual",
     title: "CoReason",
