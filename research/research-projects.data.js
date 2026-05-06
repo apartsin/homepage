@@ -3,7 +3,7 @@ window.RESEARCH_PROJECT_CARDS = [
     image: "https://raw.githubusercontent.com/ApartsinProjects/EMR-ACH/master/paper/figures/hero_emr_ach.png",
     imageAlt: "EMR-ACH evidence matrix diagram showing articles decomposed across competing hypotheses",
     title: "EMR-ACH",
-    description: "LLM geopolitical forecasting reframed as a structured matrix problem using Heuer's Analysis of Competing Hypotheses. Decomposes each forecast into indicator generation, evidence scoring, and diagnostic weighting across competing hypotheses. Includes a multi-agent adversarial variant and a leakage-clean benchmark across three tracks: public forecasting markets, GDELT geopolitical events, and S&P 500 earnings.",
+    description: "LLM geopolitical forecasting reframed as a structured evidence matrix using Heuer's Analysis of Competing Hypotheses. Covers contrastive indicator generation, diagnostic weighting, and a multi-agent adversarial variant, benchmarked on leakage-clean forecasting, GDELT, and earnings tracks.",
     links: [
       { label: "GitHub", href: "https://github.com/ApartsinProjects/EMR-ACH" }
     ]
@@ -12,7 +12,7 @@ window.RESEARCH_PROJECT_CARDS = [
     image: "https://raw.githubusercontent.com/ApartsinProjects/DGLD4Energetic/master/figures/readme_hero.png",
     imageAlt: "Domain-gated latent diffusion: from a Gaussian latent cloud to the converged headline lead 3,4,5-trinitro-1,2-isoxazole",
     title: "DGLD4Energetic",
-    description: "Domain-gated latent diffusion for discovering novel energetic materials. Produced 12 DFT-confirmed CHNO leads, with headline compound L1 (3,4,5-trinitro-1,2-isoxazole) at density 2.09 g/cm³ and detonation velocity 8.25 km/s, with max-Tanimoto similarity of 0.27 to all 65,980 training molecules. Fully reproducible end-to-end on commodity hardware; large checkpoints hosted on Zenodo.",
+    description: "Domain-gated latent diffusion for novel energetic material discovery, yielding 12 DFT-confirmed CHNO leads. Headline compound reaches density 2.09 g/cm³ and detonation velocity 8.25 km/s with max-Tanimoto 0.27 to all training molecules; reproducible end-to-end on commodity hardware.",
     links: [
       { label: "GitHub", href: "https://github.com/ApartsinProjects/DGLD4Energetic" },
       { label: "Zenodo", href: "https://doi.org/10.5281/zenodo.19821953" }
@@ -22,7 +22,7 @@ window.RESEARCH_PROJECT_CARDS = [
     image: "https://raw.githubusercontent.com/ApartsinProjects/CalexNet/master/paper/figures/hero.png",
     imageAlt: "CalexNet cascade: a CNN backbone with three early-exit branches; easy samples exit at branch 1, harder samples flow deeper",
     title: "CalexNet",
-    description: "Training-recipe modification for CNN early-exit cascades that closes three train-inference mismatches: cascade-aligned importance weighting, cascade-aware CPM calibration, and a distilled classification target against the backbone's full softmax. Matches or improves the accuracy-FLOPs Pareto frontier over PTEEnet, ZTW, and BoostNet baselines on ResNet18/50 across CIFAR-100 and CINIC-10.",
+    description: "Training-recipe modification for CNN early-exit cascades that closes three train-inference mismatches via cascade-aligned importance weighting, CPM calibration, and knowledge distillation. Matches or improves the accuracy-FLOPs Pareto frontier over PTEEnet, ZTW, and BoostNet on ResNet18/50 across CIFAR-100 and CINIC-10.",
     links: [
       { label: "GitHub", href: "https://github.com/ApartsinProjects/CalexNet" }
     ]
