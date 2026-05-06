@@ -7,13 +7,6 @@ window.UNDERGRAD_AI_PROJECTS = [
     description: "Design a low-code platform where developers define LLM app behavior declaratively instead of writing repetitive orchestration logic."
   },
   {
-    image: "../assets/teaching/ai-engineering-projects-open-for-students/img-003-edb01fa52d.png",
-    imageAlt: "TeacherSim project visual",
-    eyebrow: "",
-    title: "TeacherSim: LLM-Based Teacher Training Simulator",
-    description: "Create multi-agent classroom simulations for deliberate teaching practice with realistic student behavior and pedagogical feedback loops."
-  },
-  {
     image: "../assets/teaching/ai-engineering-projects-open-for-students/img-005-e6a024cfc4.png",
     imageAlt: "Expert decision wizard platform visual",
     eyebrow: "",

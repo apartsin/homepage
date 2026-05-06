@@ -36,6 +36,15 @@ window.CURRENT_STUDENTS = [
     description: "Selective super-resolution that boosts degraded regions while preserving clean image areas."
   },
   {
+    id: "jolian-habib",
+    image: "../assets/teaching/ai-engineering-projects-open-for-students/img-003-edb01fa52d.png",
+    imageAlt: "Project image for Jolian Habib",
+    project: "TeacherSim: LLM-Based Teacher Training Simulator",
+    name: "Jolian Habib",
+    degree: "B.Sc.",
+    description: "Multi-agent classroom simulations for deliberate teaching practice with realistic student behavior and pedagogical feedback loops."
+  },
+  {
     id: "ofek-gayero",
     image: "../assets/teaching/ai-engineering-projects-open-for-students/img-004-53a3c70937.png",
     imageAlt: "Project image for Ofek Gayero",
