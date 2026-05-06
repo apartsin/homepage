@@ -1,5 +1,14 @@
 window.RESEARCH_PROJECT_CARDS = [
   {
+    image: "https://raw.githubusercontent.com/ApartsinProjects/EMR-ACH/master/paper/figures/hero_emr_ach.png",
+    imageAlt: "EMR-ACH evidence matrix diagram showing articles decomposed across competing hypotheses",
+    title: "EMR-ACH",
+    description: "LLM geopolitical forecasting reframed as a structured matrix problem using Heuer's Analysis of Competing Hypotheses. Decomposes each forecast into indicator generation, evidence scoring, and diagnostic weighting across competing hypotheses. Includes a multi-agent adversarial variant and a leakage-clean benchmark across three tracks: public forecasting markets, GDELT geopolitical events, and S&P 500 earnings.",
+    links: [
+      { label: "GitHub", href: "https://github.com/ApartsinProjects/EMR-ACH" }
+    ]
+  },
+  {
     image: "../assets/research/research-projects/coreason-readme-hero.png",
     imageAlt: "CoReason README hero visual",
     title: "CoReason",
