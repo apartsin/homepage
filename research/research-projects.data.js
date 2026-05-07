@@ -9,6 +9,15 @@ window.RESEARCH_PROJECT_CARDS = [
     ]
   },
   {
+    image: "../assets/research/research-projects/implicit-entities-hero.png",
+    imageAlt: "Contextual text fragments connected by glowing lines converging on a hidden entity silhouette",
+    title: "ImplicitEntities",
+    description: "IRC-Bench: a benchmark for recognizing named entities from contextual cues alone in first-person reminiscence narratives, without explicit mentions. Covers 25K samples across 12K Wikidata-linked entities, with baselines spanning embedding retrieval, LLM prompting, DPR fine-tuning, and QLoRA adaptation.",
+    links: [
+      { label: "GitHub", href: "https://github.com/ApartsinProjects/ImplicitEntities" }
+    ]
+  },
+  {
     image: "https://raw.githubusercontent.com/ApartsinProjects/ZKDroneSwarm/master/docs/hero.png",
     imageAlt: "ZK drone swarm engaging distributed targets",
     title: "ZKDroneSwarm",
