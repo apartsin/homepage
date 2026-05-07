@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <meta name="description" content="Distributed and Agentic AI research: coordination, evaluation, and reasoning across agents without shared state — part of the Pragmatic AI research program.">
+  <title>Distributed and Agentic AI | Alexander (Sasha) Apartsin</title>
+  <link rel="stylesheet" href="../shared/site-shell.css">
+  <link rel="stylesheet" href="../shared/unified-theme.css">
+  <style>
+    .pragmatic-ai {
+      font-weight: 800;
+      color: #7a3fa0;
+      letter-spacing: -0.01em;
+    }
+    .direction-body {
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .direction-section-title {
+      margin: 0 0 14px;
+      font: 800 0.72rem/1.3 "Manrope", sans-serif;
+      color: #7a3fa0;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .direction-prose {
+      margin: 0;
+      font: 400 0.92rem/1.7 "Source Serif 4", Georgia, serif;
+      color: var(--site-muted, #586271);
+    }
+    .direction-prose + .direction-prose {
+      margin-top: 10px;
+    }
+    .direction-prose a {
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-color: rgba(122,63,160,0.35);
+      text-underline-offset: 2px;
+    }
+    .direction-prose a:hover {
+      text-decoration-color: rgba(122,63,160,0.75);
+    }
+    .sub-areas {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .sub-area {
+      padding: 14px 16px;
+      border: 1px solid var(--site-border, rgba(24,32,42,0.1));
+      border-radius: 12px;
+      border-top: 3px solid #7a3fa0;
+      background: #fff;
+    }
+    .sub-area h3 {
+      margin: 0 0 6px;
+      font: 700 0.88rem/1.3 "Manrope", sans-serif;
+      color: #7a3fa0;
+    }
+    .sub-area p {
+      margin: 0;
+      font: 400 0.84rem/1.6 "Source Serif 4", Georgia, serif;
+      color: var(--site-muted, #586271);
+    }
+    .direction-projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 10px;
+    }
+    .direction-project-card {
+      display: flex;
+      flex-direction: column;
+      padding: 14px 16px;
+      border: 1px solid var(--site-border, rgba(24,32,42,0.1));
+      border-radius: 12px;
+      background: #fff;
+      text-decoration: none;
+      transition: transform 150ms ease, box-shadow 150ms ease;
+    }
+    .direction-project-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(15,23,42,0.08);
+    }
+    .direction-project-card__title {
+      margin: 0 0 4px;
+      font: 700 0.88rem/1.3 "Manrope", sans-serif;
+      color: var(--site-text, #18202a);
+    }
+    .direction-project-card__desc {
+      margin: 0;
+      font: 400 0.8rem/1.5 "Source Serif 4", Georgia, serif;
+      color: var(--site-muted, #586271);
+    }
+    .direction-pub-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .direction-pub-list li {
+      padding: 12px 14px;
+      border: 1px solid var(--site-border, rgba(24,32,42,0.1));
+      border-radius: 10px;
+      background: #fff;
+    }
+    .direction-pub-list a {
+      font: 600 0.88rem/1.4 "Manrope", sans-serif;
+      color: var(--site-text, #18202a);
+      text-decoration: none;
+    }
+    .direction-pub-list a:hover {
+      text-decoration: underline;
+      text-decoration-color: rgba(122,63,160,0.5);
+      text-underline-offset: 2px;
+    }
+    .direction-pub-list .pub-meta {
+      display: block;
+      margin-top: 2px;
+      font: 400 0.78rem/1.4 "Manrope", sans-serif;
+      color: var(--site-muted, #586271);
+    }
+    @media (max-width: 640px) {
+      .sub-areas { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="research">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar">
+      <a class="apartsin-shell__brand" href="../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../index.html">About</a>
+        <a href="../research/research-focus.html">Research</a>
+        <a href="../teaching/overview.html">Teaching</a>
+        <a href="../work/overview.html">Building</a>
+        <a href="../work/innovation-overview.html">Innovations</a>
+        <a href="../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+
+        <section class="apartsin-page-header apartsin-page-header--standard">
+          <h1 class="apartsin-sr-only">Distributed and Agentic AI</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="./research-focus.html">Research</a>
+              <span aria-hidden="true">/</span>
+              <strong>Distributed and Agentic AI</strong>
+            </nav>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../assets/heroes/research-interests.png" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">The <strong class="pragmatic-ai">pragmatic</strong> test for multi-agent AI is not protocol elegance but what the collective actually achieves: can agents coordinate without communication, evaluate without ground truth, and reason without shared state? This direction studies coordination and reasoning under the strictest informational constraints.</p>
+          </div>
+        </section>
+
+        <div class="direction-body">
+
+          <section aria-labelledby="overview-title">
+            <h2 class="direction-section-title" id="overview-title">Overview</h2>
+            <p class="direction-prose">Most multi-agent systems assume some shared infrastructure: a communication channel, a common world model, or a ground-truth signal for evaluation. This direction removes those assumptions one by one. The result is a set of research questions that are both practically important and theoretically sharp: how does meaningful coordination emerge when agents can only observe outcomes? How do model ensembles evaluate their own outputs without gold labels? How do agents reason collaboratively when they cannot pool knowledge directly?</p>
+            <p class="direction-prose">The unifying insight is that the hardest informational constraints force the most interesting solutions, and that those solutions tend to generalize to the messy real-world settings where shared infrastructure is unavailable or unsafe.</p>
+            <div class="sub-areas">
+              <div class="sub-area">
+                <h3>Zero-Knowledge Coordination</h3>
+                <p>Decentralized task allocation under complete informational silence: no communication, no priors, no shared state. Coordination emerges from a public interaction broadcast and independent matrix-factorization policies.</p>
+              </div>
+              <div class="sub-area">
+                <h3>Self-Evaluation</h3>
+                <p>Ensemble-based evaluation where models rotate through teacher, student, and judge roles to build synthetic benchmarks and assess each other without external ground truth.</p>
+              </div>
+              <div class="sub-area">
+                <h3>Collaborative Reasoning</h3>
+                <p>Structured critique-and-improvement loops where agents iteratively challenge and refine each other's reasoning, with assessment and reporting built into the process.</p>
+              </div>
+            </div>
+          </section>
+
+          <section aria-labelledby="projects-title">
+            <h2 class="direction-section-title" id="projects-title">Active Projects</h2>
+            <div class="direction-projects-grid">
+              <a class="direction-project-card" href="https://github.com/ApartsinProjects/ZKDroneSwarm" target="_blank" rel="noopener noreferrer">
+                <span class="direction-project-card__title">ZKDroneSwarm</span>
+                <span class="direction-project-card__desc">Decentralized drone task allocation under zero-knowledge constraints with emergent coordination from interaction outcomes alone.</span>
+              </a>
+              <a class="direction-project-card" href="https://github.com/ApartsinProjects/CoEval" target="_blank" rel="noopener noreferrer">
+                <span class="direction-project-card__title">CoEval</span>
+                <span class="direction-project-card__desc">Ensemble-based LLM evaluation framework where models rotate roles to build synthetic benchmarks without ground truth.</span>
+              </a>
+              <a class="direction-project-card" href="https://github.com/ApartsinProjects/CoReason" target="_blank" rel="noopener noreferrer">
+                <span class="direction-project-card__title">CoReason</span>
+                <span class="direction-project-card__desc">AI-native learning platform for iterative reasoning practice through structured critique-and-improvement loops.</span>
+              </a>
+            </div>
+          </section>
+
+          <section aria-labelledby="pubs-title">
+            <h2 class="direction-section-title" id="pubs-title">Selected Publications</h2>
+            <ul class="direction-pub-list">
+              <li>
+                <a href="https://arxiv.org/abs/2509.11802" target="_blank" rel="noopener noreferrer">When Curiosity Signals Danger: Predicting Health Crises Through Online Medication Inquiries</a>
+                <span class="pub-meta">D Goncharok, A Shifman, A Apartsin, Y Aperstein &middot; arXiv 2025</span>
+              </li>
+              <li>
+                <a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:5ugPr518TE4C" target="_blank" rel="noopener noreferrer">Reading Between the Lines: Classifying Resume Seniority with Large Language Models</a>
+                <span class="pub-meta">M Cohen, S Shani, E Menahem, Y Aperstein, A Apartsin &middot; arXiv 2025</span>
+              </li>
+              <li>
+                <a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:HE397vMXCloC" target="_blank" rel="noopener noreferrer">Explainable Semantic Text Relations: A Question-Answering Framework for Comparing Document Content</a>
+                <span class="pub-meta">Y Aperstein, A Gottlib, G Benita, A Apartsin &middot; Information (MDPI) 2025</span>
+              </li>
+              <li>
+                <a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:q3oQSFYPqjQC" target="_blank" rel="noopener noreferrer">Do Large Language Models Need Intent? Revisiting Response Generation Strategies for Service Assistant</a>
+                <span class="pub-meta">I Bolshinsky, S Kupiec, A Sasson, Y Aperstein, A Apartsin &middot; arXiv 2025</span>
+              </li>
+            </ul>
+          </section>
+
+        </div>
+
+        <section class="section-quick-links">
+          <h2 class="section-quick-links__title">Quick Links</h2>
+          <nav class="section-quick-links__grid" aria-label="Quick links">
+            <a class="section-quick-link" href="./robust-ai.html">
+              <span class="section-quick-link__badge" style="background: #1d4ed8;">R</span>
+              Robust AI
+            </a>
+            <a class="section-quick-link" href="./spec-driven-ai.html">
+              <span class="section-quick-link__badge" style="background: #2e7d5a;">S</span>
+              Spec-Driven GenAI
+            </a>
+            <a class="section-quick-link" href="./research-projects.html">
+              <span class="section-quick-link__badge" style="background: #7a3fa0;">R</span>
+              All Research Projects
+            </a>
+            <a class="section-quick-link" href="./recent-publications.html">
+              <span class="section-quick-link__badge" style="background: #0e7490;">P</span>
+              All Publications
+            </a>
+          </nav>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../shared/unified-enhance.js"></script>
+  <script defer src="../shared/site-shell.js"></script>
+</body>
+</html>

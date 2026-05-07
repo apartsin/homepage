@@ -136,6 +136,9 @@
         'research/research-focus.html',
         [
           /\/research\/research-focus\.html$/i,
+          /\/research\/robust-ai\.html$/i,
+          /\/research\/spec-driven-ai\.html$/i,
+          /\/research\/distributed-ai\.html$/i,
           /\/research\/recent-publications\.html$/i,
           /\/research\/research-projects\.html$/i,
           /\/research\/grad-opportunities\.html$/i,
@@ -144,6 +147,9 @@
           /\/teaching\/current-students\.html$/i,
         ],
         [
+          { label: 'Robust AI', path: 'research/robust-ai.html' },
+          { label: 'Spec-Driven GenAI', path: 'research/spec-driven-ai.html' },
+          { label: 'Distributed and Agentic AI', path: 'research/distributed-ai.html' },
           { label: 'Recent Publications', path: 'research/recent-publications.html' },
           { label: 'Research Projects', path: 'research/research-projects.html' },
           { label: 'Research Projects for M.Sc. Students', path: 'research/grad-opportunities.html' },
