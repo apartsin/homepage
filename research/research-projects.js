@@ -19,7 +19,7 @@
 
   cards.forEach((card) => {
     const article = document.createElement("article");
-    article.className = card.theme ? "repo-card repo-card--with-badge" : "repo-card";
+    article.className = "repo-card";
 
     const media = document.createElement("div");
     media.className = "repo-card__media";
@@ -64,19 +64,19 @@
         }
         linksWrap.appendChild(anchor);
       });
+
+      if (card.theme && themeColors[card.theme]) {
+        const badge = document.createElement("span");
+        badge.className = "repo-card__theme-badge";
+        badge.textContent = card.theme;
+        badge.style.setProperty("--badge-color", themeColors[card.theme]);
+        linksWrap.appendChild(badge);
+      }
+
       body.appendChild(linksWrap);
     }
 
     article.appendChild(body);
-
-    if (card.theme && themeColors[card.theme]) {
-      const badge = document.createElement("span");
-      badge.className = "repo-card__theme-badge";
-      badge.textContent = card.theme;
-      badge.style.setProperty("--badge-color", themeColors[card.theme]);
-      article.appendChild(badge);
-    }
-
     grid.appendChild(article);
   });
 })();
