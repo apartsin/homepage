@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
-  <meta name="description" content="Robust AI research: perception and inference that hold up under degraded vision, noisy language, and ambiguous signals — part of the Pragmatic AI research program.">
+  <meta name="description" content="Robust AI research: perception and inference that holds up under degraded vision, noisy language, voice under pressure, and ambiguous physical signals. Part of the Pragmatic AI research program.">
   <title>Robust AI for Vision, Language, and Signals | Alexander (Sasha) Apartsin</title>
   <link rel="stylesheet" href="../shared/site-shell.css">
   <link rel="stylesheet" href="../shared/unified-theme.css">
@@ -18,120 +18,74 @@
       letter-spacing: -0.01em;
     }
     .direction-body {
-      margin-top: 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-    }
-    .direction-section-title {
-      margin: 0 0 14px;
-      font: 800 0.95rem/1.3 "Manrope", sans-serif;
-      color: #1d4ed8;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      font-size: 0.72rem;
-    }
-    .direction-prose {
-      margin: 0;
-      font: 400 0.92rem/1.7 "Source Serif 4", Georgia, serif;
-      color: var(--site-muted, #586271);
-    }
-    .direction-prose + .direction-prose {
-      margin-top: 10px;
-    }
-    .direction-prose a {
-      color: inherit;
-      text-decoration: underline;
-      text-decoration-color: rgba(29,78,216,0.35);
-      text-underline-offset: 2px;
-    }
-    .direction-prose a:hover {
-      text-decoration-color: rgba(29,78,216,0.75);
-    }
-    .sub-areas {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 16px;
-    }
-    .sub-area {
-      padding: 14px 16px;
+      margin-top: 24px;
+      padding: 22px 26px 26px;
       border: 1px solid var(--site-border, rgba(24,32,42,0.1));
-      border-radius: 12px;
+      border-radius: 14px;
       border-top: 3px solid #1d4ed8;
       background: #fff;
     }
-    .sub-area h3 {
-      margin: 0 0 6px;
-      font: 700 0.88rem/1.3 "Manrope", sans-serif;
-      color: #1d4ed8;
+    .direction-area {
+      overflow: auto;
+      margin-top: 22px;
     }
-    .sub-area p {
+    .direction-area:first-child {
+      margin-top: 0;
+    }
+    .direction-area + .direction-area {
+      padding-top: 20px;
+      border-top: 1px solid var(--site-border, rgba(24,32,42,0.08));
+    }
+    .direction-area__label {
+      display: block;
+      margin-bottom: 8px;
+      font: 700 0.68rem/1 "Manrope", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .direction-area--vision   .direction-area__label { color: #1d4ed8; }
+    .direction-area--language .direction-area__label { color: #0e7490; }
+    .direction-area--voice    .direction-area__label { color: #6b46c1; }
+    .direction-area--signals  .direction-area__label { color: #9c5a2e; }
+    .direction-area p {
       margin: 0;
-      font: 400 0.84rem/1.6 "Source Serif 4", Georgia, serif;
+      font: 400 0.9rem/1.75 "Source Serif 4", Georgia, serif;
       color: var(--site-muted, #586271);
     }
-    .direction-projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 10px;
-    }
-    .direction-project-card {
-      display: flex;
-      flex-direction: column;
-      padding: 14px 16px;
-      border: 1px solid var(--site-border, rgba(24,32,42,0.1));
-      border-radius: 12px;
-      background: #fff;
-      text-decoration: none;
-      transition: transform 150ms ease, box-shadow 150ms ease;
-    }
-    .direction-project-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(15,23,42,0.08);
-    }
-    .direction-project-card__title {
-      margin: 0 0 4px;
-      font: 700 0.88rem/1.3 "Manrope", sans-serif;
-      color: var(--site-text, #18202a);
-    }
-    .direction-project-card__desc {
-      margin: 0;
-      font: 400 0.8rem/1.5 "Source Serif 4", Georgia, serif;
-      color: var(--site-muted, #586271);
-    }
-    .direction-pub-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .direction-pub-list li {
-      padding: 12px 14px;
-      border: 1px solid var(--site-border, rgba(24,32,42,0.1));
-      border-radius: 10px;
-      background: #fff;
-    }
-    .direction-pub-list a {
-      font: 600 0.88rem/1.4 "Manrope", sans-serif;
-      color: var(--site-text, #18202a);
-      text-decoration: none;
-    }
-    .direction-pub-list a:hover {
+    .direction-area p + p { margin-top: 10px; }
+    .direction-area p a {
       text-decoration: underline;
-      text-decoration-color: rgba(29,78,216,0.5);
+      text-decoration-thickness: 1px;
       text-underline-offset: 2px;
     }
-    .direction-pub-list .pub-meta {
-      display: block;
-      margin-top: 2px;
-      font: 400 0.78rem/1.4 "Manrope", sans-serif;
-      color: var(--site-muted, #586271);
+    .direction-area--vision   p a { color: #1d4ed8; }
+    .direction-area--language p a { color: #0e7490; }
+    .direction-area--voice    p a { color: #6b46c1; }
+    .direction-area--signals  p a { color: #9c5a2e; }
+    .direction-area p a:hover { opacity: 0.8; }
+    .inline-fig {
+      width: clamp(130px, 22%, 190px);
+      margin: 4px 0 10px 18px;
+      float: right;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--site-border, rgba(24,32,42,0.1));
     }
-    @media (max-width: 640px) {
-      .sub-areas { grid-template-columns: 1fr; }
+    .inline-fig--left {
+      float: left;
+      margin: 4px 18px 10px 0;
+    }
+    .inline-fig img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+    @media (max-width: 520px) {
+      .inline-fig, .inline-fig--left {
+        float: none;
+        width: 100%;
+        margin: 0 0 12px;
+      }
     }
   </style>
 </head>
@@ -167,87 +121,52 @@
             <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
               <img src="../assets/heroes/research-interests.png" alt="" style="display: block; width: 100%; object-fit: cover;">
             </figure>
-            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">The <strong class="pragmatic-ai">pragmatic</strong> test for perception is not benchmark accuracy but operational reliability: does the system still work when inputs are degraded, geometry is extreme, or language is noisy and ambiguous? This direction studies inference across vision, language, and signals as they actually arrive in the field.</p>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">The <strong class="pragmatic-ai">pragmatic</strong> test for perception is not benchmark accuracy but operational reliability: does the system still work when inputs are degraded, geometry is extreme, or language is noisy and ambiguous? This direction studies inference across vision, language, voice, and physical signals as they actually arrive in the field.</p>
           </div>
         </section>
 
         <div class="direction-body">
 
-          <section aria-labelledby="overview-title">
-            <h2 class="direction-section-title" id="overview-title">Overview</h2>
-            <p class="direction-prose">Most AI benchmarks are built on clean data. Robust AI asks a harder question: what happens when the data isn't clean? This direction covers three modalities united by the same concern. In vision, it means classification and detection under degraded resolution, extreme viewing angles, and domain shift. In language, it means extraction and understanding when text is noisy, telegraphic, or missing key mentions. In signals, it means making sense of non-standard inputs such as interjections, fuzzy speech, and behavioral traces in query logs.</p>
-            <p class="direction-prose">A recurring theme is active information seeking: rather than waiting for clean inputs, robust systems must infer, reconstruct, and reason from whatever is available.</p>
-            <div class="sub-areas">
-              <div class="sub-area">
-                <h3>Robust Vision</h3>
-                <p>Image classification with early-exit cascades, license plate recoverability under extreme angles, multi-pathology chest X-ray classification with rejection, and panoramic incident reconstruction from multi-camera footage.</p>
-              </div>
-              <div class="sub-area">
-                <h3>Robust Language</h3>
-                <p>Critical information extraction from distress communications, implicit entity recognition without explicit mentions, epistemic robustness benchmarking of LLMs, and understanding under noise, ambiguity, and domain shift.</p>
-              </div>
-              <div class="sub-area">
-                <h3>Robust Signals</h3>
-                <p>Interjection and non-verbal signal classification, medical insight from fuzzy speech, and health crisis detection from behavioral signals in online medication queries.</p>
-              </div>
-            </div>
-          </section>
+          <div class="direction-area direction-area--vision">
+            <span class="direction-area__label">Robust Vision</span>
+            <figure class="inline-fig">
+              <img src="https://raw.githubusercontent.com/ApartsinProjects/CalexNet/master/paper/figures/hero.png"
+                   alt="CalexNet cascade: CNN backbone with early-exit branches" loading="lazy" decoding="async">
+            </figure>
+            <p>Vision AI is typically trained and tested on clean, well-framed images. In deployment, cameras capture things at awkward angles, in bad lighting, from unexpected distances. The question we keep returning to is how a system knows when what it sees is good enough to act on.</p>
+            <p>One line of work asks this about surveillance cameras: a license plate photographed at an extreme angle may be geometrically unrecoverable, so instead of attempting recognition and failing, we first <a href="https://arxiv.org/abs/2604.23814" target="_blank" rel="noopener noreferrer">map where recovery is even feasible</a> (2026). A related question arises with body-worn cameras used in law enforcement: footage from multiple officers at the same incident is fragmented, shaky, and out of sync. <a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:eflP2zaiRacC" target="_blank" rel="noopener noreferrer">Stitching these streams into a coherent panoramic account</a> requires robust scene understanding despite all the noise (2025). Earlier work on <a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:l7t_Zn2s7bgC" target="_blank" rel="noopener noreferrer">robust motion compensation for forensic analysis of egocentric video</a> (2018) tackled the same challenge: making shaky first-person footage usable for investigation by compensating for unavoidable camera movement. Ongoing work with Samsung on detection and localization of image quality artifacts addresses the prerequisite question: before trusting an image, can you identify exactly where and how it has degraded?</p>
+          </div>
 
-          <section aria-labelledby="projects-title">
-            <h2 class="direction-section-title" id="projects-title">Active Projects</h2>
-            <div class="direction-projects-grid">
-              <a class="direction-project-card" href="https://github.com/ApartsinProjects/CalexNet" target="_blank" rel="noopener noreferrer">
-                <span class="direction-project-card__title">CalexNet</span>
-                <span class="direction-project-card__desc">CNN early-exit cascades closing train-inference mismatches for robust, efficient image classification.</span>
-              </a>
-              <a class="direction-project-card" href="https://github.com/ApartsinProjects/ImplicitEntities" target="_blank" rel="noopener noreferrer">
-                <span class="direction-project-card__title">ImplicitEntities</span>
-                <span class="direction-project-card__desc">Benchmark for recognizing named entities from contextual cues alone, without explicit mentions.</span>
-              </a>
-              <a class="direction-project-card" href="https://github.com/ApartsinProjects/EMR-ACH" target="_blank" rel="noopener noreferrer">
-                <span class="direction-project-card__title">EMR-ACH</span>
-                <span class="direction-project-card__desc">LLM geopolitical forecasting as structured evidence matrix using Analysis of Competing Hypotheses.</span>
-              </a>
-            </div>
-          </section>
+          <div class="direction-area direction-area--language">
+            <span class="direction-area__label">Robust Language</span>
+            <figure class="inline-fig inline-fig--left">
+              <img src="../assets/research/research-projects/implicit-entities-hero.png"
+                   alt="Text fragments connecting to a hidden entity silhouette via contextual cues" loading="lazy" decoding="async">
+            </figure>
+            <p>Language AI is usually tested on well-formed, complete text. Real-world language is messier: people leave things unsaid, refer to people and places without naming them, ask questions indirectly, and express concerns through the topics they raise rather than through direct statements.</p>
+            <p>One ongoing project, <a href="https://github.com/ApartsinProjects/ImplicitEntities" target="_blank" rel="noopener noreferrer">Recognizing Entities from Contextual Cues</a>, asks whether a model can identify who someone is talking about in a personal story without ever seeing that person named, piecing together identity from details scattered across a narrative. Another, <a href="https://github.com/ApartsinProjects/EMR-ACH" target="_blank" rel="noopener noreferrer">Evidence Matrix Reasoning</a>, tackles structured analytical thinking: when multiple pieces of information point in different directions, how do you weigh them against competing explanations rather than following intuition?</p>
+            <p>Beyond identifying things, language AI needs to understand what people actually need. The <a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&sortby=pubdate&citation_for_view=-5He5joAAAAJ:WA5NYHcadZ8C" target="_blank" rel="noopener noreferrer">diagnostic questioning benchmark</a> (2026) studies whether a model can conduct a conversation the way a skilled clinician would: asking the right questions in the right order rather than jumping to conclusions. Work on <a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:HE397vMXCloC" target="_blank" rel="noopener noreferrer">explainable semantic text relations</a> (2025) asks whether two documents agree or contradict each other and, crucially, why. And sometimes what people search for reveals more than what they say: <a href="https://arxiv.org/abs/2509.11802" target="_blank" rel="noopener noreferrer">patterns in online health queries</a> (2025) can signal distress long before anyone speaks about it directly.</p>
+          </div>
 
-          <section aria-labelledby="pubs-title">
-            <h2 class="direction-section-title" id="pubs-title">Selected Publications</h2>
-            <ul class="direction-pub-list">
-              <li>
-                <a href="https://arxiv.org/abs/2604.23814" target="_blank" rel="noopener noreferrer">Mapping License Plate Recoverability Under Extreme Viewing Angles for Opportunistic Urban Sensing</a>
-                <span class="pub-meta">I Adamenko, O Ben Aharon, Y Aperstein, A Apartsin &middot; arXiv 2026</span>
-              </li>
-              <li>
-                <a href="https://arxiv.org/abs/2604.14163" target="_blank" rel="noopener noreferrer">SeaAlert: Critical Information Extraction From Maritime Distress Communications with Large Language Models</a>
-                <span class="pub-meta">T Atia, Y Aperstein, A Apartsin &middot; arXiv 2026</span>
-              </li>
-              <li>
-                <a href="https://doi.org/10.7910/DVN/CG9X6D" target="_blank" rel="noopener noreferrer">SPINE: A Benchmark for Measuring the Epistemic Backbone of Large Language Models</a>
-                <span class="pub-meta">G Shapira, A Apartsin &middot; Harvard Dataverse 2026</span>
-              </li>
-              <li>
-                <a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&sortby=pubdate&citation_for_view=-5He5joAAAAJ:WA5NYHcadZ8C" target="_blank" rel="noopener noreferrer">A Benchmark for Evaluating Diagnostic Questioning Efficiency of LLMs in Patient Conversations</a>
-                <span class="pub-meta">M Werthaim, M Kimhi, A Apartsin, Y Aperstein &middot; Scientific Reports (Nature) 2026</span>
-              </li>
-              <li>
-                <a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:BrmTIyaxlBUC" target="_blank" rel="noopener noreferrer">Multi-pathology Chest X-ray Classification with Rejection Mechanisms</a>
-                <span class="pub-meta">Y Aperstein, A Tzahar, A Gottlib et al. &middot; arXiv 2025</span>
-              </li>
-              <li>
-                <a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:eflP2zaiRacC" target="_blank" rel="noopener noreferrer">Stitching the Story: Creating Panoramic Incident Summaries from Body-Worn Footage</a>
-                <span class="pub-meta">D Cohen, I Efrosman, Y Aperstein, A Apartsin &middot; arXiv 2025</span>
-              </li>
-              <li>
-                <a href="https://arxiv.org/abs/2509.11803" target="_blank" rel="noopener noreferrer">From Fuzzy Speech to Medical Insight: Benchmarking LLMs on Noisy Patient Narratives</a>
-                <span class="pub-meta">E Mama, L Sheri, Y Aperstein, A Apartsin &middot; arXiv 2025</span>
-              </li>
-              <li>
-                <a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:q3oQSFYPqjQC" target="_blank" rel="noopener noreferrer">Beyond Words: Interjection Classification for Improved Human-Computer Interaction</a>
-                <span class="pub-meta">Y Goren, Y Cohen, A Apartsin, Y Aperstein &middot; arXiv 2025</span>
-              </li>
-            </ul>
-          </section>
+          <div class="direction-area direction-area--voice">
+            <span class="direction-area__label">Robust Voice</span>
+            <figure class="inline-fig">
+              <img src="https://raw.githubusercontent.com/ApartsinProjects/EMR-ACH/master/paper/figures/hero_emr_ach.png"
+                   alt="Structured evidence matrix for analyzing competing interpretations of audio-based communications" loading="lazy" decoding="async">
+            </figure>
+            <p>Voice and audio carry information that text strips away: urgency, hesitation, the sounds people make when words fail them. This thread focuses on settings where the spoken or audio signal is primary and where misreading it has real consequences.</p>
+            <p><a href="https://arxiv.org/abs/2604.14163" target="_blank" rel="noopener noreferrer">SeaAlert</a> (2026) extracts the critical information a rescue coordinator needs from maritime distress calls: communications that are brief, noisy, emotionally charged, and often incomplete. What needs to be captured (location, vessel type, number of people aboard) must be extracted reliably even when the caller is panicked and the connection is poor. <a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:q3oQSFYPqjQC" target="_blank" rel="noopener noreferrer">Interjection classification</a> (2025) works at the other end of the spectrum: the non-verbal sounds people make (hesitations, affirmations, expressions of surprise) carry emotional and intentional meaning that standard speech processing ignores. A <a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:sSrBHYA8nusC" target="_blank" rel="noopener noreferrer">2018 patent on methods and systems for providing a response to a public-safety audio query</a> addressed the challenge of giving accurate, fast answers to voice queries in emergency and law enforcement contexts, where both precision and speed are critical.</p>
+          </div>
+
+          <div class="direction-area direction-area--signals">
+            <span class="direction-area__label">Robust Signals</span>
+            <figure class="inline-fig">
+              <img src="../assets/research/research-projects/robust-signals-hero.png"
+                   alt="Overlapping sensor waveforms with anomaly points highlighted in orange" loading="lazy" decoding="async">
+            </figure>
+            <p>Physical and sensor signals are rarely clean: machinery vibrates irregularly, sonar echoes scatter in unpredictable environments, timing measurements get corrupted by outliers. This thread asks how AI can extract reliable information from the kind of noisy, structured time-series data that sensors produce in the real world.</p>
+            <p>Work on <a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:vRqMK49ujn8C" target="_blank" rel="noopener noreferrer">early detection of engine anomalies for vehicle health management</a> (2022) builds models that catch early warning signs of mechanical failure before they surface as visible problems, with the goal of acting on a weak signal rather than waiting for a breakdown. A <a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:geHnlv5EZngC" target="_blank" rel="noopener noreferrer">2022 patent on physical model-based machine learning</a> formalizes this idea: incorporating physical knowledge about how a system behaves into the learning process so the model doesn't have to discover basic physics from scratch. Estimating the precise timing of a signal when measurements are corrupted by outliers is a classic hard problem; a <a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:ufrVoPGSRksC" target="_blank" rel="noopener noreferrer">2014 study on time-of-flight estimation under outlier conditions</a> developed a machine learning approach that remains robust even when a significant fraction of the measurements are wrong. Earlier work on <a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:UeHWp8X0CEIC" target="_blank" rel="noopener noreferrer">biosonar-inspired source localization</a> (2011) drew on how bats navigate in cluttered, low signal-to-noise environments to develop localization methods that work where conventional approaches break down.</p>
+          </div>
 
         </div>
 

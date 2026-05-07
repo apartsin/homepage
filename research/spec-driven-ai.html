@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
-  <meta name="description" content="Spec-Driven GenAI research: generation where the specification is a hard constraint, covering molecules, images, code, and text — part of the Pragmatic AI research program.">
+  <meta name="description" content="Spec-Driven GenAI research: generation where the specification is a hard constraint, covering molecules, images, code, and text. Part of the Pragmatic AI research program.">
   <title>Spec-Driven GenAI | Alexander (Sasha) Apartsin</title>
   <link rel="stylesheet" href="../shared/site-shell.css">
   <link rel="stylesheet" href="../shared/unified-theme.css">
@@ -18,119 +18,74 @@
       letter-spacing: -0.01em;
     }
     .direction-body {
-      margin-top: 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-    }
-    .direction-section-title {
-      margin: 0 0 14px;
-      font: 800 0.72rem/1.3 "Manrope", sans-serif;
-      color: #2e7d5a;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-    .direction-prose {
-      margin: 0;
-      font: 400 0.92rem/1.7 "Source Serif 4", Georgia, serif;
-      color: var(--site-muted, #586271);
-    }
-    .direction-prose + .direction-prose {
-      margin-top: 10px;
-    }
-    .direction-prose a {
-      color: inherit;
-      text-decoration: underline;
-      text-decoration-color: rgba(46,125,90,0.35);
-      text-underline-offset: 2px;
-    }
-    .direction-prose a:hover {
-      text-decoration-color: rgba(46,125,90,0.75);
-    }
-    .sub-areas {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 16px;
-    }
-    .sub-area {
-      padding: 14px 16px;
+      margin-top: 24px;
+      padding: 22px 26px 26px;
       border: 1px solid var(--site-border, rgba(24,32,42,0.1));
-      border-radius: 12px;
+      border-radius: 14px;
       border-top: 3px solid #2e7d5a;
       background: #fff;
     }
-    .sub-area h3 {
-      margin: 0 0 6px;
-      font: 700 0.88rem/1.3 "Manrope", sans-serif;
-      color: #2e7d5a;
+    .direction-area {
+      overflow: auto;
+      margin-top: 22px;
     }
-    .sub-area p {
+    .direction-area:first-child {
+      margin-top: 0;
+    }
+    .direction-area + .direction-area {
+      padding-top: 20px;
+      border-top: 1px solid var(--site-border, rgba(24,32,42,0.08));
+    }
+    .direction-area__label {
+      display: block;
+      margin-bottom: 8px;
+      font: 700 0.68rem/1 "Manrope", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .direction-area--molecules .direction-area__label { color: #2e7d5a; }
+    .direction-area--images    .direction-area__label { color: #0e7490; }
+    .direction-area--code      .direction-area__label { color: #7a3fa0; }
+    .direction-area--text      .direction-area__label { color: #9c5a2e; }
+    .direction-area p {
       margin: 0;
-      font: 400 0.84rem/1.6 "Source Serif 4", Georgia, serif;
+      font: 400 0.9rem/1.75 "Source Serif 4", Georgia, serif;
       color: var(--site-muted, #586271);
     }
-    .direction-projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 10px;
-    }
-    .direction-project-card {
-      display: flex;
-      flex-direction: column;
-      padding: 14px 16px;
-      border: 1px solid var(--site-border, rgba(24,32,42,0.1));
-      border-radius: 12px;
-      background: #fff;
-      text-decoration: none;
-      transition: transform 150ms ease, box-shadow 150ms ease;
-    }
-    .direction-project-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(15,23,42,0.08);
-    }
-    .direction-project-card__title {
-      margin: 0 0 4px;
-      font: 700 0.88rem/1.3 "Manrope", sans-serif;
-      color: var(--site-text, #18202a);
-    }
-    .direction-project-card__desc {
-      margin: 0;
-      font: 400 0.8rem/1.5 "Source Serif 4", Georgia, serif;
-      color: var(--site-muted, #586271);
-    }
-    .direction-pub-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .direction-pub-list li {
-      padding: 12px 14px;
-      border: 1px solid var(--site-border, rgba(24,32,42,0.1));
-      border-radius: 10px;
-      background: #fff;
-    }
-    .direction-pub-list a {
-      font: 600 0.88rem/1.4 "Manrope", sans-serif;
-      color: var(--site-text, #18202a);
-      text-decoration: none;
-    }
-    .direction-pub-list a:hover {
+    .direction-area p + p { margin-top: 10px; }
+    .direction-area p a {
       text-decoration: underline;
-      text-decoration-color: rgba(46,125,90,0.5);
+      text-decoration-thickness: 1px;
       text-underline-offset: 2px;
     }
-    .direction-pub-list .pub-meta {
-      display: block;
-      margin-top: 2px;
-      font: 400 0.78rem/1.4 "Manrope", sans-serif;
-      color: var(--site-muted, #586271);
+    .direction-area--molecules p a { color: #2e7d5a; }
+    .direction-area--images    p a { color: #0e7490; }
+    .direction-area--code      p a { color: #7a3fa0; }
+    .direction-area--text      p a { color: #9c5a2e; }
+    .direction-area p a:hover { opacity: 0.8; }
+    .inline-fig {
+      width: clamp(130px, 22%, 190px);
+      margin: 4px 0 10px 18px;
+      float: right;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--site-border, rgba(24,32,42,0.1));
     }
-    @media (max-width: 640px) {
-      .sub-areas { grid-template-columns: 1fr; }
+    .inline-fig--left {
+      float: left;
+      margin: 4px 18px 10px 0;
+    }
+    .inline-fig img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+    @media (max-width: 520px) {
+      .inline-fig, .inline-fig--left {
+        float: none;
+        width: 100%;
+        margin: 0 0 12px;
+      }
     }
   </style>
 </head>
@@ -172,65 +127,41 @@
 
         <div class="direction-body">
 
-          <section aria-labelledby="overview-title">
-            <h2 class="direction-section-title" id="overview-title">Overview</h2>
-            <p class="direction-prose">Generative AI is usually evaluated on quality: how realistic is the image, how fluent is the text? Spec-Driven GenAI shifts the question: how well does the output satisfy a measurable specification? The spec could be a physical property target for a molecule, a user preference trajectory for an image, a behavioral contract for generated code, or a constraint on tone and content for generated text.</p>
-            <p class="direction-prose">The core challenge across all domains is the same: steer generation toward verifiable targets without collapsing output diversity or ignoring domain-specific structure. This requires rethinking how specifications are encoded, how they interact with the generative process, and how fitness is measured.</p>
-            <div class="sub-areas">
-              <div class="sub-area">
-                <h3>Molecular Generation</h3>
-                <p>Domain-gated latent diffusion for novel energetic material discovery, where detonation velocity, density, and structural novelty are hard targets verified by DFT computation.</p>
-              </div>
-              <div class="sub-area">
-                <h3>Image Steering</h3>
-                <p>Interactive diffusion steering from text prompts into iterative preference-guided refinement loops, tracking user intent across multiple rounds.</p>
-              </div>
-              <div class="sub-area">
-                <h3>Code and Text Generation</h3>
-                <p>Speculative code generation under a forward-only commit protocol with structured gating, and constrained text generation that meets editorial and factual targets.</p>
-              </div>
-            </div>
-          </section>
+          <div class="direction-area direction-area--molecules">
+            <span class="direction-area__label">Molecular Design</span>
+            <figure class="inline-fig">
+              <img src="../assets/research/research-projects/spec-molecules-hero.png"
+                   alt="Glowing molecular structure with ghost outlines of rejected variants">
+            </figure>
+            <p>Most generative AI is asked to create things that look plausible. In chemistry, plausible is not enough. A molecule that resembles known compounds but fails to meet its target detonation velocity or density is useless, however chemically valid it appears. The challenge is not generation in the abstract but generation under hard physical constraints, verified by computation rather than by visual inspection.</p>
+            <p><a href="https://github.com/ApartsinProjects/DGLD4Energetic" target="_blank" rel="noopener noreferrer">Domain-Gated Latent Diffusion for the Discovery of Novel Energetic Materials</a> addresses this directly. Standard latent diffusion does not respect domain-specific feasibility constraints, so the model is augmented with a gating mechanism that keeps generation anchored to physically plausible chemical space. The result is genuinely novel chemistry rather than interpolation of known structures, with detonation targets confirmed by quantum-chemical computation.</p>
+          </div>
 
-          <section aria-labelledby="projects-title">
-            <h2 class="direction-section-title" id="projects-title">Active Projects</h2>
-            <div class="direction-projects-grid">
-              <a class="direction-project-card" href="https://github.com/ApartsinProjects/DGLD4Energetic" target="_blank" rel="noopener noreferrer">
-                <span class="direction-project-card__title">DGLD4Energetic</span>
-                <span class="direction-project-card__desc">Domain-gated latent diffusion for energetic material discovery with DFT-verified property targets.</span>
-              </a>
-              <a class="direction-project-card" href="https://github.com/ApartsinProjects/StableSteering" target="_blank" rel="noopener noreferrer">
-                <span class="direction-project-card__title">StableSteering</span>
-                <span class="direction-project-card__desc">Interactive diffusion steering system moving from text prompts into preference-guided image refinement loops.</span>
-              </a>
-              <a class="direction-project-card" href="https://github.com/ApartsinProjects/SpeculativeCodeGeneration" target="_blank" rel="noopener noreferrer">
-                <span class="direction-project-card__title">VIGOR</span>
-                <span class="direction-project-card__desc">Incremental code generation under a forward-only commit protocol with structured gating and machine-readable traces.</span>
-              </a>
-            </div>
-          </section>
+          <div class="direction-area direction-area--images">
+            <span class="direction-area__label">Image Generation</span>
+            <figure class="inline-fig inline-fig--left">
+              <img src="../assets/research/research-projects/spec-images-hero.png"
+                   alt="Preference steering loops converging on a generated image frame">
+            </figure>
+            <p>When you describe an image to a generative model, you commit to a fixed description before seeing the result. In practice, people refine what they want as they see what the model produces. The specification is not a string you type once but a trajectory of expressed preferences that sharpens over rounds. A system that cannot accommodate iterative refinement is only useful when you already know exactly what you want before you start.</p>
+            <p><a href="https://github.com/ApartsinProjects/StableSteering" target="_blank" rel="noopener noreferrer">Stable Steering: Interactive Steering for Diffusion Image Generation</a> explores what it means to guide generation through preference loops rather than fixed prompts, keeping the output coherent as the specification evolves across rounds.</p>
+          </div>
 
-          <section aria-labelledby="pubs-title">
-            <h2 class="direction-section-title" id="pubs-title">Selected Publications</h2>
-            <ul class="direction-pub-list">
-              <li>
-                <a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&sortby=pubdate&citation_for_view=-5He5joAAAAJ:Mojj43d5GZwC" target="_blank" rel="noopener noreferrer">LLM-Guided Headline Rewriting for Clickability Enhancement Without Clickbait</a>
-                <span class="pub-meta">Y Aperstein, L Halifa, S Bar, A Apartsin &middot; arXiv 2026</span>
-              </li>
-              <li>
-                <a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:VOx2b1Wkg3QC" target="_blank" rel="noopener noreferrer">Generative AI-Based Platform for Deliberate Teaching Practice: A Review and a Suggested Framework</a>
-                <span class="pub-meta">Y Aperstein, Y Cohen, A Apartsin &middot; Education Sciences (MDPI) 2025</span>
-              </li>
-              <li>
-                <a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:1qzjygNMrQYC" target="_blank" rel="noopener noreferrer">Code Review Without Borders: Evaluating Synthetic vs. Real Data for Review Recommendation</a>
-                <span class="pub-meta">Y Cohen, D Ohayon, R Somkin, Y Aperstein, A Apartsin &middot; arXiv 2025</span>
-              </li>
-              <li>
-                <a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:wbdj-CoPYUoC" target="_blank" rel="noopener noreferrer">Boosted Training of Lightweight Early Exits for Optimizing CNN Image Classification Inference</a>
-                <span class="pub-meta">Y Aperstein, A Apartsin &middot; arXiv 2025</span>
-              </li>
-            </ul>
-          </section>
+          <div class="direction-area direction-area--code">
+            <span class="direction-area__label">Code Generation</span>
+            <figure class="inline-fig">
+              <img src="../assets/research/research-projects/spec-code-hero.png"
+                   alt="Sequential committed steps in forward-only code generation with speculative lookahead">
+            </figure>
+            <p>Standard code generation treats output as something to revise after the fact: generate a draft, inspect it, fix what is wrong. This is practical for prototyping but tells you little about whether the model genuinely reasons ahead or simply pattern-matches and patches. A more revealing test is to remove the option to revise.</p>
+            <p><a href="https://github.com/ApartsinProjects/SpeculativeCodeGeneration" target="_blank" rel="noopener noreferrer">Code Generation with Speculative Oracles</a> introduces a forward-only commit protocol where each generated line is irrevocable. The constraint forces the model to satisfy the specification as it writes rather than after, and produces machine-readable traces that make the generation process analyzable at each step, not only by inspecting the final output.</p>
+          </div>
+
+          <div class="direction-area direction-area--text">
+            <span class="direction-area__label">Text Generation</span>
+            <p>Constrained text generation means satisfying competing objectives at the same time, not trading one off against the other. Improving a headline for clickability while refusing to introduce misleading framing is a real specification with two hard requirements, not one soft target. Whether a model can navigate that kind of constraint is a controlled test of something that matters well beyond headline writing.</p>
+            <p><a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&sortby=pubdate&citation_for_view=-5He5joAAAAJ:Mojj43d5GZwC" target="_blank" rel="noopener noreferrer">LLM-Guided Headline Rewriting for Clickability Enhancement</a> (2026) studies exactly this case: a model asked to enhance engagement without crossing into sensationalism, in a domain where the cost of getting it wrong is visible and immediate.</p>
+          </div>
 
         </div>
 

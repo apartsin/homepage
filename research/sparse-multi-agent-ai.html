@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
-  <meta name="description" content="Sparse Multi-Agent AI research: coordination, evaluation, and reasoning across agents without shared state — part of the Pragmatic AI research program.">
+  <meta name="description" content="Sparse Multi-Agent AI research: coordination, evaluation, and reasoning across agents without shared state. Part of the Pragmatic AI research program.">
   <title>Sparse Multi-Agent AI | Alexander (Sasha) Apartsin</title>
   <link rel="stylesheet" href="../shared/site-shell.css">
   <link rel="stylesheet" href="../shared/unified-theme.css">
@@ -18,119 +18,74 @@
       letter-spacing: -0.01em;
     }
     .direction-body {
-      margin-top: 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-    }
-    .direction-section-title {
-      margin: 0 0 14px;
-      font: 800 0.72rem/1.3 "Manrope", sans-serif;
-      color: #7a3fa0;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-    .direction-prose {
-      margin: 0;
-      font: 400 0.92rem/1.7 "Source Serif 4", Georgia, serif;
-      color: var(--site-muted, #586271);
-    }
-    .direction-prose + .direction-prose {
-      margin-top: 10px;
-    }
-    .direction-prose a {
-      color: inherit;
-      text-decoration: underline;
-      text-decoration-color: rgba(122,63,160,0.35);
-      text-underline-offset: 2px;
-    }
-    .direction-prose a:hover {
-      text-decoration-color: rgba(122,63,160,0.75);
-    }
-    .sub-areas {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 16px;
-    }
-    .sub-area {
-      padding: 14px 16px;
+      margin-top: 24px;
+      padding: 22px 26px 26px;
       border: 1px solid var(--site-border, rgba(24,32,42,0.1));
-      border-radius: 12px;
+      border-radius: 14px;
       border-top: 3px solid #7a3fa0;
       background: #fff;
     }
-    .sub-area h3 {
-      margin: 0 0 6px;
-      font: 700 0.88rem/1.3 "Manrope", sans-serif;
-      color: #7a3fa0;
+    .direction-area {
+      overflow: auto;
+      margin-top: 22px;
     }
-    .sub-area p {
+    .direction-area:first-child {
+      margin-top: 0;
+    }
+    .direction-area + .direction-area {
+      padding-top: 20px;
+      border-top: 1px solid var(--site-border, rgba(24,32,42,0.08));
+    }
+    .direction-area__label {
+      display: block;
+      margin-bottom: 8px;
+      font: 700 0.68rem/1 "Manrope", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .direction-area--swarm     .direction-area__label { color: #7a3fa0; }
+    .direction-area--eval      .direction-area__label { color: #1d4ed8; }
+    .direction-area--reasoning .direction-area__label { color: #2e7d5a; }
+    .direction-area--teaching  .direction-area__label { color: #0e7490; }
+    .direction-area p {
       margin: 0;
-      font: 400 0.84rem/1.6 "Source Serif 4", Georgia, serif;
+      font: 400 0.9rem/1.75 "Source Serif 4", Georgia, serif;
       color: var(--site-muted, #586271);
     }
-    .direction-projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 10px;
-    }
-    .direction-project-card {
-      display: flex;
-      flex-direction: column;
-      padding: 14px 16px;
-      border: 1px solid var(--site-border, rgba(24,32,42,0.1));
-      border-radius: 12px;
-      background: #fff;
-      text-decoration: none;
-      transition: transform 150ms ease, box-shadow 150ms ease;
-    }
-    .direction-project-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(15,23,42,0.08);
-    }
-    .direction-project-card__title {
-      margin: 0 0 4px;
-      font: 700 0.88rem/1.3 "Manrope", sans-serif;
-      color: var(--site-text, #18202a);
-    }
-    .direction-project-card__desc {
-      margin: 0;
-      font: 400 0.8rem/1.5 "Source Serif 4", Georgia, serif;
-      color: var(--site-muted, #586271);
-    }
-    .direction-pub-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .direction-pub-list li {
-      padding: 12px 14px;
-      border: 1px solid var(--site-border, rgba(24,32,42,0.1));
-      border-radius: 10px;
-      background: #fff;
-    }
-    .direction-pub-list a {
-      font: 600 0.88rem/1.4 "Manrope", sans-serif;
-      color: var(--site-text, #18202a);
-      text-decoration: none;
-    }
-    .direction-pub-list a:hover {
+    .direction-area p + p { margin-top: 10px; }
+    .direction-area p a {
       text-decoration: underline;
-      text-decoration-color: rgba(122,63,160,0.5);
+      text-decoration-thickness: 1px;
       text-underline-offset: 2px;
     }
-    .direction-pub-list .pub-meta {
-      display: block;
-      margin-top: 2px;
-      font: 400 0.78rem/1.4 "Manrope", sans-serif;
-      color: var(--site-muted, #586271);
+    .direction-area--swarm     p a { color: #7a3fa0; }
+    .direction-area--eval      p a { color: #1d4ed8; }
+    .direction-area--reasoning p a { color: #2e7d5a; }
+    .direction-area--teaching  p a { color: #0e7490; }
+    .direction-area p a:hover { opacity: 0.8; }
+    .inline-fig {
+      width: clamp(130px, 22%, 190px);
+      margin: 4px 0 10px 18px;
+      float: right;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--site-border, rgba(24,32,42,0.1));
     }
-    @media (max-width: 640px) {
-      .sub-areas { grid-template-columns: 1fr; }
+    .inline-fig--left {
+      float: left;
+      margin: 4px 18px 10px 0;
+    }
+    .inline-fig img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+    @media (max-width: 520px) {
+      .inline-fig, .inline-fig--left {
+        float: none;
+        width: 100%;
+        margin: 0 0 12px;
+      }
     }
   </style>
 </head>
@@ -172,65 +127,41 @@
 
         <div class="direction-body">
 
-          <section aria-labelledby="overview-title">
-            <h2 class="direction-section-title" id="overview-title">Overview</h2>
-            <p class="direction-prose">Most multi-agent systems assume some shared infrastructure: a communication channel, a common world model, or a ground-truth signal for evaluation. This direction removes those assumptions one by one. The result is a set of research questions that are both practically important and theoretically sharp: how does meaningful coordination emerge when agents can only observe outcomes? How do model ensembles evaluate their own outputs without gold labels? How do agents reason collaboratively when they cannot pool knowledge directly?</p>
-            <p class="direction-prose">The unifying insight is that the hardest informational constraints force the most interesting solutions, and that those solutions tend to generalize to the messy real-world settings where shared infrastructure is unavailable or unsafe.</p>
-            <div class="sub-areas">
-              <div class="sub-area">
-                <h3>Zero-Knowledge Coordination</h3>
-                <p>Decentralized task allocation under complete informational silence: no communication, no priors, no shared state. Coordination emerges from a public interaction broadcast and independent matrix-factorization policies.</p>
-              </div>
-              <div class="sub-area">
-                <h3>Self-Evaluation</h3>
-                <p>Ensemble-based evaluation where models rotate through teacher, student, and judge roles to build synthetic benchmarks and assess each other without external ground truth.</p>
-              </div>
-              <div class="sub-area">
-                <h3>Collaborative Reasoning</h3>
-                <p>Structured critique-and-improvement loops where agents iteratively challenge and refine each other's reasoning, with assessment and reporting built into the process.</p>
-              </div>
-            </div>
-          </section>
+          <div class="direction-area direction-area--swarm">
+            <span class="direction-area__label">Swarm Coordination</span>
+            <figure class="inline-fig">
+              <img src="../assets/research/research-projects/sparse-swarm-hero.png"
+                   alt="Purple drone nodes clustered around a shared outcome log with no direct links">
+            </figure>
+            <p>The most constrained case of coordination is when agents cannot communicate at all: no messages, no shared world model, no common prior. Each agent can only observe the outcomes of past collective actions logged in a shared record, not explanations of why those outcomes occurred. Whether meaningful coordination can emerge from that alone is a question about the minimum structure collective intelligence actually needs.</p>
+            <p><a href="https://github.com/ApartsinProjects/ZKDroneSwarm" target="_blank" rel="noopener noreferrer">Zero-Knowledge Swarm AI: Drone Coordination Without Communication or Shared State</a> implements this for drone task allocation. Each drone runs an independent policy updated only from observable outcomes in a public log. Coordination emerges from the structure of those outcomes, without any agent knowing what the others are doing or planning.</p>
+          </div>
 
-          <section aria-labelledby="projects-title">
-            <h2 class="direction-section-title" id="projects-title">Active Projects</h2>
-            <div class="direction-projects-grid">
-              <a class="direction-project-card" href="https://github.com/ApartsinProjects/ZKDroneSwarm" target="_blank" rel="noopener noreferrer">
-                <span class="direction-project-card__title">ZKDroneSwarm</span>
-                <span class="direction-project-card__desc">Decentralized drone task allocation under zero-knowledge constraints with emergent coordination from interaction outcomes alone.</span>
-              </a>
-              <a class="direction-project-card" href="https://github.com/ApartsinProjects/CoEval" target="_blank" rel="noopener noreferrer">
-                <span class="direction-project-card__title">CoEval</span>
-                <span class="direction-project-card__desc">Ensemble-based LLM evaluation framework where models rotate roles to build synthetic benchmarks without ground truth.</span>
-              </a>
-              <a class="direction-project-card" href="https://github.com/ApartsinProjects/CoReason" target="_blank" rel="noopener noreferrer">
-                <span class="direction-project-card__title">CoReason</span>
-                <span class="direction-project-card__desc">AI-native learning platform for iterative reasoning practice through structured critique-and-improvement loops.</span>
-              </a>
-            </div>
-          </section>
+          <div class="direction-area direction-area--eval">
+            <span class="direction-area__label">Autonomous Evaluation</span>
+            <figure class="inline-fig inline-fig--left">
+              <img src="../assets/research/research-projects/sparse-eval-hero.png"
+                   alt="Three glowing nodes cycling through teacher, student, and judge roles">
+            </figure>
+            <p>LLM evaluation normally depends on human-curated benchmarks: fixed sets of questions with correct answers, built slowly and updated rarely. By the time a benchmark is widely used, models have often been trained on data resembling it, and the benchmark no longer tests what it claims to. The dependency on external ground truth is a structural problem, not just a practical inconvenience.</p>
+            <p><a href="https://github.com/ApartsinProjects/CoEval" target="_blank" rel="noopener noreferrer">CoEval: Self-Evaluating Model Ensembles</a> removes this dependency. Models rotate through teacher, student, and judge roles, generating challenges and evaluating responses without any external oracle. The benchmarks that emerge capture the specific weaknesses of this ensemble under these conditions at this point in time, including failure modes that fixed benchmarks miss.</p>
+          </div>
 
-          <section aria-labelledby="pubs-title">
-            <h2 class="direction-section-title" id="pubs-title">Selected Publications</h2>
-            <ul class="direction-pub-list">
-              <li>
-                <a href="https://arxiv.org/abs/2509.11802" target="_blank" rel="noopener noreferrer">When Curiosity Signals Danger: Predicting Health Crises Through Online Medication Inquiries</a>
-                <span class="pub-meta">D Goncharok, A Shifman, A Apartsin, Y Aperstein &middot; arXiv 2025</span>
-              </li>
-              <li>
-                <a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:5ugPr518TE4C" target="_blank" rel="noopener noreferrer">Reading Between the Lines: Classifying Resume Seniority with Large Language Models</a>
-                <span class="pub-meta">M Cohen, S Shani, E Menahem, Y Aperstein, A Apartsin &middot; arXiv 2025</span>
-              </li>
-              <li>
-                <a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:HE397vMXCloC" target="_blank" rel="noopener noreferrer">Explainable Semantic Text Relations: A Question-Answering Framework for Comparing Document Content</a>
-                <span class="pub-meta">Y Aperstein, A Gottlib, G Benita, A Apartsin &middot; Information (MDPI) 2025</span>
-              </li>
-              <li>
-                <a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:q3oQSFYPqjQC" target="_blank" rel="noopener noreferrer">Do Large Language Models Need Intent? Revisiting Response Generation Strategies for Service Assistant</a>
-                <span class="pub-meta">I Bolshinsky, S Kupiec, A Sasson, Y Aperstein, A Apartsin &middot; arXiv 2025</span>
-              </li>
-            </ul>
-          </section>
+          <div class="direction-area direction-area--reasoning">
+            <span class="direction-area__label">Collaborative Reasoning</span>
+            <figure class="inline-fig">
+              <img src="../assets/research/research-projects/sparse-reason-hero.png"
+                   alt="Green and amber arcs crossing and converging between two reasoning agents">
+            </figure>
+            <p>When a group of experts disagrees, the useful response is not to average their views but to surface what each is actually reasoning from and where those reasonings diverge. Structured adversarial pressure, rather than consensus-seeking, tends to expose the underlying disagreements that matter. This is especially true when agents have different information and cannot simply inspect each other's internal states.</p>
+            <p><a href="https://github.com/ApartsinProjects/CoReason" target="_blank" rel="noopener noreferrer">CoReason: Collaborative Reasoning Framework for Structured Problem-Solving</a> structures iterative critique-and-improvement loops where agents challenge each other's reasoning without access to each other's internal states. The platform is also deployed as a learning environment where students practice reasoning under the same structured adversarial pressure as the agents, with course-integrated assessment and multilingual support.</p>
+          </div>
+
+          <div class="direction-area direction-area--teaching">
+            <span class="direction-area__label">Teaching Practice</span>
+            <p>The question of how agents learn to reason under structured challenge connects directly to how people do. Deliberate practice in high-stakes situations is difficult to arrange in real training contexts: the scenarios are rare, the feedback is slow, and the stakes make repetition impractical. Generative AI can simulate those situations at scale, giving practitioners repeated exposure to the kinds of moments that are most important to get right.</p>
+            <p><a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:VOx2b1Wkg3QC" target="_blank" rel="noopener noreferrer">A generative AI-based platform for deliberate teaching practice</a> (2025) applies this logic to teacher preparation. Structured challenge scenarios are generated and evaluated by AI, giving educators repeated practice with difficult classroom situations that are otherwise hard to replicate. The same scaffolding principles that govern the agent reasoning loops in CoReason apply here: structured challenge, explicit feedback, and iteration toward better judgment.</p>
+          </div>
 
         </div>
 

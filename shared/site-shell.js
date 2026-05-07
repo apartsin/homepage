@@ -147,9 +147,15 @@
           /\/teaching\/current-students\.html$/i,
         ],
         [
-          { label: 'Robust AI', path: 'research/robust-ai.html' },
-          { label: 'Spec-Driven GenAI', path: 'research/spec-driven-ai.html' },
-          { label: 'Sparse Multi-Agent AI', path: 'research/sparse-multi-agent-ai.html' },
+          {
+            label: 'Pragmatic AI',
+            path: 'research/research-focus.html',
+            secondary: [
+              { label: 'Robust AI', path: 'research/robust-ai.html' },
+              { label: 'Spec-Driven GenAI', path: 'research/spec-driven-ai.html' },
+              { label: 'Sparse Multi-Agent AI', path: 'research/sparse-multi-agent-ai.html' },
+            ],
+          },
           { label: 'Recent Publications', path: 'research/recent-publications.html' },
           { label: 'Research Projects', path: 'research/research-projects.html' },
           { label: 'Research Projects for M.Sc. Students', path: 'research/grad-opportunities.html' },
