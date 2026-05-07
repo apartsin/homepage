@@ -145,7 +145,7 @@
         ],
         [
           { label: 'Recent Publications', path: 'research/recent-publications.html' },
-          { label: 'Current Research Projects', path: 'research/research-projects.html' },
+          { label: 'Research Projects', path: 'research/research-projects.html' },
           { label: 'Research Projects for M.Sc. Students', path: 'research/grad-opportunities.html' },
           { label: 'Former Students', path: 'teaching/former-students.html' },
           { label: 'Current Students', path: 'teaching/current-students.html' },
