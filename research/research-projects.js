@@ -13,7 +13,7 @@
     "Robust Vision":    "#1d4ed8",
     "Robust Language":  "#0e7490",
     "Robust Signals":   "#9c5a2e",
-    "DAI and Agentic":  "#7a3fa0",
+    "Sparse Multi-Agent AI": "#7a3fa0",
     "Spec-Driven GenAI":"#2e7d5a"
   };
 

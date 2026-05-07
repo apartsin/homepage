@@ -22,7 +22,7 @@ window.RESEARCH_PROJECT_CARDS = [
   {
     image: "https://raw.githubusercontent.com/ApartsinProjects/ZKDroneSwarm/master/docs/hero.png",
     imageAlt: "ZK drone swarm engaging distributed targets",
-    theme: "DAI and Agentic",
+    theme: "Sparse Multi-Agent AI",
     title: "ZKDroneSwarm",
     description: "Decentralized drone task allocation under zero-knowledge constraints: no communication, no priors, no shared state. Each drone independently runs a matrix-factorization policy updated from a public interaction broadcast, recovering emergent coordination from interaction outcomes alone.",
     links: [
@@ -53,7 +53,7 @@ window.RESEARCH_PROJECT_CARDS = [
   {
     image: "../assets/research/research-projects/coreason-readme-hero.png",
     imageAlt: "CoReason README hero visual",
-    theme: "DAI and Agentic",
+    theme: "Sparse Multi-Agent AI",
     title: "CoReason",
     description: "AI-native learning platform where students practice reasoning with LLMs through iterative critique-and-improvement loops. Supports structured assessment, multilingual content, and course-integrated reporting.",
     links: [
@@ -63,7 +63,7 @@ window.RESEARCH_PROJECT_CARDS = [
   {
     image: "../assets/research/research-projects/coeval-banner.jpg",
     imageAlt: "CoEval project visual",
-    theme: "DAI and Agentic",
+    theme: "Sparse Multi-Agent AI",
     title: "CoEval",
     description: "Ensemble-based LLM evaluation framework where models rotate through teacher, student, and judge roles to build synthetic benchmarks. Generates interactive analysis reports with multi-provider support.",
     links: [
