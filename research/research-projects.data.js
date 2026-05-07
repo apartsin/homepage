@@ -9,6 +9,15 @@ window.RESEARCH_PROJECT_CARDS = [
     ]
   },
   {
+    image: "https://raw.githubusercontent.com/ApartsinProjects/ZKDroneSwarm/master/docs/hero.png",
+    imageAlt: "ZK drone swarm engaging distributed targets",
+    title: "ZKDroneSwarm",
+    description: "Decentralized drone task allocation under zero-knowledge constraints: no communication, no priors, no shared state. Each drone independently runs a matrix-factorization policy updated from a public interaction broadcast, recovering emergent coordination from interaction outcomes alone.",
+    links: [
+      { label: "GitHub", href: "https://github.com/ApartsinProjects/ZKDroneSwarm" }
+    ]
+  },
+  {
     image: "https://raw.githubusercontent.com/ApartsinProjects/DGLD4Energetic/master/figures/readme_hero.png",
     imageAlt: "Domain-gated latent diffusion: from a Gaussian latent cloud to the converged headline lead 3,4,5-trinitro-1,2-isoxazole",
     title: "DGLD4Energetic",
