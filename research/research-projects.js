@@ -9,9 +9,17 @@
 
   const ghSvg = '<svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.01.08-2.1 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.09.16 1.9.08 2.1.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>';
 
+  const themeColors = {
+    "Robust Vision":    "#1d4ed8",
+    "Robust Language":  "#0e7490",
+    "Robust Signals":   "#9c5a2e",
+    "DAI and Agentic":  "#7a3fa0",
+    "Spec-Driven GenAI":"#2e7d5a"
+  };
+
   cards.forEach((card) => {
     const article = document.createElement("article");
-    article.className = "repo-card";
+    article.className = card.theme ? "repo-card repo-card--with-badge" : "repo-card";
 
     const media = document.createElement("div");
     media.className = "repo-card__media";
@@ -60,6 +68,15 @@
     }
 
     article.appendChild(body);
+
+    if (card.theme && themeColors[card.theme]) {
+      const badge = document.createElement("span");
+      badge.className = "repo-card__theme-badge";
+      badge.textContent = card.theme;
+      badge.style.setProperty("--badge-color", themeColors[card.theme]);
+      article.appendChild(badge);
+    }
+
     grid.appendChild(article);
   });
 })();
