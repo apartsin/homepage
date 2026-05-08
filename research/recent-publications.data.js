@@ -297,7 +297,8 @@ window.RECENT_PUBLICATIONS = [
     title: "Zero-Knowledge Multi-Robot Task Allocation: A Collaborative Filtering Approach",
     authors: [
       { name: "Y Meshulam", self: false },
-      { name: "A Apartsin", self: true }
+      { name: "A Apartsin", self: true },
+      { name: "Y Aperstein", self: false }
     ],
     venue: "Project page",
     venueHref: "https://github.com/ApartsinProjects/ZKDroneSwarm",
