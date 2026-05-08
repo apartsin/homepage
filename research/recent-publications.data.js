@@ -250,6 +250,20 @@ window.RECENT_PUBLICATIONS = [
     venueHref: "https://arxiv.org/abs/2509.05006"
   },
   {
+    id: "pub-inprep-medfollow",
+    year: 2026,
+    type: "InPreparation",
+    title: "Reliable Extraction of Follow-Up Actions and Timelines from Clinical Notes via Joint Span-Link Modeling and Deterministic Date Normalization",
+    authors: [
+      { name: "M Laufer", self: false },
+      { name: "A Apartsin", self: true },
+      { name: "Y Aperstein", self: false }
+    ],
+    venue: "Project page",
+    venueHref: "https://github.com/ApartsinProjects/MedFollow",
+    draftHref: "https://apartsinprojects.github.io/MedFollow/Paper/"
+  },
+  {
     id: "pub-inprep-emr-ach",
     year: 2026,
     type: "InPreparation",
