@@ -1,5 +1,18 @@
 window.RECENT_PUBLICATIONS = [
   {
+    id: "pub-2026-irc-bench",
+    year: 2026,
+    type: "Submitted",
+    title: "IRC-Bench: Recognizing Entities from Contextual Cues in First-Person Reminiscences",
+    authors: [
+      { name: "Y Aperstein", self: false },
+      { name: "E Moran", self: false },
+      { name: "A Apartsin", self: true }
+    ],
+    venue: "arXiv preprint (arXiv:2605.06142)",
+    venueHref: "https://arxiv.org/abs/2605.06142"
+  },
+  {
     id: "pub-2026-license-plate-recoverability",
     year: 2026,
     type: "Submitted",
