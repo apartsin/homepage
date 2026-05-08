@@ -250,6 +250,19 @@ window.RECENT_PUBLICATIONS = [
     venueHref: "https://arxiv.org/abs/2509.05006"
   },
   {
+    id: "pub-inprep-absa-courses",
+    year: 2026,
+    type: "InPreparation",
+    title: "Toward Synthetic Aspect-Based Sentiment Analysis for Higher Education Course Reviews: A Dual-Pipeline Study of Data Generation and ABSA Modeling",
+    authors: [
+      { name: "Y Aperstein", self: false },
+      { name: "A Apartsin", self: true }
+    ],
+    venue: "Project page",
+    venueHref: "https://github.com/ApartsinProjects/AbsaCourses",
+    draftHref: "https://apartsinprojects.github.io/AbsaCourses/paper/course_absa_manuscript.html"
+  },
+  {
     id: "pub-inprep-medfollow",
     year: 2026,
     type: "InPreparation",
