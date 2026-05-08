@@ -250,6 +250,18 @@ window.RECENT_PUBLICATIONS = [
     venueHref: "https://arxiv.org/abs/2509.05006"
   },
   {
+    id: "pub-inprep-zkdroneswarm",
+    year: 2026,
+    type: "InPreparation",
+    title: "Zero-Knowledge Multi-Robot Task Allocation: A Collaborative Filtering Approach",
+    authors: [
+      { name: "Y Meshulam", self: false },
+      { name: "A Apartsin", self: true }
+    ],
+    venue: "Project page",
+    venueHref: "https://apartsinprojects.github.io/ZKDroneSwarm/"
+  },
+  {
     id: "pub-inprep-dgld4energetic",
     year: 2026,
     type: "InPreparation",
