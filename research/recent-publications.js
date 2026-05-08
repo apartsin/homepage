@@ -10,9 +10,10 @@
   var sectionLabels = {
     Journal: "Peer Reviewed: 2025-2026",
     Submitted: "Preprints (Submitted for Peer Review)",
-    Preprint: "Reports"
+    Preprint: "Reports",
+    InPreparation: "In Preparation"
   };
-  var typeOrder = ["Journal", "Submitted", "Preprint"];
+  var typeOrder = ["Journal", "Submitted", "Preprint", "InPreparation"];
 
   var grouped = {};
   typeOrder.forEach(function (t) { grouped[t] = []; });
@@ -46,7 +47,7 @@
       yearSpan.textContent = pub.year;
       top.appendChild(yearSpan);
 
-      var typeLabels = { Journal: "Journal", Submitted: "Preprint", Preprint: "Report" };
+      var typeLabels = { Journal: "Journal", Submitted: "Preprint", Preprint: "Report", InPreparation: "In Preparation" };
       var typeSpan = document.createElement("span");
       typeSpan.className = "pub-card__type";
       typeSpan.textContent = typeLabels[pub.type] || pub.type;

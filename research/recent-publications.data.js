@@ -263,5 +263,18 @@ window.RECENT_PUBLICATIONS = [
     ],
     venue: "arXiv preprint (arXiv:2509.05006)",
     venueHref: "https://arxiv.org/abs/2509.05006"
+  },
+  {
+    id: "pub-inprep-imperfect-student",
+    year: 2026,
+    type: "InPreparation",
+    title: "Toward a Benchmark for Controllable Simulation of Imperfect Students with Large Language Models",
+    authors: [
+      { name: "O Sason", self: false },
+      { name: "A Apartsin", self: true },
+      { name: "Y Aperstein", self: false }
+    ],
+    venue: "Project page",
+    venueHref: "https://apartsinprojects.github.io/ImperfectStudent/"
   }
 ];
