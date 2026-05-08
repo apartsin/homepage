@@ -250,6 +250,19 @@ window.RECENT_PUBLICATIONS = [
     venueHref: "https://arxiv.org/abs/2509.05006"
   },
   {
+    id: "pub-inprep-emr-ach",
+    year: 2026,
+    type: "InPreparation",
+    title: "Evidence Matrix Reasoning: Structured Hypothesis Selection via Analysis of Competing Hypotheses",
+    authors: [
+      { name: "B Remez", self: false },
+      { name: "Y Aperstein", self: false },
+      { name: "A Apartsin", self: true }
+    ],
+    venue: "GitHub",
+    venueHref: "https://github.com/ApartsinProjects/EMR-ACH"
+  },
+  {
     id: "pub-inprep-zkdroneswarm",
     year: 2026,
     type: "InPreparation",
