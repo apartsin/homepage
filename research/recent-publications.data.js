@@ -221,21 +221,6 @@ window.RECENT_PUBLICATIONS = [
     venueHref: "https://arxiv.org/abs/2509.11803"
   },
   {
-    id: "pub-2025-clickbait-detection",
-    year: 2025,
-    type: "Preprint",
-    title: "An Interpretable Benchmark for Clickbait Detection and Tactic Attribution",
-    authors: [
-      { name: "L Nofar", self: false },
-      { name: "T Portal", self: false },
-      { name: "A Elbaz", self: false },
-      { name: "A Apartsin", self: true },
-      { name: "Y Aperstein", self: false }
-    ],
-    venue: "arXiv preprint (arXiv:2509.10937)",
-    venueHref: "https://arxiv.org/abs/2509.10937"
-  },
-  {
     id: "pub-2025-emotion-pop-lyrics",
     year: 2025,
     type: "Preprint",
