@@ -79,7 +79,21 @@
 
       var venue = document.createElement("p");
       venue.className = "pub-card__venue";
-      if (pub.venueHref) {
+      if (pub.draftHref && pub.venueHref) {
+        var repoA = document.createElement("a");
+        repoA.href = pub.venueHref;
+        repoA.target = "_blank";
+        repoA.rel = "noopener noreferrer";
+        repoA.textContent = "Project page";
+        venue.appendChild(repoA);
+        venue.appendChild(document.createTextNode(" · "));
+        var draftA = document.createElement("a");
+        draftA.href = pub.draftHref;
+        draftA.target = "_blank";
+        draftA.rel = "noopener noreferrer";
+        draftA.textContent = "Draft";
+        venue.appendChild(draftA);
+      } else if (pub.venueHref) {
         var a = document.createElement("a");
         a.href = pub.venueHref;
         a.target = "_blank";

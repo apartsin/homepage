@@ -260,7 +260,8 @@ window.RECENT_PUBLICATIONS = [
       { name: "A Apartsin", self: true }
     ],
     venue: "Project page",
-    venueHref: "https://apartsinprojects.github.io/EMR-ACH/paper/index.html"
+    venueHref: "https://github.com/ApartsinProjects/EMR-ACH",
+    draftHref: "https://apartsinprojects.github.io/EMR-ACH/paper/index.html"
   },
   {
     id: "pub-inprep-zkdroneswarm",
@@ -272,7 +273,8 @@ window.RECENT_PUBLICATIONS = [
       { name: "A Apartsin", self: true }
     ],
     venue: "Project page",
-    venueHref: "https://github.com/ApartsinProjects/ZKDroneSwarm"
+    venueHref: "https://github.com/ApartsinProjects/ZKDroneSwarm",
+    draftHref: "https://apartsinprojects.github.io/ZKDroneSwarm/paper.html"
   },
   {
     id: "pub-inprep-dgld4energetic",
@@ -284,7 +286,8 @@ window.RECENT_PUBLICATIONS = [
       { name: "A Apartsin", self: true }
     ],
     venue: "Project page",
-    venueHref: "https://github.com/ApartsinProjects/DGLD4Energetic"
+    venueHref: "https://github.com/ApartsinProjects/DGLD4Energetic",
+    draftHref: "https://apartsinprojects.github.io/DGLD4Energetic/paper/short_paper.html"
   },
   {
     id: "pub-inprep-imperfect-student",
@@ -297,6 +300,7 @@ window.RECENT_PUBLICATIONS = [
       { name: "Y Aperstein", self: false }
     ],
     venue: "Project page",
-    venueHref: "https://github.com/ApartsinProjects/ImperfectStudent"
+    venueHref: "https://github.com/ApartsinProjects/ImperfectStudent",
+    draftHref: "https://apartsinprojects.github.io/ImperfectStudent/"
   }
 ];
