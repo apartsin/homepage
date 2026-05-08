@@ -13,7 +13,7 @@
     Preprint: "Reports",
     InPreparation: "In Preparation"
   };
-  var typeOrder = ["Journal", "Submitted", "Preprint", "InPreparation"];
+  var typeOrder = ["Journal", "Submitted", "InPreparation", "Preprint"];
 
   var grouped = {};
   typeOrder.forEach(function (t) { grouped[t] = []; });
