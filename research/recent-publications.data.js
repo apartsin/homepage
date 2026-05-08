@@ -259,8 +259,8 @@ window.RECENT_PUBLICATIONS = [
       { name: "Y Aperstein", self: false },
       { name: "A Apartsin", self: true }
     ],
-    venue: "GitHub",
-    venueHref: "https://github.com/ApartsinProjects/EMR-ACH"
+    venue: "Project page",
+    venueHref: "https://apartsinprojects.github.io/EMR-ACH/paper/index.html"
   },
   {
     id: "pub-inprep-zkdroneswarm",
