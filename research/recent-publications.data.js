@@ -265,6 +265,18 @@ window.RECENT_PUBLICATIONS = [
     venueHref: "https://arxiv.org/abs/2509.05006"
   },
   {
+    id: "pub-inprep-dgld4energetic",
+    year: 2026,
+    type: "InPreparation",
+    title: "DGLD: Domain-Gated Latent Diffusion for the Discovery of Novel Energetic Materials",
+    authors: [
+      { name: "Y Aperstein", self: false },
+      { name: "A Apartsin", self: true }
+    ],
+    venue: "Project page",
+    venueHref: "https://apartsinprojects.github.io/DGLD4Energetic/paper/short_paper.html"
+  },
+  {
     id: "pub-inprep-imperfect-student",
     year: 2026,
     type: "InPreparation",
