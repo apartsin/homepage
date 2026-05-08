@@ -123,10 +123,10 @@ window.RECENT_PUBLICATIONS = [
     venueHref: "https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:BrmTIyaxlBUC"
   },
   {
-    id: "pub-2025-lightweight-early-exits",
-    year: 2025,
-    type: "Preprint",
-    title: "Boosted Training of Lightweight Early Exits for Optimizing CNN Image Classification Inference",
+    id: "pub-2026-calexnet",
+    year: 2026,
+    type: "Submitted",
+    title: "CalexNet: Soft Cascade-Aligned Training and Calibration for Lightweight Early-Exit Branches",
     authors: [
       { name: "Y Aperstein", self: false },
       { name: "A Apartsin", self: true }
