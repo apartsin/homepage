@@ -282,8 +282,8 @@ window.RECENT_PUBLICATIONS = [
     type: "InPreparation",
     title: "Evidence Matrix Reasoning: Structured Hypothesis Selection via Analysis of Competing Hypotheses",
     authors: [
-      { name: "B Remez", self: false },
       { name: "Y Aperstein", self: false },
+      { name: "B Remez", self: false },
       { name: "A Apartsin", self: true }
     ],
     venue: "Project page",
