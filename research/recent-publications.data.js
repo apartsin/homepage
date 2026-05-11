@@ -50,7 +50,7 @@ window.RECENT_PUBLICATIONS = [
       { name: "Y Aperstein", self: false }
     ],
     venue: "Scientific Reports (Nature)",
-    venueHref: "https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&sortby=pubdate&citation_for_view=-5He5joAAAAJ:WA5NYHcadZ8C"
+    venueHref: "https://www.nature.com/articles/s41598-026-37022-y"
   },
   {
     id: "pub-2025-semantic-text-relations",
@@ -64,7 +64,7 @@ window.RECENT_PUBLICATIONS = [
       { name: "A Apartsin", self: true }
     ],
     venue: "Information (MDPI)",
-    venueHref: "https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:HE397vMXCloC"
+    venueHref: "https://www.mdpi.com/2078-2489/16/12/1090"
   },
   {
     id: "pub-2025-teaching-practice-platform",
@@ -77,7 +77,7 @@ window.RECENT_PUBLICATIONS = [
       { name: "A Apartsin", self: true }
     ],
     venue: "Education Sciences (MDPI)",
-    venueHref: "https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:VOx2b1Wkg3QC"
+    venueHref: "https://www.mdpi.com/2227-7102/15/4/405"
   },
   {
     id: "pub-2026-sea-alert",
