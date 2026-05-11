@@ -104,7 +104,7 @@ window.RECENT_PUBLICATIONS = [
       { name: "A Apartsin", self: true }
     ],
     venue: "arXiv preprint (arXiv:2603.22459)",
-    venueHref: "https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&sortby=pubdate&citation_for_view=-5He5joAAAAJ:Mojj43d5GZwC"
+    venueHref: "https://arxiv.org/abs/2603.22459"
   },
   {
     id: "pub-2025-chest-xray-rejection",
@@ -119,8 +119,8 @@ window.RECENT_PUBLICATIONS = [
       { name: "R Shagan Damti", self: false },
       { name: "A Apartsin", self: true }
     ],
-    venue: "arXiv preprint",
-    venueHref: "https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:BrmTIyaxlBUC"
+    venue: "arXiv preprint (arXiv:2509.10348)",
+    venueHref: "https://arxiv.org/abs/2509.10348"
   },
   {
     id: "pub-2026-calexnet",
@@ -145,8 +145,8 @@ window.RECENT_PUBLICATIONS = [
       { name: "Y Aperstein", self: false },
       { name: "A Apartsin", self: true }
     ],
-    venue: "arXiv preprint",
-    venueHref: "https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:eflP2zaiRacC"
+    venue: "arXiv preprint (arXiv:2509.04370)",
+    venueHref: "https://arxiv.org/abs/2509.04370"
   },
   {
     id: "pub-2025-interjection-classification",
@@ -159,8 +159,8 @@ window.RECENT_PUBLICATIONS = [
       { name: "A Apartsin", self: true },
       { name: "Y Aperstein", self: false }
     ],
-    venue: "arXiv preprint",
-    venueHref: "https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:q3oQSFYPqjQC"
+    venue: "arXiv preprint (arXiv:2509.03181)",
+    venueHref: "https://arxiv.org/abs/2509.03181"
   },
   {
     id: "pub-2025-review-recommendation",
@@ -174,8 +174,8 @@ window.RECENT_PUBLICATIONS = [
       { name: "Y Aperstein", self: false },
       { name: "A Apartsin", self: true }
     ],
-    venue: "arXiv preprint",
-    venueHref: "https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:1qzjygNMrQYC"
+    venue: "arXiv preprint (arXiv:2509.04810)",
+    venueHref: "https://arxiv.org/abs/2509.04810"
   },
   {
     id: "pub-2025-resume-seniority",
@@ -189,8 +189,8 @@ window.RECENT_PUBLICATIONS = [
       { name: "Y Aperstein", self: false },
       { name: "A Apartsin", self: true }
     ],
-    venue: "arXiv preprint",
-    venueHref: "https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:5ugPr518TE4C"
+    venue: "arXiv preprint (arXiv:2509.09229)",
+    venueHref: "https://arxiv.org/abs/2509.09229"
   },
   {
     id: "pub-2025-health-crises-medication",
