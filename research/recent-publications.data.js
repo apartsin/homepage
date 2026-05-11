@@ -131,8 +131,8 @@ window.RECENT_PUBLICATIONS = [
       { name: "Y Aperstein", self: false },
       { name: "A Apartsin", self: true }
     ],
-    venue: "arXiv preprint",
-    venueHref: "https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=-5He5joAAAAJ:wbdj-CoPYUoC"
+    venue: "arXiv preprint (arXiv:2509.08318)",
+    venueHref: "https://arxiv.org/abs/2509.08318"
   },
   {
     id: "pub-2025-panoramic-incident-summaries",
