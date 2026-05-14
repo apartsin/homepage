@@ -53,6 +53,13 @@
       typeSpan.textContent = typeLabels[pub.type] || pub.type;
       top.appendChild(typeSpan);
 
+      if (pub.accepted) {
+        var acceptedBadge = document.createElement("span");
+        acceptedBadge.className = "pub-card__badge--accepted";
+        acceptedBadge.textContent = "Accepted";
+        top.appendChild(acceptedBadge);
+      }
+
       li.appendChild(top);
 
       var title = document.createElement("h2");

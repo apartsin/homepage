@@ -125,7 +125,8 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2026-calexnet",
     year: 2026,
-    type: "Submitted",
+    type: "Journal",
+    accepted: true,
     title: "CalexNet: Soft Cascade-Aligned Training and Calibration for Lightweight Early-Exit Branches",
     authors: [
       { name: "Y Aperstein", self: false },
