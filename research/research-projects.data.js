@@ -41,6 +41,17 @@ window.RESEARCH_PROJECT_CARDS = [
     ]
   },
   {
+    image: "https://raw.githubusercontent.com/ApartsinProjects/AutoAD/main/assets/hero.png",
+    imageAlt: "Leave-cluster-out validation on a normal-data manifold: clusters held out as pseudo-anomalies to rank anomaly detectors without labels",
+    theme: "Robust Signals",
+    title: "AutoAD",
+    description: "Unsupervised model selection for anomaly detection when no anomaly labels exist. Introduces Leave-Cluster-Out (LCO) validation: hold out a normal-data cluster as a pseudo-anomaly and rank detectors by how well they separate it. Combined with structured synthetic perturbations and prediction-residual consistency via an anomaly-type-aware rank-fusion combiner, targeting sub-0.05 VUS-PR regret on the TSB-AD benchmark.",
+    links: [
+      { label: "GitHub", href: "https://github.com/ApartsinProjects/AutoAD" },
+      { label: "Paper blueprint", href: "https://apartsinprojects.github.io/AutoAD/" }
+    ]
+  },
+  {
     image: "https://raw.githubusercontent.com/ApartsinProjects/CalexNet/master/paper/figures/hero.png",
     imageAlt: "CalexNet cascade: a CNN backbone with three early-exit branches; easy samples exit at branch 1, harder samples flow deeper",
     theme: "Robust Vision",
