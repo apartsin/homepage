@@ -14,6 +14,7 @@ window.RESEARCH_PROJECT_CARDS = [
     imageAlt: "Contextual text fragments connected by glowing lines converging on a hidden entity silhouette",
     theme: "Robust Language",
     title: "ImplicitEntities",
+    status: "past",
     description: "IRC-Bench: a benchmark for recognizing named entities from contextual cues alone in first-person reminiscence narratives, without explicit mentions. Covers 25K samples across 12K Wikidata-linked entities, with baselines spanning embedding retrieval, LLM prompting, DPR fine-tuning, and QLoRA adaptation.",
     links: [
       { label: "GitHub", href: "https://github.com/ApartsinProjects/ImplicitEntities" }
@@ -34,6 +35,7 @@ window.RESEARCH_PROJECT_CARDS = [
     imageAlt: "Domain-gated latent diffusion: from a Gaussian latent cloud to the converged headline lead 3,4,5-trinitro-1,2-isoxazole",
     theme: "Spec-Driven GenAI",
     title: "DGLD4Energetic",
+    status: "past",
     description: "Domain-gated latent diffusion for novel energetic material discovery, yielding 12 DFT-confirmed CHNO leads. Headline compound reaches density 2.09 g/cm³ and detonation velocity 8.25 km/s with max-Tanimoto 0.27 to all training molecules; reproducible end-to-end on commodity hardware.",
     links: [
       { label: "GitHub", href: "https://github.com/ApartsinProjects/DGLD4Energetic" },
@@ -45,6 +47,7 @@ window.RESEARCH_PROJECT_CARDS = [
     imageAlt: "NewsReWrite: a neutral headline being steered along a controllable engagement spectrum with dual BERT discriminators guiding decoding away from clickbait",
     theme: "Spec-Driven GenAI",
     title: "NewsReWrite",
+    status: "past",
     description: "Controllable headline rewriting that treats clickbait not as a discrete category but as over-amplification on a continuous engagement spectrum. A frozen LLM is steered at inference time by two prefix-aware BERT discriminators: a multi-label engagement-attribute model (10 attributes) and a binary clickbait scorer, combined via FUDGE-style per-token rescoring. Engagement level and fidelity are controlled by two inference-time weights, with no retraining of the base model.",
     links: [
       { label: "GitHub", href: "https://github.com/ApartsinProjects/NewsReWrite" },
@@ -77,6 +80,7 @@ window.RESEARCH_PROJECT_CARDS = [
     imageAlt: "CalexNet cascade: a CNN backbone with three early-exit branches; easy samples exit at branch 1, harder samples flow deeper",
     theme: "Robust Vision",
     title: "CalexNet",
+    status: "past",
     description: "Training-recipe modification for CNN early-exit cascades that closes three train-inference mismatches via cascade-aligned importance weighting, CPM calibration, and knowledge distillation. Matches or improves the accuracy-FLOPs Pareto frontier over PTEEnet, ZTW, and BoostNet on ResNet18/50 across CIFAR-100 and CINIC-10.",
     links: [
       { label: "GitHub", href: "https://github.com/ApartsinProjects/CalexNet" }
@@ -87,6 +91,7 @@ window.RESEARCH_PROJECT_CARDS = [
     imageAlt: "ImperfectStudent architecture: a skill vector controls which competencies an LLM-simulated student retains or suppresses in a structured mathematics setting",
     theme: "Sparse Multi-Agent AI",
     title: "ImperfectStudent",
+    status: "past",
     description: "A benchmark framework for controllable simulation of imperfect students with LLMs. The simulated student is represented as an explicit skill vector specifying which competencies are retained and which are suppressed. Prompt-based control induces selective partial mastery in a structured mathematics setting, enabling deliberate teacher-training practice with measurable, model-dependent controllability.",
     links: [
       { label: "GitHub", href: "https://github.com/ApartsinProjects/ImperfectStudent" },

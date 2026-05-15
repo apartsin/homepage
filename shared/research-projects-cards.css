@@ -5,6 +5,28 @@
   align-items: stretch;
 }
 
+.repo-grid__section-heading {
+  grid-column: 1 / -1;
+  margin: 24px 4px 4px;
+  padding: 4px 0 8px;
+  border-bottom: 2px solid var(--site-accent, #9c5a2e);
+  color: var(--site-text, #18202a);
+  font: 800 1.1rem/1.2 "Manrope", sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.repo-grid__section-heading:first-child {
+  margin-top: 0;
+}
+
+.repo-card--past {
+  opacity: 0.86;
+}
+
+.repo-card--past .repo-card__media img {
+  filter: saturate(0.78);
+}
+
 .repo-card {
   display: flex;
   flex-direction: column;

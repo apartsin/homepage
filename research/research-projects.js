@@ -17,9 +17,12 @@
     "Spec-Driven GenAI":"#2e7d5a"
   };
 
-  cards.forEach((card) => {
+  function renderCard(card) {
     const article = document.createElement("article");
     article.className = "repo-card";
+    if (card.status === "past") {
+      article.classList.add("repo-card--past");
+    }
 
     const media = document.createElement("div");
     media.className = "repo-card__media";
@@ -34,7 +37,7 @@
     const body = document.createElement("div");
     body.className = "repo-card__body";
 
-    const title = document.createElement("h2");
+    const title = document.createElement("h3");
     title.className = "repo-card__title";
     title.textContent = card.title || "";
     body.appendChild(title);
@@ -77,6 +80,32 @@
     }
 
     article.appendChild(body);
-    grid.appendChild(article);
+    return article;
+  }
+
+  const groups = [
+    { key: "current", label: "Current Projects" },
+    { key: "past",    label: "Past Projects" }
+  ];
+
+  const buckets = { current: [], past: [] };
+  cards.forEach((card) => {
+    const key = card.status === "past" ? "past" : "current";
+    buckets[key].push(card);
+  });
+
+  groups.forEach((group) => {
+    const items = buckets[group.key];
+    if (!items || items.length === 0) {
+      return;
+    }
+    const heading = document.createElement("h2");
+    heading.className = "repo-grid__section-heading";
+    heading.textContent = group.label;
+    grid.appendChild(heading);
+
+    items.forEach((card) => {
+      grid.appendChild(renderCard(card));
+    });
   });
 })();
