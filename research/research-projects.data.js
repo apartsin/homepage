@@ -83,6 +83,17 @@ window.RESEARCH_PROJECT_CARDS = [
     ]
   },
   {
+    image: "https://raw.githubusercontent.com/ApartsinProjects/ImperfectStudent/master/figures/fig01_architecture.svg",
+    imageAlt: "ImperfectStudent architecture: a skill vector controls which competencies an LLM-simulated student retains or suppresses in a structured mathematics setting",
+    theme: "Sparse Multi-Agent AI",
+    title: "ImperfectStudent",
+    description: "A benchmark framework for controllable simulation of imperfect students with LLMs. The simulated student is represented as an explicit skill vector specifying which competencies are retained and which are suppressed. Prompt-based control induces selective partial mastery in a structured mathematics setting, enabling deliberate teacher-training practice with measurable, model-dependent controllability.",
+    links: [
+      { label: "GitHub", href: "https://github.com/ApartsinProjects/ImperfectStudent" },
+      { label: "Draft", href: "https://apartsinprojects.github.io/ImperfectStudent/" }
+    ]
+  },
+  {
     image: "../assets/research/research-projects/coreason-readme-hero.png",
     imageAlt: "CoReason README hero visual",
     theme: "Sparse Multi-Agent AI",
