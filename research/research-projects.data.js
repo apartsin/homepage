@@ -41,6 +41,16 @@ window.RESEARCH_PROJECT_CARDS = [
     ]
   },
   {
+    image: "https://raw.githubusercontent.com/ApartsinProjects/PromptForge/main/assets/hero.png",
+    imageAlt: "AttrForge: a prompt being shaped on a forge anvil with three critic agents (attribute verifier, diversity auditor, realism discriminator) sending structured feedback in a closed loop",
+    theme: "Spec-Driven GenAI",
+    title: "AttrForge",
+    description: "Multi-objective prompt optimization for synthetic data generation. A generator LLM produces samples conditioned on explicit attribute vectors; three independent LLM critics (attribute verifier, realism discriminator, diversity auditor) score each batch; a prompt updater rewrites the generator prompt from their structured feedback. The optimized variable is the prompt, not the weights, targeting attribute fidelity, realism, and diversity simultaneously.",
+    links: [
+      { label: "GitHub", href: "https://github.com/ApartsinProjects/PromptForge" }
+    ]
+  },
+  {
     image: "https://raw.githubusercontent.com/ApartsinProjects/AutoAD/main/assets/hero.png",
     imageAlt: "Leave-cluster-out validation on a normal-data manifold: clusters held out as pseudo-anomalies to rank anomaly detectors without labels",
     theme: "Robust Signals",
