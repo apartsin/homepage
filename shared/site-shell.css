@@ -450,6 +450,29 @@ body.apartsin-shell-active .apartsin-shell__content {
   background: rgba(139, 107, 61, 0.12);
 }
 
+/* LLM Book call-to-action button */
+.apartsin-shell__menu-item > .apartsin-shell__home-nav-link[href*="llmbook"] {
+  border-color: rgba(22, 74, 131, 0.45);
+  background: rgba(22, 74, 131, 0.08);
+  color: #164a83;
+  font-weight: 800;
+}
+.apartsin-shell__menu-item > .apartsin-shell__home-nav-link[href*="llmbook"]:hover {
+  border-color: rgba(22, 74, 131, 0.65);
+  background: rgba(22, 74, 131, 0.14);
+  color: #123a67;
+}
+
+/* Amazon link gets a warm accent in the dropdown */
+.apartsin-shell__menu-dropdown a[href*="amazon"] {
+  color: #b45309;
+  font-weight: 700;
+}
+.apartsin-shell__menu-dropdown a[href*="amazon"]:hover {
+  background: rgba(180, 83, 9, 0.10);
+  color: #92400e;
+}
+
 .apartsin-shell__menu-item::after {
   content: "";
   position: absolute;
