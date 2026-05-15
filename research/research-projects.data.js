@@ -17,7 +17,8 @@ window.RESEARCH_PROJECT_CARDS = [
     status: "past",
     description: "IRC-Bench: a benchmark for recognizing named entities from contextual cues alone in first-person reminiscence narratives, without explicit mentions. Covers 25K samples across 12K Wikidata-linked entities, with baselines spanning embedding retrieval, LLM prompting, DPR fine-tuning, and QLoRA adaptation.",
     links: [
-      { label: "GitHub", href: "https://github.com/ApartsinProjects/ImplicitEntities" }
+      { label: "GitHub", href: "https://github.com/ApartsinProjects/ImplicitEntities" },
+      { label: "arXiv", href: "https://arxiv.org/abs/2605.06142" }
     ]
   },
   {
@@ -39,6 +40,7 @@ window.RESEARCH_PROJECT_CARDS = [
     description: "Domain-gated latent diffusion for novel energetic material discovery, yielding 12 DFT-confirmed CHNO leads. Headline compound reaches density 2.09 g/cm³ and detonation velocity 8.25 km/s with max-Tanimoto 0.27 to all training molecules; reproducible end-to-end on commodity hardware.",
     links: [
       { label: "GitHub", href: "https://github.com/ApartsinProjects/DGLD4Energetic" },
+      { label: "Draft", href: "https://apartsinprojects.github.io/DGLD4Energetic/paper/short_paper.html" },
       { label: "Zenodo", href: "https://doi.org/10.5281/zenodo.19821953" }
     ]
   },
@@ -83,7 +85,8 @@ window.RESEARCH_PROJECT_CARDS = [
     status: "past",
     description: "Training-recipe modification for CNN early-exit cascades that closes three train-inference mismatches via cascade-aligned importance weighting, CPM calibration, and knowledge distillation. Matches or improves the accuracy-FLOPs Pareto frontier over PTEEnet, ZTW, and BoostNet on ResNet18/50 across CIFAR-100 and CINIC-10.",
     links: [
-      { label: "GitHub", href: "https://github.com/ApartsinProjects/CalexNet" }
+      { label: "GitHub", href: "https://github.com/ApartsinProjects/CalexNet" },
+      { label: "arXiv", href: "https://arxiv.org/abs/2509.08318" }
     ]
   },
   {
