@@ -41,6 +41,17 @@ window.RESEARCH_PROJECT_CARDS = [
     ]
   },
   {
+    image: "https://raw.githubusercontent.com/ApartsinProjects/NewsReWrite/master/assets/hero.png",
+    imageAlt: "NewsReWrite: a neutral headline being steered along a controllable engagement spectrum with dual BERT discriminators guiding decoding away from clickbait",
+    theme: "Spec-Driven GenAI",
+    title: "NewsReWrite",
+    description: "Controllable headline rewriting that treats clickbait not as a discrete category but as over-amplification on a continuous engagement spectrum. A frozen LLM is steered at inference time by two prefix-aware BERT discriminators: a multi-label engagement-attribute model (10 attributes) and a binary clickbait scorer, combined via FUDGE-style per-token rescoring. Engagement level and fidelity are controlled by two inference-time weights, with no retraining of the base model.",
+    links: [
+      { label: "GitHub", href: "https://github.com/ApartsinProjects/NewsReWrite" },
+      { label: "arXiv", href: "https://arxiv.org/abs/2603.22459" }
+    ]
+  },
+  {
     image: "https://raw.githubusercontent.com/ApartsinProjects/PromptForge/main/assets/hero.png",
     imageAlt: "AttrForge: a prompt being shaped on a forge anvil with three critic agents (attribute verifier, diversity auditor, realism discriminator) sending structured feedback in a closed loop",
     theme: "Spec-Driven GenAI",
