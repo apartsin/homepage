@@ -126,14 +126,13 @@ window.RECENT_PUBLICATIONS = [
     id: "pub-2026-calexnet",
     year: 2026,
     type: "Journal",
-    accepted: true,
     title: "CalexNet: Soft Cascade-Aligned Training and Calibration for Lightweight Early-Exit Branches",
     authors: [
       { name: "Y Aperstein", self: false },
       { name: "A Apartsin", self: true }
     ],
-    venue: "arXiv preprint (arXiv:2509.08318)",
-    venueHref: "https://arxiv.org/abs/2509.08318"
+    venue: "Electronics (MDPI)",
+    venueHref: "https://www.mdpi.com/2079-9292/15/10/2149"
   },
   {
     id: "pub-2025-panoramic-incident-summaries",
