@@ -1,3 +1,23 @@
+// --- Google Analytics 4 (gtag.js) ---------------------------------------
+// Loads on the deployed site only; skipped on file:// and localhost so dev
+// traffic does not pollute the production property.
+(function () {
+  if (location.protocol === 'file:') return;
+  if (/^(localhost|127\.0\.0\.1|0\.0\.0\.0|\[::1\])$/i.test(location.hostname)) return;
+
+  var GA_ID = 'G-GJYT6J9CB5';
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ window.dataLayer.push(arguments); }
+  window.gtag = window.gtag || gtag;
+  gtag('js', new Date());
+  gtag('config', GA_ID);
+
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+  (document.head || document.documentElement).appendChild(s);
+})();
+
 (function () {
   const APP_ROOT_SEGMENTS = new Set([
     'about',
