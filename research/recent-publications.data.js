@@ -260,7 +260,7 @@ window.RECENT_PUBLICATIONS = [
     ],
     venue: "Project page",
     venueHref: "https://github.com/ApartsinProjects/AbsaCourses",
-    draftHref: "https://apartsinprojects.github.io/AbsaCourses/paper/course_absa_manuscript.html"
+    draftHref: "https://apartsinprojects.github.io/AbsaCourses/"
   },
   {
     id: "pub-inprep-medfollow",
