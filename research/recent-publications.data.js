@@ -315,7 +315,7 @@ window.RECENT_PUBLICATIONS = [
     ],
     venue: "Project page",
     venueHref: "https://github.com/ApartsinProjects/DGLD4Energetic",
-    draftHref: "https://apartsinprojects.github.io/DGLD4Energetic/paper/short_paper.html"
+    draftHref: "https://apartsinprojects.github.io/DGLD4Energetic/"
   },
   {
     id: "pub-inprep-imperfect-student",
