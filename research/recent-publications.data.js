@@ -294,7 +294,7 @@ window.RECENT_PUBLICATIONS = [
     id: "pub-inprep-zkdroneswarm",
     year: 2026,
     type: "InPreparation",
-    title: "Zero-Knowledge Multi-Robot Task Allocation: A Collaborative Filtering Approach",
+    title: "Acting on the Unseen: Communication-Free Collaborative Filtering for Decentralized Multi-Robot Task Allocation",
     authors: [
       { name: "Y Meshulam", self: false },
       { name: "A Apartsin", self: true },
@@ -302,7 +302,7 @@ window.RECENT_PUBLICATIONS = [
     ],
     venue: "Project page",
     venueHref: "https://github.com/ApartsinProjects/ZKDroneSwarm",
-    draftHref: "https://apartsinprojects.github.io/ZKDroneSwarm/paper.html"
+    draftHref: "https://apartsinprojects.github.io/ZKDroneSwarm/"
   },
   {
     id: "pub-inprep-dgld4energetic",
