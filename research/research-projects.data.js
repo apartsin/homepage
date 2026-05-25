@@ -26,6 +26,7 @@ window.RESEARCH_PROJECT_CARDS = [
     imageAlt: "ZK drone swarm engaging distributed targets",
     theme: "Sparse Multi-Agent AI",
     title: "ZKDroneSwarm",
+    status: "past",
     description: "Decentralized drone task allocation under zero-knowledge constraints: no communication, no priors, no shared state. Each drone independently runs a matrix-factorization policy updated from a public interaction broadcast, recovering emergent coordination from interaction outcomes alone.",
     links: [
       { label: "GitHub", href: "https://github.com/ApartsinProjects/ZKDroneSwarm" }
