@@ -253,7 +253,7 @@ window.RECENT_PUBLICATIONS = [
     id: "pub-inprep-absa-courses",
     year: 2026,
     type: "InPreparation",
-    title: "Toward Synthetic Aspect-Based Sentiment Analysis for Higher Education Course Reviews: A Dual-Pipeline Study of Data Generation and ABSA Modeling",
+    title: "A Controlled Synthetic Benchmark for Educational Aspect-Based Sentiment Analysis",
     authors: [
       { name: "Y Aperstein", self: false },
       { name: "A Apartsin", self: true }
@@ -293,8 +293,8 @@ window.RECENT_PUBLICATIONS = [
     type: "InPreparation",
     title: "Acting on the Unseen: Communication-Free Collaborative Filtering for Decentralized Multi-Robot Task Allocation",
     authors: [
-      { name: "Y Meshulam", self: false },
       { name: "A Apartsin", self: true },
+      { name: "Y Meshulam", self: false },
       { name: "Y Aperstein", self: false }
     ],
     venue: "arXiv preprint (arXiv:2605.25584)",
@@ -316,10 +316,10 @@ window.RECENT_PUBLICATIONS = [
     id: "pub-inprep-imperfect-student",
     year: 2026,
     type: "InPreparation",
-    title: "A Benchmark for Controllable Simulation of Imperfect Students with Large Language Models",
+    title: "Toward a Benchmark for Controllable Simulation of Imperfect Students with Large Language Models",
     authors: [
-      { name: "O Sason", self: false },
       { name: "A Apartsin", self: true },
+      { name: "O Sason", self: false },
       { name: "Y Aperstein", self: false }
     ],
     venue: "arXiv preprint (arXiv:2605.25601)",
