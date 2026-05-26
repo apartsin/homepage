@@ -258,9 +258,8 @@ window.RECENT_PUBLICATIONS = [
       { name: "Y Aperstein", self: false },
       { name: "A Apartsin", self: true }
     ],
-    venue: "Project page",
-    venueHref: "https://github.com/ApartsinProjects/AbsaCourses",
-    draftHref: "https://apartsinprojects.github.io/AbsaCourses/"
+    venue: "arXiv preprint (arXiv:2605.25502)",
+    venueHref: "https://arxiv.org/abs/2605.25502"
   },
   {
     id: "pub-inprep-medfollow",
@@ -300,9 +299,8 @@ window.RECENT_PUBLICATIONS = [
       { name: "A Apartsin", self: true },
       { name: "Y Aperstein", self: false }
     ],
-    venue: "Project page",
-    venueHref: "https://github.com/ApartsinProjects/ZKDroneSwarm",
-    draftHref: "https://apartsinprojects.github.io/ZKDroneSwarm/"
+    venue: "arXiv preprint (arXiv:2605.25584)",
+    venueHref: "https://arxiv.org/abs/2605.25584"
   },
   {
     id: "pub-inprep-dgld4energetic",
@@ -327,8 +325,7 @@ window.RECENT_PUBLICATIONS = [
       { name: "A Apartsin", self: true },
       { name: "Y Aperstein", self: false }
     ],
-    venue: "Project page",
-    venueHref: "https://github.com/ApartsinProjects/ImperfectStudent",
-    draftHref: "https://apartsinprojects.github.io/ImperfectStudent/"
+    venue: "arXiv preprint (arXiv:2605.25601)",
+    venueHref: "https://arxiv.org/abs/2605.25601"
   }
 ];
