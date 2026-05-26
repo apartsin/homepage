@@ -9,9 +9,9 @@
 
   var sectionLabels = {
     Journal: "Peer Reviewed: 2025-2026",
-    Submitted: "Preprints (Submitted for Peer Review)",
+    Submitted: "Submitted for Peer Review",
     Preprint: "Reports",
-    InPreparation: "In Preparation"
+    InPreparation: "Preprints"
   };
   var typeOrder = ["Journal", "Submitted", "InPreparation", "Preprint"];
 
@@ -47,10 +47,19 @@
       yearSpan.textContent = pub.year;
       top.appendChild(yearSpan);
 
-      var typeLabels = { Journal: "Journal", Submitted: "Preprint", Preprint: "Report", InPreparation: "In Preparation" };
+      var typeLabels = { Journal: "Journal", Submitted: "Preprint", Preprint: "Report", InPreparation: "Draft" };
+      // Within the Preprints (InPreparation) section, cards that link to an
+      // arXiv preprint show "Preprint"; cards without an arXiv link show "Draft".
+      var hasArxiv = /arxiv\.org/i.test(pub.venueHref || "");
+      var badgeText;
+      if (pub.type === "InPreparation") {
+        badgeText = hasArxiv ? "Preprint" : "Draft";
+      } else {
+        badgeText = typeLabels[pub.type] || pub.type;
+      }
       var typeSpan = document.createElement("span");
       typeSpan.className = "pub-card__type";
-      typeSpan.textContent = typeLabels[pub.type] || pub.type;
+      typeSpan.textContent = badgeText;
       top.appendChild(typeSpan);
 
       if (pub.accepted) {
@@ -120,6 +129,8 @@
         publisher = { src: "../assets/publishers/mdpi.png", alt: "MDPI" };
       } else if (venueLower.indexOf("arxiv") !== -1) {
         publisher = { src: "../assets/publishers/arxiv.jpg", alt: "arXiv" };
+      } else if (venueLower.indexOf("draft") !== -1) {
+        publisher = { src: "../assets/publishers/github.svg", alt: "GitHub" };
       }
       if (publisher) {
         li.classList.add("pub-card--with-publisher");
