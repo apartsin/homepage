@@ -265,14 +265,14 @@ window.RECENT_PUBLICATIONS = [
     id: "pub-inprep-medfollow",
     year: 2026,
     type: "InPreparation",
-    title: "Reliable Extraction of Follow-Up Actions and Timelines from Clinical Notes via Joint Span-Link Modeling and Deterministic Date Normalization",
+    title: "Reliable Extraction of Clinical Follow-Up Instructions: A Hybrid Neural-Symbolic Pipeline",
     authors: [
       { name: "M Laufer", self: false },
-      { name: "A Apartsin", self: true },
-      { name: "Y Aperstein", self: false }
+      { name: "Y Aperstein", self: false },
+      { name: "A Apartsin", self: true }
     ],
-    venue: "Draft",
-    venueHref: "https://apartsinprojects.github.io/MedFollow/Paper/"
+    venue: "arXiv preprint (arXiv:2605.26560)",
+    venueHref: "https://arxiv.org/abs/2605.26560"
   },
   {
     id: "pub-inprep-emr-ach",
@@ -309,8 +309,8 @@ window.RECENT_PUBLICATIONS = [
       { name: "Y Aperstein", self: false },
       { name: "A Apartsin", self: true }
     ],
-    venue: "Draft",
-    venueHref: "https://apartsinprojects.github.io/DGLD4Energetic/"
+    venue: "arXiv preprint (arXiv:2605.26540)",
+    venueHref: "https://arxiv.org/abs/2605.26540"
   },
   {
     id: "pub-inprep-imperfect-student",

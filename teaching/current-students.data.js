@@ -3,10 +3,11 @@ window.CURRENT_STUDENTS = [
     id: "eden-moran",
     image: "../assets/teaching/current-students/img-001-0eae3c6824-cee5ba1e66.png",
     imageAlt: "Project image for Eden Moran",
-    project: "Implicit Entity Recognition In Text",
+    project: "IRC-Bench: Recognizing Entities from Contextual Cues in First-Person Reminiscences",
     name: "Eden Moran",
     degree: "M.Sc.",
-    description: "Implicit entity recognition in text using contextual inference and discourse-level cues."
+    description: "Implicit entity recognition in text using contextual inference and discourse-level cues.",
+    links: [{ label: "Report", href: "https://arxiv.org/pdf/2605.06142?" }]
   },
   {
     id: "niv-cohen",
@@ -21,10 +22,11 @@ window.CURRENT_STUDENTS = [
     id: "yigal-meshulam",
     image: "../assets/teaching/current-students/img-004-ee314172bc.png",
     imageAlt: "Project image for Yigal Meshulam",
-    project: "Decentralized Multi-Robot Task Allocation under the Zero-Knowledge",
+    project: "Acting on the Unseen: Communication-Free Collaborative Filtering for Decentralized Multi-Robot Task Allocation",
     name: "Yigal Meshulam",
     degree: "M.Sc.",
-    description: "Decentralized multi-robot task allocation under zero-knowledge constraints and minimal signal sharing."
+    description: "Decentralized multi-robot task allocation under zero-knowledge constraints and minimal signal sharing.",
+    links: [{ label: "Report", href: "https://arxiv.org/pdf/2605.25584?" }]
   },
   {
     id: "matan-chazanovitz",

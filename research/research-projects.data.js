@@ -29,7 +29,8 @@ window.RESEARCH_PROJECT_CARDS = [
     status: "past",
     description: "Decentralized drone task allocation under zero-knowledge constraints: no communication, no priors, no shared state. Each drone independently runs a matrix-factorization policy updated from a public interaction broadcast, recovering emergent coordination from interaction outcomes alone.",
     links: [
-      { label: "GitHub", href: "https://github.com/ApartsinProjects/ZKDroneSwarm" }
+      { label: "GitHub", href: "https://github.com/ApartsinProjects/ZKDroneSwarm" },
+      { label: "arXiv", href: "https://arxiv.org/abs/2605.25584" }
     ]
   },
   {
@@ -41,7 +42,7 @@ window.RESEARCH_PROJECT_CARDS = [
     description: "Domain-gated latent diffusion for novel energetic material discovery, yielding 12 DFT-confirmed CHNO leads. Headline compound reaches density 2.09 g/cm³ and detonation velocity 8.25 km/s with max-Tanimoto 0.27 to all training molecules; reproducible end-to-end on commodity hardware.",
     links: [
       { label: "GitHub", href: "https://github.com/ApartsinProjects/DGLD4Energetic" },
-      { label: "Draft", href: "https://apartsinprojects.github.io/DGLD4Energetic/paper/short_paper.html" },
+      { label: "arXiv", href: "https://arxiv.org/abs/2605.26540" },
       { label: "Zenodo", href: "https://doi.org/10.5281/zenodo.19821953" }
     ]
   },
@@ -99,7 +100,7 @@ window.RESEARCH_PROJECT_CARDS = [
     description: "A benchmark framework for controllable simulation of imperfect students with LLMs. The simulated student is represented as an explicit skill vector specifying which competencies are retained and which are suppressed. Prompt-based control induces selective partial mastery in a structured mathematics setting, enabling deliberate teacher-training practice with measurable, model-dependent controllability.",
     links: [
       { label: "GitHub", href: "https://github.com/ApartsinProjects/ImperfectStudent" },
-      { label: "Draft", href: "https://apartsinprojects.github.io/ImperfectStudent/" }
+      { label: "arXiv", href: "https://arxiv.org/abs/2605.25601" }
     ]
   },
   {

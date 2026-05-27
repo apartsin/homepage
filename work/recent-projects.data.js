@@ -14,7 +14,7 @@ window.RECENT_PROJECT_CARDS = [
   {
     image: "../assets/work/projects/img-003-3518939917.jpg",
     imageAlt: "AutoWebMCP project visual",
-    eyebrow: "",
+    eyebrow: "Claude Skill",
     title: "AutoWebMCP",
     description: "Automation layer for web app interaction flows that helps agents learn repeatable UI operations once and reuse them reliably.",
     links: [
@@ -25,7 +25,7 @@ window.RECENT_PROJECT_CARDS = [
   {
     image: "../assets/work/projects/img-004-588a8cb27d.png",
     imageAlt: "PyTrace Autopsy project visual",
-    eyebrow: "",
+    eyebrow: "Claude Skill",
     title: "PyTrace Autopsy",
     description: "Python runtime tracing tool for debugging and post-mortem analysis, designed to expose execution behavior that is usually hidden from agents.",
     links: [

@@ -42,6 +42,23 @@
     desc.textContent = s.description || "";
     body.appendChild(desc);
 
+    if (Array.isArray(s.links) && s.links.length) {
+      var actions = document.createElement("div");
+      actions.className = "student-card__actions";
+      actions.style.cssText = "display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;";
+      s.links.forEach(function (l) {
+        var a = document.createElement("a");
+        a.className = "student-card__link";
+        a.href = l.href;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        a.textContent = l.label;
+        a.style.cssText = "display: inline-block; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--site-border, rgba(24,32,42,0.14)); background: rgba(133, 114, 81, 0.08); color: var(--site-text, #18202a); font: 700 0.72rem/1.2 'Manrope', sans-serif; text-decoration: none;";
+        actions.appendChild(a);
+      });
+      body.appendChild(actions);
+    }
+
     if (s.degree) {
       var tag = document.createElement("span");
       tag.className = "student-card__degree";

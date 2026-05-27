@@ -10,7 +10,7 @@ window.FORMER_STUDENTS = [
     meta: "Omri Sasson \u00b7 2025",
     tags: ["Text"],
     text: "Imperfect student simulations with LLMs to model realistic misunderstandings and learning gaps.",
-    links: []
+    links: [{ label: "Report", href: "https://arxiv.org/pdf/2605.25601?" }]
   },
   {
     id: "project-dewarping-diffusion",
@@ -23,7 +23,7 @@ window.FORMER_STUDENTS = [
     meta: "Igor Adamenko, Orpaz Ben-Aharon \u00b7 2025",
     tags: ["Images"],
     text: "Explored diffusion-based de-warping for images with severe geometric distortion. Iterative restoration recovered structure and detail beyond traditional correction pipelines.",
-    links: []
+    links: [{ label: "Report", href: "https://arxiv.org/pdf/2604.23814?" }]
   },
   {
     id: "project-graph-photo-tagging",
