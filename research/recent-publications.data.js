@@ -326,7 +326,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-inprep-zkdroneswarm",
     year: 2026,
-    type: "InPreparation",
+    type: "Submitted",
     title: "Acting on the Unseen: Communication-Free Collaborative Filtering for Decentralized Multi-Robot Task Allocation",
     authors: [
       { name: "A Apartsin", self: true },
