@@ -315,7 +315,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-inprep-imperfect-student",
     year: 2026,
-    type: "InPreparation",
+    type: "Submitted",
     title: "Toward a Benchmark for Controllable Simulation of Imperfect Students with Large Language Models",
     authors: [
       { name: "A Apartsin", self: true },
