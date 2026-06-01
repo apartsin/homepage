@@ -252,7 +252,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2026-promptforge",
     year: 2026,
-    type: "Preprint",
+    type: "InPreparation",
     title: "Adversarial Prompt Debugging for LLM Synthetic Data Generation",
     authors: [
       { name: "A Apartsin", self: true },
@@ -264,7 +264,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2026-coeval",
     year: 2026,
-    type: "Preprint",
+    type: "InPreparation",
     title: "CoEval: Cross-Family Judge Ensembles for LLM Evaluation",
     authors: [
       { name: "A Apartsin", self: true },
@@ -276,7 +276,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2026-coreason",
     year: 2026,
-    type: "Preprint",
+    type: "InPreparation",
     title: "Framing, Judging, Steering: An Assessable Competency Model for Teaching Students to Reason With Generative AI",
     authors: [
       { name: "A Apartsin", self: true },
