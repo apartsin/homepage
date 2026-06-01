@@ -11,7 +11,7 @@
     Journal: "Peer Reviewed: 2025-2026",
     Submitted: "Submitted for Peer Review",
     Preprint: "Reports",
-    InPreparation: "Preprints"
+    InPreparation: "Preprints (in preparation)"
   };
   var typeOrder = ["Journal", "Submitted", "InPreparation", "Preprint"];
 
