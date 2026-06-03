@@ -253,13 +253,13 @@ window.RECENT_PUBLICATIONS = [
     id: "pub-2026-promptforge",
     year: 2026,
     type: "InPreparation",
-    title: "Adversarial Prompt Debugging for LLM Synthetic Data Generation",
+    title: "SynSmith: Adversarial Multi-Critic Prompt Debugging for Synthetic Data Generation",
     authors: [
       { name: "A Apartsin", self: true },
       { name: "Y Aperstein", self: false }
     ],
     venue: "Draft",
-    venueHref: "https://apartsinprojects.github.io/PromptForge/"
+    venueHref: "https://apartsinprojects.github.io/SynSmith/"
   },
   {
     id: "pub-2026-coeval",
