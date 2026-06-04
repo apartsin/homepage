@@ -339,7 +339,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-inprep-dgld4energetic",
     year: 2026,
-    type: "InPreparation",
+    type: "Submitted",
     title: "DGLD: Domain-Gated Latent Diffusion for the Discovery of Novel Energetic Materials",
     authors: [
       { name: "Y Aperstein", self: false },
