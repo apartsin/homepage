@@ -265,13 +265,13 @@ window.RECENT_PUBLICATIONS = [
     id: "pub-2026-coeval",
     year: 2026,
     type: "InPreparation",
-    title: "CoEval: Cross-Family Judge Ensembles for LLM Evaluation",
+    title: "CoEval: Ranking Language Models for Custom Tasks Without Labeled Data or Trustworthy Benchmarks",
     authors: [
       { name: "A Apartsin", self: true },
       { name: "Y Aperstein", self: false }
     ],
-    venue: "Draft",
-    venueHref: "https://apartsinprojects.github.io/CoEval/"
+    venue: "arXiv preprint (arXiv:2606.03650)",
+    venueHref: "https://arxiv.org/abs/2606.03650"
   },
   {
     id: "pub-2026-coreason",
