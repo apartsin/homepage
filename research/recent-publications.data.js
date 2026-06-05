@@ -282,8 +282,8 @@ window.RECENT_PUBLICATIONS = [
       { name: "A Apartsin", self: true },
       { name: "Y Aperstein", self: false }
     ],
-    venue: "Draft",
-    venueHref: "https://apartsinprojects.github.io/CoReason/"
+    venue: "arXiv preprint (arXiv:2606.05983)",
+    venueHref: "https://arxiv.org/abs/2606.05983"
   },
   {
     id: "pub-inprep-absa-courses",
