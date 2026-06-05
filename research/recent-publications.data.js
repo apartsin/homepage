@@ -264,7 +264,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2026-coeval",
     year: 2026,
-    type: "InPreparation",
+    type: "Submitted",
     title: "CoEval: Ranking Language Models for Custom Tasks Without Labeled Data or Trustworthy Benchmarks",
     authors: [
       { name: "A Apartsin", self: true },
