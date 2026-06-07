@@ -279,7 +279,7 @@
           { label: 'Industry Experience', path: 'about/industry-experience.html' },
           { label: 'Recent Projects', path: 'work/recent-projects.html' },
           { label: 'Selected Past Projects', path: 'work/past-projects.html' },
-          { label: 'My Tech Stack Evolution', path: 'work/tech-stack.html' },
+          { label: 'Technology Evolution', path: 'work/tech-stack.html' },
           { label: 'Consulting', path: 'work/consulting.html' },
         ],
       ),
