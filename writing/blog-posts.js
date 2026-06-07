@@ -140,6 +140,14 @@
         const article = document.createElement('article');
         article.className = 'blog-post-card';
         article.setAttribute('data-tags', tags.join(','));
+        // Per-card language and direction (so Hebrew entries render RTL and
+        // right-aligned without affecting English entries on the same page).
+        if (post.lang) {
+          article.setAttribute('lang', post.lang);
+          if (post.lang === 'he' || post.lang === 'ar' || post.lang === 'fa') {
+            article.setAttribute('dir', 'rtl');
+          }
+        }
 
         const figure = document.createElement('figure');
         figure.className = 'blog-post-card__media';
@@ -175,6 +183,31 @@
         desc.className = 'blog-post-card__desc';
         desc.textContent = post.description || '';
         body.appendChild(desc);
+
+        // Optional per-card language picker (e.g. English + Hebrew links on a
+        // single multilingual post). Each language entry can carry its own
+        // lang/dir so RTL labels render in their native direction.
+        if (Array.isArray(post.languages) && post.languages.length > 0) {
+          const langs = document.createElement('div');
+          langs.className = 'blog-post-card__langs';
+          post.languages.forEach((language) => {
+            if (!language || !language.href) {
+              return;
+            }
+            const link = document.createElement('a');
+            link.className = 'blog-post-card__lang-link';
+            link.href = language.href;
+            link.textContent = language.label || '';
+            if (language.lang) link.setAttribute('lang', language.lang);
+            if (language.dir) link.setAttribute('dir', language.dir);
+            if (/^https?:\/\//i.test(language.href)) {
+              link.target = '_blank';
+              link.rel = 'noopener noreferrer';
+            }
+            langs.appendChild(link);
+          });
+          body.appendChild(langs);
+        }
 
         const tagsWrap = document.createElement('div');
         tagsWrap.className = 'blog-post-card__tags';

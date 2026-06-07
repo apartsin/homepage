@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="he-IL" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <meta name="description" content="שש עצות מעשיות לניווט בתואר בשנת 2026. כל עצה מובאת כדפוס לאמץ, אנטי-דפוס להימנע ממנו, והמשפט הפנימי שחושף את האנטי-דפוס.">
+  <link rel="alternate" hreflang="he" href="./advice-to-students-2026-he.html">
+  <link rel="alternate" hreflang="en" href="./advice-to-students-2026.html">
+  <title>עצות לסטודנטים ב-2026 | סשה אפרטסין</title>
+  <link rel="stylesheet" href="../shared/site-shell.css">
+  <link rel="stylesheet" href="../shared/unified-theme.css">
+  <style>
+    .advice-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-auto-rows: 1fr;
+      gap: 14px;
+      margin-top: 18px;
+      align-items: stretch;
+    }
+    /* Two columns from ~720px, three columns from ~1080px. */
+    @media (min-width: 720px) {
+      .advice-list { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1080px) {
+      .advice-list { grid-template-columns: repeat(3, 1fr); }
+    }
+    .advice-card {
+      padding: 18px 20px;
+      border: 1px solid var(--site-border);
+      border-radius: 14px;
+      background: #fff;
+      position: relative;
+      overflow: hidden;
+      /* Four-row grid: index / title / body / patterns. Body row absorbs
+         the slack so Pattern callouts sit flush at the bottom of every card. */
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      row-gap: 8px;
+      text-align: right;
+    }
+    /* In RTL, the colored accent bar sits on the right (the natural start). */
+    .advice-card::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--ac-color, var(--site-accent));
+    }
+    .advice-card:nth-child(1) { --ac-color: #c2410c; }
+    .advice-card:nth-child(2) { --ac-color: #7a3fa0; }
+    .advice-card:nth-child(3) { --ac-color: #2e7d5a; }
+    .advice-card:nth-child(4) { --ac-color: #9c5a2e; }
+    .advice-card:nth-child(5) { --ac-color: #164a83; }
+    .advice-card:nth-child(6) { --ac-color: #2c6e83; }
+    .advice-card__index {
+      display: inline-block;
+      font: 900 0.78rem/1 "Manrope", sans-serif;
+      letter-spacing: 0.08em;
+      color: var(--ac-color, var(--site-accent));
+      margin: 0;
+    }
+    .advice-card__title {
+      margin: 0;
+      font: 800 1.08rem/1.35 "Manrope", "Heebo", sans-serif;
+      color: var(--site-text);
+      min-height: calc(2 * 1.35 * 1.08rem);
+    }
+    .advice-card__body {
+      margin: 0;
+      color: var(--site-text);
+      font-size: 0.94rem;
+      line-height: 1.6;
+      /* Equalize body block across all 6 cards so the patterns row
+         underneath always starts at the same vertical position. */
+      min-height: 5.6em;
+    }
+    .advice-card__patterns {
+      display: grid;
+      /* Both callouts inside a card take equal vertical space. */
+      grid-template-rows: 1fr 1fr;
+      gap: 6px;
+    }
+    .advice-pattern {
+      margin: 0;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font: 500 0.86rem/1.55 "Manrope", "Heebo", sans-serif;
+      /* Floor every callout to the same height so Pattern + Anti-pattern
+         pills line up cleanly across all six cards in the grid. */
+      min-height: 6.5em;
+      box-sizing: border-box;
+    }
+    .advice-pattern__label {
+      display: inline-block;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      margin-left: 6px;
+    }
+    .advice-pattern--positive {
+      background: rgba(46, 125, 90, 0.08);
+      border: 1px solid rgba(46, 125, 90, 0.22);
+      color: #1f5a40;
+    }
+    .advice-pattern--positive .advice-pattern__label { color: #1f5a40; }
+    .advice-pattern--negative {
+      background: rgba(194, 65, 12, 0.06);
+      border: 1px solid rgba(194, 65, 12, 0.22);
+      color: #8a3309;
+    }
+    .advice-pattern--negative .advice-pattern__label { color: #8a3309; }
+    /* Evidence quote nested inside the anti-pattern callout. */
+    .advice-pattern__evidence {
+      display: block;
+      margin-top: 6px;
+      font-size: 0.82rem;
+      font-style: italic;
+      color: rgba(138, 51, 9, 0.82);
+    }
+    /* Memorable maxim nested inside the pattern callout (green twin of evidence). */
+    .advice-pattern__maxim {
+      display: block;
+      margin-top: 6px;
+      font-size: 0.82rem;
+      font-style: italic;
+      color: rgba(31, 90, 64, 0.85);
+    }
+    .advice-pattern__evidence .advice-pattern__label,
+    .advice-pattern__maxim .advice-pattern__label {
+      font-style: normal;
+    }
+    /* Two-tab language switcher: shows both EN and HE, current one filled. */
+    .advice-lang-switch {
+      display: inline-flex;
+      align-items: stretch;
+      border: 1px solid var(--site-border, rgba(24,32,42,0.18));
+      border-radius: 999px;
+      background: #fff;
+      overflow: hidden;
+      font: 800 0.72rem/1 "Manrope", sans-serif;
+      letter-spacing: 0.04em;
+    }
+    .advice-lang-switch__btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 14px;
+      color: var(--site-muted, #5a626c);
+      text-decoration: none;
+      transition: background 120ms ease, color 120ms ease;
+    }
+    .advice-lang-switch__btn:hover,
+    .advice-lang-switch__btn:focus-visible {
+      background: rgba(0, 0, 0, 0.05);
+      color: var(--site-text, #18202a);
+    }
+    .advice-lang-switch__btn.is-active {
+      background: var(--site-text, #18202a);
+      color: #fff;
+      cursor: default;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="writing">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar" lang="en" dir="ltr">
+      <a class="apartsin-shell__brand" href="../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../index.html">About</a>
+        <a href="../research/research-focus.html">Research</a>
+        <a href="../teaching/overview.html">Teaching</a>
+        <a href="../work/overview.html">Building</a>
+        <a href="../work/innovation-overview.html">Innovations</a>
+        <a href="../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard">
+          <h1 class="apartsin-sr-only">עצות לסטודנטים ב-2026</h1>
+          <div class="apartsin-page-header__top" dir="ltr">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb" lang="en" dir="ltr">
+              <a href="../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="./overview.html">Writing</a>
+              <span aria-hidden="true">/</span>
+              <a href="./blog-posts.html">Blog Posts</a>
+              <span aria-hidden="true">/</span>
+              <strong>Advice to Students in 2026 (עברית)</strong>
+            </nav>
+            <div class="advice-lang-switch" role="group" aria-label="שפה">
+              <a class="advice-lang-switch__btn" href="./advice-to-students-2026.html" lang="en" hreflang="en">English</a>
+              <a class="advice-lang-switch__btn is-active" href="./advice-to-students-2026-he.html" lang="he" hreflang="he" aria-current="true">עברית</a>
+            </div>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../assets/heroes/teaching-advice-to-students-2026.svg" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">שש עצות מעשיות לניווט בתואר בשנת 2026. כל עצה כוללת דפוס שכדאי לאמץ, אנטי-דפוס שכדאי להימנע ממנו, ומשפט פנימי שחושף את האנטי-דפוס.</p>
+          </div>
+        </section>
+
+        <section aria-label="פריטי עצות">
+          <div class="advice-list">
+            <article class="advice-card">
+              <span class="advice-card__index">עצה 1</span>
+              <h2 class="advice-card__title">קחו אחריות על הקריירה שלכם</h2>
+              <p class="advice-card__body">הקריירה שלכם אינה תוצר לוואי של סיום התואר. בכל קורס, אתם מחליטים אילו נושאים ראויים להעמקה ובאילו די לעבור. בחירות אלו, שחוזרות שנה אחר שנה, מעצבות את הפרופיל המקצועי שלכם.</p>
+              <div class="advice-card__patterns">
+                <p class="advice-pattern advice-pattern--positive"><span class="advice-pattern__label">דפוס:</span> החליטו אילו נושאים ראויים להעמקה בכל קורס, ולא רק באילו קורסים לבחור. <span class="advice-pattern__maxim"><span class="advice-pattern__label">מנטרה:</span> &rdquo;עצבו את התואר שלכם, אל תסתפקו בלהשלים אותו.&ldquo;</span></p>
+                <p class="advice-pattern advice-pattern--negative"><span class="advice-pattern__label">אנטי-דפוס:</span> לתת לסילבוס לקבוע אילו נושאים חשובים ביותר למסלול שבחרתם. <span class="advice-pattern__evidence"><span class="advice-pattern__label">תירוץ:</span> &rdquo;אני לומד מה שאומרים לי.&ldquo;</span></p>
+              </div>
+            </article>
+
+            <article class="advice-card">
+              <span class="advice-card__index">עצה 2</span>
+              <h2 class="advice-card__title">השתמשו בלימודים כדי לגלות מה אינכם יודעים</h2>
+              <p class="advice-card__body">הלימודים אינם רק הזדמנות להוכיח מה שאתם כבר יודעים. זוהי תקופה נדירה שבה אתם יכולים להיכנס לתחומים לא מוכרים, להתמודד עם בעיות קשות ולפתח יכולות שחסרות לכם כעת.</p>
+              <div class="advice-card__patterns">
+                <p class="advice-pattern advice-pattern--positive"><span class="advice-pattern__label">דפוס:</span> בחרו פרויקטים שמכריחים אתכם לאמץ כלים ורעיונות שמעולם לא השתמשתם בהם. <span class="advice-pattern__maxim"><span class="advice-pattern__label">מנטרה:</span> &rdquo;אם זה מרגיש קל, בחרתם פרויקט לא נכון.&ldquo;</span></p>
+                <p class="advice-pattern advice-pattern--negative"><span class="advice-pattern__label">אנטי-דפוס:</span> לפתור כל מטלה באותם כלים שאתם כבר שולטים בהם. <span class="advice-pattern__evidence"><span class="advice-pattern__label">תירוץ:</span> &rdquo;אני פותר את זה עם מה שאני כבר יודע.&ldquo;</span></p>
+              </div>
+            </article>
+
+            <article class="advice-card">
+              <span class="advice-card__index">עצה 3</span>
+              <h2 class="advice-card__title">בנו דברים שאתם יכולים להציג</h2>
+              <p class="advice-card__body">הערך המקצועי שלכם נמדד לפי יכולת מוכחת לבנות דברים, ולא רק לפי גיליון הציונים. פרויקטים עמוקים עם תוצרים שניתן להראות הם מה שהופך את הלימודים לראיונות עבודה ולהצעות עבודה אמיתיות.</p>
+              <div class="advice-card__patterns">
+                <p class="advice-pattern advice-pattern--positive"><span class="advice-pattern__label">דפוס:</span> שאפו לבנות פרויקטים מעניינים, מאתגרים וחדשניים. <span class="advice-pattern__maxim"><span class="advice-pattern__label">מנטרה:</span> &rdquo;תוצרים שורדים, ציונים נשכחים.&ldquo;</span></p>
+                <p class="advice-pattern advice-pattern--negative"><span class="advice-pattern__label">אנטי-דפוס:</span> להתמקד רק במבחנים מבלי להשאיר תוצרים מוחשים מאחור. <span class="advice-pattern__evidence"><span class="advice-pattern__label">תירוץ:</span> &rdquo;גיליון הציונים שלי מדבר בעד עצמו.&ldquo;</span></p>
+              </div>
+            </article>
+
+            <article class="advice-card">
+              <span class="advice-card__index">עצה 4</span>
+              <h2 class="advice-card__title">התייחסו ברצינות לקורסי הבחירה</h2>
+              <p class="advice-card__body">קורסי בחירה וקורסים מתקדמים הם לעיתים החלק הקובע ביותר בתואר מבחינה מקצועית. הם מעצבים את כיוון הפורטפוליו שלכם ואת סוג הצעות העבודה שתקבלו לאחר סיום התואר.</p>
+              <div class="advice-card__patterns">
+                <p class="advice-pattern advice-pattern--positive"><span class="advice-pattern__label">דפוס:</span> בחרו קורסים מתקדמים שבונים את הפורטפוליו שלכם, ולא כאלה שקל לעבור. <span class="advice-pattern__maxim"><span class="advice-pattern__label">מנטרה:</span> &rdquo;קורסי הבחירה שלכם הופכים לפורטפוליו שלכם.&ldquo;</span></p>
+                <p class="advice-pattern advice-pattern--negative"><span class="advice-pattern__label">אנטי-דפוס:</span> להתייחס לקורסי בחירה כמטלות חובה שכל מטרתן היא לעבור. <span class="advice-pattern__evidence"><span class="advice-pattern__label">תירוץ:</span> &rdquo;אני רק צריך לצבור נקודות.&ldquo;</span></p>
+              </div>
+            </article>
+
+            <article class="advice-card">
+              <span class="advice-card__index">עצה 5</span>
+              <h2 class="advice-card__title">היו המבקרים הקשים ביותר של עצמכם</h2>
+              <p class="advice-card__body">עליכם להעריך את עבודתכם לפני שמישהו אחר יעשה זאת, ולשאול את עצמכם אם היא נכונה, מקורית, מוסברת בבהירות ומובנת לעומק, או רק קשה לכם משום שהנושא עדיין חדש עבורכם.</p>
+              <div class="advice-card__patterns">
+                <p class="advice-pattern advice-pattern--positive"><span class="advice-pattern__label">דפוס:</span> חפשו משוב נוקב בשלב מוקדם, ואז שכתבו את החלקים שאינם שורדים אותו. <span class="advice-pattern__maxim"><span class="advice-pattern__label">מנטרה:</span> &rdquo;אל תבלבלו בין כאב לעומק.&ldquo;</span></p>
+                <p class="advice-pattern advice-pattern--negative"><span class="advice-pattern__label">אנטי-דפוס:</span> לבלבל בין אי-הנוחות שבלמידה לבין עומק טכני אמיתי. <span class="advice-pattern__evidence"><span class="advice-pattern__label">תירוץ:</span> &rdquo;זה היה קשה, אז זה חייב להיות בעל ערך.&ldquo;</span></p>
+              </div>
+            </article>
+
+            <article class="advice-card">
+              <span class="advice-card__index">עצה 6</span>
+              <h2 class="advice-card__title">שלטו באמנות ההסבר</h2>
+              <p class="advice-card__body">הסבר אינו עוד מיומנות רכה. עליכם לכתוב פרומפטים חדים מספיק כדי שבינה מלאכותית תוכל לבצע אותם, ועדכונים ברורים מספיק כדי לסנכרן צוות, לתדרך מנהל ולשכנע עמית.</p>
+              <div class="advice-card__patterns">
+                <p class="advice-pattern advice-pattern--positive"><span class="advice-pattern__label">דפוס:</span> תרגלו כתיבה ודיבור על העבודה הטכנית באותה רצינות שבה אתם בונים אותה. <span class="advice-pattern__maxim"><span class="advice-pattern__label">מנטרה:</span> &rdquo;אם אינכם יכולים להסביר את זה, לא סיימתם.&ldquo;</span></p>
+                <p class="advice-pattern advice-pattern--negative"><span class="advice-pattern__label">אנטי-דפוס:</span> להתמקד בתוכן ובפתרון מבלי ללטש את הצורה וההצגה. <span class="advice-pattern__evidence"><span class="advice-pattern__label">תירוץ:</span> &rdquo;אם הפתרון נכון, צורת ההצגה לא משנה.&ldquo;</span></p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script defer src="../shared/unified-enhance.js"></script>
+  <script defer src="../shared/site-shell.js"></script>
+</body>
+</html>

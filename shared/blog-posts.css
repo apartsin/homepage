@@ -158,6 +158,37 @@
   overflow: hidden;
 }
 
+/* Per-card language picker pills, e.g. "English" / "עברית" on a multilingual
+   post that has the same canonical card metadata but two destination URLs. */
+.blog-post-card__langs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 4px 0 2px 0;
+}
+
+.blog-post-card__lang-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(24, 32, 42, 0.18);
+  background: #fff;
+  color: var(--site-text, #18202a);
+  font: 800 0.72rem/1.2 "Manrope", "Segoe UI", sans-serif;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+
+.blog-post-card__lang-link:hover,
+.blog-post-card__lang-link:focus-visible {
+  background: rgba(24, 101, 168, 0.06);
+  border-color: rgba(24, 101, 168, 0.45);
+  text-decoration: none;
+}
+
 .blog-post-card__tags {
   display: flex;
   flex-wrap: wrap;
