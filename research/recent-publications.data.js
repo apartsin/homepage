@@ -300,7 +300,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-inprep-medfollow",
     year: 2026,
-    type: "InPreparation",
+    type: "Submitted",
     title: "Reliable Extraction of Clinical Follow-Up Instructions: A Hybrid Neural-Symbolic Pipeline",
     authors: [
       { name: "M Laufer", self: false },
