@@ -276,7 +276,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2026-coreason",
     year: 2026,
-    type: "InPreparation",
+    type: "Submitted",
     title: "Framing, Judging, Steering: An Assessable Competency Model for Teaching Students to Reason With Generative AI",
     authors: [
       { name: "A Apartsin", self: true },
