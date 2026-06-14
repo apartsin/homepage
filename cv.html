@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sasha Apartsin - Senior Research Resume</title>
+  <style>
+    @page {
+      size: Letter;
+      margin: 0;
+    }
+
+    :root {
+      --ink: #151922;
+      --muted: #5c6470;
+      --line: #d7dde4;
+      --panel: #f4f7fa;
+      --accent: #0b5cad;
+      --accent-2: #16735f;
+      --accent-3: #9a4c16;
+      --paper: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+    * {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    html,
+    body {
+      margin: 0;
+      background: #e8edf3;
+      color: var(--ink);
+      font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+      font-size: 9.48pt;
+      line-height: 1.35;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: 8.5in;
+      height: 11in;
+      margin: 0 auto;
+      padding: 0.34in 0.39in 0.31in;
+      background: var(--paper);
+      display: grid;
+      grid-template-columns: 2.24in 1fr;
+      column-gap: 0.25in;
+      align-items: start;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 0.13in;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
+    }
+
+    .page::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 0.04in;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
+    }
+
+    .sidebar {
+      padding-right: 0.2in;
+      border-right: 1px solid var(--line);
+    }
+
+    .main {
+      min-width: 0;
+    }
+
+    .footer {
+      position: absolute;
+      left: 0.39in;
+      right: 0.39in;
+      bottom: 0.045in;
+      color: #6a7280;
+      font-size: 7.1pt;
+      line-height: 1;
+      text-align: center;
+      letter-spacing: 0;
+    }
+
+    .footer b {
+      color: #273245;
+      font-weight: 760;
+    }
+
+    .name {
+      margin: 0;
+      font-size: 13.8pt;
+      line-height: 1.02;
+      letter-spacing: 0;
+      font-weight: 830;
+      white-space: nowrap;
+    }
+
+    .name span {
+      color: inherit;
+    }
+
+    .target {
+      margin: 0.11in 0 0;
+      font-size: 10.2pt;
+      line-height: 1.28;
+      font-weight: 760;
+      color: #263142;
+    }
+
+    .contact {
+      margin: 0.11in 0 0;
+      color: var(--muted);
+      font-size: 8.2pt;
+      line-height: 1.45;
+      display: grid;
+      gap: 0.028in;
+    }
+
+    .contact a {
+      display: flex;
+      align-items: center;
+      gap: 0.055in;
+      color: var(--muted);
+    }
+
+    .contact-badge {
+      flex: 0 0 0.18in;
+      width: 0.18in;
+      height: 0.18in;
+      border-radius: 5px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--badge, var(--accent));
+      color: #fff !important;
+      font-size: 6.7pt;
+      line-height: 1;
+      font-weight: 850;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
+    }
+
+    .brand {
+      margin: 0.18in 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.055in;
+    }
+
+    .brand li {
+      padding: 0.078in 0.09in;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--tone);
+      background: #fbfcfe;
+      border-radius: 7px;
+    }
+
+    .brand b {
+      display: block;
+      color: var(--ink);
+      font-size: 8.4pt;
+      text-transform: uppercase;
+      letter-spacing: 0.045em;
+    }
+
+    .brand span {
+      display: block;
+      margin-top: 0.018in;
+      color: var(--muted);
+      font-size: 8pt;
+      line-height: 1.26;
+    }
+
+    .side-section {
+      margin-top: 0.135in;
+    }
+
+    .side-section h2,
+    .section h2 {
+      margin: 0 0 0.055in;
+      color: var(--accent);
+      font-size: 8.6pt;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 830;
+    }
+
+    .side-section p {
+      margin: 0 0 0.045in;
+      color: var(--muted);
+      font-size: 8.2pt;
+      line-height: 1.27;
+    }
+
+    .edu-item {
+      margin: 0 0 0.06in;
+    }
+
+    .edu-item b {
+      display: block;
+      font-size: 8.25pt;
+      line-height: 1.22;
+    }
+
+    .edu-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 7.9pt;
+      line-height: 1.25;
+    }
+
+    .summary {
+      padding: 0.115in 0.15in 0.12in;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: linear-gradient(135deg, #f7fbff, #ffffff 68%);
+      font-size: 9.3pt;
+      line-height: 1.36;
+      color: #283142;
+      text-wrap: pretty;
+      hyphens: none;
+    }
+
+    .summary b {
+      color: var(--ink);
+    }
+
+    .summary-lead {
+      margin: 0 0 0.055in;
+      font-size: 9.55pt;
+      line-height: 1.3;
+      color: var(--ink);
+      font-weight: 640;
+    }
+
+    .summary ul {
+      margin: 0;
+      padding-left: 0.2in;
+      list-style: disc;
+      display: grid;
+      gap: 0.035in;
+    }
+
+    .summary li {
+      padding-left: 0.02in;
+    }
+
+    .summary li::marker {
+      color: var(--accent2);
+      font-size: 8pt;
+    }
+
+    .section {
+      margin-top: 0.2in;
+    }
+
+    .item {
+      padding: 0.085in 0 0.095in;
+      border-bottom: 1px solid #e8edf2;
+      break-inside: avoid;
+    }
+
+    .item:last-child { border-bottom: 0; padding-bottom: 0; }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.1in;
+      align-items: baseline;
+    }
+
+    .role {
+      margin: 0;
+      font-size: 9.25pt;
+      font-weight: 820;
+      color: var(--ink);
+      line-height: 1.15;
+    }
+
+    .role small {
+      color: var(--muted);
+      font-weight: 650;
+      font-size: 8pt;
+    }
+
+    .dates {
+      flex: 0 0 auto;
+      color: var(--accent);
+      font-size: 7.8pt;
+      font-weight: 780;
+      white-space: nowrap;
+    }
+
+    .detail {
+      margin: 0.04in 0 0;
+      color: var(--muted);
+      font-size: 8.6pt;
+      line-height: 1.38;
+    }
+
+    .compact-list {
+      margin: 0.035in 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.038in;
+    }
+
+    .compact-list li {
+      position: relative;
+      padding-left: 0.12in;
+      color: #344050;
+      font-size: 8.15pt;
+      line-height: 1.25;
+    }
+
+    .compact-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.105in;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--accent-2);
+    }
+
+    .columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.2in;
+    }
+
+    .wide-box {
+      padding: 0.085in 0.11in 0.095in;
+      border: 1px solid #e0e6ee;
+      border-radius: 8px;
+      background: #fbfcfe;
+    }
+
+    .evidence-grid {
+      margin-top: 0.055in;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.13in;
+    }
+
+    .evidence-block {
+      min-width: 0;
+      padding-left: 0.08in;
+      border-left: 2px solid rgba(19, 125, 106, 0.32);
+    }
+
+    .evidence-block h3 {
+      margin: 0 0 0.018in;
+      color: var(--ink);
+      font-size: 8.15pt;
+      line-height: 1.12;
+      font-weight: 820;
+    }
+
+    .evidence-block p {
+      margin: 0;
+      color: #344050;
+      font-size: 7.85pt;
+      line-height: 1.23;
+    }
+
+    .tagline {
+      margin: 0.035in 0 0;
+      color: var(--muted);
+      font-size: 8pt;
+      line-height: 1.28;
+    }
+
+    .selected {
+      font-weight: 760;
+      color: #273245;
+    }
+
+    @media print {
+      html,
+      body {
+        width: 8.5in;
+        height: 11in;
+        background: #fff;
+      }
+
+      .page {
+        margin: 0;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <article class="page" aria-label="Sasha Apartsin senior research resume">
+    <aside class="sidebar">
+      <h1 class="name"><span>Sasha</span> Apartsin, Ph.D.</h1>
+      <div class="contact" aria-label="Contact and profiles">
+        <a href="mailto:apartsin@gmail.com"><span class="contact-badge" style="--badge:#0b5cad;">@</span><span>apartsin@gmail.com</span></a>
+        <a href="https://apartsin.com"><span class="contact-badge" style="--badge:#16735f;">W</span><span>apartsin.com</span></a>
+        <a href="https://linkedin.com/in/apartsin"><span class="contact-badge" style="--badge:#0a66c2;">in</span><span>linkedin.com/in/apartsin</span></a>
+        <a href="https://github.com/ApartsinProjects"><span class="contact-badge" style="--badge:#24292f;">GH</span><span>github.com/ApartsinProjects</span></a>
+        <a href="https://scholar.google.co.il/citations?hl=en&amp;user=-5He5joAAAAJ"><span class="contact-badge" style="--badge:#4285f4;">G</span><span>Google Scholar</span></a>
+        <a href="https://medium.com/@sashaapartsin"><span class="contact-badge" style="--badge:#111827;">M</span><span>Medium: @sashaapartsin</span></a>
+      </div>
+
+      <ul class="brand" aria-label="Research leadership brand">
+        <li style="--tone: var(--accent);"><b>Research breadth</b><span>Language, vision, signals, generative AI, and multi-agent systems.</span></li>
+        <li style="--tone: var(--accent-2);"><b>Industry depth</b><span>Automotive, public safety, finance, telecom, media, and document AI.</span></li>
+        <li style="--tone: var(--accent-3);"><b>Builder-leader</b><span>Built teams, prototypes, papers, patents, and product-facing AI systems.</span></li>
+      </ul>
+
+      <section class="side-section">
+        <h2>Education</h2>
+        <p class="edu-item"><b>Postdoctoral Fellowship</b><span>Weizmann Institute of Science, 2013 - computer vision and ML</span></p>
+        <p class="edu-item"><b>Ph.D., Computer Science</b><span>Tel Aviv University, 2012 - ML and signal processing</span></p>
+        <p class="edu-item"><b>M.Sc., Technology Management</b><span>Polytechnic Institute of NYU, 2006</span></p>
+        <p class="edu-item"><b>M.Sc., Computer Science</b><span>Weizmann Institute of Science, 2004 - computer vision</span></p>
+        <p class="edu-item"><b>B.Sc., Computer Science</b><span>Technion, 1995</span></p>
+      </section>
+
+      <section class="side-section">
+        <h2>Recognition &amp; Achievements</h2>
+        <p><b>AI Product of the Year</b> recognition for SafeRide automotive AI product work.</p>
+        <p><b>$250K Citi LabLink grant</b> for a financial data science collaboration platform.</p>
+        <p><b>IIA innovation grants</b> for Motorola Solutions industry-academia AI projects.</p>
+        <p><b>$10M hardware-cost savings contribution</b> through model-based capacity planning at Amdocs.</p>
+      </section>
+
+      <section class="side-section">
+        <h2>Innovation &amp; Entrepreneurship</h2>
+        <p><b>Founder / CTO experience</b> across search, multimedia, cloud optimization, and applied AI ventures; corporate innovation through AI labs, grants, patents, and prototypes.</p>
+      </section>
+
+      <section class="side-section">
+        <h2>Teaching &amp; Mentorship</h2>
+        <p><b>Student supervision</b> of graduate and undergraduate projects since 2012; developed and taught courses in ML, computer vision, LLMs, GenAI, and hands-on AI.</p>
+      </section>
+    </aside>
+
+    <main class="main">
+      <section class="summary">
+        <ul>
+          <li>AI researcher, builder, innovator, educator, and writer turning AI ideas into teams, systems, products, and publications.</li>
+          <li>Over 30 years of industry experience, including roles as Head of AI Research, VP AI, and Head of Data Science; built and hired research, data science, and engineering teams; led cross-functional AI work.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>Leadership &amp; Research Experience</h2>
+        <div class="item">
+          <div class="row">
+            <p class="role">Faculty Member <small>- HIT, School of Computer Science</small></p>
+            <p class="dates">2024-Present</p>
+          </div>
+          <p class="detail">Conducts applied AI research and supervises student projects; teaches graduate AI courses at Bar-Ilan on LLMs, GenAI, and agents; created undergraduate Hands-On AI courses in LLMs and GenAI; served as Head of the Software Engineering track in 2024-2025.</p>
+        </div>
+        <div class="item">
+          <div class="row">
+            <p class="role">Head of Data Science <small>- Questar / SafeRide Technologies</small></p>
+            <p class="dates">2020-2024</p>
+          </div>
+          <p class="detail">Built and hired the data science team; led big-data AI for vehicle telematics across signal, audio, graph, anomaly detection, and onboard-model work; helped define a no-code product for onboard monitoring models.</p>
+        </div>
+        <div class="item">
+          <div class="row">
+            <p class="role">VP of Artificial Intelligence <small>- harmon.ie</small></p>
+            <p class="dates">2019-2020</p>
+          </div>
+          <p class="detail">Led cross-functional AI work for document management, including language processing and recommendation systems, connecting research direction with product and software execution.</p>
+        </div>
+        <div class="item">
+          <div class="row">
+            <p class="role">Head of AI Research <small>- Motorola Solutions, Israel Innovation Center</small></p>
+            <p class="dates">2015-2019</p>
+          </div>
+          <p class="detail">Built and led the research team at Motorola Solutions' first AI lab in the Innovation Center; designed the roadmap across video, text, speech, and public-safety AI.</p>
+        </div>
+        <div class="item">
+          <div class="row">
+            <p class="role">AVP Data Science <small>- Citi Israel Innovation Lab</small></p>
+            <p class="dates">2013-2015</p>
+          </div>
+          <p class="detail">Worked on financial time-series data science, anomaly detection, and trading-flow analytics.</p>
+        </div>
+        <div class="item">
+          <div class="row">
+            <p class="role">Founder / CTO / R&D and algorithm leadership <small>- SearchNG, CloudTuner, MPCode, Tegrity, AppiVision, Amdocs, Comverse, earlier roles</small></p>
+            <p class="dates">1991-2012</p>
+          </div>
+          <p class="detail">Founded ventures and led hands-on intelligent-system work in search, multimedia, video streaming, wireless communications, telecom, predictive modeling, handwriting recognition, imaging, inspection, and signal acquisition.</p>
+        </div>
+      </section>
+
+      <section class="section wide-box">
+          <h2>Research Themes</h2>
+          <p class="tagline"><span class="selected">Pragmatic AI:</span> methods for inference, generation, and coordination when clean benchmark assumptions do not hold.</p>
+          <div class="evidence-grid">
+            <div class="evidence-block">
+              <h3>Robust AI</h3>
+              <p>Vision, language, and signals under degraded or ambiguous inputs.</p>
+            </div>
+            <div class="evidence-block">
+              <h3>Spec-driven GenAI</h3>
+              <p>Generation of materials, text, images, and signals constrained by verifiable targets.</p>
+            </div>
+            <div class="evidence-block">
+              <h3>Multi-agent AI</h3>
+              <p>Evaluation and coordination without trusted benchmarks or shared state.</p>
+            </div>
+          </div>
+      </section>
+
+      <section class="section wide-box">
+          <h2>Research, Patents &amp; Systems</h2>
+          <div class="evidence-grid">
+            <div class="evidence-block">
+              <h3>Publications</h3>
+              <p>40+ Scholar-indexed works and 470+ citations across ML, computer vision, NLP, deep learning, and signal processing.</p>
+            </div>
+            <div class="evidence-block">
+              <h3>Patents</h3>
+              <p>10 patent records across vehicle diagnostics, driver monitoring, model configuration, onboard inference, public-safety audio, and search/image matching.</p>
+            </div>
+            <div class="evidence-block">
+              <h3>Systems</h3>
+              <p>Hands-on building of working systems in model integration, agent automation, runtime tracing, analytics, diffusion steering, evaluation, and reasoning platforms.</p>
+            </div>
+          </div>
+      </section>
+    </main>
+  </article>
+</body>
+</html>
