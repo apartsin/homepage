@@ -257,8 +257,8 @@
                 path: 'http://llmbook.apartsin.com/',
               },
               {
-                label: 'From AI-Assisted Software Development to AI-Powered Software Products',
-                path: 'http://vibebook.apartsin.com/',
+                label: 'Building Vision AI: From Pixels to Generative Models',
+                path: 'https://visionbook.apartsin.com/',
               },
             ],
           },

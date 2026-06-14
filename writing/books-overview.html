@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
-  <meta name="description" content="Open online book drafts by Sasha Apartsin on language AI and AI-powered software development.">
+  <meta name="description" content="Open online book drafts by Sasha Apartsin on language AI and vision AI.">
   <title>Online Books Drafts | Sasha Apartsin</title>
   <link rel="stylesheet" href="../shared/site-shell.css">
   <link rel="stylesheet" href="../shared/unified-theme.css">
@@ -50,10 +50,15 @@
       font-size: 0.92rem;
       line-height: 1.55;
     }
+    .book-card__links {
+      margin-top: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
     .book-card__link {
       display: inline-flex;
       align-items: center;
-      margin-top: auto;
       padding: 9px 16px;
       border: 1px solid var(--site-border);
       border-radius: 999px;
@@ -112,13 +117,18 @@
             <p class="book-card__eyebrow">Online Book (Draft)</p>
             <h2 class="book-card__title">Building Language AI with LLMs and Agents</h2>
             <p class="book-card__desc">A practical guide to building conversational and agentic systems with large language models, covering prompt engineering, retrieval-augmented generation, tool use, and multi-agent orchestration. Companion to the <a href="../courses/hos/series/language-ai.html">LLM course syllabus</a>.</p>
-            <a class="book-card__link external-indicator" href="http://llmbook.apartsin.com/" target="_blank" rel="noopener noreferrer">Read Online</a>
+            <div class="book-card__links">
+              <a class="book-card__link external-indicator" href="http://llmbook.apartsin.com/" target="_blank" rel="noopener noreferrer">Read Online</a>
+              <a class="book-card__link external-indicator" href="https://www.amazon.com/Building-Conversational-LLMs-Agents-practitioners-ebook/dp/B0H1MQH23D" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
+            </div>
           </article>
           <article class="book-card">
             <p class="book-card__eyebrow">Online Book (Draft)</p>
-            <h2 class="book-card__title">From AI-Assisted Software Development to AI-Powered Software Products</h2>
-            <p class="book-card__desc">Explores the shift from using AI as a coding assistant to building software products where AI is the core value driver. Covers vibe-coding, agent-driven development, and product strategy. Related posts under <a href="./blog-posts.html?theme=vibe-coding">vibe-coding</a> and <a href="./blog-posts.html?theme=ai-product-strategy">AI product strategy</a>.</p>
-            <a class="book-card__link external-indicator" href="http://vibebook.apartsin.com/" target="_blank" rel="noopener noreferrer">Read Online</a>
+            <h2 class="book-card__title">Building Vision AI: From Pixels to Generative Models</h2>
+            <p class="book-card__desc">A practical guide to computer vision, spanning classical image processing, convolutional networks, and modern generative models. Companion to the <a href="../courses/hos/series/vision-ai.html">Vision AI course syllabus</a>.</p>
+            <div class="book-card__links">
+              <a class="book-card__link external-indicator" href="https://visionbook.apartsin.com/" target="_blank" rel="noopener noreferrer">Read Online</a>
+            </div>
           </article>
         </section>
 
