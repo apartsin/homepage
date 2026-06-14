@@ -253,7 +253,7 @@
             path: 'writing/books-overview.html',
             secondary: [
               {
-                label: 'Building Language AI with LLMs and Agents',
+                label: 'Building Conversational AI with LLMs and Agents',
                 path: 'http://llmbook.apartsin.com/',
               },
               {
