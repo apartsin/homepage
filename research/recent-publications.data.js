@@ -288,7 +288,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-inprep-absa-courses",
     year: 2026,
-    type: "InPreparation",
+    type: "Submitted",
     title: "A Controlled Synthetic Benchmark for Educational Aspect-Based Sentiment Analysis",
     authors: [
       { name: "Y Aperstein", self: false },
