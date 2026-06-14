@@ -26,6 +26,7 @@
     'work',
     'writing',
     'courses',
+    'cv.html',
     'index.html',
   ]);
 
@@ -300,6 +301,17 @@
           { label: 'Entrepreneurship', path: 'work/entrepreneurship.html' },
           { label: 'Innovation-First Learning', path: 'work/innovation-first-learning.html' },
           { label: 'Consulting', path: 'work/consulting.html' },
+        ],
+      ),
+      link(
+        'CV',
+        'cv.html',
+        [
+          /\/cv\.html$/i,
+        ],
+        [
+          { label: 'HTML CV', path: 'cv.html' },
+          { label: 'PDF CV', path: 'cv.pdf' },
         ],
       ),
       link(
