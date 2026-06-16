@@ -84,35 +84,28 @@
     .book-card__links {
       margin-top: auto;
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       gap: 6px;
     }
+    /* Uniform, unhighlighted pills that share the full card width equally. */
     .book-card__link {
+      flex: 1;
       display: inline-flex;
       align-items: center;
-      padding: 5px 12px;
-      border: 1px solid transparent;
+      justify-content: center;
+      padding: 5px 8px;
+      border: 1px solid var(--site-border, rgba(24,32,42,0.16));
       border-radius: 999px;
-      font: 700 0.76rem/1.2 "Manrope", sans-serif;
+      background: rgba(133,114,81,0.06);
+      color: var(--site-accent, #9c5a2e);
+      font: 700 0.72rem/1.2 "Manrope", sans-serif;
       text-decoration: none;
+      white-space: nowrap;
       transition: background 160ms ease, border-color 160ms ease;
     }
-    /* Primary action: filled accent. */
-    .book-card__link--primary {
-      background: var(--site-accent, #9c5a2e);
-      color: #fff;
-    }
-    .book-card__link--primary:hover {
-      background: #84502a;
-    }
-    /* Secondary action: subtle outline. */
-    .book-card__link--secondary {
-      background: rgba(133,114,81,0.08);
-      border-color: var(--site-border, rgba(24,32,42,0.16));
-      color: var(--site-accent, #9c5a2e);
-    }
-    .book-card__link--secondary:hover {
-      background: rgba(133,114,81,0.16);
+    .book-card__link:hover {
+      background: rgba(133,114,81,0.14);
+      border-color: rgba(133,114,81,0.4);
     }
     @media (max-width: 640px) {
       .books-grid { grid-template-columns: 1fr; }
