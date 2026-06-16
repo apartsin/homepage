@@ -12,10 +12,23 @@
   <link rel="stylesheet" href="../shared/site-shell.css">
   <link rel="stylesheet" href="../shared/unified-theme.css">
   <style>
+    .curriculum-section-title {
+      margin: 28px 0 4px;
+      color: var(--site-text, #18202a);
+      font: 800 0.82rem/1.2 "Manrope", sans-serif;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .curriculum-section-title:first-of-type {
+      margin-top: 8px;
+    }
     .curriculum-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
       gap: 14px;
+    }
+    .curriculum-grid + .curriculum-section-title {
+      margin-top: 32px;
     }
     .curriculum-card {
       display: flex;
@@ -110,6 +123,7 @@
             <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">I do my best to align CS curricula with the real world, based on <a href="../about/industry-experience.html">three decades</a> of hiring, mentoring, and leading graduates in industry.</p>
           </div>
         </section>
+        <h2 class="curriculum-section-title">Course Development</h2>
         <section class="curriculum-grid">
           <article class="hub-card curriculum-card" id="deep-learning-foundation-course">
             <span class="curriculum-card__year">2025</span>
@@ -139,6 +153,37 @@
               </nav>
             </div>
           </article>
+          <article class="hub-card curriculum-card" id="genai-graduate-course">
+            <span class="curriculum-card__year">2026</span>
+            <figure class="curriculum-card__media">
+              <img src="../assets/teaching/teaching-and-curriculum-development/Logo_hit+50.jpg" alt="Generative AI graduate course visual">
+            </figure>
+            <div class="curriculum-card__body">
+              <h2>Generative AI: From Variational Autoencoders to World Models</h2>
+              <p>A 13-week graduate course on generative modeling, spanning variational autoencoders, diffusion models, and world models, taught at <a href="../index.html">HIT</a>.</p>
+              <nav class="hub-anchor-nav">
+                <a href="https://apartsin.github.io/hit_genai_grad/" target="_blank" rel="noopener noreferrer">Course Site</a>
+                <a href="https://github.com/apartsin/hit_genai_grad" target="_blank" rel="noopener noreferrer">GitHub</a>
+              </nav>
+            </div>
+          </article>
+          <article class="hub-card curriculum-card" id="llm-graduate-course">
+            <span class="curriculum-card__year">2026</span>
+            <figure class="curriculum-card__media">
+              <img src="../assets/teaching/teaching-and-curriculum-development/Logo_hit+50.jpg" alt="Large Language Models and Agentic AI graduate course visual">
+            </figure>
+            <div class="curriculum-card__body">
+              <h2>Large Language Models and Agentic AI</h2>
+              <p>A 13-week graduate course on large language models and agentic AI, covering modern LLM architectures, alignment, tool use, and multi-agent systems, taught at <a href="../index.html">HIT</a>.</p>
+              <nav class="hub-anchor-nav">
+                <a href="https://apartsin.github.io/hit_llm_grad/syllabus.html" target="_blank" rel="noopener noreferrer">Course Site</a>
+                <a href="https://github.com/apartsin/hit_llm_grad" target="_blank" rel="noopener noreferrer">GitHub</a>
+              </nav>
+            </div>
+          </article>
+        </section>
+        <h2 class="curriculum-section-title">Curriculum Development</h2>
+        <section class="curriculum-grid">
           <article class="hub-card curriculum-card" id="cs-degree-curriculum-design">
             <span class="curriculum-card__year">2024-2025</span>
             <figure class="curriculum-card__media">
