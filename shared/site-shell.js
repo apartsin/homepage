@@ -253,7 +253,7 @@
             path: 'writing/books-overview.html',
             secondary: [
               {
-                label: 'Building Conversational AI with LLMs and Agents',
+                label: 'Building Language AI: From Tokens to Agents',
                 path: 'http://llmbook.apartsin.com/',
                 cover: 'assets/writing/covers/llmbook-cover.jpg',
               },
