@@ -26,7 +26,6 @@
     'work',
     'writing',
     'courses',
-    'cv.html',
     'index.html',
   ]);
 
