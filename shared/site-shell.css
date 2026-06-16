@@ -586,6 +586,21 @@ body.apartsin-shell-active .apartsin-shell__content {
   font-weight: 600;
 }
 
+/* Menu items that show a small cover thumbnail before the label (e.g. books). */
+.apartsin-shell__menu-item--with-cover {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.apartsin-shell__menu-cover {
+  flex: 0 0 24px;
+  width: 24px;
+  height: 34px;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.28);
+}
+
 .apartsin-shell__menu-subitem-nested {
   display: grid;
   gap: 2px;

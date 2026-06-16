@@ -256,14 +256,17 @@
               {
                 label: 'Building Conversational AI with LLMs and Agents',
                 path: 'http://llmbook.apartsin.com/',
+                cover: 'assets/writing/covers/llmbook-cover.jpg',
               },
               {
                 label: 'Building Vision AI: From Pixels to Generative Models',
                 path: 'https://visionbook.apartsin.com/',
+                cover: 'assets/writing/covers/visionbook-cover.jpg',
               },
               {
                 label: 'Building Temporal AI: From Forecasting to Sequential Decision Making',
                 path: 'http://temporalbook.apartsin.com/',
+                cover: 'assets/writing/covers/temporalbook-cover.jpg',
               },
             ],
           },
@@ -562,7 +565,21 @@
           secondaryEntry.secondary.forEach((thirdLevelEntry) => {
             const thirdAnchor = document.createElement('a');
             thirdAnchor.href = sitePath(thirdLevelEntry.path);
-            thirdAnchor.textContent = thirdLevelEntry.label;
+            if (thirdLevelEntry.cover) {
+              // Render a small cover thumbnail before the label (e.g. books).
+              thirdAnchor.classList.add('apartsin-shell__menu-item--with-cover');
+              const cover = document.createElement('img');
+              cover.className = 'apartsin-shell__menu-cover';
+              cover.src = sitePath(thirdLevelEntry.cover);
+              cover.alt = '';
+              cover.loading = 'lazy';
+              cover.decoding = 'async';
+              const coverLabel = document.createElement('span');
+              coverLabel.textContent = thirdLevelEntry.label;
+              thirdAnchor.append(cover, coverLabel);
+            } else {
+              thirdAnchor.textContent = thirdLevelEntry.label;
+            }
             thirdAnchor.setAttribute('role', 'menuitem');
             if (isPrimaryActive && linkMatchesCurrent(thirdLevelEntry.path)) {
               thirdAnchor.setAttribute('aria-current', 'page');
