@@ -261,6 +261,10 @@
                 label: 'Building Vision AI: From Pixels to Generative Models',
                 path: 'https://visionbook.apartsin.com/',
               },
+              {
+                label: 'Building Temporal AI: From Forecasting to Sequential Decision Making',
+                path: 'http://temporalbook.apartsin.com/',
+              },
             ],
           },
         ],
