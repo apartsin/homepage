@@ -310,17 +310,6 @@
           { label: 'Consulting', path: 'work/consulting.html' },
         ],
       ),
-      link(
-        'CV',
-        'cv.html',
-        [
-          /\/cv\.html$/i,
-        ],
-        [
-          { label: 'HTML CV', path: 'cv.html' },
-          { label: 'PDF CV', path: 'cv.pdf' },
-        ],
-      ),
     ],
   };
 
