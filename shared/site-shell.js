@@ -318,15 +318,6 @@
           { label: 'PDF CV', path: 'cv.pdf' },
         ],
       ),
-      link(
-        'LLM Book',
-        'http://llmbook.apartsin.com/',
-        [],
-        [
-          { label: 'Read Online', path: 'http://llmbook.apartsin.com/' },
-          { label: 'Buy on Amazon', path: 'https://www.amazon.com/Building-Conversational-LLMs-Agents-practitioners-ebook/dp/B0H1MQH23D' },
-        ],
-      ),
     ],
   };
 
