@@ -250,7 +250,7 @@
             ],
           },
           {
-            label: 'Online Books Drafts',
+            label: 'Online Textbooks',
             path: 'writing/books-overview.html',
             secondary: [
               {
