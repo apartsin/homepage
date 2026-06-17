@@ -263,6 +263,11 @@
                 cover: 'assets/writing/covers/visionbook-cover.jpg',
               },
               {
+                label: 'Building Scalable AI: From Big Data Algorithms to Distributed Intelligence',
+                path: 'https://scalablebook.apartsin.com/',
+                cover: 'assets/writing/covers/scalablebook-cover.jpg',
+              },
+              {
                 label: 'Building Temporal AI: From Forecasting to Sequential Decision Making',
                 path: 'http://temporalbook.apartsin.com/',
                 cover: 'assets/writing/covers/temporalbook-cover.jpg',

@@ -27,9 +27,11 @@ window.HOS_COURSE_SYLLABI = [
     image: "../assets/courses/hos-series/bigdata-course/img-012-scalable-ai-gemini.png",
     imageAlt: "Building Scalable AI with Big Data and Distributed AI",
     badge: "Updated",
+    bookLink: "https://scalablebook.apartsin.com/",
     titleHtml: "<span class=\"hos-course-title__line\">Building <span class=\"hos-course-title__focus\">Scalable AI</span> with</span><span class=\"hos-course-title__line\"><span class=\"hos-course-title__detail\">Big Data and Distributed Intelligence</span></span>",
     links: [
       { label: "Syllabus", href: "../courses/hos/series/scalable-ai.html" },
+      { label: "Textbook", href: "https://scalablebook.apartsin.com/" },
       { label: "Course Offerings", href: "../teaching/hands-on-ai-science-courses-past-offerings.html?type=scalable-ai" }
     ]
   },
