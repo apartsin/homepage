@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Book APK Downloads | Sasha Apartsin</title>
+  <style>
+    :root {
+      --bg: #f7f2ea;
+      --surface: rgba(255, 253, 248, 0.92);
+      --surface-strong: #fffdf8;
+      --text: #17202a;
+      --muted: #5d6875;
+      --accent: #8b6b3d;
+      --accent-deep: #1d4655;
+      --border: rgba(23, 32, 42, 0.12);
+      --shadow: 0 22px 48px rgba(23, 32, 42, 0.08);
+      --radius: 22px;
+      --radius-sm: 14px;
+      --shell: min(1160px, calc(100vw - 2rem));
+      --font-body: "Segoe UI", "Aptos", sans-serif;
+      --font-head: "Bahnschrift", "Aptos Display", "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { min-height: 100%; }
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      background:
+        radial-gradient(circle at top right, rgba(139, 107, 61, 0.14), transparent 28%),
+        linear-gradient(180deg, #fbf8f2, var(--bg));
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    .shell { width: var(--shell); margin: 0 auto; }
+
+    .hero {
+      padding: 3rem 0 1.5rem;
+    }
+    .hero__panel {
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+    .eyebrow {
+      margin: 0 0 0.6rem;
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3 { margin: 0; font-family: var(--font-head); line-height: 1.08; }
+    h1 { font-size: clamp(2.2rem, 5vw, 4.4rem); max-width: 12ch; }
+    .lede {
+      max-width: 72ch;
+      margin: 1rem 0 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+    .note {
+      margin-top: 1rem;
+      padding: 0.85rem 1rem;
+      border-left: 4px solid var(--accent-deep);
+      background: rgba(29, 70, 85, 0.06);
+      border-radius: 0 12px 12px 0;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      padding-bottom: 2.5rem;
+    }
+    .card {
+      display: grid;
+      grid-template-columns: 124px minmax(0, 1fr);
+      gap: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface-strong);
+      box-shadow: var(--shadow);
+    }
+    .cover {
+      width: 124px;
+      min-height: 184px;
+      aspect-ratio: 2 / 3;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(23, 32, 42, 0.16);
+    }
+    .meta {
+      display: grid;
+      gap: 0.55rem;
+      min-width: 0;
+      align-content: start;
+    }
+    .kicker {
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .title {
+      font-size: 1.18rem;
+    }
+    .desc {
+      margin: 0;
+      color: var(--muted);
+    }
+    .file {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      width: fit-content;
+      padding: 0.28rem 0.62rem;
+      border-radius: 999px;
+      background: rgba(139, 107, 61, 0.1);
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.25rem;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.78rem 1rem;
+      border-radius: 999px;
+      background: var(--accent-deep);
+      color: #f9f6ef;
+      font-weight: 700;
+    }
+    .button--secondary {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    @media (max-width: 860px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .hero { padding-top: 1rem; }
+      .card { grid-template-columns: 1fr; }
+      .cover { width: 100%; min-height: 0; aspect-ratio: 16 / 10; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div class="hero__panel">
+        <p class="eyebrow">Books APKs</p>
+        <h1>Direct downloads for the four book apps.</h1>
+        <p class="lede">
+          This page is intentionally unlisted and works directly from disk. The APK files live in the local <code>book</code> folder, so each button downloads the matching file without any backend.
+        </p>
+        <p class="note">
+          If you move the folder, keep the <code>book</code> directory next to this page so the links remain valid.
+        </p>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="Book APK downloads">
+      <article class="card">
+        <img class="cover" src="./assets/writing/covers/llmbook-cover.jpg" alt="Cover of Building Language AI">
+        <div class="meta">
+          <p class="kicker">Language AI</p>
+          <h2 class="title">Building Language AI</h2>
+          <p class="desc">Android package for the language-model book.</p>
+          <div class="file">llmbook.apk</div>
+          <div class="actions">
+            <a class="button" href="./book/llmbook.apk" download="llmbook.apk">Download APK</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="cover" src="./assets/writing/covers/visionbook-cover.jpg" alt="Cover of Building Vision AI">
+        <div class="meta">
+          <p class="kicker">Vision AI</p>
+          <h2 class="title">Building Vision AI</h2>
+          <p class="desc">Android package for the vision-model book.</p>
+          <div class="file">visionbook.apk</div>
+          <div class="actions">
+            <a class="button" href="./book/visionbook.apk" download="visionbook.apk">Download APK</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="cover" src="./assets/writing/covers/scalablebook-cover.jpg" alt="Cover of Building Scalable AI">
+        <div class="meta">
+          <p class="kicker">Scalable AI</p>
+          <h2 class="title">Building Scalable AI</h2>
+          <p class="desc">Android package for the distributed-systems book.</p>
+          <div class="file">scalablebook.apk</div>
+          <div class="actions">
+            <a class="button" href="./book/scalablebook.apk" download="scalablebook.apk">Download APK</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="cover" src="./assets/writing/covers/temporalbook-cover.jpg" alt="Cover of Building Temporal AI">
+        <div class="meta">
+          <p class="kicker">Temporal AI</p>
+          <h2 class="title">Building Temporal AI</h2>
+          <p class="desc">Android package for the temporal-model book.</p>
+          <div class="file">temporalbook.apk</div>
+          <div class="actions">
+            <a class="button" href="./book/temporalbook.apk" download="temporalbook.apk">Download APK</a>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
