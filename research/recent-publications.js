@@ -24,7 +24,13 @@
   });
 
   typeOrder.forEach(function (type) {
-    var items = grouped[type];
+    var items = grouped[type].slice().sort(function (a, b) {
+      var yearDiff = (b.year || 0) - (a.year || 0);
+      if (yearDiff !== 0) {
+        return yearDiff;
+      }
+      return String(a.title || "").localeCompare(String(b.title || ""));
+    });
     if (items.length === 0) {
       return;
     }
