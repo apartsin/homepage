@@ -15,7 +15,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2026-license-plate-recoverability",
     year: 2026,
-    type: "Submitted",
+    type: "Journal",
     title: "Mapping License Plate Recoverability Under Extreme Viewing Angles for Opportunistic Urban Sensing",
     authors: [
       { name: "I Adamenko", self: false },
@@ -23,8 +23,8 @@ window.RECENT_PUBLICATIONS = [
       { name: "Y Aperstein", self: false },
       { name: "A Apartsin", self: true }
     ],
-    venue: "arXiv preprint (arXiv:2604.23814)",
-    venueHref: "https://arxiv.org/abs/2604.23814"
+    venue: "AI (MDPI)",
+    venueHref: "https://www.mdpi.com/2673-2688/7/7/237"
   },
   {
     id: "pub-2026-spine-benchmark",
