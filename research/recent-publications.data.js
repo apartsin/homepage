@@ -82,14 +82,14 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2026-sea-alert",
     year: 2026,
-    type: "Submitted",
+    type: "Journal",
     title: "SeaAlert: Critical Information Extraction From Maritime Distress Communications with Large Language Models",
     authors: [
       { name: "T Atia", self: false },
       { name: "Y Aperstein", self: false },
       { name: "A Apartsin", self: true }
     ],
-    venue: "arXiv preprint (arXiv:2604.14163)",
+    venue: "IEEE Access",
     venueHref: "https://arxiv.org/abs/2604.14163"
   },
   {
