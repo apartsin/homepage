@@ -101,6 +101,9 @@
 
       var venue = document.createElement("p");
       venue.className = "pub-card__venue";
+      // Drop the trailing publisher tag (MDPI/Nature) from the visible link
+      // text; the publisher icon below still keys off the full pub.venue.
+      var displayVenue = (pub.venue || "").replace(/\s*\((?:MDPI|Nature)\)\s*$/i, "");
       if (pub.draftHref && pub.venueHref) {
         var repoA = document.createElement("a");
         repoA.href = pub.venueHref;
@@ -120,10 +123,10 @@
         a.href = pub.venueHref;
         a.target = "_blank";
         a.rel = "noopener noreferrer";
-        a.textContent = pub.venue;
+        a.textContent = displayVenue;
         venue.appendChild(a);
       } else {
-        venue.textContent = pub.venue;
+        venue.textContent = displayVenue;
       }
       li.appendChild(venue);
 
