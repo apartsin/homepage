@@ -10,7 +10,7 @@ window.RECENT_PUBLICATIONS = [
       { name: "A Apartsin", self: true }
     ],
     venue: "Machine Learning and Knowledge Extraction (MAKE) (MDPI)",
-    venueHref: "https://arxiv.org/abs/2605.06142"
+    venueHref: "https://www.mdpi.com/2504-4990/8/7/186"
   },
   {
     id: "pub-2026-license-plate-recoverability",
