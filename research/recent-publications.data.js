@@ -90,7 +90,7 @@ window.RECENT_PUBLICATIONS = [
       { name: "A Apartsin", self: true }
     ],
     venue: "IEEE Access",
-    venueHref: "https://arxiv.org/abs/2604.14163"
+    venueHref: "https://ieeexplore.ieee.org/document/11592329"
   },
   {
     id: "pub-2026-headline-rewriting",
