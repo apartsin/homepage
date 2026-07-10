@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <meta name="description" content="A five-attribute framework for assessing and strengthening advanced computer science electives.">
+  <title>Advanced CS Elective Framework | Sasha Apartsin</title>
+  <link rel="stylesheet" href="../shared/site-shell.css">
+  <link rel="stylesheet" href="../shared/unified-theme.css">
+  <style>
+    .framework-page {
+      display: grid;
+      gap: 16px;
+    }
+    .framework-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 240px) minmax(0, 1fr);
+      gap: 18px;
+      align-items: start;
+      padding: 18px;
+      border: 1px solid var(--site-border);
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(247, 248, 250, 0.96));
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.07);
+    }
+    .framework-hero__media {
+      margin: 0;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--site-border);
+    }
+    .framework-hero__media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .framework-hero__kicker {
+      margin: 0 0 8px;
+      color: #9c5a2e;
+      font: 800 0.78rem/1.2 "Manrope", sans-serif;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .framework-hero h1 {
+      margin: 0;
+      color: var(--site-text, #18202a);
+      font: 800 clamp(1.9rem, 4vw, 3rem)/1.08 "Manrope", sans-serif;
+      letter-spacing: -0.02em;
+    }
+    .framework-hero__lede {
+      margin: 12px 0 0;
+      color: var(--site-muted);
+      font: 600 1rem/1.65 "Manrope", "Segoe UI", sans-serif;
+      max-width: 78ch;
+    }
+    .framework-summary {
+      display: grid;
+      gap: 10px;
+      padding: 0 2px;
+    }
+    .framework-summary h2 {
+      margin: 0;
+      color: var(--site-text, #18202a);
+      font: 800 1.05rem/1.2 "Manrope", sans-serif;
+      letter-spacing: -0.01em;
+    }
+    .framework-summary p {
+      margin: 0;
+      color: var(--site-muted);
+      font: 600 0.95rem/1.65 "Manrope", "Segoe UI", sans-serif;
+      max-width: 78ch;
+    }
+    .framework-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    .framework-card {
+      position: relative;
+      display: grid;
+      gap: 10px;
+      padding: 16px;
+      border: 1px solid var(--site-border);
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+    }
+    .framework-card__num {
+      width: fit-content;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(24, 101, 168, 0.1);
+      color: #164a83;
+      font: 800 0.74rem/1 "Manrope", sans-serif;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .framework-card h2 {
+      margin: 0;
+      color: var(--site-text, #18202a);
+      font: 800 1.02rem/1.28 "Manrope", sans-serif;
+    }
+    .framework-card p {
+      margin: 0;
+      color: var(--site-muted);
+      font: 600 0.92rem/1.62 "Manrope", "Segoe UI", sans-serif;
+    }
+    .framework-card__missing {
+      padding-top: 6px;
+      border-top: 1px solid var(--site-border);
+    }
+    .framework-card__missing strong {
+      color: #164a83;
+    }
+    .framework-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .framework-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.72rem 1rem;
+      border-radius: 999px;
+      border: 1px solid var(--site-border);
+      background: #fff;
+      color: var(--site-text);
+      font: 700 0.9rem/1 "Manrope", sans-serif;
+      text-decoration: none;
+    }
+    .framework-link:hover {
+      border-color: rgba(24, 101, 168, 0.35);
+      color: #164a83;
+    }
+    @media (max-width: 760px) {
+      .framework-hero {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="teaching">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar">
+      <a class="apartsin-shell__brand" href="../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../index.html">About</a>
+        <a href="../research/research-focus.html">Research</a>
+        <a href="../teaching/overview.html">Teaching</a>
+        <a href="../work/overview.html">Building</a>
+        <a href="../work/innovation-overview.html">Innovations</a>
+        <a href="../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="advanced-cs-elective-framework-overview">
+          <h1 class="apartsin-sr-only">Advanced CS Elective Framework</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="./overview.html">Teaching</a>
+              <span aria-hidden="true">/</span>
+              <a href="./curriculum-development.html">Curriculum Development</a>
+              <span aria-hidden="true">/</span>
+              <strong>Advanced CS Elective Framework</strong>
+            </nav>
+          </div>
+          <div class="framework-page" style="margin-top: 18px;">
+            <div class="framework-hero">
+              <figure class="framework-hero__media">
+                <img src="../assets/heroes/teaching-curriculum.png" alt="Curriculum development visual">
+              </figure>
+              <div>
+                <p class="framework-hero__kicker">Curriculum Development</p>
+                <h1>Framework for Assessing Advanced Computer Science Electives</h1>
+                <p class="framework-hero__lede">
+                  Advanced CS electives are evaluated and strengthened through five attributes: academic depth, industry relevance, system building, technical communication, and subject consolidation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="framework-summary">
+          <h2>How to use this framework</h2>
+          <p>
+            Use it when reviewing a syllabus, revising an existing course, or comparing elective proposals. A strong elective does not optimize only for content coverage, it balances scientific depth, current tools, substantial projects, repeated presentation, and efficient consolidation of related topics.
+          </p>
+        </section>
+
+        <section class="framework-grid" aria-label="Framework attributes">
+          <article class="framework-card">
+            <span class="framework-card__num">1</span>
+            <h2>Academic Depth</h2>
+            <p>Provide academic depth through advanced scientific and engineering concepts, with enough rigor in models, algorithms, and design principles.</p>
+            <p class="framework-card__missing"><strong>What may be missing:</strong> the course may become tool driven, with platforms and demos taking priority over the underlying scientific and engineering ideas.</p>
+          </article>
+
+          <article class="framework-card">
+            <span class="framework-card__num">2</span>
+            <h2>Industry Relevance</h2>
+            <p>Ensure industry relevance by exposing students to modern tools, frameworks, libraries, datasets, and development environments used in professional practice.</p>
+            <p class="framework-card__missing"><strong>What may be missing:</strong> the course may rely on outdated tools or remain too theoretical to prepare students for contemporary engineering work.</p>
+          </article>
+
+          <article class="framework-card">
+            <span class="framework-card__num">3</span>
+            <h2>System Building</h2>
+            <p>Develop student system building skills through complex, novel projects that integrate advanced concepts and current tools to solve realistic problems.</p>
+            <p class="framework-card__missing"><strong>What may be missing:</strong> assignments may be exercise-like, trivial, or highly repeatable, so students can complete them by pattern matching instead of real integration work.</p>
+          </article>
+
+          <article class="framework-card">
+            <span class="framework-card__num">4</span>
+            <h2>Technical Communication</h2>
+            <p>Develop technical communication skills through iterative presentations, instructor feedback, and explicit defense of design decisions and tradeoffs.</p>
+            <p class="framework-card__missing"><strong>What may be missing:</strong> students may only submit code or a final report, with little chance to explain, defend, refine, and improve their work.</p>
+          </article>
+
+          <article class="framework-card">
+            <span class="framework-card__num">5</span>
+            <h2>Subject Consolidation</h2>
+            <p>Maximize learning efficiency by consolidating related topics into one course that covers a broad range of concepts without losing depth.</p>
+            <p class="framework-card__missing"><strong>What may be missing:</strong> the curriculum may fragment into many narrow electives, reducing breadth and limiting what students can master within available credits.</p>
+          </article>
+        </section>
+
+        <section class="section-quick-links" style="margin-top: 20px;">
+          <h2 class="section-quick-links__title">Related Links</h2>
+          <nav class="framework-links" aria-label="Related links">
+            <a class="framework-link" href="./curriculum-development.html">Curriculum Development</a>
+            <a class="framework-link" href="./overview.html">Teaching Overview</a>
+            <a class="framework-link" href="../work/innovation-first-learning.html">Innovation-First Learning</a>
+          </nav>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script defer src="../shared/unified-enhance.js"></script>
+  <script defer src="../shared/site-shell.js"></script>
+</body>
+</html>
