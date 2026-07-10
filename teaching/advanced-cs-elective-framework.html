@@ -7,11 +7,17 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
-  <meta name="description" content="A five-attribute framework for assessing and strengthening advanced computer science electives.">
-  <title>Advanced CS Elective Framework | Sasha Apartsin</title>
+  <meta name="description" content="A five-criteria framework for evaluating and strengthening advanced computer science electives.">
+  <title>Advanced CS Elective Design Principles | Sasha Apartsin</title>
   <link rel="stylesheet" href="../shared/site-shell.css">
   <link rel="stylesheet" href="../shared/unified-theme.css">
   <style>
+    .framework-layout {
+      display: grid;
+      gap: 18px;
+      margin-top: 18px;
+      padding-inline: clamp(6px, 1.5vw, 18px);
+    }
     .framework-page {
       display: grid;
       gap: 16px;
@@ -38,6 +44,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center;
     }
     .framework-hero__kicker {
       margin: 0 0 8px;
@@ -58,40 +65,77 @@
       font: 600 1rem/1.65 "Manrope", "Segoe UI", sans-serif;
       max-width: 78ch;
     }
-    .framework-summary {
+    .framework-intro {
       display: grid;
-      gap: 10px;
-      padding: 0 2px;
+      gap: 12px;
+      padding: 20px 22px 22px;
+      border: 1px solid var(--site-border);
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.95));
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.05);
     }
-    .framework-summary h2 {
+    .framework-intro__label {
+      margin: 0;
+      color: #9c5a2e;
+      font: 800 0.74rem/1.2 "Manrope", sans-serif;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .framework-intro h2 {
       margin: 0;
       color: var(--site-text, #18202a);
-      font: 800 1.05rem/1.2 "Manrope", sans-serif;
+      font: 800 1.1rem/1.2 "Manrope", sans-serif;
       letter-spacing: -0.01em;
     }
-    .framework-summary p {
+    .framework-intro p {
       margin: 0;
       color: var(--site-muted);
-      font: 600 0.95rem/1.65 "Manrope", "Segoe UI", sans-serif;
-      max-width: 78ch;
+      font: 600 0.97rem/1.7 "Manrope", "Segoe UI", sans-serif;
+      max-width: 82ch;
+    }
+    .framework-principles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 0;
+      margin: 2px 0 0;
+      list-style: none;
+    }
+    .framework-principles li {
+      padding: 0.44rem 0.75rem;
+      border: 1px solid rgba(24, 74, 131, 0.14);
+      border-radius: 999px;
+      background: rgba(24, 101, 168, 0.06);
+      color: #1d4f86;
+      font: 700 0.78rem/1.1 "Manrope", sans-serif;
     }
     .framework-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 14px;
+      gap: 16px;
     }
     .framework-card {
       position: relative;
       display: grid;
-      gap: 10px;
-      padding: 16px;
+      gap: 11px;
+      padding: 18px 18px 17px;
       border: 1px solid var(--site-border);
       border-radius: 16px;
       background: #fff;
       box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+      overflow: hidden;
+    }
+    .framework-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, rgba(157, 90, 46, 0.9), rgba(24, 101, 168, 0.8));
     }
     .framework-card__num {
       width: fit-content;
+      margin-top: 4px;
       padding: 4px 10px;
       border-radius: 999px;
       background: rgba(24, 101, 168, 0.1);
@@ -108,7 +152,7 @@
     .framework-card p {
       margin: 0;
       color: var(--site-muted);
-      font: 600 0.92rem/1.62 "Manrope", "Segoe UI", sans-serif;
+      font: 600 0.94rem/1.66 "Manrope", "Segoe UI", sans-serif;
     }
     .framework-card__missing {
       padding-top: 6px;
@@ -142,6 +186,12 @@
       .framework-hero {
         grid-template-columns: 1fr;
       }
+      .framework-layout {
+        padding-inline: 0;
+      }
+      .framework-intro {
+        padding: 18px 16px 18px;
+      }
     }
   </style>
 </head>
@@ -162,7 +212,7 @@
     <div class="apartsin-shell__content">
       <main class="apartsin-shell__main">
         <section class="apartsin-page-header apartsin-page-header--standard" id="advanced-cs-elective-framework-overview">
-          <h1 class="apartsin-sr-only">Advanced CS Elective Framework</h1>
+          <h1 class="apartsin-sr-only">Advanced CS Elective Design Principles</h1>
           <div class="apartsin-page-header__top">
             <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
               <a href="../index.html">Home</a>
@@ -171,30 +221,39 @@
               <span aria-hidden="true">/</span>
               <a href="./curriculum-development.html">Curriculum Development</a>
               <span aria-hidden="true">/</span>
-              <strong>Advanced CS Elective Framework</strong>
+              <strong>Advanced CS Elective Design Principles</strong>
             </nav>
           </div>
-          <div class="framework-page" style="margin-top: 18px;">
+          <div class="framework-layout">
             <div class="framework-hero">
               <figure class="framework-hero__media">
                 <img src="../assets/heroes/teaching-curriculum.png" alt="Curriculum development visual">
               </figure>
               <div>
                 <p class="framework-hero__kicker">Curriculum Development</p>
-                <h1>Framework for Assessing Advanced Computer Science Electives</h1>
+                <h1>Five Criteria for Strong CS Electives</h1>
                 <p class="framework-hero__lede">
-                  Advanced CS electives are evaluated and strengthened through five attributes: academic depth, industry relevance, system building, technical communication, and subject consolidation.
+                  A practical review lens for advanced CS electives, focused on academic depth, current tools, substantial projects, iterative presentation, and topic consolidation.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        <section class="framework-summary">
-          <h2>How to use this framework</h2>
+        <div class="framework-layout">
+        <section class="framework-intro">
+          <p class="framework-intro__label">How to use these principles</p>
+          <h2>Use the five criteria as a design check, not a checklist.</h2>
           <p>
-            Use it when reviewing a syllabus, revising an existing course, or comparing elective proposals. A strong elective does not optimize only for content coverage, it balances scientific depth, current tools, substantial projects, repeated presentation, and efficient consolidation of related topics.
+            Use it when reviewing a syllabus, revising an existing course, or comparing elective proposals. Strong electives balance scientific depth, current tools, substantial projects, iterative presentation, and efficient topic consolidation.
           </p>
+          <ul class="framework-principles" aria-label="Framework priorities">
+            <li>Academic depth</li>
+            <li>Industry relevance</li>
+            <li>System building</li>
+            <li>Technical communication</li>
+            <li>Subject consolidation</li>
+          </ul>
         </section>
 
         <section class="framework-grid" aria-label="Framework attributes">
@@ -242,6 +301,7 @@
             <a class="framework-link" href="../work/innovation-first-learning.html">Innovation-First Learning</a>
           </nav>
         </section>
+        </div>
       </main>
     </div>
   </div>
