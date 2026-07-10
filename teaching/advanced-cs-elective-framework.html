@@ -118,7 +118,7 @@
       position: relative;
       display: grid;
       gap: 11px;
-      padding: 18px 18px 17px;
+      padding: 22px 18px 17px;
       border: 1px solid var(--site-border);
       border-radius: 16px;
       background: #fff;
@@ -135,7 +135,7 @@
     }
     .framework-card__num {
       width: fit-content;
-      margin-top: 4px;
+      margin-top: 2px;
       padding: 4px 10px;
       border-radius: 999px;
       background: rgba(24, 101, 168, 0.1);
@@ -143,6 +143,49 @@
       font: 800 0.74rem/1 "Manrope", sans-serif;
       letter-spacing: 0.06em;
       text-transform: uppercase;
+    }
+    .framework-card__lang-switch {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      display: inline-flex;
+      gap: 4px;
+      z-index: 2;
+    }
+    .framework-card__lang-switch button {
+      padding: 0.34rem 0.55rem;
+      border: 1px solid var(--site-border);
+      border-radius: 999px;
+      background: #f8fafc;
+      color: #4a5d72;
+      font: 800 0.66rem/1 "Manrope", sans-serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 150ms ease, border-color 150ms ease, color 150ms ease;
+    }
+    .framework-card__lang-switch button:hover {
+      border-color: rgba(24, 101, 168, 0.25);
+      color: #164a83;
+    }
+    .framework-card__lang-switch button[aria-pressed="true"] {
+      background: #164a83;
+      border-color: #164a83;
+      color: #fff;
+    }
+    .framework-card__copy {
+      display: grid;
+      gap: 11px;
+    }
+    .framework-card__copy[lang="he"] {
+      direction: rtl;
+      text-align: right;
+    }
+    .framework-card[data-language="he"] .framework-card__copy[data-card-lang="en"] {
+      display: none;
+    }
+    .framework-card[data-language="en"] .framework-card__copy[data-card-lang="he"] {
+      display: none;
     }
     .framework-card h2 {
       margin: 0;
@@ -192,6 +235,10 @@
       .framework-intro {
         padding: 18px 16px 18px;
       }
+      .framework-card__lang-switch {
+        top: 10px;
+        right: 10px;
+      }
     }
   </style>
 </head>
@@ -240,71 +287,153 @@
           </div>
         </section>
 
-        <div class="framework-layout">
-        <section class="framework-intro">
-          <p class="framework-intro__label">How to use these principles</p>
-          <h2>Use the five criteria as a design check, not a checklist.</h2>
-          <p>
-            Use it when reviewing a syllabus, revising an existing course, or comparing elective proposals. Strong electives balance scientific depth, current tools, substantial projects, iterative presentation, and efficient topic consolidation.
-          </p>
-          <ul class="framework-principles" aria-label="Framework priorities">
-            <li>Academic depth</li>
-            <li>Industry relevance</li>
-            <li>System building</li>
-            <li>Technical communication</li>
-            <li>Subject consolidation</li>
-          </ul>
-        </section>
+          <div class="framework-layout">
+            <section class="framework-intro">
+              <p class="framework-intro__label">How to use these principles</p>
+              <h2>Use the five criteria as a design check, not a checklist.</h2>
+              <p>
+                Use it when reviewing a syllabus, revising an existing course, or comparing elective proposals. Strong electives balance scientific depth, current tools, substantial projects, iterative presentation, and efficient topic consolidation.
+              </p>
+              <ul class="framework-principles" aria-label="Framework priorities">
+                <li>Academic depth</li>
+                <li>Industry relevance</li>
+                <li>System building</li>
+                <li>Technical communication</li>
+                <li>Subject consolidation</li>
+              </ul>
+            </section>
 
-        <section class="framework-grid" aria-label="Framework attributes">
-          <article class="framework-card">
-            <span class="framework-card__num">1</span>
-            <h2>Academic Depth</h2>
-            <p>Provide academic depth through advanced scientific and engineering concepts, with enough rigor in models, algorithms, and design principles.</p>
-            <p class="framework-card__missing"><strong>What may be missing:</strong> the course may become tool driven, with platforms and demos taking priority over the underlying scientific and engineering ideas.</p>
-          </article>
+            <section class="framework-grid" aria-label="Framework attributes">
+              <article class="framework-card" data-language="en">
+                <span class="framework-card__lang-switch" role="group" aria-label="Language switch for academic depth card">
+                  <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+                  <button type="button" data-set-lang="he" aria-pressed="false">HE</button>
+                </span>
+                <span class="framework-card__num">1</span>
+                <div class="framework-card__copy" data-card-lang="en">
+                  <h2>Academic Depth</h2>
+                  <p>Provide academic depth through advanced scientific and engineering concepts, with enough rigor in models, algorithms, and design principles.</p>
+                  <p class="framework-card__missing"><strong>What may be missing:</strong> the course may become tool driven, with platforms and demos taking priority over the underlying scientific and engineering ideas.</p>
+                </div>
+                <div class="framework-card__copy" data-card-lang="he" lang="he" dir="rtl">
+                  <h2>עומק אקדמי</h2>
+                  <p>ספקו עומק אקדמי באמצעות מושגים מדעיים והנדסיים מתקדמים, עם דיוק מספק במודלים, באלגוריתמים ובעקרונות התכנון.</p>
+                  <p class="framework-card__missing"><strong>מה עלול להיות חסר:</strong> הקורס עלול להפוך לממוקד בכלים, כאשר פלטפורמות והדגמות מקבלות עדיפות על פני הרעיונות המדעיים וההנדסיים.</p>
+                </div>
+              </article>
 
-          <article class="framework-card">
-            <span class="framework-card__num">2</span>
-            <h2>Industry Relevance</h2>
-            <p>Ensure industry relevance by exposing students to modern tools, frameworks, libraries, datasets, and development environments used in professional practice.</p>
-            <p class="framework-card__missing"><strong>What may be missing:</strong> the course may rely on outdated tools or remain too theoretical to prepare students for contemporary engineering work.</p>
-          </article>
+              <article class="framework-card" data-language="en">
+                <span class="framework-card__lang-switch" role="group" aria-label="Language switch for industry relevance card">
+                  <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+                  <button type="button" data-set-lang="he" aria-pressed="false">HE</button>
+                </span>
+                <span class="framework-card__num">2</span>
+                <div class="framework-card__copy" data-card-lang="en">
+                  <h2>Industry Relevance</h2>
+                  <p>Ensure industry relevance by exposing students to modern tools, frameworks, libraries, datasets, and development environments used in professional practice.</p>
+                  <p class="framework-card__missing"><strong>What may be missing:</strong> the course may rely on outdated tools or remain too theoretical to prepare students for contemporary engineering work.</p>
+                </div>
+                <div class="framework-card__copy" data-card-lang="he" lang="he" dir="rtl">
+                  <h2>רלוונטיות לתעשייה</h2>
+                  <p>הבטיחו רלוונטיות לתעשייה באמצעות חשיפה לכלים, למסגרות עבודה, לספריות, למאגרי נתונים ולסביבות פיתוח מודרניות המשמשות בעבודה מקצועית.</p>
+                  <p class="framework-card__missing"><strong>מה עלול להיות חסר:</strong> הקורס עלול להישען על כלים מיושנים או להישאר תיאורטי מדי כדי להכין את הסטודנטים לעבודה הנדסית עכשווית.</p>
+                </div>
+              </article>
 
-          <article class="framework-card">
-            <span class="framework-card__num">3</span>
-            <h2>System Building</h2>
-            <p>Develop student system building skills through complex, novel projects that integrate advanced concepts and current tools to solve realistic problems.</p>
-            <p class="framework-card__missing"><strong>What may be missing:</strong> assignments may be exercise-like, trivial, or highly repeatable, so students can complete them by pattern matching instead of real integration work.</p>
-          </article>
+              <article class="framework-card" data-language="en">
+                <span class="framework-card__lang-switch" role="group" aria-label="Language switch for system building card">
+                  <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+                  <button type="button" data-set-lang="he" aria-pressed="false">HE</button>
+                </span>
+                <span class="framework-card__num">3</span>
+                <div class="framework-card__copy" data-card-lang="en">
+                  <h2>System Building</h2>
+                  <p>Develop student system building skills through complex, novel projects that integrate advanced concepts and current tools to solve realistic problems.</p>
+                  <p class="framework-card__missing"><strong>What may be missing:</strong> assignments may be exercise-like, trivial, or highly repeatable, so students can complete them by pattern matching instead of real integration work.</p>
+                </div>
+                <div class="framework-card__copy" data-card-lang="he" lang="he" dir="rtl">
+                  <h2>בניית מערכות</h2>
+                  <p>פתחו יכולת לבנות מערכות באמצעות פרויקטים מורכבים וחדשים המשלבים מושגים מתקדמים וכלים עדכניים לפתרון בעיות מציאותיות.</p>
+                  <p class="framework-card__missing"><strong>מה עלול להיות חסר:</strong> המטלות עלולות להיות תרגיליות, פשוטות או ניתנות לחזרה בקלות, כך שהסטודנטים יוכלו להשלים אותן באמצעות התאמת דפוסים במקום עבודת אינטגרציה אמיתית.</p>
+                </div>
+              </article>
 
-          <article class="framework-card">
-            <span class="framework-card__num">4</span>
-            <h2>Technical Communication</h2>
-            <p>Develop technical communication skills through iterative presentations, instructor feedback, and explicit defense of design decisions and tradeoffs.</p>
-            <p class="framework-card__missing"><strong>What may be missing:</strong> students may only submit code or a final report, with little chance to explain, defend, refine, and improve their work.</p>
-          </article>
+              <article class="framework-card" data-language="en">
+                <span class="framework-card__lang-switch" role="group" aria-label="Language switch for technical communication card">
+                  <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+                  <button type="button" data-set-lang="he" aria-pressed="false">HE</button>
+                </span>
+                <span class="framework-card__num">4</span>
+                <div class="framework-card__copy" data-card-lang="en">
+                  <h2>Technical Communication</h2>
+                  <p>Develop technical communication skills through iterative presentations, instructor feedback, and explicit defense of design decisions and tradeoffs.</p>
+                  <p class="framework-card__missing"><strong>What may be missing:</strong> students may only submit code or a final report, with little chance to explain, defend, refine, and improve their work.</p>
+                </div>
+                <div class="framework-card__copy" data-card-lang="he" lang="he" dir="rtl">
+                  <h2>תקשורת טכנית</h2>
+                  <p>פתחו מיומנויות תקשורת טכנית באמצעות מצגות חוזרות, משוב של המרצה, והצגה מפורשת של החלטות תכנון ופשרות.</p>
+                  <p class="framework-card__missing"><strong>מה עלול להיות חסר:</strong> הסטודנטים עלולים להגיש רק קוד או דו״ח סופי, עם מעט הזדמנויות להסביר, להגן, לחדד ולשפר את עבודתם.</p>
+                </div>
+              </article>
 
-          <article class="framework-card">
-            <span class="framework-card__num">5</span>
-            <h2>Subject Consolidation</h2>
-            <p>Maximize learning efficiency by consolidating related topics into one course that covers a broad range of concepts without losing depth.</p>
-            <p class="framework-card__missing"><strong>What may be missing:</strong> the curriculum may fragment into many narrow electives, reducing breadth and limiting what students can master within available credits.</p>
-          </article>
-        </section>
+              <article class="framework-card" data-language="en">
+                <span class="framework-card__lang-switch" role="group" aria-label="Language switch for subject consolidation card">
+                  <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+                  <button type="button" data-set-lang="he" aria-pressed="false">HE</button>
+                </span>
+                <span class="framework-card__num">5</span>
+                <div class="framework-card__copy" data-card-lang="en">
+                  <h2>Subject Consolidation</h2>
+                  <p>Maximize learning efficiency by consolidating related topics into one course that covers a broad range of concepts without losing depth.</p>
+                  <p class="framework-card__missing"><strong>What may be missing:</strong> the curriculum may fragment into many narrow electives, reducing breadth and limiting what students can master within available credits.</p>
+                </div>
+                <div class="framework-card__copy" data-card-lang="he" lang="he" dir="rtl">
+                  <h2>איחוד נושאים</h2>
+                  <p>מקסמו את יעילות הלמידה באמצעות איחוד נושאים קרובים לקורס אחד המכסה מגוון רחב של מושגים מבלי לאבד עומק.</p>
+                  <p class="framework-card__missing"><strong>מה עלול להיות חסר:</strong> תוכנית הלימודים עלולה להתפצל להרבה קורסים צרים, לצמצם את רוחב הידע ולהגביל את מה שניתן לשלוט בו במסגרת הנקודות הזמינות.</p>
+                </div>
+              </article>
+            </section>
 
-        <section class="section-quick-links" style="margin-top: 20px;">
-          <h2 class="section-quick-links__title">Related Links</h2>
-          <nav class="framework-links" aria-label="Related links">
-            <a class="framework-link" href="./curriculum-development.html">Curriculum Development</a>
-            <a class="framework-link" href="./overview.html">Teaching Overview</a>
-            <a class="framework-link" href="../work/innovation-first-learning.html">Innovation-First Learning</a>
-          </nav>
-        </section>
+            <section class="section-quick-links" style="margin-top: 20px;">
+              <h2 class="section-quick-links__title">Related Links</h2>
+              <nav class="framework-links" aria-label="Related links">
+                <a class="framework-link" href="./curriculum-development.html">Curriculum Development</a>
+                <a class="framework-link" href="./overview.html">Teaching Overview</a>
+                <a class="framework-link" href="../work/innovation-first-learning.html">Innovation-First Learning</a>
+              </nav>
+            </section>
         </div>
       </main>
     </div>
   </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.framework-card').forEach((card) => {
+        const buttons = Array.from(card.querySelectorAll('.framework-card__lang-switch button'));
+        if (buttons.length === 0) {
+          return;
+        }
+
+        const applyLanguage = (language) => {
+          const nextLanguage = language === 'he' ? 'he' : 'en';
+          card.dataset.language = nextLanguage;
+          buttons.forEach((button) => {
+            const active = (button.dataset.setLang || 'en') === nextLanguage;
+            button.setAttribute('aria-pressed', active ? 'true' : 'false');
+          });
+        };
+
+        applyLanguage(card.dataset.language || 'en');
+
+        buttons.forEach((button) => {
+          button.addEventListener('click', () => {
+            applyLanguage(button.dataset.setLang || 'en');
+          });
+        });
+      });
+    });
+  </script>
   <script defer src="../shared/unified-enhance.js"></script>
   <script defer src="../shared/site-shell.js"></script>
 </body>
