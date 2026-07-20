@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="he-IL" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <meta name="description" content="עשר תפיסות מוטעות שמגבילות את מה שסטודנטים מפיקים מקורס AI מבוסס פרויקטים. לכל אחת מצורף המשפט שחושף אותה והמציאות שאמורה להחליף אותה.">
+  <link rel="alternate" hreflang="he" href="./common-misconceptions-he.html">
+  <link rel="alternate" hreflang="en" href="./common-misconceptions.html">
+  <title>תפיסות מוטעות נפוצות | סשה אפרטסין</title>
+  <link rel="stylesheet" href="../../shared/site-shell.css">
+  <link rel="stylesheet" href="../../shared/unified-theme.css">
+  <style>
+    .misc-section-title {
+      margin: 34px 0 2px;
+      color: var(--site-text, #18202a);
+      font: 800 0.82rem/1.2 "Manrope", "Heebo", sans-serif;
+      letter-spacing: 0.06em;
+    }
+    .misc-section-title:first-of-type { margin-top: 10px; }
+    .misc-section-lede {
+      margin: 0 0 4px;
+      color: var(--site-muted);
+      font: 600 0.88rem/1.6 "Manrope", "Heebo", sans-serif;
+    }
+    .misc-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-auto-rows: 1fr;
+      gap: 14px;
+      margin-top: 14px;
+      align-items: stretch;
+    }
+    /* Two columns from ~720px, three columns from ~1080px. */
+    @media (min-width: 720px) {
+      .misc-list { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1080px) {
+      .misc-list { grid-template-columns: repeat(3, 1fr); }
+    }
+    .misc-card {
+      padding: 18px 20px;
+      border: 1px solid var(--site-border);
+      border-radius: 14px;
+      background: #fff;
+      position: relative;
+      overflow: hidden;
+      /* Four-row grid: index / title / body / callouts. The body row absorbs
+         the slack so the callout pills sit flush at the bottom of every card. */
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      row-gap: 8px;
+      text-align: right;
+    }
+    /* In RTL, the colored accent bar sits on the right (the natural start). */
+    .misc-card::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--mc-color, var(--site-accent));
+    }
+    /* Accent colour is set per theme group, so the three sections read as
+       distinct families rather than ten unrelated cards. */
+    .misc-list--signals .misc-card { --mc-color: #c2410c; }
+    .misc-list--project .misc-card { --mc-color: #164a83; }
+    .misc-list--learning .misc-card { --mc-color: #2e7d5a; }
+    .misc-card__index {
+      display: inline-block;
+      font: 900 0.78rem/1 "Manrope", "Heebo", sans-serif;
+      letter-spacing: 0.08em;
+      color: var(--mc-color, var(--site-accent));
+      margin: 0;
+    }
+    .misc-card__title {
+      margin: 0;
+      font: 800 1.08rem/1.35 "Manrope", "Heebo", sans-serif;
+      color: var(--site-text);
+      /* Force at least two lines so 1-line and 2-line titles take equal space,
+         keeping every card visually uniform across the grid. */
+      min-height: calc(2 * 1.35 * 1.08rem);
+    }
+    .misc-card__body {
+      margin: 0;
+      color: var(--site-text);
+      font-size: 0.94rem;
+      line-height: 1.6;
+      /* Equalize the body block so the callouts underneath always start at
+         the same vertical position across the row. */
+      min-height: 6.2em;
+    }
+    .misc-card__callouts {
+      display: grid;
+      /* Both callouts inside a card take equal vertical space. */
+      grid-template-rows: 1fr 1fr;
+      gap: 6px;
+    }
+    .misc-callout {
+      margin: 0;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font: 500 0.86rem/1.55 "Manrope", "Heebo", sans-serif;
+      /* Floor every callout to the same height so the Misconception and
+         Reality pills line up cleanly across all cards in the grid. */
+      min-height: 6.8em;
+      box-sizing: border-box;
+    }
+    .misc-callout__label {
+      display: inline-block;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      margin-left: 6px;
+    }
+    .misc-callout--false {
+      background: rgba(194, 65, 12, 0.06);
+      border: 1px solid rgba(194, 65, 12, 0.22);
+      color: #8a3309;
+    }
+    .misc-callout--false .misc-callout__label { color: #8a3309; }
+    .misc-callout--true {
+      background: rgba(46, 125, 90, 0.08);
+      border: 1px solid rgba(46, 125, 90, 0.22);
+      color: #1f5a40;
+    }
+    .misc-callout--true .misc-callout__label { color: #1f5a40; }
+    /* The giveaway line nested inside the misconception callout: the sentence
+       a student says out loud when holding this belief. */
+    .misc-callout__tell {
+      display: block;
+      margin-top: 6px;
+      font-size: 0.82rem;
+      font-style: italic;
+      color: rgba(138, 51, 9, 0.82);
+    }
+    /* Memorable maxim nested inside the reality callout, the green twin of
+       the giveaway line. */
+    .misc-callout__maxim {
+      display: block;
+      margin-top: 6px;
+      font-size: 0.82rem;
+      font-style: italic;
+      color: rgba(31, 90, 64, 0.85);
+    }
+    /* Keep the "Sounds like:" / "Mantra:" prefix upright and bold, so it
+       stands out from the italicized quote that follows it. */
+    .misc-callout__tell .misc-callout__label,
+    .misc-callout__maxim .misc-callout__label {
+      font-style: normal;
+    }
+    /* Two-tab language switcher: shows both EN and HE, current one filled. */
+    .guide-lang-switch {
+      display: inline-flex;
+      align-items: stretch;
+      border: 1px solid var(--site-border, rgba(24,32,42,0.18));
+      border-radius: 999px;
+      background: #fff;
+      overflow: hidden;
+      font: 800 0.72rem/1 "Manrope", sans-serif;
+      letter-spacing: 0.04em;
+    }
+    .guide-lang-switch__btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 14px;
+      color: var(--site-muted, #5a626c);
+      text-decoration: none;
+      transition: background 120ms ease, color 120ms ease;
+    }
+    .guide-lang-switch__btn:hover,
+    .guide-lang-switch__btn:focus-visible {
+      background: rgba(0, 0, 0, 0.05);
+      color: var(--site-text, #18202a);
+    }
+    .guide-lang-switch__btn.is-active {
+      background: var(--site-text, #18202a);
+      color: #fff;
+      cursor: default;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="teaching">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar" lang="en" dir="ltr">
+      <a class="apartsin-shell__brand" href="../../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../../index.html">About</a>
+        <a href="../../research/research-focus.html">Research</a>
+        <a href="../../teaching/overview.html">Teaching</a>
+        <a href="../../work/overview.html">Building</a>
+        <a href="../../work/innovation-overview.html">Innovations</a>
+        <a href="../../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="common-misconceptions-overview">
+          <h1 class="apartsin-sr-only">תפיסות מוטעות נפוצות</h1>
+          <div class="apartsin-page-header__top" dir="ltr">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb" lang="en" dir="ltr">
+              <a href="../../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="../overview.html">Teaching</a>
+              <span aria-hidden="true">/</span>
+              <a href="./index.html">Guides for Students</a>
+              <span aria-hidden="true">/</span>
+              <strong>Common Misconceptions (עברית)</strong>
+            </nav>
+            <div class="guide-lang-switch" role="group" aria-label="שפה">
+              <a class="guide-lang-switch__btn" href="./common-misconceptions.html" lang="en" hreflang="en">English</a>
+              <a class="guide-lang-switch__btn is-active" href="./common-misconceptions-he.html" lang="he" hreflang="he" aria-current="true">עברית</a>
+            </div>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../../assets/heroes/teaching-cs-courses.png" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">עשר אמונות שמגבילות בשקט את מה שסטודנטים מפיקים מקורס מבוסס פרויקטים. לכל אחת מצורף המשפט שחושף אותה והמציאות שאמורה להחליף אותה. אף אחת מהן אינה סימן לסטודנט חלש; אלו הנחות ברירת המחדל שהתואר, וכיום גם עוזר AI, מקלים מאוד לאחוז בהן.</p>
+          </div>
+        </section>
+
+        <h2 class="misc-section-title">1. עומק אינו מה שהוא נראה</h2>
+        <p class="misc-section-lede">שלושת הסימנים שמתבלבלים לרוב עם עומק הנדסי: מאמץ, demo שעובד, ושליטה שוטפת בשפה המקצועית.</p>
+        <section class="misc-list misc-list--signals" aria-label="תפיסות מוטעות בנוגע לעומק טכני">
+          <article class="misc-card" id="difficulty-is-not-depth">
+            <span class="misc-card__index">תפיסה מוטעית 1</span>
+            <h2 class="misc-card__title">אם היה קשה לבנות, זה עמוק</h2>
+            <p class="misc-card__body">מאמץ המימוש מודד חיכוך, לא תובנה. חיבור ממשקי API, התמודדות עם שגיאות סביבה ומרדף אחרי באגים בפריסה יכולים לבלוע שבועות שלמים מבלי לדרוש ולו החלטה הנדסית אחת לא טריוויאלית.</p>
+            <div class="misc-card__callouts">
+              <p class="misc-callout misc-callout--false"><span class="misc-callout__label">תפיסה מוטעית:</span> ככל שהיה קשה יותר לממש משהו, כך ההנדסה שמאחוריו עמוקה יותר. <span class="misc-callout__tell"><span class="misc-callout__label">נשמע כמו:</span> &rdquo;זה לקח לי שלושה שבועות, אז זה בטח מתקדם.&ldquo;</span></p>
+              <p class="misc-callout misc-callout--true"><span class="misc-callout__label">המציאות:</span> העומק נמצא בהחלטות שאתם יכולים להצדיק: האילוצים שזיהיתם, החלופות שפסלתם, והסיבה לכך. <span class="misc-callout__maxim"><span class="misc-callout__label">מנטרה:</span> &rdquo;מדדו עומק בהחלטות, לא בשעות.&ldquo;</span></p>
+            </div>
+          </article>
+
+          <article class="misc-card" id="demo-is-not-evidence">
+            <span class="misc-card__index">תפיסה מוטעית 2</span>
+            <h2 class="misc-card__title">demo שעובד מוכיח יכולת הנדסית</h2>
+            <p class="misc-card__body">כלים גנרטיביים מייצרים תוצרים מלוטשים ורצים בתוך אחר צהריים אחד. demo מראה שמשהו רץ. הוא אינו אומר דבר על היכולת שלכם להסביר אותו, להגן עליו, להרחיב אותו או לתקן אותו כשהוא נשבר.</p>
+            <div class="misc-card__callouts">
+              <p class="misc-callout misc-callout--false"><span class="misc-callout__label">תפיסה מוטעית:</span> אם ה-demo עובד, החלק ההנדסי הסתיים. <span class="misc-callout__tell"><span class="misc-callout__label">נשמע כמו:</span> &rdquo;תראו, זה רץ.&ldquo;</span></p>
+              <p class="misc-callout misc-callout--true"><span class="misc-callout__label">המציאות:</span> ההערכה שלכם נעשית על ההיגיון שמאחורי התוצר: למה התכנון הזה, הפרמטרים האלה, ההערכה הזו. <span class="misc-callout__maxim"><span class="misc-callout__label">מנטרה:</span> &rdquo;ה-demo הוא הראיה, לא הטיעון.&ldquo;</span></p>
+            </div>
+          </article>
+
+          <article class="misc-card" id="fluency-is-not-understanding">
+            <span class="misc-card__index">תפיסה מוטעית 3</span>
+            <h2 class="misc-card__title">להישמע טכני זה להבין</h2>
+            <p class="misc-card__body">קל לשחזר שפה מקצועית וקשה לזכות בה. לנקוב בשם של שיטה בשטף ולדעת לומר מה היא מניחה, מתי היא נכשלת ומה היא עולה הן יכולות שונות לחלוטין.</p>
+            <div class="misc-card__callouts">
+              <p class="misc-callout misc-callout--false"><span class="misc-callout__label">תפיסה מוטעית:</span> אם אני יודע לדבר על זה במונחים הנכונים, אני מבין את זה. <span class="misc-callout__tell"><span class="misc-callout__label">נשמע כמו:</span> &rdquo;השתמשנו בפונקציית מטרה קונטרסטיבית עם attention על ה-embeddings.&ldquo;</span></p>
+              <p class="misc-callout misc-callout--true"><span class="misc-callout__label">המציאות:</span> ההבנה מתגלה כשאתם מסבירים את הרעיון בפשטות, מנסחים את ההנחות שלו וחוזים היכן הוא נשבר. <span class="misc-callout__maxim"><span class="misc-callout__label">מנטרה:</span> &rdquo;אם אינכם יכולים לומר זאת בפשטות, אתם מצטטים ולא יודעים.&ldquo;</span></p>
+            </div>
+          </article>
+        </section>
+
+        <h2 class="misc-section-title">2. מיקום הפרויקט</h2>
+        <p class="misc-section-lede">היכן ממוקם הפרויקט ביחס לקורס, לספרות המקצועית ולעבודה שכבר קיימת.</p>
+        <section class="misc-list misc-list--project" aria-label="תפיסות מוטעות בנוגע לפרויקט">
+          <article class="misc-card" id="project-and-course">
+            <span class="misc-card__index">תפיסה מוטעית 4</span>
+            <h2 class="misc-card__title">הפרויקט עומד בנפרד מהקורס</h2>
+            <p class="misc-card__body">הפרויקט קיים כדי ליישם את מה שהקורס מלמד. פרויקט שאפשר היה לבנות עוד לפני ההרצאה הראשונה מדגים יוזמה, אבל הוא אינו מדגים למידה.</p>
+            <div class="misc-card__callouts">
+              <p class="misc-callout misc-callout--false"><span class="misc-callout__label">תפיסה מוטעית:</span> הפרויקט הוא תוצר עצמאי שפשוט צריך להגיש. <span class="misc-callout__tell"><span class="misc-callout__label">נשמע כמו:</span> &rdquo;לפרויקט אין שום קשר להרצאות.&ldquo;</span></p>
+              <p class="misc-callout misc-callout--true"><span class="misc-callout__label">המציאות:</span> השתמשו במושגים, בשיטות ובשפה של הקורס באופן מכוון, והפכו את הקשר הזה למפורש בעבודה שלכם. <span class="misc-callout__maxim"><span class="misc-callout__label">מנטרה:</span> &rdquo;בפרויקט הסילבוס הופך לשלכם.&ldquo;</span></p>
+            </div>
+          </article>
+
+          <article class="misc-card" id="novelty-requires-research">
+            <span class="misc-card__index">תפיסה מוטעית 5</span>
+            <h2 class="misc-card__title">אפשר לטעון לחדשנות אחרי חיפוש מהיר</h2>
+            <p class="misc-card__body">&rdquo;אף אחד לא עשה את זה&ldquo; היא טענה חזקה על החזית הטכנולוגית. כדי לזכות בה נדרש חיפוש אמיתי בספרות האקדמית, במאגרי קוד פתוח ובמוצרים שכבר יצאו לשוק, ולא שאילתה אחת וגלילה.</p>
+            <div class="misc-card__callouts">
+              <p class="misc-callout misc-callout--false"><span class="misc-callout__label">תפיסה מוטעית:</span> לא מצאתי את זה מהר, ולכן זה לא קיים. <span class="misc-callout__tell"><span class="misc-callout__label">נשמע כמו:</span> &rdquo;חיפשתי ולא מצאתי שום דבר דומה.&ldquo;</span></p>
+              <p class="misc-callout misc-callout--true"><span class="misc-callout__label">המציאות:</span> סקרו קודם את התחום, ואז מקמו את התרומה שלכם במדויק מול מה שמצאתם. <span class="misc-callout__maxim"><span class="misc-callout__label">מנטרה:</span> &rdquo;חדשנות היא מה ששורד חיפוש אמיתי.&ldquo;</span></p>
+            </div>
+          </article>
+
+          <article class="misc-card" id="build-on-existing-work">
+            <span class="misc-card__index">תפיסה מוטעית 6</span>
+            <h2 class="misc-card__title">בנייה מאפס מעידה על יכולת גדולה יותר</h2>
+            <p class="misc-card__body">התחלה מאפס היא בדרך כלל עלות, לא מעלה. מודלים מבוססים, ספריות, מאגרי נתונים, benchmarks והשיטות מהקורס הם בסיס הייחוס שאתם אמורים לעמוד עליו.</p>
+            <div class="misc-card__callouts">
+              <p class="misc-callout misc-callout--false"><span class="misc-callout__label">תפיסה מוטעית:</span> כתיבה עצמאית של כל רכיב מוכיחה יותר יכולת מאשר שימוש חוזר בקיים. <span class="misc-callout__tell"><span class="misc-callout__label">נשמע כמו:</span> &rdquo;רציתי לבנות את הכול בעצמי.&ldquo;</span></p>
+              <p class="misc-callout misc-callout--true"><span class="misc-callout__label">המציאות:</span> עשו שימוש חוזר באופן מכוון, ואז השקיעו את המאמץ בחלק האחד שהוא באמת שלכם. <span class="misc-callout__maxim"><span class="misc-callout__label">מנטרה:</span> &rdquo;זכו במקוריות שלכם היכן שהיא באמת נחשבת.&ldquo;</span></p>
+            </div>
+          </article>
+        </section>
+
+        <h2 class="misc-section-title">3. איך למידה באמת עובדת</h2>
+        <p class="misc-section-lede">מה לעשות עם בלבול, עם הזמן בכיתה, עם עוזר AI, ועם הפערים שאתם כבר יודעים שקיימים אצלכם.</p>
+        <section class="misc-list misc-list--learning" aria-label="תפיסות מוטעות בנוגע ללמידה">
+          <article class="misc-card" id="confusion-is-a-defect">
+            <span class="misc-card__index">תפיסה מוטעית 7</span>
+            <h2 class="misc-card__title">להישאר מבולבלים זה חלק מהנושא</h2>
+            <p class="misc-card__body">תחושה מעורפלת ומתמשכת סביב מושג היא מידע: המודל המנטלי אינו שלם. אם משאירים אותה כך, הערפול הזה הופך לתשתית של כל מה שנבנה מעליו.</p>
+            <div class="misc-card__callouts">
+              <p class="misc-callout misc-callout--false"><span class="misc-callout__label">תפיסה מוטעית:</span> תחושת חוסר ודאות קבועה לגבי הרעיונות המרכזיים היא דבר נורמלי כאן. <span class="misc-callout__tell"><span class="misc-callout__label">נשמע כמו:</span> &rdquo;אף אחד לא באמת מבין את החלק הזה בכל מקרה.&ldquo;</span></p>
+              <p class="misc-callout misc-callout--true"><span class="misc-callout__label">המציאות:</span> התייחסו לכל בלבול מתמשך כאל תקלה שיש לתקן, עד שתוכלו להסביר את המושג ללא גמגום. <span class="misc-callout__maxim"><span class="misc-callout__label">מנטרה:</span> &rdquo;ערפול הוא דוח באג.&ldquo;</span></p>
+            </div>
+          </article>
+
+          <article class="misc-card" id="course-is-a-conversation">
+            <span class="misc-card__index">תפיסה מוטעית 8</span>
+            <h2 class="misc-card__title">ללמוד קורס זה לצרוך את התוכן שלו</h2>
+            <p class="misc-card__body">שקפים, הקלטות וסיכומים הם החלק הכי בר-החלפה בקורס; תוכן שקול זמין בכל מקום. מה שאי אפשר להשיג במקום אחר הוא התשאול, הוויכוח והמשוב הישיר על העבודה שלכם.</p>
+            <div class="misc-card__callouts">
+              <p class="misc-callout misc-callout--false"><span class="misc-callout__label">תפיסה מוטעית:</span> אם עברתי על כל החומר, למדתי את הקורס. <span class="misc-callout__tell"><span class="misc-callout__label">נשמע כמו:</span> &rdquo;אני פשוט אצפה בהקלטות אחר כך.&ldquo;</span></p>
+              <p class="misc-callout misc-callout--true"><span class="misc-callout__label">המציאות:</span> שאלו, אתגרו, הציגו ואספו ביקורת כל עוד יש לכם גישה לאנשים שיכולים לתת אותה. <span class="misc-callout__maxim"><span class="misc-callout__label">מנטרה:</span> &rdquo;תוכן יש בכל מקום. משוב אין.&ldquo;</span></p>
+            </div>
+          </article>
+
+          <article class="misc-card" id="ai-as-critic">
+            <span class="misc-card__index">תפיסה מוטעית 9</span>
+            <h2 class="misc-card__title">AI הוא כלי לייצור עבודה</h2>
+            <p class="misc-card__body">ייצור תוכן הוא הדבר הכי פחות מעניין שמודל חזק יודע לעשות. אותו כלי ינתח בביקורתיות את התכנון שלכם, יחשוף מצבי כשל, יטען את הטענה הנגדית וימצא את החור בהערכה שלכם, אבל רק אם תבקשו ממנו.</p>
+            <div class="misc-card__callouts">
+              <p class="misc-callout misc-callout--false"><span class="misc-callout__label">תפיסה מוטעית:</span> מטרתו של עוזר AI היא לייצר את התוצר מהר יותר. <span class="misc-callout__tell"><span class="misc-callout__label">נשמע כמו:</span> &rdquo;תכתוב לי את החלק הזה.&ldquo;</span></p>
+              <p class="misc-callout misc-callout--true"><span class="misc-callout__label">המציאות:</span> הפכו את המודל למבקר הקשוח ביותר שלכם, לפני שאדם ייקח את התפקיד הזה. <span class="misc-callout__maxim"><span class="misc-callout__label">מנטרה:</span> &rdquo;בקשו ממנו לשבור את העבודה שלכם, לא רק לבנות אותה.&ldquo;</span></p>
+            </div>
+          </article>
+
+          <article class="misc-card" id="close-gaps-immediately">
+            <span class="misc-card__index">תפיסה מוטעית 10</span>
+            <h2 class="misc-card__title">אפשר לסגור פערים בהמשך</h2>
+            <p class="misc-card__body">פער שלא נסגר רק לעיתים נדירות נשאר פער בודד. החומר שבא אחריו מניח אותו, ולכן העלות של השארתו פתוח מצטברת מדי שבוע עד שהנושא הופך לבלתי מושג בלי לחזור אחורה.</p>
+            <div class="misc-card__callouts">
+              <p class="misc-callout misc-callout--false"><span class="misc-callout__label">תפיסה מוטעית:</span> אפשר להשלים את החלקים החסרים בסוף, כשיהיה זמן. <span class="misc-callout__tell"><span class="misc-callout__label">נשמע כמו:</span> &rdquo;אני אבין את זה לפני המבחן.&ldquo;</span></p>
+              <p class="misc-callout misc-callout--true"><span class="misc-callout__label">המציאות:</span> סגרו את הפער באותו שבוע שבו גיליתם אותו, בעזרת סיכומים, מקורות, עמיתים ו-AI כמורה פרטי זמין. <span class="misc-callout__maxim"><span class="misc-callout__label">מנטרה:</span> &rdquo;חוב מצטבר. שלמו אותו באותו שבוע.&ldquo;</span></p>
+            </div>
+          </article>
+        </section>
+
+      <section class="section-quick-links">
+        <h2 class="section-quick-links__title">קישורים מהירים</h2>
+        <nav class="section-quick-links__grid" aria-label="קישורים מהירים">
+          <a class="section-quick-link" href="./advice-to-students-2026.html">
+            <span class="section-quick-link__badge" style="background: #c2410c;">A</span>
+            עצות לסטודנטים
+          </a>
+          <a class="section-quick-link" href="../hands-on-ai-science-courses-courses.html">
+            <span class="section-quick-link__badge" style="background: #1d4ed8;">C</span>
+            סילבוסים של קורסים
+          </a>
+          <a class="section-quick-link" href="../../work/innovation-first-learning.html">
+            <span class="section-quick-link__badge" style="background: #2e7d5a;">I</span>
+            למידה מונחית חדשנות
+          </a>
+        </nav>
+      </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../../shared/unified-enhance.js"></script>
+  <script defer src="../../shared/site-shell.js"></script>
+</body>
+</html>

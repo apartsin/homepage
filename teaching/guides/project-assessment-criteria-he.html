@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="he-IL" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <meta name="description" content="קריטריונים להערכת פרויקטים של סטודנטים: חמשת הממדים שעל פיהם נשפט פרויקט, מה מצופה בכל אחד מהם, והאנטי-דפוסים המחלישים אותו.">
+  <link rel="alternate" hreflang="he" href="./project-assessment-criteria-he.html">
+  <link rel="alternate" hreflang="en" href="./project-assessment-criteria.html">
+  <title>קריטריונים להערכת פרויקטים | סשה אפרטסין</title>
+  <link rel="stylesheet" href="../../shared/site-shell.css">
+  <link rel="stylesheet" href="../../shared/unified-theme.css">
+  <style>
+    .assess-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 18px;
+    }
+    /* These criteria carry both an expectations list and an anti-pattern list,
+       so they stay full width on small screens and pair up only when wide. */
+    @media (min-width: 1080px) {
+      .assess-list { grid-template-columns: repeat(2, 1fr); }
+    }
+    .assess-card {
+      padding: 20px 22px;
+      border: 1px solid var(--site-border);
+      border-radius: 14px;
+      background: #fff;
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: auto auto auto 1fr auto;
+      row-gap: 10px;
+      text-align: right;
+    }
+    /* In RTL, the colored accent bar sits on the right (the natural start). */
+    .assess-card::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--as-color, var(--site-accent));
+    }
+    .assess-card:nth-child(1) { --as-color: #c2410c; }
+    .assess-card:nth-child(2) { --as-color: #164a83; }
+    .assess-card:nth-child(3) { --as-color: #7a3fa0; }
+    .assess-card:nth-child(4) { --as-color: #2e7d5a; }
+    .assess-card:nth-child(5) { --as-color: #9c5a2e; }
+    .assess-card__index {
+      display: inline-block;
+      font: 900 0.78rem/1 "Manrope", "Heebo", sans-serif;
+      letter-spacing: 0.08em;
+      color: var(--as-color, var(--site-accent));
+      margin: 0;
+    }
+    .assess-card__title {
+      margin: 0;
+      font: 800 1.12rem/1.35 "Manrope", "Heebo", sans-serif;
+      color: var(--site-text);
+    }
+    .assess-card__body {
+      margin: 0;
+      color: var(--site-text);
+      font-size: 0.93rem;
+      line-height: 1.65;
+    }
+    .assess-expect {
+      margin: 0;
+      padding: 10px 12px 10px 14px;
+      border-radius: 8px;
+      background: rgba(46, 125, 90, 0.07);
+      border: 1px solid rgba(46, 125, 90, 0.2);
+      color: #1f5a40;
+    }
+    .assess-expect__label,
+    .assess-anti__label {
+      display: block;
+      font: 800 0.76rem/1.2 "Manrope", "Heebo", sans-serif;
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+    }
+    .assess-expect__label { color: #1f5a40; }
+    .assess-anti {
+      margin: 0;
+      padding: 10px 12px 10px 14px;
+      border-radius: 8px;
+      background: rgba(194, 65, 12, 0.06);
+      border: 1px solid rgba(194, 65, 12, 0.22);
+      color: #8a3309;
+    }
+    .assess-anti__label { color: #8a3309; }
+    .assess-expect ul,
+    .assess-anti ul {
+      margin: 0;
+      padding-right: 16px;
+      list-style: disc;
+    }
+    .assess-expect li,
+    .assess-anti li {
+      font: 500 0.85rem/1.65 "Manrope", "Heebo", sans-serif;
+      margin: 0 0 4px;
+    }
+    .assess-expect li:last-child,
+    .assess-anti li:last-child { margin-bottom: 0; }
+    .assess-card__note {
+      margin: 0;
+      color: var(--site-muted);
+      font: 600 0.86rem/1.65 "Manrope", "Heebo", sans-serif;
+    }
+    /* Two-tab language switcher: shows both EN and HE, current one filled. */
+    .guide-lang-switch {
+      display: inline-flex;
+      align-items: stretch;
+      border: 1px solid var(--site-border, rgba(24,32,42,0.18));
+      border-radius: 999px;
+      background: #fff;
+      overflow: hidden;
+      font: 800 0.72rem/1 "Manrope", sans-serif;
+      letter-spacing: 0.04em;
+    }
+    .guide-lang-switch__btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 14px;
+      color: var(--site-muted, #5a626c);
+      text-decoration: none;
+      transition: background 120ms ease, color 120ms ease;
+    }
+    .guide-lang-switch__btn:hover,
+    .guide-lang-switch__btn:focus-visible {
+      background: rgba(0, 0, 0, 0.05);
+      color: var(--site-text, #18202a);
+    }
+    .guide-lang-switch__btn.is-active {
+      background: var(--site-text, #18202a);
+      color: #fff;
+      cursor: default;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="teaching">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar" lang="en" dir="ltr">
+      <a class="apartsin-shell__brand" href="../../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../../index.html">About</a>
+        <a href="../../research/research-focus.html">Research</a>
+        <a href="../../teaching/overview.html">Teaching</a>
+        <a href="../../work/overview.html">Building</a>
+        <a href="../../work/innovation-overview.html">Innovations</a>
+        <a href="../../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="project-assessment-overview">
+          <h1 class="apartsin-sr-only">קריטריונים להערכת פרויקטים</h1>
+          <div class="apartsin-page-header__top" dir="ltr">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb" lang="en" dir="ltr">
+              <a href="../../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="../overview.html">Teaching</a>
+              <span aria-hidden="true">/</span>
+              <a href="./index.html">Guides for Students</a>
+              <span aria-hidden="true">/</span>
+              <strong>Project Assessment Criteria (עברית)</strong>
+            </nav>
+            <div class="guide-lang-switch" role="group" aria-label="שפה">
+              <a class="guide-lang-switch__btn" href="./project-assessment-criteria.html" lang="en" hreflang="en">English</a>
+              <a class="guide-lang-switch__btn is-active" href="./project-assessment-criteria-he.html" lang="he" hreflang="he" aria-current="true">עברית</a>
+            </div>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../../assets/heroes/teaching-hos-offerings.png" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">קריטריונים להערכת פרויקטים של סטודנטים. חמשת הממדים שעל פיהם נשפט פרויקט, מה מצופה בכל אחד מהם בפועל, והאנטי-דפוסים שמחלישים אותו לרוב. לרשימת הדרישות המפורטת, סעיף אחר סעיף, ראו <a href="./project-requirements.html">דרישות הפרויקט</a>.</p>
+          </div>
+        </section>
+
+        <section class="assess-list" aria-label="קריטריוני הערכה">
+          <article class="assess-card" id="problem-domain-understanding">
+            <span class="assess-card__index">קריטריון 1</span>
+            <h2 class="assess-card__title">הפגנת הבנה של תחום הבעיה</h2>
+            <p class="assess-card__body">על הסטודנטים לפתח מומחיות של ממש בתחום הפרויקט. הניתוח צריך לחרוג מהתרשמויות שכל אדם יכול להגיע אליהן, ולהישען על מחקר, מקורות מקצועיים וספרות רלוונטית.</p>
+            <div class="assess-expect">
+              <span class="assess-expect__label">על הסטודנטים להבין בבירור</span>
+              <ul>
+                <li>את מקרה השימוש המעשי ואת הבעיה שבה מטפלים.</li>
+                <li>את הערך שבפתרון הבעיה.</li>
+                <li>את המשתמשים, בעלי העניין והאילוצים התפעוליים הרלוונטיים.</li>
+                <li>פתרונות, שיטות ומגבלות קיימים.</li>
+              </ul>
+            </div>
+            <div class="assess-anti">
+              <span class="assess-anti__label">אנטי-דפוסים</span>
+              <ul>
+                <li>הבנה שטחית של הבעיה.</li>
+                <li>מוטיבציה שנשענת על טרנדים כלליים בבינה מלאכותית במקום על צורך אמיתי של משתמש.</li>
+                <li>התייחסות מועטה או היעדר התייחסות לפתרונות קיימים.</li>
+                <li>שימוש שגוי או לא עקבי במונחי התחום.</li>
+                <li>מטרות פרויקט מעורפלות או מנותקות מהבעיה עצמה.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="assess-card" id="explore-solution-space">
+            <span class="assess-card__index">קריטריון 2</span>
+            <h2 class="assess-card__title">חקירה מעמיקה של מרחב הפתרונות</h2>
+            <p class="assess-card__body">על הסטודנטים לחקור לעומק את מרחב הפתרונות האפשריים, ולא לבחור מיד בגישה הראשונה שנראית ישימה.</p>
+            <div class="assess-expect">
+              <span class="assess-expect__label">על הפרויקט להדגים</span>
+              <ul>
+                <li>היכרות עם מודלים, שיטות וטכנולוגיות בחזית הידע.</li>
+                <li>השוואה בין גישות פתרון חלופיות.</li>
+                <li>מיפוי ברור בין דרישות תחום הבעיה לבין החלטות התכן הטכניות.</li>
+                <li>בחירה מנומקת היטב של מודלים, ארכיטקטורות, כלים ורכיבי מערכת.</li>
+                <li>הבנה של היתרונות, המגבלות והפשרות (trade-offs) של הפתרון שנבחר.</li>
+              </ul>
+            </div>
+            <div class="assess-anti">
+              <span class="assess-anti__label">אנטי-דפוסים</span>
+              <ul>
+                <li>בחירה במודל או ב-framework הראשון ללא הצדקה.</li>
+                <li>תכן שמונע מהטכנולוגיה במקום מהבעיה.</li>
+                <li>היעדר השוואה לגישות חלופיות.</li>
+                <li>החלטות תכן שנשענות על פופולריות או היכרות מוקדמת במקום על הדרישות.</li>
+                <li>מיפוי לא עקבי בין מאפייני הבעיה לבין הבחירות הטכניות.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="assess-card" id="novelty-and-reuse">
+            <span class="assess-card__index">קריטריון 3</span>
+            <h2 class="assess-card__title">הבטחת חדשנות ושימוש חוזר יעיל</h2>
+            <p class="assess-card__body">הפרויקט צריך לכלול מרכיב חדשנות משמעותי בניסוח הבעיה, בתכן הפתרון, באינטגרציית המערכת, בניסויים או ביישום. במקביל, על הסטודנטים לעשות שימוש חוזר יעיל במודלים, בספריות, במערכי נתונים, בכלים וברכיבי תוכנה קיימים במקום שבו הדבר מתאים, ולא לבנות מחדש שלא לצורך פונקציונליות שכבר זמינה.</p>
+            <div class="assess-expect">
+              <span class="assess-expect__label">על הסטודנטים להבחין בבירור בין</span>
+              <ul>
+                <li>רכיבים קיימים שנעשה בהם שימוש חוזר.</li>
+                <li>רכיבים שהותאמו או הורחבו.</li>
+                <li>תרומות חדשות שפותחו במסגרת הפרויקט.</li>
+              </ul>
+            </div>
+            <div class="assess-anti">
+              <span class="assess-anti__label">אנטי-דפוסים</span>
+              <ul>
+                <li>מימוש מחדש של ספריות או מודלים סטנדרטיים ללא סיבה ברורה.</li>
+                <li>בניית תשתית בהיקף גדול במקום פתרון בעיית המחקר.</li>
+                <li>העתקת פרויקטים קיימים תוך שינויים קוסמטיים בלבד.</li>
+                <li>טענת חדשנות כאשר ההבדל מתמצה בפרטי מימוש.</li>
+                <li>אי-זיהוי של מה שחדש באמת בפרויקט.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="assess-card" id="rigorous-methodology">
+            <span class="assess-card__index">קריטריון 4</span>
+            <h2 class="assess-card__title">יישום מתודולוגיה נכונה וקפדנית</h2>
+            <p class="assess-card__body">על הסטודנטים לאמץ מתודולוגיה המתאימה לפרויקט ולתחום הבעיה. ההערכה צריכה להראות האם הפתרון המוצע אכן מטפל בבעיה המקורית ומספק ערך מדיד.</p>
+            <div class="assess-expect">
+              <span class="assess-expect__label">הדבר כולל</span>
+              <ul>
+                <li>הליכים נכונים של איסוף, בחירה, יצירה או עיבוד מקדים של נתונים.</li>
+                <li>הפרדה נאותה בין נתוני אימון, ולידציה ומבחן.</li>
+                <li>בחירת בסיסי ייחוס (baselines) מתאימים.</li>
+                <li>שימוש במדדי הערכה רלוונטיים.</li>
+                <li>תכנון ניסויים נאות.</li>
+                <li>ניתוח שגיאות, מגבלות ומקרי כשל.</li>
+                <li>ניסויים שחזוריים ומתועדים היטב.</li>
+              </ul>
+            </div>
+            <div class="assess-anti">
+              <span class="assess-anti__label">אנטי-דפוסים</span>
+              <ul>
+                <li>שימוש במערכי נתונים או במדדי הערכה שאינם מתאימים.</li>
+                <li>דליפת נתונים בין האימון למבחן.</li>
+                <li>השוואה לבסיסי ייחוס חלשים, או היעדר בסיס ייחוס.</li>
+                <li>דיווח על דוגמאות מוצלחות בלבד תוך התעלמות מכשלים.</li>
+                <li>הסקת מסקנות שאינן נתמכות בראיות ניסוייות.</li>
+                <li>ניסויים שאינם ניתנים לשחזור או הליכים שאינם מתועדים.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="assess-card" id="present-and-defend">
+            <span class="assess-card__index">קריטריון 5</span>
+            <h2 class="assess-card__title">הצגת הפרויקט והגנה עליו בבהירות</h2>
+            <p class="assess-card__body">על הסטודנטים להציג את הבעיה, המתודולוגיה, הפתרון והתוצאות בבהירות ובאופן מקצועי. ההסברים צריכים להיות קצרים, מדויקים ואינפורמטיביים, ולא מעורפלים, כלליים מדי או עמוסים בפרטים מיותרים.</p>
+            <div class="assess-expect">
+              <span class="assess-expect__label">על הסטודנטים</span>
+              <ul>
+                <li>להשתמש בטרמינולוגיה טכנית ומקצועית מדויקת.</li>
+                <li>להסביר את הפרויקט בתמציתיות וללא מידע לא רלוונטי.</li>
+                <li>לנמק כל החלטת תכן ומימוש משמעותית.</li>
+                <li>להסביר את אופן הפעולה הפנימי של המודלים ורכיבי המערכת.</li>
+                <li>להציג תוצאות באמצעות טבלאות, גרפים, דוגמאות והשוואות מתאימים.</li>
+                <li>להבחין בבירור בין הנחות, ראיות, מסקנות ומגבלות.</li>
+                <li>להשיב על שאלות בביטחון ולהפגין הבנה אישית של הפרויקט.</li>
+              </ul>
+            </div>
+            <div class="assess-anti">
+              <span class="assess-anti__label">אנטי-דפוסים</span>
+              <ul>
+                <li>שקפים עמוסים בטקסט או בפרטים לא רלוונטיים.</li>
+                <li>מילות באזז ללא הבנה טכנית.</li>
+                <li>חוסר יכולת להסביר החלטות תכן או התנהגות של מודל.</li>
+                <li>ערבוב בין פרטי מימוש לבין תרומות הפרויקט.</li>
+                <li>הצגה ויזואלית חלשה של התוצאות.</li>
+                <li>תשובות ארוכות ולא ממוקדות שאינן עונות ישירות על השאלה.</li>
+              </ul>
+            </div>
+          </article>
+        </section>
+
+      <section class="section-quick-links">
+        <h2 class="section-quick-links__title">קישורים מהירים</h2>
+        <nav class="section-quick-links__grid" aria-label="קישורים מהירים">
+          <a class="section-quick-link" href="./project-requirements.html">
+            <span class="section-quick-link__badge" style="background: #c2410c;">R</span>
+            דרישות הפרויקט
+          </a>
+          <a class="section-quick-link" href="./common-misconceptions.html">
+            <span class="section-quick-link__badge" style="background: #7a3fa0;">M</span>
+            תפיסות שגויות נפוצות
+          </a>
+          <a class="section-quick-link" href="../hands-on-ai-science-courses-student-projects.html">
+            <span class="section-quick-link__badge" style="background: #9c5a2e;">P</span>
+            פרויקטים קודמים
+          </a>
+        </nav>
+      </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../../shared/unified-enhance.js"></script>
+  <script defer src="../../shared/site-shell.js"></script>
+</body>
+</html>

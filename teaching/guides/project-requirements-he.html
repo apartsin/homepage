@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="he-IL" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <meta name="description" content="קריטריונים להערכת פרויקטים של סטודנטים: שתים-עשרה הדרישות שפרויקט קורס חזק אמור לעמוד בהן, וכל אחת מלווה באנטי-דפוסים הנפוצים שמחלישים אותה.">
+  <link rel="alternate" hreflang="he" href="./project-requirements-he.html">
+  <link rel="alternate" hreflang="en" href="./project-requirements.html">
+  <title>דרישות הפרויקט | סשה אפרטסין</title>
+  <link rel="stylesheet" href="../../shared/site-shell.css">
+  <link rel="stylesheet" href="../../shared/unified-theme.css">
+  <style>
+    .crit-section-title {
+      margin: 34px 0 2px;
+      color: var(--site-text, #18202a);
+      font: 800 0.82rem/1.2 "Manrope", "Heebo", sans-serif;
+      letter-spacing: 0.06em;
+    }
+    .crit-section-title:first-of-type { margin-top: 10px; }
+    .crit-section-lede {
+      margin: 0 0 4px;
+      color: var(--site-muted);
+      font: 600 0.88rem/1.6 "Manrope", "Heebo", sans-serif;
+    }
+    .crit-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-auto-rows: 1fr;
+      gap: 14px;
+      margin-top: 14px;
+      align-items: stretch;
+    }
+    /* Two columns from ~720px, three columns from ~1080px. */
+    @media (min-width: 720px) {
+      .crit-list { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1080px) {
+      .crit-list { grid-template-columns: repeat(3, 1fr); }
+    }
+    .crit-card {
+      padding: 18px 20px;
+      border: 1px solid var(--site-border);
+      border-radius: 14px;
+      background: #fff;
+      position: relative;
+      overflow: hidden;
+      /* Four-row grid: index / title / requirement / anti-patterns. The
+         requirement row absorbs slack so the anti-pattern block sits flush
+         at the bottom of every card in the row. */
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      row-gap: 8px;
+      text-align: right;
+    }
+    /* In RTL, the colored accent bar sits on the right (the natural start). */
+    .crit-card::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--cc-color, var(--site-accent));
+    }
+    /* Accent colour per phase, so the four groups read as distinct families. */
+    .crit-list--problem .crit-card { --cc-color: #c2410c; }
+    .crit-list--research .crit-card { --cc-color: #164a83; }
+    .crit-list--delivery .crit-card { --cc-color: #7a3fa0; }
+    .crit-list--rigor .crit-card { --cc-color: #2e7d5a; }
+    .crit-card__index {
+      display: inline-block;
+      font: 900 0.78rem/1 "Manrope", "Heebo", sans-serif;
+      letter-spacing: 0.08em;
+      color: var(--cc-color, var(--site-accent));
+      margin: 0;
+    }
+    .crit-card__title {
+      margin: 0;
+      font: 800 1.06rem/1.35 "Manrope", "Heebo", sans-serif;
+      color: var(--site-text);
+      /* Force at least two lines so short and long titles occupy equal space. */
+      min-height: calc(2 * 1.35 * 1.06rem);
+    }
+    .crit-card__body {
+      margin: 0;
+      color: var(--site-text);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+    .crit-antipatterns {
+      margin: 0;
+      padding: 10px 12px 10px 14px;
+      border-radius: 8px;
+      background: rgba(194, 65, 12, 0.06);
+      border: 1px solid rgba(194, 65, 12, 0.22);
+      color: #8a3309;
+    }
+    .crit-antipatterns__label {
+      display: block;
+      font: 800 0.76rem/1.2 "Manrope", "Heebo", sans-serif;
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+      color: #8a3309;
+    }
+    .crit-antipatterns ul {
+      margin: 0;
+      padding-right: 16px;
+      list-style: disc;
+    }
+    .crit-antipatterns li {
+      font: 500 0.83rem/1.6 "Manrope", "Heebo", sans-serif;
+      margin: 0 0 3px;
+    }
+    .crit-antipatterns li:last-child { margin-bottom: 0; }
+    /* Two-tab language switcher: shows both EN and HE, current one filled. */
+    .guide-lang-switch {
+      display: inline-flex;
+      align-items: stretch;
+      border: 1px solid var(--site-border, rgba(24,32,42,0.18));
+      border-radius: 999px;
+      background: #fff;
+      overflow: hidden;
+      font: 800 0.72rem/1 "Manrope", sans-serif;
+      letter-spacing: 0.04em;
+    }
+    .guide-lang-switch__btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 14px;
+      color: var(--site-muted, #5a626c);
+      text-decoration: none;
+      transition: background 120ms ease, color 120ms ease;
+    }
+    .guide-lang-switch__btn:hover,
+    .guide-lang-switch__btn:focus-visible {
+      background: rgba(0, 0, 0, 0.05);
+      color: var(--site-text, #18202a);
+    }
+    .guide-lang-switch__btn.is-active {
+      background: var(--site-text, #18202a);
+      color: #fff;
+      cursor: default;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="teaching">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar" lang="en" dir="ltr">
+      <a class="apartsin-shell__brand" href="../../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../../index.html">About</a>
+        <a href="../../research/research-focus.html">Research</a>
+        <a href="../../teaching/overview.html">Teaching</a>
+        <a href="../../work/overview.html">Building</a>
+        <a href="../../work/innovation-overview.html">Innovations</a>
+        <a href="../../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="project-requirements-overview">
+          <h1 class="apartsin-sr-only">דרישות הפרויקט</h1>
+          <div class="apartsin-page-header__top" dir="ltr">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb" lang="en" dir="ltr">
+              <a href="../../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="../overview.html">Teaching</a>
+              <span aria-hidden="true">/</span>
+              <a href="./index.html">Guides for Students</a>
+              <span aria-hidden="true">/</span>
+              <strong>Project Requirements (עברית)</strong>
+            </nav>
+            <div class="guide-lang-switch" role="group" aria-label="שפה">
+              <a class="guide-lang-switch__btn" href="./project-requirements.html" lang="en" hreflang="en">English</a>
+              <a class="guide-lang-switch__btn is-active" href="./project-requirements-he.html" lang="he" hreflang="he" aria-current="true">עברית</a>
+            </div>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../../assets/heroes/teaching-hos-student-projects.png" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">קריטריונים להערכת פרויקטים של סטודנטים. שתים-עשרה דרישות שפרויקט קורס חזק אמור לעמוד בהן, וכל אחת מהן מלווה באנטי-דפוסים שמחלישים אותה לרוב. השתמשו בזה כרשימת בדיקה בזמן שהפרויקט עדיין מתגבש, ולא כמחוון שקוראים פעם אחת בסוף.</p>
+          </div>
+        </section>
+
+        <h2 class="crit-section-title">שלב 1. מסגור הבעיה</h2>
+        <p class="crit-section-lede">עוד לפני כל מידול: מהי הבעיה, מדוע היא חשובה, וכיצד היא הופכת למשימת למידת מכונה.</p>
+        <section class="crit-list crit-list--problem" aria-label="קריטריונים למסגור הבעיה">
+          <article class="crit-card" id="problem-domain-understanding">
+            <span class="crit-card__index">דרישה 1</span>
+            <h2 class="crit-card__title">הבנת תחום הבעיה</h2>
+            <p class="crit-card__body">הציגו הבנה מעמיקה של תחום הבעיה, המוטיבציה שמאחוריה והמשמעות שלה בעולם האמיתי. בססו את חשיבות הבעיה על ראיות אמינות: ספרות מחקרית, דוחות תעשייה, נתונים סטטיסטיים, נתוני שוק או מקורות עובדתיים אחרים.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">אנטי-דפוסים נפוצים</span>
+              <ul>
+                <li>הגדרת בעיה מעורפלת או כללית מדי.</li>
+                <li>מוטיבציה שנשענת על דעה אישית במקום על ראיות.</li>
+                <li>היעדר הצדקה כמותית.</li>
+                <li>הבנה שטחית של הפתרונות הקיימים ושל מגבלותיהם.</li>
+                <li>בחירה בבעיה טריוויאלית או מלאכותית.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="crit-card" id="problem-significance-and-value">
+            <span class="crit-card__index">דרישה 2</span>
+            <h2 class="crit-card__title">חשיבות הבעיה והערך שבפתרונה</h2>
+            <p class="crit-card__body">התמודדו עם צורך מוגדר היטב, משמעותי ורצוי שטרם נענה. הפרויקט אמור לפתור בעיה שמניבה ערך מוחשי למשתמשים או לבעלי העניין שאליהם הוא מכוון, עם יעדים וקריטריוני הצלחה ברורים.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">אנטי-דפוסים נפוצים</span>
+              <ul>
+                <li>פתרון בעיה טריוויאלית.</li>
+                <li>טיפול בבעיה שכבר נפתרה היטב, בלי שום בידול.</li>
+                <li>יעדים מעורפלים או קהל משתמשים לא ברור.</li>
+                <li>היעדר הסבר משכנע לגבי ההשפעה הצפויה.</li>
+                <li>פיתוח שמונע מפיצ'רים במקום מהבעיה עצמה.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="crit-card" id="problem-formulation">
+            <span class="crit-card__index">דרישה 3</span>
+            <h2 class="crit-card__title">ניסוח הבעיה כמשימת למידה</h2>
+            <p class="crit-card__body">תרגמו את הצורך מהעולם האמיתי לבעיית ML מוגדרת היטב. הגדירו במפורש את משימת החיזוי או ההחלטה, את הקלט והפלט, את ההנחות, את האילוצים ואת יעדי ההערכה.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">אנטי-דפוסים נפוצים</span>
+              <ul>
+                <li>ניסוח שגוי של משימת ה-ML.</li>
+                <li>משתנה מטרה מוגדר בצורה רופפת.</li>
+                <li>פער בין הבעיה העסקית לבין הניסוח ה-ML שלה.</li>
+                <li>התעלמות מהנחות או מאילוצים.</li>
+                <li>מסגור הבעיה סביב הנתונים הזמינים במקום סביב הצורך האמיתי.</li>
+              </ul>
+            </div>
+          </article>
+        </section>
+
+        <h2 class="crit-section-title">שלב 2. סקירת ספרות, נתונים ובסיסי ייחוס</h2>
+        <p class="crit-section-lede">מה כבר קיים, מהיכן מגיעים הנתונים, ומה הפתרון שלכם צריך לנצח.</p>
+        <section class="crit-list crit-list--research" aria-label="קריטריונים לסקירת ספרות ולנתונים">
+          <article class="crit-card" id="state-of-the-art-research">
+            <span class="crit-card__index">דרישה 4</span>
+            <h2 class="crit-card__title">סקירת פתרונות בחזית הידע</h2>
+            <p class="crit-card__body">בצעו סקירה יסודית של המודלים, השיטות והטכנולוגיות הרלוונטיים בחזית הידע. הראו הבנה עמוקה של אופן הפעולה שלהם, של החוזקות והמגבלות שלהם, והסבירו מדוע הם רלוונטיים לפרויקט.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">אנטי-דפוסים נפוצים</span>
+              <ul>
+                <li>בחירת מודלים רק משום שהם פופולריים.</li>
+                <li>תיאורים שטחיים.</li>
+                <li>השוואה בין שיטות בלי להבין אותן.</li>
+                <li>התעלמות מספרות עדכנית.</li>
+                <li>הנמקה חלשה לבחירת המודל.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="crit-card" id="data-acquisition-methodology">
+            <span class="crit-card__index">דרישה 5</span>
+            <h2 class="crit-card__title">מתודולוגיה לאיסוף וליצירת נתונים</h2>
+            <p class="crit-card__body">פתחו והצדיקו מתודולוגיה מבוססת לאיסוף, ליצירה או לאצירה של נתונים, תוך שימוש בעקרונות שנלמדו בקורס. המתודולוגיה צריכה להיות שיטתית, ניתנת לשחזור ומתואמת ליעדי הפרויקט.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">אנטי-דפוסים נפוצים</span>
+              <ul>
+                <li>בחירה שרירותית של מערך הנתונים.</li>
+                <li>נתונים באיכות ירודה או מוטים.</li>
+                <li>היעדר מתודולוגיית איסוף מתועדת.</li>
+                <li>התעלמות משיקולים אתיים או משפטיים.</li>
+                <li>נתונים שמייצגים בצורה גרועה את בעיית היעד.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="crit-card" id="eda-and-baselines">
+            <span class="crit-card__index">דרישה 6</span>
+            <h2 class="crit-card__title">ניתוח נתונים חוקר ובניית בסיסי ייחוס</h2>
+            <p class="crit-card__body">בצעו ניתוח נתונים חוקר (EDA) יסודי כדי להכיר את מערך הנתונים, לאתר בעיות איכות, לגלות דפוסים משמעותיים ולהנחות את החלטות המידול. בססו מודלי baseline חזקים לצורך השוואה.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">אנטי-דפוסים נפוצים</span>
+              <ul>
+                <li>EDA שטחי.</li>
+                <li>התעלמות מערכים חסרים, חריגים, חוסר איזון או דליפת נתונים.</li>
+                <li>דילוג על מודלי baseline.</li>
+                <li>בסיסי ייחוס חלשים.</li>
+                <li>החלטות שאינן נתמכות בניתוח הנתונים.</li>
+              </ul>
+            </div>
+          </article>
+        </section>
+
+        <h2 class="crit-section-title">שלב 3. הערכה ומסירת תוצרים</h2>
+        <p class="crit-section-lede">השוואה בין חלופות אמיתיות, דיווח מדויק עליהן, ומסירת ריפוזיטורי שמישהו אחר יכול להריץ.</p>
+        <section class="crit-list crit-list--delivery" aria-label="קריטריונים להערכה ולמסירת תוצרים">
+          <article class="crit-card" id="comparative-evaluation">
+            <span class="crit-card__index">דרישה 7</span>
+            <h2 class="crit-card__title">הערכה משווה של מספר גישות</h2>
+            <p class="crit-card__body">ממשו והשוו כמה גישות מידול משמעותיות ולא טריוויאליות, באמצעות מתודולוגיה ניסויית הוגנת ומדדי הערכה מתאימים. נתחו את הפשרות בין הפתרונות המתחרים.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">אנטי-דפוסים נפוצים</span>
+              <ul>
+                <li>הערכה של מודל יחיד בלבד.</li>
+                <li>השוואה בין וריאציות פרמטרים זניחות בלבד.</li>
+                <li>השוואות לא הוגנות.</li>
+                <li>דיווח תוצאות ללא ניתוח.</li>
+                <li>בחירת המודל הטוב ביותר על סמך מדד בודד.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="crit-card" id="results-presentation">
+            <span class="crit-card__index">דרישה 8</span>
+            <h2 class="crit-card__title">הצגת התוצאות ותקשורן</h2>
+            <p class="crit-card__body">הציגו את התוצאות בבהירות באמצעות מדדי הערכה מתאימים, ויזואליזציות אינפורמטיביות והסברים טכניים תמציתיים. תקשרו בבירור הן את הביצועים והן את התובנות המרכזיות.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">אנטי-דפוסים נפוצים</span>
+              <ul>
+                <li>דיווח מדדים ללא פרשנות.</li>
+                <li>מדדי הערכה לא מתאימים.</li>
+                <li>ויזואליזציות לא ברורות או עמוסות.</li>
+                <li>דוחות או מצגות עמוסים מדי.</li>
+                <li>מסקנות שאינן נתמכות בראיות.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="crit-card" id="repository-quality">
+            <span class="crit-card__index">דרישה 9</span>
+            <h2 class="crit-card__title">איכות הריפוזיטורי ושחזוריות</h2>
+            <p class="crit-card__body">נהלו ריפוזיטורי GitHub מקצועי עם שם משמעותי, README מקיף, ארגון הגיוני של הקבצים וכל התוצרים הדרושים כדי לאפשר שחזוריות.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">אנטי-דפוסים נפוצים</span>
+              <ul>
+                <li>ארגון לקוי של הריפוזיטורי.</li>
+                <li>היעדר README.</li>
+                <li>מבנה פרויקט מבולגן.</li>
+                <li>היעדר תוצרים הדרושים לשחזור התוצאות.</li>
+                <li>היעדר דיאגרמות, צילומי מסך או תיעוד של תהליך העבודה.</li>
+              </ul>
+            </div>
+          </article>
+        </section>
+
+        <h2 class="crit-section-title">שלב 4. קפדנות, התקדמות ועומק</h2>
+        <p class="crit-section-lede">ההבדל בין פרויקט שרץ פעם אחת לבין פרויקט שבאמת הונדס.</p>
+        <section class="crit-list crit-list--rigor" aria-label="קריטריונים לקפדנות ולעומק">
+          <article class="crit-card" id="engineering-rigor">
+            <span class="crit-card__index">דרישה 10</span>
+            <h2 class="crit-card__title">קפדנות הנדסית ושיפור איטרטיבי</h2>
+            <p class="crit-card__body">הראו מאמץ הנדסי משמעותי באמצעות ניסויים שיטתיים, אופטימיזציה של hyperparameters, ולידציה של הנתונים, ניתוח שגיאות וליטוש איטרטיבי של הפתרון.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">אנטי-דפוסים נפוצים</span>
+              <ul>
+                <li>עצירה אחרי המודל הראשון שעובד.</li>
+                <li>כוונון מינימלי של hyperparameters.</li>
+                <li>היעדר ולידציה של הנתונים.</li>
+                <li>היעדר ניתוח שגיאות.</li>
+                <li>היעדר מחזור שיפור איטרטיבי.</li>
+                <li>הסתמכות עיוורת על AutoML או על קוד שנוצר בידי בינה מלאכותית.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="crit-card" id="project-progression">
+            <span class="crit-card__index">דרישה 11</span>
+            <h2 class="crit-card__title">התקדמות הפרויקט והיענות למשוב</h2>
+            <p class="crit-card__body">הראו התקדמות רציפה לאורך הסמסטר: עמידה באבני דרך משמעותיות, הטמעת המשוב של המרצה וליטוש הפתרון לאורך כמה איטרציות. הפרויקט הסופי אמור לשקף בבירור למידה וצמיחה טכנית.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">אנטי-דפוסים נפוצים</span>
+              <ul>
+                <li>התקדמות מזערית אחרי הגשת ההצעה.</li>
+                <li>התעלמות מהמשוב של המרצה.</li>
+                <li>מימוש שנדחק לרגע האחרון.</li>
+                <li>חזרה שוב ושוב על אותן טעויות.</li>
+                <li>היעדר עדות לשיפור בין אבני הדרך.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="crit-card" id="technical-depth">
+            <span class="crit-card__index">דרישה 12</span>
+            <h2 class="crit-card__title">עומק טכני וחשיבה ביקורתית</h2>
+            <p class="crit-card__body">הראו הבנה טכנית עמוקה של הבעיה, של הנתונים ושל הפתרון. התקדמו מעבר לתצפיות מובנות מאליהן וזהו אתגרים עדינים, ניואנסים ייחודיים לתחום, הנחות סמויות, מקרי קצה ופשרות טכניות. הציגו ניתוח מעמיק, ולא רק יישום של טכניקות סטנדרטיות.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">אנטי-דפוסים נפוצים</span>
+              <ul>
+                <li>ניתוח שטחי.</li>
+                <li>התייחסות למודלים כאל קופסאות שחורות.</li>
+                <li>התעלמות מניואנסים של הנתונים או של התחום.</li>
+                <li>דיון כללי ברמת ספר לימוד.</li>
+                <li>שכפול הסברים שנוצרו בידי בינה מלאכותית ללא בחינה ביקורתית.</li>
+                <li>אי-הנמקה של החלטות טכניות או היעדר דיון בפשרות.</li>
+              </ul>
+            </div>
+          </article>
+        </section>
+
+      <section class="section-quick-links">
+        <h2 class="section-quick-links__title">קישורים מהירים</h2>
+        <nav class="section-quick-links__grid" aria-label="קישורים מהירים">
+          <a class="section-quick-link" href="./project-assessment-criteria.html">
+            <span class="section-quick-link__badge" style="background: #164a83;">E</span>
+            קריטריונים להערכה
+          </a>
+          <a class="section-quick-link" href="./common-misconceptions.html">
+            <span class="section-quick-link__badge" style="background: #7a3fa0;">M</span>
+            תפיסות שגויות נפוצות
+          </a>
+          <a class="section-quick-link" href="../hands-on-ai-science-courses-student-projects.html">
+            <span class="section-quick-link__badge" style="background: #9c5a2e;">P</span>
+            פרויקטים מהעבר
+          </a>
+        </nav>
+      </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../../shared/unified-enhance.js"></script>
+  <script defer src="../../shared/site-shell.js"></script>
+</body>
+</html>
