@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <meta name="description" content="Student project assessment criteria: the twelve requirements a strong course project must satisfy, each with the anti-patterns that most often weaken it.">
+  <title>Project Requirements | Sasha Apartsin</title>
+  <link rel="stylesheet" href="../../shared/site-shell.css">
+  <link rel="stylesheet" href="../../shared/unified-theme.css">
+  <style>
+    .crit-section-title {
+      margin: 34px 0 2px;
+      color: var(--site-text, #18202a);
+      font: 800 0.82rem/1.2 "Manrope", sans-serif;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .crit-section-title:first-of-type { margin-top: 10px; }
+    .crit-section-lede {
+      margin: 0 0 4px;
+      color: var(--site-muted);
+      font: 600 0.88rem/1.5 "Manrope", sans-serif;
+    }
+    .crit-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-auto-rows: 1fr;
+      gap: 14px;
+      margin-top: 14px;
+      align-items: stretch;
+    }
+    /* Two columns from ~720px, three columns from ~1080px. */
+    @media (min-width: 720px) {
+      .crit-list { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1080px) {
+      .crit-list { grid-template-columns: repeat(3, 1fr); }
+    }
+    .crit-card {
+      padding: 18px 20px;
+      border: 1px solid var(--site-border);
+      border-radius: 14px;
+      background: #fff;
+      position: relative;
+      overflow: hidden;
+      /* Four-row grid: index / title / requirement / anti-patterns. The
+         requirement row absorbs slack so the anti-pattern block sits flush
+         at the bottom of every card in the row. */
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      row-gap: 8px;
+    }
+    .crit-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--cc-color, var(--site-accent));
+    }
+    /* Accent colour per phase, so the four groups read as distinct families. */
+    .crit-list--problem .crit-card { --cc-color: #c2410c; }
+    .crit-list--research .crit-card { --cc-color: #164a83; }
+    .crit-list--delivery .crit-card { --cc-color: #7a3fa0; }
+    .crit-list--rigor .crit-card { --cc-color: #2e7d5a; }
+    .crit-card__index {
+      display: inline-block;
+      font: 900 0.78rem/1 "Manrope", sans-serif;
+      letter-spacing: 0.08em;
+      color: var(--cc-color, var(--site-accent));
+      text-transform: uppercase;
+      margin: 0;
+    }
+    .crit-card__title {
+      margin: 0;
+      font: 800 1.06rem/1.28 "Manrope", sans-serif;
+      color: var(--site-text);
+      /* Force at least two lines so short and long titles occupy equal space. */
+      min-height: calc(2 * 1.28 * 1.06rem);
+    }
+    .crit-card__body {
+      margin: 0;
+      color: var(--site-text);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+    .crit-antipatterns {
+      margin: 0;
+      padding: 10px 12px 10px 14px;
+      border-radius: 8px;
+      background: rgba(194, 65, 12, 0.06);
+      border: 1px solid rgba(194, 65, 12, 0.22);
+      color: #8a3309;
+    }
+    .crit-antipatterns__label {
+      display: block;
+      font: 800 0.76rem/1.2 "Manrope", sans-serif;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      color: #8a3309;
+    }
+    .crit-antipatterns ul {
+      margin: 0;
+      padding-left: 16px;
+      list-style: disc;
+    }
+    .crit-antipatterns li {
+      font: 500 0.83rem/1.45 "Manrope", sans-serif;
+      margin: 0 0 3px;
+    }
+    .crit-antipatterns li:last-child { margin-bottom: 0; }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="teaching">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar">
+      <a class="apartsin-shell__brand" href="../../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../../index.html">About</a>
+        <a href="../../research/research-focus.html">Research</a>
+        <a href="../../teaching/overview.html">Teaching</a>
+        <a href="../../work/overview.html">Building</a>
+        <a href="../../work/innovation-overview.html">Innovations</a>
+        <a href="../../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="project-requirements-overview">
+          <h1 class="apartsin-sr-only">Project Requirements</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="../overview.html">Teaching</a>
+              <span aria-hidden="true">/</span>
+              <a href="./index.html">Guides for Students</a>
+              <span aria-hidden="true">/</span>
+              <strong>Project Requirements</strong>
+            </nav>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../../assets/heroes/teaching-hos-student-projects.png" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">Student project assessment criteria. Twelve requirements a strong course project is expected to satisfy, each paired with the anti-patterns that most often weaken it. Use this as a checklist while the project is still being shaped, not as a rubric to read once at the end.</p>
+          </div>
+        </section>
+
+        <h2 class="crit-section-title">Phase 1. Framing the Problem</h2>
+        <p class="crit-section-lede">Before any modeling: what the problem is, why it matters, and how it becomes a machine learning task.</p>
+        <section class="crit-list crit-list--problem" aria-label="Problem framing criteria">
+          <article class="crit-card" id="problem-domain-understanding">
+            <span class="crit-card__index">Requirement 1</span>
+            <h2 class="crit-card__title">Problem Domain Understanding</h2>
+            <p class="crit-card__body">Demonstrate a thorough understanding of the problem domain, its motivation, and real-world significance. Justify why the problem matters using credible evidence such as research literature, industry reports, statistics, market data, or other factual sources.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">Common anti-patterns</span>
+              <ul>
+                <li>Vague or generic problem statement.</li>
+                <li>Motivation based on personal opinion rather than evidence.</li>
+                <li>No quantitative justification.</li>
+                <li>Poor understanding of existing solutions and their limitations.</li>
+                <li>Selecting a trivial or artificial problem.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="crit-card" id="problem-significance-and-value">
+            <span class="crit-card__index">Requirement 2</span>
+            <h2 class="crit-card__title">Problem Significance and Value</h2>
+            <p class="crit-card__body">Address a clearly defined, meaningful, and preferably unmet need. The project should solve a problem that delivers tangible value to its intended users or stakeholders, with well-defined objectives and success criteria.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">Common anti-patterns</span>
+              <ul>
+                <li>Solving a trivial problem.</li>
+                <li>Addressing a problem already well solved without differentiation.</li>
+                <li>Vague objectives or unclear target users.</li>
+                <li>No convincing explanation of expected impact.</li>
+                <li>Feature-driven rather than problem-driven development.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="crit-card" id="problem-formulation">
+            <span class="crit-card__index">Requirement 3</span>
+            <h2 class="crit-card__title">Problem Formulation</h2>
+            <p class="crit-card__body">Translate the real-world need into a well-defined machine learning problem. Clearly specify the prediction or decision task, inputs, outputs, assumptions, constraints, and evaluation objectives.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">Common anti-patterns</span>
+              <ul>
+                <li>Incorrect ML task formulation.</li>
+                <li>Poorly defined target variable.</li>
+                <li>Mismatch between the business problem and the ML formulation.</li>
+                <li>Ignoring assumptions or constraints.</li>
+                <li>Framing the problem around available data rather than the actual need.</li>
+              </ul>
+            </div>
+          </article>
+        </section>
+
+        <h2 class="crit-section-title">Phase 2. Research, Data, and Baselines</h2>
+        <p class="crit-section-lede">What already exists, where the data comes from, and what the solution has to beat.</p>
+        <section class="crit-list crit-list--research" aria-label="Research and data criteria">
+          <article class="crit-card" id="state-of-the-art-research">
+            <span class="crit-card__index">Requirement 4</span>
+            <h2 class="crit-card__title">State-of-the-Art Solution Research</h2>
+            <p class="crit-card__body">Conduct a thorough review of relevant state-of-the-art models, methods, and technologies. Demonstrate a deep understanding of how these approaches work, their strengths and limitations, and explain their relevance to the project.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">Common anti-patterns</span>
+              <ul>
+                <li>Choosing models because they are popular.</li>
+                <li>Superficial descriptions.</li>
+                <li>Comparing methods without understanding them.</li>
+                <li>Ignoring recent literature.</li>
+                <li>Weak justification for model selection.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="crit-card" id="data-acquisition-methodology">
+            <span class="crit-card__index">Requirement 5</span>
+            <h2 class="crit-card__title">Data Acquisition and Generation Methodology</h2>
+            <p class="crit-card__body">Develop and justify a sound methodology for acquiring, generating, or curating data using principles learned in the course. The methodology should be systematic, reproducible, and aligned with the project objectives.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">Common anti-patterns</span>
+              <ul>
+                <li>Arbitrary dataset selection.</li>
+                <li>Poor-quality or biased data.</li>
+                <li>No documented acquisition methodology.</li>
+                <li>Ignoring ethical or legal considerations.</li>
+                <li>Data that poorly represents the target problem.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="crit-card" id="eda-and-baselines">
+            <span class="crit-card__index">Requirement 6</span>
+            <h2 class="crit-card__title">Exploratory Data Analysis and Baseline Development</h2>
+            <p class="crit-card__body">Perform thorough exploratory data analysis (EDA) to understand the dataset, identify quality issues, discover meaningful patterns, and guide modeling decisions. Establish strong baseline models for comparison.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">Common anti-patterns</span>
+              <ul>
+                <li>Superficial EDA.</li>
+                <li>Ignoring missing values, outliers, imbalance, or leakage.</li>
+                <li>Skipping baseline models.</li>
+                <li>Weak baselines.</li>
+                <li>Decisions unsupported by data analysis.</li>
+              </ul>
+            </div>
+          </article>
+        </section>
+
+        <h2 class="crit-section-title">Phase 3. Evaluation and Delivery</h2>
+        <p class="crit-section-lede">Comparing real alternatives, reporting them honestly, and shipping a repository someone else can run.</p>
+        <section class="crit-list crit-list--delivery" aria-label="Evaluation and delivery criteria">
+          <article class="crit-card" id="comparative-evaluation">
+            <span class="crit-card__index">Requirement 7</span>
+            <h2 class="crit-card__title">Comparative Evaluation of Multiple Approaches</h2>
+            <p class="crit-card__body">Implement and compare several meaningful, non-trivial modeling approaches using fair experimental methodology and appropriate evaluation metrics. Analyze trade-offs between competing solutions.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">Common anti-patterns</span>
+              <ul>
+                <li>Evaluating only one model.</li>
+                <li>Comparing only minor parameter variations.</li>
+                <li>Unfair comparisons.</li>
+                <li>Reporting results without analysis.</li>
+                <li>Choosing the best model solely by a single metric.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="crit-card" id="results-presentation">
+            <span class="crit-card__index">Requirement 8</span>
+            <h2 class="crit-card__title">Results Presentation and Communication</h2>
+            <p class="crit-card__body">Present results clearly using appropriate evaluation metrics, informative visualizations, and concise technical explanations. Clearly communicate both performance and key insights.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">Common anti-patterns</span>
+              <ul>
+                <li>Reporting metrics without interpretation.</li>
+                <li>Poor evaluation metrics.</li>
+                <li>Unclear or cluttered visualizations.</li>
+                <li>Overloaded reports or presentations.</li>
+                <li>Conclusions unsupported by evidence.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="crit-card" id="repository-quality">
+            <span class="crit-card__index">Requirement 9</span>
+            <h2 class="crit-card__title">Repository Quality and Reproducibility</h2>
+            <p class="crit-card__body">Maintain a professional GitHub repository with a meaningful name, comprehensive README, logical organization, and all necessary artifacts to enable reproducibility.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">Common anti-patterns</span>
+              <ul>
+                <li>Poor repository organization.</li>
+                <li>Missing README.</li>
+                <li>Disorganized project structure.</li>
+                <li>Missing artifacts required for reproduction.</li>
+                <li>Lack of diagrams, screenshots, or workflow documentation.</li>
+              </ul>
+            </div>
+          </article>
+        </section>
+
+        <h2 class="crit-section-title">Phase 4. Rigor, Progress, and Depth</h2>
+        <p class="crit-section-lede">The difference between a project that ran once and a project that was actually engineered.</p>
+        <section class="crit-list crit-list--rigor" aria-label="Rigor and depth criteria">
+          <article class="crit-card" id="engineering-rigor">
+            <span class="crit-card__index">Requirement 10</span>
+            <h2 class="crit-card__title">Engineering Rigor and Iterative Improvement</h2>
+            <p class="crit-card__body">Demonstrate substantial engineering effort through systematic experimentation, hyperparameter optimization, data validation, error analysis, and iterative refinement of the solution.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">Common anti-patterns</span>
+              <ul>
+                <li>Stopping after the first working model.</li>
+                <li>Minimal hyperparameter tuning.</li>
+                <li>No data validation.</li>
+                <li>No error analysis.</li>
+                <li>No iterative improvement cycle.</li>
+                <li>Blind reliance on AutoML or AI-generated code.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="crit-card" id="project-progression">
+            <span class="crit-card__index">Requirement 11</span>
+            <h2 class="crit-card__title">Project Progression and Responsiveness to Feedback</h2>
+            <p class="crit-card__body">Demonstrate continuous progress throughout the semester by achieving meaningful milestones, incorporating instructor feedback, and refining the solution over multiple iterations. The final project should clearly reflect learning and technical growth.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">Common anti-patterns</span>
+              <ul>
+                <li>Minimal progress after the proposal.</li>
+                <li>Ignoring instructor feedback.</li>
+                <li>Last-minute implementation.</li>
+                <li>Repeating the same mistakes.</li>
+                <li>No evidence of improvement between milestones.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="crit-card" id="technical-depth">
+            <span class="crit-card__index">Requirement 12</span>
+            <h2 class="crit-card__title">Technical Depth and Critical Thinking</h2>
+            <p class="crit-card__body">Demonstrate deep technical understanding of the problem, data, and solution. Go beyond obvious or common-sense observations by identifying subtle challenges, domain-specific nuances, hidden assumptions, edge cases, and technical trade-offs. Show thoughtful analysis rather than simply applying standard techniques.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">Common anti-patterns</span>
+              <ul>
+                <li>Superficial analysis.</li>
+                <li>Treating models as black boxes.</li>
+                <li>Ignoring data or domain nuances.</li>
+                <li>Generic, textbook-level discussion.</li>
+                <li>Repeating AI-generated explanations without critical evaluation.</li>
+                <li>Failing to justify technical decisions or discuss trade-offs.</li>
+              </ul>
+            </div>
+          </article>
+        </section>
+
+      <section class="section-quick-links">
+        <h2 class="section-quick-links__title">Quick Links</h2>
+        <nav class="section-quick-links__grid" aria-label="Quick links">
+          <a class="section-quick-link" href="./project-assessment-criteria.html">
+            <span class="section-quick-link__badge" style="background: #164a83;">E</span>
+            Assessment Criteria
+          </a>
+          <a class="section-quick-link" href="./common-misconceptions.html">
+            <span class="section-quick-link__badge" style="background: #7a3fa0;">M</span>
+            Common Misconceptions
+          </a>
+          <a class="section-quick-link" href="../hands-on-ai-science-courses-student-projects.html">
+            <span class="section-quick-link__badge" style="background: #9c5a2e;">P</span>
+            Past Projects
+          </a>
+        </nav>
+      </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../../shared/unified-enhance.js"></script>
+  <script defer src="../../shared/site-shell.js"></script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <meta name="description" content="Student project assessment criteria: the five dimensions a project is judged on, what each one expects, and the anti-patterns that weaken it.">
+  <title>Project Assessment Criteria | Sasha Apartsin</title>
+  <link rel="stylesheet" href="../../shared/site-shell.css">
+  <link rel="stylesheet" href="../../shared/unified-theme.css">
+  <style>
+    .assess-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 18px;
+    }
+    /* These criteria carry both an expectations list and an anti-pattern list,
+       so they stay full width on small screens and pair up only when wide. */
+    @media (min-width: 1080px) {
+      .assess-list { grid-template-columns: repeat(2, 1fr); }
+    }
+    .assess-card {
+      padding: 20px 22px;
+      border: 1px solid var(--site-border);
+      border-radius: 14px;
+      background: #fff;
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: auto auto auto 1fr auto;
+      row-gap: 10px;
+    }
+    .assess-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--as-color, var(--site-accent));
+    }
+    .assess-card:nth-child(1) { --as-color: #c2410c; }
+    .assess-card:nth-child(2) { --as-color: #164a83; }
+    .assess-card:nth-child(3) { --as-color: #7a3fa0; }
+    .assess-card:nth-child(4) { --as-color: #2e7d5a; }
+    .assess-card:nth-child(5) { --as-color: #9c5a2e; }
+    .assess-card__index {
+      display: inline-block;
+      font: 900 0.78rem/1 "Manrope", sans-serif;
+      letter-spacing: 0.08em;
+      color: var(--as-color, var(--site-accent));
+      text-transform: uppercase;
+      margin: 0;
+    }
+    .assess-card__title {
+      margin: 0;
+      font: 800 1.12rem/1.28 "Manrope", sans-serif;
+      color: var(--site-text);
+    }
+    .assess-card__body {
+      margin: 0;
+      color: var(--site-text);
+      font-size: 0.93rem;
+      line-height: 1.55;
+    }
+    .assess-expect {
+      margin: 0;
+      padding: 10px 12px 10px 14px;
+      border-radius: 8px;
+      background: rgba(46, 125, 90, 0.07);
+      border: 1px solid rgba(46, 125, 90, 0.2);
+      color: #1f5a40;
+    }
+    .assess-expect__label,
+    .assess-anti__label {
+      display: block;
+      font: 800 0.76rem/1.2 "Manrope", sans-serif;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .assess-expect__label { color: #1f5a40; }
+    .assess-anti {
+      margin: 0;
+      padding: 10px 12px 10px 14px;
+      border-radius: 8px;
+      background: rgba(194, 65, 12, 0.06);
+      border: 1px solid rgba(194, 65, 12, 0.22);
+      color: #8a3309;
+    }
+    .assess-anti__label { color: #8a3309; }
+    .assess-expect ul,
+    .assess-anti ul {
+      margin: 0;
+      padding-left: 16px;
+      list-style: disc;
+    }
+    .assess-expect li,
+    .assess-anti li {
+      font: 500 0.85rem/1.5 "Manrope", sans-serif;
+      margin: 0 0 4px;
+    }
+    .assess-expect li:last-child,
+    .assess-anti li:last-child { margin-bottom: 0; }
+    .assess-card__note {
+      margin: 0;
+      color: var(--site-muted);
+      font: 600 0.86rem/1.5 "Manrope", sans-serif;
+    }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="teaching">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar">
+      <a class="apartsin-shell__brand" href="../../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../../index.html">About</a>
+        <a href="../../research/research-focus.html">Research</a>
+        <a href="../../teaching/overview.html">Teaching</a>
+        <a href="../../work/overview.html">Building</a>
+        <a href="../../work/innovation-overview.html">Innovations</a>
+        <a href="../../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="project-assessment-overview">
+          <h1 class="apartsin-sr-only">Project Assessment Criteria</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="../overview.html">Teaching</a>
+              <span aria-hidden="true">/</span>
+              <a href="./index.html">Guides for Students</a>
+              <span aria-hidden="true">/</span>
+              <strong>Project Assessment Criteria</strong>
+            </nav>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../../assets/heroes/teaching-hos-offerings.png" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">Student project assessment criteria. The five dimensions a project is judged on, what each one expects in practice, and the anti-patterns that most often weaken it. For the detailed, requirement-by-requirement checklist, see <a href="./project-requirements.html">Project Requirements</a>.</p>
+          </div>
+        </section>
+
+        <section class="assess-list" aria-label="Assessment criteria">
+          <article class="assess-card" id="problem-domain-understanding">
+            <span class="assess-card__index">Criterion 1</span>
+            <h2 class="assess-card__title">Demonstrate Problem-Domain Understanding</h2>
+            <p class="assess-card__body">Students should develop substantial expertise in the project domain. The analysis should go beyond common-sense observations and be supported by research, professional sources, and relevant literature.</p>
+            <div class="assess-expect">
+              <span class="assess-expect__label">Students should clearly understand</span>
+              <ul>
+                <li>The practical use case and the problem being addressed.</li>
+                <li>The value of solving the problem.</li>
+                <li>The relevant users, stakeholders, and operational constraints.</li>
+                <li>Existing solutions, methods, and limitations.</li>
+              </ul>
+            </div>
+            <div class="assess-anti">
+              <span class="assess-anti__label">Anti-patterns</span>
+              <ul>
+                <li>Superficial understanding of the problem.</li>
+                <li>Motivation based on generic AI trends rather than a real user need.</li>
+                <li>Little or no discussion of existing solutions.</li>
+                <li>Incorrect or inconsistent use of domain terminology.</li>
+                <li>Project objectives that are vague or disconnected from the actual problem.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="assess-card" id="explore-solution-space">
+            <span class="assess-card__index">Criterion 2</span>
+            <h2 class="assess-card__title">Explore the Solution Space in Depth</h2>
+            <p class="assess-card__body">Students should thoroughly investigate the possible solution space rather than immediately selecting the first feasible approach.</p>
+            <div class="assess-expect">
+              <span class="assess-expect__label">The project should demonstrate</span>
+              <ul>
+                <li>Awareness of state-of-the-art models, methods, and technologies.</li>
+                <li>Comparison of alternative solution approaches.</li>
+                <li>Clear mapping between problem-domain requirements and technical design decisions.</li>
+                <li>Well-reasoned selection of models, architectures, tools, and system components.</li>
+                <li>Understanding of the advantages, limitations, and trade-offs of the selected solution.</li>
+              </ul>
+            </div>
+            <div class="assess-anti">
+              <span class="assess-anti__label">Anti-patterns</span>
+              <ul>
+                <li>Choosing the first model or framework without justification.</li>
+                <li>Technology-driven rather than problem-driven design.</li>
+                <li>No comparison with alternative approaches.</li>
+                <li>Design decisions based on popularity or familiarity instead of requirements.</li>
+                <li>Inconsistent mapping between problem characteristics and technical choices.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="assess-card" id="novelty-and-reuse">
+            <span class="assess-card__index">Criterion 3</span>
+            <h2 class="assess-card__title">Ensure Novelty and Effective Reuse</h2>
+            <p class="assess-card__body">The project should contain a meaningful element of novelty in the problem formulation, solution design, system integration, experimentation, or application. At the same time, students should effectively reuse existing models, libraries, datasets, tools, and software components where appropriate, and should not unnecessarily recreate functionality that is already available.</p>
+            <div class="assess-expect">
+              <span class="assess-expect__label">Students should clearly distinguish between</span>
+              <ul>
+                <li>Existing components that were reused.</li>
+                <li>Components that were adapted or extended.</li>
+                <li>New contributions developed as part of the project.</li>
+              </ul>
+            </div>
+            <div class="assess-anti">
+              <span class="assess-anti__label">Anti-patterns</span>
+              <ul>
+                <li>Reimplementing standard libraries or models without a clear reason.</li>
+                <li>Building large amounts of infrastructure instead of solving the research problem.</li>
+                <li>Copying existing projects with only cosmetic modifications.</li>
+                <li>Claiming novelty where only implementation details differ.</li>
+                <li>Failing to identify what is genuinely new in the project.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="assess-card" id="rigorous-methodology">
+            <span class="assess-card__index">Criterion 4</span>
+            <h2 class="assess-card__title">Apply a Correct and Rigorous Methodology</h2>
+            <p class="assess-card__body">Students should use a methodology appropriate to the project and problem domain. The evaluation should demonstrate whether the proposed solution actually addresses the original problem and provides measurable value.</p>
+            <div class="assess-expect">
+              <span class="assess-expect__label">This includes</span>
+              <ul>
+                <li>Correct data collection, selection, generation, or preprocessing procedures.</li>
+                <li>Appropriate separation of training, validation, and test data.</li>
+                <li>Selection of suitable baselines.</li>
+                <li>Use of relevant evaluation metrics.</li>
+                <li>Proper experimental design.</li>
+                <li>Analysis of errors, limitations, and failure cases.</li>
+                <li>Reproducible and well-documented experiments.</li>
+              </ul>
+            </div>
+            <div class="assess-anti">
+              <span class="assess-anti__label">Anti-patterns</span>
+              <ul>
+                <li>Using inappropriate datasets or evaluation metrics.</li>
+                <li>Data leakage between training and testing.</li>
+                <li>Comparing against weak or missing baselines.</li>
+                <li>Reporting only successful examples while ignoring failures.</li>
+                <li>Drawing conclusions unsupported by experimental evidence.</li>
+                <li>Irreproducible experiments or undocumented procedures.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="assess-card" id="present-and-defend">
+            <span class="assess-card__index">Criterion 5</span>
+            <h2 class="assess-card__title">Present and Defend the Project Clearly</h2>
+            <p class="assess-card__body">Students should present the problem, methodology, solution, and results clearly and professionally. Explanations should be short, precise, and informative rather than vague, overly general, or unnecessarily detailed.</p>
+            <div class="assess-expect">
+              <span class="assess-expect__label">Students should</span>
+              <ul>
+                <li>Use accurate technical and domain-specific terminology.</li>
+                <li>Explain the project concisely and without irrelevant information.</li>
+                <li>Justify all important design and implementation decisions.</li>
+                <li>Explain the internal operation of the models and system components.</li>
+                <li>Present results using suitable tables, figures, examples, and comparisons.</li>
+                <li>Clearly distinguish between assumptions, evidence, conclusions, and limitations.</li>
+                <li>Answer questions confidently and demonstrate personal understanding of the project.</li>
+              </ul>
+            </div>
+            <div class="assess-anti">
+              <span class="assess-anti__label">Anti-patterns</span>
+              <ul>
+                <li>Slides overloaded with text or irrelevant details.</li>
+                <li>Buzzwords without technical understanding.</li>
+                <li>Inability to explain design decisions or model behavior.</li>
+                <li>Confusing implementation details with project contributions.</li>
+                <li>Weak visual presentation of results.</li>
+                <li>Long, unfocused answers that fail to address the question directly.</li>
+              </ul>
+            </div>
+          </article>
+        </section>
+
+      <section class="section-quick-links">
+        <h2 class="section-quick-links__title">Quick Links</h2>
+        <nav class="section-quick-links__grid" aria-label="Quick links">
+          <a class="section-quick-link" href="./project-requirements.html">
+            <span class="section-quick-link__badge" style="background: #c2410c;">R</span>
+            Project Requirements
+          </a>
+          <a class="section-quick-link" href="./common-misconceptions.html">
+            <span class="section-quick-link__badge" style="background: #7a3fa0;">M</span>
+            Common Misconceptions
+          </a>
+          <a class="section-quick-link" href="../hands-on-ai-science-courses-student-projects.html">
+            <span class="section-quick-link__badge" style="background: #9c5a2e;">P</span>
+            Past Projects
+          </a>
+        </nav>
+      </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../../shared/unified-enhance.js"></script>
+  <script defer src="../../shared/site-shell.js"></script>
+</body>
+</html>

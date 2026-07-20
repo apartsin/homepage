@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <meta name="description" content="Guides for students: advice, common misconceptions, project requirements, assessment criteria, past projects, course bots, and online textbooks.">
+  <title>Guides for Students | Sasha Apartsin</title>
+  <link rel="stylesheet" href="../../shared/site-shell.css">
+  <link rel="stylesheet" href="../../shared/unified-theme.css">
+  <style>
+    .guides-section-title {
+      margin: 30px 0 4px;
+      color: var(--site-text, #18202a);
+      font: 800 0.82rem/1.2 "Manrope", sans-serif;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .guides-section-title:first-of-type { margin-top: 10px; }
+    .guides-section-lede {
+      margin: 0 0 4px;
+      color: var(--site-muted);
+      font: 600 0.88rem/1.5 "Manrope", sans-serif;
+    }
+    .guides-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .guide-card {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      overflow: hidden;
+      position: relative;
+    }
+    .guide-card__media {
+      display: block;
+      border-bottom: 1px solid var(--site-border);
+      background: rgba(255, 255, 255, 0.98);
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      margin: 0;
+    }
+    .guide-card__media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      background: #fff;
+    }
+    .guide-card__body {
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+    .guide-card__body h2 {
+      margin: 0;
+      font-size: 1.04rem;
+      line-height: 1.25;
+    }
+    .guide-card__body p {
+      margin: 0;
+      color: var(--site-muted);
+      font: 600 0.87rem/1.55 "Manrope", "Segoe UI", sans-serif;
+      /* Push the link row to the bottom so every card's footer aligns. */
+      flex: 1;
+    }
+    .guide-card__body .hub-anchor-nav {
+      margin-top: auto;
+      padding-top: 4px;
+    }
+    /* Small tag in the corner marking guides that live off this section. */
+    .guide-card__tag {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 2;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(17, 20, 24, 0.78);
+      color: #fff;
+      font: 800 0.7rem/1 "Manrope", "Segoe UI", sans-serif;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      backdrop-filter: blur(2px);
+    }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="teaching">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar">
+      <a class="apartsin-shell__brand" href="../../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../../index.html">About</a>
+        <a href="../../research/research-focus.html">Research</a>
+        <a href="../../teaching/overview.html">Teaching</a>
+        <a href="../../work/overview.html">Building</a>
+        <a href="../../work/innovation-overview.html">Innovations</a>
+        <a href="../../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="guides-overview">
+          <h1 class="apartsin-sr-only">Guides for Students</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="../overview.html">Teaching</a>
+              <span aria-hidden="true">/</span>
+              <strong>Guides for Students</strong>
+            </nav>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../../assets/heroes/teaching-overview.png" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">Everything a student in one of my courses should read before starting, and keep open while working. How to approach the degree, which assumptions to drop, what a strong project has to demonstrate, and where to find worked examples, course assistants, and the textbooks behind the courses.</p>
+          </div>
+        </section>
+
+        <h2 class="guides-section-title">Start Here</h2>
+        <p class="guides-section-lede">Read these two before choosing a project. They shape how everything else is judged.</p>
+        <section class="guides-grid" aria-label="Orientation guides">
+          <article class="hub-card guide-card" id="guide-advice">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/teaching-advice-to-students-2026.svg" alt="Advice to Students visual">
+            </figure>
+            <div class="guide-card__body">
+              <h2>Advice to Students</h2>
+              <p>Six pieces of advice for navigating a degree in the AI era, each with a pattern to adopt, an anti-pattern to avoid, and the inner statement that gives the anti-pattern away. Available in English and Hebrew.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./advice-to-students-2026.html">Read the guide</a>
+                <a href="./advice-to-students-2026-he.html" lang="he">עברית</a>
+              </nav>
+            </div>
+          </article>
+
+          <article class="hub-card guide-card" id="guide-misconceptions">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/teaching-cs-courses.png" alt="Common Misconceptions visual">
+            </figure>
+            <div class="guide-card__body">
+              <h2>Common Misconceptions</h2>
+              <p>Ten beliefs that quietly limit what students get out of a project-based course, from mistaking a working demo for engineering skill to treating a course as content to consume. Each comes with the sentence that gives it away.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./common-misconceptions.html">Read the guide</a>
+              </nav>
+            </div>
+          </article>
+        </section>
+
+        <h2 class="guides-section-title">Project Standards</h2>
+        <p class="guides-section-lede">What the project has to demonstrate, at two levels of detail. Use them as a checklist while the work is still taking shape.</p>
+        <section class="guides-grid" aria-label="Project standards">
+          <article class="hub-card guide-card" id="guide-requirements">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/teaching-hos-student-projects.png" alt="Project Requirements visual">
+            </figure>
+            <div class="guide-card__body">
+              <h2>Project Requirements</h2>
+              <p>Twelve requirements a strong course project is expected to satisfy, grouped into four phases from framing the problem through to engineering rigor, each paired with the anti-patterns that most often weaken it.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./project-requirements.html">See the requirements</a>
+              </nav>
+            </div>
+          </article>
+
+          <article class="hub-card guide-card" id="guide-assessment">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/teaching-hos-offerings.png" alt="Project Assessment Criteria visual">
+            </figure>
+            <div class="guide-card__body">
+              <h2>Project Assessment Criteria</h2>
+              <p>The five dimensions a project is judged on: domain understanding, depth of solution-space exploration, novelty and reuse, methodological rigor, and how clearly the work is presented and defended.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./project-assessment-criteria.html">See the criteria</a>
+              </nav>
+            </div>
+          </article>
+        </section>
+
+        <h2 class="guides-section-title">Working Resources</h2>
+        <p class="guides-section-lede">Worked examples, course assistants, and the textbooks the courses are built on.</p>
+        <section class="guides-grid" aria-label="Working resources">
+          <article class="hub-card guide-card" id="guide-past-projects">
+            <span class="guide-card__tag">Examples</span>
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/teaching-undergrad-projects.png" alt="Past student projects visual">
+            </figure>
+            <div class="guide-card__body">
+              <h2>Past Projects</h2>
+              <p>Completed student course projects with their repositories and write-ups. The most reliable way to calibrate scope and quality before committing to your own proposal.</p>
+              <nav class="hub-anchor-nav">
+                <a href="../hands-on-ai-science-courses-student-projects.html">Browse projects</a>
+              </nav>
+            </div>
+          </article>
+
+          <article class="hub-card guide-card" id="guide-bots">
+            <span class="guide-card__tag">Assistants</span>
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/teaching-course-bots.png" alt="Course bots visual">
+            </figure>
+            <div class="guide-card__body">
+              <h2>Course Bots</h2>
+              <p>Course-specific AI assistants grounded in the syllabus and materials. Use them to close knowledge gaps the week they appear, and to challenge your own reasoning rather than to generate work.</p>
+              <nav class="hub-anchor-nav">
+                <a href="../course-bots.html">Meet the bots</a>
+              </nav>
+            </div>
+          </article>
+
+          <article class="hub-card guide-card" id="guide-textbooks">
+            <span class="guide-card__tag">Reference</span>
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/writing-books.png" alt="Online textbooks visual">
+            </figure>
+            <div class="guide-card__body">
+              <h2>Online Textbooks</h2>
+              <p>The open textbooks behind the course series: Language AI, Vision AI, Scalable AI, and Temporal AI. Readable online, with companion Android builds.</p>
+              <nav class="hub-anchor-nav">
+                <a href="../../writing/books-overview.html">Open the textbooks</a>
+              </nav>
+            </div>
+          </article>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../../shared/unified-enhance.js"></script>
+  <script defer src="../../shared/site-shell.js"></script>
+</body>
+</html>

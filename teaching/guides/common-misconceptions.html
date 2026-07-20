@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <meta name="description" content="Ten misconceptions that limit what students get out of a project-based AI course. Each one comes with the statement that gives it away and the reality that replaces it.">
+  <title>Common Misconceptions | Sasha Apartsin</title>
+  <link rel="stylesheet" href="../../shared/site-shell.css">
+  <link rel="stylesheet" href="../../shared/unified-theme.css">
+  <style>
+    .misc-section-title {
+      margin: 34px 0 2px;
+      color: var(--site-text, #18202a);
+      font: 800 0.82rem/1.2 "Manrope", sans-serif;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .misc-section-title:first-of-type { margin-top: 10px; }
+    .misc-section-lede {
+      margin: 0 0 4px;
+      color: var(--site-muted);
+      font: 600 0.88rem/1.5 "Manrope", sans-serif;
+    }
+    .misc-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-auto-rows: 1fr;
+      gap: 14px;
+      margin-top: 14px;
+      align-items: stretch;
+    }
+    /* Two columns from ~720px, three columns from ~1080px. */
+    @media (min-width: 720px) {
+      .misc-list { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1080px) {
+      .misc-list { grid-template-columns: repeat(3, 1fr); }
+    }
+    .misc-card {
+      padding: 18px 20px;
+      border: 1px solid var(--site-border);
+      border-radius: 14px;
+      background: #fff;
+      position: relative;
+      overflow: hidden;
+      /* Four-row grid: index / title / body / callouts. The body row absorbs
+         the slack so the callout pills sit flush at the bottom of every card. */
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      row-gap: 8px;
+    }
+    .misc-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--mc-color, var(--site-accent));
+    }
+    /* Accent colour is set per theme group, so the three sections read as
+       distinct families rather than ten unrelated cards. */
+    .misc-list--signals .misc-card { --mc-color: #c2410c; }
+    .misc-list--project .misc-card { --mc-color: #164a83; }
+    .misc-list--learning .misc-card { --mc-color: #2e7d5a; }
+    .misc-card__index {
+      display: inline-block;
+      font: 900 0.78rem/1 "Manrope", sans-serif;
+      letter-spacing: 0.08em;
+      color: var(--mc-color, var(--site-accent));
+      text-transform: uppercase;
+      margin: 0;
+    }
+    .misc-card__title {
+      margin: 0;
+      font: 800 1.08rem/1.28 "Manrope", sans-serif;
+      color: var(--site-text);
+      /* Force at least two lines so 1-line and 2-line titles take equal space,
+         keeping every card visually uniform across the grid. */
+      min-height: calc(2 * 1.28 * 1.08rem);
+    }
+    .misc-card__body {
+      margin: 0;
+      color: var(--site-text);
+      font-size: 0.94rem;
+      line-height: 1.5;
+      /* Equalize the body block so the callouts underneath always start at
+         the same vertical position across the row. */
+      min-height: 6.2em;
+    }
+    .misc-card__callouts {
+      display: grid;
+      /* Both callouts inside a card take equal vertical space. */
+      grid-template-rows: 1fr 1fr;
+      gap: 6px;
+    }
+    .misc-callout {
+      margin: 0;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font: 500 0.86rem/1.42 "Manrope", sans-serif;
+      /* Floor every callout to the same height so the Misconception and
+         Reality pills line up cleanly across all cards in the grid. */
+      min-height: 6.8em;
+      box-sizing: border-box;
+    }
+    .misc-callout__label {
+      display: inline-block;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      margin-right: 6px;
+    }
+    .misc-callout--false {
+      background: rgba(194, 65, 12, 0.06);
+      border: 1px solid rgba(194, 65, 12, 0.22);
+      color: #8a3309;
+    }
+    .misc-callout--false .misc-callout__label { color: #8a3309; }
+    .misc-callout--true {
+      background: rgba(46, 125, 90, 0.08);
+      border: 1px solid rgba(46, 125, 90, 0.22);
+      color: #1f5a40;
+    }
+    .misc-callout--true .misc-callout__label { color: #1f5a40; }
+    /* The giveaway line nested inside the misconception callout: the sentence
+       a student says out loud when holding this belief. */
+    .misc-callout__tell {
+      display: block;
+      margin-top: 6px;
+      font-size: 0.82rem;
+      font-style: italic;
+      color: rgba(138, 51, 9, 0.82);
+    }
+    /* Memorable maxim nested inside the reality callout, the green twin of
+       the giveaway line. */
+    .misc-callout__maxim {
+      display: block;
+      margin-top: 6px;
+      font-size: 0.82rem;
+      font-style: italic;
+      color: rgba(31, 90, 64, 0.85);
+    }
+    /* Keep the "Sounds like:" / "Mantra:" prefix upright and bold, so it
+       stands out from the italicized quote that follows it. */
+    .misc-callout__tell .misc-callout__label,
+    .misc-callout__maxim .misc-callout__label {
+      font-style: normal;
+    }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="teaching">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar">
+      <a class="apartsin-shell__brand" href="../../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../../index.html">About</a>
+        <a href="../../research/research-focus.html">Research</a>
+        <a href="../../teaching/overview.html">Teaching</a>
+        <a href="../../work/overview.html">Building</a>
+        <a href="../../work/innovation-overview.html">Innovations</a>
+        <a href="../../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="common-misconceptions-overview">
+          <h1 class="apartsin-sr-only">Common Misconceptions</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="../overview.html">Teaching</a>
+              <span aria-hidden="true">/</span>
+              <a href="./index.html">Guides for Students</a>
+              <span aria-hidden="true">/</span>
+              <strong>Common Misconceptions</strong>
+            </nav>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../../assets/heroes/teaching-cs-courses.png" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">Ten beliefs that quietly limit what students get out of a project-based course. Each one comes with the sentence that gives it away and the reality that should replace it. None of them are signs of a weak student; they are the default assumptions that a degree, and now an AI assistant, make very easy to hold.</p>
+          </div>
+        </section>
+
+        <h2 class="misc-section-title">1. Depth Is Not What It Looks Like</h2>
+        <p class="misc-section-lede">The three signals most often mistaken for engineering substance: effort, a working demo, and fluent vocabulary.</p>
+        <section class="misc-list misc-list--signals" aria-label="Misconceptions about technical depth">
+          <article class="misc-card" id="difficulty-is-not-depth">
+            <span class="misc-card__index">Misconception 1</span>
+            <h2 class="misc-card__title">Hard to build means deep</h2>
+            <p class="misc-card__body">Implementation effort measures friction, not insight. Wiring APIs, fighting environment errors, and chasing deployment bugs can consume weeks without ever exercising a non-trivial engineering decision.</p>
+            <div class="misc-card__callouts">
+              <p class="misc-callout misc-callout--false"><span class="misc-callout__label">Misconception:</span> The harder something was to implement, the deeper the engineering behind it. <span class="misc-callout__tell"><span class="misc-callout__label">Sounds like:</span> &ldquo;It took me three weeks, so it must be advanced.&rdquo;</span></p>
+              <p class="misc-callout misc-callout--true"><span class="misc-callout__label">Reality:</span> Depth lives in the decisions you can justify: the constraints you identified, the alternatives you rejected, and why. <span class="misc-callout__maxim"><span class="misc-callout__label">Mantra:</span> &ldquo;Measure depth in decisions, not in hours.&rdquo;</span></p>
+            </div>
+          </article>
+
+          <article class="misc-card" id="demo-is-not-evidence">
+            <span class="misc-card__index">Misconception 2</span>
+            <h2 class="misc-card__title">A working demo proves engineering skill</h2>
+            <p class="misc-card__body">Generative tools produce polished, runnable artifacts in an afternoon. A demo shows that something runs. It says nothing about whether you can explain it, defend it, extend it, or debug it when it breaks.</p>
+            <div class="misc-card__callouts">
+              <p class="misc-callout misc-callout--false"><span class="misc-callout__label">Misconception:</span> If the demo works, the engineering part is finished. <span class="misc-callout__tell"><span class="misc-callout__label">Sounds like:</span> &ldquo;Look, it runs.&rdquo;</span></p>
+              <p class="misc-callout misc-callout--true"><span class="misc-callout__label">Reality:</span> You are assessed on the reasoning behind the artifact: why this design, these parameters, this evaluation. <span class="misc-callout__maxim"><span class="misc-callout__label">Mantra:</span> &ldquo;The demo is evidence, not the argument.&rdquo;</span></p>
+            </div>
+          </article>
+
+          <article class="misc-card" id="fluency-is-not-understanding">
+            <span class="misc-card__index">Misconception 3</span>
+            <h2 class="misc-card__title">Sounding technical means understanding</h2>
+            <p class="misc-card__body">Technical vocabulary is easy to reproduce and hard to earn. Naming a method fluently and being able to state what it assumes, when it fails, and what it costs are entirely different capabilities.</p>
+            <div class="misc-card__callouts">
+              <p class="misc-callout misc-callout--false"><span class="misc-callout__label">Misconception:</span> If I can discuss it in the right terms, I understand it. <span class="misc-callout__tell"><span class="misc-callout__label">Sounds like:</span> &ldquo;We used a contrastive objective with attention over the embeddings.&rdquo;</span></p>
+              <p class="misc-callout misc-callout--true"><span class="misc-callout__label">Reality:</span> Understanding shows when you explain the idea plainly, state its assumptions, and predict where it breaks. <span class="misc-callout__maxim"><span class="misc-callout__label">Mantra:</span> &ldquo;If you cannot say it simply, you are quoting, not knowing.&rdquo;</span></p>
+            </div>
+          </article>
+        </section>
+
+        <h2 class="misc-section-title">2. Positioning the Project</h2>
+        <p class="misc-section-lede">Where the project sits relative to the course, the literature, and the work that already exists.</p>
+        <section class="misc-list misc-list--project" aria-label="Misconceptions about the project">
+          <article class="misc-card" id="project-and-course">
+            <span class="misc-card__index">Misconception 4</span>
+            <h2 class="misc-card__title">The project stands apart from the course</h2>
+            <p class="misc-card__body">The project exists to apply what the course teaches. A project that could have been built before the first lecture demonstrates initiative, but it does not demonstrate learning.</p>
+            <div class="misc-card__callouts">
+              <p class="misc-callout misc-callout--false"><span class="misc-callout__label">Misconception:</span> The project is an independent deliverable that simply has to be handed in. <span class="misc-callout__tell"><span class="misc-callout__label">Sounds like:</span> &ldquo;The project has nothing to do with the lectures.&rdquo;</span></p>
+              <p class="misc-callout misc-callout--true"><span class="misc-callout__label">Reality:</span> Use the course concepts, methods, and vocabulary deliberately, and make that connection explicit in your work. <span class="misc-callout__maxim"><span class="misc-callout__label">Mantra:</span> &ldquo;The project is where the syllabus becomes yours.&rdquo;</span></p>
+            </div>
+          </article>
+
+          <article class="misc-card" id="novelty-requires-research">
+            <span class="misc-card__index">Misconception 5</span>
+            <h2 class="misc-card__title">Novelty can be claimed after a quick search</h2>
+            <p class="misc-card__body">&ldquo;Nobody has done this&rdquo; is a strong claim about the state of the art. Earning it requires a real search of academic literature, open-source repositories, and shipped products, not one query and a scroll.</p>
+            <div class="misc-card__callouts">
+              <p class="misc-callout misc-callout--false"><span class="misc-callout__label">Misconception:</span> I did not find it quickly, therefore it does not exist. <span class="misc-callout__tell"><span class="misc-callout__label">Sounds like:</span> &ldquo;I searched and found nothing similar.&rdquo;</span></p>
+              <p class="misc-callout misc-callout--true"><span class="misc-callout__label">Reality:</span> Survey the field first, then position your contribution precisely against what you found. <span class="misc-callout__maxim"><span class="misc-callout__label">Mantra:</span> &ldquo;Novelty is what survives a real search.&rdquo;</span></p>
+            </div>
+          </article>
+
+          <article class="misc-card" id="build-on-existing-work">
+            <span class="misc-card__index">Misconception 6</span>
+            <h2 class="misc-card__title">Building from scratch shows more skill</h2>
+            <p class="misc-card__body">Starting from zero is usually a cost, not a virtue. Established models, libraries, datasets, benchmarks, and the methods from the course are the baseline you are expected to stand on.</p>
+            <div class="misc-card__callouts">
+              <p class="misc-callout misc-callout--false"><span class="misc-callout__label">Misconception:</span> Writing every part myself proves more capability than reusing what exists. <span class="misc-callout__tell"><span class="misc-callout__label">Sounds like:</span> &ldquo;I wanted to build it all on my own.&rdquo;</span></p>
+              <p class="misc-callout misc-callout--true"><span class="misc-callout__label">Reality:</span> Reuse deliberately, then spend your effort on the one part that is genuinely yours. <span class="misc-callout__maxim"><span class="misc-callout__label">Mantra:</span> &ldquo;Earn your originality where it counts.&rdquo;</span></p>
+            </div>
+          </article>
+        </section>
+
+        <h2 class="misc-section-title">3. How Learning Actually Works</h2>
+        <p class="misc-section-lede">What to do with confusion, with the time in the room, with an AI assistant, and with the gaps you already know you have.</p>
+        <section class="misc-list misc-list--learning" aria-label="Misconceptions about learning">
+          <article class="misc-card" id="confusion-is-a-defect">
+            <span class="misc-card__index">Misconception 7</span>
+            <h2 class="misc-card__title">Staying confused is part of the subject</h2>
+            <p class="misc-card__body">A persistent fuzzy feeling around a concept is information: the mental model is incomplete. Left alone, that fuzziness becomes the foundation for everything built on top of it.</p>
+            <div class="misc-card__callouts">
+              <p class="misc-callout misc-callout--false"><span class="misc-callout__label">Misconception:</span> Feeling permanently unsure about the core ideas is normal here. <span class="misc-callout__tell"><span class="misc-callout__label">Sounds like:</span> &ldquo;Nobody really understands this part anyway.&rdquo;</span></p>
+              <p class="misc-callout misc-callout--true"><span class="misc-callout__label">Reality:</span> Treat every persistent confusion as a defect to fix, until you can explain the concept without hedging. <span class="misc-callout__maxim"><span class="misc-callout__label">Mantra:</span> &ldquo;Fuzzy is a bug report.&rdquo;</span></p>
+            </div>
+          </article>
+
+          <article class="misc-card" id="course-is-a-conversation">
+            <span class="misc-card__index">Misconception 8</span>
+            <h2 class="misc-card__title">Taking a course means consuming its content</h2>
+            <p class="misc-card__body">Slides, recordings, and notes are the most replaceable part of a course; equivalent content is available anywhere. What you cannot get elsewhere is the questioning, argument, and direct feedback on your own work.</p>
+            <div class="misc-card__callouts">
+              <p class="misc-callout misc-callout--false"><span class="misc-callout__label">Misconception:</span> If I get through all the material, I have taken the course. <span class="misc-callout__tell"><span class="misc-callout__label">Sounds like:</span> &ldquo;I will just watch the recordings later.&rdquo;</span></p>
+              <p class="misc-callout misc-callout--true"><span class="misc-callout__label">Reality:</span> Ask, challenge, present, and collect critique while you still have access to the people who can give it. <span class="misc-callout__maxim"><span class="misc-callout__label">Mantra:</span> &ldquo;Content is everywhere. Feedback is not.&rdquo;</span></p>
+            </div>
+          </article>
+
+          <article class="misc-card" id="ai-as-critic">
+            <span class="misc-card__index">Misconception 9</span>
+            <h2 class="misc-card__title">AI is a tool for producing work</h2>
+            <p class="misc-card__body">Generation is the least interesting thing a capable model does. The same tool will critique your design, surface failure modes, argue the opposing case, and find the hole in your evaluation, but only if you ask it to.</p>
+            <div class="misc-card__callouts">
+              <p class="misc-callout misc-callout--false"><span class="misc-callout__label">Misconception:</span> The point of an AI assistant is to generate the artifact faster. <span class="misc-callout__tell"><span class="misc-callout__label">Sounds like:</span> &ldquo;Write this part for me.&rdquo;</span></p>
+              <p class="misc-callout misc-callout--true"><span class="misc-callout__label">Reality:</span> Make the model your harshest reviewer before a human becomes one. <span class="misc-callout__maxim"><span class="misc-callout__label">Mantra:</span> &ldquo;Ask it to break your work, not just to build it.&rdquo;</span></p>
+            </div>
+          </article>
+
+          <article class="misc-card" id="close-gaps-immediately">
+            <span class="misc-card__index">Misconception 10</span>
+            <h2 class="misc-card__title">Gaps can be closed later</h2>
+            <p class="misc-card__body">An unresolved gap rarely stays a single gap. Later material assumes it, so the cost of leaving it open compounds every week until the topic becomes unreachable without going back.</p>
+            <div class="misc-card__callouts">
+              <p class="misc-callout misc-callout--false"><span class="misc-callout__label">Misconception:</span> Missing pieces can be picked up at the end, when there is time. <span class="misc-callout__tell"><span class="misc-callout__label">Sounds like:</span> &ldquo;I will figure that out before the exam.&rdquo;</span></p>
+              <p class="misc-callout misc-callout--true"><span class="misc-callout__label">Reality:</span> Close the gap the week you find it, using notes, references, peers, and AI as an on-demand tutor. <span class="misc-callout__maxim"><span class="misc-callout__label">Mantra:</span> &ldquo;Debt compounds. Pay it the same week.&rdquo;</span></p>
+            </div>
+          </article>
+        </section>
+
+      <section class="section-quick-links">
+        <h2 class="section-quick-links__title">Quick Links</h2>
+        <nav class="section-quick-links__grid" aria-label="Quick links">
+          <a class="section-quick-link" href="./advice-to-students-2026.html">
+            <span class="section-quick-link__badge" style="background: #c2410c;">A</span>
+            Advice to Students
+          </a>
+          <a class="section-quick-link" href="../hands-on-ai-science-courses-courses.html">
+            <span class="section-quick-link__badge" style="background: #1d4ed8;">C</span>
+            Course Syllabi
+          </a>
+          <a class="section-quick-link" href="../../work/innovation-first-learning.html">
+            <span class="section-quick-link__badge" style="background: #2e7d5a;">I</span>
+            Innovation-First Learning
+          </a>
+        </nav>
+      </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../../shared/unified-enhance.js"></script>
+  <script defer src="../../shared/site-shell.js"></script>
+</body>
+</html>

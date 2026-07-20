@@ -198,6 +198,7 @@
           /\/teaching\/innovation-first-learning\.html$/i,
           /\/teaching\/ai-engineering-projects-open-for-students\.html$/i,
           /\/teaching\/course-bots\.html$/i,
+          /\/teaching\/guides\//i,
           /\/courses\//i,
         ],
         [
@@ -208,6 +209,7 @@
               {
                 label: 'Course Syllabi',
                 path: 'teaching/hands-on-ai-science-courses-courses.html',
+                collapsed: true,
                 secondary: [
                   { label: 'Language AI', path: 'courses/hos/series/language-ai.html' },
                   { label: 'Vision AI', path: 'courses/hos/series/vision-ai.html' },
@@ -218,6 +220,17 @@
               { label: 'Course Offerings', path: 'teaching/hands-on-ai-science-courses-past-offerings.html' },
               { label: 'Student Course Projects', path: 'teaching/hands-on-ai-science-courses-student-projects.html' },
               { label: 'Course Bots', path: 'teaching/course-bots.html' },
+            ],
+          },
+          {
+            label: 'Guides for Students',
+            path: 'teaching/guides/index.html',
+            collapsed: true,
+            secondary: [
+              { label: 'Advice to Students', path: 'teaching/guides/advice-to-students-2026.html' },
+              { label: 'Common Misconceptions', path: 'teaching/guides/common-misconceptions.html' },
+              { label: 'Project Requirements', path: 'teaching/guides/project-requirements.html' },
+              { label: 'Project Assessment Criteria', path: 'teaching/guides/project-assessment-criteria.html' },
             ],
           },
           { label: 'Computer Science Courses', path: 'teaching/other-cs-courses.html' },
@@ -534,6 +547,10 @@
             /online books drafts/i.test(secondaryEntry.label || '')
           ) {
             nestedItem.classList.add('is-easy-open');
+          }
+          // Opt-in: stay shut until this group itself is hovered or focused.
+          if (secondaryEntry.collapsed) {
+            nestedItem.classList.add('is-collapsed');
           }
 
           const nestedAnchor = document.createElement('a');

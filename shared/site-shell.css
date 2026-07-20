@@ -575,9 +575,11 @@ body.apartsin-shell-active .apartsin-shell__content {
   display: grid;
 }
 
-/* Keep nested groups open while the parent popup is open to prevent hover/focus jumps. */
-.apartsin-shell__menu-item:hover .apartsin-shell__menu-subitem > .apartsin-shell__menu-subitem-dropdown,
-.apartsin-shell__menu-item:focus-within .apartsin-shell__menu-subitem > .apartsin-shell__menu-subitem-dropdown {
+/* Keep nested groups open while the parent popup is open to prevent hover/focus jumps.
+   Groups marked .is-collapsed opt out: they stay shut until hovered/focused directly,
+   so long menus (e.g. Course Syllabi, Guides for Students) do not dominate the popup. */
+.apartsin-shell__menu-item:hover .apartsin-shell__menu-subitem:not(.is-collapsed) > .apartsin-shell__menu-subitem-dropdown,
+.apartsin-shell__menu-item:focus-within .apartsin-shell__menu-subitem:not(.is-collapsed) > .apartsin-shell__menu-subitem-dropdown {
   display: grid;
 }
 

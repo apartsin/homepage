@@ -1,18 +1,5 @@
 window.BLOG_POSTS_DATA = [
   {
-    tags: ["ai-in-academia"],
-    image: "../assets/heroes/teaching-advice-to-students-2026.svg",
-    imageAlt: "Compass illustration symbolizing career direction for students",
-    venue: "apartsin.com",
-    title: "Advice to Students in 2026",
-    href: "./advice-to-students-2026.html",
-    description: "Six pieces of crisp advice for navigating a degree in the AI era, each delivered as a pattern, an anti-pattern, and the inner statement that gives the anti-pattern away.",
-    languages: [
-      { label: "English", href: "./advice-to-students-2026.html" },
-      { label: "עברית", href: "./advice-to-students-2026-he.html", lang: "he", dir: "rtl" }
-    ]
-  },
-  {
     tags: ["vibe-coding", "ai-product-strategy"],
     image: "../assets/writing/blog-posts/blog-01.png",
     imageAlt: "The End of Software Engineering as We Know It",
