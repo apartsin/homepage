@@ -119,6 +119,14 @@
     return normalizePath(`${appBasePath()}${clean}`);
   }
 
+  // Small red "Draft" tag appended to menu entries whose book is unfinished.
+  function draftTag() {
+    const tag = document.createElement('span');
+    tag.className = 'apartsin-shell__menu-draft';
+    tag.textContent = 'Draft';
+    return tag;
+  }
+
   function link(label, path, matches, secondary) {
     return {
       label,
@@ -264,6 +272,7 @@
           {
             label: 'Online Textbooks',
             path: 'writing/books-overview.html',
+            collapsed: true,
             secondary: [
               {
                 label: 'Building Language AI: From Tokens to Agents',
@@ -284,6 +293,30 @@
                 label: 'Building Temporal AI: From Forecasting to Sequential Decision Making',
                 path: 'http://temporalbook.apartsin.com/',
                 cover: 'assets/writing/covers/temporalbook-cover.jpg',
+              },
+              {
+                label: 'Building Embodied AI: From Perception to Autonomous Action',
+                path: 'https://embodiedbook.apartsin.com/',
+                cover: 'assets/writing/covers/embodiedbook-cover.jpg',
+                draft: true,
+              },
+              {
+                label: 'Building Discovery AI: From Vibe Coding to Autonomous Science',
+                path: 'https://discoverybook.apartsin.com/',
+                cover: 'assets/writing/covers/discoverybook-cover.jpg',
+                draft: true,
+              },
+              {
+                label: 'Building Neuromorphic AI: From Spiking Neurons to Edge Intelligence',
+                path: 'https://neuromorphicbook.apartsin.com/',
+                cover: 'assets/writing/covers/neuromorphicbook-cover.jpg',
+                draft: true,
+              },
+              {
+                label: 'Building Sensory AI: Machine Perception of the Physical World',
+                path: 'https://sensorbook.apartsin.com/',
+                cover: 'assets/writing/covers/sensorbook-cover.jpg',
+                draft: true,
               },
             ],
           },
@@ -587,8 +620,14 @@
               const coverLabel = document.createElement('span');
               coverLabel.textContent = thirdLevelEntry.label;
               thirdAnchor.append(cover, coverLabel);
+              if (thirdLevelEntry.draft) {
+                coverLabel.appendChild(draftTag());
+              }
             } else {
               thirdAnchor.textContent = thirdLevelEntry.label;
+              if (thirdLevelEntry.draft) {
+                thirdAnchor.appendChild(draftTag());
+              }
             }
             thirdAnchor.setAttribute('role', 'menuitem');
             if (isPrimaryActive && linkMatchesCurrent(thirdLevelEntry.path)) {
@@ -615,7 +654,19 @@
                 }
                 fourthGroup.appendChild(fourthAnchor);
               });
-              nestedDropdown.appendChild(fourthGroup);
+              if (thirdLevelEntry.collapsed) {
+                // Wrap the trigger and its group together so hovering either one
+                // keeps the group open; without a wrapper the pointer would leave
+                // the anchor on the way into the list and it would snap shut.
+                const thirdItem = document.createElement('div');
+                thirdItem.className = 'apartsin-shell__menu-thirditem is-collapsed';
+                nestedDropdown.removeChild(thirdAnchor);
+                thirdItem.appendChild(thirdAnchor);
+                thirdItem.appendChild(fourthGroup);
+                nestedDropdown.appendChild(thirdItem);
+              } else {
+                nestedDropdown.appendChild(fourthGroup);
+              }
             }
           });
 

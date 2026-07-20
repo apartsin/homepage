@@ -12,6 +12,19 @@
   <link rel="stylesheet" href="../shared/site-shell.css">
   <link rel="stylesheet" href="../shared/unified-theme.css">
   <style>
+    .books-section-title {
+      margin: 30px 0 2px;
+      color: var(--site-text, #18202a);
+      font: 800 0.82rem/1.2 "Manrope", sans-serif;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .books-section-title:first-of-type { margin-top: 8px; }
+    .books-section-lede {
+      margin: 0;
+      color: var(--site-muted);
+      font: 600 0.88rem/1.5 "Manrope", sans-serif;
+    }
     .books-grid {
       margin-top: 16px;
       display: grid;
@@ -63,6 +76,21 @@
       font: 800 0.72rem/1.2 "Manrope", sans-serif;
       letter-spacing: 0.14em;
       text-transform: uppercase;
+    }
+    /* Red pill marking a book that is still an unfinished draft, so readers
+       know the text is in progress before they open it. */
+    .book-card__draft {
+      display: inline-block;
+      margin-left: 8px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(190, 18, 22, 0.1);
+      border: 1px solid rgba(190, 18, 22, 0.35);
+      color: #be1216;
+      font: 800 0.66rem/1.35 "Manrope", sans-serif;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      vertical-align: middle;
     }
     .book-card__title {
       margin: 0 0 8px;
@@ -147,7 +175,9 @@
           </div>
         </section>
 
-        <section class="books-grid" aria-label="Online book drafts">
+        <h2 class="books-section-title">Published</h2>
+        <p class="books-section-lede">Complete editions, available to read online and in print where noted.</p>
+        <section class="books-grid" aria-label="Published textbooks">
           <article class="book-card">
             <img class="book-card__cover" src="../assets/writing/covers/llmbook-cover.jpg" alt="Cover of Building Language AI: From Tokens to Agents" loading="lazy" decoding="async">
             <div class="book-card__content">
@@ -161,6 +191,7 @@
               </div>
             </div>
           </article>
+
           <article class="book-card">
             <img class="book-card__cover" src="../assets/writing/covers/visionbook-cover.jpg" alt="Cover of Building Vision AI: From Pixels to Generative Models" loading="lazy" decoding="async">
             <div class="book-card__content">
@@ -174,6 +205,7 @@
               </div>
             </div>
           </article>
+
           <article class="book-card">
             <img class="book-card__cover" src="../assets/writing/covers/scalablebook-cover.jpg" alt="Cover of Building Scalable AI: From Big Data Algorithms to Distributed Intelligence" loading="lazy" decoding="async">
             <div class="book-card__content">
@@ -187,6 +219,7 @@
               </div>
             </div>
           </article>
+
           <article class="book-card">
             <img class="book-card__cover" src="../assets/writing/covers/temporalbook-cover.jpg" alt="Cover of Building Temporal AI: From Forecasting to Sequential Decision Making" loading="lazy" decoding="async">
             <div class="book-card__content">
@@ -197,6 +230,58 @@
                 <a class="book-card__link book-card__link--primary external-indicator" href="http://temporalbook.apartsin.com/" target="_blank" rel="noopener noreferrer">Read Online</a>
                 <a class="book-card__link book-card__link--secondary external-indicator" href="https://www.amazon.com/dp/B0H5KRJFCD" target="_blank" rel="noopener noreferrer">Amazon</a>
                 <a class="book-card__link book-card__link--secondary" href="../courses/hos/series/temporal-ai.html">Course</a>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <h2 class="books-section-title">Drafts</h2>
+        <p class="books-section-lede">Work in progress. These are being written and revised, so chapters may be incomplete or change.</p>
+        <section class="books-grid" aria-label="Draft textbooks">
+          <article class="book-card">
+            <img class="book-card__cover" src="../assets/writing/covers/embodiedbook-cover.jpg" alt="Cover of Building Embodied AI: From Perception to Autonomous Action" loading="lazy" decoding="async">
+            <div class="book-card__content">
+              <p class="book-card__eyebrow">Online Textbook<span class="book-card__draft">Draft</span></p>
+              <h2 class="book-card__title">Building Embodied AI: From Perception to Autonomous Action</h2>
+              <p class="book-card__desc">A practitioner's guide to systems that act in the physical world, spanning simulation, reinforcement learning, learning from demonstration, perception, world models, manipulation and locomotion, and safe deployment.</p>
+              <div class="book-card__links">
+                <a class="book-card__link book-card__link--primary external-indicator" href="https://embodiedbook.apartsin.com/" target="_blank" rel="noopener noreferrer">Read Online</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <img class="book-card__cover" src="../assets/writing/covers/discoverybook-cover.jpg" alt="Cover of Building Discovery AI: From Vibe Coding to Autonomous Science" loading="lazy" decoding="async">
+            <div class="book-card__content">
+              <p class="book-card__eyebrow">Online Textbook<span class="book-card__draft">Draft</span></p>
+              <h2 class="book-card__title">Building Discovery AI: From Vibe Coding to Autonomous Science</h2>
+              <p class="book-card__desc">AI systems that accelerate scientific research: vibe coding as engineering practice, scientific foundation models, literature mining and hypothesis generation, autonomous discovery pipelines, and self-driving laboratories.</p>
+              <div class="book-card__links">
+                <a class="book-card__link book-card__link--primary external-indicator" href="https://discoverybook.apartsin.com/" target="_blank" rel="noopener noreferrer">Read Online</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <img class="book-card__cover" src="../assets/writing/covers/neuromorphicbook-cover.jpg" alt="Cover of Building Neuromorphic AI: From Spiking Neurons to Edge Intelligence" loading="lazy" decoding="async">
+            <div class="book-card__content">
+              <p class="book-card__eyebrow">Online Textbook<span class="book-card__draft">Draft</span></p>
+              <h2 class="book-card__title">Building Neuromorphic AI: From Spiking Neurons to Edge Intelligence</h2>
+              <p class="book-card__desc">A practitioner's guide to brain-inspired AI: spiking neural networks, neural coding, learning algorithms, neuromorphic hardware such as Loihi 2 and SpiNNaker, event-based sensors, and edge deployment.</p>
+              <div class="book-card__links">
+                <a class="book-card__link book-card__link--primary external-indicator" href="https://neuromorphicbook.apartsin.com/" target="_blank" rel="noopener noreferrer">Read Online</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <img class="book-card__cover" src="../assets/writing/covers/sensorbook-cover.jpg" alt="Cover of Building Sensory AI: Machine Perception of the Physical World" loading="lazy" decoding="async">
+            <div class="book-card__content">
+              <p class="book-card__eyebrow">Online Textbook<span class="book-card__draft">Draft</span></p>
+              <h2 class="book-card__title">Building Sensory AI: Machine Perception of the Physical World</h2>
+              <p class="book-card__desc">The full sensing pipeline across inertial, vibration, radar, lidar, depth, thermal, event, RF, tactile, and biomedical sensors: signal processing, state estimation, deep learning, multimodal fusion, and edge deployment.</p>
+              <div class="book-card__links">
+                <a class="book-card__link book-card__link--primary external-indicator" href="https://sensorbook.apartsin.com/" target="_blank" rel="noopener noreferrer">Read Online</a>
               </div>
             </div>
           </article>
