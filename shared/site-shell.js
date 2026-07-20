@@ -110,13 +110,20 @@
       return path;
     }
 
-    const clean = (path || '').replace(/^\/+/, '');
+    // Split off any ?query / #hash before normalizing: normalizePath() drops
+    // both, which would silently strip deep links such as
+    // blog-posts.html?theme=vibe-coding down to the unfiltered page.
+    const raw = String(path || '');
+    const suffixIndex = raw.search(/[?#]/);
+    const suffix = suffixIndex >= 0 ? raw.slice(suffixIndex) : '';
+    const bare = suffixIndex >= 0 ? raw.slice(0, suffixIndex) : raw;
+    const clean = bare.replace(/^\/+/, '');
 
     if (location.protocol === 'file:') {
-      return relativePath(getAppRelativePath(), clean);
+      return relativePath(getAppRelativePath(), clean) + suffix;
     }
 
-    return normalizePath(`${appBasePath()}${clean}`);
+    return normalizePath(`${appBasePath()}${clean}`) + suffix;
   }
 
   // Small red "Draft" tag appended to menu entries whose book is unfinished.
