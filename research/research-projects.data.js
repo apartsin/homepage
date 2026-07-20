@@ -80,7 +80,7 @@ window.RESEARCH_PROJECT_CARDS = [
     ]
   },
   {
-    image: "https://raw.githubusercontent.com/ApartsinProjects/CalexNet/master/paper/figures/hero.png",
+    image: "../assets/research/research-projects/calexnet-hero.png",
     imageAlt: "CalexNet cascade: a CNN backbone with three early-exit branches; easy samples exit at branch 1, harder samples flow deeper",
     theme: "Robust Vision",
     title: "CalexNet",
