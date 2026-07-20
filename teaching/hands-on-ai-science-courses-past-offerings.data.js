@@ -10,7 +10,7 @@ window.HOS_PAST_OFFERINGS = [
     desc: "2026, Spring",
     trackHref: "../courses/hos/series/vision-ai.html",
     trackLabel: "Vision AI",
-    links: [{ label: "Moodle", href: "https://lemida.biu.ac.il/course/view.php?id=110002" }]
+    links: [{ label: "Moodle", href: "https://lemida.biu.ac.il/course/view.php?id=110002" }, { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=vision-ai&institution=Bar-Ilan%20University&term=2026%20Spring" }]
   },
   {
     years: "2026",
@@ -36,7 +36,7 @@ window.HOS_PAST_OFFERINGS = [
     desc: "2026, Spring",
     trackHref: "../courses/hos/series/language-ai.html",
     trackLabel: "Language AI",
-    links: [{ label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=26698" }]
+    links: [{ label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=26698" }, { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=language-ai&institution=Holon%20Institute%20of%20Technology&term=2026%20Spring" }]
   },
   {
     years: "2026",
@@ -49,7 +49,7 @@ window.HOS_PAST_OFFERINGS = [
     desc: "2026, Spring",
     trackHref: "../courses/hos/series/language-ai.html",
     trackLabel: "Language AI",
-    links: [{ label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=26295" }]
+    links: [{ label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=26295" }, { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=language-ai&institution=Holon%20Institute%20of%20Technology&term=2026%20Spring" }]
   },
   {
     years: "2025,2026",
