@@ -32,9 +32,15 @@
       background: #fff;
       position: relative;
       overflow: hidden;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+      transition: transform 180ms ease, box-shadow 180ms ease;
       display: grid;
-      grid-template-rows: auto auto auto 1fr auto;
+      grid-template-rows: auto auto 1fr auto auto;
       row-gap: 10px;
+    }
+    .assess-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.09);
     }
     .assess-card::before {
       content: "";
@@ -96,6 +102,22 @@
       color: #8a3309;
     }
     .assess-anti__label { color: #8a3309; }
+    /* Check / cross badges make the expectations and anti-patterns scannable
+       at a glance. margin-inline-end keeps the badge on the correct side in
+       both LTR and RTL. */
+    .assess-expect__label::before,
+    .assess-anti__label::before {
+      content: "";
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      margin-inline-end: 7px;
+      vertical-align: -3px;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    .assess-expect__label::before { background-image: url("data:image/svg+xml,<svg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'><circle%20cx='8'%20cy='8'%20r='8'%20fill='%231f5a40'/><path%20d='M4.6%208.3l2.1%202.1%204.7-4.9'%20fill='none'%20stroke='white'%20stroke-width='1.7'%20stroke-linecap='round'%20stroke-linejoin='round'/></svg>"); }
+    .assess-anti__label::before { background-image: url("data:image/svg+xml,<svg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2016%2016'><circle%20cx='8'%20cy='8'%20r='8'%20fill='%238a3309'/><path%20d='M5.4%205.4l5.2%205.2M10.6%205.4l-5.2%205.2'%20fill='none'%20stroke='white'%20stroke-width='1.7'%20stroke-linecap='round'/></svg>"); }
     .assess-expect ul,
     .assess-anti ul {
       margin: 0;
