@@ -242,6 +242,7 @@
             secondary: [
               { label: 'Advice to CS Students in 2026', path: 'teaching/guides/advice-to-students-2026.html' },
               { label: 'Common Misconceptions', path: 'teaching/guides/common-misconceptions.html' },
+              { label: 'What LLM and GenAI Courses Expect', path: 'teaching/guides/course-expectations.html' },
               { label: 'Project Requirements', path: 'teaching/guides/project-requirements.html' },
               { label: 'Project Assessment Criteria', path: 'teaching/guides/project-assessment-criteria.html' },
             ],
