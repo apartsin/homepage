@@ -118,28 +118,72 @@
       font: 600 0.88rem/1.55 "Manrope", sans-serif;
     }
     .sdg-note b { color: #1f5a40; }
-    /* Don't panel */
-    .sdg-dont {
+    /* Don't cards: same layout as the Do cards, with a red rail and a cross badge. */
+    .sdg-dont-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
       margin-top: 14px;
-      padding: 20px 22px;
-      border: 1px solid rgba(190, 18, 22, 0.24);
-      border-radius: 16px;
-      background: linear-gradient(180deg, rgba(190, 18, 22, 0.06), rgba(255, 255, 255, 0) 40%), #fff;
     }
-    .sdg-dont ul {
+    .sdg-dont-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: start;
+      column-gap: 18px;
+      row-gap: 10px;
+      padding: 20px 22px 18px 24px;
+      border: 1px solid var(--site-border);
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+      overflow: hidden;
+    }
+    .sdg-dont-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5px;
+      background: #be1216;
+    }
+    .sdg-dont-card__badge {
+      grid-column: 1;
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      margin-top: 2px;
+      border-radius: 50%;
+      background: rgba(190, 18, 22, 0.1);
+      border: 1px solid rgba(190, 18, 22, 0.28);
+      color: #be1216;
+      font: 800 1.1rem/1 "Manrope", sans-serif;
+    }
+    .sdg-dont-card__content {
+      grid-column: 2;
+      display: grid;
+      gap: 8px;
+      max-width: 88ch;
+    }
+    .sdg-dont-card__content h2 {
+      margin: 0;
+      color: var(--site-text, #18202a);
+      font: 800 1.06rem/1.28 "Manrope", sans-serif;
+    }
+    .sdg-dont-card__content ul {
       margin: 0;
       padding: 0;
       list-style: none;
       display: grid;
-      gap: 8px;
+      gap: 7px;
     }
-    .sdg-dont li {
+    .sdg-dont-card__content li {
       position: relative;
-      padding-left: 26px;
+      padding-left: 24px;
       color: var(--site-text);
-      font: 600 0.9rem/1.5 "Manrope", "Segoe UI", sans-serif;
+      font: 600 0.88rem/1.5 "Manrope", "Segoe UI", sans-serif;
     }
-    .sdg-dont li::before {
+    .sdg-dont-card__content li::before {
       content: "\2715";
       position: absolute;
       left: 0;
@@ -379,28 +423,79 @@
 
         <h2 class="sdg-heading sdg-heading--dont">Don't</h2>
         <p class="sdg-heading-lede">The failure modes each of the practices above is meant to prevent.</p>
-        <section class="sdg-dont" aria-label="Don't">
-          <ul>
-            <li>Do not generate synthetic data before checking whether appropriate real data exist.</li>
-            <li>Do not ask the model to generate a concept that you cannot clearly define, produce, or recognize yourself.</li>
-            <li>Do not use vague prompts for complex labels or attributes.</li>
-            <li>Do not assume that mentioning a label in the prompt guarantees that the generated sample has that label.</li>
-            <li>Do not generate data blindly without debugging and manual inspection.</li>
-            <li>Do not generate the entire dataset in a single API call.</li>
-            <li>Do not generate all data in one large uninterrupted batch.</li>
-            <li>Do not move directly to large-scale API generation before testing prompts interactively.</li>
-            <li>Do not assume that a prompt that works for several examples will remain reliable across thousands of samples.</li>
-            <li>Do not generate data in bulk before you are satisfied with the quality of small test batches.</li>
-            <li>Do not accept unrealistic, contradictory, ambiguous, or incorrectly labeled data.</li>
-            <li>Do not prioritize dataset size over quality, realism, controllability, and label reliability.</li>
-            <li>Do not assume that random variation automatically provides useful diversity.</li>
-            <li>Do not inspect only convenient or successful examples.</li>
-            <li>Do not ignore rare classes, difficult combinations, and failure cases.</li>
-            <li>Do not stop with the first model, prompt, or generation approach.</li>
-            <li>Do not treat direct synthetic generation as the only possible solution.</li>
-            <li>Do not ignore multi-step approaches combining extraction from real data, augmentation, modification, generation, filtering, and validation.</li>
-            <li>Do not continue generating after identifying a systematic problem; stop, diagnose the cause, fix the pipeline, and retest on a small scale.</li>
-          </ul>
+        <section class="sdg-dont-list" aria-label="Don't">
+          <article class="sdg-dont-card" id="dont-real-data">
+            <span class="sdg-dont-card__badge" aria-hidden="true">&#10005;</span>
+            <div class="sdg-dont-card__content">
+              <h2>Skipping the search for real data</h2>
+              <ul>
+                <li>Do not generate synthetic data before checking whether appropriate real data exist.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="sdg-dont-card" id="dont-vague-control">
+            <span class="sdg-dont-card__badge" aria-hidden="true">&#10005;</span>
+            <div class="sdg-dont-card__content">
+              <h2>Vague or unverified control</h2>
+              <ul>
+                <li>Do not ask the model to generate a concept that you cannot clearly define, produce, or recognize yourself.</li>
+                <li>Do not use vague prompts for complex labels or attributes.</li>
+                <li>Do not assume that mentioning a label in the prompt guarantees that the generated sample has that label.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="sdg-dont-card" id="dont-scaling">
+            <span class="sdg-dont-card__badge" aria-hidden="true">&#10005;</span>
+            <div class="sdg-dont-card__content">
+              <h2>Scaling before it is ready</h2>
+              <ul>
+                <li>Do not generate data blindly without debugging and manual inspection.</li>
+                <li>Do not generate the entire dataset in a single API call.</li>
+                <li>Do not generate all data in one large uninterrupted batch.</li>
+                <li>Do not move directly to large-scale API generation before testing prompts interactively.</li>
+                <li>Do not assume that a prompt that works for several examples will remain reliable across thousands of samples.</li>
+                <li>Do not generate data in bulk before you are satisfied with the quality of small test batches.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="sdg-dont-card" id="dont-size-over-quality">
+            <span class="sdg-dont-card__badge" aria-hidden="true">&#10005;</span>
+            <div class="sdg-dont-card__content">
+              <h2>Size over quality</h2>
+              <ul>
+                <li>Do not accept unrealistic, contradictory, ambiguous, or incorrectly labeled data.</li>
+                <li>Do not prioritize dataset size over quality, realism, controllability, and label reliability.</li>
+                <li>Do not assume that random variation automatically provides useful diversity.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="sdg-dont-card" id="dont-cherry-picked">
+            <span class="sdg-dont-card__badge" aria-hidden="true">&#10005;</span>
+            <div class="sdg-dont-card__content">
+              <h2>Cherry-picked inspection</h2>
+              <ul>
+                <li>Do not inspect only convenient or successful examples.</li>
+                <li>Do not ignore rare classes, difficult combinations, and failure cases.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="sdg-dont-card" id="dont-one-approach">
+            <span class="sdg-dont-card__badge" aria-hidden="true">&#10005;</span>
+            <div class="sdg-dont-card__content">
+              <h2>One approach, pushed blindly</h2>
+              <ul>
+                <li>Do not stop with the first model, prompt, or generation approach.</li>
+                <li>Do not treat direct synthetic generation as the only possible solution.</li>
+                <li>Do not ignore multi-step approaches combining extraction from real data, augmentation, modification, generation, filtering, and validation.</li>
+                <li>Do not continue generating after identifying a systematic problem; stop, diagnose the cause, fix the pipeline, and retest on a small scale.</li>
+              </ul>
+            </div>
+          </article>
         </section>
 
       <section class="section-quick-links">
