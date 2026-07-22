@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
-  <meta name="description" content="Student project assessment criteria: the five dimensions a project is judged on, what each one expects, and the anti-patterns that weaken it.">
+  <meta name="description" content="Student project assessment criteria: the six dimensions a project is judged on, what each one expects, and the anti-patterns that weaken it.">
   <link rel="alternate" hreflang="he" href="./project-assessment-criteria-he.html">
   <link rel="alternate" hreflang="en" href="./project-assessment-criteria.html">
   <title>Project Assessment Criteria | Sasha Apartsin</title>
@@ -50,6 +50,7 @@
     .assess-card:nth-child(3) { --as-color: #7a3fa0; }
     .assess-card:nth-child(4) { --as-color: #2e7d5a; }
     .assess-card:nth-child(5) { --as-color: #9c5a2e; }
+    .assess-card:nth-child(6) { --as-color: #2c6e83; }
     .assess-card__index {
       display: inline-block;
       font: 900 0.78rem/1 "Manrope", sans-serif;
@@ -182,7 +183,7 @@
             <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
               <img src="../../assets/heroes/teaching-hos-offerings.png" alt="" style="display: block; width: 100%; object-fit: cover;">
             </figure>
-            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">Student project assessment criteria. The five dimensions a project is judged on, what each one expects in practice, and the anti-patterns that most often weaken it. For the detailed, requirement-by-requirement checklist, see <a href="./project-requirements.html">Project Requirements</a>.</p>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">Student project assessment criteria. The six dimensions a project is judged on, what each one expects in practice, and the anti-patterns that most often weaken it. For the detailed, requirement-by-requirement checklist, see <a href="./project-requirements.html">Project Requirements</a>.</p>
           </div>
         </section>
 
@@ -316,6 +317,32 @@
                 <li>Confusing implementation details with project contributions.</li>
                 <li>Weak visual presentation of results.</li>
                 <li>Long, unfocused answers that fail to address the question directly.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="assess-card" id="reasonable-effort">
+            <span class="assess-card__index">Criterion 6</span>
+            <h2 class="assess-card__title">Reasonable Effort Toward Good Performance</h2>
+            <p class="assess-card__body">Reaching 100% accuracy is not the goal, but you must show that you invested reasonable effort to achieve good performance. Demonstrate a genuine attempt to improve results rather than accepting the first number you obtained.</p>
+            <div class="assess-expect">
+              <span class="assess-expect__label">Reasonable effort includes</span>
+              <ul>
+                <li>Adding more data, or improving the quality of the data you have.</li>
+                <li>Trying stronger or more suitable models and architectures.</li>
+                <li>Tuning hyperparameters systematically rather than by guesswork.</li>
+                <li>Investigating and explaining the likely sources of error.</li>
+                <li>Iterating on the solution based on what the errors reveal.</li>
+              </ul>
+            </div>
+            <div class="assess-anti">
+              <span class="assess-anti__label">Anti-patterns</span>
+              <ul>
+                <li>Reporting the first result with no attempt to improve it.</li>
+                <li>Little or no hyperparameter tuning.</li>
+                <li>Ignoring obvious sources of error.</li>
+                <li>Blaming the data or the task without trying alternatives.</li>
+                <li>Accepting a weak score without investigating why.</li>
               </ul>
             </div>
           </article>
