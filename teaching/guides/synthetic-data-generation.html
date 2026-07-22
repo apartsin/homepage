@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <meta name="description" content="A do-and-don't guide to generating synthetic data for LLM and GenAI course projects: research real data first, control what you generate, prototype, debug, inspect, and compare strategies.">
+  <title>Synthetic Data Generation Guide | Sasha Apartsin</title>
+  <link rel="stylesheet" href="../../shared/site-shell.css">
+  <link rel="stylesheet" href="../../shared/unified-theme.css">
+  <style>
+    .sdg-heading {
+      margin: 34px 0 2px;
+      color: var(--site-text, #18202a);
+      font: 800 0.86rem/1.2 "Manrope", sans-serif;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .sdg-heading:first-of-type { margin-top: 12px; }
+    .sdg-heading--do { color: #1f5a40; }
+    .sdg-heading--dont { color: #8a3309; }
+    .sdg-heading-lede {
+      margin: 0;
+      color: var(--site-muted);
+      font: 600 0.9rem/1.5 "Manrope", sans-serif;
+    }
+    .sdg-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .sdg-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: start;
+      column-gap: 18px;
+      row-gap: 10px;
+      padding: 20px 22px 18px 24px;
+      border: 1px solid var(--site-border);
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+      overflow: hidden;
+    }
+    .sdg-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5px;
+      background: linear-gradient(180deg, rgba(46, 125, 90, 0.9), rgba(24, 101, 168, 0.75));
+    }
+    .sdg-card__num {
+      grid-column: 1;
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      margin-top: 2px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(46, 125, 90, 0.16), rgba(24, 101, 168, 0.16));
+      color: #1f5a40;
+      font: 800 1.08rem/1 "Manrope", sans-serif;
+    }
+    .sdg-card__content {
+      grid-column: 2;
+      display: grid;
+      gap: 8px;
+      max-width: 88ch;
+    }
+    .sdg-card__content h2 {
+      margin: 0;
+      color: var(--site-text, #18202a);
+      font: 800 1.06rem/1.28 "Manrope", sans-serif;
+    }
+    .sdg-card__content p {
+      margin: 0;
+      color: var(--site-text);
+      font: 600 0.9rem/1.6 "Manrope", "Segoe UI", sans-serif;
+    }
+    .sdg-card__content ul {
+      margin: 0;
+      padding-left: 18px;
+      list-style: disc;
+    }
+    .sdg-card__content li {
+      color: var(--site-muted);
+      font: 600 0.88rem/1.55 "Manrope", "Segoe UI", sans-serif;
+      margin: 0 0 3px;
+    }
+    .sdg-card__content li:last-child { margin-bottom: 0; }
+    .sdg-sub__label {
+      display: block;
+      margin: 2px 0 4px;
+      color: var(--site-text);
+      font: 800 0.8rem/1.3 "Manrope", sans-serif;
+    }
+    /* Inline example callout for turning a vague prompt into explicit attributes. */
+    .sdg-example {
+      margin: 2px 0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: rgba(194, 65, 12, 0.06);
+      border: 1px solid rgba(194, 65, 12, 0.2);
+      color: #8a3309;
+      font: 600 0.87rem/1.5 "Manrope", sans-serif;
+    }
+    .sdg-example em { color: #8a3309; }
+    .sdg-note {
+      margin: 2px 0 0;
+      padding-top: 8px;
+      border-top: 1px solid var(--site-border);
+      color: var(--site-text);
+      font: 600 0.88rem/1.55 "Manrope", sans-serif;
+    }
+    .sdg-note b { color: #1f5a40; }
+    /* Don't panel */
+    .sdg-dont {
+      margin-top: 14px;
+      padding: 20px 22px;
+      border: 1px solid rgba(190, 18, 22, 0.24);
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(190, 18, 22, 0.06), rgba(255, 255, 255, 0) 40%), #fff;
+    }
+    .sdg-dont ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+    .sdg-dont li {
+      position: relative;
+      padding-left: 26px;
+      color: var(--site-text);
+      font: 600 0.9rem/1.5 "Manrope", "Segoe UI", sans-serif;
+    }
+    .sdg-dont li::before {
+      content: "\2715";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #be1216;
+      font-weight: 800;
+    }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="teaching">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar">
+      <a class="apartsin-shell__brand" href="../../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../../index.html">About</a>
+        <a href="../../research/research-focus.html">Research</a>
+        <a href="../../teaching/overview.html">Teaching</a>
+        <a href="../../work/overview.html">Building</a>
+        <a href="../../work/innovation-overview.html">Innovations</a>
+        <a href="../../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="synthetic-data-generation-overview">
+          <h1 class="apartsin-sr-only">Synthetic Data Generation Guide</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="../overview.html">Teaching</a>
+              <span aria-hidden="true">/</span>
+              <a href="./index.html">Guides for Students</a>
+              <span aria-hidden="true">/</span>
+              <strong>Synthetic Data Generation Guide</strong>
+            </nav>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../../assets/heroes/teaching-hos-student-projects.png" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">Synthetic data generation for LLM and GenAI projects, as a do-and-don't guide. Generate data on purpose, not on autopilot: research real data first, control exactly what you produce, prototype and debug small, inspect by hand, and compare strategies before scaling.</p>
+          </div>
+        </section>
+
+        <h2 class="sdg-heading sdg-heading--do">Do</h2>
+        <p class="sdg-heading-lede">Ten practices that turn synthetic data from a guess into a controlled, inspectable process.</p>
+        <section class="sdg-list" aria-label="Do">
+          <article class="sdg-card" id="do-1">
+            <span class="sdg-card__num">1</span>
+            <div class="sdg-card__content">
+              <h2>Research existing data first</h2>
+              <ul>
+                <li>Search for relevant real datasets before generating synthetic data.</li>
+                <li>Do not create synthetic data when suitable real data already exist.</li>
+              </ul>
+              <div>
+                <span class="sdg-sub__label">Consider repurposing existing datasets through:</span>
+                <ul>
+                  <li>Data augmentation</li>
+                  <li>Relabeling</li>
+                  <li>Attribute extraction</li>
+                  <li>Signal extraction</li>
+                  <li>Controlled modification</li>
+                  <li>Combining real and synthetic samples</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="do-2">
+            <span class="sdg-card__num">2</span>
+            <div class="sdg-card__content">
+              <h2>Control what you generate</h2>
+              <ul>
+                <li>Define the ground-truth labels or target attribute space.</li>
+                <li>Define a nuance space to create meaningful diversity.</li>
+                <li>Specify a clear sampling strategy across classes, attributes, and nuances.</li>
+                <li>Generate every sample according to explicitly sampled target values.</li>
+              </ul>
+              <div>
+                <span class="sdg-sub__label">Examples of attributes:</span>
+                <ul>
+                  <li>Positive / negative</li>
+                  <li>Summer / winter</li>
+                  <li>Formal / informal</li>
+                  <li>Expert / inexperienced</li>
+                  <li>Easy / difficult</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="do-3">
+            <span class="sdg-card__num">3</span>
+            <div class="sdg-card__content">
+              <h2>Translate vague concepts into explicit attributes</h2>
+              <p>Do not rely on concepts that you cannot define or recognize.</p>
+              <p class="sdg-example">Instead of asking: <em>&ldquo;Generate code written by an inexperienced programmer.&rdquo;</em></p>
+              <div>
+                <span class="sdg-sub__label">Define specific characteristics, such as:</span>
+                <ul>
+                  <li>Poor variable names</li>
+                  <li>Repeated code</li>
+                  <li>Missing error handling</li>
+                  <li>Inefficient loops</li>
+                  <li>Hard-coded values</li>
+                  <li>Missing input validation</li>
+                  <li>Incorrect abstractions</li>
+                  <li>Excessive global variables</li>
+                  <li>Unclear control flow</li>
+                  <li>Inconsistent formatting</li>
+                </ul>
+              </div>
+              <p class="sdg-note">Then sample one or more mistakes and instruct the model to generate an example containing those specific mistakes.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="do-4">
+            <span class="sdg-card__num">4</span>
+            <div class="sdg-card__content">
+              <h2>Prototype with the ChatGPT interface before using the API</h2>
+              <ul>
+                <li>Use the ChatGPT interface first to explore ideas and test prompts interactively.</li>
+                <li>Inspect initial examples and refine the task definition.</li>
+                <li>Test the labels, nuances, constraints, and expected output format.</li>
+                <li>Move to the API only after the generation approach produces satisfactory results.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="do-5">
+            <span class="sdg-card__num">5</span>
+            <div class="sdg-card__content">
+              <h2>Use the API for controlled generation</h2>
+              <ul>
+                <li>Use the API for reproducible and scalable data generation.</li>
+                <li>Generate data programmatically according to the defined sampling strategy.</li>
+                <li>Store the sampled target attributes, prompt, model, parameters, and generated output for each example.</li>
+                <li>Use structured outputs when possible.</li>
+                <li>Include automatic validation and retry mechanisms.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="do-6">
+            <span class="sdg-card__num">6</span>
+            <div class="sdg-card__content">
+              <h2>Generate data in small batches</h2>
+              <ul>
+                <li>Generate a small batch first.</li>
+                <li>Inspect the results before continuing.</li>
+                <li>Correct the prompt, sampling strategy, or model configuration between batches.</li>
+                <li>Gradually increase batch size only after quality becomes stable.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="do-7">
+            <span class="sdg-card__num">7</span>
+            <div class="sdg-card__content">
+              <h2>Debug before scaling</h2>
+              <ul>
+                <li>Test prompts on a small number of samples.</li>
+                <li>Verify that each output matches its sampled target attributes.</li>
+                <li>Review examples from every class and important attribute combination.</li>
+                <li>Evaluate whether the generated data are realistic, diverse, and correctly labeled.</li>
+                <li>Generate large datasets only after the small-scale process is reliable.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="do-8">
+            <span class="sdg-card__num">8</span>
+            <div class="sdg-card__content">
+              <h2>Inspect generated data manually</h2>
+              <ul>
+                <li>Visually inspect images, videos, diagrams, and control signals.</li>
+                <li>Read representative text and code samples.</li>
+                <li>Find unrealistic, contradictory, ambiguous, or incorrectly labeled examples.</li>
+              </ul>
+              <div>
+                <span class="sdg-sub__label">Investigate the root cause of each problem:</span>
+                <ul>
+                  <li>Inappropriate model</li>
+                  <li>Weak or ambiguous prompt</li>
+                  <li>Poorly defined attribute</li>
+                  <li>Invalid attribute combination</li>
+                  <li>Incorrect sampling strategy</li>
+                  <li>Inadequate control signal</li>
+                  <li>Generation or parsing error</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="do-9">
+            <span class="sdg-card__num">9</span>
+            <div class="sdg-card__content">
+              <h2>Use suitable control signals for vision tasks</h2>
+              <p>For ControlNet and related vision models, consider:</p>
+              <ul>
+                <li>Synthetically constructed depth maps</li>
+                <li>Skeletons or pose maps</li>
+                <li>Segmentation maps</li>
+                <li>Edge maps</li>
+                <li>Layouts and spatial constraints</li>
+                <li>Control signals extracted from real images</li>
+                <li>Extracted control signals that are subsequently modified</li>
+              </ul>
+              <p class="sdg-note"><b>Validate</b> both the control signals and the generated images.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="do-10">
+            <span class="sdg-card__num">10</span>
+            <div class="sdg-card__content">
+              <h2>Compare multiple generation strategies</h2>
+              <p>Consider and evaluate:</p>
+              <ul>
+                <li>Direct generation</li>
+                <li>Template-based generation</li>
+                <li>Few-shot generation</li>
+                <li>Modification of real examples</li>
+                <li>Attribute-controlled generation</li>
+                <li>Extraction followed by augmentation</li>
+                <li>Multi-step generation and validation</li>
+                <li>Generation followed by filtering</li>
+                <li>Generation followed by correction</li>
+                <li>Hybrid real and synthetic datasets</li>
+              </ul>
+              <p class="sdg-note">Select the approach based on data quality, controllability, realism, diversity, and cost.</p>
+            </div>
+          </article>
+        </section>
+
+        <h2 class="sdg-heading sdg-heading--dont">Don't</h2>
+        <p class="sdg-heading-lede">The failure modes each of the practices above is meant to prevent.</p>
+        <section class="sdg-dont" aria-label="Don't">
+          <ul>
+            <li>Do not generate synthetic data before checking whether appropriate real data exist.</li>
+            <li>Do not ask the model to generate a concept that you cannot clearly define, produce, or recognize yourself.</li>
+            <li>Do not use vague prompts for complex labels or attributes.</li>
+            <li>Do not assume that mentioning a label in the prompt guarantees that the generated sample has that label.</li>
+            <li>Do not generate data blindly without debugging and manual inspection.</li>
+            <li>Do not generate the entire dataset in a single API call.</li>
+            <li>Do not generate all data in one large uninterrupted batch.</li>
+            <li>Do not move directly to large-scale API generation before testing prompts interactively.</li>
+            <li>Do not assume that a prompt that works for several examples will remain reliable across thousands of samples.</li>
+            <li>Do not generate data in bulk before you are satisfied with the quality of small test batches.</li>
+            <li>Do not accept unrealistic, contradictory, ambiguous, or incorrectly labeled data.</li>
+            <li>Do not prioritize dataset size over quality, realism, controllability, and label reliability.</li>
+            <li>Do not assume that random variation automatically provides useful diversity.</li>
+            <li>Do not inspect only convenient or successful examples.</li>
+            <li>Do not ignore rare classes, difficult combinations, and failure cases.</li>
+            <li>Do not stop with the first model, prompt, or generation approach.</li>
+            <li>Do not treat direct synthetic generation as the only possible solution.</li>
+            <li>Do not ignore multi-step approaches combining extraction from real data, augmentation, modification, generation, filtering, and validation.</li>
+            <li>Do not continue generating after identifying a systematic problem; stop, diagnose the cause, fix the pipeline, and retest on a small scale.</li>
+          </ul>
+        </section>
+
+      <section class="section-quick-links">
+        <h2 class="section-quick-links__title">Quick Links</h2>
+        <nav class="section-quick-links__grid" aria-label="Quick links">
+          <a class="section-quick-link" href="./project-requirements.html">
+            <span class="section-quick-link__badge" style="background: #c2410c;">R</span>
+            Project Requirements
+          </a>
+          <a class="section-quick-link" href="./project-assessment-criteria.html">
+            <span class="section-quick-link__badge" style="background: #164a83;">E</span>
+            Assessment Criteria
+          </a>
+          <a class="section-quick-link" href="../hands-on-ai-science-courses-student-projects.html">
+            <span class="section-quick-link__badge" style="background: #9c5a2e;">P</span>
+            Past Projects
+          </a>
+        </nav>
+      </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../../shared/unified-enhance.js"></script>
+  <script defer src="../../shared/site-shell.js"></script>
+</body>
+</html>

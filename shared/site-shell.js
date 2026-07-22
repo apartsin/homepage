@@ -245,6 +245,7 @@
               { label: 'What LLM and GenAI Courses Expect', path: 'teaching/guides/course-expectations.html' },
               { label: 'Project Requirements', path: 'teaching/guides/project-requirements.html' },
               { label: 'Project Assessment Criteria', path: 'teaching/guides/project-assessment-criteria.html' },
+              { label: 'Synthetic Data Generation', path: 'teaching/guides/synthetic-data-generation.html' },
             ],
           },
           { label: 'Computer Science Courses', path: 'teaching/other-cs-courses.html' },
