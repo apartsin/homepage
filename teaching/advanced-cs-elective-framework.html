@@ -58,50 +58,6 @@
       font: 600 1rem/1.65 "Manrope", "Segoe UI", sans-serif;
       max-width: 78ch;
     }
-    .framework-intro {
-      display: grid;
-      gap: 12px;
-      padding: 20px 22px 22px;
-      border: 1px solid var(--site-border);
-      border-radius: 18px;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.95));
-      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.05);
-    }
-    .framework-intro__label {
-      margin: 0;
-      color: #9c5a2e;
-      font: 800 0.74rem/1.2 "Manrope", sans-serif;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-    .framework-intro h2 {
-      margin: 0;
-      color: var(--site-text, #18202a);
-      font: 800 1.1rem/1.2 "Manrope", sans-serif;
-      letter-spacing: -0.01em;
-    }
-    .framework-intro p {
-      margin: 0;
-      color: var(--site-muted);
-      font: 600 0.97rem/1.7 "Manrope", "Segoe UI", sans-serif;
-      max-width: 82ch;
-    }
-    .framework-principles {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      padding: 0;
-      margin: 2px 0 0;
-      list-style: none;
-    }
-    .framework-principles li {
-      padding: 0.44rem 0.75rem;
-      border: 1px solid rgba(24, 74, 131, 0.14);
-      border-radius: 999px;
-      background: rgba(24, 101, 168, 0.06);
-      color: #1d4f86;
-      font: 700 0.78rem/1.1 "Manrope", sans-serif;
-    }
     /* One card per row, stacked vertically. */
     .framework-grid {
       display: grid;
@@ -235,9 +191,6 @@
       .framework-layout {
         padding-inline: 0;
       }
-      .framework-intro {
-        padding: 18px 16px 18px;
-      }
       .framework-card__lang-switch {
         top: 10px;
         right: 10px;
@@ -301,21 +254,6 @@
         </section>
 
           <div class="framework-layout">
-            <section class="framework-intro">
-              <p class="framework-intro__label">How to use these guidelines</p>
-              <h2>Use the five criteria as a design check, not a checklist.</h2>
-              <p>
-                Use it when reviewing a syllabus, revising an existing course, or comparing elective proposals. Strong electives balance scientific depth, current tools, efficient topic consolidation, a capstone built through staged presentations, and a tangible, well-documented deliverable.
-              </p>
-              <ul class="framework-principles" aria-label="Framework priorities">
-                <li>Academic depth</li>
-                <li>Industry relevance</li>
-                <li>Subject consolidation</li>
-                <li>Running a capstone project</li>
-                <li>Tangible delivery</li>
-              </ul>
-            </section>
-
             <section class="framework-grid" aria-label="Framework attributes">
               <article class="framework-card" data-language="en">
                 <span class="framework-card__lang-switch" role="group" aria-label="Language switch for academic depth card">
