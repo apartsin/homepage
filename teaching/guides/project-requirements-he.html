@@ -185,7 +185,7 @@
             <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
               <img src="../../assets/heroes/teaching-hos-student-projects.png" alt="" style="display: block; width: 100%; object-fit: cover;">
             </figure>
-            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">קריטריונים להערכת פרויקטים של סטודנטים. שתים-עשרה דרישות שפרויקט קורס חזק אמור לעמוד בהן, וכל אחת מהן מלווה באנטי-דפוסים שמחלישים אותה לרוב. השתמשו בזה כרשימת בדיקה בזמן שהפרויקט עדיין מתגבש, ולא כמחוון שקוראים פעם אחת בסוף.</p>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">קריטריונים להערכת פרויקטים של סטודנטים. שלוש-עשרה דרישות שפרויקט קורס חזק אמור לעמוד בהן, וכל אחת מהן מלווה באנטי-דפוסים שמחלישים אותה לרוב. השתמשו בזה כרשימת בדיקה בזמן שהפרויקט עדיין מתגבש, ולא כמחוון שקוראים פעם אחת בסוף.</p>
           </div>
         </section>
 
@@ -244,8 +244,24 @@
         <h2 class="crit-section-title">שלב 2. סקירת ספרות, נתונים ובסיסי ייחוס</h2>
         <p class="crit-section-lede">מה כבר קיים, מהיכן מגיעים הנתונים, ומה הפתרון שלכם צריך לנצח.</p>
         <section class="crit-list crit-list--research" aria-label="קריטריונים לסקירת ספרות ולנתונים">
-          <article class="crit-card" id="state-of-the-art-research">
+          <article class="crit-card" id="novelty">
             <span class="crit-card__index">דרישה 4</span>
+            <h2 class="crit-card__title">חדשנות</h2>
+            <p class="crit-card__body">הבעיה שאתם פותרים, או האופן שבו אתם פותרים אותה, חייבת לכלול מרכיב חדשני משמעותי. היא לא אמורה להיות פתורה כבר, ועליה להיבדל באופן ממשי מהדרך שבה נפתרו בעיות דומות בעבר. החדשנות יכולה להיות בבעיה עצמה, בנתונים, בשיטה או ביישום, אך עליה להיות אמיתית וניתנת לזיהוי.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">אנטי-דפוסים נפוצים</span>
+              <ul>
+                <li>פתרון מחדש של בעיה שכבר נפתרה היטב.</li>
+                <li>מימוש מחדש של פרויקט קיים עם שינויים קוסמטיים בלבד.</li>
+                <li>טענת חדשנות בלי לבדוק מה כבר קיים.</li>
+                <li>כותרת שנשמעת חדשנית מעל פתרון סטנדרטי ומדף.</li>
+                <li>בלבול בין &rdquo;חדש עבורי&ldquo; לבין &rdquo;חדש עבור התחום&ldquo;.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="crit-card" id="state-of-the-art-research">
+            <span class="crit-card__index">דרישה 5</span>
             <h2 class="crit-card__title">סקירת פתרונות בחזית הידע</h2>
             <p class="crit-card__body">בצעו סקירה יסודית של המודלים, השיטות והטכנולוגיות הרלוונטיים בחזית הידע. הראו הבנה עמוקה של אופן הפעולה שלהם, של החוזקות והמגבלות שלהם, והסבירו מדוע הם רלוונטיים לפרויקט.</p>
             <div class="crit-antipatterns">
@@ -261,7 +277,7 @@
           </article>
 
           <article class="crit-card" id="data-acquisition-methodology">
-            <span class="crit-card__index">דרישה 5</span>
+            <span class="crit-card__index">דרישה 6</span>
             <h2 class="crit-card__title">מתודולוגיה לאיסוף וליצירת נתונים</h2>
             <p class="crit-card__body">פתחו והצדיקו מתודולוגיה מבוססת לאיסוף, ליצירה או לאצירה של נתונים, תוך שימוש בעקרונות שנלמדו בקורס. המתודולוגיה צריכה להיות שיטתית, ניתנת לשחזור ומתואמת ליעדי הפרויקט.</p>
             <div class="crit-antipatterns">
@@ -277,7 +293,7 @@
           </article>
 
           <article class="crit-card" id="eda-and-baselines">
-            <span class="crit-card__index">דרישה 6</span>
+            <span class="crit-card__index">דרישה 7</span>
             <h2 class="crit-card__title">ניתוח נתונים חוקר ובניית בסיסי ייחוס</h2>
             <p class="crit-card__body">בצעו ניתוח נתונים חוקר (EDA) יסודי כדי להכיר את מערך הנתונים, לאתר בעיות איכות, לגלות דפוסים משמעותיים ולהנחות את החלטות המידול. בססו מודלי baseline חזקים לצורך השוואה.</p>
             <div class="crit-antipatterns">
@@ -297,7 +313,7 @@
         <p class="crit-section-lede">השוואה בין חלופות אמיתיות, דיווח מדויק עליהן, ומסירת ריפוזיטורי שמישהו אחר יכול להריץ.</p>
         <section class="crit-list crit-list--delivery" aria-label="קריטריונים להערכה ולמסירת תוצרים">
           <article class="crit-card" id="comparative-evaluation">
-            <span class="crit-card__index">דרישה 7</span>
+            <span class="crit-card__index">דרישה 8</span>
             <h2 class="crit-card__title">הערכה משווה של מספר גישות</h2>
             <p class="crit-card__body">ממשו והשוו כמה גישות מידול משמעותיות ולא טריוויאליות, באמצעות מתודולוגיה ניסויית הוגנת ומדדי הערכה מתאימים. נתחו את הפשרות בין הפתרונות המתחרים.</p>
             <div class="crit-antipatterns">
@@ -313,7 +329,7 @@
           </article>
 
           <article class="crit-card" id="results-presentation">
-            <span class="crit-card__index">דרישה 8</span>
+            <span class="crit-card__index">דרישה 9</span>
             <h2 class="crit-card__title">הצגת התוצאות ותקשורן</h2>
             <p class="crit-card__body">הציגו את התוצאות בבהירות באמצעות מדדי הערכה מתאימים, ויזואליזציות אינפורמטיביות והסברים טכניים תמציתיים. תקשרו בבירור הן את הביצועים והן את התובנות המרכזיות.</p>
             <div class="crit-antipatterns">
@@ -329,7 +345,7 @@
           </article>
 
           <article class="crit-card" id="repository-quality">
-            <span class="crit-card__index">דרישה 9</span>
+            <span class="crit-card__index">דרישה 10</span>
             <h2 class="crit-card__title">איכות הריפוזיטורי ושחזוריות</h2>
             <p class="crit-card__body">נהלו ריפוזיטורי GitHub מקצועי עם שם משמעותי, README מקיף, ארגון הגיוני של הקבצים וכל התוצרים הדרושים כדי לאפשר שחזוריות.</p>
             <div class="crit-antipatterns">
@@ -349,9 +365,9 @@
         <p class="crit-section-lede">ההבדל בין פרויקט שרץ פעם אחת לבין פרויקט שבאמת הונדס.</p>
         <section class="crit-list crit-list--rigor" aria-label="קריטריונים לקפדנות ולעומק">
           <article class="crit-card" id="engineering-rigor">
-            <span class="crit-card__index">דרישה 10</span>
-            <h2 class="crit-card__title">קפדנות הנדסית ושיפור איטרטיבי</h2>
-            <p class="crit-card__body">הראו מאמץ הנדסי משמעותי באמצעות ניסויים שיטתיים, אופטימיזציה של hyperparameters, ולידציה של הנתונים, ניתוח שגיאות וליטוש איטרטיבי של הפתרון.</p>
+            <span class="crit-card__index">דרישה 11</span>
+            <h2 class="crit-card__title">קפדנות מתודולוגית ושיפור איטרטיבי</h2>
+            <p class="crit-card__body">הראו מאמץ ממושמע ומשמעותי באמצעות ניסויים שיטתיים, השוואות מבוקרות, בחינה של hyperparameters ושל החלטות תכנון, ולידציה של הנתונים, ניתוח שגיאות וליטוש איטרטיבי. המתודולוגיה צריכה להיות תקינה בין אם הפרויקט הוא בעיקרו מיזם הנדסי ובין אם הוא חקר מדעי.</p>
             <div class="crit-antipatterns">
               <span class="crit-antipatterns__label">אנטי-דפוסים נפוצים</span>
               <ul>
@@ -366,7 +382,7 @@
           </article>
 
           <article class="crit-card" id="project-progression">
-            <span class="crit-card__index">דרישה 11</span>
+            <span class="crit-card__index">דרישה 12</span>
             <h2 class="crit-card__title">התקדמות הפרויקט והיענות למשוב</h2>
             <p class="crit-card__body">הראו התקדמות רציפה לאורך הסמסטר: עמידה באבני דרך משמעותיות, הטמעת המשוב של המרצה וליטוש הפתרון לאורך כמה איטרציות. הפרויקט הסופי אמור לשקף בבירור למידה וצמיחה טכנית.</p>
             <div class="crit-antipatterns">
@@ -382,12 +398,13 @@
           </article>
 
           <article class="crit-card" id="technical-depth">
-            <span class="crit-card__index">דרישה 12</span>
-            <h2 class="crit-card__title">עומק טכני וחשיבה ביקורתית</h2>
-            <p class="crit-card__body">הראו הבנה טכנית עמוקה של הבעיה, של הנתונים ושל הפתרון. התקדמו מעבר לתצפיות מובנות מאליהן וזהו אתגרים עדינים, ניואנסים ייחודיים לתחום, הנחות סמויות, מקרי קצה ופשרות טכניות. הציגו ניתוח מעמיק, ולא רק יישום של טכניקות סטנדרטיות.</p>
+            <span class="crit-card__index">דרישה 13</span>
+            <h2 class="crit-card__title">מתוחכמות טכנית וחשיבה ביקורתית</h2>
+            <p class="crit-card__body">בנו פתרון מתוחכם טכנית, כזה שהצריך החלטות תכנון רבות ולא טריוויאליות, והיו מסוגלים להצדיק כל אחת מהן. התקדמו מעבר לבחירות מובנות מאליהן וזהו אתגרים עדינים, ניואנסים ייחודיים לתחום, הנחות סמויות, מקרי קצה ופשרות. העומק ניכר בהחלטות שאתם יכולים להגן עליהן, לא בגודל הצנרת.</p>
             <div class="crit-antipatterns">
               <span class="crit-antipatterns__label">אנטי-דפוסים נפוצים</span>
               <ul>
+                <li>צנרת טריוויאלית עם מעט החלטות תכנון של ממש.</li>
                 <li>ניתוח שטחי.</li>
                 <li>התייחסות למודלים כאל קופסאות שחורות.</li>
                 <li>התעלמות מניואנסים של הנתונים או של התחום.</li>

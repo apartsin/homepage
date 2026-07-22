@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
-  <meta name="description" content="Student project assessment criteria: the twelve requirements a strong course project must satisfy, each with the anti-patterns that most often weaken it.">
+  <meta name="description" content="Student project assessment criteria: the thirteen requirements a strong course project must satisfy, each with the anti-patterns that most often weaken it.">
   <link rel="alternate" hreflang="he" href="./project-requirements-he.html">
   <link rel="alternate" hreflang="en" href="./project-requirements.html">
   <title>Project Requirements | Sasha Apartsin</title>
@@ -186,7 +186,7 @@
             <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
               <img src="../../assets/heroes/teaching-hos-student-projects.png" alt="" style="display: block; width: 100%; object-fit: cover;">
             </figure>
-            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">Student project assessment criteria. Twelve requirements a strong course project is expected to satisfy, each paired with the anti-patterns that most often weaken it. Use this as a checklist while the project is still being shaped, not as a rubric to read once at the end.</p>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">Student project assessment criteria. Thirteen requirements a strong course project is expected to satisfy, each paired with the anti-patterns that most often weaken it. Use this as a checklist while the project is still being shaped, not as a rubric to read once at the end.</p>
           </div>
         </section>
 
@@ -245,8 +245,24 @@
         <h2 class="crit-section-title">Phase 2. Research, Data, and Baselines</h2>
         <p class="crit-section-lede">What already exists, where the data comes from, and what the solution has to beat.</p>
         <section class="crit-list crit-list--research" aria-label="Research and data criteria">
-          <article class="crit-card" id="state-of-the-art-research">
+          <article class="crit-card" id="novelty">
             <span class="crit-card__index">Requirement 4</span>
+            <h2 class="crit-card__title">Novelty</h2>
+            <p class="crit-card__body">The problem you solve, or the way you solve it, must contain a significantly novel element. It should not already be solved, and it should differ meaningfully from how similar problems have been solved before. The novelty can lie in the problem itself, the data, the method, or the application, but it has to be real and identifiable.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">Common anti-patterns</span>
+              <ul>
+                <li>Re-solving a problem that is already well solved.</li>
+                <li>Reimplementing an existing project with only cosmetic changes.</li>
+                <li>Claiming novelty without checking what already exists.</li>
+                <li>A novel-sounding title over a standard, off-the-shelf solution.</li>
+                <li>Confusing &ldquo;new to me&rdquo; with &ldquo;new to the field&rdquo;.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="crit-card" id="state-of-the-art-research">
+            <span class="crit-card__index">Requirement 5</span>
             <h2 class="crit-card__title">State-of-the-Art Solution Research</h2>
             <p class="crit-card__body">Conduct a thorough review of relevant state-of-the-art models, methods, and technologies. Demonstrate a deep understanding of how these approaches work, their strengths and limitations, and explain their relevance to the project.</p>
             <div class="crit-antipatterns">
@@ -262,7 +278,7 @@
           </article>
 
           <article class="crit-card" id="data-acquisition-methodology">
-            <span class="crit-card__index">Requirement 5</span>
+            <span class="crit-card__index">Requirement 6</span>
             <h2 class="crit-card__title">Data Acquisition and Generation Methodology</h2>
             <p class="crit-card__body">Develop and justify a sound methodology for acquiring, generating, or curating data using principles learned in the course. The methodology should be systematic, reproducible, and aligned with the project objectives.</p>
             <div class="crit-antipatterns">
@@ -278,7 +294,7 @@
           </article>
 
           <article class="crit-card" id="eda-and-baselines">
-            <span class="crit-card__index">Requirement 6</span>
+            <span class="crit-card__index">Requirement 7</span>
             <h2 class="crit-card__title">Exploratory Data Analysis and Baseline Development</h2>
             <p class="crit-card__body">Perform thorough exploratory data analysis (EDA) to understand the dataset, identify quality issues, discover meaningful patterns, and guide modeling decisions. Establish strong baseline models for comparison.</p>
             <div class="crit-antipatterns">
@@ -298,7 +314,7 @@
         <p class="crit-section-lede">Comparing real alternatives, reporting them honestly, and shipping a repository someone else can run.</p>
         <section class="crit-list crit-list--delivery" aria-label="Evaluation and delivery criteria">
           <article class="crit-card" id="comparative-evaluation">
-            <span class="crit-card__index">Requirement 7</span>
+            <span class="crit-card__index">Requirement 8</span>
             <h2 class="crit-card__title">Comparative Evaluation of Multiple Approaches</h2>
             <p class="crit-card__body">Implement and compare several meaningful, non-trivial modeling approaches using fair experimental methodology and appropriate evaluation metrics. Analyze trade-offs between competing solutions.</p>
             <div class="crit-antipatterns">
@@ -314,7 +330,7 @@
           </article>
 
           <article class="crit-card" id="results-presentation">
-            <span class="crit-card__index">Requirement 8</span>
+            <span class="crit-card__index">Requirement 9</span>
             <h2 class="crit-card__title">Results Presentation and Communication</h2>
             <p class="crit-card__body">Present results clearly using appropriate evaluation metrics, informative visualizations, and concise technical explanations. Clearly communicate both performance and key insights.</p>
             <div class="crit-antipatterns">
@@ -330,7 +346,7 @@
           </article>
 
           <article class="crit-card" id="repository-quality">
-            <span class="crit-card__index">Requirement 9</span>
+            <span class="crit-card__index">Requirement 10</span>
             <h2 class="crit-card__title">Repository Quality and Reproducibility</h2>
             <p class="crit-card__body">Maintain a professional GitHub repository with a meaningful name, comprehensive README, logical organization, and all necessary artifacts to enable reproducibility.</p>
             <div class="crit-antipatterns">
@@ -350,9 +366,9 @@
         <p class="crit-section-lede">The difference between a project that ran once and a project that was actually engineered.</p>
         <section class="crit-list crit-list--rigor" aria-label="Rigor and depth criteria">
           <article class="crit-card" id="engineering-rigor">
-            <span class="crit-card__index">Requirement 10</span>
-            <h2 class="crit-card__title">Engineering Rigor and Iterative Improvement</h2>
-            <p class="crit-card__body">Demonstrate substantial engineering effort through systematic experimentation, hyperparameter optimization, data validation, error analysis, and iterative refinement of the solution.</p>
+            <span class="crit-card__index">Requirement 11</span>
+            <h2 class="crit-card__title">Methodological Rigor and Iterative Improvement</h2>
+            <p class="crit-card__body">Demonstrate substantial and disciplined effort through systematic experimentation, controlled comparisons, exploration of hyperparameters and design choices, data validation, error analysis, and iterative refinement. The methodology should be sound whether the project is primarily an engineering build or a scientific investigation.</p>
             <div class="crit-antipatterns">
               <span class="crit-antipatterns__label">Common anti-patterns</span>
               <ul>
@@ -367,7 +383,7 @@
           </article>
 
           <article class="crit-card" id="project-progression">
-            <span class="crit-card__index">Requirement 11</span>
+            <span class="crit-card__index">Requirement 12</span>
             <h2 class="crit-card__title">Project Progression and Responsiveness to Feedback</h2>
             <p class="crit-card__body">Demonstrate continuous progress throughout the semester by achieving meaningful milestones, incorporating instructor feedback, and refining the solution over multiple iterations. The final project should clearly reflect learning and technical growth.</p>
             <div class="crit-antipatterns">
@@ -383,12 +399,13 @@
           </article>
 
           <article class="crit-card" id="technical-depth">
-            <span class="crit-card__index">Requirement 12</span>
-            <h2 class="crit-card__title">Technical Depth and Critical Thinking</h2>
-            <p class="crit-card__body">Demonstrate deep technical understanding of the problem, data, and solution. Go beyond obvious or common-sense observations by identifying subtle challenges, domain-specific nuances, hidden assumptions, edge cases, and technical trade-offs. Show thoughtful analysis rather than simply applying standard techniques.</p>
+            <span class="crit-card__index">Requirement 13</span>
+            <h2 class="crit-card__title">Technical Sophistication and Critical Thinking</h2>
+            <p class="crit-card__body">Build a technically sophisticated solution, one that required many non-trivial design decisions, and be able to justify each of them. Go beyond obvious or common-sense choices by identifying subtle challenges, domain-specific nuances, hidden assumptions, edge cases, and trade-offs. Depth shows in the decisions you can defend, not in the size of the pipeline.</p>
             <div class="crit-antipatterns">
               <span class="crit-antipatterns__label">Common anti-patterns</span>
               <ul>
+                <li>A trivial pipeline with few real design decisions.</li>
                 <li>Superficial analysis.</li>
                 <li>Treating models as black boxes.</li>
                 <li>Ignoring data or domain nuances.</li>
