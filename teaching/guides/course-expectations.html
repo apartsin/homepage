@@ -8,6 +8,8 @@
   <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
   <meta name="description" content="What LLM and GenAI course projects are judged on: the three questions behind any project, the three kinds of innovation, and why these courses target scientific innovation with product value as a floor.">
+  <link rel="alternate" hreflang="he" href="./course-expectations-he.html">
+  <link rel="alternate" hreflang="en" href="./course-expectations.html">
   <title>What LLM and GenAI Courses Expect | Sasha Apartsin</title>
   <link rel="stylesheet" href="../../shared/site-shell.css">
   <link rel="stylesheet" href="../../shared/unified-theme.css">
@@ -129,6 +131,36 @@
       color: var(--site-text);
       font: 700 0.96rem/1.5 "Manrope", sans-serif;
     }
+    /* Two-tab language switcher: shows both EN and HE, current one filled. */
+    .guide-lang-switch {
+      display: inline-flex;
+      align-items: stretch;
+      border: 1px solid var(--site-border, rgba(24,32,42,0.18));
+      border-radius: 999px;
+      background: #fff;
+      overflow: hidden;
+      font: 800 0.72rem/1 "Manrope", sans-serif;
+      letter-spacing: 0.04em;
+    }
+    .guide-lang-switch__btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 14px;
+      color: var(--site-muted, #5a626c);
+      text-decoration: none;
+      transition: background 120ms ease, color 120ms ease;
+    }
+    .guide-lang-switch__btn:hover,
+    .guide-lang-switch__btn:focus-visible {
+      background: rgba(0, 0, 0, 0.05);
+      color: var(--site-text, #18202a);
+    }
+    .guide-lang-switch__btn.is-active {
+      background: var(--site-text, #18202a);
+      color: #fff;
+      cursor: default;
+      pointer-events: none;
+    }
   </style>
 </head>
 <body class="apartsin-shell-active" data-site-section="teaching">
@@ -159,6 +191,10 @@
               <span aria-hidden="true">/</span>
               <strong>What LLM and GenAI Courses Expect</strong>
             </nav>
+            <div class="guide-lang-switch" role="group" aria-label="Language">
+              <a class="guide-lang-switch__btn is-active" href="./course-expectations.html" lang="en" hreflang="en" aria-current="true">English</a>
+              <a class="guide-lang-switch__btn" href="./course-expectations-he.html" lang="he" hreflang="he">עברית</a>
+            </div>
           </div>
           <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
             <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
