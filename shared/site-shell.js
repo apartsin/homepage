@@ -224,7 +224,6 @@
               {
                 label: 'Course Syllabi',
                 path: 'teaching/hands-on-ai-science-courses-courses.html',
-                collapsed: true,
                 secondary: [
                   { label: 'Language AI', path: 'courses/hos/series/language-ai.html' },
                   { label: 'Vision AI', path: 'courses/hos/series/vision-ai.html' },
@@ -240,7 +239,6 @@
           {
             label: 'Guides for Students',
             path: 'teaching/guides/index.html',
-            collapsed: true,
             secondary: [
               { label: 'Advice to CS Students in 2026', path: 'teaching/guides/advice-to-students-2026.html' },
               { label: 'Common Misconceptions', path: 'teaching/guides/common-misconceptions.html' },
