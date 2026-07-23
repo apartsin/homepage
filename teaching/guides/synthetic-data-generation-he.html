@@ -123,6 +123,18 @@
     }
     .sdg-note b { color: #1f5a40; }
     /* Don't cards: same layout as the Do cards, with a red rail and a cross badge. */
+    /* Green worked-example callout (a good pattern, unlike the red anti-example). */
+    .sdg-good {
+      margin: 2px 0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: rgba(46, 125, 90, 0.06);
+      border: 1px solid rgba(46, 125, 90, 0.2);
+      color: var(--site-text);
+      font: 600 0.87rem/1.6 "Manrope", "Heebo", sans-serif;
+    }
+    .sdg-good b { color: #1f5a40; }
+    .sdg-good q { font-style: italic; color: #1f5a40; }
     .sdg-dont-list {
       display: grid;
       grid-template-columns: 1fr;
@@ -273,7 +285,7 @@
         </section>
 
         <h2 class="sdg-heading sdg-heading--do">עשה</h2>
-        <p class="sdg-heading-lede">עשר פרקטיקות שהופכות נתונים סינתטיים מניחוש לתהליך מבוקר וניתן לבדיקה.</p>
+        <p class="sdg-heading-lede">אחת עשרה פרקטיקות שהופכות נתונים סינתטיים מניחוש לתהליך מבוקר וניתן לבדיקה.</p>
         <section class="sdg-list" aria-label="עשה">
           <article class="sdg-card" id="do-1">
             <span class="sdg-card__num">1</span>
@@ -323,6 +335,30 @@
           <article class="sdg-card" id="do-3">
             <span class="sdg-card__num">3</span>
             <div class="sdg-card__content">
+              <h2>עצבו את המשתנים, ורק אז בנו את הפרומפט</h2>
+              <p>כל דגימה מוגדרת על ידי משתנים שאתם דוגמים תחילה והופכים לפרומפט לאחר מכן. הפרידו בין שני תפקידים, והכירו את סוג כל משתנה.</p>
+              <div>
+                <span class="sdg-sub__label">שני תפקידים:</span>
+                <ul>
+                  <li><b>משתני מטרה</b> קובעים את התווית שאתם רוצים שהנתונים ילמדו (סנטימנט, סוג פגם, חומרה). ערך המטרה שנדגם הופך לתווית אמת-היסוד.</li>
+                  <li><b>משתני ניואנס</b> הם כל השאר שאמור להשתנות אך אינו התווית (נושא, אורך, טון, עונה, מחבר). הם מוסיפים גיוון כדי שהמודל לא יוכל לקצר את הדרך אל המטרה באמצעות מתאמים מזויפים.</li>
+                </ul>
+              </div>
+              <div>
+                <span class="sdg-sub__label">שני סוגים:</span>
+                <ul>
+                  <li><b>מספרי:</b> מספר או טווח, כגון אורך ביקורת במילים או קושי מ-1 עד 5. דגמו מטווח או מרשת.</li>
+                  <li><b>איכותני (קטגוריאלי):</b> ערך מתוך קבוצה קבועה, כגון חיובי / שלילי או קיץ / חורף. דגמו מתוך הקבוצה.</li>
+                </ul>
+              </div>
+              <p class="sdg-note">בנו כל פרומפט על ידי <b>הרכבה מחדש של מקטעי טקסט</b> שנבחרים לפי הערכים שנדגמו, במקום לחזור על פרומפט קבוע אחד. פרומפטים מונחי-משתנים הם דבר טוב: הם מספקים שליטה מפורשת וניתנת לשחזור וכיסוי אחיד של המרחב.</p>
+              <p class="sdg-good"><b>דוגמה &mdash; ביקורות מסעדות.</b> מטרה (קטגוריאלי): סנטימנט, חיובי או שלילי. ניואנס: סוג מטבח (איטלקי, סושי, טבעוני), טון (רשמי, יומיומי), ואורך (40, 80 או 120 מילים). דגמו צירוף אחד, למשל שלילי + סושי + יומיומי + 80 מילים, ואז הרכיבו את הפרומפט ממקטעים: <q>כתבו ביקורת יומיומית באורך 80 מילים על מסעדת סושי. החוויה הכוללת של הסוקר הייתה שלילית.</q> הסנטימנט שנדגם הוא התווית; כל השאר הוא ניואנס.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="do-4">
+            <span class="sdg-card__num">4</span>
+            <div class="sdg-card__content">
               <h2>תרגמו מושגים מעורפלים לתכונות מפורשות</h2>
               <p>אל תסתמכו על מושגים שאינכם יכולים להגדיר או לזהות.</p>
               <p class="sdg-example">במקום לבקש: <em>&rdquo;ייצר קוד שנכתב על ידי מתכנת חסר ניסיון.&ldquo;</em></p>
@@ -345,8 +381,8 @@
             </div>
           </article>
 
-          <article class="sdg-card" id="do-4">
-            <span class="sdg-card__num">4</span>
+          <article class="sdg-card" id="do-5">
+            <span class="sdg-card__num">5</span>
             <div class="sdg-card__content">
               <h2>נסו תחילה בממשק ChatGPT לפני שימוש ב-API</h2>
               <ul>
@@ -358,8 +394,8 @@
             </div>
           </article>
 
-          <article class="sdg-card" id="do-5">
-            <span class="sdg-card__num">5</span>
+          <article class="sdg-card" id="do-6">
+            <span class="sdg-card__num">6</span>
             <div class="sdg-card__content">
               <h2>השתמשו ב-API לייצור מבוקר</h2>
               <ul>
@@ -372,8 +408,8 @@
             </div>
           </article>
 
-          <article class="sdg-card" id="do-6">
-            <span class="sdg-card__num">6</span>
+          <article class="sdg-card" id="do-7">
+            <span class="sdg-card__num">7</span>
             <div class="sdg-card__content">
               <h2>ייצרו נתונים באצוות קטנות</h2>
               <ul>
@@ -385,8 +421,8 @@
             </div>
           </article>
 
-          <article class="sdg-card" id="do-7">
-            <span class="sdg-card__num">7</span>
+          <article class="sdg-card" id="do-8">
+            <span class="sdg-card__num">8</span>
             <div class="sdg-card__content">
               <h2>אתרו באגים לפני הגדלת קנה המידה</h2>
               <ul>
@@ -399,8 +435,8 @@
             </div>
           </article>
 
-          <article class="sdg-card" id="do-8">
-            <span class="sdg-card__num">8</span>
+          <article class="sdg-card" id="do-9">
+            <span class="sdg-card__num">9</span>
             <div class="sdg-card__content">
               <h2>בדקו את הנתונים שנוצרו ידנית</h2>
               <ul>
@@ -423,8 +459,8 @@
             </div>
           </article>
 
-          <article class="sdg-card" id="do-9">
-            <span class="sdg-card__num">9</span>
+          <article class="sdg-card" id="do-10">
+            <span class="sdg-card__num">10</span>
             <div class="sdg-card__content">
               <h2>השתמשו באותות בקרה מתאימים למשימות ראייה</h2>
               <p>עבור ControlNet ומודלי ראייה קרובים, שקלו:</p>
@@ -441,8 +477,8 @@
             </div>
           </article>
 
-          <article class="sdg-card" id="do-10">
-            <span class="sdg-card__num">10</span>
+          <article class="sdg-card" id="do-11">
+            <span class="sdg-card__num">11</span>
             <div class="sdg-card__content">
               <h2>השוו בין אסטרטגיות ייצור שונות</h2>
               <p>שקלו והעריכו:</p>

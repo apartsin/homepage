@@ -120,6 +120,18 @@
       font: 600 0.88rem/1.55 "Manrope", sans-serif;
     }
     .sdg-note b { color: #1f5a40; }
+    /* Green worked-example callout (a good pattern, unlike the red anti-example). */
+    .sdg-good {
+      margin: 2px 0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: rgba(46, 125, 90, 0.06);
+      border: 1px solid rgba(46, 125, 90, 0.2);
+      color: var(--site-text);
+      font: 600 0.87rem/1.55 "Manrope", sans-serif;
+    }
+    .sdg-good b { color: #1f5a40; }
+    .sdg-good q { font-style: italic; color: #1f5a40; }
     /* Don't cards: same layout as the Do cards, with a red rail and a cross badge. */
     .sdg-dont-list {
       display: grid;
@@ -267,7 +279,7 @@
         </section>
 
         <h2 class="sdg-heading sdg-heading--do">Do</h2>
-        <p class="sdg-heading-lede">Ten practices that turn synthetic data from a guess into a controlled, inspectable process.</p>
+        <p class="sdg-heading-lede">Eleven practices that turn synthetic data from a guess into a controlled, inspectable process.</p>
         <section class="sdg-list" aria-label="Do">
           <article class="sdg-card" id="do-1">
             <span class="sdg-card__num">1</span>
@@ -317,6 +329,30 @@
           <article class="sdg-card" id="do-3">
             <span class="sdg-card__num">3</span>
             <div class="sdg-card__content">
+              <h2>Design your variables, then build the prompt</h2>
+              <p>Every sample is defined by variables you sample first and turn into a prompt second. Separate two roles, and know each variable's type.</p>
+              <div>
+                <span class="sdg-sub__label">Two roles:</span>
+                <ul>
+                  <li><b>Target variables</b> set the label you want the data to teach (sentiment, defect type, severity). The sampled target value becomes the ground-truth label.</li>
+                  <li><b>Nuance variables</b> are everything else that should vary but is not the label (topic, length, tone, season, author). They add diversity so the model cannot shortcut the target through spurious correlations.</li>
+                </ul>
+              </div>
+              <div>
+                <span class="sdg-sub__label">Two types:</span>
+                <ul>
+                  <li><b>Numerical:</b> a number or range, such as review length in words or difficulty from 1 to 5. Sample from a range or a grid.</li>
+                  <li><b>Qualitative (categorical):</b> a value from a fixed set, such as positive / negative or summer / winter. Sample from the set.</li>
+                </ul>
+              </div>
+              <p class="sdg-note">Build each prompt by <b>recombining text chunks</b> chosen for the sampled values, rather than reusing one fixed prompt. Variable-driven prompts are good: they give explicit, reproducible control and even coverage of the space.</p>
+              <p class="sdg-good"><b>Example &mdash; restaurant reviews.</b> Target (categorical): sentiment, positive or negative. Nuance: cuisine (Italian, sushi, vegan), tone (formal, casual), and length (40, 80, or 120 words). Sample one combination, say negative + sushi + casual + 80 words, then assemble the prompt from chunks: <q>Write a casual 80-word review of a sushi restaurant. The reviewer's overall experience was negative.</q> The sampled sentiment is the label; the rest is nuance.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="do-4">
+            <span class="sdg-card__num">4</span>
+            <div class="sdg-card__content">
               <h2>Translate vague concepts into explicit attributes</h2>
               <p>Do not rely on concepts that you cannot define or recognize.</p>
               <p class="sdg-example">Instead of asking: <em>&ldquo;Generate code written by an inexperienced programmer.&rdquo;</em></p>
@@ -339,8 +375,8 @@
             </div>
           </article>
 
-          <article class="sdg-card" id="do-4">
-            <span class="sdg-card__num">4</span>
+          <article class="sdg-card" id="do-5">
+            <span class="sdg-card__num">5</span>
             <div class="sdg-card__content">
               <h2>Prototype with the ChatGPT interface before using the API</h2>
               <ul>
@@ -352,8 +388,8 @@
             </div>
           </article>
 
-          <article class="sdg-card" id="do-5">
-            <span class="sdg-card__num">5</span>
+          <article class="sdg-card" id="do-6">
+            <span class="sdg-card__num">6</span>
             <div class="sdg-card__content">
               <h2>Use the API for controlled generation</h2>
               <ul>
@@ -366,8 +402,8 @@
             </div>
           </article>
 
-          <article class="sdg-card" id="do-6">
-            <span class="sdg-card__num">6</span>
+          <article class="sdg-card" id="do-7">
+            <span class="sdg-card__num">7</span>
             <div class="sdg-card__content">
               <h2>Generate data in small batches</h2>
               <ul>
@@ -379,8 +415,8 @@
             </div>
           </article>
 
-          <article class="sdg-card" id="do-7">
-            <span class="sdg-card__num">7</span>
+          <article class="sdg-card" id="do-8">
+            <span class="sdg-card__num">8</span>
             <div class="sdg-card__content">
               <h2>Debug before scaling</h2>
               <ul>
@@ -393,8 +429,8 @@
             </div>
           </article>
 
-          <article class="sdg-card" id="do-8">
-            <span class="sdg-card__num">8</span>
+          <article class="sdg-card" id="do-9">
+            <span class="sdg-card__num">9</span>
             <div class="sdg-card__content">
               <h2>Inspect generated data manually</h2>
               <ul>
@@ -417,8 +453,8 @@
             </div>
           </article>
 
-          <article class="sdg-card" id="do-9">
-            <span class="sdg-card__num">9</span>
+          <article class="sdg-card" id="do-10">
+            <span class="sdg-card__num">10</span>
             <div class="sdg-card__content">
               <h2>Use suitable control signals for vision tasks</h2>
               <p>For ControlNet and related vision models, consider:</p>
@@ -435,8 +471,8 @@
             </div>
           </article>
 
-          <article class="sdg-card" id="do-10">
-            <span class="sdg-card__num">10</span>
+          <article class="sdg-card" id="do-11">
+            <span class="sdg-card__num">11</span>
             <div class="sdg-card__content">
               <h2>Compare multiple generation strategies</h2>
               <p>Consider and evaluate:</p>
