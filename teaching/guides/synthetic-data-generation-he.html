@@ -91,18 +91,7 @@
     }
     .sdg-approach--works li::before { content: "✓"; color: #1f5a40; }
     .sdg-approach--avoid li::before { content: "✕"; color: #be1216; }
-    .sdg-approach__eg {
-      margin-top: 10px;
-      padding: 9px 12px;
-      border-radius: 8px;
-      border: 1px solid;
-      font: 600 0.85rem/1.6 "Manrope", "Heebo", "Segoe UI", sans-serif;
-      color: var(--site-text);
-    }
-    .sdg-approach--works .sdg-approach__eg { background: rgba(46, 125, 90, 0.08); border-color: rgba(46, 125, 90, 0.22); }
-    .sdg-approach--avoid .sdg-approach__eg { background: rgba(190, 18, 22, 0.06); border-color: rgba(190, 18, 22, 0.22); }
-    .sdg-approach--works .sdg-approach__eg b { color: #1f5a40; }
-    .sdg-approach--avoid .sdg-approach__eg b { color: #be1216; }
+    .sdg-approach .sdg-eg { margin-top: 12px; }
     /* Phase sub-heading inside the steps. */
     .sdg-phase {
       margin: 26px 0 2px;
@@ -281,7 +270,10 @@
               <li>כל דוגמה מגיעה עם תווית שאתם כבר יודעים שהיא נכונה.</li>
               <li>אתם יכולים לחזור על זה, להסתכל על זה, ולתקן.</li>
             </ul>
-            <p class="sdg-approach__eg"><b>דוגמה.</b> אתם רוצים 500 ביקורות סרטים, חצי חיוביות וחצי שליליות, בשלוש ז'אנרים. אתם בוחרים לכל אחת סנטימנט וז'אנר, בונים את הפרומפט מהם, וכל ביקורת יוצאת עם התווית שבחרתם.</p>
+            <div class="sdg-eg">
+              <div class="sdg-eg__box sdg-eg__box--good"><span class="sdg-eg__tag">✓ עשו כך</span>אתם בוחרים לכל אחת מ-500 ביקורות הסרטים סנטימנט וז'אנר, בונים את הפרומפט מהם, כך שלכל ביקורת יש התווית שקבעתם.</div>
+              <div class="sdg-eg__box sdg-eg__box--bad"><span class="sdg-eg__tag">✕ לא כך</span>אתם חוזרים על פרומפט קבוע אחד ומקווים שיופיע גיוון, ואז מגלים ש-500 הביקורות נראות כמעט זהות.</div>
+            </div>
           </article>
           <article class="sdg-approach sdg-approach--avoid">
             <span class="sdg-approach__tag">מה לא עובד</span>
@@ -292,7 +284,10 @@
               <li>אתם מייצרים הכול בבת אחת ולעולם לא מסתכלים על זה.</li>
               <li>אתם לא יכולים לשחזר את זה, ולא יכולים לתקן את מה שהשתבש.</li>
             </ul>
-            <p class="sdg-approach__eg"><b>דוגמה.</b> אתם מבקשים &rdquo;500 ביקורות סרטים, חלק טובות וחלק רעות&ldquo;. אתם מקבלים 430 חיוביות, רובן על קומדיות, וללא תוויות שאפשר לסמוך עליהן.</p>
+            <div class="sdg-eg">
+              <div class="sdg-eg__box sdg-eg__box--good"><span class="sdg-eg__tag">✓ עשו כך</span>אם אתם מתחילים בבקשה חופשית, התייחסו לזה כבדיקה מהירה, ואז עברו לבחירת התכונות בעצמכם ולבדיקת הפלט.</div>
+              <div class="sdg-eg__box sdg-eg__box--bad"><span class="sdg-eg__tag">✕ לא כך</span>אתם מבקשים &rdquo;500 ביקורות, חלק טובות וחלק רעות&ldquo;, שומרים 430 קומדיות חיוביות, וסומכים על תוויות שמעולם לא אימתתם.</div>
+            </div>
           </article>
         </section>
 

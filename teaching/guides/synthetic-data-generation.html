@@ -90,18 +90,7 @@
     }
     .sdg-approach--works li::before { content: "✓"; color: #1f5a40; }
     .sdg-approach--avoid li::before { content: "✕"; color: #be1216; }
-    .sdg-approach__eg {
-      margin-top: 10px;
-      padding: 9px 12px;
-      border-radius: 8px;
-      border: 1px solid;
-      font: 600 0.85rem/1.5 "Manrope", "Segoe UI", sans-serif;
-      color: var(--site-text);
-    }
-    .sdg-approach--works .sdg-approach__eg { background: rgba(46, 125, 90, 0.08); border-color: rgba(46, 125, 90, 0.22); }
-    .sdg-approach--avoid .sdg-approach__eg { background: rgba(190, 18, 22, 0.06); border-color: rgba(190, 18, 22, 0.22); }
-    .sdg-approach--works .sdg-approach__eg b { color: #1f5a40; }
-    .sdg-approach--avoid .sdg-approach__eg b { color: #be1216; }
+    .sdg-approach .sdg-eg { margin-top: 12px; }
     /* Phase sub-heading inside the steps. */
     .sdg-phase {
       margin: 26px 0 2px;
@@ -278,7 +267,10 @@
               <li>Every example comes with a label you already know is correct.</li>
               <li>You can repeat it, look at it, and fix it.</li>
             </ul>
-            <p class="sdg-approach__eg"><b>Example.</b> You want 500 movie reviews, half positive and half negative, across three genres. You pick a sentiment and a genre for each, build the prompt from them, and every review comes out with the label you chose.</p>
+            <div class="sdg-eg">
+              <div class="sdg-eg__box sdg-eg__box--good"><span class="sdg-eg__tag">✓ Do this</span>You choose a sentiment and a genre for each of 500 movie reviews, build the prompt from them, so every review has the label you set.</div>
+              <div class="sdg-eg__box sdg-eg__box--bad"><span class="sdg-eg__tag">✕ Not this</span>You reuse one fixed prompt and hope variety appears, then find the 500 reviews all look nearly the same.</div>
+            </div>
           </article>
           <article class="sdg-approach sdg-approach--avoid">
             <span class="sdg-approach__tag">What doesn't</span>
@@ -289,7 +281,10 @@
               <li>You make everything in one go and never look at it.</li>
               <li>You can't reproduce it, and you can't fix what went wrong.</li>
             </ul>
-            <p class="sdg-approach__eg"><b>Example.</b> You ask for &ldquo;500 movie reviews, some good and some bad.&rdquo; You get 430 positive ones, mostly about comedies, and no labels you can trust.</p>
+            <div class="sdg-eg">
+              <div class="sdg-eg__box sdg-eg__box--good"><span class="sdg-eg__tag">✓ Do this</span>If you start by just asking, treat it as a quick test, then switch to picking the attributes yourself and checking the output.</div>
+              <div class="sdg-eg__box sdg-eg__box--bad"><span class="sdg-eg__tag">✕ Not this</span>You ask for &ldquo;500 reviews, some good and some bad,&rdquo; keep 430 positive comedies, and trust labels you never verified.</div>
+            </div>
           </article>
         </section>
 
