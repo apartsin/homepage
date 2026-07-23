@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
-  <meta name="description" content="מדריך עשה ואל תעשה לייצור נתונים סינתטיים לפרויקטים בקורסי LLM ו-GenAI: חפשו נתונים אמיתיים תחילה, שלטו במה שאתם מייצרים, נסו, אתרו באגים, בדקו והשוו אסטרטגיות.">
+  <meta name="description" content="ייצור נתוני אימון משלכם בעזרת AI, מוסבר בפשטות. הרעיון הגדול, ואז שנים עשר צעדים, לכל אחד דוגמה טובה ודוגמה רעה.">
   <link rel="alternate" hreflang="he" href="./synthetic-data-generation-he.html">
   <link rel="alternate" hreflang="en" href="./synthetic-data-generation.html">
   <title>מדריך לייצור נתונים סינתטיים | סשה אפרטסין</title>
@@ -17,18 +17,16 @@
     .sdg-heading {
       margin: 34px 0 2px;
       color: var(--site-text, #18202a);
-      font: 800 0.86rem/1.2 "Manrope", "Heebo", sans-serif;
-      letter-spacing: 0.06em;
+      font: 800 0.9rem/1.3 "Manrope", "Heebo", sans-serif;
+      letter-spacing: 0.04em;
     }
     .sdg-heading:first-of-type { margin-top: 12px; }
-    .sdg-heading--do { color: #1f5a40; }
-    .sdg-heading--dont { color: #8a3309; }
     .sdg-heading-lede {
       margin: 0;
       color: var(--site-muted);
-      font: 600 0.9rem/1.6 "Manrope", "Heebo", sans-serif;
+      font: 600 0.92rem/1.6 "Manrope", "Heebo", sans-serif;
     }
-    /* Core-idea comparison: what works vs what does not. */
+    /* Big-picture comparison: the two ways to generate. */
     .sdg-compare {
       display: grid;
       grid-template-columns: 1fr;
@@ -41,14 +39,13 @@
     .sdg-approach {
       position: relative;
       overflow: hidden;
-      padding: 18px 24px 18px 20px;
+      padding: 18px 20px 18px 24px;
       border: 1px solid var(--site-border);
       border-radius: 16px;
       background: #fff;
       box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
       text-align: right;
     }
-    /* In RTL the accent sits on the right. */
     .sdg-approach::before {
       content: "";
       position: absolute;
@@ -81,29 +78,33 @@
     .sdg-approach li {
       position: relative;
       padding-right: 22px;
-      font: 600 0.88rem/1.6 "Manrope", "Heebo", "Segoe UI", sans-serif;
+      padding-left: 0;
+      font: 600 0.9rem/1.6 "Manrope", "Heebo", "Segoe UI", sans-serif;
       color: var(--site-text);
     }
     .sdg-approach li::before {
       position: absolute;
       right: 0;
+      left: auto;
       top: 0;
       font-weight: 800;
     }
     .sdg-approach--works li::before { content: "✓"; color: #1f5a40; }
     .sdg-approach--avoid li::before { content: "✕"; color: #be1216; }
+    /* Phase sub-heading inside the steps. */
     .sdg-phase {
-      margin: 24px 0 2px;
+      margin: 26px 0 2px;
       color: #1f5a40;
-      font: 800 0.82rem/1.35 "Manrope", "Heebo", sans-serif;
+      font: 800 0.84rem/1.4 "Manrope", "Heebo", sans-serif;
       letter-spacing: 0.02em;
     }
     .sdg-phase span { color: var(--site-muted); font-weight: 700; }
+    /* Step cards: number on a left rail, plain sentence, then a good/bad pair. */
     .sdg-list {
       display: grid;
       grid-template-columns: 1fr;
       gap: 14px;
-      margin-top: 14px;
+      margin-top: 12px;
     }
     .sdg-card {
       position: relative;
@@ -120,7 +121,6 @@
       overflow: hidden;
       text-align: right;
     }
-    /* In RTL the accent rail sits on the right (the natural start). */
     .sdg-card::before {
       content: "";
       position: absolute;
@@ -132,156 +132,58 @@
       grid-column: 1;
       display: grid;
       place-items: center;
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       margin-top: 2px;
       border-radius: 50%;
       background: linear-gradient(135deg, rgba(46, 125, 90, 0.16), rgba(24, 101, 168, 0.16));
       color: #1f5a40;
-      font: 800 1.08rem/1 "Manrope", sans-serif;
+      font: 800 1.15rem/1 "Manrope", "Heebo", sans-serif;
     }
     .sdg-card__content {
       grid-column: 2;
       display: grid;
-      gap: 8px;
-      max-width: 88ch;
+      gap: 10px;
+      max-width: 92ch;
     }
     .sdg-card__content h2 {
       margin: 0;
       color: var(--site-text, #18202a);
-      font: 800 1.06rem/1.28 "Manrope", "Heebo", sans-serif;
+      font: 800 1.08rem/1.35 "Manrope", "Heebo", sans-serif;
     }
-    .sdg-card__content p {
+    .sdg-plain {
       margin: 0;
       color: var(--site-text);
-      font: 600 0.9rem/1.6 "Manrope", "Heebo", "Segoe UI", sans-serif;
+      font: 600 0.96rem/1.6 "Manrope", "Heebo", "Segoe UI", sans-serif;
     }
-    .sdg-card__content ul {
-      margin: 0;
-      padding-right: 18px;
-      padding-left: 0;
-      list-style: disc;
-    }
-    .sdg-card__content li {
-      color: var(--site-muted);
-      font: 600 0.88rem/1.6 "Manrope", "Heebo", "Segoe UI", sans-serif;
-      margin: 0 0 3px;
-    }
-    .sdg-card__content li:last-child { margin-bottom: 0; }
-    .sdg-sub__label {
-      display: block;
-      margin: 2px 0 4px;
-      color: var(--site-text);
-      font: 800 0.8rem/1.3 "Manrope", "Heebo", sans-serif;
-    }
-    /* Inline example callout for turning a vague prompt into explicit attributes. */
-    .sdg-example {
-      margin: 2px 0;
-      padding: 10px 12px;
-      border-radius: 8px;
-      background: rgba(194, 65, 12, 0.06);
-      border: 1px solid rgba(194, 65, 12, 0.2);
-      color: #8a3309;
-      font: 600 0.87rem/1.6 "Manrope", "Heebo", sans-serif;
-    }
-    .sdg-example em { color: #8a3309; }
-    .sdg-note {
-      margin: 2px 0 0;
-      padding-top: 8px;
-      border-top: 1px solid var(--site-border);
-      color: var(--site-text);
-      font: 600 0.88rem/1.6 "Manrope", "Heebo", sans-serif;
-    }
-    .sdg-note b { color: #1f5a40; }
-    /* Don't cards: same layout as the Do cards, with a red rail and a cross badge. */
-    /* Green worked-example callout (a good pattern, unlike the red anti-example). */
-    .sdg-good {
-      margin: 2px 0;
-      padding: 10px 12px;
-      border-radius: 8px;
-      background: rgba(46, 125, 90, 0.06);
-      border: 1px solid rgba(46, 125, 90, 0.2);
-      color: var(--site-text);
-      font: 600 0.87rem/1.6 "Manrope", "Heebo", sans-serif;
-    }
-    .sdg-good b { color: #1f5a40; }
-    .sdg-good q { font-style: italic; color: #1f5a40; }
-    .sdg-dont-list {
+    /* Good / bad example pair. */
+    .sdg-eg {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 14px;
-      margin-top: 14px;
+      gap: 8px;
+      margin-top: 2px;
     }
-    .sdg-dont-card {
-      position: relative;
-      display: grid;
-      grid-template-columns: auto minmax(0, 1fr);
-      align-items: start;
-      column-gap: 18px;
-      row-gap: 10px;
-      padding: 20px 22px 18px 24px;
-      border: 1px solid var(--site-border);
-      border-radius: 16px;
-      background: #fff;
-      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
-      overflow: hidden;
+    @media (min-width: 620px) {
+      .sdg-eg { grid-template-columns: 1fr 1fr; }
+    }
+    .sdg-eg__box {
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid;
+      font: 600 0.87rem/1.6 "Manrope", "Heebo", "Segoe UI", sans-serif;
+      color: var(--site-text);
       text-align: right;
     }
-    /* In RTL the accent rail sits on the right (the natural start). */
-    .sdg-dont-card::before {
-      content: "";
-      position: absolute;
-      inset: 0 0 0 auto;
-      width: 5px;
-      background: #be1216;
+    .sdg-eg__box--good { background: rgba(46, 125, 90, 0.06); border-color: rgba(46, 125, 90, 0.24); }
+    .sdg-eg__box--bad  { background: rgba(190, 18, 22, 0.06); border-color: rgba(190, 18, 22, 0.24); }
+    .sdg-eg__tag {
+      display: block;
+      margin-bottom: 3px;
+      font: 800 0.72rem/1.4 "Manrope", "Heebo", sans-serif;
+      letter-spacing: 0.02em;
     }
-    .sdg-dont-card__badge {
-      grid-column: 1;
-      display: grid;
-      place-items: center;
-      width: 42px;
-      height: 42px;
-      margin-top: 2px;
-      border-radius: 50%;
-      background: rgba(190, 18, 22, 0.1);
-      border: 1px solid rgba(190, 18, 22, 0.28);
-      color: #be1216;
-      font: 800 1.1rem/1 "Manrope", sans-serif;
-    }
-    .sdg-dont-card__content {
-      grid-column: 2;
-      display: grid;
-      gap: 8px;
-      max-width: 88ch;
-    }
-    .sdg-dont-card__content h2 {
-      margin: 0;
-      color: var(--site-text, #18202a);
-      font: 800 1.06rem/1.28 "Manrope", "Heebo", sans-serif;
-    }
-    .sdg-dont-card__content ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      display: grid;
-      gap: 7px;
-    }
-    .sdg-dont-card__content li {
-      position: relative;
-      padding-right: 24px;
-      padding-left: 0;
-      color: var(--site-text);
-      font: 600 0.88rem/1.6 "Manrope", "Heebo", "Segoe UI", sans-serif;
-    }
-    .sdg-dont-card__content li::before {
-      content: "\2715";
-      position: absolute;
-      right: 0;
-      left: auto;
-      top: 0;
-      color: #be1216;
-      font-weight: 800;
-    }
+    .sdg-eg__box--good .sdg-eg__tag { color: #1f5a40; }
+    .sdg-eg__box--bad .sdg-eg__tag { color: #be1216; }
     /* Two-tab language switcher: shows both EN and HE, current one filled. */
     .guide-lang-switch {
       display: inline-flex;
@@ -351,82 +253,60 @@
             <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
               <img src="../../assets/heroes/teaching-hos-student-projects.png" alt="" style="display: block; width: 100%; object-fit: cover;">
             </figure>
-            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">ייצור נתונים סינתטיים לפרויקטים בתחום ה-LLM וה-GenAI. המיומנות שחשובה היא ייצור שיטתי ומבוקר: במקום לבקש מהמודל פשוט לייצר דוגמאות של X ולקוות, אתם מגדירים את התכונות שמאחורי כל דגימה (עבור טקסט ותוויות) או את אותות הבקרה (עבור ראייה), דוגמים אותם במפורש, ובונים כל דוגמה מהערכים שנדגמו. המדריך מראה את הגישה שעובדת, את הקיצורים שלא עובדים, ואת פרטי העשה ואל תעשה.</p>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">ייצור נתוני אימון משלכם בעזרת AI, מוסבר בפשטות. הסוד הוא שליטה: החליטו בדיוק מה כל דוגמה צריכה להכיל, ואז בנו אותה במכוון במקום לקוות. למטה מופיע הרעיון הגדול, ואחריו שנים עשר צעדים, לכל אחד דוגמה טובה ודוגמה רעה.</p>
           </div>
         </section>
 
-        <h2 class="sdg-heading">הרעיון המרכזי</h2>
-        <p class="sdg-heading-lede">יש שתי דרכים לייצר נתונים. רק אחת מהן נותנת לכם שליטה, והיא זו שהפרויקטים האלה מצפים לה.</p>
-        <section class="sdg-compare" aria-label="מה עובד ומה לא">
+        <h2 class="sdg-heading">הרעיון הגדול</h2>
+        <p class="sdg-heading-lede">יש שתי דרכים לייצר נתונים בעזרת AI. רק אחת מהן נותנת לכם נתונים שאפשר לסמוך עליהם.</p>
+        <section class="sdg-compare" aria-label="שתי הגישות">
           <article class="sdg-approach sdg-approach--works">
             <span class="sdg-approach__tag">מה עובד</span>
-            <h2>ייצור מבוסס-תכונות ומבוסס-אותות-בקרה</h2>
+            <h2>לייצר במכוון</h2>
             <ul>
-              <li>הגדירו תכונות מטרה (התווית) ותכונות ניואנס (כל השאר שאמור להשתנות).</li>
-              <li>עבור ראייה, הגדירו אותות בקרה מפורשים: מפות עומק, תנוחות, סגמנטציה, קצוות, פריסות.</li>
-              <li>דגמו את התכונות או האותות, ואז בנו כל דוגמה מהערכים שנדגמו.</li>
-              <li>לכל דגימה יש תווית ידועה שנדגמה; הכיסוי והגיוון מבוקרים, לא מקווים להם.</li>
-              <li>ניתן לשחזור ולבדיקה, כך שאפשר לאתר באגים בקנה מידה קטן לפני ההגדלה.</li>
+              <li>אתם בוחרים את התשובה (התווית) ואת מה שאמור להשתנות, ואז בוחרים כל אחד מהם במכוון.</li>
+              <li>לתמונות, אתם נותנים למודל צורה שילך לפיה: תנוחה, עומק, או קו מתאר.</li>
+              <li>כל דוגמה מגיעה עם תווית שאתם כבר יודעים שהיא נכונה.</li>
+              <li>אתם יכולים לחזור על זה, להסתכל על זה, ולתקן.</li>
             </ul>
           </article>
           <article class="sdg-approach sdg-approach--avoid">
             <span class="sdg-approach__tag">מה לא עובד</span>
-            <h2>ייצור אד-הוק, בתקווה שיסתדר</h2>
+            <h2>פשוט לבקש ולקוות</h2>
             <ul>
-              <li>לבקש מהמודל &rdquo;לייצר דוגמאות של X&ldquo; באמצעות פרומפט מעורפל.</li>
-              <li>להניח שאזכור של תווית הופך את הדגימה לכזו שאכן נושאת אותה.</li>
-              <li>אצווה אחת גדולה ולא בדוקה, בלי תוכנית דגימה.</li>
-              <li>להישען על שונות אקראית כדי לספק גיוון מועיל.</li>
-              <li>אין דרך לשחזר, לבדוק או לתקן בעיות באופן שיטתי.</li>
+              <li>אתם מבקשים &rdquo;כמה דוגמאות של X&ldquo; ושומרים כל מה שהמודל מחזיר.</li>
+              <li>אתם מניחים שלומר את התווית הופך אותה לנכונה.</li>
+              <li>אתם מייצרים הכול בבת אחת ולעולם לא מסתכלים על זה.</li>
+              <li>אתם לא יכולים לשחזר את זה, ולא יכולים לתקן את מה שהשתבש.</li>
             </ul>
           </article>
         </section>
 
-        <h2 class="sdg-heading sdg-heading--do">עשה</h2>
-        <p class="sdg-heading-lede">שתים עשרה פרקטיקות, לפי הסדר שבו תיתקלו בהן, שגורמות לייצור מבוסס-תכונות ומבוסס-אותות-בקרה לעבוד בפועל.</p>
+        <h2 class="sdg-heading">שנים עשר הצעדים</h2>
+        <p class="sdg-heading-lede">בסדר שבו תיתקלו בהם. לכל צעד דוגמה טובה להעתיק ודוגמה רעה להימנע ממנה.</p>
 
-        <h3 class="sdg-phase"><span>שלב 1 &middot;</span> תכננו את הנתונים לפני שאתם מייצרים</h3>
-        <section class="sdg-list" aria-label="עשה, שלב 1">
+        <h3 class="sdg-phase"><span>שלב 1 &middot;</span> תכננו לפני שאתם מייצרים</h3>
+        <section class="sdg-list" aria-label="צעדים, שלב 1">
           <article class="sdg-card" id="do-1">
             <span class="sdg-card__num">1</span>
             <div class="sdg-card__content">
-              <h2>חפשו נתונים קיימים תחילה</h2>
-              <p>לפני שאתם מייצרים משהו, חפשו נתונים אמיתיים. נתונים סינתטיים הם מוצא אחרון, לא ברירת מחדל.</p>
-              <ul>
-                <li>חפשו מאגרי נתונים אמיתיים שכבר מתאימים למשימה.</li>
-                <li>העדיפו שימוש חוזר בנתונים אמיתיים על פני ייצור מאפס.</li>
-              </ul>
-              <div>
-                <span class="sdg-sub__label">דרכים לעשות שימוש חוזר בנתונים אמיתיים:</span>
-                <ul>
-                  <li>אוגמנטציה, תיוג מחדש, חילוץ תכונות או אותות.</li>
-                  <li>שינוי מבוקר, או שילוב של דגימות אמיתיות וסינתטיות.</li>
-                </ul>
+              <h2>חפשו קודם נתונים אמיתיים</h2>
+              <p class="sdg-plain">לפני שאתם מייצרים נתונים מזויפים, בדקו אם כבר קיימים נתונים אמיתיים. נתונים אמיתיים כמעט תמיד עדיפים, וייתכן שתצטרכו רק לעצב אותם מחדש.</p>
+              <div class="sdg-eg">
+                <div class="sdg-eg__box sdg-eg__box--good"><span class="sdg-eg__tag">✓ עשו כך</span>אתם צריכים ביקורות על מוצרים, אז אתם מוצאים מאגר ביקורות פתוח ומתייגים אותו מחדש למשימה שלכם.</div>
+                <div class="sdg-eg__box sdg-eg__box--bad"><span class="sdg-eg__tag">✕ לא כך</span>אתם מדלגים על החיפוש ומייצרים 10,000 ביקורות מזויפות, כשמאגר ציבורי היה במרחק חיפוש אחד.</div>
               </div>
-              <p class="sdg-good"><b>דוגמה.</b> תייגו מחדש מאגר סנטימנט קיים לסכמה חדשה בת שלוש מחלקות, או חלצו רק את הערות הקוד ממאגר קוד ציבורי, במקום לייצר כל אחד מהם מאפס.</p>
             </div>
           </article>
 
           <article class="sdg-card" id="do-2">
             <span class="sdg-card__num">2</span>
             <div class="sdg-card__content">
-              <h2>שלטו במה שאתם מייצרים</h2>
-              <p>הכריעו על מרחב התוויות ועל הגיוון לפני שאתם כותבים פרומפט, ואז דגמו ממנו.</p>
-              <ul>
-                <li>הגדירו את תוויות אמת-היסוד (ground truth) או את תכונות המטרה.</li>
-                <li>הגדירו מרחב ניואנסים שמוסיף גיוון משמעותי.</li>
-                <li>ציינו כיצד אתם דוגמים על פני מחלקות, תכונות וניואנסים.</li>
-                <li>ייצרו כל דגימה מערכים שנדגמו במפורש.</li>
-              </ul>
-              <div>
-                <span class="sdg-sub__label">דוגמאות לתכונות:</span>
-                <ul>
-                  <li>חיובי / שלילי</li>
-                  <li>קיץ / חורף</li>
-                  <li>פורמלי / לא פורמלי</li>
-                  <li>מומחה / חסר ניסיון</li>
-                  <li>קל / קשה</li>
-                </ul>
+              <h2>החליטו מראש על התוויות ועל המגוון</h2>
+              <p class="sdg-plain">לפני שאתם כותבים prompt כלשהו, דעו בדיוק מה כל דוגמה צריכה ללמד (התווית) ומה צריך להיות שונה מדוגמה לדוגמה.</p>
+              <div class="sdg-eg">
+                <div class="sdg-eg__box sdg-eg__box--good"><span class="sdg-eg__tag">✓ עשו כך</span>אתם מרשימים תוויות (spam / לא spam), מחליטים שההודעות משתנות באורך ובנימה, ואז בוחרים כל אחת במכוון.</div>
+                <div class="sdg-eg__box sdg-eg__box--bad"><span class="sdg-eg__tag">✕ לא כך</span>אתם מבקשים &rdquo;קצת spam וקצת הודעות רגילות&ldquo; ומקווים שהתערובת תצא מאוזנת.</div>
               </div>
             </div>
           </article>
@@ -434,183 +314,116 @@
           <article class="sdg-card" id="do-3">
             <span class="sdg-card__num">3</span>
             <div class="sdg-card__content">
-              <h2>עצבו את המשתנים, ורק אז בנו את הפרומפט</h2>
-              <p>כל דגימה מוגדרת על ידי משתנים שאתם דוגמים תחילה והופכים לפרומפט לאחר מכן. הפרידו בין שני תפקידים, והכירו את סוג כל משתנה.</p>
-              <div>
-                <span class="sdg-sub__label">שני תפקידים:</span>
-                <ul>
-                  <li><b>משתני מטרה</b> קובעים את התווית שאתם רוצים שהנתונים ילמדו (סנטימנט, סוג פגם, חומרה). ערך המטרה שנדגם הופך לתווית אמת-היסוד.</li>
-                  <li><b>משתני ניואנס</b> הם כל השאר שאמור להשתנות אך אינו התווית (נושא, אורך, טון, עונה, מחבר). הם מוסיפים גיוון כדי שהמודל לא יוכל לקצר את הדרך אל המטרה באמצעות מתאמים מזויפים.</li>
-                </ul>
+              <h2>חלקו את המשתנים ל&rdquo;תשובה&ldquo; ול&rdquo;כל השאר&ldquo;</h2>
+              <p class="sdg-plain">משתנה אחד הוא התווית שאתם רוצים ללמד. האחרים רק מוסיפים מגוון, כדי שהמודל לא יוכל לרמות ולהיתפס לדבר הלא נכון. ואז בנו את ה-prompt מהערכים שבחרתם.</p>
+              <div class="sdg-eg">
+                <div class="sdg-eg__box sdg-eg__box--good"><span class="sdg-eg__tag">✓ עשו כך</span>תשובה = סנטימנט. מגוון = סוג מטבח, נימה, אורך. אתם בוחרים אחד מכל אחד, ואז כותבים את ה-prompt לביקורת סביבם.</div>
+                <div class="sdg-eg__box sdg-eg__box--bad"><span class="sdg-eg__tag">✕ לא כך</span>כל ביקורת חיובית במקרה עוסקת בפיצה, אז המודל לומד &rdquo;פיצה = חיובי&ldquo; במקום סנטימנט אמיתי.</div>
               </div>
-              <div>
-                <span class="sdg-sub__label">שני סוגים:</span>
-                <ul>
-                  <li><b>מספרי:</b> מספר או טווח, כגון אורך ביקורת במילים או קושי מ-1 עד 5. דגמו מטווח או מרשת.</li>
-                  <li><b>איכותני (קטגוריאלי):</b> ערך מתוך קבוצה קבועה, כגון חיובי / שלילי או קיץ / חורף. דגמו מתוך הקבוצה.</li>
-                </ul>
-              </div>
-              <p class="sdg-note">בנו כל פרומפט על ידי <b>הרכבה מחדש של מקטעי טקסט</b> שנבחרים לפי הערכים שנדגמו, במקום לחזור על פרומפט קבוע אחד. פרומפטים מונחי-משתנים הם דבר טוב: הם מספקים שליטה מפורשת וניתנת לשחזור וכיסוי אחיד של המרחב.</p>
-              <p class="sdg-good"><b>דוגמה &mdash; ביקורות מסעדות.</b> מטרה (קטגוריאלי): סנטימנט, חיובי או שלילי. ניואנס: סוג מטבח (איטלקי, סושי, טבעוני), טון (רשמי, יומיומי), ואורך (40, 80 או 120 מילים). דגמו צירוף אחד, למשל שלילי + סושי + יומיומי + 80 מילים, ואז הרכיבו את הפרומפט ממקטעים: <q>כתבו ביקורת יומיומית באורך 80 מילים על מסעדת סושי. החוויה הכוללת של הסוקר הייתה שלילית.</q> הסנטימנט שנדגם הוא התווית; כל השאר הוא ניואנס.</p>
             </div>
           </article>
 
           <article class="sdg-card" id="do-4">
             <span class="sdg-card__num">4</span>
             <div class="sdg-card__content">
-              <h2>תרגמו מושגים מעורפלים לתכונות מפורשות</h2>
-              <p>אל תסתמכו על מושגים שאינכם יכולים להגדיר או לזהות.</p>
-              <p class="sdg-example">במקום לבקש: <em>&rdquo;ייצר קוד שנכתב על ידי מתכנת חסר ניסיון.&ldquo;</em></p>
-              <div>
-                <span class="sdg-sub__label">הגדירו מאפיינים ספציפיים, כגון:</span>
-                <ul>
-                  <li>שמות משתנים גרועים</li>
-                  <li>קוד חוזר</li>
-                  <li>היעדר טיפול בשגיאות</li>
-                  <li>לולאות לא יעילות</li>
-                  <li>ערכים מקובעים בקוד (hard-coded)</li>
-                  <li>היעדר ולידציה של קלט</li>
-                  <li>הפשטות שגויות</li>
-                  <li>שימוש מופרז במשתנים גלובליים</li>
-                  <li>זרימת בקרה לא ברורה</li>
-                  <li>עיצוב לא עקבי</li>
-                </ul>
+              <h2>הפכו מילים מעורפלות לרשימת בדיקה</h2>
+              <p class="sdg-plain">אל תבקשו משהו שאינכם יכולים להגדיר או לזהות. פרקו רעיון מעורפל למאפיינים קונקרטיים שאתם יכולים לנקוב בשמם ולבדוק.</p>
+              <div class="sdg-eg">
+                <div class="sdg-eg__box sdg-eg__box--good"><span class="sdg-eg__tag">✓ עשו כך</span>&rdquo;קוד של מתחיל&ldquo; הופך לשמות משתנים גרועים + חוסר טיפול בשגיאות + בלוקים מועתקים, ואת אלה אתם מבקשים.</div>
+                <div class="sdg-eg__box sdg-eg__box--bad"><span class="sdg-eg__tag">✕ לא כך</span>אתם מבקשים &rdquo;קוד שכתב מתחיל&ldquo; ומקבלים קוד שנראה בסדר, או שגוי באיזושהי דרך אקראית.</div>
               </div>
-              <p class="sdg-note">לאחר מכן דגמו טעות אחת או יותר והנחו את המודל לייצר דוגמה המכילה את הטעויות הספציפיות הללו.</p>
             </div>
           </article>
         </section>
 
-        <h3 class="sdg-phase"><span>שלב 2 &middot;</span> ייצרו אותם בשליטה</h3>
-        <section class="sdg-list" aria-label="עשה, שלב 2">
+        <h3 class="sdg-phase"><span>שלב 2 &middot;</span> ייצרו בשליטה</h3>
+        <section class="sdg-list" aria-label="צעדים, שלב 2">
           <article class="sdg-card" id="do-5">
             <span class="sdg-card__num">5</span>
             <div class="sdg-card__content">
-              <h2>נסו תחילה בממשק ChatGPT</h2>
-              <ul>
-                <li>חקרו רעיונות ובחנו פרומפטים באופן אינטראקטיבי לפני שאתם כותבים קוד.</li>
-                <li>בדקו דוגמאות ראשוניות וחדדו את הגדרת המשימה.</li>
-                <li>בחנו את התוויות, הניואנסים, האילוצים ופורמט הפלט.</li>
-                <li>עברו ל-API רק לאחר שהגישה מפיקה תוצאות מספקות.</li>
-              </ul>
+              <h2>בדקו את הרעיון ב-ChatGPT לפני שאתם כותבים קוד</h2>
+              <p class="sdg-plain">נסו את ה-prompt קודם ידנית. תקנו את הניסוח בחלון הצ'אט לפני שאתם עושים אוטומציה כלשהי.</p>
+              <div class="sdg-eg">
+                <div class="sdg-eg__box sdg-eg__box--good"><span class="sdg-eg__tag">✓ עשו כך</span>אתם מדביקים את ה-prompt ל-ChatGPT, רואים שהפלט לא מדויק, ומתקנים את הניסוח בחמש דקות.</div>
+                <div class="sdg-eg__box sdg-eg__box--bad"><span class="sdg-eg__tag">✕ לא כך</span>אתם כותבים 200 שורות של קוד API, מריצים אותן על 5,000 דגימות, ורק אז מבחינים שה-prompt היה שגוי.</div>
+              </div>
             </div>
           </article>
 
           <article class="sdg-card" id="do-6">
             <span class="sdg-card__num">6</span>
             <div class="sdg-card__content">
-              <h2>השתמשו ב-API לייצור מבוקר</h2>
-              <p>ה-API הופך פרומפט שעובד לפייפליין ניתן לשחזור ולהרחבה.</p>
-              <ul>
-                <li>ייצרו באופן תוכנתי בהתאם לאסטרטגיית הדגימה שהוגדרה.</li>
-                <li>השתמשו בפלטים מובנים (structured outputs) כאשר הדבר אפשרי.</li>
-                <li>שלבו מנגנוני ולידציה אוטומטית וניסיון חוזר.</li>
-              </ul>
-              <div>
-                <span class="sdg-sub__label">שמרו עבור כל דוגמה:</span>
-                <ul>
-                  <li>את התכונות שנדגמו, הפרומפט, המודל והפרמטרים שלו, והפלט הגולמי.</li>
-                </ul>
+              <h2>השתמשו ב-API כדי שזה יהיה ניתן לשחזור</h2>
+              <p class="sdg-plain">ברגע שה-prompt עובד, הריצו אותו מקוד כדי שתוכלו לשחזר ולהגדיל, ושמרו את כל הפרטים על כל דוגמה.</p>
+              <div class="sdg-eg">
+                <div class="sdg-eg__box sdg-eg__box--good"><span class="sdg-eg__tag">✓ עשו כך</span>עבור כל דגימה אתם שומרים שורה אחת: התווית, ה-prompt, המודל, והפלט.</div>
+                <div class="sdg-eg__box sdg-eg__box--bad"><span class="sdg-eg__tag">✕ לא כך</span>אתם מייצרים בחלון הצ'אט ומעתיקים את התוצאות, כך שאחר כך אינכם יכולים לשחזר או לעקוב אחרי שום דבר.</div>
               </div>
-              <p class="sdg-good"><b>דוגמה.</b> שמרו רשומת JSON אחת לכל דגימה, כגון {id, sampled_attributes, prompt, model, params, output}, כדי שתוכלו לשחזר, לסנן ולאתר באגים במאגר בהמשך.</p>
             </div>
           </article>
 
           <article class="sdg-card" id="do-7">
             <span class="sdg-card__num">7</span>
             <div class="sdg-card__content">
-              <h2>אמנו או כווננו מודל מחולל כאשר פרומפט אינו מספיק</h2>
-              <p>מודל כללי שמקבל תכונות בפרומפט מכסה מקרים רבים, אך לא את כולם. כאשר התחום צר, בעל סגנון או פורמט ספציפי, או דורש שליטה הדוקה, אמנו או בצעו כוונון עדין (fine-tuning) של מודל מחולל על נתונים אמיתיים כך שיפיק את ההתפלגות שאתם באמת צריכים.</p>
-              <div>
-                <span class="sdg-sub__label">מתי לאמן מודל מחולל:</span>
-                <ul>
-                  <li>מודלים מן המדף מפספסים את הסגנון, הז&#39;רגון או הפורמט של התחום שלכם.</li>
-                  <li>אתם זקוקים למודל מחולל בר-שליטה שתוכלו להתנות בתכונות או באותות משלכם.</li>
-                  <li>יש לכם מעט נתונים אמיתיים ללמוד מהם, ופרומפט לבדו נותן ריאליזם או גיוון נמוכים.</li>
-                </ul>
+              <h2>אמנו מחולל משלכם כשה-prompt לא מספיק</h2>
+              <p class="sdg-plain">אם מודל כללי אינו מצליח להתאים לתחום או לסגנון הייחודי שלכם, בצעו כוונון עדין (fine-tune) של מודל על דוגמאות אמיתיות כדי שייצר את סוג הנתונים שאתם באמת צריכים. ואז בדקו שהוא לא סתם מעתיק את נתוני האימון שלו.</p>
+              <div class="sdg-eg">
+                <div class="sdg-eg__box sdg-eg__box--good"><span class="sdg-eg__tag">✓ עשו כך</span>אתם מבצעים כוונון עדין של LLM על 300 פניות תמיכה אמיתיות כדי שיכתוב חדשות באותו סגנון, ואז בודקים על פניות אמיתיות מודל שאומן עליהן.</div>
+                <div class="sdg-eg__box sdg-eg__box--bad"><span class="sdg-eg__tag">✕ לא כך</span>אתם מבצעים כוונון עדין על 20 דגימות, והמודל פשוט חוזר עליהן או ממציא פניות לא ריאליסטיות.</div>
               </div>
-              <div>
-                <span class="sdg-sub__label">כיצד:</span>
-                <ul>
-                  <li>בצעו כוונון עדין ל-LLM (SFT או LoRA) על דוגמאות אמיתיות כדי לייצר עוד באותו סגנון ובאותן כוונות.</li>
-                  <li>בצעו כוונון עדין למודל דיפיוזן, או אמנו ControlNet, על תמונות מהתחום כדי לייצר וריאציות מתויגות.</li>
-                  <li>אמנו מודל מחולל מותנה קטן (VAE או GAN) עבור אותות או נתונים מובנים.</li>
-                </ul>
-              </div>
-              <p class="sdg-note">מודל מחולל לומד את ההטיות של הנתונים האמיתיים שלכם ועלול לקרוס למוד (mode collapse) או לשנן דגימות. בדקו קיום <b>דליפה</b> (leakage), והעריכו את האיכות במורד הזרם: האם מודל שאומן על הנתונים הסינתטיים מכליל לנתונים אמיתיים?</p>
-              <p class="sdg-good"><b>דוגמה &mdash; פניות תמיכה.</b> בצעו כוונון עדין ל-LLM על כמה מאות פניות אמיתיות, בהתניה על כוונה ותחום מוצר, כדי לייצר אלפים נוספות באותו קול עם תוויות מבוקרות. לאחר מכן ודאו שמסווג שאומן עליהן עדיין עובד על פניות אמיתיות שהוחזקו בצד.</p>
             </div>
           </article>
 
           <article class="sdg-card" id="do-8">
             <span class="sdg-card__num">8</span>
             <div class="sdg-card__content">
-              <h2>השתמשו באותות בקרה מתאימים למשימות ראייה</h2>
-              <p>עבור ControlNet ומודלים קרובים, הובילו את הייצור באמצעות אות מפורש, לא רק טקסט.</p>
-              <ul>
-                <li>מפות עומק (depth maps) שנבנו סינתטית</li>
-                <li>שלדים או מפות תנוחה (pose maps)</li>
-                <li>מפות סגמנטציה (segmentation maps)</li>
-                <li>מפות קצוות (edge maps)</li>
-                <li>פריסות ואילוצים מרחביים</li>
-                <li>אותות בקרה שחולצו מתמונות אמיתיות</li>
-                <li>אותות בקרה שחולצו ושונו לאחר מכן</li>
-              </ul>
-              <p class="sdg-note">אמתו הן את אותות הבקרה והן את התמונות שנוצרו.</p>
+              <h2>לתמונות, הכווינו באמצעות אות בקרה</h2>
+              <p class="sdg-plain">לתמונות, מילים לבדן אינן מספיקות. תנו למודל צורה שילך לפיה, כמו תנוחה, מפת עומק, או קו מתאר, בעזרת כלים כמו ControlNet.</p>
+              <div class="sdg-eg">
+                <div class="sdg-eg__box sdg-eg__box--good"><span class="sdg-eg__tag">✓ עשו כך</span>אתם נותנים שלד תנוחה, כך שכל אדם שנוצר עומד בדיוק בתנוחה שהמשימה שלכם צריכה.</div>
+                <div class="sdg-eg__box sdg-eg__box--bad"><span class="sdg-eg__tag">✕ לא כך</span>אתם כותבים רק &rdquo;אדם קופץ&ldquo; ומקבלים תנוחות אקראיות שאינכם יכולים ליישר עם התוויות שלכם.</div>
+              </div>
             </div>
           </article>
         </section>
 
-        <h3 class="sdg-phase"><span>שלב 3 &middot;</span> הגדילו קנה מידה בבטחה</h3>
-        <section class="sdg-list" aria-label="עשה, שלב 3">
+        <h3 class="sdg-phase"><span>שלב 3 &middot;</span> הגדילו בבטחה</h3>
+        <section class="sdg-list" aria-label="צעדים, שלב 3">
           <article class="sdg-card" id="do-9">
             <span class="sdg-card__num">9</span>
             <div class="sdg-card__content">
-              <h2>ייצרו נתונים באצוות קטנות</h2>
-              <ul>
-                <li>ייצרו אצווה קטנה, ואז בדקו את התוצאות לפני שאתם ממשיכים.</li>
-                <li>תקנו את הפרומפט, אסטרטגיית הדגימה או תצורת המודל בין אצווה לאצווה.</li>
-                <li>הגדילו את גודל האצווה רק לאחר שהאיכות מתייצבת.</li>
-              </ul>
+              <h2>ייצרו קצת, ואז הסתכלו</h2>
+              <p class="sdg-plain">ייצרו אצווה קטנה, בדקו אותה, תקנו את הבעיות, ואז ייצרו עוד. לעולם אל תייצרו את הכול בבת אחת.</p>
+              <div class="sdg-eg">
+                <div class="sdg-eg__box sdg-eg__box--good"><span class="sdg-eg__tag">✓ עשו כך</span>אתם מייצרים 20 דוגמאות, מזהים באג בתיוג, מתקנים אותו, ואז מייצרים את ה-20 הבאות.</div>
+                <div class="sdg-eg__box sdg-eg__box--bad"><span class="sdg-eg__tag">✕ לא כך</span>אתם מייצרים 5,000 בבת אחת, ואז מגלים שלכל אחת מהן אותו באג.</div>
+              </div>
             </div>
           </article>
 
           <article class="sdg-card" id="do-10">
             <span class="sdg-card__num">10</span>
             <div class="sdg-card__content">
-              <h2>אתרו באגים לפני הגדלת קנה המידה</h2>
-              <ul>
-                <li>בחנו פרומפטים על מספר קטן של דגימות תחילה.</li>
-                <li>ודאו שכל פלט תואם לתכונות המטרה שנדגמו עבורו.</li>
-                <li>כסו כל מחלקה וכל שילוב תכונות חשוב.</li>
-                <li>העריכו מציאותיות, גיוון ונכונות תיוג.</li>
-                <li>ייצרו מאגרי נתונים גדולים רק לאחר שהתהליך בקנה מידה קטן אמין.</li>
-              </ul>
+              <h2>אתרו באגים על מעטים לפני שמגדילים</h2>
+              <p class="sdg-plain">הוכיחו שהתהליך עובד על קומץ דגימות לפני שאתם מייצרים אלפים.</p>
+              <div class="sdg-eg">
+                <div class="sdg-eg__box sdg-eg__box--good"><span class="sdg-eg__tag">✓ עשו כך</span>אתם בודקים ש-10 דגימות מכסות כל מחלקה ומתויגות נכון, ואז מגדילים ל-10,000.</div>
+                <div class="sdg-eg__box sdg-eg__box--bad"><span class="sdg-eg__tag">✕ לא כך</span>אתם מניחים שזה עובד, מייצרים 10,000, ומחצית מהן מתויגות שגוי.</div>
+              </div>
             </div>
           </article>
         </section>
 
-        <h3 class="sdg-phase"><span>שלב 4 &middot;</span> אמתו ובחרו</h3>
-        <section class="sdg-list" aria-label="עשה, שלב 4">
+        <h3 class="sdg-phase"><span>שלב 4 &middot;</span> בדקו ובחרו</h3>
+        <section class="sdg-list" aria-label="צעדים, שלב 4">
           <article class="sdg-card" id="do-11">
             <span class="sdg-card__num">11</span>
             <div class="sdg-card__content">
-              <h2>בדקו את הנתונים שנוצרו ידנית</h2>
-              <ul>
-                <li>הביטו בתמונות, בסרטונים, בדיאגרמות ובאותות בקרה; קראו טקסט וקוד מייצגים.</li>
-                <li>אתרו דוגמאות לא מציאותיות, סותרות, דו-משמעיות או מתויגות באופן שגוי.</li>
-              </ul>
-              <div>
-                <span class="sdg-sub__label">התחקו אחר שורש הבעיה של כל תקלה:</span>
-                <ul>
-                  <li>מודל לא מתאים</li>
-                  <li>פרומפט חלש או דו-משמעי</li>
-                  <li>תכונה שהוגדרה בצורה גרועה</li>
-                  <li>שילוב תכונות לא חוקי</li>
-                  <li>אסטרטגיית דגימה שגויה</li>
-                  <li>אות בקרה לא מספק</li>
-                  <li>שגיאת ייצור או פענוח (parsing)</li>
-                </ul>
+              <h2>הסתכלו על הנתונים במו עיניכם</h2>
+              <p class="sdg-plain">קראו וצפו באמת בדגימות שלכם. מצאו את הגרועות, והבינו למה הן השתבשו כדי שתוכלו לתקן את הסיבה.</p>
+              <div class="sdg-eg">
+                <div class="sdg-eg__box sdg-eg__box--good"><span class="sdg-eg__tag">✓ עשו כך</span>אתם קוראים 50 דגימות, מוצאים סתירות, ומתחקים אחריהן עד למילה מבלבלת אחת ב-prompt.</div>
+                <div class="sdg-eg__box sdg-eg__box--bad"><span class="sdg-eg__tag">✕ לא כך</span>אתם סוקרים רק את הדוגמאות הכי יפות ומניחים ששאר הדוגמאות טובות בדיוק כמותן.</div>
               </div>
             </div>
           </article>
@@ -618,110 +431,12 @@
           <article class="sdg-card" id="do-12">
             <span class="sdg-card__num">12</span>
             <div class="sdg-card__content">
-              <h2>השוו בין אסטרטגיות ייצור שונות</h2>
-              <p>לעיתים רחוקות יש שיטה נכונה אחת. נסו כמה, ובחרו על בסיס הראיות.</p>
-              <ul>
-                <li>ייצור ישיר</li>
-                <li>ייצור מבוסס-תבנית</li>
-                <li>ייצור few-shot</li>
-                <li>שינוי של דוגמאות אמיתיות</li>
-                <li>ייצור מבוקר-תכונות</li>
-                <li>חילוץ ולאחריו אוגמנטציה</li>
-                <li>ייצור וולידציה רב-שלביים</li>
-                <li>ייצור ולאחריו סינון</li>
-                <li>ייצור ולאחריו תיקון</li>
-                <li>מאגרי נתונים היברידיים, אמיתיים וסינתטיים</li>
-              </ul>
-              <p class="sdg-note">בחרו את הגישה על בסיס איכות הנתונים, יכולת השליטה, המציאותיות, הגיוון והעלות.</p>
-            </div>
-          </article>
-        </section>
-
-        <h2 class="sdg-heading sdg-heading--dont">אל תעשה</h2>
-        <p class="sdg-heading-lede">מצבי הכשל שכל אחת מהפרקטיקות שלמעלה נועדה למנוע.</p>
-        <section class="sdg-dont-list" aria-label="אל תעשה">
-          <article class="sdg-dont-card" id="dont-real-data">
-            <span class="sdg-dont-card__badge" aria-hidden="true">&#10005;</span>
-            <div class="sdg-dont-card__content">
-              <h2>דילוג על חיפוש נתונים אמיתיים</h2>
-              <ul>
-                <li>אל תייצרו נתונים סינתטיים לפני שבדקתם אם קיימים נתונים אמיתיים מתאימים.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="sdg-dont-card" id="dont-vague-control">
-            <span class="sdg-dont-card__badge" aria-hidden="true">&#10005;</span>
-            <div class="sdg-dont-card__content">
-              <h2>בקרה מעורפלת או לא מאומתת</h2>
-              <ul>
-                <li>אל תבקשו מהמודל לייצר מושג שאינכם יכולים להגדיר, לייצר או לזהות בעצמכם בבירור.</li>
-                <li>אל תשתמשו בפרומפטים מעורפלים עבור תוויות או תכונות מורכבות.</li>
-                <li>אל תניחו שהזכרת תווית בפרומפט מבטיחה שהדגימה שנוצרה אכן נושאת את התווית הזו.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="sdg-dont-card" id="dont-scaling">
-            <span class="sdg-dont-card__badge" aria-hidden="true">&#10005;</span>
-            <div class="sdg-dont-card__content">
-              <h2>הגדלת קנה מידה לפני שהמערכת מוכנה</h2>
-              <ul>
-                <li>אל תייצרו נתונים בעיוורון ללא איתור באגים ובדיקה ידנית.</li>
-                <li>אל תייצרו את מאגר הנתונים כולו בקריאת API אחת.</li>
-                <li>אל תייצרו את כל הנתונים באצווה גדולה ורציפה אחת.</li>
-                <li>אל תעברו ישירות לייצור בקנה מידה גדול דרך ה-API לפני שבחנתם פרומפטים באופן אינטראקטיבי.</li>
-                <li>אל תניחו שפרומפט שעובד עבור כמה דוגמאות יישאר אמין על פני אלפי דגימות.</li>
-                <li>אל תייצרו נתונים בכמות גדולה לפני שאתם מרוצים מאיכות אצוות הבדיקה הקטנות.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="sdg-dont-card" id="dont-size-over-quality">
-            <span class="sdg-dont-card__badge" aria-hidden="true">&#10005;</span>
-            <div class="sdg-dont-card__content">
-              <h2>גודל על חשבון איכות</h2>
-              <ul>
-                <li>אל תקבלו נתונים לא מציאותיים, סותרים, דו-משמעיים או מתויגים באופן שגוי.</li>
-                <li>אל תעדיפו את גודל מאגר הנתונים על פני איכות, מציאותיות, יכולת שליטה ואמינות תיוג.</li>
-                <li>אל תניחו ששונות אקראית מספקת אוטומטית גיוון מועיל.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="sdg-dont-card" id="dont-cherry-picked">
-            <span class="sdg-dont-card__badge" aria-hidden="true">&#10005;</span>
-            <div class="sdg-dont-card__content">
-              <h2>בדיקה מגמתית</h2>
-              <ul>
-                <li>אל תבדקו רק דוגמאות נוחות או מוצלחות.</li>
-                <li>אל תתעלמו ממחלקות נדירות, משילובים קשים וממקרי כשל.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="sdg-dont-card" id="dont-one-approach">
-            <span class="sdg-dont-card__badge" aria-hidden="true">&#10005;</span>
-            <div class="sdg-dont-card__content">
-              <h2>גישה אחת, שנדחפת בעיוורון</h2>
-              <ul>
-                <li>אל תעצרו במודל, בפרומפט או בגישת הייצור הראשונים.</li>
-                <li>אל תתייחסו לייצור סינתטי ישיר כאל הפתרון האפשרי היחיד.</li>
-                <li>אל תתעלמו מגישות רב-שלביות המשלבות חילוץ מנתונים אמיתיים, אוגמנטציה, שינוי, ייצור, סינון וולידציה.</li>
-                <li>אל תמשיכו לייצר לאחר שזיהיתם בעיה שיטתית; עצרו, אבחנו את הסיבה, תקנו את הפייפליין ובחנו מחדש בקנה מידה קטן.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="sdg-dont-card" id="dont-trained-generator">
-            <span class="sdg-dont-card__badge" aria-hidden="true">&#10005;</span>
-            <div class="sdg-dont-card__content">
-              <h2>לתת אמון עיוור במודל מחולל שאומן</h2>
-              <ul>
-                <li>אל תאמנו מודל מחולל על נתונים אמיתיים זעירים או מוטים ותניחו שהפלט שלו מציאותי או מגוון.</li>
-                <li>אל תשלחו לשימוש נתונים ממודל מחולל שכוונן בלי לבדוק קיום דגימות אמיתיות ששוננו או דלפו.</li>
-                <li>אל תשפטו מודל מחולל לפי הדגימות שלו בלבד; שפטו אותו לפי השאלה האם מודל שאומן על הפלט שלו מכליל לנתונים אמיתיים.</li>
-              </ul>
+              <h2>נסו כמה שיטות, שמרו את הטובה ביותר</h2>
+              <p class="sdg-plain">לעיתים נדירות יש דרך אחת נכונה. נסו כמה גישות ושמרו את זו שנותנת את הנתונים הטובים ביותר במאמץ הנמוך ביותר.</p>
+              <div class="sdg-eg">
+                <div class="sdg-eg__box sdg-eg__box--good"><span class="sdg-eg__tag">✓ עשו כך</span>אתם משווים ייצור מאפס מול עריכה של דוגמאות אמיתיות, ושומרים את מה שנראה יותר ריאליסטי.</div>
+                <div class="sdg-eg__box sdg-eg__box--bad"><span class="sdg-eg__tag">✕ לא כך</span>אתם משתמשים בשיטה הראשונה שרצה ולעולם לא בודקים אם אחרת הייתה עובדת טוב יותר.</div>
+              </div>
             </div>
           </article>
         </section>
