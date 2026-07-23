@@ -28,6 +28,70 @@
       color: var(--site-muted);
       font: 600 0.9rem/1.6 "Manrope", "Heebo", sans-serif;
     }
+    /* Core-idea comparison: what works vs what does not. */
+    .sdg-compare {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 14px;
+    }
+    @media (min-width: 760px) {
+      .sdg-compare { grid-template-columns: 1fr 1fr; }
+    }
+    .sdg-approach {
+      position: relative;
+      overflow: hidden;
+      padding: 18px 24px 18px 20px;
+      border: 1px solid var(--site-border);
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+      text-align: right;
+    }
+    /* In RTL the accent sits on the right. */
+    .sdg-approach::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 0 auto;
+      width: 5px;
+    }
+    .sdg-approach--works::before { background: #2e7d5a; }
+    .sdg-approach--avoid::before { background: #be1216; }
+    .sdg-approach__tag {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font: 800 0.68rem/1.4 "Manrope", "Heebo", sans-serif;
+      letter-spacing: 0.04em;
+    }
+    .sdg-approach--works .sdg-approach__tag { background: rgba(46, 125, 90, 0.1); border: 1px solid rgba(46, 125, 90, 0.3); color: #1f5a40; }
+    .sdg-approach--avoid .sdg-approach__tag { background: rgba(190, 18, 22, 0.08); border: 1px solid rgba(190, 18, 22, 0.28); color: #be1216; }
+    .sdg-approach h2 {
+      margin: 8px 0 6px;
+      font: 800 1.06rem/1.35 "Manrope", "Heebo", sans-serif;
+      color: var(--site-text, #18202a);
+    }
+    .sdg-approach ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 6px;
+    }
+    .sdg-approach li {
+      position: relative;
+      padding-right: 22px;
+      font: 600 0.88rem/1.6 "Manrope", "Heebo", "Segoe UI", sans-serif;
+      color: var(--site-text);
+    }
+    .sdg-approach li::before {
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-weight: 800;
+    }
+    .sdg-approach--works li::before { content: "✓"; color: #1f5a40; }
+    .sdg-approach--avoid li::before { content: "✕"; color: #be1216; }
     .sdg-list {
       display: grid;
       grid-template-columns: 1fr;
@@ -280,12 +344,39 @@
             <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
               <img src="../../assets/heroes/teaching-hos-student-projects.png" alt="" style="display: block; width: 100%; object-fit: cover;">
             </figure>
-            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">ייצור נתונים סינתטיים לפרויקטים בתחום ה-LLM וה-GenAI, כמדריך עשה ואל תעשה. ייצרו נתונים במכוון, לא בטייס אוטומטי: חפשו נתונים אמיתיים תחילה, שלטו במדויק במה שאתם מייצרים, נסו ואתרו באגים בקנה מידה קטן, בדקו ידנית, והשוו בין אסטרטגיות לפני הגדלת קנה המידה.</p>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">ייצור נתונים סינתטיים לפרויקטים בתחום ה-LLM וה-GenAI. המיומנות שחשובה היא ייצור שיטתי ומבוקר: במקום לבקש מהמודל פשוט לייצר דוגמאות של X ולקוות, אתם מגדירים את התכונות שמאחורי כל דגימה (עבור טקסט ותוויות) או את אותות הבקרה (עבור ראייה), דוגמים אותם במפורש, ובונים כל דוגמה מהערכים שנדגמו. המדריך מראה את הגישה שעובדת, את הקיצורים שלא עובדים, ואת פרטי העשה ואל תעשה.</p>
           </div>
         </section>
 
+        <h2 class="sdg-heading">הרעיון המרכזי</h2>
+        <p class="sdg-heading-lede">יש שתי דרכים לייצר נתונים. רק אחת מהן נותנת לכם שליטה, והיא זו שהפרויקטים האלה מצפים לה.</p>
+        <section class="sdg-compare" aria-label="מה עובד ומה לא">
+          <article class="sdg-approach sdg-approach--works">
+            <span class="sdg-approach__tag">מה עובד</span>
+            <h2>ייצור מבוסס-תכונות ומבוסס-אותות-בקרה</h2>
+            <ul>
+              <li>הגדירו תכונות מטרה (התווית) ותכונות ניואנס (כל השאר שאמור להשתנות).</li>
+              <li>עבור ראייה, הגדירו אותות בקרה מפורשים: מפות עומק, תנוחות, סגמנטציה, קצוות, פריסות.</li>
+              <li>דגמו את התכונות או האותות, ואז בנו כל דוגמה מהערכים שנדגמו.</li>
+              <li>לכל דגימה יש תווית ידועה שנדגמה; הכיסוי והגיוון מבוקרים, לא מקווים להם.</li>
+              <li>ניתן לשחזור ולבדיקה, כך שאפשר לאתר באגים בקנה מידה קטן לפני ההגדלה.</li>
+            </ul>
+          </article>
+          <article class="sdg-approach sdg-approach--avoid">
+            <span class="sdg-approach__tag">מה לא עובד</span>
+            <h2>ייצור אד-הוק, בתקווה שיסתדר</h2>
+            <ul>
+              <li>לבקש מהמודל &rdquo;לייצר דוגמאות של X&ldquo; באמצעות פרומפט מעורפל.</li>
+              <li>להניח שאזכור של תווית בפרומפט אכן מקנה לדגימה את אותה תווית.</li>
+              <li>אצווה אחת גדולה ולא בדוקה, בלי תוכנית דגימה.</li>
+              <li>להישען על שונות אקראית כדי לספק גיוון מועיל.</li>
+              <li>אין דרך לשחזר, לבדוק או לתקן בעיות באופן שיטתי.</li>
+            </ul>
+          </article>
+        </section>
+
         <h2 class="sdg-heading sdg-heading--do">עשה</h2>
-        <p class="sdg-heading-lede">אחת עשרה פרקטיקות שהופכות נתונים סינתטיים מניחוש לתהליך מבוקר וניתן לבדיקה.</p>
+        <p class="sdg-heading-lede">אחת עשרה הפרקטיקות שגורמות לייצור מבוסס-תכונות ומבוסס-אותות-בקרה לעבוד בפועל.</p>
         <section class="sdg-list" aria-label="עשה">
           <article class="sdg-card" id="do-1">
             <span class="sdg-card__num">1</span>

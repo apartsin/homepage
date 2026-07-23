@@ -29,6 +29,69 @@
       color: var(--site-muted);
       font: 600 0.9rem/1.5 "Manrope", sans-serif;
     }
+    /* Core-idea comparison: what works vs what does not. */
+    .sdg-compare {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 14px;
+    }
+    @media (min-width: 760px) {
+      .sdg-compare { grid-template-columns: 1fr 1fr; }
+    }
+    .sdg-approach {
+      position: relative;
+      overflow: hidden;
+      padding: 18px 20px 18px 24px;
+      border: 1px solid var(--site-border);
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+    }
+    .sdg-approach::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5px;
+    }
+    .sdg-approach--works::before { background: #2e7d5a; }
+    .sdg-approach--avoid::before { background: #be1216; }
+    .sdg-approach__tag {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font: 800 0.68rem/1.4 "Manrope", sans-serif;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .sdg-approach--works .sdg-approach__tag { background: rgba(46, 125, 90, 0.1); border: 1px solid rgba(46, 125, 90, 0.3); color: #1f5a40; }
+    .sdg-approach--avoid .sdg-approach__tag { background: rgba(190, 18, 22, 0.08); border: 1px solid rgba(190, 18, 22, 0.28); color: #be1216; }
+    .sdg-approach h2 {
+      margin: 8px 0 6px;
+      font: 800 1.06rem/1.28 "Manrope", sans-serif;
+      color: var(--site-text, #18202a);
+    }
+    .sdg-approach ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 6px;
+    }
+    .sdg-approach li {
+      position: relative;
+      padding-left: 22px;
+      font: 600 0.88rem/1.5 "Manrope", "Segoe UI", sans-serif;
+      color: var(--site-text);
+    }
+    .sdg-approach li::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-weight: 800;
+    }
+    .sdg-approach--works li::before { content: "✓"; color: #1f5a40; }
+    .sdg-approach--avoid li::before { content: "✕"; color: #be1216; }
     .sdg-list {
       display: grid;
       grid-template-columns: 1fr;
@@ -274,12 +337,39 @@
             <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
               <img src="../../assets/heroes/teaching-hos-student-projects.png" alt="" style="display: block; width: 100%; object-fit: cover;">
             </figure>
-            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">Synthetic data generation for LLM and GenAI projects, as a do-and-don't guide. Generate data on purpose, not on autopilot: research real data first, control exactly what you produce, prototype and debug small, inspect by hand, and compare strategies before scaling.</p>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">Synthetic data generation for LLM and GenAI projects. The skill that matters is systematic, controlled generation: instead of asking a model to just generate examples of X and hoping, you define the attributes behind each sample (for text and labels) or the control signals (for vision), sample them explicitly, and build every example from those values. This guide shows the approach that works, the shortcuts that don't, and the do-and-don't details.</p>
           </div>
         </section>
 
+        <h2 class="sdg-heading">The core idea</h2>
+        <p class="sdg-heading-lede">There are two ways to generate data. Only one gives you control, and it is the one these projects expect.</p>
+        <section class="sdg-compare" aria-label="What works and what does not">
+          <article class="sdg-approach sdg-approach--works">
+            <span class="sdg-approach__tag">What works</span>
+            <h2>Attribute- and control-signal-based generation</h2>
+            <ul>
+              <li>Define target attributes (the label) and nuance attributes (everything else that should vary).</li>
+              <li>For vision, define explicit control signals: depth maps, poses, segmentation, edges, layouts.</li>
+              <li>Sample the attributes or signals, then build each example from the sampled values.</li>
+              <li>Every sample carries a known, sampled label; coverage and diversity are controlled, not hoped for.</li>
+              <li>Reproducible and inspectable, so you can debug at small scale before scaling.</li>
+            </ul>
+          </article>
+          <article class="sdg-approach sdg-approach--avoid">
+            <span class="sdg-approach__tag">What doesn't</span>
+            <h2>Ad-hoc, hope-it-works generation</h2>
+            <ul>
+              <li>Asking the model to &ldquo;generate examples of X&rdquo; with a vague prompt.</li>
+              <li>Assuming that mentioning a label makes the sample actually have it.</li>
+              <li>One large, uninspected batch with no sampling plan.</li>
+              <li>Relying on random variation to supply useful diversity.</li>
+              <li>No way to reproduce, inspect, or fix problems systematically.</li>
+            </ul>
+          </article>
+        </section>
+
         <h2 class="sdg-heading sdg-heading--do">Do</h2>
-        <p class="sdg-heading-lede">Eleven practices that turn synthetic data from a guess into a controlled, inspectable process.</p>
+        <p class="sdg-heading-lede">The eleven practices that make attribute- and control-signal-based generation work in practice.</p>
         <section class="sdg-list" aria-label="Do">
           <article class="sdg-card" id="do-1">
             <span class="sdg-card__num">1</span>
