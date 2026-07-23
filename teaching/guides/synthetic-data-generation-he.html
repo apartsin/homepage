@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
-  <meta name="description" content="ייצור נתוני אימון משלכם בעזרת AI, מוסבר בפשטות. הרעיון הגדול, ואז שנים עשר צעדים, לכל אחד דוגמה טובה ודוגמה רעה.">
+  <meta name="description" content="ייצור נתוני אימון משלכם בעזרת AI, מוסבר בפשטות. הרעיון הגדול, ואז שלושה עשר צעדים, לכל אחד דוגמה טובה ודוגמה רעה.">
   <link rel="alternate" hreflang="he" href="./synthetic-data-generation-he.html">
   <link rel="alternate" hreflang="en" href="./synthetic-data-generation.html">
   <title>מדריך לייצור נתונים סינתטיים | סשה אפרטסין</title>
@@ -254,7 +254,7 @@
             <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
               <img src="../../assets/heroes/teaching-hos-student-projects.png" alt="" style="display: block; width: 100%; object-fit: cover;">
             </figure>
-            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">ייצור נתוני אימון משלכם בעזרת AI, מוסבר בפשטות. הסוד הוא שליטה: החליטו בדיוק מה כל דוגמה צריכה להכיל, ואז בנו אותה במכוון במקום לקוות. למטה מופיע הרעיון הגדול, ואחריו שנים עשר צעדים, לכל אחד דוגמה טובה ודוגמה רעה.</p>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">ייצור נתוני אימון משלכם בעזרת AI, מוסבר בפשטות. הסוד הוא שליטה: החליטו בדיוק מה כל דוגמה צריכה להכיל, ואז בנו אותה במכוון במקום לקוות. למטה מופיע הרעיון הגדול, ואחריו שלושה עשר צעדים, לכל אחד דוגמה טובה ודוגמה רעה.</p>
           </div>
         </section>
 
@@ -291,7 +291,7 @@
           </article>
         </section>
 
-        <h2 class="sdg-heading">שנים עשר הצעדים</h2>
+        <h2 class="sdg-heading">שלושה עשר הצעדים</h2>
         <p class="sdg-heading-lede">בסדר שבו תיתקלו בהם. לכל צעד דוגמה טובה להעתיק ודוגמה רעה להימנע ממנה.</p>
 
         <h3 class="sdg-phase"><span>שלב 1 &middot;</span> תכננו לפני שאתם מייצרים</h3>
@@ -335,6 +335,18 @@
           <article class="sdg-card" id="do-4">
             <span class="sdg-card__num">4</span>
             <div class="sdg-card__content">
+              <h2>שנו את הערכים, לא בלוקים קבועים של טקסט</h2>
+              <p class="sdg-plain">צרו מגוון על ידי שינוי המאפיינים והערכים שלהם, ואז תנו למודל לכתוב כל דוגמה סביבם. אל תבנו דוגמאות מערבוב של כמה משפטים קבועים, אחרת כולן יוצאות באותה צורה.</p>
+              <div class="sdg-eg">
+                <div class="sdg-eg__box sdg-eg__box--good"><span class="sdg-eg__tag">✓ עשו כך</span>אתם קובעים סוג מטבח, נימה ואורך לערכים שונים ונותנים למודל לכתוב כל ביקורת מחדש מהם.</div>
+                <div class="sdg-eg__box sdg-eg__box--bad"><span class="sdg-eg__tag">✕ לא כך</span>אתם משאירים תבנית אחת ורק מחליפים &rdquo;מצוין&ldquo; ב&rdquo;נורא&ldquo; ו&rdquo;פיצה&ldquo; ב&rdquo;סושי&ldquo;, אז כל הביקורות נקראות אותו דבר.</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="do-5">
+            <span class="sdg-card__num">5</span>
+            <div class="sdg-card__content">
               <h2>הפכו מילים מעורפלות לרשימת בדיקה</h2>
               <p class="sdg-plain">אל תבקשו משהו שאינכם יכולים להגדיר או לזהות. פרקו רעיון מעורפל למאפיינים קונקרטיים שאתם יכולים לנקוב בשמם ולבדוק.</p>
               <div class="sdg-eg">
@@ -347,8 +359,8 @@
 
         <h3 class="sdg-phase"><span>שלב 2 &middot;</span> ייצרו בשליטה</h3>
         <section class="sdg-list" aria-label="צעדים, שלב 2">
-          <article class="sdg-card" id="do-5">
-            <span class="sdg-card__num">5</span>
+          <article class="sdg-card" id="do-6">
+            <span class="sdg-card__num">6</span>
             <div class="sdg-card__content">
               <h2>בדקו את הרעיון ב-ChatGPT לפני שאתם כותבים קוד</h2>
               <p class="sdg-plain">נסו את ה-prompt קודם ידנית. תקנו את הניסוח בחלון הצ'אט לפני שאתם עושים אוטומציה כלשהי.</p>
@@ -359,8 +371,8 @@
             </div>
           </article>
 
-          <article class="sdg-card" id="do-6">
-            <span class="sdg-card__num">6</span>
+          <article class="sdg-card" id="do-7">
+            <span class="sdg-card__num">7</span>
             <div class="sdg-card__content">
               <h2>השתמשו ב-API כדי שזה יהיה ניתן לשחזור</h2>
               <p class="sdg-plain">ברגע שה-prompt עובד, הריצו אותו מקוד כדי שתוכלו לשחזר ולהגדיל, ושמרו את כל הפרטים על כל דוגמה.</p>
@@ -371,8 +383,8 @@
             </div>
           </article>
 
-          <article class="sdg-card" id="do-7">
-            <span class="sdg-card__num">7</span>
+          <article class="sdg-card" id="do-8">
+            <span class="sdg-card__num">8</span>
             <div class="sdg-card__content">
               <h2>אמנו מחולל משלכם כשה-prompt לא מספיק</h2>
               <p class="sdg-plain">אם מודל כללי אינו מצליח להתאים לתחום או לסגנון הייחודי שלכם, בצעו כוונון עדין (fine-tune) של מודל על דוגמאות אמיתיות כדי שייצר את סוג הנתונים שאתם באמת צריכים. ואז בדקו שהוא לא סתם מעתיק את נתוני האימון שלו.</p>
@@ -383,8 +395,8 @@
             </div>
           </article>
 
-          <article class="sdg-card" id="do-8">
-            <span class="sdg-card__num">8</span>
+          <article class="sdg-card" id="do-9">
+            <span class="sdg-card__num">9</span>
             <div class="sdg-card__content">
               <h2>לתמונות, הכווינו באמצעות אות בקרה</h2>
               <p class="sdg-plain">לתמונות, מילים לבדן אינן מספיקות. תנו למודל צורה שילך לפיה, כמו תנוחה, מפת עומק, או קו מתאר, בעזרת כלים כמו ControlNet.</p>
@@ -398,8 +410,8 @@
 
         <h3 class="sdg-phase"><span>שלב 3 &middot;</span> הגדילו בבטחה</h3>
         <section class="sdg-list" aria-label="צעדים, שלב 3">
-          <article class="sdg-card" id="do-9">
-            <span class="sdg-card__num">9</span>
+          <article class="sdg-card" id="do-10">
+            <span class="sdg-card__num">10</span>
             <div class="sdg-card__content">
               <h2>ייצרו קצת, ואז הסתכלו</h2>
               <p class="sdg-plain">ייצרו אצווה קטנה, בדקו אותה, תקנו את הבעיות, ואז ייצרו עוד. לעולם אל תייצרו את הכול בבת אחת.</p>
@@ -410,8 +422,8 @@
             </div>
           </article>
 
-          <article class="sdg-card" id="do-10">
-            <span class="sdg-card__num">10</span>
+          <article class="sdg-card" id="do-11">
+            <span class="sdg-card__num">11</span>
             <div class="sdg-card__content">
               <h2>אתרו באגים על מעטים לפני שמגדילים</h2>
               <p class="sdg-plain">הוכיחו שהתהליך עובד על קומץ דגימות לפני שאתם מייצרים אלפים.</p>
@@ -425,8 +437,8 @@
 
         <h3 class="sdg-phase"><span>שלב 4 &middot;</span> בדקו ובחרו</h3>
         <section class="sdg-list" aria-label="צעדים, שלב 4">
-          <article class="sdg-card" id="do-11">
-            <span class="sdg-card__num">11</span>
+          <article class="sdg-card" id="do-12">
+            <span class="sdg-card__num">12</span>
             <div class="sdg-card__content">
               <h2>הסתכלו על הנתונים במו עיניכם</h2>
               <p class="sdg-plain">קראו וצפו באמת בדגימות שלכם. מצאו את הגרועות, והבינו למה הן השתבשו כדי שתוכלו לתקן את הסיבה.</p>
@@ -437,8 +449,8 @@
             </div>
           </article>
 
-          <article class="sdg-card" id="do-12">
-            <span class="sdg-card__num">12</span>
+          <article class="sdg-card" id="do-13">
+            <span class="sdg-card__num">13</span>
             <div class="sdg-card__content">
               <h2>נסו כמה שיטות, שמרו את הטובה ביותר</h2>
               <p class="sdg-plain">לעיתים נדירות יש דרך אחת נכונה. נסו כמה גישות ושמרו את זו שנותנת את הנתונים הטובים ביותר במאמץ הנמוך ביותר.</p>

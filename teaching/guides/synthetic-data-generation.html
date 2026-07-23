@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
-  <meta name="description" content="Making your own training data with AI, explained simply. The big idea, then twelve steps, each with a good and a bad example.">
+  <meta name="description" content="Making your own training data with AI, explained simply. The big idea, then thirteen steps, each with a good and a bad example.">
   <link rel="alternate" hreflang="he" href="./synthetic-data-generation-he.html">
   <link rel="alternate" hreflang="en" href="./synthetic-data-generation.html">
   <title>Synthetic Data Generation Guide | Sasha Apartsin</title>
@@ -251,7 +251,7 @@
             <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
               <img src="../../assets/heroes/teaching-hos-student-projects.png" alt="" style="display: block; width: 100%; object-fit: cover;">
             </figure>
-            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">Making your own training data with AI, explained simply. The trick is control: decide exactly what each example should contain, then build it on purpose instead of hoping. Below is the big idea, then twelve steps, each with a good and a bad example.</p>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">Making your own training data with AI, explained simply. The trick is control: decide exactly what each example should contain, then build it on purpose instead of hoping. Below is the big idea, then thirteen steps, each with a good and a bad example.</p>
           </div>
         </section>
 
@@ -288,7 +288,7 @@
           </article>
         </section>
 
-        <h2 class="sdg-heading">The twelve steps</h2>
+        <h2 class="sdg-heading">The thirteen steps</h2>
         <p class="sdg-heading-lede">In the order you meet them. Each step has a good example to copy and a bad one to avoid.</p>
 
         <h3 class="sdg-phase"><span>Phase 1 &middot;</span> Plan before you generate</h3>
@@ -332,6 +332,18 @@
           <article class="sdg-card" id="do-4">
             <span class="sdg-card__num">4</span>
             <div class="sdg-card__content">
+              <h2>Change the values, not fixed blocks of text</h2>
+              <p class="sdg-plain">Get variety by changing the attributes and their values, then let the model write each example around them. Don&rsquo;t build examples by shuffling a few fixed sentences, or they all come out with the same shape.</p>
+              <div class="sdg-eg">
+                <div class="sdg-eg__box sdg-eg__box--good"><span class="sdg-eg__tag">✓ Do this</span>You set cuisine, tone, and length to different values and let the model write each review fresh from them.</div>
+                <div class="sdg-eg__box sdg-eg__box--bad"><span class="sdg-eg__tag">✕ Not this</span>You keep one template and only swap &ldquo;great&rdquo; for &ldquo;terrible&rdquo; and &ldquo;pizza&rdquo; for &ldquo;sushi,&rdquo; so every review reads the same.</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="do-5">
+            <span class="sdg-card__num">5</span>
+            <div class="sdg-card__content">
               <h2>Turn fuzzy words into a checklist</h2>
               <p class="sdg-plain">Don't ask for something you can't define or recognize. Break a vague idea into concrete features you can name and check.</p>
               <div class="sdg-eg">
@@ -344,8 +356,8 @@
 
         <h3 class="sdg-phase"><span>Phase 2 &middot;</span> Make the data under control</h3>
         <section class="sdg-list" aria-label="Steps, phase 2">
-          <article class="sdg-card" id="do-5">
-            <span class="sdg-card__num">5</span>
+          <article class="sdg-card" id="do-6">
+            <span class="sdg-card__num">6</span>
             <div class="sdg-card__content">
               <h2>Test your idea in ChatGPT before writing code</h2>
               <p class="sdg-plain">Try the prompt by hand first. Fix the wording in the chat window before you automate anything.</p>
@@ -356,8 +368,8 @@
             </div>
           </article>
 
-          <article class="sdg-card" id="do-6">
-            <span class="sdg-card__num">6</span>
+          <article class="sdg-card" id="do-7">
+            <span class="sdg-card__num">7</span>
             <div class="sdg-card__content">
               <h2>Use the API to make it repeatable</h2>
               <p class="sdg-plain">Once the prompt works, run it from code so you can reproduce and scale it, and save everything about each example.</p>
@@ -368,8 +380,8 @@
             </div>
           </article>
 
-          <article class="sdg-card" id="do-7">
-            <span class="sdg-card__num">7</span>
+          <article class="sdg-card" id="do-8">
+            <span class="sdg-card__num">8</span>
             <div class="sdg-card__content">
               <h2>Train your own generator when prompting isn't enough</h2>
               <p class="sdg-plain">If a general model can't match your special domain or style, fine-tune one on real examples so it produces the kind of data you actually need. Then check it doesn't just copy its training data.</p>
@@ -380,8 +392,8 @@
             </div>
           </article>
 
-          <article class="sdg-card" id="do-8">
-            <span class="sdg-card__num">8</span>
+          <article class="sdg-card" id="do-9">
+            <span class="sdg-card__num">9</span>
             <div class="sdg-card__content">
               <h2>For images, steer with a control signal</h2>
               <p class="sdg-plain">For pictures, words alone are not enough. Give the model a shape to follow, such as a pose, a depth map, or an outline, using tools like ControlNet.</p>
@@ -395,8 +407,8 @@
 
         <h3 class="sdg-phase"><span>Phase 3 &middot;</span> Grow it safely</h3>
         <section class="sdg-list" aria-label="Steps, phase 3">
-          <article class="sdg-card" id="do-9">
-            <span class="sdg-card__num">9</span>
+          <article class="sdg-card" id="do-10">
+            <span class="sdg-card__num">10</span>
             <div class="sdg-card__content">
               <h2>Make a little, then look</h2>
               <p class="sdg-plain">Generate a small batch, check it, fix the problems, then make more. Never make it all in one shot.</p>
@@ -407,8 +419,8 @@
             </div>
           </article>
 
-          <article class="sdg-card" id="do-10">
-            <span class="sdg-card__num">10</span>
+          <article class="sdg-card" id="do-11">
+            <span class="sdg-card__num">11</span>
             <div class="sdg-card__content">
               <h2>Debug on a few before scaling up</h2>
               <p class="sdg-plain">Prove the process works on a handful of samples before you make thousands.</p>
@@ -422,8 +434,8 @@
 
         <h3 class="sdg-phase"><span>Phase 4 &middot;</span> Check and choose</h3>
         <section class="sdg-list" aria-label="Steps, phase 4">
-          <article class="sdg-card" id="do-11">
-            <span class="sdg-card__num">11</span>
+          <article class="sdg-card" id="do-12">
+            <span class="sdg-card__num">12</span>
             <div class="sdg-card__content">
               <h2>Look at the data with your own eyes</h2>
               <p class="sdg-plain">Actually read and view your samples. Find the bad ones, and work out why they went wrong so you can fix the cause.</p>
@@ -434,8 +446,8 @@
             </div>
           </article>
 
-          <article class="sdg-card" id="do-12">
-            <span class="sdg-card__num">12</span>
+          <article class="sdg-card" id="do-13">
+            <span class="sdg-card__num">13</span>
             <div class="sdg-card__content">
               <h2>Try a few methods, keep the best</h2>
               <p class="sdg-plain">There is rarely one right way. Try a couple of approaches and keep the one that gives the best data for the lowest effort.</p>
