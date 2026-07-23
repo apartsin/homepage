@@ -92,6 +92,13 @@
     }
     .sdg-approach--works li::before { content: "✓"; color: #1f5a40; }
     .sdg-approach--avoid li::before { content: "✕"; color: #be1216; }
+    .sdg-phase {
+      margin: 24px 0 2px;
+      color: #1f5a40;
+      font: 800 0.82rem/1.35 "Manrope", sans-serif;
+      letter-spacing: 0.02em;
+    }
+    .sdg-phase span { color: var(--site-muted); font-weight: 700; }
     .sdg-list {
       display: grid;
       grid-template-columns: 1fr;
@@ -369,27 +376,27 @@
         </section>
 
         <h2 class="sdg-heading sdg-heading--do">Do</h2>
-        <p class="sdg-heading-lede">The eleven practices that make attribute- and control-signal-based generation work in practice.</p>
-        <section class="sdg-list" aria-label="Do">
+        <p class="sdg-heading-lede">Twelve practices, in the order you meet them, that make attribute- and control-signal-based generation work.</p>
+
+        <h3 class="sdg-phase"><span>Phase 1 &middot;</span> Plan the data before you generate</h3>
+        <section class="sdg-list" aria-label="Do, phase-1">
           <article class="sdg-card" id="do-1">
             <span class="sdg-card__num">1</span>
             <div class="sdg-card__content">
               <h2>Research existing data first</h2>
+              <p>Before generating anything, look for real data. Synthetic data is a last resort, not a default.</p>
               <ul>
-                <li>Search for relevant real datasets before generating synthetic data.</li>
-                <li>Do not create synthetic data when suitable real data already exist.</li>
+                <li>Search for real datasets that already fit the task.</li>
+                <li>Prefer repurposing real data over generating from scratch.</li>
               </ul>
               <div>
-                <span class="sdg-sub__label">Consider repurposing existing datasets through:</span>
+                <span class="sdg-sub__label">Ways to repurpose real data:</span>
                 <ul>
-                  <li>Data augmentation</li>
-                  <li>Relabeling</li>
-                  <li>Attribute extraction</li>
-                  <li>Signal extraction</li>
-                  <li>Controlled modification</li>
-                  <li>Combining real and synthetic samples</li>
+                  <li>Augmentation, relabeling, attribute or signal extraction.</li>
+                  <li>Controlled modification, or mixing real and synthetic samples.</li>
                 </ul>
               </div>
+              <p class="sdg-good"><b>Example.</b> Relabel an existing sentiment dataset for a new three-class scheme, or extract just the code comments from a public code dataset, instead of generating either from nothing.</p>
             </div>
           </article>
 
@@ -397,14 +404,15 @@
             <span class="sdg-card__num">2</span>
             <div class="sdg-card__content">
               <h2>Control what you generate</h2>
+              <p>Decide the label space and the diversity before you write a prompt, then sample from it.</p>
               <ul>
-                <li>Define the ground-truth labels or target attribute space.</li>
-                <li>Define a nuance space to create meaningful diversity.</li>
-                <li>Specify a clear sampling strategy across classes, attributes, and nuances.</li>
-                <li>Generate every sample according to explicitly sampled target values.</li>
+                <li>Define the ground-truth labels or target attributes.</li>
+                <li>Define a nuance space that adds meaningful diversity.</li>
+                <li>Specify how you sample across classes, attributes, and nuances.</li>
+                <li>Generate every sample from explicitly sampled values.</li>
               </ul>
               <div>
-                <span class="sdg-sub__label">Examples of attributes:</span>
+                <span class="sdg-sub__label">Example attributes:</span>
                 <ul>
                   <li>Positive / negative</li>
                   <li>Summer / winter</li>
@@ -464,16 +472,19 @@
               <p class="sdg-note">Then sample one or more mistakes and instruct the model to generate an example containing those specific mistakes.</p>
             </div>
           </article>
+        </section>
 
+        <h3 class="sdg-phase"><span>Phase 2 &middot;</span> Produce it under control</h3>
+        <section class="sdg-list" aria-label="Do, phase-2">
           <article class="sdg-card" id="do-5">
             <span class="sdg-card__num">5</span>
             <div class="sdg-card__content">
-              <h2>Prototype with the ChatGPT interface before using the API</h2>
+              <h2>Prototype in the ChatGPT interface first</h2>
               <ul>
-                <li>Use the ChatGPT interface first to explore ideas and test prompts interactively.</li>
-                <li>Inspect initial examples and refine the task definition.</li>
-                <li>Test the labels, nuances, constraints, and expected output format.</li>
-                <li>Move to the API only after the generation approach produces satisfactory results.</li>
+                <li>Explore ideas and test prompts interactively before writing any code.</li>
+                <li>Inspect early examples and refine the task definition.</li>
+                <li>Check the labels, nuances, constraints, and output format.</li>
+                <li>Move to the API only once the approach gives satisfactory results.</li>
               </ul>
             </div>
           </article>
@@ -482,54 +493,108 @@
             <span class="sdg-card__num">6</span>
             <div class="sdg-card__content">
               <h2>Use the API for controlled generation</h2>
+              <p>The API turns a working prompt into a reproducible, scalable pipeline.</p>
               <ul>
-                <li>Use the API for reproducible and scalable data generation.</li>
-                <li>Generate data programmatically according to the defined sampling strategy.</li>
-                <li>Store the sampled target attributes, prompt, model, parameters, and generated output for each example.</li>
-                <li>Use structured outputs when possible.</li>
-                <li>Include automatic validation and retry mechanisms.</li>
+                <li>Generate programmatically from the defined sampling strategy.</li>
+                <li>Use structured outputs where possible.</li>
+                <li>Add automatic validation and retry mechanisms.</li>
               </ul>
+              <div>
+                <span class="sdg-sub__label">Store for every example:</span>
+                <ul>
+                  <li>the sampled attributes, the prompt, the model and its parameters, and the raw output.</li>
+                </ul>
+              </div>
+              <p class="sdg-good"><b>Example.</b> Save one JSON record per sample, such as {id, sampled_attributes, prompt, model, params, output}, so you can reproduce, filter, and debug the dataset later.</p>
             </div>
           </article>
 
           <article class="sdg-card" id="do-7">
             <span class="sdg-card__num">7</span>
             <div class="sdg-card__content">
-              <h2>Generate data in small batches</h2>
-              <ul>
-                <li>Generate a small batch first.</li>
-                <li>Inspect the results before continuing.</li>
-                <li>Correct the prompt, sampling strategy, or model configuration between batches.</li>
-                <li>Gradually increase batch size only after quality becomes stable.</li>
-              </ul>
+              <h2>Train or fine-tune a generator when prompting is not enough</h2>
+              <p>A general model prompted with attributes covers many cases, but not all. When the domain is narrow, has a specific style or format, or needs tight control, train or fine-tune a generator on real data so it produces the distribution you actually need.</p>
+              <div>
+                <span class="sdg-sub__label">When to train a generator:</span>
+                <ul>
+                  <li>Off-the-shelf models miss your domain's style, jargon, or format.</li>
+                  <li>You need a controllable generator you can condition on your own attributes or signals.</li>
+                  <li>You have some real data to learn from, and prompting alone gives low realism or diversity.</li>
+                </ul>
+              </div>
+              <div>
+                <span class="sdg-sub__label">How:</span>
+                <ul>
+                  <li>Fine-tune an LLM (SFT or LoRA) on real examples to generate more in the same style and intents.</li>
+                  <li>Fine-tune a diffusion model, or train a ControlNet, on domain images to generate labeled variations.</li>
+                  <li>Train a small conditional generator (VAE or GAN) for signals or structured data.</li>
+                </ul>
+              </div>
+              <p class="sdg-note">A generator learns your real data's biases and can mode-collapse or memorize samples. Check for <b>leakage</b>, and judge quality downstream: does a model trained on the synthetic data generalize to real data?</p>
+              <p class="sdg-good"><b>Example &mdash; support tickets.</b> Fine-tune an LLM on a few hundred real tickets, conditioned on intent and product area, to generate thousands more in the same voice with controlled labels. Then confirm a classifier trained on them still works on held-out real tickets.</p>
             </div>
           </article>
 
           <article class="sdg-card" id="do-8">
             <span class="sdg-card__num">8</span>
             <div class="sdg-card__content">
-              <h2>Debug before scaling</h2>
+              <h2>Use suitable control signals for vision tasks</h2>
+              <p>For ControlNet and related models, drive generation with an explicit signal, not just text.</p>
               <ul>
-                <li>Test prompts on a small number of samples.</li>
-                <li>Verify that each output matches its sampled target attributes.</li>
-                <li>Review examples from every class and important attribute combination.</li>
-                <li>Evaluate whether the generated data are realistic, diverse, and correctly labeled.</li>
-                <li>Generate large datasets only after the small-scale process is reliable.</li>
+                <li>Synthetically constructed depth maps</li>
+                <li>Skeletons or pose maps</li>
+                <li>Segmentation maps</li>
+                <li>Edge maps</li>
+                <li>Layouts and spatial constraints</li>
+                <li>Control signals extracted from real images</li>
+                <li>Extracted control signals that are subsequently modified</li>
+              </ul>
+              <p class="sdg-note">Validate both the control signals and the generated images.</p>
+            </div>
+          </article>
+        </section>
+
+        <h3 class="sdg-phase"><span>Phase 3 &middot;</span> Scale safely</h3>
+        <section class="sdg-list" aria-label="Do, phase-3">
+          <article class="sdg-card" id="do-9">
+            <span class="sdg-card__num">9</span>
+            <div class="sdg-card__content">
+              <h2>Generate data in small batches</h2>
+              <ul>
+                <li>Generate a small batch, then inspect the results before continuing.</li>
+                <li>Correct the prompt, sampling strategy, or model configuration between batches.</li>
+                <li>Increase batch size only once quality becomes stable.</li>
               </ul>
             </div>
           </article>
 
-          <article class="sdg-card" id="do-9">
-            <span class="sdg-card__num">9</span>
+          <article class="sdg-card" id="do-10">
+            <span class="sdg-card__num">10</span>
+            <div class="sdg-card__content">
+              <h2>Debug before scaling</h2>
+              <ul>
+                <li>Test prompts on a small number of samples first.</li>
+                <li>Verify that each output matches its sampled target attributes.</li>
+                <li>Cover every class and important attribute combination.</li>
+                <li>Judge realism, diversity, and label correctness.</li>
+                <li>Generate large datasets only once the small-scale process is reliable.</li>
+              </ul>
+            </div>
+          </article>
+        </section>
+
+        <h3 class="sdg-phase"><span>Phase 4 &middot;</span> Verify and choose</h3>
+        <section class="sdg-list" aria-label="Do, phase-4">
+          <article class="sdg-card" id="do-11">
+            <span class="sdg-card__num">11</span>
             <div class="sdg-card__content">
               <h2>Inspect generated data manually</h2>
               <ul>
-                <li>Visually inspect images, videos, diagrams, and control signals.</li>
-                <li>Read representative text and code samples.</li>
-                <li>Find unrealistic, contradictory, ambiguous, or incorrectly labeled examples.</li>
+                <li>Look at images, video, diagrams, and control signals; read representative text and code.</li>
+                <li>Find unrealistic, contradictory, ambiguous, or mislabeled examples.</li>
               </ul>
               <div>
-                <span class="sdg-sub__label">Investigate the root cause of each problem:</span>
+                <span class="sdg-sub__label">Trace each problem to its cause:</span>
                 <ul>
                   <li>Inappropriate model</li>
                   <li>Weak or ambiguous prompt</li>
@@ -543,29 +608,11 @@
             </div>
           </article>
 
-          <article class="sdg-card" id="do-10">
-            <span class="sdg-card__num">10</span>
-            <div class="sdg-card__content">
-              <h2>Use suitable control signals for vision tasks</h2>
-              <p>For ControlNet and related vision models, consider:</p>
-              <ul>
-                <li>Synthetically constructed depth maps</li>
-                <li>Skeletons or pose maps</li>
-                <li>Segmentation maps</li>
-                <li>Edge maps</li>
-                <li>Layouts and spatial constraints</li>
-                <li>Control signals extracted from real images</li>
-                <li>Extracted control signals that are subsequently modified</li>
-              </ul>
-              <p class="sdg-note"><b>Validate</b> both the control signals and the generated images.</p>
-            </div>
-          </article>
-
-          <article class="sdg-card" id="do-11">
-            <span class="sdg-card__num">11</span>
+          <article class="sdg-card" id="do-12">
+            <span class="sdg-card__num">12</span>
             <div class="sdg-card__content">
               <h2>Compare multiple generation strategies</h2>
-              <p>Consider and evaluate:</p>
+              <p>There is rarely one right method. Try several and choose on the evidence.</p>
               <ul>
                 <li>Direct generation</li>
                 <li>Template-based generation</li>
@@ -655,6 +702,18 @@
                 <li>Do not treat direct synthetic generation as the only possible solution.</li>
                 <li>Do not ignore multi-step approaches combining extraction from real data, augmentation, modification, generation, filtering, and validation.</li>
                 <li>Do not continue generating after identifying a systematic problem; stop, diagnose the cause, fix the pipeline, and retest on a small scale.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="sdg-dont-card" id="dont-trained-generator">
+            <span class="sdg-dont-card__badge" aria-hidden="true">&#10005;</span>
+            <div class="sdg-dont-card__content">
+              <h2>Trusting a trained generator blindly</h2>
+              <ul>
+                <li>Do not train a generator on tiny or biased real data and assume its output is realistic or diverse.</li>
+                <li>Do not ship data from a fine-tuned generator without checking for memorized or leaked real samples.</li>
+                <li>Do not judge a generator by its samples alone; judge it by whether a model trained on its output generalizes to real data.</li>
               </ul>
             </div>
           </article>
