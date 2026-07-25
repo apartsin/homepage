@@ -360,5 +360,17 @@ window.RECENT_PUBLICATIONS = [
     ],
     venue: "arXiv preprint (arXiv:2605.25601)",
     venueHref: "https://arxiv.org/abs/2605.25601"
+  },
+  {
+    id: "pub-2026-normal-latent-clustering",
+    year: 2026,
+    type: "InPreparation",
+    title: "Modeling Normal Is All You Need: Joint Latent Clustering for Anomaly Detection in Multimodal Cyber-Physical Systems",
+    authors: [
+      { name: "A Apartsin", self: true },
+      { name: "Y Aperstein", self: false }
+    ],
+    venue: "arXiv preprint (arXiv:2607.06094)",
+    venueHref: "https://arxiv.org/abs/2607.06094"
   }
 ];
