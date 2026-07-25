@@ -133,11 +133,11 @@
       var venueLower = (pub.venue || "").toLowerCase();
       var publisher = null;
       if (venueLower.indexOf("nature") !== -1) {
-        publisher = { src: "../assets/publishers/nature.svg", alt: "Nature" };
+        publisher = { src: "../assets/publishers/springer-nature.svg", alt: "Springer Nature" };
       } else if (venueLower.indexOf("mdpi") !== -1) {
         publisher = { src: "../assets/publishers/mdpi.png", alt: "MDPI" };
       } else if (venueLower.indexOf("ieee access") !== -1 || venueLower.indexOf("ieee") !== -1) {
-        publisher = { src: "../assets/publishers/ieee-access.png", alt: "IEEE Access" };
+        publisher = { src: "../assets/publishers/ieee.svg", alt: "IEEE" };
       } else if (venueLower.indexOf("arxiv") !== -1) {
         publisher = { src: "../assets/publishers/arxiv.jpg", alt: "arXiv" };
       } else if (venueLower.indexOf("draft") !== -1) {
