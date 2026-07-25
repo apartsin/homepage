@@ -8,7 +8,7 @@
   }
 
   var sectionLabels = {
-    Journal: "Accepted for Publication: 2025-2026",
+    Journal: "Published",
     Submitted: "Submitted for Peer Review",
     Preprint: "Reports",
     InPreparation: "In Preparation"
