@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
-  <meta name="description" content="Student project assessment criteria: the thirteen requirements a strong course project must satisfy, each with the anti-patterns that most often weaken it.">
+  <meta name="description" content="What a strong course project must do: thirteen core requirements, each with the anti-patterns that most often weaken it, plus additional research-grade requirements for graduate students. How the project is graded is covered separately in the assessment criteria guide.">
   <link rel="alternate" hreflang="he" href="./project-requirements-he.html">
   <link rel="alternate" hreflang="en" href="./project-requirements.html">
   <title>Project Requirements | Sasha Apartsin</title>
@@ -70,6 +70,7 @@
     .crit-list--research .crit-card { --cc-color: #164a83; }
     .crit-list--delivery .crit-card { --cc-color: #7a3fa0; }
     .crit-list--rigor .crit-card { --cc-color: #2e7d5a; }
+    .crit-list--graduate .crit-card { --cc-color: #0f766e; }
     .crit-card__index {
       display: inline-block;
       font: 900 0.78rem/1 "Manrope", sans-serif;
@@ -186,7 +187,7 @@
             <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
               <img src="../../assets/heroes/teaching-hos-student-projects.png" alt="" style="display: block; width: 100%; object-fit: cover;">
             </figure>
-            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">Student project assessment criteria. Thirteen requirements a strong course project is expected to satisfy, each paired with the anti-patterns that most often weaken it. Use this as a checklist while the project is still being shaped, not as a rubric to read once at the end.</p>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">What a strong course project actually has to do. Thirteen core requirements, each paired with the anti-patterns that most often weaken it, plus a further research-grade set for graduate students at the end. Use it as a build checklist while the project is still being shaped. How the finished project is graded is a separate question, covered in the <a href="./project-assessment-criteria.html">Project Assessment Criteria</a> guide.</p>
           </div>
         </section>
 
@@ -414,6 +415,46 @@
                 <li>Failing to justify technical decisions or discuss trade-offs.</li>
               </ul>
             </div>
+          </article>
+        </section>
+
+        <h2 class="crit-section-title">For Graduate Students. Additional Requirements</h2>
+        <p class="crit-section-lede">Beyond the thirteen above, a graduate project is held to a research standard: a real contribution, rigorous evaluation, and a paper you could submit.</p>
+        <section class="crit-list crit-list--graduate" aria-label="Additional requirements for graduate students">
+          <article class="crit-card" id="grad-substantial-problem">
+            <span class="crit-card__index">Graduate 1</span>
+            <h2 class="crit-card__title">Substantial Problem or Application</h2>
+            <p class="crit-card__body">Address a valuable real-world, scientific, or engineering problem. A toy example or small demonstration may be used for initial validation but is insufficient as the main project.</p>
+          </article>
+
+          <article class="crit-card" id="grad-prior-work-review">
+            <span class="crit-card__index">Graduate 2</span>
+            <h2 class="crit-card__title">Deep and Structured Review of Prior Work</h2>
+            <p class="crit-card__body">Read relevant recent papers and systematically map existing methods, datasets, assumptions, evaluation approaches, strengths, and limitations. Clearly identify the research gap addressed by the project.</p>
+          </article>
+
+          <article class="crit-card" id="grad-research-contribution">
+            <span class="crit-card__index">Graduate 3</span>
+            <h2 class="crit-card__title">Clear Research Contribution</h2>
+            <p class="crit-card__body">Define a non-trivial contribution, such as a new method, meaningful extension, dataset, benchmark, evaluation framework, or rigorous empirical finding. Simply integrating existing components is insufficient.</p>
+          </article>
+
+          <article class="crit-card" id="grad-multiple-sota-models">
+            <span class="crit-card__index">Graduate 4</span>
+            <h2 class="crit-card__title">Multiple Strong Models, Including SOTA</h2>
+            <p class="crit-card__body">Build and compare several genuinely different approaches, including appropriate baselines and at least one recent state-of-the-art method. Explain and justify all major design choices.</p>
+          </article>
+
+          <article class="crit-card" id="grad-research-grade-evaluation">
+            <span class="crit-card__index">Graduate 5</span>
+            <h2 class="crit-card__title">Research-Grade Experimental Evaluation</h2>
+            <p class="crit-card__body">Conduct controlled experiments, including ablation studies, repeated runs, robustness testing, error analysis, and evaluation across multiple datasets, conditions, or relevant scenarios when feasible.</p>
+          </article>
+
+          <article class="crit-card" id="grad-academic-report">
+            <span class="crit-card__index">Graduate 6</span>
+            <h2 class="crit-card__title">Well-Written Academic Report</h2>
+            <p class="crit-card__body">Produce a publication-quality mini-paper suitable, after refinement, for submission to arXiv. It should include an abstract, motivation, related work, methodology, experimental setup, results, discussion, limitations, and conclusions, with claims supported by evidence and properly cited sources.</p>
           </article>
         </section>
 
