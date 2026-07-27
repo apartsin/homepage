@@ -18,7 +18,7 @@ window.RESEARCH_PROJECT_CARDS = [
     description: "IRC-Bench: a benchmark for recognizing named entities from contextual cues alone in first-person reminiscence narratives, without explicit mentions. Covers 25K samples across 12K Wikidata-linked entities, with baselines spanning embedding retrieval, LLM prompting, DPR fine-tuning, and QLoRA adaptation.",
     links: [
       { label: "GitHub", href: "https://github.com/ApartsinProjects/ImplicitEntities" },
-      { label: "arXiv", href: "https://arxiv.org/abs/2605.06142" }
+      { label: "Paper", href: "https://www.mdpi.com/2504-4990/8/7/186" }
     ]
   },
   {
@@ -88,7 +88,7 @@ window.RESEARCH_PROJECT_CARDS = [
     description: "Training-recipe modification for CNN early-exit cascades that closes three train-inference mismatches via cascade-aligned importance weighting, CPM calibration, and knowledge distillation. Matches or improves the accuracy-FLOPs Pareto frontier over PTEEnet, ZTW, and BoostNet on ResNet18/50 across CIFAR-100 and CINIC-10.",
     links: [
       { label: "GitHub", href: "https://github.com/ApartsinProjects/CalexNet" },
-      { label: "arXiv", href: "https://arxiv.org/abs/2509.08318" }
+      { label: "Paper", href: "https://www.mdpi.com/2079-9292/15/10/2149" }
     ]
   },
   {
