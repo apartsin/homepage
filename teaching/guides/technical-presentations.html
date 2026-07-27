@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <meta name="description" content="How to deliver a technical presentation: build a narrative, justify only the real choices, rehearse on camera, keep slides clean, speak in precise technical language, and spend your time where the information is. Ten practical tips.">
+  <link rel="alternate" hreflang="en" href="./technical-presentations.html">
+  <title>Delivering a Technical Presentation | Sasha Apartsin</title>
+  <link rel="stylesheet" href="../../shared/site-shell.css">
+  <link rel="stylesheet" href="../../shared/unified-theme.css">
+  <style>
+    .sdg-heading {
+      margin: 34px 0 2px;
+      color: var(--site-text, #18202a);
+      font: 800 0.9rem/1.2 "Manrope", sans-serif;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .sdg-heading:first-of-type { margin-top: 12px; }
+    .sdg-heading-lede {
+      margin: 0;
+      color: var(--site-muted);
+      font: 600 0.92rem/1.5 "Manrope", sans-serif;
+    }
+    .sdg-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 12px;
+    }
+    .sdg-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: start;
+      column-gap: 18px;
+      row-gap: 8px;
+      padding: 18px 22px 18px 24px;
+      border: 1px solid var(--site-border);
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+      overflow: hidden;
+    }
+    .sdg-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5px;
+      background: linear-gradient(180deg, rgba(24, 101, 168, 0.9), rgba(122, 63, 160, 0.75));
+    }
+    .sdg-card__num {
+      grid-column: 1;
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      margin-top: 2px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(24, 101, 168, 0.16), rgba(122, 63, 160, 0.16));
+      color: #164a83;
+      font: 800 1.15rem/1 "Manrope", sans-serif;
+    }
+    .sdg-card__content {
+      grid-column: 2;
+      display: grid;
+      gap: 6px;
+      max-width: 92ch;
+    }
+    .sdg-card__content h2 {
+      margin: 0;
+      color: var(--site-text, #18202a);
+      font: 800 1.08rem/1.28 "Manrope", sans-serif;
+    }
+    .sdg-plain {
+      margin: 0;
+      color: var(--site-text);
+      font: 600 0.96rem/1.55 "Manrope", "Segoe UI", sans-serif;
+    }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="teaching">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar">
+      <a class="apartsin-shell__brand" href="../../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../../index.html">About</a>
+        <a href="../../research/research-focus.html">Research</a>
+        <a href="../../teaching/overview.html">Teaching</a>
+        <a href="../../work/overview.html">Building</a>
+        <a href="../../work/innovation-overview.html">Innovations</a>
+        <a href="../../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="technical-presentations-overview">
+          <h1 class="apartsin-sr-only">Delivering a Technical Presentation</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="../overview.html">Teaching</a>
+              <span aria-hidden="true">/</span>
+              <a href="./index.html">Guides for Students</a>
+              <span aria-hidden="true">/</span>
+              <strong>Delivering a Technical Presentation</strong>
+            </nav>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../../assets/heroes/teaching-cs-courses.png" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">A technical talk works when the audience follows your reasoning and leaves holding the key technical points. These ten tips cover the whole arc: the story you tell, the slides you show, the language you use, and how you rehearse.</p>
+          </div>
+        </section>
+
+        <h2 class="sdg-heading">Ten tips for a technical talk</h2>
+        <p class="sdg-heading-lede">From the narrative and your slides to your technical language and delivery.</p>
+        <section class="sdg-list" aria-label="Ten tips for a technical talk">
+          <article class="sdg-card" id="tip-1">
+            <span class="sdg-card__num">1</span>
+            <div class="sdg-card__content">
+              <h2>Tell a story</h2>
+              <p class="sdg-plain">Give the talk a narrative: why you did what you did, what the main challenges were, and the decisions you made along the way. A bare list of results with no throughline is hard to follow and easy to forget.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="tip-2">
+            <span class="sdg-card__num">2</span>
+            <div class="sdg-card__content">
+              <h2>Justify the real choices, not the obvious ones</h2>
+              <p class="sdg-plain">Avoid trivial statements that amount to &ldquo;good things are good and bad things are bad.&rdquo; Spend your explanation where two or more valid options existed; you do not need to explain why you picked the obviously good option over an obviously bad one.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="tip-3">
+            <span class="sdg-card__num">3</span>
+            <div class="sdg-card__content">
+              <h2>Practice, and watch yourself back</h2>
+              <p class="sdg-plain">Rehearse out loud and record yourself. Some habits and tics, in your speech and your delivery, you simply will not notice until you watch the recording.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="tip-4">
+            <span class="sdg-card__num">4</span>
+            <div class="sdg-card__content">
+              <h2>Keep slides light</h2>
+              <p class="sdg-plain">Do not overload a slide with information, and do not overuse heavy or decorative graphics. A crowded slide competes with you for the audience&rsquo;s attention instead of supporting you.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="tip-5">
+            <span class="sdg-card__num">5</span>
+            <div class="sdg-card__content">
+              <h2>Show only what the audience should read</h2>
+              <p class="sdg-plain">Do not put anything on a slide that you do not expect the audience to read or understand. If it is not meant to be read, it does not belong there.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="tip-6">
+            <span class="sdg-card__num">6</span>
+            <div class="sdg-card__content">
+              <h2>Speak in precise technical language</h2>
+              <p class="sdg-plain">Remember that this is a technical presentation. Phrase your statements in clear technical language, using the right concepts and terms rather than vague paraphrase.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="tip-7">
+            <span class="sdg-card__num">7</span>
+            <div class="sdg-card__content">
+              <h2>Pronounce names and terms correctly</h2>
+              <p class="sdg-plain">Make sure you know how the key model names, methods, and concepts are pronounced in English. Mispronouncing the core terms quietly undercuts your command of the material.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="tip-8">
+            <span class="sdg-card__num">8</span>
+            <div class="sdg-card__content">
+              <h2>Deliver the real technical content</h2>
+              <p class="sdg-plain">Make sure no important technical information is missing. The talk is technical, so your job is to actually deliver the technical points, not to talk around them.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="tip-9">
+            <span class="sdg-card__num">9</span>
+            <div class="sdg-card__content">
+              <h2>Spend time where the information is</h2>
+              <p class="sdg-plain">Optimize the information content of the talk: give more time to the richer, more informative items, and less to the routine ones. Not every point deserves an equal slice of the clock.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="tip-10">
+            <span class="sdg-card__num">10</span>
+            <div class="sdg-card__content">
+              <h2>Show it, do not just say it</h2>
+              <p class="sdg-plain">Use visualizations, graphs, and diagrams wherever they fit, instead of or alongside text. A good figure often carries a technical point better than a paragraph does.</p>
+            </div>
+          </article>
+        </section>
+
+      <section class="section-quick-links">
+        <h2 class="section-quick-links__title">Quick Links</h2>
+        <nav class="section-quick-links__grid" aria-label="Quick links">
+          <a class="section-quick-link" href="./how-to-use-ai.html">
+            <span class="section-quick-link__badge" style="background: #7a3fa0;">U</span>
+            How to Use AI
+          </a>
+          <a class="section-quick-link" href="./project-requirements.html">
+            <span class="section-quick-link__badge" style="background: #164a83;">R</span>
+            Project Requirements
+          </a>
+          <a class="section-quick-link" href="./project-assessment-criteria.html">
+            <span class="section-quick-link__badge" style="background: #2e7d5a;">E</span>
+            Assessment Criteria
+          </a>
+        </nav>
+      </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../../shared/unified-enhance.js"></script>
+  <script defer src="../../shared/site-shell.js"></script>
+</body>
+</html>
