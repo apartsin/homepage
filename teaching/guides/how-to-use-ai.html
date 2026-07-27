@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <meta name="description" content="How to use AI well in your coursework and projects: push past artifact generation, own every result, treat AI as a utility, and meet the higher bar it creates. Five ideas, each with a good and a bad example.">
+  <link rel="alternate" hreflang="en" href="./how-to-use-ai.html">
+  <title>How to Use AI | Sasha Apartsin</title>
+  <link rel="stylesheet" href="../../shared/site-shell.css">
+  <link rel="stylesheet" href="../../shared/unified-theme.css">
+  <style>
+    .sdg-heading {
+      margin: 34px 0 2px;
+      color: var(--site-text, #18202a);
+      font: 800 0.9rem/1.2 "Manrope", sans-serif;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .sdg-heading:first-of-type { margin-top: 12px; }
+    .sdg-heading-lede {
+      margin: 0;
+      color: var(--site-muted);
+      font: 600 0.92rem/1.5 "Manrope", sans-serif;
+    }
+    /* Step cards: number on a left rail, plain sentence, then a good/bad pair. */
+    .sdg-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 12px;
+    }
+    .sdg-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: start;
+      column-gap: 18px;
+      row-gap: 10px;
+      padding: 20px 22px 18px 24px;
+      border: 1px solid var(--site-border);
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+      overflow: hidden;
+    }
+    .sdg-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5px;
+      background: linear-gradient(180deg, rgba(46, 125, 90, 0.9), rgba(24, 101, 168, 0.75));
+    }
+    .sdg-card__num {
+      grid-column: 1;
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      margin-top: 2px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(46, 125, 90, 0.16), rgba(24, 101, 168, 0.16));
+      color: #1f5a40;
+      font: 800 1.15rem/1 "Manrope", sans-serif;
+    }
+    .sdg-card__content {
+      grid-column: 2;
+      display: grid;
+      gap: 10px;
+      max-width: 92ch;
+    }
+    .sdg-card__content h2 {
+      margin: 0;
+      color: var(--site-text, #18202a);
+      font: 800 1.08rem/1.28 "Manrope", sans-serif;
+    }
+    .sdg-plain {
+      margin: 0;
+      color: var(--site-text);
+      font: 600 0.96rem/1.55 "Manrope", "Segoe UI", sans-serif;
+    }
+    /* Good / bad example pair. */
+    .sdg-eg {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      margin-top: 2px;
+    }
+    @media (min-width: 620px) {
+      .sdg-eg { grid-template-columns: 1fr 1fr; }
+    }
+    .sdg-eg__box {
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid;
+      font: 600 0.87rem/1.5 "Manrope", "Segoe UI", sans-serif;
+      color: var(--site-text);
+    }
+    .sdg-eg__box--good { background: rgba(46, 125, 90, 0.06); border-color: rgba(46, 125, 90, 0.24); }
+    .sdg-eg__box--bad  { background: rgba(190, 18, 22, 0.06); border-color: rgba(190, 18, 22, 0.24); }
+    .sdg-eg__tag {
+      display: block;
+      margin-bottom: 3px;
+      font: 800 0.72rem/1.3 "Manrope", sans-serif;
+      letter-spacing: 0.02em;
+    }
+    .sdg-eg__box--good .sdg-eg__tag { color: #1f5a40; }
+    .sdg-eg__box--bad .sdg-eg__tag { color: #be1216; }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="teaching">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar">
+      <a class="apartsin-shell__brand" href="../../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../../index.html">About</a>
+        <a href="../../research/research-focus.html">Research</a>
+        <a href="../../teaching/overview.html">Teaching</a>
+        <a href="../../work/overview.html">Building</a>
+        <a href="../../work/innovation-overview.html">Innovations</a>
+        <a href="../../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="how-to-use-ai-overview">
+          <h1 class="apartsin-sr-only">How to Use AI</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="../overview.html">Teaching</a>
+              <span aria-hidden="true">/</span>
+              <a href="./index.html">Guides for Students</a>
+              <span aria-hidden="true">/</span>
+              <strong>How to Use AI</strong>
+            </nav>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../../assets/heroes/teaching-innovation-first.png" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">AI can do far more than write your code and slides. Its usefulness is almost unlimited, so the real limit is your imagination, not the tool, and the block is usually in your own head. Below are five ways to use it well, each with a good example to copy and a bad one to avoid.</p>
+          </div>
+        </section>
+
+        <h2 class="sdg-heading">Five ways to use AI well</h2>
+        <p class="sdg-heading-lede">From how you think about AI to what it now expects of you. Each idea has a good example and a bad one.</p>
+        <section class="sdg-list" aria-label="Five ways to use AI well">
+          <article class="sdg-card" id="use-1">
+            <span class="sdg-card__num">1</span>
+            <div class="sdg-card__content">
+              <h2>Invent new ways to use it</h2>
+              <p class="sdg-plain">Because AI&rsquo;s usefulness is almost unlimited, you are almost never using it to its full potential, and the block is usually in your own head. Actively look for new roles for it: a mentor, a reviewer of your work, a source of ideas, a way to find existing projects.</p>
+              <div class="sdg-eg">
+                <div class="sdg-eg__box sdg-eg__box--good"><span class="sdg-eg__tag">✓ Do this</span>When you&rsquo;re stuck, you ask &ldquo;what are three other ways you could help me here?&rdquo; and try the one you hadn&rsquo;t thought of, like having it role-play a tough reviewer.</div>
+                <div class="sdg-eg__box sdg-eg__box--bad"><span class="sdg-eg__tag">✕ Not this</span>You only open AI to generate code or slides and assume that is all it is good for.</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="use-2">
+            <span class="sdg-card__num">2</span>
+            <div class="sdg-card__content">
+              <h2>Generating code and slides is a tiny fraction</h2>
+              <p class="sdg-plain">Producing artifacts is the smallest part of what AI can do. Use it to think: find similar and existing projects; ask why X works the way it does and how it differs from Y; test your idea&rsquo;s strong and weak points; ask what to change to make the project excellent; have it ask the questions you might get in your presentation; and let it critique your slides.</p>
+              <div class="sdg-eg">
+                <div class="sdg-eg__box sdg-eg__box--good"><span class="sdg-eg__tag">✓ Do this</span>You paste your idea and ask &ldquo;what are the strong and weak points, and what should I change to make this excellent?&rdquo; then &ldquo;ask me the questions I&rsquo;ll get during the presentation.&rdquo;</div>
+                <div class="sdg-eg__box sdg-eg__box--bad"><span class="sdg-eg__tag">✕ Not this</span>You only ask AI to &ldquo;write the code&rdquo; and &ldquo;make the slides,&rdquo; and never use it to sharpen the thinking behind them.</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="use-3">
+            <span class="sdg-card__num">3</span>
+            <div class="sdg-card__content">
+              <h2>Take full ownership of the result</h2>
+              <p class="sdg-plain">It does not matter whether the slides, code, or project idea came from you, a friend, or AI. You are fully responsible for what you submit, and you should be able to explain every line in the deck, every design decision, and every internal detail.</p>
+              <div class="sdg-eg">
+                <div class="sdg-eg__box sdg-eg__box--good"><span class="sdg-eg__tag">✓ Do this</span>Before submitting, you go through each slide and code block and make sure you can justify why it is there and how it works.</div>
+                <div class="sdg-eg__box sdg-eg__box--bad"><span class="sdg-eg__tag">✕ Not this</span>You hand in AI-generated code you cannot explain and freeze when asked why a function is written the way it is.</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="use-4">
+            <span class="sdg-card__num">4</span>
+            <div class="sdg-card__content">
+              <h2>AI is a utility, like electricity</h2>
+              <p class="sdg-plain">You are not measured on how much electricity you used to prepare an assignment, and you are not measured on which AI you used or how much of it. Use as much as helps. What is assessed is the result and your understanding of it.</p>
+              <div class="sdg-eg">
+                <div class="sdg-eg__box sdg-eg__box--good"><span class="sdg-eg__tag">✓ Do this</span>You use AI freely wherever it helps and spend your energy on the quality and depth of the final work.</div>
+                <div class="sdg-eg__box sdg-eg__box--bad"><span class="sdg-eg__tag">✕ Not this</span>You hide that you used AI, or you treat &ldquo;I used a lot of AI&rdquo; as if it were an achievement in itself.</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="use-5">
+            <span class="sdg-card__num">5</span>
+            <div class="sdg-card__content">
+              <h2>AI raises the bar, it does not lower it</h2>
+              <p class="sdg-plain">Because AI makes so much possible, expectations are higher, not lower. You are expected to deliver a real, novel project that is technically and scientifically deep, with several moving parts and genuine design decisions. A single-prompt project no longer impresses an employer and carries no weight in the course.</p>
+              <div class="sdg-eg">
+                <div class="sdg-eg__box sdg-eg__box--good"><span class="sdg-eg__tag">✓ Do this</span>You use AI to reach further, building a substantial system with multiple components and design choices you can defend.</div>
+                <div class="sdg-eg__box sdg-eg__box--bad"><span class="sdg-eg__tag">✕ Not this</span>You submit something a single prompt could produce and expect it to count as a serious project.</div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+      <section class="section-quick-links">
+        <h2 class="section-quick-links__title">Quick Links</h2>
+        <nav class="section-quick-links__grid" aria-label="Quick links">
+          <a class="section-quick-link" href="./advice-to-students-2026.html">
+            <span class="section-quick-link__badge" style="background: #c2410c;">A</span>
+            Advice to CS Students in 2026
+          </a>
+          <a class="section-quick-link" href="./project-requirements.html">
+            <span class="section-quick-link__badge" style="background: #164a83;">R</span>
+            Project Requirements
+          </a>
+          <a class="section-quick-link" href="./synthetic-data-generation.html">
+            <span class="section-quick-link__badge" style="background: #1f5a40;">S</span>
+            Synthetic Data Generation
+          </a>
+        </nav>
+      </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../../shared/unified-enhance.js"></script>
+  <script defer src="../../shared/site-shell.js"></script>
+</body>
+</html>
