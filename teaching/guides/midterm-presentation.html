@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <meta name="description" content="How to build the midterm presentation: project refinement, previous work, dataset and EDA, a baseline, initial results with error analysis, and a completion plan.">
+  <link rel="alternate" hreflang="en" href="./midterm-presentation.html">
+  <title>Midterm Presentation | Sasha Apartsin</title>
+  <link rel="stylesheet" href="../../shared/site-shell.css">
+  <link rel="stylesheet" href="../../shared/unified-theme.css">
+  <style>
+    .sdg-heading { margin: 34px 0 2px; color: var(--site-text,#18202a); font: 800 .9rem/1.2 "Manrope",sans-serif; letter-spacing:.04em; text-transform:uppercase; }
+    .sdg-heading:first-of-type { margin-top: 12px; }
+    .sdg-heading-lede { margin:0; color:var(--site-muted); font:600 .92rem/1.5 "Manrope",sans-serif; }
+    .guide-intro { margin-top:14px; padding:16px 18px; border:1px solid var(--site-border); border-radius:14px; background:rgba(20,56,92,.03); }
+    .guide-intro__lead { margin:0 0 6px; font:800 .95rem/1.4 "Manrope",sans-serif; color:var(--site-text); }
+    .guide-intro ul { margin:0; padding-left:20px; display:grid; gap:4px; }
+    .guide-intro li { font:600 .9rem/1.5 "Manrope","Segoe UI",sans-serif; color:var(--site-text); }
+    .guide-intro__note { margin:10px 0 0; color:var(--site-muted); font:600 .88rem/1.5 "Manrope",sans-serif; }
+    .mile-list { display:grid; grid-template-columns:1fr; gap:14px; margin-top:12px; }
+    .mile-card { position:relative; display:grid; grid-template-columns:auto minmax(0,1fr); align-items:start; column-gap:18px; row-gap:8px; padding:20px 22px 18px 26px; border:1px solid var(--site-border); border-radius:16px; background:#fff; box-shadow:0 10px 22px rgba(15,23,42,.06); overflow:hidden; }
+    .mile-card::before { content:""; position:absolute; inset:0 auto 0 0; width:5px; background:var(--accent,#164a83); }
+    .mile-card__num { grid-column:1; display:grid; place-items:center; width:42px; height:42px; margin-top:2px; border-radius:50%; background:color-mix(in srgb, var(--accent,#164a83) 16%, #fff); color:var(--accent,#164a83); font:800 1.1rem/1 "Manrope",sans-serif; }
+    .mile-card__content { grid-column:2; display:grid; gap:12px; max-width:94ch; }
+    .mile-card__content h2 { margin:0; color:var(--site-text,#18202a); font:800 1.12rem/1.28 "Manrope",sans-serif; }
+    .mile-sec { display:grid; gap:5px; }
+    .mile-sec__label { font:800 .72rem/1.3 "Manrope",sans-serif; letter-spacing:.04em; text-transform:uppercase; color:var(--accent,#164a83); }
+    .mile-sec__text { margin:0; color:var(--site-text); font:600 .93rem/1.55 "Manrope","Segoe UI",sans-serif; }
+    .mile-sec ul { margin:0; padding-left:20px; display:grid; gap:3px; }
+    .mile-sec li { font:600 .9rem/1.5 "Manrope","Segoe UI",sans-serif; color:var(--site-text); }
+    .mile-sec--avoid { padding:10px 12px 10px 14px; border-radius:10px; background:rgba(190,18,22,.05); border:1px solid rgba(190,18,22,.22); }
+    .mile-sec--avoid .mile-sec__label { color:#be1216; }
+    .mile-note { margin:2px 0 0; padding:8px 12px; border-left:3px solid var(--accent,#164a83); background:rgba(20,56,92,.04); border-radius:0 8px 8px 0; color:var(--site-text); font:600 .88rem/1.55 "Manrope","Segoe UI",sans-serif; }
+    .mile-code { margin:0; padding:12px 14px; border-radius:10px; background:#0f172a; color:#e2e8f0; overflow-x:auto; font:600 .82rem/1.5 ui-monospace,"SFMono-Regular",Consolas,monospace; }
+    .mile-tablewrap { overflow-x:auto; }
+    .mile-table { border-collapse:collapse; width:100%; font:600 .86rem/1.4 "Manrope","Segoe UI",sans-serif; }
+    .mile-table th, .mile-table td { border:1px solid var(--site-border); padding:6px 10px; text-align:left; }
+    .mile-table thead th { background:rgba(20,56,92,.06); }
+</style>
+</head>
+<body class="apartsin-shell-active" data-site-section="teaching">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar">
+      <a class="apartsin-shell__brand" href="../../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../../index.html">About</a>
+        <a href="../../research/research-focus.html">Research</a>
+        <a href="../../teaching/overview.html">Teaching</a>
+        <a href="../../work/overview.html">Building</a>
+        <a href="../../work/innovation-overview.html">Innovations</a>
+        <a href="../../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="midterm-presentation-overview">
+          <h1 class="apartsin-sr-only">Midterm Presentation</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="../overview.html">Teaching</a>
+              <span aria-hidden="true">/</span>
+              <a href="./index.html">Guides for Students</a>
+              <span aria-hidden="true">/</span>
+              <strong>Midterm Presentation</strong>
+            </nav>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../../assets/heroes/teaching-hos-offerings.png" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">The midterm shows the project has moved from planning to validated technical work: a refined definition, real data, a working baseline, and initial measurable results.</p>
+          </div>
+        </section>
+
+        <section class="guide-intro">
+          <p class="guide-intro__lead">By the midterm, the team should have:</p>
+          <ul><li>refined the project definition</li><li>completed a meaningful review of previous work</li><li>obtained or created the main dataset</li><li>performed exploratory data analysis</li><li>implemented a baseline</li><li>produced initial measurable results</li><li>identified errors and technical risks</li><li>prepared a realistic completion plan</li></ul>
+          <p class="guide-intro__note">Show evidence of progress, not only plans.</p>
+        </section>
+
+        <h2 class="sdg-heading">What the midterm must show</h2>
+        <p class="sdg-heading-lede">Six parts, each with what to present, the requirements, and what to avoid.</p>
+        <section class="mile-list" style="--accent:#164a83" aria-label="Midterm Presentation cards">
+          <article class="mile-card" id="mid-review"><span class="mile-card__num">1</span><div class="mile-card__content"><h2>Project Review and Refinement</h2><div class="mile-sec"><span class="mile-sec__label">What to present</span><p class="mile-sec__text">Briefly review:</p><ul><li>the motivating use case</li><li>the formal project task</li><li>the planned inputs and outputs</li><li>the main contribution</li><li>the evaluation criteria</li></ul><p class="mile-note">Then explain how the project changed since the proposal: narrower scope, a revised research question, a different dataset or model, added constraints, a removed unrealistic component, or improved evaluation.</p></div><div class="mile-sec"><span class="mile-sec__label">Requirements</span><p class="mile-sec__text">Changes are expected and should be explained honestly. A good project evolves as the team learns more about the problem, the data, previous work, model limitations, and available resources.</p></div><div class="mile-sec mile-sec--avoid"><span class="mile-sec__label">Avoid</span><ul><li>repeating the proposal with no updates</li><li>hiding major changes</li><li>keeping an unrealistic scope just because it was in the proposal</li><li>changing the project without explaining why</li></ul></div></div></article><article class="mile-card" id="mid-prior-work"><span class="mile-card__num">2</span><div class="mile-card__content"><h2>Previous Work</h2><div class="mile-sec"><span class="mile-sec__label">What to present</span><p class="mile-sec__text">Review at least three relevant scientific papers, chosen for being recent, influential, or directly related. Organize them in a comparison table with:</p><ul><li>title and year</li><li>research task</li><li>models or methods</li><li>datasets</li><li>evaluation metrics</li><li>main results</li><li>limitations</li><li>relationship to your project</li></ul></div><div class="mile-sec"><span class="mile-sec__label">Requirements</span><p class="mile-sec__text">The review should shape project decisions. Explain:</p><ul><li>which methods you may reuse</li><li>which baselines to implement</li><li>which datasets or metrics are standard</li><li>what limitation your project addresses</li></ul><p class="mile-note">Use scientific databases and citation indexes to find strong work.</p></div><div class="mile-sec mile-sec--avoid"><span class="mile-sec__label">Avoid</span><ul><li>summarizing papers in isolation without comparing them</li><li>picking papers only because they are easy</li><li>citing blog posts instead of scientific work</li><li>listing papers that do not affect the design</li><li>claiming novelty without showing how you differ</li></ul></div></div></article><article class="mile-card" id="mid-eda"><span class="mile-card__num">3</span><div class="mile-card__content"><h2>Dataset and Exploratory Data Analysis</h2><div class="mile-sec"><span class="mile-sec__label">What to present</span><p class="mile-sec__text">Describe the dataset you collected, created, labeled, or generated:</p><ul><li>number of samples</li><li>data sources</li><li>labels</li><li>class distributions</li><li>input lengths or dimensions</li><li>missing values</li><li>duplicate records</li><li>representative examples</li><li>training, validation, and test splits</li></ul></div><div class="mile-sec"><span class="mile-sec__label">Required EDA</span><p class="mile-sec__text">Run analysis relevant to the project, such as:</p><ul><li>class-frequency graphs</li><li>text-length distributions</li><li>image-size distributions</li><li>feature distributions</li><li>label co-occurrence</li><li>temporal distributions</li><li>missing-data analysis</li><li>correlations</li><li>examples of difficult or ambiguous samples</li></ul></div><div class="mile-sec"><span class="mile-sec__label">Requirements</span><p class="mile-sec__text">Say what you learned and how it changes the solution, for example:</p><ul><li>class imbalance requires weighted loss</li><li>long inputs require truncation or chunking</li><li>noisy labels require manual verification</li><li>leakage requires a different split</li><li>limited data requires augmentation or transfer learning</li></ul></div><div class="mile-sec mile-sec--avoid"><span class="mile-sec__label">Avoid</span><ul><li>showing graphs with no interpretation</li><li>presenting only averages</li><li>ignoring unusual or difficult samples</li><li>modifying data without documenting it</li><li>using the test set during development</li></ul></div></div></article><article class="mile-card" id="mid-baseline"><span class="mile-card__num">4</span><div class="mile-card__content"><h2>Baseline Solution</h2><div class="mile-sec"><span class="mile-sec__label">What to present</span><p class="mile-sec__text">Implement and evaluate at least one baseline, a simple and credible reference point. Options:</p><ul><li>majority-class prediction</li><li>rules or heuristics</li><li>linear or tree-based models</li><li>a pretrained model without fine-tuning</li><li>an established method from prior work</li><li>a simple prompt-based solution</li><li>an existing library or API</li></ul></div><div class="mile-sec"><span class="mile-sec__label">Requirements</span><p class="mile-sec__text">Describe the baseline's architecture or logic, training configuration, preprocessing, evaluation dataset, metrics, and results.</p><p class="mile-note">The baseline must be strong enough to make later improvements meaningful.</p></div><div class="mile-sec mile-sec--avoid"><span class="mile-sec__label">Avoid</span><ul><li>deliberately weak baselines</li><li>comparing only against random prediction</li><li>calling your final proposed model a baseline</li><li>reporting results without the configuration</li><li>comparing methods on different data splits</li></ul></div></div></article><article class="mile-card" id="mid-results"><span class="mile-card__num">5</span><div class="mile-card__content"><h2>Initial Results and Error Analysis</h2><div class="mile-sec"><span class="mile-sec__label">What to present</span><p class="mile-sec__text">Show measurable results in clean tables and graphs:</p><ul><li>baseline results</li><li>results of initial alternatives</li><li>per-class or per-group performance</li><li>representative successes</li><li>representative failures</li></ul></div><div class="mile-sec"><span class="mile-sec__label">Error analysis</span><p class="mile-sec__text">Inspect wrong or poor outputs and group them into meaningful categories, such as:</p><ul><li>ambiguous input</li><li>missing context</li><li>poor labels</li><li>rare classes</li><li>model hallucination</li><li>incorrect retrieval</li><li>preprocessing failure</li><li>domain terminology</li><li>long or complex input</li><li>distribution shift</li></ul></div><div class="mile-sec"><span class="mile-sec__label">Requirements</span><p class="mile-sec__text">For each important error category, explain why it happens, how frequent it is, how it affects the user, and what change might fix it.</p></div><div class="mile-sec mile-sec--avoid"><span class="mile-sec__label">Avoid</span><ul><li>showing only average metrics</li><li>hiding failed experiments</li><li>reporting cherry-picked examples</li><li>calling errors random without investigating</li><li>proposing improvements unrelated to the observed failures</li></ul></div></div></article><article class="mile-card" id="mid-plan"><span class="mile-card__num">6</span><div class="mile-card__content"><h2>Completion Plan</h2><div class="mile-sec"><span class="mile-sec__label">What to present</span><p class="mile-sec__text">Give a table with, for each remaining task: the technical scope, the responsible team member, the due date, the expected output, the risk, and a fallback solution.</p><p class="mile-note">The last item should be preparing the final presentation and repository submission.</p></div><div class="mile-sec"><span class="mile-sec__label">Requirements</span><p class="mile-sec__text">Base the plan on current evidence, not the proposal. Prioritize:</p><ul><li>resolving data problems</li><li>implementing comparison models</li><li>running controlled experiments</li><li>performing error analysis</li><li>improving the system</li><li>preparing reproducible results</li></ul></div><div class="mile-sec mile-sec--avoid"><span class="mile-sec__label">Avoid</span><ul><li>plans with only vague activities like "improve model"</li><li>too many experiments with no priorities</li><li>leaving evaluation to the last week</li><li>polishing the interface while core results are weak</li></ul></div></div></article>
+        </section>
+
+      <section class="section-quick-links">
+        <h2 class="section-quick-links__title">Other milestone guides</h2>
+        <nav class="section-quick-links__grid" aria-label="Other milestone guides">
+          <a class="section-quick-link" href="./project-proposal-presentation.html"><span class="section-quick-link__badge" style="background:#c2410c;">P</span>Project Proposal</a><a class="section-quick-link" href="./final-presentation.html"><span class="section-quick-link__badge" style="background:#2e7d5a;">F</span>Final Presentation</a><a class="section-quick-link" href="./github-submission.html"><span class="section-quick-link__badge" style="background:#7a3fa0;">G</span>GitHub Submission</a>
+        </nav>
+      </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../../shared/unified-enhance.js"></script>
+  <script defer src="../../shared/site-shell.js"></script>
+</body>
+</html>

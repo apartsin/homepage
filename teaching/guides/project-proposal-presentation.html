@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <meta name="description" content="How to build the project proposal presentation: motivating use case, problem statement, novelty, models, data, and an evaluation plan, each with requirements and anti-patterns.">
+  <link rel="alternate" hreflang="en" href="./project-proposal-presentation.html">
+  <title>Project Proposal Presentation | Sasha Apartsin</title>
+  <link rel="stylesheet" href="../../shared/site-shell.css">
+  <link rel="stylesheet" href="../../shared/unified-theme.css">
+  <style>
+    .sdg-heading { margin: 34px 0 2px; color: var(--site-text,#18202a); font: 800 .9rem/1.2 "Manrope",sans-serif; letter-spacing:.04em; text-transform:uppercase; }
+    .sdg-heading:first-of-type { margin-top: 12px; }
+    .sdg-heading-lede { margin:0; color:var(--site-muted); font:600 .92rem/1.5 "Manrope",sans-serif; }
+    .guide-intro { margin-top:14px; padding:16px 18px; border:1px solid var(--site-border); border-radius:14px; background:rgba(20,56,92,.03); }
+    .guide-intro__lead { margin:0 0 6px; font:800 .95rem/1.4 "Manrope",sans-serif; color:var(--site-text); }
+    .guide-intro ul { margin:0; padding-left:20px; display:grid; gap:4px; }
+    .guide-intro li { font:600 .9rem/1.5 "Manrope","Segoe UI",sans-serif; color:var(--site-text); }
+    .guide-intro__note { margin:10px 0 0; color:var(--site-muted); font:600 .88rem/1.5 "Manrope",sans-serif; }
+    .mile-list { display:grid; grid-template-columns:1fr; gap:14px; margin-top:12px; }
+    .mile-card { position:relative; display:grid; grid-template-columns:auto minmax(0,1fr); align-items:start; column-gap:18px; row-gap:8px; padding:20px 22px 18px 26px; border:1px solid var(--site-border); border-radius:16px; background:#fff; box-shadow:0 10px 22px rgba(15,23,42,.06); overflow:hidden; }
+    .mile-card::before { content:""; position:absolute; inset:0 auto 0 0; width:5px; background:var(--accent,#164a83); }
+    .mile-card__num { grid-column:1; display:grid; place-items:center; width:42px; height:42px; margin-top:2px; border-radius:50%; background:color-mix(in srgb, var(--accent,#164a83) 16%, #fff); color:var(--accent,#164a83); font:800 1.1rem/1 "Manrope",sans-serif; }
+    .mile-card__content { grid-column:2; display:grid; gap:12px; max-width:94ch; }
+    .mile-card__content h2 { margin:0; color:var(--site-text,#18202a); font:800 1.12rem/1.28 "Manrope",sans-serif; }
+    .mile-sec { display:grid; gap:5px; }
+    .mile-sec__label { font:800 .72rem/1.3 "Manrope",sans-serif; letter-spacing:.04em; text-transform:uppercase; color:var(--accent,#164a83); }
+    .mile-sec__text { margin:0; color:var(--site-text); font:600 .93rem/1.55 "Manrope","Segoe UI",sans-serif; }
+    .mile-sec ul { margin:0; padding-left:20px; display:grid; gap:3px; }
+    .mile-sec li { font:600 .9rem/1.5 "Manrope","Segoe UI",sans-serif; color:var(--site-text); }
+    .mile-sec--avoid { padding:10px 12px 10px 14px; border-radius:10px; background:rgba(190,18,22,.05); border:1px solid rgba(190,18,22,.22); }
+    .mile-sec--avoid .mile-sec__label { color:#be1216; }
+    .mile-note { margin:2px 0 0; padding:8px 12px; border-left:3px solid var(--accent,#164a83); background:rgba(20,56,92,.04); border-radius:0 8px 8px 0; color:var(--site-text); font:600 .88rem/1.55 "Manrope","Segoe UI",sans-serif; }
+    .mile-code { margin:0; padding:12px 14px; border-radius:10px; background:#0f172a; color:#e2e8f0; overflow-x:auto; font:600 .82rem/1.5 ui-monospace,"SFMono-Regular",Consolas,monospace; }
+    .mile-tablewrap { overflow-x:auto; }
+    .mile-table { border-collapse:collapse; width:100%; font:600 .86rem/1.4 "Manrope","Segoe UI",sans-serif; }
+    .mile-table th, .mile-table td { border:1px solid var(--site-border); padding:6px 10px; text-align:left; }
+    .mile-table thead th { background:rgba(20,56,92,.06); }
+</style>
+</head>
+<body class="apartsin-shell-active" data-site-section="teaching">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar">
+      <a class="apartsin-shell__brand" href="../../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../../index.html">About</a>
+        <a href="../../research/research-focus.html">Research</a>
+        <a href="../../teaching/overview.html">Teaching</a>
+        <a href="../../work/overview.html">Building</a>
+        <a href="../../work/innovation-overview.html">Innovations</a>
+        <a href="../../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="project-proposal-presentation-overview">
+          <h1 class="apartsin-sr-only">Project Proposal Presentation</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="../overview.html">Teaching</a>
+              <span aria-hidden="true">/</span>
+              <a href="./index.html">Guides for Students</a>
+              <span aria-hidden="true">/</span>
+              <strong>Project Proposal Presentation</strong>
+            </nav>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../../assets/heroes/teaching-hos-student-projects.png" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">The proposal sets the project's direction before serious implementation begins. It shows the team understands a real, valuable problem, has defined a clear and feasible task, and has a realistic plan, not final results.</p>
+          </div>
+        </section>
+
+        <section class="guide-intro">
+          <p class="guide-intro__lead">A strong proposal demonstrates that the team:</p>
+          <ul><li>understands a real and valuable problem</li><li>has defined a clear and feasible project task</li><li>has researched possible solutions</li><li>has identified suitable data, models, and evaluation methods</li><li>has a realistic plan for completing the project</li></ul>
+          <p class="guide-intro__note">The proposal is not expected to contain final results, but it must show the project has been carefully investigated and is technically meaningful.</p>
+        </section>
+
+        <h2 class="sdg-heading">What the proposal must cover</h2>
+        <p class="sdg-heading-lede">Six parts, each with what to present, the requirements, and what to avoid.</p>
+        <section class="mile-list" style="--accent:#c2410c" aria-label="Project Proposal Presentation cards">
+          <article class="mile-card" id="prop-use-case"><span class="mile-card__num">1</span><div class="mile-card__content"><h2>Motivating Use Case</h2><div class="mile-sec"><span class="mile-sec__label">What to present</span><p class="mile-sec__text">Describe the real-world context in which the problem occurs, and answer:</p><ul><li>Who experiences the problem?</li><li>What process, system, or decision is affected?</li><li>Why does it matter?</li><li>What is the practical value of solving it?</li><li>Why is the problem difficult?</li><li>How is it handled today?</li><li>What are the limits of existing solutions?</li></ul></div><div class="mile-sec"><span class="mile-sec__label">Requirements</span><p class="mile-sec__text">Keep the use case specific and evidence-based. Do not rely on common-sense claims like "it saves time." Instead say:</p><ul><li>whose time is saved</li><li>which activity improves</li><li>what errors or costs are reduced</li><li>why existing tools fall short</li></ul></div><div class="mile-sec"><span class="mile-sec__label">Expected evidence</span><p class="mile-sec__text">Include at least one of:</p><ul><li>examples from real systems</li><li>user scenarios</li><li>scientific or professional sources</li><li>existing products or services</li><li>representative input and output examples</li><li>statistics showing the scale of the problem</li></ul></div><div class="mile-sec mile-sec--avoid"><span class="mile-sec__label">Avoid</span><ul><li>toy problems with no meaningful application</li><li>general statements about AI with no specific need</li><li>describing a technology before explaining the problem</li><li>claiming no solution exists without researching existing ones</li></ul></div></div></article><article class="mile-card" id="prop-task"><span class="mile-card__num">2</span><div class="mile-card__content"><h2>Project Task and Problem Statement</h2><div class="mile-sec"><span class="mile-sec__label">What to present</span><p class="mile-sec__text">Define exactly what the project will do. A good problem statement describes:</p><ul><li>the input</li><li>the expected output</li><li>the processing task</li><li>the target users or system</li><li>the conditions under which the system operates</li></ul></div><div class="mile-sec"><span class="mile-sec__label">Example structure</span><p class="mile-note">Given [input], develop a system that produces [output] to support [use case], while satisfying [important constraints].</p></div><div class="mile-sec"><span class="mile-sec__label">Requirements</span><p class="mile-sec__text">The task must be clear, technically meaningful, feasible within the schedule, measurable, and tied directly to the motivating use case.</p></div><div class="mile-sec"><span class="mile-sec__label">Break it into components</span><p class="mile-sec__text">When the system is complex, split it into technical steps, for example:</p><ul><li>collect or prepare the data</li><li>identify relevant information</li><li>apply a model</li><li>rank or classify the results</li><li>present the output to the user</li></ul></div><div class="mile-sec mile-sec--avoid"><span class="mile-sec__label">Avoid</span><ul><li>defining the task as "build an AI system"</li><li>confusing a software feature with a research problem</li><li>describing implementation details without defining the objective</li><li>vague goals like "improve performance" without saying what performance means</li></ul></div></div></article><article class="mile-card" id="prop-novelty"><span class="mile-card__num">3</span><div class="mile-card__content"><h2>Novelty and Contribution</h2><div class="mile-sec"><span class="mile-sec__label">What to present</span><p class="mile-sec__text">Explain what is new or valuable. Novelty can come from:</p><ul><li>a new application</li><li>adapting an existing method to a new domain</li><li>combining several methods</li><li>creating or labeling a new dataset</li><li>a new evaluation protocol</li><li>comparing methods not compared before</li><li>improving quality, efficiency, explainability, or usability</li><li>integrating existing models into a useful end-to-end system</li></ul></div><div class="mile-sec"><span class="mile-sec__label">Requirements</span><p class="mile-sec__text">Base novelty on prior-work research. Identify:</p><ul><li>what already exists</li><li>what can be reused</li><li>what limitation remains</li><li>what the project adds</li></ul><p class="mile-note">Novelty does not require a brand-new neural architecture; a strong engineering or experimental contribution counts.</p></div><div class="mile-sec mile-sec--avoid"><span class="mile-sec__label">Avoid</span><ul><li>claiming novelty before reviewing previous work</li><li>presenting the use of a popular model as a contribution</li><li>calling API integration a research contribution</li><li>rebuilding an existing solution with no clear improvement or evaluation</li></ul></div></div></article><article class="mile-card" id="prop-models"><span class="mile-card__num">4</span><div class="mile-card__content"><h2>Models and Methods</h2><div class="mile-sec"><span class="mile-sec__label">What to present</span><p class="mile-sec__text">Describe the planned technical solution. For each major step, explain:</p><ul><li>which model, algorithm, API, library, or technique will be used</li><li>why it is appropriate</li><li>what alternatives were considered</li><li>what modifications or fine-tuning may be needed</li></ul></div><div class="mile-sec"><span class="mile-sec__label">Requirements</span><p class="mile-sec__text">Go beyond a single unexplained model call. Consider:</p><ul><li>pretrained models</li><li>traditional baselines</li><li>state-of-the-art models</li><li>fine-tuning</li><li>prompt engineering</li><li>retrieval</li><li>data augmentation</li><li>rule-based processing</li><li>post-processing</li><li>ranking</li><li>calibration</li><li>error correction</li></ul><p class="mile-note">Present the complete pipeline, not only the central model.</p></div><div class="mile-sec mile-sec--avoid"><span class="mile-sec__label">Avoid</span><ul><li>choosing a model only because it is familiar</li><li>saying "we will use ChatGPT" without defining the task and evaluation</li><li>using technical terms without explaining their role</li><li>listing technologies instead of a coherent solution</li></ul></div></div></article><article class="mile-card" id="prop-data"><span class="mile-card__num">5</span><div class="mile-card__content"><h2>Data Specification</h2><div class="mile-sec"><span class="mile-sec__label">What to present</span><p class="mile-sec__text">Describe the data needed for development and evaluation:</p><ul><li>which dataset</li><li>where it comes from</li><li>how many samples</li><li>what each sample contains</li><li>which labels or annotations exist</li><li>how it splits into training, validation, and test</li><li>whether more data must be collected or generated</li></ul></div><div class="mile-sec"><span class="mile-sec__label">Synthetic data</span><p class="mile-sec__text">When using synthetic data, explain:</p><ul><li>why real data is insufficient</li><li>what attributes are controlled</li><li>how diversity is created</li><li>how realism and correctness are checked</li><li>how synthetic data is kept separate from test data</li></ul></div><div class="mile-sec"><span class="mile-sec__label">Requirements</span><p class="mile-sec__text">Give representative examples of inputs, labels, and expected outputs, and name the risks:</p><ul><li>insufficient data</li><li>class imbalance</li><li>label noise</li><li>privacy restrictions</li><li>duplicate samples</li><li>data leakage</li><li>biased or unrepresentative data</li></ul></div><div class="mile-sec mile-sec--avoid"><span class="mile-sec__label">Avoid</span><ul><li>starting model development before inspecting the data</li><li>generating large amounts of synthetic data without validation</li><li>evaluating only on synthetic data</li><li>treating auto-generated labels as unquestionable ground truth</li></ul></div></div></article><article class="mile-card" id="prop-metrics"><span class="mile-card__num">6</span><div class="mile-card__content"><h2>Metrics and Evaluation Plan</h2><div class="mile-sec"><span class="mile-sec__label">What to present</span><p class="mile-sec__text">Define how success is measured:</p><ul><li>which metrics</li><li>why each is appropriate</li><li>what ground truth is required</li><li>how the test set is built</li><li>what systems or models are compared</li><li>what result counts as success</li></ul></div><div class="mile-sec"><span class="mile-sec__label">Requirements</span><p class="mile-sec__text">Include:</p><ul><li>at least one baseline</li><li>quantitative evaluation</li><li>qualitative examples where useful</li><li>evaluation of major pipeline components</li><li>an end-to-end evaluation of the whole system</li></ul><p class="mile-note">Candidate metrics: accuracy; precision, recall, and F1; ROC-AUC or PR-AUC; mean absolute error; ranking metrics; generation-quality metrics; latency; cost; robustness; human evaluation.</p></div><div class="mile-sec mile-sec--avoid"><span class="mile-sec__label">Avoid</span><ul><li>choosing metrics only after seeing results</li><li>reporting accuracy alone on highly imbalanced data</li><li>evaluating on training data</li><li>showing only successful examples</li><li>subjective claims like "the results look good"</li></ul></div></div></article>
+        </section>
+
+      <section class="section-quick-links">
+        <h2 class="section-quick-links__title">Other milestone guides</h2>
+        <nav class="section-quick-links__grid" aria-label="Other milestone guides">
+          <a class="section-quick-link" href="./midterm-presentation.html"><span class="section-quick-link__badge" style="background:#164a83;">M</span>Midterm Presentation</a><a class="section-quick-link" href="./final-presentation.html"><span class="section-quick-link__badge" style="background:#2e7d5a;">F</span>Final Presentation</a><a class="section-quick-link" href="./github-submission.html"><span class="section-quick-link__badge" style="background:#7a3fa0;">G</span>GitHub Submission</a>
+        </nav>
+      </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../../shared/unified-enhance.js"></script>
+  <script defer src="../../shared/site-shell.js"></script>
+</body>
+</html>

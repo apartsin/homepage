@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <meta name="description" content="How to prepare the GitHub submission: a meaningful name, a logical structure, a complete README, documented data, models, training and evaluation, reproducibility, code quality, and a final checklist.">
+  <link rel="alternate" hreflang="en" href="./github-submission.html">
+  <title>GitHub Submission | Sasha Apartsin</title>
+  <link rel="stylesheet" href="../../shared/site-shell.css">
+  <link rel="stylesheet" href="../../shared/unified-theme.css">
+  <style>
+    .sdg-heading { margin: 34px 0 2px; color: var(--site-text,#18202a); font: 800 .9rem/1.2 "Manrope",sans-serif; letter-spacing:.04em; text-transform:uppercase; }
+    .sdg-heading:first-of-type { margin-top: 12px; }
+    .sdg-heading-lede { margin:0; color:var(--site-muted); font:600 .92rem/1.5 "Manrope",sans-serif; }
+    .guide-intro { margin-top:14px; padding:16px 18px; border:1px solid var(--site-border); border-radius:14px; background:rgba(20,56,92,.03); }
+    .guide-intro__lead { margin:0 0 6px; font:800 .95rem/1.4 "Manrope",sans-serif; color:var(--site-text); }
+    .guide-intro ul { margin:0; padding-left:20px; display:grid; gap:4px; }
+    .guide-intro li { font:600 .9rem/1.5 "Manrope","Segoe UI",sans-serif; color:var(--site-text); }
+    .guide-intro__note { margin:10px 0 0; color:var(--site-muted); font:600 .88rem/1.5 "Manrope",sans-serif; }
+    .mile-list { display:grid; grid-template-columns:1fr; gap:14px; margin-top:12px; }
+    .mile-card { position:relative; display:grid; grid-template-columns:auto minmax(0,1fr); align-items:start; column-gap:18px; row-gap:8px; padding:20px 22px 18px 26px; border:1px solid var(--site-border); border-radius:16px; background:#fff; box-shadow:0 10px 22px rgba(15,23,42,.06); overflow:hidden; }
+    .mile-card::before { content:""; position:absolute; inset:0 auto 0 0; width:5px; background:var(--accent,#164a83); }
+    .mile-card__num { grid-column:1; display:grid; place-items:center; width:42px; height:42px; margin-top:2px; border-radius:50%; background:color-mix(in srgb, var(--accent,#164a83) 16%, #fff); color:var(--accent,#164a83); font:800 1.1rem/1 "Manrope",sans-serif; }
+    .mile-card__content { grid-column:2; display:grid; gap:12px; max-width:94ch; }
+    .mile-card__content h2 { margin:0; color:var(--site-text,#18202a); font:800 1.12rem/1.28 "Manrope",sans-serif; }
+    .mile-sec { display:grid; gap:5px; }
+    .mile-sec__label { font:800 .72rem/1.3 "Manrope",sans-serif; letter-spacing:.04em; text-transform:uppercase; color:var(--accent,#164a83); }
+    .mile-sec__text { margin:0; color:var(--site-text); font:600 .93rem/1.55 "Manrope","Segoe UI",sans-serif; }
+    .mile-sec ul { margin:0; padding-left:20px; display:grid; gap:3px; }
+    .mile-sec li { font:600 .9rem/1.5 "Manrope","Segoe UI",sans-serif; color:var(--site-text); }
+    .mile-sec--avoid { padding:10px 12px 10px 14px; border-radius:10px; background:rgba(190,18,22,.05); border:1px solid rgba(190,18,22,.22); }
+    .mile-sec--avoid .mile-sec__label { color:#be1216; }
+    .mile-note { margin:2px 0 0; padding:8px 12px; border-left:3px solid var(--accent,#164a83); background:rgba(20,56,92,.04); border-radius:0 8px 8px 0; color:var(--site-text); font:600 .88rem/1.55 "Manrope","Segoe UI",sans-serif; }
+    .mile-code { margin:0; padding:12px 14px; border-radius:10px; background:#0f172a; color:#e2e8f0; overflow-x:auto; font:600 .82rem/1.5 ui-monospace,"SFMono-Regular",Consolas,monospace; }
+    .mile-tablewrap { overflow-x:auto; }
+    .mile-table { border-collapse:collapse; width:100%; font:600 .86rem/1.4 "Manrope","Segoe UI",sans-serif; }
+    .mile-table th, .mile-table td { border:1px solid var(--site-border); padding:6px 10px; text-align:left; }
+    .mile-table thead th { background:rgba(20,56,92,.06); }
+</style>
+</head>
+<body class="apartsin-shell-active" data-site-section="teaching">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar">
+      <a class="apartsin-shell__brand" href="../../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../../index.html">About</a>
+        <a href="../../research/research-focus.html">Research</a>
+        <a href="../../teaching/overview.html">Teaching</a>
+        <a href="../../work/overview.html">Building</a>
+        <a href="../../work/innovation-overview.html">Innovations</a>
+        <a href="../../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="github-submission-overview">
+          <h1 class="apartsin-sr-only">GitHub Submission</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="../overview.html">Teaching</a>
+              <span aria-hidden="true">/</span>
+              <a href="./index.html">Guides for Students</a>
+              <span aria-hidden="true">/</span>
+              <strong>GitHub Submission</strong>
+            </nav>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../../assets/heroes/teaching-cs-courses.png" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">The repository is the permanent technical record of the project and part of the deliverable. It should let anyone understand, inspect, reproduce, review, and continue the work.</p>
+          </div>
+        </section>
+
+        <section class="guide-intro">
+          <p class="guide-intro__lead">A good repository lets another student, researcher, instructor, or developer:</p>
+          <ul><li>understand the project</li><li>inspect the data and code</li><li>reproduce the experiments</li><li>review the results</li><li>continue the work</li></ul>
+          <p class="guide-intro__note">A repository is not just storage; it is evaluated for clarity, completeness, organization, and reproducibility.</p>
+        </section>
+
+        <h2 class="sdg-heading">What the repository must contain</h2>
+        <p class="sdg-heading-lede">Fifteen parts, from naming and structure through reproducibility and the final checklist.</p>
+        <section class="mile-list" style="--accent:#7a3fa0" aria-label="GitHub Submission cards">
+          <article class="mile-card" id="gh-name"><span class="mile-card__num">1</span><div class="mile-card__content"><h2>Repository Name and Overview</h2><div class="mile-sec"><span class="mile-sec__label">Requirements</span><p class="mile-sec__text">Give the repository a meaningful name that reflects the project.</p></div><div class="mile-sec"><span class="mile-sec__label">Good names</span><ul><li>clinical-followup-extraction</li><li>synthetic-email-ranking</li><li>warehouse-anomaly-detection</li></ul></div><div class="mile-sec mile-sec--avoid"><span class="mile-sec__label">Weak names</span><ul><li>final-project</li><li>project-code</li><li>team7</li><li>new-version-final</li></ul></div><div class="mile-sec"><span class="mile-sec__label">Overview</span><p class="mile-sec__text">Add a short description covering the problem, the main approach, and the main output.</p></div></div></article><article class="mile-card" id="gh-structure"><span class="mile-card__num">2</span><div class="mile-card__content"><h2>Required Repository Structure</h2><div class="mile-sec"><span class="mile-sec__label">Recommended structure</span><pre class="mile-code"><code>project-name/
+|
+|-- README.md
+|-- requirements.txt
+|-- environment.yml
+|-- LICENSE
+|
+|-- slides/
+|   |-- proposal.pptx / proposal.pdf
+|   |-- midterm.pptx  / midterm.pdf
+|   |-- final.pptx    / final.pdf
+|
+|-- src/
+|   |-- data/  models/  training/  evaluation/  utils/
+|
+|-- notebooks/
+|   |-- 01_data_exploration.ipynb
+|   |-- 02_baseline.ipynb
+|   |-- 03_experiments.ipynb
+|
+|-- data/
+|   |-- raw/  processed/  samples/
+|
+|-- configs/
+|-- results/
+|   |-- metrics/  predictions/  experiment_logs/
+|
+|-- visuals/
+|   |-- visual_abstract.png  pipeline.png  result_figures/
+|
+|-- tests/</code></pre><p class="mile-note">The exact structure may differ, but it must be logical and easy to navigate.</p></div><div class="mile-sec mile-sec--avoid"><span class="mile-sec__label">Avoid</span><ul><li>placing all files in the repository root</li><li>folders named new, old, temp, or final-final</li><li>duplicate notebooks with unclear differences</li><li>committing large unnecessary files</li><li>mixing code, data, results, and slides</li></ul></div></div></article><article class="mile-card" id="gh-motivation"><span class="mile-card__num">3</span><div class="mile-card__content"><h2>README: Project Motivation</h2><div class="mile-sec"><span class="mile-sec__label">What to include</span><p class="mile-sec__text">Explain the real-world problem, why it matters, who benefits, and why existing solutions fall short. Keep it concise but specific.</p></div></div></article><article class="mile-card" id="gh-problem"><span class="mile-card__num">4</span><div class="mile-card__content"><h2>README: Problem Statement</h2><div class="mile-sec"><span class="mile-sec__label">What to include</span><p class="mile-sec__text">Define the input, the output, the technical task, the target use case, and the important constraints. Add representative input and output examples.</p></div></div></article><article class="mile-card" id="gh-visual"><span class="mile-card__num">5</span><div class="mile-card__content"><h2>README: Visual Abstract</h2><div class="mile-sec"><span class="mile-sec__label">What to include</span><p class="mile-sec__text">Add one clear figure that summarizes the project: input, major processing stages, the model or system, the output, and the practical use. It should be understandable without reading the full repository.</p></div></div></article><article class="mile-card" id="gh-datasets"><span class="mile-card__num">6</span><div class="mile-card__content"><h2>README: Datasets</h2><div class="mile-sec"><span class="mile-sec__label">What to include</span><p class="mile-sec__text">For every dataset, document:</p><ul><li>name</li><li>source</li><li>license</li><li>number of samples</li><li>fields or labels</li><li>preprocessing</li><li>training, validation, and test splits</li><li>access instructions</li><li>known limitations</li></ul><p class="mile-note">For generated or labeled data, also describe the generation or collection process, the labeling instructions, the quality checks, and the validation procedure.</p></div><div class="mile-sec"><span class="mile-sec__label">Requirements</span><p class="mile-sec__text">Do not commit sensitive, restricted, or copyrighted data without permission. When the full dataset cannot be included, provide sample files, download instructions, preparation scripts, and the expected folder structure.</p></div></div></article><article class="mile-card" id="gh-pipeline"><span class="mile-card__num">7</span><div class="mile-card__content"><h2>README: Models and Pipeline</h2><div class="mile-sec"><span class="mile-sec__label">What to include</span><p class="mile-sec__text">Describe the complete flow: the models used, the role of each, preprocessing, training, inference, and post-processing. Include a pipeline diagram, and for each major model explain why it was chosen and how it was configured.</p></div></div></article><article class="mile-card" id="gh-augmentation"><span class="mile-card__num">8</span><div class="mile-card__content"><h2>README: Data Augmentation and Generation</h2><div class="mile-sec"><span class="mile-sec__label">What to include</span><p class="mile-sec__text">Document:</p><ul><li>why augmentation or synthetic generation was needed</li><li>the generation method</li><li>prompts or templates</li><li>controlled attributes</li><li>sampling strategy</li><li>filtering</li><li>quality checks</li><li>number of generated samples</li></ul><p class="mile-note">Store the important prompts, configurations, and generation scripts in the repository.</p></div><div class="mile-sec mile-sec--avoid"><span class="mile-sec__label">Avoid</span><ul><li>generating data manually without documenting it</li><li>storing only the final generated files</li><li>omitting failed or filtered-sample criteria</li><li>using synthetic test data as the only evidence of quality</li></ul></div></div></article><article class="mile-card" id="gh-training"><span class="mile-card__num">9</span><div class="mile-card__content"><h2>README: Training Process</h2><div class="mile-sec"><span class="mile-sec__label">What to include</span><p class="mile-sec__text">Document:</p><ul><li>model version</li><li>initialization</li><li>hyperparameters</li><li>batch size</li><li>number of epochs</li><li>optimizer</li><li>learning rate</li><li>loss function</li><li>hardware</li><li>random seed</li><li>stopping criteria</li><li>checkpoint selection</li></ul></div><div class="mile-sec"><span class="mile-sec__label">Reproduce training</span><p class="mile-sec__text">Provide exact commands, for example:</p><pre class="mile-code"><code>python -m src.training.train \
+  --config configs/baseline.yaml</code></pre></div></div></article><article class="mile-card" id="gh-evaluation"><span class="mile-card__num">10</span><div class="mile-card__content"><h2>README: Evaluation and Metrics</h2><div class="mile-sec"><span class="mile-sec__label">What to include</span><p class="mile-sec__text">Explain the test-set construction, the evaluation metrics, the baseline methods, the comparison models, the evaluation scripts, the qualitative evaluation procedure, and human evaluation when used.</p></div><div class="mile-sec"><span class="mile-sec__label">Reproduce evaluation</span><p class="mile-sec__text">Provide exact commands, for example:</p><pre class="mile-code"><code>python -m src.evaluation.evaluate \
+  --config configs/final_model.yaml</code></pre></div></div></article><article class="mile-card" id="gh-results"><span class="mile-card__num">11</span><div class="mile-card__content"><h2>README: Results</h2><div class="mile-sec"><span class="mile-sec__label">What to include</span><p class="mile-sec__text">Present the main results in readable tables.</p><div class="mile-tablewrap"><table class="mile-table"><thead><tr><th>Model</th><th>Accuracy</th><th>Macro-F1</th><th>Latency</th></tr></thead><tbody><tr><td>Baseline</td><td>0.78</td><td>0.65</td><td>20 ms</td></tr><tr><td>Model A</td><td>0.84</td><td>0.76</td><td>35 ms</td></tr><tr><td>Final model</td><td>0.88</td><td>0.81</td><td>42 ms</td></tr></tbody></table></div><p class="mile-note">Link to detailed CSV or JSON results, prediction files, experiment logs, and figures. The numbers in the README, the slides, and the result files must match.</p></div></div></article><article class="mile-card" id="gh-repro"><span class="mile-card__num">12</span><div class="mile-card__content"><h2>Reproducibility</h2><div class="mile-sec"><span class="mile-sec__label">Requirements</span><p class="mile-sec__text">The repository must let another person run the project. Include:</p><ul><li>installation instructions</li><li>a dependency file</li><li>the Python version</li><li>environment variables</li><li>data-preparation instructions</li><li>training commands</li><li>evaluation commands</li><li>an inference example</li><li>expected outputs</li></ul><p class="mile-note">Use relative paths and configuration files; do not depend on undocumented local folders.</p></div><div class="mile-sec mile-sec--avoid"><span class="mile-sec__label">Secrets</span><p class="mile-sec__text">Never commit:</p><ul><li>API keys</li><li>passwords</li><li>access tokens</li><li>private URLs</li><li>personal information</li></ul><p class="mile-note">Use environment variables and provide a .env.example file.</p></div></div></article><article class="mile-card" id="gh-quality"><span class="mile-card__num">13</span><div class="mile-card__content"><h2>Code Quality</h2><div class="mile-sec"><span class="mile-sec__label">Requirements</span><p class="mile-sec__text">Code should be organized into meaningful modules, readable, documented where needed, free of unused files and hard-coded local paths, consistent in naming, and runnable from a clean environment.</p><p class="mile-note">Notebooks should run top to bottom, have clear headings, separate exploration from final experiments, avoid excessive output, and explain important decisions.</p></div><div class="mile-sec mile-sec--avoid"><span class="mile-sec__label">Avoid</span><ul><li>one enormous notebook containing the whole project</li><li>copied code the team cannot explain</li><li>code that only runs on one student's machine</li><li>manually edited result numbers</li><li>undocumented dependencies</li></ul></div></div></article><article class="mile-card" id="gh-team"><span class="mile-card__num">14</span><div class="mile-card__content"><h2>Team Members and Contributions</h2><div class="mile-sec"><span class="mile-sec__label">What to include</span><p class="mile-sec__text">List every team member and their responsibilities, with concrete contributions such as dataset collection, labeling, model implementation, experimentation, evaluation, interface development, and documentation.</p><p class="mile-note">Every member is expected to understand the whole project, not only their own files.</p></div></div></article><article class="mile-card" id="gh-checklist"><span class="mile-card__num">15</span><div class="mile-card__content"><h2>Final Submission Checklist</h2><div class="mile-sec"><span class="mile-sec__label">Before submitting, verify that</span><ul><li>the repository has a meaningful name</li><li>the README explains the whole project</li><li>proposal, midterm, and final slides are included in PPT and PDF</li><li>the code is organized</li><li>notebooks run correctly</li><li>dependencies are documented</li><li>sample data or download instructions are included</li><li>training and evaluation commands are provided</li><li>result files are included</li><li>figures are readable</li><li>reported results are consistent</li><li>no API keys or private information are committed</li><li>all repository links work</li><li>another person can reproduce the main result</li></ul><p class="mile-note">A strong submission shows both the quality of the project and the professionalism of the team.</p></div></div></article>
+        </section>
+
+      <section class="section-quick-links">
+        <h2 class="section-quick-links__title">Other milestone guides</h2>
+        <nav class="section-quick-links__grid" aria-label="Other milestone guides">
+          <a class="section-quick-link" href="./project-proposal-presentation.html"><span class="section-quick-link__badge" style="background:#c2410c;">P</span>Project Proposal</a><a class="section-quick-link" href="./midterm-presentation.html"><span class="section-quick-link__badge" style="background:#164a83;">M</span>Midterm Presentation</a><a class="section-quick-link" href="./final-presentation.html"><span class="section-quick-link__badge" style="background:#2e7d5a;">F</span>Final Presentation</a>
+        </nav>
+      </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../../shared/unified-enhance.js"></script>
+  <script defer src="../../shared/site-shell.js"></script>
+</body>
+</html>
