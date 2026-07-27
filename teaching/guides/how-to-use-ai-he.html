@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="he-IL" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <meta name="description" content="כיצד להשתמש ב-AI היטב בקורסים ובפרויקטים שלכם: ללכת מעבר לייצור תוצרים, לקחת בעלות על כל תוצאה, להתייחס ל-AI כאל תשתית, ולעמוד ברף הגבוה יותר שהוא יוצר. חמישה רעיונות, לכל אחד דוגמה טובה ודוגמה רעה.">
+  <link rel="alternate" hreflang="he" href="./how-to-use-ai-he.html">
+  <link rel="alternate" hreflang="en" href="./how-to-use-ai.html">
+  <title>כיצד להשתמש ב-AI | סשה אפרטסין</title>
+  <link rel="stylesheet" href="../../shared/site-shell.css">
+  <link rel="stylesheet" href="../../shared/unified-theme.css">
+  <style>
+    .sdg-heading {
+      margin: 34px 0 2px;
+      color: var(--site-text, #18202a);
+      font: 800 0.9rem/1.3 "Manrope", "Heebo", sans-serif;
+      letter-spacing: 0.04em;
+    }
+    .sdg-heading:first-of-type { margin-top: 12px; }
+    .sdg-heading-lede {
+      margin: 0;
+      color: var(--site-muted);
+      font: 600 0.92rem/1.6 "Manrope", "Heebo", sans-serif;
+    }
+    /* Step cards: number on a right rail, plain sentence, then a good/bad pair. */
+    .sdg-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 12px;
+    }
+    .sdg-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: start;
+      column-gap: 18px;
+      row-gap: 10px;
+      padding: 20px 22px 18px 24px;
+      border: 1px solid var(--site-border);
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+      overflow: hidden;
+      text-align: right;
+    }
+    .sdg-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 0 auto;
+      width: 5px;
+      background: linear-gradient(180deg, rgba(46, 125, 90, 0.9), rgba(24, 101, 168, 0.75));
+    }
+    .sdg-card__num {
+      grid-column: 1;
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      margin-top: 2px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(46, 125, 90, 0.16), rgba(24, 101, 168, 0.16));
+      color: #1f5a40;
+      font: 800 1.15rem/1 "Manrope", "Heebo", sans-serif;
+    }
+    .sdg-card__content {
+      grid-column: 2;
+      display: grid;
+      gap: 10px;
+      max-width: 92ch;
+    }
+    .sdg-card__content h2 {
+      margin: 0;
+      color: var(--site-text, #18202a);
+      font: 800 1.08rem/1.35 "Manrope", "Heebo", sans-serif;
+    }
+    .sdg-plain {
+      margin: 0;
+      color: var(--site-text);
+      font: 600 0.96rem/1.6 "Manrope", "Heebo", "Segoe UI", sans-serif;
+    }
+    /* Good / bad example pair. */
+    .sdg-eg {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      margin-top: 2px;
+    }
+    @media (min-width: 620px) {
+      .sdg-eg { grid-template-columns: 1fr 1fr; }
+    }
+    .sdg-eg__box {
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid;
+      font: 600 0.87rem/1.6 "Manrope", "Heebo", "Segoe UI", sans-serif;
+      color: var(--site-text);
+      text-align: right;
+    }
+    .sdg-eg__box--good { background: rgba(46, 125, 90, 0.06); border-color: rgba(46, 125, 90, 0.24); }
+    .sdg-eg__box--bad  { background: rgba(190, 18, 22, 0.06); border-color: rgba(190, 18, 22, 0.24); }
+    .sdg-eg__tag {
+      display: block;
+      margin-bottom: 3px;
+      font: 800 0.72rem/1.4 "Manrope", "Heebo", sans-serif;
+      letter-spacing: 0.02em;
+    }
+    .sdg-eg__box--good .sdg-eg__tag { color: #1f5a40; }
+    .sdg-eg__box--bad .sdg-eg__tag { color: #be1216; }
+    /* Two-tab language switcher: shows both EN and HE, current one filled. */
+    .guide-lang-switch {
+      display: inline-flex;
+      align-items: stretch;
+      border: 1px solid var(--site-border, rgba(24,32,42,0.18));
+      border-radius: 999px;
+      background: #fff;
+      overflow: hidden;
+      font: 800 0.72rem/1 "Manrope", sans-serif;
+      letter-spacing: 0.04em;
+    }
+    .guide-lang-switch__btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 14px;
+      color: var(--site-muted, #5a626c);
+      text-decoration: none;
+      transition: background 120ms ease, color 120ms ease;
+    }
+    .guide-lang-switch__btn:hover,
+    .guide-lang-switch__btn:focus-visible {
+      background: rgba(0, 0, 0, 0.05);
+      color: var(--site-text, #18202a);
+    }
+    .guide-lang-switch__btn.is-active {
+      background: var(--site-text, #18202a);
+      color: #fff;
+      cursor: default;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="teaching">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar" lang="en" dir="ltr">
+      <a class="apartsin-shell__brand" href="../../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../../index.html">About</a>
+        <a href="../../research/research-focus.html">Research</a>
+        <a href="../../teaching/overview.html">Teaching</a>
+        <a href="../../work/overview.html">Building</a>
+        <a href="../../work/innovation-overview.html">Innovations</a>
+        <a href="../../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="how-to-use-ai-overview">
+          <h1 class="apartsin-sr-only">כיצד להשתמש ב-AI</h1>
+          <div class="apartsin-page-header__top" dir="ltr">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb" lang="en" dir="ltr">
+              <a href="../../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="../overview.html">Teaching</a>
+              <span aria-hidden="true">/</span>
+              <a href="./index.html">Guides for Students</a>
+              <span aria-hidden="true">/</span>
+              <strong>How to Use AI (עברית)</strong>
+            </nav>
+            <div class="guide-lang-switch" role="group" aria-label="שפה">
+              <a class="guide-lang-switch__btn" href="./how-to-use-ai.html" lang="en" hreflang="en">English</a>
+              <a class="guide-lang-switch__btn is-active" href="./how-to-use-ai-he.html" lang="he" hreflang="he" aria-current="true">עברית</a>
+            </div>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../../assets/heroes/teaching-innovation-first.png" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">AI יכול לעשות הרבה יותר מאשר לכתוב את הקוד ואת המצגות שלכם. התועלת שבו כמעט בלתי מוגבלת, ולכן הגבול האמיתי הוא הדמיון שלכם, לא הכלי, והחסם נמצא בדרך כלל בראש שלכם. למטה מופיעות חמש דרכים להשתמש בו היטב, לכל אחת דוגמה טובה להעתיק ודוגמה רעה להימנע ממנה.</p>
+          </div>
+        </section>
+
+        <h2 class="sdg-heading">חמש דרכים להשתמש ב-AI היטב</h2>
+        <p class="sdg-heading-lede">מאיך שאתם חושבים על AI ועד למה שהוא מצפה מכם עכשיו. לכל רעיון דוגמה טובה ודוגמה רעה.</p>
+        <section class="sdg-list" aria-label="חמש דרכים להשתמש ב-AI היטב">
+          <article class="sdg-card" id="use-1">
+            <span class="sdg-card__num">1</span>
+            <div class="sdg-card__content">
+              <h2>המציאו דרכים חדשות להשתמש בו</h2>
+              <p class="sdg-plain">מכיוון שהתועלת שב-AI כמעט בלתי מוגבלת, אתם כמעט אף פעם לא מנצלים אותו במלוא הפוטנציאל שלו, והחסם נמצא בדרך כלל בראש שלכם. חפשו באופן פעיל תפקידים חדשים עבורו: מנטור, מבקר של העבודה שלכם, מקור לרעיונות, דרך למצוא פרויקטים קיימים.</p>
+              <div class="sdg-eg">
+                <div class="sdg-eg__box sdg-eg__box--good"><span class="sdg-eg__tag">✓ עשו כך</span>כשאתם תקועים, אתם שואלים &rdquo;מהן שלוש דרכים אחרות שבהן תוכל לעזור לי כאן?&ldquo; ומנסים את זו שלא חשבתם עליה, למשל לבקש ממנו לגלם מבקר קשוח.</div>
+                <div class="sdg-eg__box sdg-eg__box--bad"><span class="sdg-eg__tag">✕ לא כך</span>אתם פותחים AI רק כדי לייצר קוד או מצגות ומניחים שזה כל מה שהוא טוב בשבילו.</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="use-2">
+            <span class="sdg-card__num">2</span>
+            <div class="sdg-card__content">
+              <h2>ייצור קוד ומצגות הוא חלק זעיר</h2>
+              <p class="sdg-plain">ייצור תוצרים הוא החלק הקטן ביותר ממה ש-AI יכול לעשות. השתמשו בו כדי לחשוב: מצאו פרויקטים דומים וקיימים; שאלו למה X עובד כמו שהוא עובד ובמה הוא שונה מ-Y; בחנו את נקודות החוזק והחולשה של הרעיון שלכם; שאלו מה לשנות כדי להפוך את הפרויקט למצוין; בקשו ממנו לשאול את השאלות שאולי תקבלו במצגת; ותנו לו לבקר את המצגת שלכם.</p>
+              <div class="sdg-eg">
+                <div class="sdg-eg__box sdg-eg__box--good"><span class="sdg-eg__tag">✓ עשו כך</span>אתם מדביקים את הרעיון שלכם ושואלים &rdquo;מהן נקודות החוזק והחולשה, ומה כדאי שאשנה כדי שזה יהיה מצוין?&ldquo; ואז &rdquo;שאל אותי את השאלות שאקבל במהלך המצגת.&ldquo;</div>
+                <div class="sdg-eg__box sdg-eg__box--bad"><span class="sdg-eg__tag">✕ לא כך</span>אתם רק מבקשים מ-AI &rdquo;לכתוב את הקוד&ldquo; ו&rdquo;להכין את המצגת&ldquo;, ואף פעם לא משתמשים בו כדי לחדד את החשיבה שמאחוריהם.</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="use-3">
+            <span class="sdg-card__num">3</span>
+            <div class="sdg-card__content">
+              <h2>קחו בעלות מלאה על התוצאה</h2>
+              <p class="sdg-plain">לא משנה אם המצגת, הקוד, או רעיון הפרויקט הגיעו מכם, מחבר, או מ-AI. אתם אחראים באופן מלא למה שאתם מגישים, ואתם צריכים להיות מסוגלים להסביר כל שורה במצגת, כל החלטת עיצוב, וכל פרט פנימי.</p>
+              <div class="sdg-eg">
+                <div class="sdg-eg__box sdg-eg__box--good"><span class="sdg-eg__tag">✓ עשו כך</span>לפני ההגשה, אתם עוברים על כל שקופית ובלוק קוד ומוודאים שאתם יכולים להצדיק למה הם שם ואיך הם עובדים.</div>
+                <div class="sdg-eg__box sdg-eg__box--bad"><span class="sdg-eg__tag">✕ לא כך</span>אתם מגישים קוד שנוצר על ידי AI שאתם לא יכולים להסביר, וקופאים כשנשאלים למה פונקציה כתובה כפי שהיא כתובה.</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="use-4">
+            <span class="sdg-card__num">4</span>
+            <div class="sdg-card__content">
+              <h2>AI הוא תשתית, כמו חשמל</h2>
+              <p class="sdg-plain">לא מודדים אתכם לפי כמות החשמל שהשתמשתם בה כדי להכין מטלה, ולא מודדים אתכם לפי איזה AI השתמשתם או כמה. השתמשו בכמה שעוזר. מה שמוערך הוא התוצאה וההבנה שלכם אותה.</p>
+              <div class="sdg-eg">
+                <div class="sdg-eg__box sdg-eg__box--good"><span class="sdg-eg__tag">✓ עשו כך</span>אתם משתמשים ב-AI בחופשיות בכל מקום שבו הוא עוזר, ומשקיעים את האנרגיה שלכם באיכות ובעומק של העבודה הסופית.</div>
+                <div class="sdg-eg__box sdg-eg__box--bad"><span class="sdg-eg__tag">✕ לא כך</span>אתם מסתירים שהשתמשתם ב-AI, או מתייחסים ל&rdquo;השתמשתי בהרבה AI&ldquo; כאילו זה הישג בפני עצמו.</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="use-5">
+            <span class="sdg-card__num">5</span>
+            <div class="sdg-card__content">
+              <h2>AI מעלה את הרף, הוא לא מוריד אותו</h2>
+              <p class="sdg-plain">מכיוון ש-AI מאפשר כל כך הרבה, הציפיות גבוהות יותר, לא נמוכות יותר. מצופה מכם לספק פרויקט אמיתי וחדשני שהוא עמוק מבחינה טכנית ומדעית, עם כמה חלקים נעים והחלטות עיצוב אמיתיות. פרויקט של פרומפט יחיד כבר לא מרשים מעסיק ואין לו משקל בקורס.</p>
+              <div class="sdg-eg">
+                <div class="sdg-eg__box sdg-eg__box--good"><span class="sdg-eg__tag">✓ עשו כך</span>אתם משתמשים ב-AI כדי להגיע רחוק יותר, ובונים מערכת משמעותית עם כמה רכיבים והחלטות עיצוב שאתם יכולים להגן עליהן.</div>
+                <div class="sdg-eg__box sdg-eg__box--bad"><span class="sdg-eg__tag">✕ לא כך</span>אתם מגישים משהו שפרומפט יחיד היה יכול לייצר ומצפים שזה ייחשב לפרויקט רציני.</div>
+              </div>
+            </div>
+          </article>
+        </section>
+
+      <section class="section-quick-links">
+        <h2 class="section-quick-links__title">קישורים מהירים</h2>
+        <nav class="section-quick-links__grid" aria-label="קישורים מהירים">
+          <a class="section-quick-link" href="./advice-to-students-2026.html">
+            <span class="section-quick-link__badge" style="background: #c2410c;">A</span>
+            עצות לסטודנטים למדעי המחשב ב-2026
+          </a>
+          <a class="section-quick-link" href="./project-requirements-he.html">
+            <span class="section-quick-link__badge" style="background: #164a83;">R</span>
+            דרישות הפרויקט
+          </a>
+          <a class="section-quick-link" href="./synthetic-data-generation-he.html">
+            <span class="section-quick-link__badge" style="background: #1f5a40;">S</span>
+            ייצור נתונים סינתטיים
+          </a>
+        </nav>
+      </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../../shared/unified-enhance.js"></script>
+  <script defer src="../../shared/site-shell.js"></script>
+</body>
+</html>

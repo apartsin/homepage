@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="he-IL" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <meta name="description" content="כיצד להכין את הגשת ה-GitHub: שם משמעותי, מבנה הגיוני, README מלא, נתונים מתועדים, מודלים, אימון והערכה, שחזוריות, איכות קוד, ורשימת תיוג סופית.">
+  <link rel="alternate" hreflang="he" href="./github-submission-he.html">
+  <link rel="alternate" hreflang="en" href="./github-submission.html">
+  <title>הגשת ה-GitHub | סשה אפרטסין</title>
+  <link rel="stylesheet" href="../../shared/site-shell.css">
+  <link rel="stylesheet" href="../../shared/unified-theme.css">
+  <style>
+    .sdg-heading { margin: 34px 0 2px; color: var(--site-text,#18202a); font: 800 .9rem/1.2 "Manrope","Heebo",sans-serif; letter-spacing:.04em; }
+    .sdg-heading:first-of-type { margin-top: 12px; }
+    .sdg-heading-lede { margin:0; color:var(--site-muted); font:600 .92rem/1.5 "Manrope","Heebo",sans-serif; }
+    .guide-intro { margin-top:14px; padding:16px 18px; border:1px solid var(--site-border); border-radius:14px; background:rgba(20,56,92,.03); text-align:right; }
+    .guide-intro__lead { margin:0 0 6px; font:800 .95rem/1.4 "Manrope","Heebo",sans-serif; color:var(--site-text); }
+    .guide-intro ul { margin:0; padding-right:20px; padding-left:0; display:grid; gap:4px; }
+    .guide-intro li { font:600 .9rem/1.5 "Manrope","Heebo","Segoe UI",sans-serif; color:var(--site-text); }
+    .guide-intro__note { margin:10px 0 0; color:var(--site-muted); font:600 .88rem/1.5 "Manrope","Heebo",sans-serif; }
+    .mile-list { display:grid; grid-template-columns:1fr; gap:14px; margin-top:12px; }
+    .mile-card { position:relative; display:grid; grid-template-columns:auto minmax(0,1fr); align-items:start; column-gap:18px; row-gap:8px; padding:20px 26px 18px 22px; border:1px solid var(--site-border); border-radius:16px; background:#fff; box-shadow:0 10px 22px rgba(15,23,42,.06); overflow:hidden; text-align:right; }
+    .mile-card::before { content:""; position:absolute; inset:0 0 0 auto; width:5px; background:var(--accent,#164a83); }
+    .mile-card__num { grid-column:1; display:grid; place-items:center; width:42px; height:42px; margin-top:2px; border-radius:50%; background:color-mix(in srgb, var(--accent,#164a83) 16%, #fff); color:var(--accent,#164a83); font:800 1.1rem/1 "Manrope","Heebo",sans-serif; }
+    .mile-card__content { grid-column:2; display:grid; gap:12px; max-width:94ch; }
+    .mile-card__content h2 { margin:0; color:var(--site-text,#18202a); font:800 1.12rem/1.28 "Manrope","Heebo",sans-serif; }
+    .mile-sec { display:grid; gap:5px; }
+    .mile-sec__label { font:800 .72rem/1.3 "Manrope","Heebo",sans-serif; letter-spacing:.04em; color:var(--accent,#164a83); }
+    .mile-sec__text { margin:0; color:var(--site-text); font:600 .93rem/1.55 "Manrope","Heebo","Segoe UI",sans-serif; }
+    .mile-sec ul { margin:0; padding-right:20px; padding-left:0; display:grid; gap:3px; }
+    .mile-sec li { font:600 .9rem/1.5 "Manrope","Heebo","Segoe UI",sans-serif; color:var(--site-text); }
+    .mile-sec--avoid { padding:10px 14px 10px 12px; border-radius:10px; background:rgba(190,18,22,.05); border:1px solid rgba(190,18,22,.22); }
+    .mile-sec--avoid .mile-sec__label { color:#be1216; }
+    .mile-note { margin:2px 0 0; padding:8px 12px; border-right:3px solid var(--accent,#164a83); background:rgba(20,56,92,.04); border-radius:8px 0 0 8px; color:var(--site-text); font:600 .88rem/1.55 "Manrope","Heebo","Segoe UI",sans-serif; }
+    .mile-code { margin:0; padding:12px 14px; border-radius:10px; background:#0f172a; color:#e2e8f0; overflow-x:auto; font:600 .82rem/1.5 ui-monospace,"SFMono-Regular",Consolas,monospace; text-align:left; }
+    .mile-tablewrap { overflow-x:auto; }
+    .mile-table { border-collapse:collapse; width:100%; font:600 .86rem/1.4 "Manrope","Heebo","Segoe UI",sans-serif; }
+    .mile-table th, .mile-table td { border:1px solid var(--site-border); padding:6px 10px; text-align:right; }
+    .mile-table thead th { background:rgba(20,56,92,.06); }
+    /* Two-tab language switcher: shows both EN and HE, current one filled. */
+    .guide-lang-switch {
+      display: inline-flex;
+      align-items: stretch;
+      border: 1px solid var(--site-border, rgba(24,32,42,0.18));
+      border-radius: 999px;
+      background: #fff;
+      overflow: hidden;
+      font: 800 0.72rem/1 "Manrope", sans-serif;
+      letter-spacing: 0.04em;
+    }
+    .guide-lang-switch__btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 14px;
+      color: var(--site-muted, #5a626c);
+      text-decoration: none;
+      transition: background 120ms ease, color 120ms ease;
+    }
+    .guide-lang-switch__btn:hover,
+    .guide-lang-switch__btn:focus-visible {
+      background: rgba(0, 0, 0, 0.05);
+      color: var(--site-text, #18202a);
+    }
+    .guide-lang-switch__btn.is-active {
+      background: var(--site-text, #18202a);
+      color: #fff;
+      cursor: default;
+      pointer-events: none;
+    }
+</style>
+</head>
+<body class="apartsin-shell-active" data-site-section="teaching">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar" lang="en" dir="ltr">
+      <a class="apartsin-shell__brand" href="../../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../../index.html">About</a>
+        <a href="../../research/research-focus.html">Research</a>
+        <a href="../../teaching/overview.html">Teaching</a>
+        <a href="../../work/overview.html">Building</a>
+        <a href="../../work/innovation-overview.html">Innovations</a>
+        <a href="../../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="github-submission-overview">
+          <h1 class="apartsin-sr-only">הגשת ה-GitHub</h1>
+          <div class="apartsin-page-header__top" dir="ltr">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb" lang="en" dir="ltr">
+              <a href="../../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="../overview.html">Teaching</a>
+              <span aria-hidden="true">/</span>
+              <a href="./index.html">Guides for Students</a>
+              <span aria-hidden="true">/</span>
+              <strong>GitHub Submission (עברית)</strong>
+            </nav>
+            <div class="guide-lang-switch" role="group" aria-label="שפה">
+              <a class="guide-lang-switch__btn" href="./github-submission.html" lang="en" hreflang="en">English</a>
+              <a class="guide-lang-switch__btn is-active" href="./github-submission-he.html" lang="he" hreflang="he" aria-current="true">עברית</a>
+            </div>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../../assets/heroes/teaching-cs-courses.png" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">המאגר הוא הרשומה הטכנית הקבועה של הפרויקט וחלק מהתוצר המוגש. הוא צריך לאפשר לכל אחד להבין, לבחון, לשחזר, לסקור, ולהמשיך את העבודה.</p>
+          </div>
+        </section>
+
+        <section class="guide-intro">
+          <p class="guide-intro__lead">מאגר טוב מאפשר לסטודנט, חוקר, מרצה, או מפתח אחר:</p>
+          <ul><li>להבין את הפרויקט</li><li>לבחון את הנתונים והקוד</li><li>לשחזר את הניסויים</li><li>לסקור את התוצאות</li><li>להמשיך את העבודה</li></ul>
+          <p class="guide-intro__note">מאגר אינו רק אחסון; הוא נבחן על בהירות, שלמות, ארגון, ושחזוריות.</p>
+        </section>
+
+        <h2 class="sdg-heading">מה המאגר חייב להכיל</h2>
+        <p class="sdg-heading-lede">חמישה עשר חלקים, משם ומבנה ועד שחזוריות ורשימת התיוג הסופית.</p>
+        <section class="mile-list" style="--accent:#7a3fa0" aria-label="כרטיסי הגשת GitHub">
+          <article class="mile-card" id="gh-name"><span class="mile-card__num">1</span><div class="mile-card__content"><h2>שם המאגר וסקירה</h2><div class="mile-sec"><span class="mile-sec__label">דרישות</span><p class="mile-sec__text">תנו למאגר שם משמעותי שמשקף את הפרויקט.</p></div><div class="mile-sec"><span class="mile-sec__label">שמות טובים</span><ul><li>clinical-followup-extraction</li><li>synthetic-email-ranking</li><li>warehouse-anomaly-detection</li></ul></div><div class="mile-sec mile-sec--avoid"><span class="mile-sec__label">שמות חלשים</span><ul><li>final-project</li><li>project-code</li><li>team7</li><li>new-version-final</li></ul></div><div class="mile-sec"><span class="mile-sec__label">סקירה</span><p class="mile-sec__text">הוסיפו תיאור קצר שמכסה את הבעיה, הגישה המרכזית, והפלט המרכזי.</p></div></div></article><article class="mile-card" id="gh-structure"><span class="mile-card__num">2</span><div class="mile-card__content"><h2>מבנה המאגר הנדרש</h2><div class="mile-sec"><span class="mile-sec__label">מבנה מומלץ</span><pre class="mile-code" dir="ltr"><code>project-name/
+|
+|-- README.md
+|-- requirements.txt
+|-- environment.yml
+|-- LICENSE
+|
+|-- slides/
+|   |-- proposal.pptx / proposal.pdf
+|   |-- midterm.pptx  / midterm.pdf
+|   |-- final.pptx    / final.pdf
+|
+|-- src/
+|   |-- data/  models/  training/  evaluation/  utils/
+|
+|-- notebooks/
+|   |-- 01_data_exploration.ipynb
+|   |-- 02_baseline.ipynb
+|   |-- 03_experiments.ipynb
+|
+|-- data/
+|   |-- raw/  processed/  samples/
+|
+|-- configs/
+|-- results/
+|   |-- metrics/  predictions/  experiment_logs/
+|
+|-- visuals/
+|   |-- visual_abstract.png  pipeline.png  result_figures/
+|
+|-- tests/</code></pre><p class="mile-note">המבנה המדויק יכול להשתנות, אבל הוא חייב להיות הגיוני וקל לניווט.</p></div><div class="mile-sec mile-sec--avoid"><span class="mile-sec__label">הימנעו מ</span><ul><li>הנחת כל הקבצים בשורש המאגר</li><li>תיקיות בשם new, old, temp, או final-final</li><li>מחברות (notebooks) כפולות עם הבדלים לא ברורים</li><li>העלאת קבצים גדולים ומיותרים</li><li>ערבוב של קוד, נתונים, תוצאות, ומצגות</li></ul></div></div></article><article class="mile-card" id="gh-motivation"><span class="mile-card__num">3</span><div class="mile-card__content"><h2>README: מוטיבציית הפרויקט</h2><div class="mile-sec"><span class="mile-sec__label">מה לכלול</span><p class="mile-sec__text">הסבירו את הבעיה בעולם האמיתי, מדוע היא חשובה, מי נהנה ממנה, ומדוע הפתרונות הקיימים אינם מספקים. שמרו על תמציתיות אך היו ספציפיים.</p></div></div></article><article class="mile-card" id="gh-problem"><span class="mile-card__num">4</span><div class="mile-card__content"><h2>README: הגדרת הבעיה</h2><div class="mile-sec"><span class="mile-sec__label">מה לכלול</span><p class="mile-sec__text">הגדירו את הקלט, הפלט, המשימה הטכנית, מקרה השימוש היעד, והאילוצים החשובים. הוסיפו דוגמאות מייצגות של קלט ופלט.</p></div></div></article><article class="mile-card" id="gh-visual"><span class="mile-card__num">5</span><div class="mile-card__content"><h2>README: תקציר חזותי</h2><div class="mile-sec"><span class="mile-sec__label">מה לכלול</span><p class="mile-sec__text">הוסיפו איור אחד ברור שמסכם את הפרויקט: הקלט, שלבי העיבוד המרכזיים, המודל או המערכת, הפלט, והשימוש המעשי. הוא צריך להיות מובן בלי לקרוא את כל המאגר.</p></div></div></article><article class="mile-card" id="gh-datasets"><span class="mile-card__num">6</span><div class="mile-card__content"><h2>README: מאגרי נתונים</h2><div class="mile-sec"><span class="mile-sec__label">מה לכלול</span><p class="mile-sec__text">עבור כל מאגר נתונים, תעדו:</p><ul><li>שם</li><li>מקור</li><li>רישיון</li><li>מספר הדגימות</li><li>שדות או תוויות</li><li>עיבוד מקדים</li><li>חלוקות אימון, ולידציה, ומבחן</li><li>הוראות גישה</li><li>מגבלות ידועות</li></ul><p class="mile-note">עבור נתונים שנוצרו או תויגו, תארו גם את תהליך הייצור או האיסוף, הוראות התיוג, בדיקות האיכות, ותהליך האימות.</p></div><div class="mile-sec"><span class="mile-sec__label">דרישות</span><p class="mile-sec__text">אל תעלו נתונים רגישים, מוגבלים, או מוגני זכויות יוצרים ללא רשות. כאשר לא ניתן לכלול את מאגר הנתונים המלא, ספקו קובצי דוגמה, הוראות הורדה, סקריפטים להכנה, ואת מבנה התיקיות הצפוי.</p></div></div></article><article class="mile-card" id="gh-pipeline"><span class="mile-card__num">7</span><div class="mile-card__content"><h2>README: מודלים וצינור עיבוד</h2><div class="mile-sec"><span class="mile-sec__label">מה לכלול</span><p class="mile-sec__text">תארו את הזרימה המלאה: המודלים שבהם השתמשתם, התפקיד של כל אחד, עיבוד מקדים, אימון, היסק, ועיבוד לאחר מכן. כללו תרשים של צינור העיבוד, ולכל מודל מרכזי הסבירו מדוע הוא נבחר וכיצד הוגדר.</p></div></div></article><article class="mile-card" id="gh-augmentation"><span class="mile-card__num">8</span><div class="mile-card__content"><h2>README: הרחבת נתונים וייצורם</h2><div class="mile-sec"><span class="mile-sec__label">מה לכלול</span><p class="mile-sec__text">תעדו:</p><ul><li>מדוע נדרשה הרחבה או ייצור סינתטי</li><li>שיטת הייצור</li><li>פרומפטים או תבניות</li><li>מאפיינים מבוקרים</li><li>אסטרטגיית דגימה</li><li>סינון</li><li>בדיקות איכות</li><li>מספר הדגימות שנוצרו</li></ul><p class="mile-note">שמרו במאגר את הפרומפטים, ההגדרות, וסקריפטי הייצור החשובים.</p></div><div class="mile-sec mile-sec--avoid"><span class="mile-sec__label">הימנעו מ</span><ul><li>ייצור נתונים ידני בלי לתעד אותו</li><li>שמירת קובצי הייצור הסופיים בלבד</li><li>השמטת הקריטריונים לדגימות שנכשלו או סוננו</li><li>שימוש בנתוני מבחן סינתטיים כראיה היחידה לאיכות</li></ul></div></div></article><article class="mile-card" id="gh-training"><span class="mile-card__num">9</span><div class="mile-card__content"><h2>README: תהליך האימון</h2><div class="mile-sec"><span class="mile-sec__label">מה לכלול</span><p class="mile-sec__text">תעדו:</p><ul><li>גרסת המודל</li><li>אתחול</li><li>היפר-פרמטרים</li><li>גודל אצווה</li><li>מספר האפוקות</li><li>אופטימייזר</li><li>קצב למידה</li><li>פונקציית ההפסד</li><li>חומרה</li><li>זרע אקראי</li><li>קריטריון עצירה</li><li>בחירת נקודת ביקורת</li></ul></div><div class="mile-sec"><span class="mile-sec__label">שחזור האימון</span><p class="mile-sec__text">ספקו פקודות מדויקות, לדוגמה:</p><pre class="mile-code" dir="ltr"><code>python -m src.training.train \
+  --config configs/baseline.yaml</code></pre></div></div></article><article class="mile-card" id="gh-evaluation"><span class="mile-card__num">10</span><div class="mile-card__content"><h2>README: הערכה ומדדים</h2><div class="mile-sec"><span class="mile-sec__label">מה לכלול</span><p class="mile-sec__text">הסבירו את בניית מערך המבחן, מדדי ההערכה, שיטות הבסיס, מודלי ההשוואה, סקריפטי ההערכה, תהליך ההערכה האיכותנית, והערכה אנושית כאשר נעשה בה שימוש.</p></div><div class="mile-sec"><span class="mile-sec__label">שחזור ההערכה</span><p class="mile-sec__text">ספקו פקודות מדויקות, לדוגמה:</p><pre class="mile-code" dir="ltr"><code>python -m src.evaluation.evaluate \
+  --config configs/final_model.yaml</code></pre></div></div></article><article class="mile-card" id="gh-results"><span class="mile-card__num">11</span><div class="mile-card__content"><h2>README: תוצאות</h2><div class="mile-sec"><span class="mile-sec__label">מה לכלול</span><p class="mile-sec__text">הציגו את התוצאות המרכזיות בטבלאות קריאות.</p><div class="mile-tablewrap"><table class="mile-table"><thead><tr><th>מודל</th><th>דיוק</th><th>Macro-F1</th><th>זמן תגובה</th></tr></thead><tbody><tr><td>בסיס</td><td>0.78</td><td>0.65</td><td>20 ms</td></tr><tr><td>Model A</td><td>0.84</td><td>0.76</td><td>35 ms</td></tr><tr><td>מודל סופי</td><td>0.88</td><td>0.81</td><td>42 ms</td></tr></tbody></table></div><p class="mile-note">קשרו לתוצאות מפורטות בפורמט CSV או JSON, קובצי חיזוי, יומני ניסויים, ואיורים. המספרים ב-README, במצגות, ובקובצי התוצאות חייבים להיות זהים.</p></div></div></article><article class="mile-card" id="gh-repro"><span class="mile-card__num">12</span><div class="mile-card__content"><h2>שחזוריות</h2><div class="mile-sec"><span class="mile-sec__label">דרישות</span><p class="mile-sec__text">המאגר חייב לאפשר לאדם אחר להריץ את הפרויקט. כללו:</p><ul><li>הוראות התקנה</li><li>קובץ תלויות</li><li>גרסת Python</li><li>משתני סביבה</li><li>הוראות להכנת נתונים</li><li>פקודות אימון</li><li>פקודות הערכה</li><li>דוגמת היסק</li><li>פלטים צפויים</li></ul><p class="mile-note">השתמשו בנתיבים יחסיים ובקובצי הגדרות; אל תסתמכו על תיקיות מקומיות לא מתועדות.</p></div><div class="mile-sec mile-sec--avoid"><span class="mile-sec__label">סודות</span><p class="mile-sec__text">לעולם אל תעלו:</p><ul><li>מפתחות API</li><li>סיסמאות</li><li>אסימוני גישה</li><li>כתובות URL פרטיות</li><li>מידע אישי</li></ul><p class="mile-note">השתמשו במשתני סביבה וספקו קובץ .env.example.</p></div></div></article><article class="mile-card" id="gh-quality"><span class="mile-card__num">13</span><div class="mile-card__content"><h2>איכות הקוד</h2><div class="mile-sec"><span class="mile-sec__label">דרישות</span><p class="mile-sec__text">הקוד צריך להיות מאורגן במודולים משמעותיים, קריא, מתועד היכן שנדרש, נקי מקבצים שאינם בשימוש ומנתיבים מקומיים קשיחים, עקבי בשמות, וניתן להרצה מסביבה נקייה.</p><p class="mile-note">מחברות (notebooks) צריכות לרוץ מלמעלה למטה, לכלול כותרות ברורות, להפריד בין חקירה לניסויים הסופיים, להימנע מפלט מוגזם, ולהסביר החלטות חשובות.</p></div><div class="mile-sec mile-sec--avoid"><span class="mile-sec__label">הימנעו מ</span><ul><li>מחברת ענקית אחת שמכילה את כל הפרויקט</li><li>קוד מועתק שהצוות אינו יכול להסביר</li><li>קוד שרץ רק על המחשב של סטודנט אחד</li><li>מספרי תוצאות שנערכו ידנית</li><li>תלויות לא מתועדות</li></ul></div></div></article><article class="mile-card" id="gh-team"><span class="mile-card__num">14</span><div class="mile-card__content"><h2>חברי הצוות ותרומות</h2><div class="mile-sec"><span class="mile-sec__label">מה לכלול</span><p class="mile-sec__text">פרטו כל חבר צוות ואת תחומי האחריות שלו, עם תרומות קונקרטיות כמו איסוף מאגר נתונים, תיוג, מימוש מודל, ניסויים, הערכה, פיתוח ממשק, ותיעוד.</p><p class="mile-note">מכל חבר צוות מצופה להבין את כל הפרויקט, לא רק את הקבצים שלו.</p></div></div></article><article class="mile-card" id="gh-checklist"><span class="mile-card__num">15</span><div class="mile-card__content"><h2>רשימת תיוג להגשה סופית</h2><div class="mile-sec"><span class="mile-sec__label">לפני ההגשה, ודאו ש</span><ul><li>למאגר יש שם משמעותי</li><li>ה-README מסביר את כל הפרויקט</li><li>מצגות ההצעה, האמצע, והסיום כלולות בפורמט PPT ו-PDF</li><li>הקוד מאורגן</li><li>המחברות רצות כראוי</li><li>התלויות מתועדות</li><li>נתוני דוגמה או הוראות הורדה כלולים</li><li>פקודות אימון והערכה מסופקות</li><li>קובצי התוצאות כלולים</li><li>האיורים קריאים</li><li>התוצאות המדווחות עקביות</li><li>לא הועלו מפתחות API או מידע פרטי</li><li>כל הקישורים במאגר עובדים</li><li>אדם אחר יכול לשחזר את התוצאה המרכזית</li></ul><p class="mile-note">הגשה חזקה מציגה גם את איכות הפרויקט וגם את המקצועיות של הצוות.</p></div></div></article>
+        </section>
+
+      <section class="section-quick-links">
+        <h2 class="section-quick-links__title">מדריכי אבני דרך נוספים</h2>
+        <nav class="section-quick-links__grid" aria-label="מדריכי אבני דרך נוספים">
+          <a class="section-quick-link" href="./project-proposal-presentation-he.html"><span class="section-quick-link__badge" style="background:#c2410c;">P</span>הצעת הפרויקט</a><a class="section-quick-link" href="./midterm-presentation-he.html"><span class="section-quick-link__badge" style="background:#164a83;">M</span>מצגת אמצע</a><a class="section-quick-link" href="./final-presentation-he.html"><span class="section-quick-link__badge" style="background:#2e7d5a;">F</span>מצגת סיום</a>
+        </nav>
+      </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../../shared/unified-enhance.js"></script>
+  <script defer src="../../shared/site-shell.js"></script>
+</body>
+</html>

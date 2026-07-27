@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="he-IL" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <meta name="description" content="כיצד לבנות את מצגת הצעת הפרויקט: מקרה שימוש מניע, הגדרת הבעיה, חדשנות, מודלים, נתונים, ותוכנית הערכה, לכל אחד דרישות ודפוסים שכדאי להימנע מהם.">
+  <link rel="alternate" hreflang="he" href="./project-proposal-presentation-he.html">
+  <link rel="alternate" hreflang="en" href="./project-proposal-presentation.html">
+  <title>מצגת הצעת הפרויקט | סשה אפרטסין</title>
+  <link rel="stylesheet" href="../../shared/site-shell.css">
+  <link rel="stylesheet" href="../../shared/unified-theme.css">
+  <style>
+    .sdg-heading { margin: 34px 0 2px; color: var(--site-text,#18202a); font: 800 .9rem/1.3 "Manrope","Heebo",sans-serif; letter-spacing:.04em; }
+    .sdg-heading:first-of-type { margin-top: 12px; }
+    .sdg-heading-lede { margin:0; color:var(--site-muted); font:600 .92rem/1.6 "Manrope","Heebo",sans-serif; }
+    .guide-intro { margin-top:14px; padding:16px 18px; border:1px solid var(--site-border); border-radius:14px; background:rgba(20,56,92,.03); text-align:right; }
+    .guide-intro__lead { margin:0 0 6px; font:800 .95rem/1.5 "Manrope","Heebo",sans-serif; color:var(--site-text); }
+    .guide-intro ul { margin:0; padding-right:20px; padding-left:0; display:grid; gap:4px; }
+    .guide-intro li { font:600 .9rem/1.6 "Manrope","Heebo","Segoe UI",sans-serif; color:var(--site-text); }
+    .guide-intro__note { margin:10px 0 0; color:var(--site-muted); font:600 .88rem/1.6 "Manrope","Heebo",sans-serif; }
+    .mile-list { display:grid; grid-template-columns:1fr; gap:14px; margin-top:12px; }
+    .mile-card { position:relative; display:grid; grid-template-columns:auto minmax(0,1fr); align-items:start; column-gap:18px; row-gap:8px; padding:20px 26px 18px 22px; border:1px solid var(--site-border); border-radius:16px; background:#fff; box-shadow:0 10px 22px rgba(15,23,42,.06); overflow:hidden; text-align:right; }
+    .mile-card::before { content:""; position:absolute; inset:0 0 0 auto; width:5px; background:var(--accent,#164a83); }
+    .mile-card__num { grid-column:1; display:grid; place-items:center; width:42px; height:42px; margin-top:2px; border-radius:50%; background:color-mix(in srgb, var(--accent,#164a83) 16%, #fff); color:var(--accent,#164a83); font:800 1.1rem/1 "Manrope","Heebo",sans-serif; }
+    .mile-card__content { grid-column:2; display:grid; gap:12px; max-width:94ch; }
+    .mile-card__content h2 { margin:0; color:var(--site-text,#18202a); font:800 1.12rem/1.35 "Manrope","Heebo",sans-serif; }
+    .mile-sec { display:grid; gap:5px; }
+    .mile-sec__label { font:800 .72rem/1.4 "Manrope","Heebo",sans-serif; letter-spacing:.04em; color:var(--accent,#164a83); }
+    .mile-sec__text { margin:0; color:var(--site-text); font:600 .93rem/1.6 "Manrope","Heebo","Segoe UI",sans-serif; }
+    .mile-sec ul { margin:0; padding-right:20px; padding-left:0; display:grid; gap:3px; }
+    .mile-sec li { font:600 .9rem/1.6 "Manrope","Heebo","Segoe UI",sans-serif; color:var(--site-text); }
+    .mile-sec--avoid { padding:10px 14px 10px 12px; border-radius:10px; background:rgba(190,18,22,.05); border:1px solid rgba(190,18,22,.22); }
+    .mile-sec--avoid .mile-sec__label { color:#be1216; }
+    .mile-note { margin:2px 0 0; padding:8px 12px; border-right:3px solid var(--accent,#164a83); background:rgba(20,56,92,.04); border-radius:8px 0 0 8px; color:var(--site-text); font:600 .88rem/1.6 "Manrope","Heebo","Segoe UI",sans-serif; }
+    .mile-code { margin:0; padding:12px 14px; border-radius:10px; background:#0f172a; color:#e2e8f0; overflow-x:auto; font:600 .82rem/1.5 ui-monospace,"SFMono-Regular",Consolas,monospace; }
+    .mile-tablewrap { overflow-x:auto; }
+    .mile-table { border-collapse:collapse; width:100%; font:600 .86rem/1.4 "Manrope","Heebo","Segoe UI",sans-serif; }
+    .mile-table th, .mile-table td { border:1px solid var(--site-border); padding:6px 10px; text-align:right; }
+    .mile-table thead th { background:rgba(20,56,92,.06); }
+    /* Two-tab language switcher: shows both EN and HE, current one filled. */
+    .guide-lang-switch {
+      display: inline-flex;
+      align-items: stretch;
+      border: 1px solid var(--site-border, rgba(24,32,42,0.18));
+      border-radius: 999px;
+      background: #fff;
+      overflow: hidden;
+      font: 800 0.72rem/1 "Manrope", sans-serif;
+      letter-spacing: 0.04em;
+    }
+    .guide-lang-switch__btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 14px;
+      color: var(--site-muted, #5a626c);
+      text-decoration: none;
+      transition: background 120ms ease, color 120ms ease;
+    }
+    .guide-lang-switch__btn:hover,
+    .guide-lang-switch__btn:focus-visible {
+      background: rgba(0, 0, 0, 0.05);
+      color: var(--site-text, #18202a);
+    }
+    .guide-lang-switch__btn.is-active {
+      background: var(--site-text, #18202a);
+      color: #fff;
+      cursor: default;
+      pointer-events: none;
+    }
+</style>
+</head>
+<body class="apartsin-shell-active" data-site-section="teaching">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar" lang="en" dir="ltr">
+      <a class="apartsin-shell__brand" href="../../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../../index.html">About</a>
+        <a href="../../research/research-focus.html">Research</a>
+        <a href="../../teaching/overview.html">Teaching</a>
+        <a href="../../work/overview.html">Building</a>
+        <a href="../../work/innovation-overview.html">Innovations</a>
+        <a href="../../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="project-proposal-presentation-overview">
+          <h1 class="apartsin-sr-only">מצגת הצעת הפרויקט</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../../index.html">בית</a>
+              <span aria-hidden="true">/</span>
+              <a href="../overview.html">הוראה</a>
+              <span aria-hidden="true">/</span>
+              <a href="./index.html">מדריכים לסטודנטים</a>
+              <span aria-hidden="true">/</span>
+              <strong>מצגת הצעת הפרויקט</strong>
+            </nav>
+            <div class="guide-lang-switch" role="group" aria-label="שפה">
+              <a class="guide-lang-switch__btn" href="./project-proposal-presentation.html" lang="en" hreflang="en">English</a>
+              <a class="guide-lang-switch__btn is-active" href="./project-proposal-presentation-he.html" lang="he" hreflang="he" aria-current="true">עברית</a>
+            </div>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../../assets/heroes/teaching-hos-student-projects.png" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">ההצעה קובעת את כיוון הפרויקט לפני שמתחיל מימוש רציני. היא מראה שהצוות מבין בעיה אמיתית ובעלת ערך, הגדיר משימה ברורה וישימה, ויש לו תוכנית מציאותית, לא תוצאות סופיות.</p>
+          </div>
+        </section>
+
+        <section class="guide-intro">
+          <p class="guide-intro__lead">הצעה חזקה מדגימה שהצוות:</p>
+          <ul><li>מבין בעיה אמיתית ובעלת ערך</li><li>הגדיר משימת פרויקט ברורה וישימה</li><li>חקר פתרונות אפשריים</li><li>זיהה נתונים, מודלים ושיטות הערכה מתאימים</li><li>יש לו תוכנית מציאותית להשלמת הפרויקט</li></ul>
+          <p class="guide-intro__note">לא מצופה שההצעה תכיל תוצאות סופיות, אך עליה להראות שהפרויקט נחקר בקפידה ושהוא בעל משמעות טכנית.</p>
+        </section>
+
+        <h2 class="sdg-heading">מה ההצעה חייבת לכסות</h2>
+        <p class="sdg-heading-lede">שישה חלקים, לכל אחד מה להציג, הדרישות, וממה להימנע.</p>
+        <section class="mile-list" style="--accent:#c2410c" aria-label="כרטיסי מצגת הצעת הפרויקט">
+          <article class="mile-card" id="prop-use-case"><span class="mile-card__num">1</span><div class="mile-card__content"><h2>מקרה השימוש המניע</h2><div class="mile-sec"><span class="mile-sec__label">מה להציג</span><p class="mile-sec__text">תארו את ההקשר האמיתי שבו הבעיה מתרחשת, וענו על:</p><ul><li>מי חווה את הבעיה?</li><li>איזה תהליך, מערכת, או החלטה מושפעים?</li><li>מדוע זה חשוב?</li><li>מהו הערך המעשי של פתרונה?</li><li>מדוע הבעיה קשה?</li><li>כיצד מטפלים בה כיום?</li><li>מהם הגבולות של הפתרונות הקיימים?</li></ul></div><div class="mile-sec"><span class="mile-sec__label">דרישות</span><p class="mile-sec__text">שמרו על מקרה שימוש ספציפי ומבוסס ראיות. אל תסתמכו על טענות מובנות מאליהן כמו &rdquo;זה חוסך זמן&ldquo;. במקום זאת אמרו:</p><ul><li>של מי הזמן נחסך</li><li>איזו פעילות משתפרת</li><li>אילו שגיאות או עלויות מצטמצמות</li><li>מדוע הכלים הקיימים אינם מספקים</li></ul></div><div class="mile-sec"><span class="mile-sec__label">ראיות נדרשות</span><p class="mile-sec__text">כללו לפחות אחד מ:</p><ul><li>דוגמאות ממערכות אמיתיות</li><li>תרחישי משתמש</li><li>מקורות מדעיים או מקצועיים</li><li>מוצרים או שירותים קיימים</li><li>דוגמאות מייצגות של קלט ופלט</li><li>סטטיסטיקות המראות את היקף הבעיה</li></ul></div><div class="mile-sec mile-sec--avoid"><span class="mile-sec__label">הימנעו מ</span><ul><li>בעיות צעצוע ללא יישום משמעותי</li><li>אמירות כלליות על AI ללא צורך ספציפי</li><li>תיאור טכנולוגיה לפני הסבר הבעיה</li><li>טענה שאין פתרון קיים בלי לחקור פתרונות קיימים</li></ul></div></div></article><article class="mile-card" id="prop-task"><span class="mile-card__num">2</span><div class="mile-card__content"><h2>משימת הפרויקט והגדרת הבעיה</h2><div class="mile-sec"><span class="mile-sec__label">מה להציג</span><p class="mile-sec__text">הגדירו בדיוק מה הפרויקט יעשה. הגדרת בעיה טובה מתארת:</p><ul><li>את הקלט</li><li>את הפלט הצפוי</li><li>את משימת העיבוד</li><li>את המשתמשים או המערכת שאליהם מכוונים</li><li>את התנאים שבהם המערכת פועלת</li></ul></div><div class="mile-sec"><span class="mile-sec__label">מבנה לדוגמה</span><p class="mile-note">בהינתן [קלט], פתחו מערכת שמייצרת [פלט] כדי לתמוך ב-[מקרה שימוש], תוך עמידה ב-[אילוצים חשובים].</p></div><div class="mile-sec"><span class="mile-sec__label">דרישות</span><p class="mile-sec__text">המשימה חייבת להיות ברורה, בעלת משמעות טכנית, ישימה במסגרת לוח הזמנים, מדידה, וקשורה ישירות למקרה השימוש המניע.</p></div><div class="mile-sec"><span class="mile-sec__label">פרקו לרכיבים</span><p class="mile-sec__text">כשהמערכת מורכבת, פרקו אותה לצעדים טכניים, לדוגמה:</p><ul><li>אספו או הכינו את הנתונים</li><li>זהו מידע רלוונטי</li><li>הפעילו מודל</li><li>דרגו או סווגו את התוצאות</li><li>הציגו את הפלט למשתמש</li></ul></div><div class="mile-sec mile-sec--avoid"><span class="mile-sec__label">הימנעו מ</span><ul><li>הגדרת המשימה כ&rdquo;בניית מערכת AI&ldquo;</li><li>בלבול בין תכונת תוכנה לבעיית מחקר</li><li>תיאור פרטי מימוש בלי להגדיר את המטרה</li><li>מטרות מעורפלות כמו &rdquo;לשפר ביצועים&ldquo; בלי לומר מה משמעות הביצועים</li></ul></div></div></article><article class="mile-card" id="prop-novelty"><span class="mile-card__num">3</span><div class="mile-card__content"><h2>חדשנות ותרומה</h2><div class="mile-sec"><span class="mile-sec__label">מה להציג</span><p class="mile-sec__text">הסבירו מה חדש או בעל ערך. חדשנות יכולה לנבוע מ:</p><ul><li>יישום חדש</li><li>התאמת שיטה קיימת לתחום חדש</li><li>שילוב של כמה שיטות</li><li>יצירה או תיוג של מאגר נתונים חדש</li><li>פרוטוקול הערכה חדש</li><li>השוואת שיטות שלא הושוו קודם</li><li>שיפור איכות, יעילות, יכולת הסבר, או שמישות</li><li>שילוב מודלים קיימים למערכת שלמה (end-to-end) שימושית</li></ul></div><div class="mile-sec"><span class="mile-sec__label">דרישות</span><p class="mile-sec__text">בססו את החדשנות על חקר עבודות קודמות. זהו:</p><ul><li>מה כבר קיים</li><li>מה ניתן לעשות בו שימוש חוזר</li><li>איזו מגבלה נותרת</li><li>מה הפרויקט מוסיף</li></ul><p class="mile-note">חדשנות אינה מחייבת ארכיטקטורה נוירונית חדשה לגמרי; תרומה הנדסית או ניסויית חזקה נחשבת גם היא.</p></div><div class="mile-sec mile-sec--avoid"><span class="mile-sec__label">הימנעו מ</span><ul><li>טענה לחדשנות לפני סקירת עבודות קודמות</li><li>הצגת שימוש במודל פופולרי כתרומה</li><li>כינוי אינטגרציית API כתרומה מחקרית</li><li>בנייה מחדש של פתרון קיים ללא שיפור או הערכה ברורים</li></ul></div></div></article><article class="mile-card" id="prop-models"><span class="mile-card__num">4</span><div class="mile-card__content"><h2>מודלים ושיטות</h2><div class="mile-sec"><span class="mile-sec__label">מה להציג</span><p class="mile-sec__text">תארו את הפתרון הטכני המתוכנן. לכל צעד מרכזי, הסבירו:</p><ul><li>באיזה מודל, אלגוריתם, API, ספרייה, או טכניקה ייעשה שימוש</li><li>מדוע הוא מתאים</li><li>אילו חלופות נשקלו</li><li>אילו שינויים או כוונון עדין (fine-tuning) עשויים להידרש</li></ul></div><div class="mile-sec"><span class="mile-sec__label">דרישות</span><p class="mile-sec__text">התקדמו מעבר לקריאת מודל בודדת ולא מוסברת. שקלו:</p><ul><li>מודלים מאומנים מראש</li><li>קווי בסיס מסורתיים</li><li>מודלים חדישים (state-of-the-art)</li><li>כוונון עדין (fine-tuning)</li><li>הנדסת פרומפטים</li><li>אחזור (retrieval)</li><li>הגדלת נתונים (augmentation)</li><li>עיבוד מבוסס-חוקים</li><li>עיבוד לאחר מעשה (post-processing)</li><li>דירוג</li><li>כיול</li><li>תיקון שגיאות</li></ul><p class="mile-note">הציגו את הצינור (pipeline) השלם, לא רק את המודל המרכזי.</p></div><div class="mile-sec mile-sec--avoid"><span class="mile-sec__label">הימנעו מ</span><ul><li>בחירת מודל רק כי הוא מוכר</li><li>אמירה &rdquo;נשתמש ב-ChatGPT&ldquo; בלי להגדיר את המשימה וההערכה</li><li>שימוש במונחים טכניים בלי להסביר את תפקידם</li><li>מנייה של טכנולוגיות במקום פתרון קוהרנטי</li></ul></div></div></article><article class="mile-card" id="prop-data"><span class="mile-card__num">5</span><div class="mile-card__content"><h2>מפרט הנתונים</h2><div class="mile-sec"><span class="mile-sec__label">מה להציג</span><p class="mile-sec__text">תארו את הנתונים הדרושים לפיתוח ולהערכה:</p><ul><li>איזה מאגר נתונים</li><li>מהיכן הוא מגיע</li><li>כמה דגימות</li><li>מה כל דגימה מכילה</li><li>אילו תוויות או הערות קיימות</li><li>כיצד הוא מתחלק לאימון, ולידציה, ומבחן</li><li>האם יש לאסוף או לייצר נתונים נוספים</li></ul></div><div class="mile-sec"><span class="mile-sec__label">נתונים סינתטיים</span><p class="mile-sec__text">כשמשתמשים בנתונים סינתטיים, הסבירו:</p><ul><li>מדוע נתונים אמיתיים אינם מספיקים</li><li>אילו מאפיינים נשלטים</li><li>כיצד נוצר גיוון</li><li>כיצד נבדקים ריאליזם ונכונות</li><li>כיצד נשמרים נתונים סינתטיים בנפרד מנתוני המבחן</li></ul></div><div class="mile-sec"><span class="mile-sec__label">דרישות</span><p class="mile-sec__text">תנו דוגמאות מייצגות של קלטים, תוויות, ופלטים צפויים, ונקבו בסיכונים:</p><ul><li>נתונים לא מספיקים</li><li>חוסר איזון בין מחלקות</li><li>רעש בתוויות</li><li>מגבלות פרטיות</li><li>דגימות כפולות</li><li>דליפת נתונים</li><li>נתונים מוטים או לא מייצגים</li></ul></div><div class="mile-sec mile-sec--avoid"><span class="mile-sec__label">הימנעו מ</span><ul><li>התחלת פיתוח המודל לפני בחינת הנתונים</li><li>ייצור כמויות גדולות של נתונים סינתטיים ללא ולידציה</li><li>הערכה על נתונים סינתטיים בלבד</li><li>התייחסות לתוויות שנוצרו אוטומטית כאל אמת מוחלטת שאין לערער עליה</li></ul></div></div></article><article class="mile-card" id="prop-metrics"><span class="mile-card__num">6</span><div class="mile-card__content"><h2>מדדים ותוכנית הערכה</h2><div class="mile-sec"><span class="mile-sec__label">מה להציג</span><p class="mile-sec__text">הגדירו כיצד נמדדת הצלחה:</p><ul><li>אילו מדדים</li><li>מדוע כל אחד מתאים</li><li>איזו אמת-יסוד (ground truth) נדרשת</li><li>כיצד נבנית קבוצת המבחן</li><li>אילו מערכות או מודלים מושווים</li><li>איזו תוצאה נחשבת הצלחה</li></ul></div><div class="mile-sec"><span class="mile-sec__label">דרישות</span><p class="mile-sec__text">כללו:</p><ul><li>לפחות קו בסיס אחד</li><li>הערכה כמותית</li><li>דוגמאות איכותניות היכן שמועיל</li><li>הערכה של רכיבי הצינור המרכזיים</li><li>הערכה מקצה לקצה (end-to-end) של המערכת כולה</li></ul><p class="mile-note">מדדים אפשריים: דיוק (accuracy); precision, recall, ו-F1; ROC-AUC או PR-AUC; שגיאה מוחלטת ממוצעת; מדדי דירוג; מדדי איכות ייצור; זמן תגובה (latency); עלות; חוסן; הערכה אנושית.</p></div><div class="mile-sec mile-sec--avoid"><span class="mile-sec__label">הימנעו מ</span><ul><li>בחירת מדדים רק לאחר ראיית התוצאות</li><li>דיווח על דיוק בלבד על נתונים מאוד לא מאוזנים</li><li>הערכה על נתוני האימון</li><li>הצגת דוגמאות מוצלחות בלבד</li><li>טענות סובייקטיביות כמו &rdquo;התוצאות נראות טוב&ldquo;</li></ul></div></div></article>
+        </section>
+
+      <section class="section-quick-links">
+        <h2 class="section-quick-links__title">מדריכי אבני דרך נוספים</h2>
+        <nav class="section-quick-links__grid" aria-label="מדריכי אבני דרך נוספים">
+          <a class="section-quick-link" href="./midterm-presentation-he.html"><span class="section-quick-link__badge" style="background:#164a83;">M</span>מצגת אמצע</a><a class="section-quick-link" href="./final-presentation-he.html"><span class="section-quick-link__badge" style="background:#2e7d5a;">F</span>מצגת סיום</a><a class="section-quick-link" href="./github-submission-he.html"><span class="section-quick-link__badge" style="background:#7a3fa0;">G</span>הגשת GitHub</a>
+        </nav>
+      </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../../shared/unified-enhance.js"></script>
+  <script defer src="../../shared/site-shell.js"></script>
+</body>
+</html>
