@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deep Generative Models for Visual Data: Undergraduate Course Syllabus</title>
+<style>
+  :root{
+    --ink:#111418; --soft:#2c3138; --muted:#5a626c; --accent:#14385c;
+    --rule:#d1d4d8; --codebg:#f4f5f7;
+  }
+  html{background:#fff;}
+  body{
+    font-family:"Charter","Iowan Old Style","Source Serif Pro",Georgia,"Times New Roman",serif;
+    color:var(--ink); font-size:11pt; line-height:1.55;
+    max-width:720px; margin:0 auto; padding:48px 24px 72px;
+    text-align:justify; hyphens:auto;
+  }
+  code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:9.5pt; background:var(--codebg); padding:0 3px; border-radius:2px;}
+  a{color:var(--accent); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  .titleblock{text-align:center; margin-bottom:8px;}
+  h1{font-size:19pt; font-weight:600; line-height:1.25; margin:0 0 6px;}
+  .courseinfo{font-size:10pt; color:var(--muted); margin:0 0 4px;}
+  .courseinfo b{color:var(--soft); font-weight:600;}
+
+  h2{font-size:13pt; font-weight:700; color:var(--ink); margin:28px 0 8px; text-align:left;}
+  h3{font-size:11.5pt; font-weight:700; margin:18px 0 6px; text-align:left;}
+
+  p{margin:0; text-indent:1.4em;}
+  h2+p, h3+p, .tablewrap+p, figure+p, ul+p, ol+p, .abstract+p, table+p{text-indent:0;}
+  ul,ol{margin:6px 0 6px 1.6em; padding:0; text-align:left;}
+  li{margin:2px 0;}
+
+  .abstract{margin:22px auto 6px; width:92%;}
+  .abstract .ahead{text-align:center; font-variant:small-caps; letter-spacing:.06em; font-weight:600; font-size:11pt; margin-bottom:6px;}
+  .abstract .abody{font-size:10pt; text-align:justify;}
+
+  .tablewrap{margin:14px 0 6px;}
+  table{border-collapse:collapse; width:100%; font-size:9.5pt; line-height:1.4;}
+  caption{caption-side:top; font-size:9.5pt; text-align:left; padding-bottom:5px; color:var(--soft);}
+  caption b{color:var(--ink);}
+  thead th{border-top:1.5px solid var(--ink); border-bottom:1px solid var(--ink); padding:5px 8px; text-align:left; font-weight:700;}
+  tbody td{padding:6px 8px; vertical-align:top; text-align:left;}
+  tbody tr:last-child td{border-bottom:1.5px solid var(--ink);}
+  td.wk, th.wk{white-space:nowrap; width:1%; text-align:center;}
+  td.wk{font-weight:600;}
+  tr.pres td{background:#eef2f7;}
+  tr.pres td:first-child{font-weight:700; color:var(--accent);}
+  tr.pres td.presnote{font-weight:700; color:var(--accent);}
+  .chlist{margin:3px 0 0; color:var(--muted); font-size:9pt;}
+  .topic{font-weight:600;}
+
+  .hr{border:0; border-top:1px solid var(--rule); margin:26px 0;}
+  .refs p{font-size:9pt; text-indent:-1.6em; padding-left:1.6em; margin:0 0 6px; text-align:left;}
+  .footer{margin-top:40px; font-size:9pt; color:var(--muted); text-align:center;}
+  @media print{ body{padding:0;} a{color:var(--ink);} }
+</style>
+</head>
+<body>
+
+<div class="titleblock">
+  <h1>Deep Generative Models for Visual Data</h1>
+  <p class="courseinfo"><b>Level:</b> Undergraduate &nbsp;·&nbsp; <b>Duration:</b> 13 weeks &nbsp;·&nbsp; <b>Lecturer:</b> Sasha Apartsin</p>
+</div>
+
+<div class="abstract">
+  <div class="ahead">Course Description</div>
+  <div class="abody">
+    This course focuses on modern deep generative models trained on large-scale, unstructured, multimodal data, such as text and images. These models can produce high-quality outputs that closely resemble real data and can be controlled or conditioned on desired attributes. Many important real-world problems can be naturally framed as generative tasks, in which structured outputs are produced from given inputs, such as generating textual descriptions from images. Beyond their direct generative capabilities, a central focus of the course is their transformative role in creating realistic, diverse, and labeled synthetic datasets, enabling the training and evaluation of AI systems in domains where annotated data is limited, expensive, or unavailable.
+  </div>
+</div>
+
+<h2>Course Content</h2>
+<p>This course provides a comprehensive introduction to the architectures and foundation models that underpin modern generative AI, as well as the generative modelling approaches built on top of them. It begins with key challenges in computer vision. The course then introduces core architectural foundations, including Transformers and Vision Transformers, and examines how these models support both discriminative and generative systems. Building on this foundation, students study major generative approaches, including Variational Autoencoders (VAEs), Generative Adversarial Networks (GANs), and, with primary emphasis, diffusion models and the Stable Diffusion family. The course highlights modern techniques for controllable, fine-grained generation, as well as the use of generative models to create realistic synthetic training and evaluation data. Adopting a code-first approach, it presents core concepts through hands-on examples using contemporary libraries and tools.</p>
+
+<h2>Prerequisites</h2>
+<p>All necessary background material, including machine learning and deep learning fundamentals and the PyTorch library, is introduced during the course. Students are expected to be proficient in Python programming and comfortable with basic linear algebra and probability. Prior exposure to machine learning or computer vision is helpful but not required.</p>
+
+<h2>Expected Outcomes</h2>
+<p>Students who complete the course will acquire a broad, in-depth understanding of deep generative models and their applications. By the end of the course, students will have gained hands-on experience with state-of-the-art AI models and software libraries, developing practical skills through structured, guided projects. These projects will provide opportunities to design and implement AI solutions by combining, adapting, and extending existing components. The course emphasizes both technical proficiency and creative problem-solving, preparing students to innovate using modern AI technologies in real-world development scenarios. Students will develop a tangible AI project that can be showcased in a professional portfolio. At the same time, in-class presentations will enhance their ability to present and articulate complex technical work with confidence.</p>
+
+<h2>Course Format</h2>
+<p>The course runs for 13 weeks with one session per week. Ten sessions are lectures on the week's topic, taught with a code-first approach through hands-on examples using contemporary libraries and tools. The remaining three sessions (Weeks 5, 9, and 13) are dedicated entirely to student project presentations: proposal, interim, and final. In all three, teams present and receive in-class feedback from the instructor and peers.</p>
+
+<h2>Course Project</h2>
+<p>During the course, students will propose, implement, and present an innovative project based on the concepts studied in class. Each project will address a novel vision-related problem chosen by the students, with particular emphasis on using generative models to create synthetic training and evaluation data. The project will involve comparing different strategies for synthetic data generation and evaluating multiple deep learning models, including at least one model based on the Transformer architecture. The milestones, all presented in class, are:</p>
+<ul>
+  <li><b>Project proposal (Week 5).</b> A talk covering the chosen problem, its motivation, the proposed approach, and the experimental plan. Presented for feedback and approval.</li>
+  <li><b>Interim progress update (Week 9).</b> A talk with first experimental results, what is and is not working, and the plan for the remaining weeks.</li>
+  <li><b>Final presentation (Week 13).</b> A talk covering the contribution, method, experiments, results, and conclusions.</li>
+  <li><b>Project repository.</b> A GitHub repository containing all project materials, including presentation slides, source code, datasets, and a detailed README file.</li>
+</ul>
+
+<h2>Grading</h2>
+<div class="tablewrap">
+<table>
+  <thead><tr><th>Delivery</th><th>Grade</th></tr></thead>
+  <tbody>
+    <tr><td>In-class project proposal presentation</td><td>No grade, for feedback and approval only</td></tr>
+    <tr><td>In-class project interim presentation</td><td>20%</td></tr>
+    <tr><td>In-class final project presentation</td><td>40%</td></tr>
+    <tr><td>Final project submission (GitHub repository)</td><td>40%</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Weekly Schedule</h2>
+<p>Below is an approximate weekly schedule outlining the subjects that will be covered. The actual order or content may vary depending on the class background, recent advancements in the field, or the specific focus of student projects. Suggested readings refer to the course reference texts [<a href="#references">1</a>] to [<a href="#references">4</a>]. Presentation weeks are highlighted.</p>
+
+<div class="tablewrap">
+<table>
+  <thead>
+    <tr><th class="wk">Week</th><th>Theme and readings</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="wk">1</td>
+      <td><span class="topic">Introduction</span><br>
+      Typical vision tasks, project requirements, PyTorch and deep-learning tutorials.
+      <div class="chlist">Readings: [<a href="#references">4</a>] PyTorch foundations; [<a href="#references">1</a>] Ch.&nbsp;1, generative modeling overview.</div></td>
+    </tr>
+    <tr>
+      <td class="wk">2</td>
+      <td><span class="topic">Introduction to Language Foundation Models</span><br>
+      HuggingFace libraries, LLMs for text generation and representation, and an introduction to fine-tuning.
+      <div class="chlist">Readings: [<a href="#references">3</a>] transformers and the HuggingFace ecosystem.</div></td>
+    </tr>
+    <tr>
+      <td class="wk">3</td>
+      <td><span class="topic">Vision Foundation Models</span><br>
+      Vision models for image representation and classification, and image feature encoding.
+      <div class="chlist">Readings: [<a href="#references">3</a>] foundation models for perception.</div></td>
+    </tr>
+    <tr>
+      <td class="wk">4</td>
+      <td><span class="topic">Synthetic Image Data Generation for Model Training</span><br>
+      Introduction to Stable Diffusion pipelines; using generative models to create synthetic data for image classification and object detection.
+      <div class="chlist">Readings: [<a href="#references">3</a>] diffusion pipelines; [<a href="#references">1</a>] diffusion models.</div></td>
+    </tr>
+    <tr class="pres">
+      <td class="wk">5</td>
+      <td class="presnote" colspan="1">Student Presentations: Project Proposal</td>
+    </tr>
+    <tr>
+      <td class="wk">6</td>
+      <td><span class="topic">Transformers Deep Dive</span><br>
+      Tokenization and word embedding, attention, transformer blocks, pretraining, and Parameter-Efficient Fine-Tuning (PEFT).
+      <div class="chlist">Readings: [<a href="#references">3</a>] transformer architecture; [<a href="#references">4</a>] implementations in PyTorch.</div></td>
+    </tr>
+    <tr>
+      <td class="wk">7</td>
+      <td><span class="topic">Video Transformers</span><br>
+      Vision Transformers, DeiT/DINO/SWIN models, DETR, and multimodal models: CLIP/BLIP.
+      <div class="chlist">Readings: [<a href="#references">3</a>] vision and multimodal transformers.</div></td>
+    </tr>
+    <tr>
+      <td class="wk">8</td>
+      <td><span class="topic">Variational Autoencoders</span><br>
+      Autoencoders, autoencoder variants, the VAE, and VAE variants.
+      <div class="chlist">Readings: [<a href="#references">1</a>] VAEs; [<a href="#references">2</a>] latent-variable models; [<a href="#references">4</a>] VAE in PyTorch.</div></td>
+    </tr>
+    <tr class="pres">
+      <td class="wk">9</td>
+      <td class="presnote" colspan="1">Student Presentations: Interim Report</td>
+    </tr>
+    <tr>
+      <td class="wk">10</td>
+      <td><span class="topic">Stable Diffusion</span><br>
+      Mathematical background, diffusion models, latent diffusion models, guidance, long prompts, and SDXL.
+      <div class="chlist">Readings: [<a href="#references">1</a>] diffusion models; [<a href="#references">3</a>] Stable Diffusion; [<a href="#references">2</a>] score-based and diffusion theory.</div></td>
+    </tr>
+    <tr>
+      <td class="wk">11</td>
+      <td><span class="topic">Stable Diffusion Applications</span><br>
+      Inpainting, DepthNet, Text2Video, Prompt2Prompt, instruction editing, image inversion, ControlNet, DreamBooth, and Textual Inversion.
+      <div class="chlist">Readings: [<a href="#references">3</a>] controllable generation and editing; [<a href="#references">1</a>] applications.</div></td>
+    </tr>
+    <tr>
+      <td class="wk">12</td>
+      <td><span class="topic">Generative Adversarial Networks</span><br>
+      GAN introduction, DCGAN, WGAN, Pix2Pix/SRGAN, CycleGAN, StyleGAN, and BigGAN.
+      <div class="chlist">Readings: [<a href="#references">1</a>] GANs; [<a href="#references">2</a>] adversarial models; [<a href="#references">4</a>] GANs in PyTorch.</div></td>
+    </tr>
+    <tr class="pres">
+      <td class="wk">13</td>
+      <td class="presnote" colspan="1">Student Presentations: Project Finals</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Policies</h2>
+<h3>Use of AI tools</h3>
+<p>The use of AI tools for generating project code and presentation slides is highly encouraged, provided that two essential requirements are met: the project must demonstrate novelty by addressing a new and valuable task, and the team must maintain full ownership and responsibility for all submitted code and presentation materials.</p>
+<h3>Collaboration and integrity</h3>
+<p>Discussion across teams is encouraged; the code, experiments, and writing submitted by each team must be its own. All results reported in presentations and documentation must be backed by runnable artifacts in the team's repository.</p>
+
+<hr class="hr">
+<h2 id="references">References</h2>
+<div class="refs">
+<p>[1] D. Foster, <em>Generative Deep Learning</em>, 2nd ed. O'Reilly Media, 2022.</p>
+<p>[2] J. M. Tomczak, <em>Deep Generative Modeling</em>, 2nd ed. Springer, 2024.</p>
+<p>[3] O. Sanseviero, P. Cuenca, A. Passos, and J. Whitaker, <em>Hands-On Generative AI with Transformers and Diffusion Models</em>. O'Reilly Media, 2024.</p>
+<p>[4] M. Liu, <em>Learn Generative AI with PyTorch</em>. Manning Publications, 2024. Available at <a href="https://www.manning.com/books/learn-generative-ai-with-pytorch">manning.com</a>.</p>
+</div>
+<div class="footer">Deep Generative Models for Visual Data · Undergraduate course syllabus · Lecturer: Sasha Apartsin</div>
+
+</body>
+</html>

@@ -67,6 +67,20 @@
       white-space: nowrap;
       backdrop-filter: blur(2px);
     }
+    .curriculum-card__level {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 2;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(46, 125, 90, 0.92);
+      color: #fff;
+      font: 800 0.72rem/1 "Manrope", "Segoe UI", sans-serif;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      backdrop-filter: blur(2px);
+    }
     .curriculum-card p {
       margin: 8px 0 0;
       color: var(--site-muted);
@@ -86,6 +100,43 @@
       object-fit: cover;
       object-position: center;
       background: #fff;
+    }
+    .curriculum-card__level--graduate { background: rgba(29, 78, 216, 0.9); }
+    .curriculum-card__level--undergraduate { background: rgba(46, 125, 90, 0.92); }
+    .curriculum-card__hero {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 16 / 9;
+      margin: 0;
+      padding: 18px 20px;
+      text-align: center;
+      border-bottom: 1px solid var(--site-border);
+    }
+    .curriculum-card__herotitle {
+      color: #fff;
+      font: 800 1.06rem/1.24 "Manrope", "Segoe UI", sans-serif;
+      letter-spacing: 0.01em;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+    .curriculum-card__hero--worldmodels { background: linear-gradient(135deg, #0f2b46, #2b6cb0); }
+    .curriculum-card__hero--llm { background: linear-gradient(135deg, #3a2f5c, #7c5cc4); }
+    .curriculum-card__hero--dgm-av { background: linear-gradient(135deg, #5a1d2e, #b5455f); }
+    .curriculum-card__hero--dgm-v { background: linear-gradient(135deg, #134e4a, #2e9e8f); }
+    .curriculum-card__hero--llmnlp { background: linear-gradient(135deg, #5a3210, #c07a2c); }
+    .curriculum-card__inst {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      z-index: 2;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.94);
+      color: #14202a;
+      font: 800 0.66rem/1 "Manrope", "Segoe UI", sans-serif;
+      letter-spacing: 0.04em;
+      border: 1px solid rgba(0, 0, 0, 0.08);
     }
   </style>
 </head>
@@ -127,8 +178,10 @@
         <section class="curriculum-grid" style="grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));">
           <article class="hub-card curriculum-card" id="genai-graduate-course">
             <span class="curriculum-card__year">2026</span>
-            <figure class="curriculum-card__media">
-              <img src="../assets/teaching/teaching-and-curriculum-development/Logo_hit+50.jpg" alt="Generative AI graduate course visual">
+            <span class="curriculum-card__level curriculum-card__level--graduate">Graduate</span>
+            <figure class="curriculum-card__hero curriculum-card__hero--worldmodels">
+              <span class="curriculum-card__herotitle">Generative AI: VAEs to World Models</span>
+              <span class="curriculum-card__inst">HIT</span>
             </figure>
             <div class="curriculum-card__body">
               <h2>Generative AI: From Variational Autoencoders to World Models</h2>
@@ -140,14 +193,61 @@
           </article>
           <article class="hub-card curriculum-card" id="llm-graduate-course">
             <span class="curriculum-card__year">2026</span>
-            <figure class="curriculum-card__media">
-              <img src="../assets/teaching/teaching-and-curriculum-development/Logo_hit+50.jpg" alt="Large Language Models and Agentic AI graduate course visual">
+            <span class="curriculum-card__level curriculum-card__level--graduate">Graduate</span>
+            <figure class="curriculum-card__hero curriculum-card__hero--llm">
+              <span class="curriculum-card__herotitle">LLMs &amp; Agentic AI</span>
+              <span class="curriculum-card__inst">HIT</span>
             </figure>
             <div class="curriculum-card__body">
               <h2>Large Language Models and Agentic AI</h2>
               <p>A 13-week graduate course on large language models and agentic AI, covering modern LLM architectures, alignment, tool use, and multi-agent systems, taught at <a href="../index.html">HIT</a>.</p>
               <nav class="hub-anchor-nav">
                 <a href="https://apartsin.github.io/hit_llm_grad/syllabus.html" target="_blank" rel="noopener noreferrer">Syllabus</a>
+              </nav>
+            </div>
+          </article>
+          <article class="hub-card curriculum-card" id="llm-undergraduate-course">
+            <span class="curriculum-card__year">2026</span>
+            <span class="curriculum-card__level curriculum-card__level--undergraduate">Undergraduate</span>
+            <figure class="curriculum-card__hero curriculum-card__hero--llmnlp">
+              <span class="curriculum-card__herotitle">LLMs for NLP</span>
+              <span class="curriculum-card__inst">HIT</span>
+            </figure>
+            <div class="curriculum-card__body">
+              <h2>Large Language Model for Natural Language Processing</h2>
+              <p>A 13-week undergraduate course applying large language models to NLP tasks with a code-first approach, spanning foundation models, fine-tuning, retrieval-augmented generation, and agentic AI, taught at <a href="../index.html">HIT</a>.</p>
+              <nav class="hub-anchor-nav">
+                <a href="https://apartsin.github.io/hit_llm_grad/syllabus_undergrad.html" target="_blank" rel="noopener noreferrer">Syllabus</a>
+              </nav>
+            </div>
+          </article>
+          <article class="hub-card curriculum-card" id="dgm-audio-visual-graduate-course">
+            <span class="curriculum-card__year">2026</span>
+            <span class="curriculum-card__level curriculum-card__level--graduate">Graduate</span>
+            <figure class="curriculum-card__hero curriculum-card__hero--dgm-av">
+              <span class="curriculum-card__herotitle">Deep Generative Models: Audio-Visual</span>
+              <span class="curriculum-card__inst">BIU</span>
+            </figure>
+            <div class="curriculum-card__body">
+              <h2>Deep Generative Models for Audio-Visual Data</h2>
+              <p>A 13-week graduate course on deep generative models for audio-visual data, covering VAEs, GANs, diffusion and the Stable Diffusion family, and synthetic data generation, taught at BIU.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./deep-generative-models-audio-visual-graduate-syllabus.html">Syllabus</a>
+              </nav>
+            </div>
+          </article>
+          <article class="hub-card curriculum-card" id="dgm-visual-undergraduate-course">
+            <span class="curriculum-card__year">2026</span>
+            <span class="curriculum-card__level curriculum-card__level--undergraduate">Undergraduate</span>
+            <figure class="curriculum-card__hero curriculum-card__hero--dgm-v">
+              <span class="curriculum-card__herotitle">Deep Generative Models: Visual</span>
+              <span class="curriculum-card__inst">HIT</span>
+            </figure>
+            <div class="curriculum-card__body">
+              <h2>Deep Generative Models for Visual Data</h2>
+              <p>A 13-week undergraduate course on deep generative models for visual data, covering VAEs, GANs, diffusion and the Stable Diffusion family, and synthetic data generation, taught at <a href="../index.html">HIT</a>.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./deep-generative-models-visual-undergraduate-syllabus.html">Syllabus</a>
               </nav>
             </div>
           </article>
