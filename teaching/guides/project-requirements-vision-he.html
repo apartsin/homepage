@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="he-IL" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <meta name="description" content="מה פרויקט חזק בקורס הראייה חייב לעשות: מחקר עמידוּת של אלגוריתמי עיבוד תמונה וראייה על פני תנאים נקיים, מעוותים, משוחזרים ומכווננים, עם הדרישות והאנטי-דפוסים לכל שלב ותוכנית שבועית מוצעת.">
+  <link rel="alternate" hreflang="he" href="./project-requirements-vision-he.html">
+  <link rel="alternate" hreflang="en" href="./project-requirements-vision.html">
+  <title>דרישות הפרויקט לקורס הראייה | סשה אפרטסין</title>
+  <link rel="stylesheet" href="../../shared/site-shell.css">
+  <link rel="stylesheet" href="../../shared/unified-theme.css">
+  <style>
+    .crit-section-title { margin: 34px 0 2px; color: var(--site-text, #18202a); font: 800 0.82rem/1.2 "Manrope", "Heebo", sans-serif; letter-spacing: 0.06em; }
+    .crit-section-title:first-of-type { margin-top: 10px; }
+    .crit-section-lede { margin: 0 0 4px; color: var(--site-muted); font: 600 0.88rem/1.6 "Manrope", "Heebo", sans-serif; }
+    .crit-list { display: grid; grid-template-columns: 1fr; grid-auto-rows: 1fr; gap: 14px; margin-top: 14px; align-items: stretch; }
+    @media (min-width: 720px) { .crit-list { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1080px) { .crit-list { grid-template-columns: repeat(3, 1fr); } }
+    .crit-card { padding: 18px 20px; border: 1px solid var(--site-border); border-radius: 14px; background: #fff; position: relative; overflow: hidden; display: grid; grid-template-rows: auto auto 1fr auto; row-gap: 8px; text-align: right; }
+    /* In RTL, the colored accent bar sits on the right (the natural start). */
+    .crit-card::before { content: ""; position: absolute; right: 0; top: 0; width: 4px; height: 100%; background: var(--cc-color, var(--site-accent)); }
+    .crit-list--scope .crit-card { --cc-color: #c2410c; }
+    .crit-list--baseline .crit-card { --cc-color: #164a83; }
+    .crit-list--recovery .crit-card { --cc-color: #7a3fa0; }
+    .crit-list--delivery .crit-card { --cc-color: #2e7d5a; }
+    .crit-card__index { display: inline-block; font: 900 0.78rem/1 "Manrope", "Heebo", sans-serif; letter-spacing: 0.08em; color: var(--cc-color, var(--site-accent)); margin: 0; }
+    .crit-card__title { margin: 0; font: 800 1.06rem/1.35 "Manrope", "Heebo", sans-serif; color: var(--site-text); min-height: calc(2 * 1.35 * 1.06rem); }
+    .crit-card__body { margin: 0; color: var(--site-text); font-size: 0.92rem; line-height: 1.6; }
+    .crit-antipatterns { margin: 0; padding: 10px 12px 10px 14px; border-radius: 8px; background: rgba(194, 65, 12, 0.06); border: 1px solid rgba(194, 65, 12, 0.22); color: #8a3309; }
+    .crit-antipatterns__label { display: block; font: 800 0.76rem/1.2 "Manrope", "Heebo", sans-serif; letter-spacing: 0.04em; margin-bottom: 6px; color: #8a3309; }
+    .crit-antipatterns ul { margin: 0; padding-right: 16px; list-style: disc; }
+    .crit-antipatterns li { font: 500 0.83rem/1.6 "Manrope", "Heebo", sans-serif; margin: 0 0 3px; }
+    .crit-antipatterns li:last-child { margin-bottom: 0; }
+
+    /* Stage diagram: the four-part robustness pipeline. */
+    .vis-pipeline { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 16px 0 4px; }
+    .vis-stage { border: 1px solid var(--site-border); border-radius: 12px; padding: 12px 14px; background: #fff; position: relative; }
+    .vis-stage__n { font: 900 0.72rem/1 "Manrope", "Heebo", sans-serif; letter-spacing: .08em; color: var(--site-accent, #1d4ed8); }
+    .vis-stage__t { font: 800 0.95rem/1.3 "Manrope", "Heebo", sans-serif; margin: 5px 0 3px; color: var(--site-text); }
+    .vis-stage__d { font: 500 0.8rem/1.5 "Manrope", "Heebo", sans-serif; color: var(--site-muted); margin: 0; }
+
+    /* Weekly plan table. */
+    .plan-table { width: 100%; border-collapse: collapse; margin: 14px 0 4px; font: 500 0.85rem/1.55 "Manrope", "Heebo", sans-serif; }
+    .plan-table th, .plan-table td { text-align: right; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--site-border); }
+    .plan-table thead th { font-weight: 800; color: var(--site-text); border-bottom: 2px solid var(--site-text); font-size: 0.78rem; letter-spacing: .04em; }
+    .plan-table td.wk { font-weight: 800; color: var(--site-accent, #1d4ed8); white-space: nowrap; width: 1%; }
+    .plan-wrap { overflow-x: auto; }
+
+    /* Two-tab language switcher: shows both EN and HE, current one filled. */
+    .guide-lang-switch {
+      display: inline-flex;
+      align-items: stretch;
+      border: 1px solid var(--site-border, rgba(24,32,42,0.18));
+      border-radius: 999px;
+      background: #fff;
+      overflow: hidden;
+      font: 800 0.72rem/1 "Manrope", sans-serif;
+      letter-spacing: 0.04em;
+    }
+    .guide-lang-switch__btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 14px;
+      color: var(--site-muted, #5a626c);
+      text-decoration: none;
+      transition: background 120ms ease, color 120ms ease;
+    }
+    .guide-lang-switch__btn:hover,
+    .guide-lang-switch__btn:focus-visible {
+      background: rgba(0, 0, 0, 0.05);
+      color: var(--site-text, #18202a);
+    }
+    .guide-lang-switch__btn.is-active {
+      background: var(--site-text, #18202a);
+      color: #fff;
+      cursor: default;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="teaching">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar" lang="en" dir="ltr">
+      <a class="apartsin-shell__brand" href="../../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../../index.html">About</a>
+        <a href="../../research/research-focus.html">Research</a>
+        <a href="../../teaching/overview.html">Teaching</a>
+        <a href="../../work/overview.html">Building</a>
+        <a href="../../work/innovation-overview.html">Innovations</a>
+        <a href="../../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="project-requirements-vision-overview">
+          <h1 class="apartsin-sr-only">דרישות הפרויקט לקורס הראייה</h1>
+          <div class="apartsin-page-header__top" dir="ltr">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb" lang="en" dir="ltr">
+              <a href="../../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="../overview.html">Teaching</a>
+              <span aria-hidden="true">/</span>
+              <a href="./index.html">Guides for Students</a>
+              <span aria-hidden="true">/</span>
+              <strong>Project Requirements for Vision Course (עברית)</strong>
+            </nav>
+            <div class="guide-lang-switch" role="group" aria-label="שפה">
+              <a class="guide-lang-switch__btn" href="./project-requirements-vision.html" lang="en" hreflang="en">English</a>
+              <a class="guide-lang-switch__btn is-active" href="./project-requirements-vision-he.html" lang="he" hreflang="he" aria-current="true">עברית</a>
+            </div>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../../assets/heroes/teaching-hos-student-projects.png" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">הפרויקט בקורס הראייה הוא <b>מחקר עמידוּת</b>: אתם מודדים כיצד אלגוריתמי עיבוד תמונה וראייה מתנהגים כשאיכות התמונה מתדרדרת, וכמה מהביצועים שאבדו ניתן לשחזר. המדריך הזה מפרט מה הפרויקט חייב לעשות, שלב אחר שלב, לצד האנטי-דפוסים שמחלישים לרוב כל שלב, ותוכנית שבועית מוצעת. כיצד הפרויקט המוגמר מדורג היא שאלה נפרדת, שנדונה במדריך <a href="./project-assessment-criteria-vision.html">קריטריונים להערכת הפרויקט בקורס הראייה</a>.</p>
+          </div>
+        </section>
+
+        <h2 class="crit-section-title">המחקר בארבעה שלבים</h2>
+        <p class="crit-section-lede">כל צירוף של משימה ומערך נתונים עובר דרך אותה צנרת. הפרויקט הוא אותו ניסוי החוזר על עצמו על פני משימות ועיוותים.</p>
+        <div class="vis-pipeline">
+          <div class="vis-stage"><span class="vis-stage__n">שלב 1</span><p class="vis-stage__t">בסיס ייחוס נקי</p><p class="vis-stage__d">הריצו כל שיטה על תמונות נקיות ומדדו את הביצועים מול אמת הקרקע.</p></div>
+          <div class="vis-stage"><span class="vis-stage__n">שלב 2</span><p class="vis-stage__t">עיוות</p><p class="vis-stage__d">הפעילו עיוותים בעוצמות מכוילות ומדדו את ההידרדרות מול ה-SNR.</p></div>
+          <div class="vis-stage"><span class="vis-stage__n">שלב 3</span><p class="vis-stage__t">שחזור</p><p class="vis-stage__d">שפרו את התמונות המעוותות (הפחתת רעש, הסרת גשם, תאורה חלשה) ומדדו שוב.</p></div>
+          <div class="vis-stage"><span class="vis-stage__n">שלב 4</span><p class="vis-stage__t">כיוונון עדין</p><p class="vis-stage__d">התאימו את המודלים העמוקים לעיוותים והשוו מול השחזור.</p></div>
+        </div>
+
+        <h2 class="crit-section-title">שלב א. היקף ובחירה</h2>
+        <p class="crit-section-lede">מה אתם חוקרים ולמה. קבעו זאת לפני כתיבת הקוד; תעדו כל בחירה, עם קישורים, ב-README.</p>
+        <section class="crit-list crit-list--scope" aria-label="דרישות היקף ובחירה">
+          <article class="crit-card" id="req-dataset">
+            <span class="crit-card__index">דרישה 1</span>
+            <h2 class="crit-card__title">מערך נתונים ציבורי עם אמת קרקע</h2>
+            <p class="crit-card__body">בחרו מערך נתונים ציבורי (KITTI, Cityscapes, COCO, ADE20K, Oxford-IIIT Pet, DOTA, מערך רפואי וכדומה) שנושא תיוגי אמת קרקע לפחות עבור אחת מהמשימות שלכם. טענו תת-קבוצה קבועה עם seed כך שהתוצאות יהיו ניתנות לשחזור.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">אנטי-דפוסים נפוצים</span>
+              <ul>
+                <li>היעדר אמת קרקע, כך שאי אפשר למדוד את ההידרדרות.</li>
+                <li>תת-קבוצה ללא seed או משתנה שמשתנה בין ריצות.</li>
+                <li>מערך נתונים צעצוע, קטן מכדי להראות מגמות אמיתיות.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="crit-card" id="req-tasks">
+            <span class="crit-card__index">דרישה 2</span>
+            <h2 class="crit-card__title">שלוש משימות, ברמה נמוכה וגבוהה</h2>
+            <p class="crit-card__body">בחרו לפחות שלוש משימות ראייה ופרשו במכוון על פני טווח ההפשטה: משימה קלאסית ברמה נמוכה (זיהוי קצוות/פינות/נקודות עניין, התאמת תכונות) ומשימה ברמה גבוהה (זיהוי עצמים, סגמנטציה, סיווג, תנוחה). זה מה שהופך את סיפור העמידוּת למעניין.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">אנטי-דפוסים נפוצים</span>
+              <ul>
+                <li>שלוש וריאציות של אותה משימה.</li>
+                <li>מודלים עמוקים בלבד, ללא משימה קלאסית ברמה נמוכה.</li>
+                <li>משימות שאין להן מדד אמת קרקע זמין.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="crit-card" id="req-distortions">
+            <span class="crit-card__index">דרישה 3</span>
+            <h2 class="crit-card__title">שלוש שיטות עיוות</h2>
+            <p class="crit-card__body">בחרו לפחות שלושה עיוותים שריאליסטיים לתחום שלכם: רעש (גאוסי, speckle, מלח-ופלפל), תאורה חלשה, טשטוש תנועה, גשם, ערפל, דחיסת JPEG וכדומה. כל עיוות חייב להיות מופעל בכמה רמות עוצמה מכוילות.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">אנטי-דפוסים נפוצים</span>
+              <ul>
+                <li>עוצמה יחידה, כך שלא קיימת עקומת הידרדרות.</li>
+                <li>עיוותים שאינם רלוונטיים לתחום שנבחר.</li>
+                <li>עוצמה שאינה מכומתת (ראו דרישה 6).</li>
+              </ul>
+            </div>
+          </article>
+          <article class="crit-card" id="req-models">
+            <span class="crit-card__index">דרישה 4</span>
+            <h2 class="crit-card__title">מודל או אלגוריתם לכל משימה</h2>
+            <p class="crit-card__body">שייכו שיטה קונקרטית לכל משימה, וכללו לפחות מודל למידה עמוקה אחד (למשל YOLO לזיהוי, SegFormer/DeepLab לסגמנטציה, ResNet לסיווג). שיטות קלאסיות (ORB, Canny, Lucas-Kanade) מכסות את המשימות ברמה הנמוכה.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">אנטי-דפוסים נפוצים</span>
+              <ul>
+                <li>היעדר כל מודל למידה עמוקה.</li>
+                <li>מודל שלא ניתן לכוונן בהמשך (חוסם את שלב 4).</li>
+                <li>גרסת מודל או משקלים לא מתועדים.</li>
+              </ul>
+            </div>
+          </article>
+        </section>
+
+        <h2 class="crit-section-title">שלב ב. בסיס ייחוס והידרדרות</h2>
+        <p class="crit-section-lede">בססו את האמת על תמונות נקיות, ואז כמתו כמה כל שיטה צונחת ככל שהאיכות יורדת.</p>
+        <section class="crit-list crit-list--baseline" aria-label="דרישות בסיס ייחוס והידרדרות">
+          <article class="crit-card" id="req-baseline">
+            <span class="crit-card__index">דרישה 5</span>
+            <h2 class="crit-card__title">בסיס ייחוס על תמונות נקיות</h2>
+            <p class="crit-card__body">הריצו כל שיטה על תמונות נקיות ותעדו את ביצועיה מול אמת הקרקע. בסיס ייחוס זה הוא הרפרנס שכל מספר מאוחר יותר מושווה אליו, ולכן עליו להשתמש במדד הנכון והמתאים למשימה (IoU/mAP לזיהוי, mIoU/Dice לסגמנטציה, יחס התאמות לתכונות).</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">אנטי-דפוסים נפוצים</span>
+              <ul>
+                <li>דיווח פלט הדגמה במקום מדד מדוד.</li>
+                <li>מדד שאינו תואם למשימה.</li>
+                <li>היעדר בסיס ייחוס, כך שההידרדרות אינה ניתנת לפרשנות.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="crit-card" id="req-snr">
+            <span class="crit-card__index">דרישה 6</span>
+            <h2 class="crit-card__title">הידרדרות נמדדת מול SNR</h2>
+            <p class="crit-card__body">מַפּוּ את עוצמת העיוות לציר פיזיקלי משותף (SNR או PSNR ב-dB) ודווחו את הביצועים כעקומה על פני הציר הזה. כך ניתן להשוות עיוותים מסוגים שונים בסקאלה אחת, ומתגלה היכן כל שיטה נשברת.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">אנטי-דפוסים נפוצים</span>
+              <ul>
+                <li>עוצמה שמדווחת כערך שרירותי של כפתור.</li>
+                <li>זוג לפני/אחרי בודד במקום עקומה.</li>
+                <li>עיוותים שונים המשורטטים על צירים שאינם ברי-השוואה.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="crit-card" id="req-perclass">
+            <span class="crit-card__index">דרישה 7</span>
+            <h2 class="crit-card__title">דיווח לפי מחלקה ולפי SNR</h2>
+            <p class="crit-card__body">פרקו את הביצועים לפי מחלקה ולפי רמת SNR, ולא רק כמספר מצרפי יחיד. ממוצע מסתיר את העובדה שמחלקות קטנות או נדירות קורסות לרוב ראשונות תחת עיוות; המבט לפי מחלקה הוא המקום שבו נמצאים הממצאים האמיתיים.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">אנטי-דפוסים נפוצים</span>
+              <ul>
+                <li>מספר מצרפי יחיד עבור כל מערך הנתונים.</li>
+                <li>מיצוע שמעלים את הקריסה לפי מחלקה.</li>
+                <li>היעדר טבלה שמקשרת בין המדד למחלקה ול-SNR.</li>
+              </ul>
+            </div>
+          </article>
+        </section>
+
+        <h2 class="crit-section-title">שלב ג. שחזור</h2>
+        <p class="crit-section-lede">שתי דרכים להילחם בהידרדרות: לתקן את התמונה, או להתאים את המודל. עשו את שתיהן והשוו ביניהן בהוגנות.</p>
+        <section class="crit-list crit-list--recovery" aria-label="דרישות שחזור">
+          <article class="crit-card" id="req-enhance">
+            <span class="crit-card__index">דרישה 8</span>
+            <h2 class="crit-card__title">שיפור / שחזור תמונה</h2>
+            <p class="crit-card__body">עבור כל עיוות, הפעילו שלב עיבוד-מקדים קלאסי תואם (הפחתת רעש בשיטת non-local-means או bilateral, gamma/CLAHE לתאורה חלשה, deblocking ל-JPEG, deconvolution לטשטוש) ומדדו מחדש כל משימה על התמונות המשוחזרות.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">אנטי-דפוסים נפוצים</span>
+              <ul>
+                <li>מסנן גנרי יחיד המופעל על כל עיוות.</li>
+                <li>שיפוט השחזור לפי איך שהתמונה נראית, ולא לפי המדד במורד הזרם.</li>
+                <li>אי-הרצה מחדש של המשימות לאחר השיפור.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="crit-card" id="req-finetune">
+            <span class="crit-card__index">דרישה 9</span>
+            <h2 class="crit-card__title">כיוונון עדין של המודל</h2>
+            <p class="crit-card__body">עבור שיטות הלמידה העמוקה, כווננו על נתונים מעוותים (או נקיים-בתוספת-מעוותים) ומדדו כמה מהביצועים חוזרים. במקום שבו קיימים תיוגי אמת נקיים, תוכלו לייצר תיוגי אימון מתמונות נקיות ולעשות בהם שימוש חוזר עבור המערך המעוות.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">אנטי-דפוסים נפוצים</span>
+              <ul>
+                <li>כיוונון והערכה על אותן תמונות.</li>
+                <li>היעדר checkpoint או config שמורים, כך שאי אפשר לשחזר.</li>
+                <li>טענת שחזור ללא השוואה מול בסיס הייחוס הנקי.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="crit-card" id="req-compare">
+            <span class="crit-card__index">דרישה 10</span>
+            <h2 class="crit-card__title">השוואה הוגנת בין שיפור לכיוונון עדין</h2>
+            <p class="crit-card__body">העמידו את השחזור ואת הכיוונון העדין זה לצד זה על אותן משימות, עיוותים ורמות SNR, וקבעו מי מנצח והיכן. התוצאה המעניינת היא לרוב שהתשובה תלויה ברמת ההפשטה של המשימה.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">אנטי-דפוסים נפוצים</span>
+              <ul>
+                <li>ניסיון באסטרטגיית שחזור אחת בלבד.</li>
+                <li>השוואה ביניהן על תת-קבוצות או מדדים שונים.</li>
+                <li>הסתרת המקרים שבהם השחזור נכשל.</li>
+              </ul>
+            </div>
+          </article>
+        </section>
+
+        <h2 class="crit-section-title">שלב ד. הנדסה ותיעוד</h2>
+        <p class="crit-section-lede">קורא אמור להיות מסוגל להבין ולשחזר את המחקר מתוך הריפוזיטורי בלבד.</p>
+        <section class="crit-list crit-list--delivery" aria-label="דרישות הנדסה ותיעוד">
+          <article class="crit-card" id="req-repo">
+            <span class="crit-card__index">דרישה 11</span>
+            <h2 class="crit-card__title">ריפוזיטורי ניתן לשחזור</h2>
+            <p class="crit-card__body">מסרו ריפוזיטורי GitHub עם קוד העיוות, קוד הפעלת המודלים, הפלטים והתיוגים השמורים, checkpoints או configs, ו-README מתועד שרושם כל בחירה עם קישורים. ראו את המדריך <a href="./github-submission.html">הגשה ב-GitHub</a> לרשימת הבדיקה המלאה.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">אנטי-דפוסים נפוצים</span>
+              <ul>
+                <li>תוצאות במצגת שאין קוד בריפוזיטורי שמייצר אותן.</li>
+                <li>נתיבים מקומיים מקודדים קשיח וללא קובץ סביבה.</li>
+                <li>README שמפרט צעדים אך לא החלטות.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="crit-card" id="req-viz">
+            <span class="crit-card__index">דרישה 12</span>
+            <h2 class="crit-card__title">ויזואליזציה: לפני/אחרי ועקומות</h2>
+            <p class="crit-card__body">תעדו את הצנרת באופן חזותי: תמונות עם תיוגים מונחים מעליהן, רשתות של לפני/אחרי עיוות ושחזור, ותרשימי מדידה (תרשימי עמודות, עקומות לפי SNR, השוואות לפי מחלקה). החזותיים הם האופן שבו הממצא מתקשר, ולא קישוט.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">אנטי-דפוסים נפוצים</span>
+              <ul>
+                <li>טבלאות של מספרים ללא איור תומך.</li>
+                <li>צילומי מסך ללא תוויות, צירים או כיתובים.</li>
+                <li>היעדר לפני/אחרי שיראה מה העיוות באמת עשה.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="crit-card" id="req-submission">
+            <span class="crit-card__index">דרישה 13</span>
+            <h2 class="crit-card__title">מצגת והגשה סופית</h2>
+            <p class="crit-card__body">הגישו את הריפוזיטורי המלא לצד מצגת (PPT ו-PDF). המצגת מספרת את סיפור העמידוּת מקצה לקצה: הבחירות, בסיס הייחוס הנקי, ההידרדרות, השחזור והמסקנות.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">אנטי-דפוסים נפוצים</span>
+              <ul>
+                <li>מצגת שמראה פלטים אך לעולם לא את הסיפור המדוד.</li>
+                <li>מספרים במצגת שאינם עולים בקנה אחד עם הריפוזיטורי.</li>
+                <li>היעדר מסקנה לגבי מה משחזר ביצועים ומתי.</li>
+              </ul>
+            </div>
+          </article>
+        </section>
+
+        <h2 class="crit-section-title">תוכנית שבועית מוצעת</h2>
+        <p class="crit-section-lede">קצב עבודה בר-ביצוע מהקמת הצוות ועד ההגשה הסופית. כל שבוע מפיק תוצר קונקרטי בריפוזיטורי.</p>
+        <div class="plan-wrap">
+        <table class="plan-table">
+          <thead><tr><th class="wk">שבוע</th><th>משימה</th><th>תוצר</th></tr></thead>
+          <tbody>
+            <tr><td class="wk">1</td><td>הרכבת צוות, פתיחת Git, רישום</td><td>ריפוזיטורי GitHub פתוח; שורה בטבלת פרויקטי הקורס</td></tr>
+            <tr><td class="wk">2</td><td>חקר ובחירה של מערך נתונים, עיוותים ומשימות</td><td>טבלת החלטות עם קישורים, משובצת ב-README</td></tr>
+            <tr><td class="wk">3</td><td>חקר ובחירה של שיטות ושיפורים</td><td>טבלת החלטות עם קישורים, משובצת ב-README</td></tr>
+            <tr><td class="wk">4</td><td>הורדת נתונים; ויזואליזציה של תמונות ותיוגים</td><td>קוד הורדה ו-EDA; רשת תמונות לדוגמה עם תיוגים ב-README</td></tr>
+            <tr><td class="wk">5</td><td>הרצת שיטות/מודלים על נתונים נקיים; שמירת פלטים</td><td>תיקייה עם פלטים/תיוגים בריפוזיטורי</td></tr>
+            <tr><td class="wk">6</td><td>מדידת ביצועים על נתונים נקיים באמצעות אמת קרקע</td><td>טבלת תוצאות; ויזואליזציה לפי מחלקה</td></tr>
+            <tr><td class="wk">7</td><td>הפעלת עיוותים; שמירת נתונים</td><td>קוד עיוות; תיקיית תמונות מעוותות; ויזואליזציית לפני/אחרי</td></tr>
+            <tr><td class="wk">8</td><td>הרצת מודלים; מדידת הידרדרות</td><td>קוד הפעלה; טבלאות ביצועים; חזותיי השוואה מתויגים</td></tr>
+            <tr><td class="wk">9</td><td>הפעלת שיפורים; מדידת ביצועים</td><td>רשתות זו-לצד-זו; חזותיי השוואת ביצועים</td></tr>
+            <tr><td class="wk">10</td><td>כיוונון עדין של המודל/ים</td><td>קוד כיוונון עדין; checkpoints / משקלי מודל</td></tr>
+            <tr><td class="wk">11</td><td>מדידת ביצועי המודל המכוונן</td><td>טבלת תוצאות ב-Git; ויזואליזציה</td></tr>
+            <tr><td class="wk">12</td><td>סקירת ה-README; שיפור חזותיים, טקסט וטבלאות</td><td>README עשיר ומפורט עם כל ההחלטות והויזואליזציה</td></tr>
+            <tr><td class="wk">13</td><td>הכנה והעלאה של המצגת; סקירת הריפוזיטורי</td><td>ריפוזיטורי מלא; מצגת (PPT ו-PDF)</td></tr>
+          </tbody>
+        </table>
+        </div>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../../shared/unified-enhance.js"></script>
+  <script defer src="../../shared/site-shell.js"></script>
+</body>
+</html>

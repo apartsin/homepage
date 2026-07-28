@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="he-IL" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <meta name="description" content="כיצד נשפט פרויקט עמידוּת בקורס הראייה: חמישה ממדים, מתכנון המחקר דרך קפדנות המדידה, עומק החקירה, ניתוח השחזור, ועד איכות ההמחשה והתקשורת, כל אחד עם אותות חוזק וחולשה.">
+  <link rel="alternate" hreflang="he" href="./project-assessment-criteria-vision-he.html">
+  <link rel="alternate" hreflang="en" href="./project-assessment-criteria-vision.html">
+  <title>קריטריונים להערכת הפרויקט לקורס הראייה | סשה אפרטסין</title>
+  <link rel="stylesheet" href="../../shared/site-shell.css">
+  <link rel="stylesheet" href="../../shared/unified-theme.css">
+  <style>
+    .crit-section-title { margin: 34px 0 2px; color: var(--site-text, #18202a); font: 800 0.82rem/1.2 "Manrope", "Heebo", sans-serif; letter-spacing: 0.06em; }
+    .crit-section-title:first-of-type { margin-top: 10px; }
+    .crit-section-lede { margin: 0 0 4px; color: var(--site-muted); font: 600 0.88rem/1.5 "Manrope", "Heebo", sans-serif; }
+    .crit-list { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 14px; }
+    @media (min-width: 860px) { .crit-list { grid-template-columns: repeat(2, 1fr); } }
+    .crit-card { padding: 18px 20px; border: 1px solid var(--site-border); border-radius: 14px; background: #fff; position: relative; overflow: hidden; text-align: right; }
+    /* In RTL, the colored accent bar sits on the right (the natural start). */
+    .crit-card::before { content: ""; position: absolute; right: 0; top: 0; width: 4px; height: 100%; background: var(--cc-color, var(--site-accent)); }
+    .crit-card:nth-child(1) { --cc-color: #c2410c; }
+    .crit-card:nth-child(2) { --cc-color: #164a83; }
+    .crit-card:nth-child(3) { --cc-color: #7a3fa0; }
+    .crit-card:nth-child(4) { --cc-color: #2e7d5a; }
+    .crit-card:nth-child(5) { --cc-color: #0f766e; }
+    .crit-card--wide { grid-column: 1 / -1; }
+    .crit-card__index { display: inline-block; font: 900 0.78rem/1 "Manrope", "Heebo", sans-serif; letter-spacing: 0.08em; color: var(--cc-color, var(--site-accent)); margin: 0 0 6px; }
+    .crit-card__title { margin: 0 0 6px; font: 800 1.1rem/1.35 "Manrope", "Heebo", sans-serif; color: var(--site-text); }
+    .crit-card__body { margin: 0; color: var(--site-text); font-size: 0.92rem; line-height: 1.65; }
+    .crit-signals { display: grid; gap: 10px; margin-top: 12px; }
+    @media (min-width: 520px) { .crit-signals { grid-template-columns: 1fr 1fr; } }
+    .crit-signal { padding: 10px 12px; border-radius: 8px; font: 500 0.83rem/1.6 "Manrope", "Heebo", sans-serif; }
+    .crit-signal__label { display: block; font: 800 0.74rem/1.2 "Manrope", "Heebo", sans-serif; letter-spacing: .04em; margin-bottom: 5px; }
+    .crit-signal ul { margin: 0; padding-right: 15px; }
+    .crit-signal li { margin: 0 0 3px; }
+    .crit-signal--strong { background: rgba(46, 125, 90, 0.08); border: 1px solid rgba(46, 125, 90, 0.28); color: #1d5b41; }
+    .crit-signal--strong .crit-signal__label { color: #1d5b41; }
+    .crit-signal--weak { background: rgba(194, 65, 12, 0.06); border: 1px solid rgba(194, 65, 12, 0.22); color: #8a3309; }
+    .crit-signal--weak .crit-signal__label { color: #8a3309; }
+
+    /* Visual-abstract example strip for the visualization criterion. */
+    .vexamples { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 14px; }
+    .vex { border: 1px solid var(--site-border); border-radius: 10px; padding: 10px; background: #fbfcfd; }
+    .vex svg { display: block; width: 100%; height: auto; }
+    .vex__cap { margin: 8px 0 0; font: 700 0.74rem/1.3 "Manrope", "Heebo", sans-serif; color: var(--site-muted); text-align: center; }
+
+    /* Two-tab language switcher: shows both EN and HE, current one filled. */
+    .guide-lang-switch {
+      display: inline-flex;
+      align-items: stretch;
+      border: 1px solid var(--site-border, rgba(24,32,42,0.18));
+      border-radius: 999px;
+      background: #fff;
+      overflow: hidden;
+      font: 800 0.72rem/1 "Manrope", sans-serif;
+      letter-spacing: 0.04em;
+    }
+    .guide-lang-switch__btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 14px;
+      color: var(--site-muted, #5a626c);
+      text-decoration: none;
+      transition: background 120ms ease, color 120ms ease;
+    }
+    .guide-lang-switch__btn:hover,
+    .guide-lang-switch__btn:focus-visible {
+      background: rgba(0, 0, 0, 0.05);
+      color: var(--site-text, #18202a);
+    }
+    .guide-lang-switch__btn.is-active {
+      background: var(--site-text, #18202a);
+      color: #fff;
+      cursor: default;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="teaching">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar" lang="en" dir="ltr">
+      <a class="apartsin-shell__brand" href="../../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../../index.html">About</a>
+        <a href="../../research/research-focus.html">Research</a>
+        <a href="../../teaching/overview.html">Teaching</a>
+        <a href="../../work/overview.html">Building</a>
+        <a href="../../work/innovation-overview.html">Innovations</a>
+        <a href="../../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="project-assessment-criteria-vision-overview">
+          <h1 class="apartsin-sr-only">קריטריונים להערכת הפרויקט לקורס הראייה</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../../index.html">בית</a>
+              <span aria-hidden="true">/</span>
+              <a href="../overview.html">הוראה</a>
+              <span aria-hidden="true">/</span>
+              <a href="./index.html">מדריכים לסטודנטים</a>
+              <span aria-hidden="true">/</span>
+              <strong>קריטריונים להערכת הפרויקט לקורס הראייה</strong>
+            </nav>
+            <div class="guide-lang-switch" role="group" aria-label="שפה">
+              <a class="guide-lang-switch__btn" href="./project-assessment-criteria-vision.html" lang="en" hreflang="en">English</a>
+              <a class="guide-lang-switch__btn is-active" href="./project-assessment-criteria-vision-he.html" lang="he" hreflang="he" aria-current="true">עברית</a>
+            </div>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../../assets/heroes/teaching-hos-offerings.png" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">חמשת הממדים שעל פיהם נשפט פרויקט עמידוּת בקורס הראייה. כל ממד מציב זה לצד זה את האותות המסמנים עבודה חזקה ואת אלה שמחלישים אותה. מה הפרויקט חייב לכלול היא שאלה נפרדת, הנדונה במדריך <a href="./project-requirements-vision.html">דרישות הפרויקט לקורס הראייה</a>.</p>
+          </div>
+        </section>
+
+        <h2 class="crit-section-title">חמשת הממדים</h2>
+        <p class="crit-section-lede">ההערכה שוקלת את כל החמישה יחד; פרויקט חזק בקפדנות אך שותק בהמחשה הוא חלקי, ולהפך.</p>
+        <section class="crit-list" aria-label="קריטריוני הערכה">
+
+          <article class="crit-card" id="crit-design">
+            <span class="crit-card__index">קריטריון 1</span>
+            <h2 class="crit-card__title">תכנון המחקר ובחירתו</h2>
+            <p class="crit-card__body">האם מערך הנתונים, המשימות והעיוותים נבחרו במכוון ומנומקים: קיימת אמת יסוד (ground truth), המשימות משתרעות על פני ראייה ברמה נמוכה וגבוהה, והעיוותים ריאליסטיים לתחום.</p>
+            <div class="crit-signals">
+              <div class="crit-signal crit-signal--strong"><span class="crit-signal__label">חזק</span><ul><li>המשימות משתרעות על שיטות קלאסיות ושיטות עומק.</li><li>עיוותים המתאימים לתחום, מנומקים עם קישורים.</li><li>תת-מערך נתונים קבוע עם seed.</li></ul></div>
+              <div class="crit-signal crit-signal--weak"><span class="crit-signal__label">חלש</span><ul><li>שלושה וריאנטים של משימה אחת.</li><li>עיוותים שאינם קשורים לתחום.</li><li>בחירות שנטענות אך אינן מנומקות.</li></ul></div>
+            </div>
+          </article>
+
+          <article class="crit-card" id="crit-rigor">
+            <span class="crit-card__index">קריטריון 2</span>
+            <h2 class="crit-card__title">קפדנות המדידה</h2>
+            <p class="crit-card__body">האם הביצועים נמדדים כראוי: בסיס ייחוס נקי מול אמת היסוד, מדדים המתאימים למשימה, עוצמת עיוות המכוילת ל-SNR/PSNR, ותוצאות המפורקות לפי מחלקה ולפי רמת עוצמה.</p>
+            <div class="crit-signals">
+              <div class="crit-signal crit-signal--strong"><span class="crit-signal__label">חזק</span><ul><li>מדד נכון לכל משימה (mAP, mIoU, יחס התאמה).</li><li>שחיקת ביצועים המשורטטת מול SNR ביחידות dB.</li><li>טבלאות לפי מחלקה ולפי SNR.</li></ul></div>
+              <div class="crit-signal crit-signal--weak"><span class="crit-signal__label">חלש</span><ul><li>פלטי הדגמה במקום מדדים.</li><li>מספר מצרפי יחיד שמסתיר קריסת מחלקה.</li><li>עוצמה כערך שרירותי של כפתור כוונון.</li></ul></div>
+            </div>
+          </article>
+
+          <article class="crit-card" id="crit-depth">
+            <span class="crit-card__index">קריטריון 3</span>
+            <h2 class="crit-card__title">עומק החקירה</h2>
+            <p class="crit-card__body">כמה יסודי הכיסוי של המרחב: משימות, עיוותים ורמות עוצמה מרובים, ושתי אסטרטגיות השחזור נחקרות ולא נקודה בודדת שנמדדה. תוצאות שליליות ומפתיעות נשמרות ואינן מוסתרות.</p>
+            <div class="crit-signals">
+              <div class="crit-signal crit-signal--strong"><span class="crit-signal__label">חזק</span><ul><li>סריקות עוצמה צפופות, לא שתי נקודות.</li><li>ניסיון גם בשיפור תמונה וגם ב-fine-tuning.</li><li>דיווח כן על כשלים.</li></ul></div>
+              <div class="crit-signal crit-signal--weak"><span class="crit-signal__label">חלש</span><ul><li>עיוות יחיד ברמה אחת.</li><li>ניסיון באסטרטגיית שחזור אחת בלבד.</li><li>תמונות מקרה מיטבי שנבררו בקפידה.</li></ul></div>
+            </div>
+          </article>
+
+          <article class="crit-card" id="crit-recovery">
+            <span class="crit-card__index">קריטריון 4</span>
+            <h2 class="crit-card__title">ניתוח השחזור ותובנה</h2>
+            <p class="crit-card__body">האם שיפור התמונה וה-fine-tuning מושווים באופן הוגן על אותן משימות ואותן עוצמות, והאם הפרויקט מסיק מסקנה הניתנת להגנה לגבי מתי כל אסטרטגיה עוזרת ומדוע.</p>
+            <div class="crit-signals">
+              <div class="crit-signal crit-signal--strong"><span class="crit-signal__label">חזק</span><ul><li>השוואה ישירה בתנאים זהים.</li><li>מסקנה ברורה של מתי כל גישה מנצחת.</li><li>קישור התוצאות לרמת ההפשטה של המשימה.</li></ul></div>
+              <div class="crit-signal crit-signal--weak"><span class="crit-signal__label">חלש</span><ul><li>אסטרטגיות שמושוות על תת-מערכים שונים.</li><li>מספרים ללא פרשנות.</li><li>טענת שחזור ללא הפרש מול בסיס הייחוס.</li></ul></div>
+            </div>
+          </article>
+
+          <article class="crit-card crit-card--wide" id="crit-viz">
+            <span class="crit-card__index">קריטריון 5</span>
+            <h2 class="crit-card__title">המחשה ותקשורת</h2>
+            <p class="crit-card__body">כמה בבירור העבודה מוצגת ומוגנת. פרויקטים חזקים הופכים את הממצא לגלוי: תמונות עם הערות (annotations) על גביהן, רשתות לפני/אחרי לאורך עיוות ושחזור, וגרפי מדידה (עקומות לפי SNR, עמודות לפי מחלקה). שלושת הפאנלים שלהלן הם אוצר המילים הוויזואלי המינימלי שדוח צריך לדבר בו.</p>
+            <div class="vexamples" aria-label="דוגמאות המחשה">
+              <figure class="vex">
+                <svg viewBox="0 0 200 130" role="img" aria-label="תמונה עם הערות: תיבה תוחמת ותווית מחלקה">
+                  <rect x="4" y="4" width="192" height="122" rx="6" fill="#eef2f7" stroke="#c7ced6"/>
+                  <rect x="52" y="40" width="86" height="66" fill="none" stroke="#c2410c" stroke-width="3"/>
+                  <rect x="52" y="26" width="60" height="15" fill="#c2410c"/>
+                  <text x="56" y="37" font-family="Manrope,sans-serif" font-size="10" font-weight="800" fill="#fff">car 0.94</text>
+                  <circle cx="150" cy="96" r="4" fill="#164a83"/><circle cx="70" cy="60" r="4" fill="#164a83"/><circle cx="120" cy="88" r="4" fill="#164a83"/>
+                </svg>
+                <p class="vex__cap">שכבת הערות: תיבה + תווית + נקודות מפתח</p>
+              </figure>
+              <figure class="vex">
+                <svg viewBox="0 0 200 130" role="img" aria-label="לפני ואחרי: תמונה מעוותת לצד גרסתה המשוחזרת">
+                  <rect x="4" y="4" width="92" height="122" rx="6" fill="#3a3f47"/>
+                  <g fill="#6b7280"><circle cx="20" cy="24" r="1.4"/><circle cx="42" cy="38" r="1.4"/><circle cx="66" cy="20" r="1.4"/><circle cx="30" cy="70" r="1.4"/><circle cx="74" cy="92" r="1.4"/><circle cx="52" cy="58" r="1.4"/><circle cx="18" cy="104" r="1.4"/><circle cx="82" cy="66" r="1.4"/><circle cx="60" cy="110" r="1.4"/></g>
+                  <text x="10" y="119" font-family="Manrope,sans-serif" font-size="9" font-weight="800" fill="#e5e7eb">מעוות</text>
+                  <rect x="104" y="4" width="92" height="122" rx="6" fill="#dbe6d8"/>
+                  <circle cx="150" cy="52" r="20" fill="#8bb08a"/><rect x="120" y="86" width="60" height="24" rx="4" fill="#9cb87f"/>
+                  <text x="110" y="119" font-family="Manrope,sans-serif" font-size="9" font-weight="800" fill="#1d5b41">משוחזר</text>
+                </svg>
+                <p class="vex__cap">לפני / אחרי: עיוות ושחזור</p>
+              </figure>
+              <figure class="vex">
+                <svg viewBox="0 0 200 130" role="img" aria-label="עקומת ביצועים מול SNR המראה שחיקה והתאוששות">
+                  <line x1="30" y1="10" x2="30" y2="108" stroke="#c7ced6" stroke-width="1.5"/>
+                  <line x1="30" y1="108" x2="190" y2="108" stroke="#c7ced6" stroke-width="1.5"/>
+                  <polyline points="34,96 70,86 106,64 142,36 178,22" fill="none" stroke="#164a83" stroke-width="2.5"/>
+                  <polyline points="34,98 70,94 106,86 142,74 178,58" fill="none" stroke="#c2410c" stroke-width="2.5" stroke-dasharray="5 4"/>
+                  <text x="60" y="124" font-family="Manrope,sans-serif" font-size="9" font-weight="700" fill="#5a626c">SNR (dB) &#8594;</text>
+                  <text x="6" y="60" font-family="Manrope,sans-serif" font-size="9" font-weight="700" fill="#5a626c" transform="rotate(-90 10 60)">ציון</text>
+                </svg>
+                <p class="vex__cap">עקומה לפי SNR: נקי מול משוחזר</p>
+              </figure>
+            </div>
+            <div class="crit-signals" style="margin-top:14px;">
+              <div class="crit-signal crit-signal--strong"><span class="crit-signal__label">חזק</span><ul><li>כל טענה נתמכת בגרף או בטבלה.</li><li>צירים מתויגים, כיתובים, מקראות ויחידות.</li><li>לפני/אחרי הופך את העיוות לקריא.</li></ul></div>
+              <div class="crit-signal crit-signal--weak"><span class="crit-signal__label">חלש</span><ul><li>צילומי מסך ללא תיוג.</li><li>מספרים ללא תמיכה ויזואלית.</li><li>שקפים שאינם מציגים את הסיפור הנמדד.</li></ul></div>
+            </div>
+          </article>
+
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../../shared/unified-enhance.js"></script>
+  <script defer src="../../shared/site-shell.js"></script>
+</body>
+</html>
