@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research Areas in Plain Language | Alexander (Sasha) Apartsin</title>
+<style>
+  :root{
+    --ink:#0f172a;
+    --muted:#475569;
+    --line:#e2e8f0;
+    --bg:#f8fafc;
+    --c1:#1d4ed8;   /* Robust */
+    --c2:#2e7d5a;   /* Spec-driven */
+    --c3:#7a3fa0;   /* Sparse multi-agent */
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:clamp(28px,5vw,56px) clamp(16px,4vw,32px)}
+  header .eyebrow{
+    font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--c1);
+    font-weight:800;margin:0 0 10px;
+  }
+  h1{margin:0;font-size:clamp(26px,4vw,40px);font-weight:800;letter-spacing:-.02em}
+  .lede{margin:14px 0 0;max-width:75ch;color:var(--muted);font-size:clamp(15px,1.6vw,18px)}
+  .lede b{color:var(--c1)}
+  .lede .he{display:block;margin-top:6px;color:#334155}
+
+  .table-scroll{margin-top:clamp(22px,3vw,34px);overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:#fff}
+  table{border-collapse:collapse;width:100%;min-width:760px}
+  thead th{
+    text-align:left;font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);font-weight:700;padding:16px 20px;border-bottom:2px solid var(--line);
+    background:#fbfdff;
+  }
+  tbody td{padding:20px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr{border-left:5px solid var(--row)}
+  tr.r1{--row:var(--c1)} tr.r2{--row:var(--c2)} tr.r3{--row:var(--c3)}
+
+  .area-name{font-size:17px;font-weight:800;color:var(--row);margin:0 0 4px;letter-spacing:-.01em}
+  .area-he{font-size:15px;font-weight:700;color:#334155;margin:0}
+  .area-tag{display:block;margin-top:8px;font-size:12.5px;color:var(--muted);font-style:italic;line-height:1.45}
+
+  .hook{margin:0;font-size:14.5px}
+  .hook .he{display:block;margin-top:8px;color:#334155}
+  [dir="rtl"]{direction:rtl;text-align:right}
+
+  ul.ex{margin:0;padding:0;list-style:none;font-size:14px}
+  ul.ex li{position:relative;padding:5px 0 5px 16px}
+  ul.ex li::before{content:"";position:absolute;left:0;top:12px;width:6px;height:6px;border-radius:50%;background:var(--row)}
+  ul.ex a{color:var(--ink);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--row) 40%,transparent)}
+  ul.ex a:hover{color:var(--row);border-bottom-color:var(--row)}
+  ul.ex .note{color:var(--muted)}
+
+  .col-area{width:23%} .col-hook{width:40%} .col-ex{width:37%}
+
+  footer{margin-top:26px;color:var(--muted);font-size:13px}
+  footer a{color:var(--c1)}
+
+  @media (max-width:640px){
+    thead{display:none}
+    table,tbody,tr,td{display:block;width:100%!important;min-width:0}
+    tbody tr{border-left:none;border-top:5px solid var(--row);margin:0}
+    tbody td{border-bottom:none;padding:14px 18px}
+    tbody td:first-child{padding-top:18px}
+    tbody tr:not(:last-child){border-bottom:1px solid var(--line)}
+    .table-scroll{min-width:0}
+    table{min-width:0}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Research &middot; Pragmatic AI</p>
+    <h1>Research Areas, in Plain Language</h1>
+    <p class="lede">
+      My research develops <b>Pragmatic AI</b>: methods that keep working in the messy real world, not just on the clean, idealized tests where almost any system looks good.
+      <span class="he" dir="rtl" lang="he">המחקר שלי מפַתח <b>בינה מלאכותית פרגמטית</b>: שיטות שממשיכות לעבוד בעולם האמיתי והמבולגן, ולא רק במבחני מעבדה נקיים שבהם כמעט כל מערכת נראית מצוין.</span>
+    </p>
+  </header>
+
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr>
+          <th class="col-area">Research area</th>
+          <th class="col-hook">In plain language (EN / HE)</th>
+          <th class="col-ex">Examples</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="r1">
+          <td>
+            <p class="area-name">Robust AI</p>
+            <p class="area-he" dir="rtl" lang="he">בינה חסינה</p>
+            <span class="area-tag">Robust perception and inference under degraded, real-world inputs.</span>
+          </td>
+          <td>
+            <p class="hook">
+              AI that still gets it right when the input is bad, a blurry plate at an impossible angle, a panicked emergency call, a noisy sensor.
+              <span class="he" dir="rtl" lang="he">בינה מלאכותית שקולעת לתשובה גם כשהקלט גרוע: לוחית מטושטשת בזווית קיצונית, שיחת מצוקה בהולה, או אות רועש.</span>
+            </p>
+          </td>
+          <td>
+            <ul class="ex">
+              <li><a href="https://arxiv.org/abs/2604.23814" target="_blank" rel="noopener">Recognition under extreme viewing geometry</a></li>
+              <li><a href="https://arxiv.org/abs/2604.14163" target="_blank" rel="noopener">Information extraction from mission-critical voice</a></li>
+              <li><a href="https://github.com/ApartsinProjects/ImplicitEntities" target="_blank" rel="noopener">Entity recognition from indirect cues</a></li>
+              <li><a href="https://github.com/ApartsinProjects/EMR-ACH" target="_blank" rel="noopener">Reasoning over conflicting evidence</a></li>
+            </ul>
+          </td>
+        </tr>
+        <tr class="r2">
+          <td>
+            <p class="area-name">Spec-Driven Generative AI</p>
+            <p class="area-he" dir="rtl" lang="he">בינה יוצרת מונחית מפרט</p>
+            <span class="area-tag">Generation under hard, verifiable constraints.</span>
+          </td>
+          <td>
+            <p class="hook">
+              Generative AI that meets an exact, checkable goal, like a molecule with a required property or code that provably matches its spec.
+              <span class="he" dir="rtl" lang="he">בינה יוצרת שפוגעת במטרה מדויקת שאפשר לאמת, כמו מולקולה עם תכונה נדרשת או קוד שעומד במפרט שלו.</span>
+            </p>
+          </td>
+          <td>
+            <ul class="ex">
+              <li><a href="https://github.com/ApartsinProjects/DGLD4Energetic" target="_blank" rel="noopener">Property-targeted molecular generation</a></li>
+              <li><a href="https://github.com/ApartsinProjects/StableSteering" target="_blank" rel="noopener">Preference-guided image generation</a></li>
+              <li><a href="https://github.com/ApartsinProjects/SpeculativeCodeGeneration" target="_blank" rel="noopener">Specification-verified code generation</a></li>
+              <li><a href="https://scholar.google.co.il/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&sortby=pubdate&citation_for_view=-5He5joAAAAJ:Mojj43d5GZwC" target="_blank" rel="noopener">Objective-driven text rewriting</a></li>
+            </ul>
+          </td>
+        </tr>
+        <tr class="r3">
+          <td>
+            <p class="area-name">Sparse Multi-Agent AI</p>
+            <p class="area-he" dir="rtl" lang="he">בינה רב-סוכנית דלילה</p>
+            <span class="area-tag">Coordination and reasoning with minimal communication or shared state.</span>
+          </td>
+          <td>
+            <p class="hook">
+              Many AI agents reaching a shared goal with almost no communication, like a drone swarm that coordinates with no control tower.
+              <span class="he" dir="rtl" lang="he">הרבה סוכני בינה שמשיגים מטרה משותפת כמעט בלי לתקשר, כמו נחיל רחפנים שמתאם בלי מגדל פיקוד.</span>
+            </p>
+          </td>
+          <td>
+            <ul class="ex">
+              <li><a href="https://github.com/ApartsinProjects/ZKDroneSwarm" target="_blank" rel="noopener">Coordination without communication</a></li>
+              <li><a href="https://github.com/ApartsinProjects/CoEval" target="_blank" rel="noopener">Evaluation without ground truth</a></li>
+              <li><a href="https://github.com/ApartsinProjects/CoReason" target="_blank" rel="noopener">Collaborative reasoning without shared state</a></li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <footer>
+    Part of the <a href="./research-focus.html">Pragmatic AI research program</a>. Example links point to public project repositories and papers.
+  </footer>
+</div>
+</body>
+</html>

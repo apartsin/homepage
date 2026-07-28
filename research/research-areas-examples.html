@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research Areas with Examples | Alexander (Sasha) Apartsin</title>
+<style>
+  :root{--ink:#0f172a;--muted:#475569;--line:#e2e8f0;--c1:#1d4ed8;--c2:#2e7d5a;--c3:#7a3fa0;}
+  *{box-sizing:border-box}
+  body{margin:0;background:#fff;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;}
+  .wrap{max-width:900px;margin:0 auto;padding:clamp(26px,5vw,52px) clamp(16px,4vw,32px)}
+  h1{margin:0 0 6px;font-size:clamp(24px,3.6vw,34px);font-weight:800;letter-spacing:-.02em}
+  .intro{color:var(--muted);margin:0 0 26px;max-width:75ch}
+  .intro b{color:var(--c1)}
+  .area{border:1px solid var(--line);border-left:5px solid var(--rc);border-radius:14px;padding:20px 22px;margin:18px 0}
+  .area.a1{--rc:var(--c1)} .area.a2{--rc:var(--c2)} .area.a3{--rc:var(--c3)}
+  .area h2{margin:0;font-size:19px;font-weight:800;color:var(--rc);letter-spacing:-.01em}
+  .area .sub{margin:5px 0 14px;color:var(--muted);font-size:14px}
+  ul{margin:0;padding:0;list-style:none}
+  li{position:relative;padding:7px 0 7px 18px;font-size:15px}
+  li::before{content:"";position:absolute;left:0;top:15px;width:7px;height:7px;border-radius:50%;background:var(--rc)}
+  li a{color:var(--ink);text-decoration:none;border-bottom:1.5px solid color-mix(in srgb,var(--rc) 45%,transparent)}
+  li a:hover{color:var(--rc);border-bottom-color:var(--rc)}
+  .tag{display:inline-block;margin-left:8px;font-size:11px;font-weight:700;letter-spacing:.03em;
+       padding:1px 7px;border-radius:999px;vertical-align:middle}
+  .tag.j{background:#e7f3ee;color:#1c6b47}
+  .tag.p{background:#eef2fb;color:#3253b5}
+  footer{margin-top:24px;color:var(--muted);font-size:12.5px}
+  footer .tag{margin-left:0}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Research Areas, with Examples</h1>
+  <p class="intro">Three directions of <b>Pragmatic AI</b>: methods that keep working in the messy real world. Each example links to the paper (journal or conference version where one exists, otherwise the preprint).</p>
+
+  <section class="area a1">
+    <h2>Robust AI for Language and Vision</h2>
+    <p class="sub">AI, language and vision, that works under high noise and realistic human text.</p>
+    <ul>
+      <li><a href="https://arxiv.org/abs/2509.11803" target="_blank" rel="noopener">LLM that understands noisy patient text</a><span class="tag p">preprint</span></li>
+      <li><a href="https://www.nature.com/articles/s41598-026-37022-y" target="_blank" rel="noopener">LLM that asks good follow-up questions</a><span class="tag j">Scientific Reports</span></li>
+      <li><a href="https://arxiv.org/abs/2604.14163" target="_blank" rel="noopener">LLM that understands critical voice communications</a><span class="tag p">preprint</span></li>
+      <li><a href="https://arxiv.org/abs/2604.23814" target="_blank" rel="noopener">Neural networks that read license plates from impossible angles</a><span class="tag p">preprint</span></li>
+      <li><a href="https://saemobilus.sae.org/papers/early-detection-engine-anomalies-a-case-study-ai-based-integrated-vehicle-health-management-2022-01-0225" target="_blank" rel="noopener">Neural networks that detect anomalies in cyber-physical (vehicle) models</a><span class="tag j">SAE WCX</span></li>
+      <li><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=-5He5joAAAAJ&citation_for_view=-5He5joAAAAJ:LPZeul_q3PIC" target="_blank" rel="noopener">ML that detects tunnels from weak seismic signals</a><span class="tag j">US Army report</span></li>
+    </ul>
+  </section>
+
+  <section class="area a2">
+    <h2>Spec-Driven Generative AI for Language, Vision and Materials</h2>
+    <p class="sub">AI that generates data according to strict specifications.</p>
+    <ul>
+      <li><a href="https://arxiv.org/abs/2605.26540" target="_blank" rel="noopener">Diffusion model that designs new molecules by their properties</a><span class="tag p">preprint</span></li>
+      <li><a href="https://arxiv.org/abs/2603.22459" target="_blank" rel="noopener">LLM that generates text with a precise style</a><span class="tag p">preprint</span></li>
+      <li><a href="https://arxiv.org/abs/2605.25502" target="_blank" rel="noopener">LLM that generates text with multi-aspect sentiments</a><span class="tag p">preprint</span></li>
+      <li><a href="https://arxiv.org/abs/2605.25601" target="_blank" rel="noopener">LLM that simulates students with specified knowledge gaps</a><span class="tag p">preprint</span></li>
+    </ul>
+  </section>
+
+  <section class="area a3">
+    <h2>Multi-Agent AI without Explicit Coordination</h2>
+    <p class="sub">Multiple AI agents that solve a common task without prior knowledge or coordination.</p>
+    <ul>
+      <li><a href="https://arxiv.org/abs/2605.25584" target="_blank" rel="noopener">Drones working together on a pool of targets</a><span class="tag p">preprint</span></li>
+      <li><a href="https://arxiv.org/abs/2606.03650" target="_blank" rel="noopener">LLMs evaluating and ranking each other</a><span class="tag p">preprint</span></li>
+    </ul>
+  </section>
+
+  <footer>
+    <span class="tag j">journal / conference</span> = peer-reviewed published version &nbsp;&middot;&nbsp; <span class="tag p">preprint</span> = arXiv.
+  </footer>
+</div>
+</body>
+</html>

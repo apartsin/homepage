@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Images and Vision: From Pixels to Deep Learning: Undergraduate Course Syllabus</title>
+<style>
+  :root{
+    --ink:#111418; --soft:#2c3138; --muted:#5a626c; --accent:#14385c;
+    --rule:#d1d4d8; --codebg:#f4f5f7;
+  }
+  html{background:#fff;}
+  body{
+    font-family:"Charter","Iowan Old Style","Source Serif Pro",Georgia,"Times New Roman",serif;
+    color:var(--ink); font-size:11pt; line-height:1.55;
+    max-width:720px; margin:0 auto; padding:48px 24px 72px;
+    text-align:justify; hyphens:auto;
+  }
+  code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:9.5pt; background:var(--codebg); padding:0 3px; border-radius:2px;}
+  a{color:var(--accent); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  .titleblock{text-align:center; margin-bottom:8px;}
+  h1{font-size:19pt; font-weight:600; line-height:1.25; margin:0 0 6px;}
+  .courseinfo{font-size:10pt; color:var(--muted); margin:0 0 4px;}
+  .courseinfo b{color:var(--soft); font-weight:600;}
+
+  h2{font-size:13pt; font-weight:700; color:var(--ink); margin:28px 0 8px; text-align:left;}
+  h3{font-size:11.5pt; font-weight:700; margin:18px 0 6px; text-align:left;}
+
+  p{margin:0; text-indent:1.4em;}
+  h2+p, h3+p, .tablewrap+p, figure+p, ul+p, ol+p, .abstract+p, table+p{text-indent:0;}
+  ul,ol{margin:6px 0 6px 1.6em; padding:0; text-align:left;}
+  li{margin:2px 0;}
+
+  .abstract{margin:22px auto 6px; width:92%;}
+  .abstract .ahead{text-align:center; font-variant:small-caps; letter-spacing:.06em; font-weight:600; font-size:11pt; margin-bottom:6px;}
+  .abstract .abody{font-size:10pt; text-align:justify;}
+
+  .tablewrap{margin:14px 0 6px;}
+  table{border-collapse:collapse; width:100%; font-size:9.5pt; line-height:1.4;}
+  caption{caption-side:top; font-size:9.5pt; text-align:left; padding-bottom:5px; color:var(--soft);}
+  caption b{color:var(--ink);}
+  thead th{border-top:1.5px solid var(--ink); border-bottom:1px solid var(--ink); padding:5px 8px; text-align:left; font-weight:700;}
+  tbody td{padding:6px 8px; vertical-align:top; text-align:left;}
+  tbody tr:last-child td{border-bottom:1.5px solid var(--ink);}
+  td.wk, th.wk{white-space:nowrap; width:1%; text-align:center;}
+  td.wk{font-weight:600;}
+  tr.pres td{background:#eef2f7;}
+  tr.pres td:first-child{font-weight:700; color:var(--accent);}
+  tr.pres td.presnote{font-weight:700; color:var(--accent);}
+  .chlist{margin:3px 0 0; color:var(--muted); font-size:9pt;}
+  .topic{font-weight:600;}
+
+  .hr{border:0; border-top:1px solid var(--rule); margin:26px 0;}
+  .refs p{font-size:9pt; text-indent:-1.6em; padding-left:1.6em; margin:0 0 6px; text-align:left;}
+  .footer{margin-top:40px; font-size:9pt; color:var(--muted); text-align:center;}
+  @media print{ body{padding:0;} a{color:var(--ink);} }
+</style>
+</head>
+<body>
+
+<div class="titleblock">
+  <h1>Images and Vision: From Pixels to Deep Learning</h1>
+  <p class="courseinfo"><b>Level:</b> Undergraduate &nbsp;·&nbsp; <b>Duration:</b> 13 weeks, one session per week &nbsp;·&nbsp; <b>Lecturer:</b> Sasha Apartsin</p>
+  <p class="courseinfo"><b>Course text:</b> <a href="https://visionbook.apartsin.com">Building Vision AI: From Pixels to Generative Models</a> (open access) · <a href="https://www.amazon.com/dp/B0H5BT8Y75">ebook at Amazon</a></p>
+</div>
+
+<div class="abstract">
+  <div class="ahead">Course Description</div>
+  <div class="abody">
+    This course is a hands-on, code-first introduction to computer vision, tracing the field from the physics of image formation to modern deep learning. It begins with how images are formed and represented, then builds through classical image processing (filtering, the frequency domain, morphology, and enhancement), classical computer vision (features, segmentation, camera geometry, stereo, motion, and 3D reconstruction), and finally deep vision (convolutional networks, detection, and segmentation). Throughout, concepts are demonstrated with practical coding examples using contemporary Python libraries, and are reinforced by a semester-long project in which students build, evaluate, and iterate on a vision system of their own.
+  </div>
+</div>
+
+<h2>Prerequisites</h2>
+<p>All necessary background material, including a refresher on machine learning fundamentals and the PyTorch library, is introduced during the course. Students are expected to be proficient in Python programming and comfortable with basic linear algebra, calculus, and probability. Prior exposure to machine learning is helpful but not required.</p>
+
+<h2>Expected Outcomes</h2>
+<p>Students who complete the course will acquire a broad, in-depth understanding of computer vision, from classical image processing to modern deep learning. By the end of the course, students will be able to:</p>
+<ul>
+  <li>Explain how digital images are formed, sampled, and represented, and apply core image-processing operations (filtering, frequency-domain analysis, morphology, and enhancement).</li>
+  <li>Apply classical computer-vision techniques, including feature detection and description, segmentation, camera calibration, stereo, optical flow, and 3D reconstruction.</li>
+  <li>Design, train, and evaluate deep vision models for image classification, object detection, and segmentation using PyTorch.</li>
+  <li>Build and iterate on an end-to-end vision system through a structured, guided project, combining and extending existing components.</li>
+  <li>Present and articulate technical work with confidence through in-class project presentations.</li>
+</ul>
+
+<h2>Course Format</h2>
+<p>The course runs for 13 weeks with one session per week. Ten sessions are lectures on the week's topic, taught with a code-first approach through hands-on examples using contemporary libraries and tools. The remaining three sessions (Weeks 5, 9, and 13) are dedicated entirely to student project presentations: proposal, interim, and final. In all three, teams present and receive in-class feedback from the instructor and peers.</p>
+
+<h2>Course Project</h2>
+<p>During the course, students will propose, implement, and present a project that builds an end-to-end vision system on a task of their choice. The project runs across the semester as a sequence of milestones: assembling the repository and team, scoping the problem, building a baseline, evaluating the model under image distortions and enhancements, and improving and fine-tuning the model with a documented analysis of what changed and why. For inspiration, a sample of past student projects supervised by the instructor is available at <a href="https://www.apartsin.com/teaching/hands-on-ai-science-courses-student-projects.html">apartsin.com/teaching/student-projects</a>. The milestones, all presented in class, are:</p>
+<ul>
+  <li><b>Project proposal (Week 5).</b> A talk covering the chosen problem, its motivation, the proposed approach, and the experimental plan. Presented for feedback and approval.</li>
+  <li><b>Interim progress update (Week 9).</b> A talk with first experimental results, what is and is not working, and the plan for the remaining weeks.</li>
+  <li><b>Final presentation (Week 13).</b> A talk covering the contribution, method, experiments, results, and conclusions.</li>
+  <li><b>Project repository.</b> A GitHub repository containing all project materials, including presentation slides, source code, datasets, and a detailed README file.</li>
+</ul>
+
+<h2>Grading</h2>
+<div class="tablewrap">
+<table>
+  <thead><tr><th>Delivery</th><th>Grade</th></tr></thead>
+  <tbody>
+    <tr><td>In-class project proposal presentation</td><td>No grade, for feedback and approval only</td></tr>
+    <tr><td>In-class project interim presentation</td><td>20%</td></tr>
+    <tr><td>In-class final project presentation</td><td>40%</td></tr>
+    <tr><td>Final project submission (GitHub repository)</td><td>40%</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Weekly Schedule</h2>
+<p>Below is an approximate weekly schedule outlining the subjects that will be covered. The actual order or content may vary depending on the class background, recent advancements in the field, or the specific focus of student projects. Chapter numbers refer to the course text [<a href="#references">1</a>]; each entry links to the corresponding chapter. Presentation weeks are highlighted.</p>
+
+<div class="tablewrap">
+<table>
+  <thead>
+    <tr><th class="wk">Week</th><th>Theme and readings</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="wk">1</td>
+      <td><span class="topic">Introduction &amp; Machine-Learning Refresher</span><br>
+      Typical vision tasks, course and project structure and requirements, and a refresher on machine-learning concepts, optimization, and generalization.
+      <div class="chlist">Textbook [<a href="#references">1</a>]: <a href="https://visionbook.apartsin.com/part-1-image-processing/module-00-python-imaging-stack/index.html">Ch.&nbsp;0, Foundations: The Python Imaging Stack</a>; <a href="https://visionbook.apartsin.com/part-1-image-processing/module-01-digital-image-fundamentals/index.html">Ch.&nbsp;1, Digital Image Fundamentals</a>.</div></td>
+    </tr>
+    <tr>
+      <td class="wk">2</td>
+      <td><span class="topic">Image Formation</span><br>
+      The human visual system, image sensors, color fundamentals, pinhole cameras and lenses, and sampling and quantization.
+      <div class="chlist">Textbook [<a href="#references">1</a>]: <a href="https://visionbook.apartsin.com/part-1-image-processing/module-01-digital-image-fundamentals/index.html">Ch.&nbsp;1, Digital Image Fundamentals</a> (sensors, color, sampling &amp; quantization).</div></td>
+    </tr>
+    <tr>
+      <td class="wk">3</td>
+      <td><span class="topic">Image Manipulation &amp; Geometric Transforms</span><br>
+      Imaging libraries, basic image manipulation, resampling, and geometric transformations and warping.
+      <div class="chlist">Textbook [<a href="#references">1</a>]: <a href="https://visionbook.apartsin.com/part-1-image-processing/module-05-geometric-transformations/index.html">Ch.&nbsp;5, Geometric Transformations &amp; Image Warping</a>; <a href="https://visionbook.apartsin.com/part-1-image-processing/module-08-tools-of-the-trade/index.html">Ch.&nbsp;8, Tools of the Trade: The Image Processing Stack</a>.</div></td>
+    </tr>
+    <tr>
+      <td class="wk">4</td>
+      <td><span class="topic">Image Filtering &amp; the Frequency Domain</span><br>
+      Spatial filtering and convolution, the Discrete Fourier Transform, convolution and filtering in the frequency domain, and image enhancement.
+      <div class="chlist">Textbook [<a href="#references">1</a>]: <a href="https://visionbook.apartsin.com/part-1-image-processing/module-03-spatial-filtering-convolution/index.html">Ch.&nbsp;3, Spatial Filtering &amp; Convolution</a>; <a href="https://visionbook.apartsin.com/part-1-image-processing/module-04-frequency-domain-multiscale/index.html">Ch.&nbsp;4, The Frequency Domain &amp; Multi-Scale Analysis</a>; <a href="https://visionbook.apartsin.com/part-1-image-processing/module-07-restoration-enhancement/index.html">Ch.&nbsp;7, Image Restoration &amp; Enhancement</a>.</div></td>
+    </tr>
+    <tr class="pres">
+      <td class="wk">5</td>
+      <td class="presnote">Student Presentations: Project Proposal</td>
+    </tr>
+    <tr>
+      <td class="wk">6</td>
+      <td><span class="topic">Enhancement, Edges &amp; Morphology</span><br>
+      Histogram processing and thresholding, noise smoothing, image pyramids, image derivatives and edge detection, and binary and grey-scale morphology.
+      <div class="chlist">Textbook [<a href="#references">1</a>]: <a href="https://visionbook.apartsin.com/part-1-image-processing/module-02-point-operations-histograms/index.html">Ch.&nbsp;2, Point Operations, Histograms &amp; Thresholding</a>; <a href="https://visionbook.apartsin.com/part-1-image-processing/module-06-morphology-binary-shape/index.html">Ch.&nbsp;6, Morphology, Binary Images &amp; Shape</a>; <a href="https://visionbook.apartsin.com/part-2-classical-computer-vision/module-09-edges-lines-curves/index.html">Ch.&nbsp;9, Edges, Lines &amp; Curves</a>.</div></td>
+    </tr>
+    <tr>
+      <td class="wk">7</td>
+      <td><span class="topic">Segmentation &amp; Features</span><br>
+      Classical segmentation and grouping, image features and descriptors, and supervised and unsupervised recognition pipelines.
+      <div class="chlist">Textbook [<a href="#references">1</a>]: <a href="https://visionbook.apartsin.com/part-2-classical-computer-vision/module-10-keypoints-descriptors-matching/index.html">Ch.&nbsp;10, Keypoints, Descriptors &amp; Matching</a>; <a href="https://visionbook.apartsin.com/part-2-classical-computer-vision/module-11-classical-segmentation/index.html">Ch.&nbsp;11, Classical Segmentation &amp; Grouping</a>; <a href="https://visionbook.apartsin.com/part-2-classical-computer-vision/module-16-classical-recognition/index.html">Ch.&nbsp;16, Classical Recognition Pipelines</a>.</div></td>
+    </tr>
+    <tr>
+      <td class="wk">8</td>
+      <td><span class="topic">Camera Geometry, Stereo &amp; Motion</span><br>
+      Image registration, camera parameters and calibration, two-view geometry and stereo, optical flow, and object tracking.
+      <div class="chlist">Textbook [<a href="#references">1</a>]: <a href="https://visionbook.apartsin.com/part-2-classical-computer-vision/module-12-camera-models-calibration/index.html">Ch.&nbsp;12, Camera Models &amp; Calibration</a>; <a href="https://visionbook.apartsin.com/part-2-classical-computer-vision/module-13-two-view-stereo-depth/index.html">Ch.&nbsp;13, Two-View Geometry, Stereo &amp; Depth</a>; <a href="https://visionbook.apartsin.com/part-2-classical-computer-vision/module-15-motion-flow-tracking/index.html">Ch.&nbsp;15, Motion, Optical Flow &amp; Tracking</a>.</div></td>
+    </tr>
+    <tr class="pres">
+      <td class="wk">9</td>
+      <td class="presnote">Student Presentations: Interim Report</td>
+    </tr>
+    <tr>
+      <td class="wk">10</td>
+      <td><span class="topic">3D Vision &amp; Neural Scene Representations</span><br>
+      Structure from motion, visual SLAM, point clouds, structured light, pose estimation, 2D and 3D Gaussian Splatting, and Neural Radiance Fields.
+      <div class="chlist">Textbook [<a href="#references">1</a>]: <a href="https://visionbook.apartsin.com/part-2-classical-computer-vision/module-14-sfm-visual-slam/index.html">Ch.&nbsp;14, Structure from Motion &amp; Visual SLAM</a>; <a href="https://visionbook.apartsin.com/part-3-deep-learning-for-vision/module-27-depth-3d-neural-scenes/index.html">Ch.&nbsp;27, Depth, 3D Vision &amp; Neural Scene Representations</a>.</div></td>
+    </tr>
+    <tr>
+      <td class="wk">11</td>
+      <td><span class="topic">Deep Vision Foundations &amp; CNNs</span><br>
+      Deep-learning concepts and PyTorch, MLP and CNN classifiers, CNN visualizations and manipulations, CNN architectures, and training recipes.
+      <div class="chlist">Textbook [<a href="#references">1</a>]: <a href="https://visionbook.apartsin.com/part-3-deep-learning-for-vision/module-18-neural-networks-pytorch/index.html">Ch.&nbsp;18, Neural Networks &amp; PyTorch for Vision</a>; <a href="https://visionbook.apartsin.com/part-3-deep-learning-for-vision/module-19-convolutional-neural-networks/index.html">Ch.&nbsp;19, Convolutional Neural Networks</a>; <a href="https://visionbook.apartsin.com/part-3-deep-learning-for-vision/module-20-cnn-architectures/index.html">Ch.&nbsp;20, CNN Architectures</a>; <a href="https://visionbook.apartsin.com/part-3-deep-learning-for-vision/module-21-training-recipes/index.html">Ch.&nbsp;21, Training Recipes</a>.</div></td>
+    </tr>
+    <tr>
+      <td class="wk">12</td>
+      <td><span class="topic">Deep Detection &amp; Segmentation</span><br>
+      Region-proposal networks, advanced object detection, semantic and instance segmentation, and end-to-end detection applications.
+      <div class="chlist">Textbook [<a href="#references">1</a>]: <a href="https://visionbook.apartsin.com/part-3-deep-learning-for-vision/module-23-object-detection/index.html">Ch.&nbsp;23, Object Detection</a>; <a href="https://visionbook.apartsin.com/part-3-deep-learning-for-vision/module-24-segmentation/index.html">Ch.&nbsp;24, Segmentation: Semantic, Instance &amp; Promptable</a>.</div></td>
+    </tr>
+    <tr class="pres">
+      <td class="wk">13</td>
+      <td class="presnote">Student Presentations: Project Finals</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Policies</h2>
+<h3>Use of AI tools</h3>
+<p>The use of AI tools for generating project code and presentation slides is highly encouraged, provided that two essential requirements are met: the project must demonstrate novelty by addressing a new and valuable task, and the team must maintain full ownership and responsibility for all submitted code and presentation materials.</p>
+<h3>Collaboration and integrity</h3>
+<p>Discussion across teams is encouraged; the code, experiments, and writing submitted by each team must be its own. All results reported in presentations and documentation must be backed by runnable artifacts in the team's repository.</p>
+
+<hr class="hr">
+<h2 id="references">References</h2>
+<div class="refs">
+<p>[1] A. Apartsin and Y. Aperstein, <em>Building Vision AI: From Pixels to Generative Models</em>, 2nd ed., 2026. Open access online at <a href="https://visionbook.apartsin.com">https://visionbook.apartsin.com</a>; also available as an ebook at Amazon: <a href="https://www.amazon.com/dp/B0H5BT8Y75">https://www.amazon.com/dp/B0H5BT8Y75</a>. Part I (Image Processing, Chapters 0 to 8) and Part II (Classical Computer Vision, Chapters 9 to 17) are the primary text for the course; Part III (Deep Learning for Vision, Chapters 18 to 29) supports the deep-vision material.</p>
+<h3 style="font-size:9.5pt; margin:10px 0 4px;">Supplementary books</h3>
+<p>[2] R. Szeliski, <em>Computer Vision: Algorithms and Applications</em>, 2nd ed. Springer, 2022. Open access at <a href="https://szeliski.org/Book/">szeliski.org/Book</a>.</p>
+<p>[3] R. C. Gonzalez and R. E. Woods, <em>Digital Image Processing</em>, 4th ed. Pearson, 2018.</p>
+<p>[4] D. A. Forsyth and J. Ponce, <em>Computer Vision: A Modern Approach</em>, 2nd ed. Pearson, 2012.</p>
+</div>
+<div class="footer">Images and Vision: From Pixels to Deep Learning · Undergraduate course syllabus · Lecturer: Sasha Apartsin</div>
+
+</body>
+</html>

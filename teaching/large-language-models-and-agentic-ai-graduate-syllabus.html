@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Large Language Models and Agentic AI: Graduate Course Syllabus</title>
+<style>
+  :root{
+    --ink:#111418; --soft:#2c3138; --muted:#5a626c; --accent:#14385c;
+    --rule:#d1d4d8; --codebg:#f4f5f7;
+  }
+  html{background:#fff;}
+  body{
+    font-family:"Charter","Iowan Old Style","Source Serif Pro",Georgia,"Times New Roman",serif;
+    color:var(--ink); font-size:11pt; line-height:1.55;
+    max-width:720px; margin:0 auto; padding:48px 24px 72px;
+    text-align:justify; hyphens:auto;
+  }
+  code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:9.5pt; background:var(--codebg); padding:0 3px; border-radius:2px;}
+  a{color:var(--accent); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  .titleblock{text-align:center; margin-bottom:8px;}
+  h1{font-size:19pt; font-weight:600; line-height:1.25; margin:0 0 6px;}
+  .courseinfo{font-size:10pt; color:var(--muted); margin:0 0 4px;}
+  .courseinfo b{color:var(--soft); font-weight:600;}
+  .doclinks{font-size:9.5pt; text-align:center; margin:10px 0 20px; color:var(--muted);}
+  .doclinks a{display:inline-block; margin:0 6px 4px;}
+
+  h2{font-size:13pt; font-weight:700; color:var(--ink); margin:28px 0 8px; text-align:left;}
+  h3{font-size:11.5pt; font-weight:700; margin:18px 0 6px; text-align:left;}
+
+  p{margin:0; text-indent:1.4em;}
+  h2+p, h3+p, .tablewrap+p, figure+p, ul+p, ol+p, .abstract+p, table+p{text-indent:0;}
+  ul,ol{margin:6px 0 6px 1.6em; padding:0; text-align:left;}
+  li{margin:2px 0;}
+
+  .abstract{margin:22px auto 6px; width:92%;}
+  .abstract .ahead{text-align:center; font-variant:small-caps; letter-spacing:.06em; font-weight:600; font-size:11pt; margin-bottom:6px;}
+  .abstract .abody{font-size:10pt; text-align:justify;}
+
+  .tablewrap{margin:14px 0 6px;}
+  table{border-collapse:collapse; width:100%; font-size:9.5pt; line-height:1.4;}
+  caption{caption-side:top; font-size:9.5pt; text-align:left; padding-bottom:5px; color:var(--soft);}
+  caption b{color:var(--ink);}
+  thead th{border-top:1.5px solid var(--ink); border-bottom:1px solid var(--ink); padding:5px 8px; text-align:left; font-weight:700;}
+  tbody td{padding:6px 8px; vertical-align:top; text-align:left;}
+  tbody tr:last-child td{border-bottom:1.5px solid var(--ink);}
+  td.wk, th.wk{white-space:nowrap; width:1%;}
+  tr.pres td{background:#eef2f7;}
+  tr.pres td:first-child{font-weight:700; color:var(--accent);}
+  .chlist{margin:3px 0 0; color:var(--muted); font-size:9pt;}
+  .topic{font-weight:600;}
+
+  .hr{border:0; border-top:1px solid var(--rule); margin:26px 0;}
+  .refs p{font-size:9pt; text-indent:-1.6em; padding-left:1.6em; margin:0 0 6px; text-align:left;}
+  .footer{margin-top:40px; font-size:9pt; color:var(--muted); text-align:center;}
+  @media print{ body{padding:0;} a{color:var(--ink);} }
+</style>
+</head>
+<body>
+
+<div class="titleblock">
+  <h1>Large Language Models and Agentic AI</h1>
+  <p class="courseinfo"><b>Level:</b> Graduate &nbsp;·&nbsp; <b>Duration:</b> 13 weeks, one 3-hour session per week &nbsp;·&nbsp; <b>Credits:</b> 3</p>
+  <p class="courseinfo"><b>Instructor:</b> Dr. Alexander (Sasha) Apartsin &nbsp;·&nbsp; <b>Course text:</b> <a href="https://llmbook.apartsin.com">llmbook.apartsin.com</a> (open access) · <a href="https://www.amazon.com/dp/B0H1MQH23D">ebook at Amazon</a></p>
+</div>
+
+<div class="abstract">
+  <div class="ahead">Course Description</div>
+  <div class="abody">
+    This course is an advanced, research-oriented treatment of large language models and the agentic systems built on top of them. Building directly on a prior graduate course in deep learning, it moves quickly from a one-week consolidation of Transformer architecture and text generation into the core of the modern LLM stack: pretraining and scaling laws, reasoning models and test-time compute, inference optimization, prompting and hybrid architectures, fine-tuning and alignment, retrieval-augmented generation, tool-using and multi-agent systems, multimodal and conversational interfaces, rigorous evaluation, and safety and security. The centerpiece of the course is a semester-long research project: each team formulates an original research question, designs and runs experiments, and reports results in three milestone presentations (proposal, interim, final) and a documented GitHub repository. Each student leaves the course with a demonstrable, novel, technically deep, research-oriented project added to their portfolio.
+  </div>
+</div>
+
+<h2>Prerequisites</h2>
+<p>Students are assumed to have completed an <b>advanced graduate course in deep learning</b>. In particular, the following are treated as known and are not retaught: backpropagation and optimization (SGD, Adam, learning-rate schedules), regularization, CNNs and RNNs, embeddings, sequence-to-sequence models, and basic attention; comfortable fluency in Python and PyTorch; and graduate-level probability and linear algebra. Week 1 provides a fast, LLM-focused consolidation of the Transformer and decoding, not an introduction to deep learning. Students missing the prerequisite should first work through Part I of the course text (Chapters 0 to 5) and Appendix A independently.</p>
+
+<h2>Learning Outcomes</h2>
+<p>On completing the course, students will be able to:</p>
+<ul>
+  <li>Explain how modern LLMs are built and served: pretraining data and scaling laws, architecture variants, reasoning via test-time compute, and inference optimization.</li>
+  <li>Design LLM applications spanning prompting, structured outputs, retrieval-augmented generation, fine-tuning and alignment, and tool-using agents, and justify the choice among them.</li>
+  <li>Evaluate LLM systems credibly, including benchmark design, LLM-as-judge protocols and their biases, RAG and agent-specific evaluation, and online monitoring.</li>
+  <li>Analyze safety, security, and governance properties of deployed LLM and agent systems, including prompt injection, guardrails, and hallucination measurement.</li>
+  <li>Conduct and communicate original research: formulate a hypothesis, design controlled experiments, analyze results, and present them in talks and a documented project repository.</li>
+  <li>Leave the course with a demonstrable, novel, technically deep, research-oriented project added to their portfolio, published as a documented GitHub repository.</li>
+</ul>
+
+<h2>Course Format</h2>
+<p>The course consists of lectures and student presentations. Ten sessions are lectures on the week's topic, with the listed chapters to be read before class. The remaining three sessions (Weeks 5, 8, and 13) are dedicated entirely to student presentations of the research projects: proposal, interim, and final. In all three, teams present and receive in-class feedback from the instructor and peers.</p>
+
+<h2>Research Project</h2>
+<p>The project is the core deliverable of the course and is explicitly <b>research-oriented</b>: the goal is a novel, defensible empirical or methodological contribution. Students work in teams of two. Each team is required to: (i) <b>formulate a novel research problem</b> connected to the course material, positioned against related work and not already answered in the literature; (ii) <b>source suitable datasets or generate synthetic data</b> where no adequate dataset exists, with the data collection or generation methodology documented and justified; and (iii) design and run controlled experiments that answer the problem with evidence. Significant novelty is a hard requirement and is assessed at the proposal stage; projects re-implementing an existing system or reproducing a published result without a new question will not be approved. For inspiration, a sample of past student projects supervised by the instructor is available at <a href="https://www.apartsin.com/teaching/hands-on-ai-science-courses-student-projects.html">apartsin.com/teaching/student-projects</a>.</p>
+<p>Milestones, all presented in class:</p>
+<ul>
+  <li><b>Project proposal (Week 5).</b> A talk covering the research question and hypothesis, why it matters, related work, proposed method, experimental design (datasets, models, baselines, metrics), and a risk plan. Teams receive in-class feedback from the instructor and peers.</li>
+  <li><b>Interim presentation (Week 8).</b> A talk with first experimental results: what has been run, what the early evidence shows, what changed relative to the proposal, and the plan for the remaining weeks. Teams receive in-class feedback. Negative or surprising early results are expected at this stage; the grade rewards sound diagnosis and iteration, not polished numbers.</li>
+  <li><b>Final presentation (Week 13).</b> A conference-style talk plus questions, covering the contribution, method, experiments, and conclusions, with in-class feedback from the instructor and peers.</li>
+  <li><b>Project repository (one week after Week 13).</b> A GitHub repository containing the complete project: code, experiment configurations and result files, and the written report and documentation (README, problem statement and related work, method, data sourcing or synthetic-data generation, results, and reproduction instructions). The repository is the lasting portfolio artifact of the course: a demonstrable, novel, technically deep, research-oriented project.</li>
+</ul>
+
+<h2>Grading</h2>
+<div class="tablewrap">
+<table>
+  <thead><tr><th>Component</th><th>Weight</th><th>Due</th></tr></thead>
+  <tbody>
+    <tr><td>Proposal presentation</td><td>10%</td><td>Week 5</td></tr>
+    <tr><td>Interim presentation</td><td>20%</td><td>Week 8</td></tr>
+    <tr><td>Final presentation</td><td>20%</td><td>Week 13</td></tr>
+    <tr><td>Project repository: code, text, and documentation (GitHub)</td><td>50%</td><td>One week after Week 13</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Weekly Schedule</h2>
+<p>Chapter numbers refer to the course text; each entry links to the corresponding chapter. Presentation weeks are highlighted.</p>
+
+<div class="tablewrap">
+<table>
+  <thead>
+    <tr><th class="wk">Week</th><th>Topic and readings</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="wk">1</td>
+      <td><span class="topic">From Deep Learning to LLMs</span><br>
+      Fast consolidation for students with a deep-learning background: attention as the central primitive, the Transformer architecture in detail (pre-norm, positional encodings, KV caching), and decoding strategies for text generation (sampling, beam, nucleus, speculative decoding). Course overview and project kickoff.
+      <div class="chlist">Readings [<a href="#references">1</a>]: <a href="https://llmbook.apartsin.com/part-1-llm-building-blocks/module-02-sequence-models-attention/index.html">Ch.&nbsp;2, Sequence Models &amp; the Attention Mechanism</a>; <a href="https://llmbook.apartsin.com/part-1-llm-building-blocks/module-03-transformer-architecture/index.html">Ch.&nbsp;3, The Transformer Architecture</a>; <a href="https://llmbook.apartsin.com/part-1-llm-building-blocks/module-04-decoding-text-generation/index.html">Ch.&nbsp;4, Decoding Strategies &amp; Text Generation</a></div></td>    </tr>
+    <tr>
+      <td class="wk">2</td>
+      <td><span class="topic">Pretraining, Scaling Laws &amp; the Modern LLM Landscape</span><br>
+      Pretraining objectives, data curation and contamination, compute-optimal scaling, and the contemporary model landscape: architecture variants, mixture-of-experts, long-context internals, and open-weight versus frontier models.
+      <div class="chlist">Readings [<a href="#references">1</a>]: <a href="https://llmbook.apartsin.com/part-2-understanding-llms/module-06-pretraining-scaling-laws/index.html">Ch.&nbsp;6, Pretraining, Scaling Laws &amp; Data Curation</a>; <a href="https://llmbook.apartsin.com/part-2-understanding-llms/module-07-modern-llm-landscape/index.html">Ch.&nbsp;7, Modern LLM Landscape &amp; Model Internals</a></div></td>    </tr>
+    <tr>
+      <td class="wk">3</td>
+      <td><span class="topic">Reasoning, Test-Time Compute &amp; Efficient Inference</span><br>
+      Reasoning models and chain-of-thought training, test-time compute scaling, verification and search; inference optimization (quantization, batching, attention kernels, serving systems); a survey of interpretability and mechanistic analysis as a research toolkit.
+      <div class="chlist">Readings [<a href="#references">1</a>]: <a href="https://llmbook.apartsin.com/part-2-understanding-llms/module-08-reasoning-test-time-compute/index.html">Ch.&nbsp;8, Reasoning Models &amp; Test-Time Compute</a>; <a href="https://llmbook.apartsin.com/part-2-understanding-llms/module-09-inference-optimization/index.html">Ch.&nbsp;9, Inference Optimization &amp; Efficient Serving</a>; <a href="https://llmbook.apartsin.com/part-2-understanding-llms/module-10-interpretability/index.html">Ch.&nbsp;10, Interpretability &amp; Mechanistic Understanding</a></div></td>
+    </tr>
+    <tr>
+      <td class="wk">4</td>
+      <td><span class="topic">Working with LLMs: APIs, Prompting &amp; Hybrid Architectures</span><br>
+      LLM APIs and structured outputs, prompt engineering as a disciplined methodology (few-shot, chain-of-thought, self-consistency, prompt optimization), and decision frameworks for hybrid ML+LLM system design. Proposal clinic: experimental-design checklist for the project proposals.
+      <div class="chlist">Readings [<a href="#references">1</a>]: <a href="https://llmbook.apartsin.com/part-3-working-with-llms/module-11-llm-apis/index.html">Ch.&nbsp;11, Working with LLM APIs</a>; <a href="https://llmbook.apartsin.com/part-3-working-with-llms/module-12-prompt-engineering/index.html">Ch.&nbsp;12, Prompt Engineering &amp; Advanced Techniques</a>; <a href="https://llmbook.apartsin.com/part-3-working-with-llms/module-13-hybrid-ml-llm/index.html">Ch.&nbsp;13, Hybrid ML+LLM Architectures &amp; Decision Frameworks</a></div></td>    </tr>
+    <tr class="pres">
+      <td class="wk">5</td>
+      <td><span class="topic">Student Presentations I: Project Proposals</span><br>
+      Each team presents its research question, related work, method, and experimental design, and receives in-class feedback from the instructor and peers.</td>    </tr>
+    <tr>
+      <td class="wk">6</td>
+      <td><span class="topic">Training &amp; Adaptation: Fine-Tuning, PEFT &amp; Alignment</span><br>
+      Synthetic data generation, supervised fine-tuning, parameter-efficient methods (LoRA and variants), distillation and model merging, and alignment via RLHF, DPO, and preference tuning.
+      <div class="chlist">Readings [<a href="#references">1</a>]: <a href="https://llmbook.apartsin.com/part-4-training-adaptation/module-15-synthetic-data/index.html">Ch.&nbsp;15, Synthetic Data Generation &amp; LLM Simulation</a>; <a href="https://llmbook.apartsin.com/part-4-training-adaptation/module-16-fine-tuning-fundamentals/index.html">Ch.&nbsp;16, Fine-Tuning Fundamentals</a>; <a href="https://llmbook.apartsin.com/part-4-training-adaptation/module-17-peft/index.html">Ch.&nbsp;17, Parameter-Efficient Fine-Tuning, Distillation &amp; Model Merging</a>; <a href="https://llmbook.apartsin.com/part-4-training-adaptation/module-18-alignment-rlhf-dpo/index.html">Ch.&nbsp;18, Alignment: RLHF, DPO &amp; Preference Tuning</a></div></td>
+    </tr>
+    <tr>
+      <td class="wk">7</td>
+      <td><span class="topic">Retrieval-Augmented Generation &amp; Information Extraction</span><br>
+      Embeddings, vector databases and semantic search; the RAG pipeline and its failure modes; structured information extraction and NER with LLMs; advanced RAG: query rewriting, reranking, agentic and graph-based retrieval.
+      <div class="chlist">Readings [<a href="#references">1</a>]: <a href="https://llmbook.apartsin.com/part-7-retrieval-information-extraction-with-llms/module-31-embeddings-vector-db/index.html">Ch.&nbsp;31, Embeddings, Vector Databases &amp; Semantic Search</a>; <a href="https://llmbook.apartsin.com/part-7-retrieval-information-extraction-with-llms/module-32-rag/index.html">Ch.&nbsp;32, Retrieval-Augmented Generation (RAG)</a>; <a href="https://llmbook.apartsin.com/part-7-retrieval-information-extraction-with-llms/module-34-structured-information-extraction-ner/index.html">Ch.&nbsp;34, Structured Information Extraction &amp; NER</a>; <a href="https://llmbook.apartsin.com/part-7-retrieval-information-extraction-with-llms/module-35-advanced-rag/index.html">Ch.&nbsp;35, Advanced RAG</a></div></td>    </tr>
+    <tr class="pres">
+      <td class="wk">8</td>
+      <td><span class="topic">Student Presentations II: Interim Progress</span><br>
+      Each team presents first experimental results, diagnosis of what is and is not working, deviations from the proposal, and the plan for the final stretch, and receives in-class feedback from the instructor and peers.</td>    </tr>
+    <tr>
+      <td class="wk">9</td>
+      <td><span class="topic">Agentic AI: Tool Use, Protocols &amp; Multi-Agent Systems</span><br>
+      Agent foundations (planning, memory, reflection), tool use and function calling, agent protocols (MCP and beyond), multi-agent architectures and coordination, and specialized agents for coding and research.
+      <div class="chlist">Readings [<a href="#references">1</a>]: <a href="https://llmbook.apartsin.com/part-6-agentic-ai/module-26-ai-agents/index.html">Ch.&nbsp;26, AI Agent Foundations</a>; <a href="https://llmbook.apartsin.com/part-6-agentic-ai/module-27-tool-use-protocols/index.html">Ch.&nbsp;27, Tool Use, Function Calling &amp; Protocols</a>; <a href="https://llmbook.apartsin.com/part-6-agentic-ai/module-28-multi-agent-systems/index.html">Ch.&nbsp;28, Multi-Agent Systems</a>; <a href="https://llmbook.apartsin.com/part-6-agentic-ai/module-29-specialized-agents/index.html">Ch.&nbsp;29, Specialized Agents</a></div></td>
+    </tr>
+    <tr>
+      <td class="wk">10</td>
+      <td><span class="topic">Multimodal &amp; Conversational Systems</span><br>
+      Vision-language and omni models, document understanding and OCR, architectures for end-to-end conversational AI systems, and voice and realtime multimodal assistants.
+      <div class="chlist">Readings [<a href="#references">1</a>]: <a href="https://llmbook.apartsin.com/part-5-multimodal-llms/module-21-document-understanding-ocr/index.html">Ch.&nbsp;21, Document Understanding and OCR</a>; <a href="https://llmbook.apartsin.com/part-5-multimodal-llms/module-22-vision-language-models/index.html">Ch.&nbsp;22, Vision-Language and Omni Models</a>; <a href="https://llmbook.apartsin.com/part-8-conversational-ai-with-llms/module-37-conversational-ai/index.html">Ch.&nbsp;37, Building Conversational AI Systems</a>; <a href="https://llmbook.apartsin.com/part-8-conversational-ai-with-llms/module-40-voice-realtime-multimodal/index.html">Ch.&nbsp;40, Voice and Realtime Multimodal Assistants</a></div></td>
+    </tr>
+    <tr>
+      <td class="wk">11</td>
+      <td><span class="topic">Evaluation: Benchmarks, LLM-as-Judge &amp; Observability</span><br>
+      Evaluation foundations and quality metrics; specialized evaluation for RAG, agents, multimodal, and long-context systems; LLM-as-judge protocols and their biases; online evaluation and production monitoring. Directly applicable to the final project experiments.
+      <div class="chlist">Readings [<a href="#references">1</a>]: <a href="https://llmbook.apartsin.com/part-9-llm-evaluation-observability/module-42-evaluation-foundations/index.html">Ch.&nbsp;42, LLM Evaluation &amp; Quality Metrics</a>; <a href="https://llmbook.apartsin.com/part-9-llm-evaluation-observability/module-43-specialized-evaluation/index.html">Ch.&nbsp;43, Specialized Evaluation: RAG, Agents, Multimodal, Long-Context</a>; <a href="https://llmbook.apartsin.com/part-9-llm-evaluation-observability/module-44-online-eval-observability/index.html">Ch.&nbsp;44, Online Evaluation, Observability, and Production Monitoring</a>; <a href="https://llmbook.apartsin.com/part-9-llm-evaluation-observability/module-46-llm-as-judge-automated-evaluation/index.html">Ch.&nbsp;46, LLM-as-Judge &amp; Automated Evaluation</a></div></td>
+    </tr>
+    <tr>
+      <td class="wk">12</td>
+      <td><span class="topic">Safety, Security &amp; Research Frontiers</span><br>
+      Adversarial security and red teaming, prompt injection, guardrails and runtime safety, agent safety, bias and hallucinations; a closing survey of research frontiers: frontier architectures, theory and cognition, and open questions.
+      <div class="chlist">Readings [<a href="#references">1</a>]: <a href="https://llmbook.apartsin.com/part-10-llm-security-runtime-safety/module-47-adversarial-security-red-team/index.html">Ch.&nbsp;47, Adversarial Security and Red Teaming</a>; <a href="https://llmbook.apartsin.com/part-10-llm-security-runtime-safety/module-48-guardrails-runtime-safety/index.html">Ch.&nbsp;48, Guardrails and Runtime Safety</a>; <a href="https://llmbook.apartsin.com/part-10-llm-security-runtime-safety/module-49-agent-safety-autonomy/index.html">Ch.&nbsp;49, Agent Safety &amp; Security</a>; <a href="https://llmbook.apartsin.com/part-11-llm-ethics-trust-governance/module-52-bias-fairness/index.html">Ch.&nbsp;52, Bias, Fairness &amp; Hallucinations</a>; <a href="https://llmbook.apartsin.com/part-15-llm-agentic-ai-research-frontiers/module-75-frontier-architectures/index.html">Ch.&nbsp;75, Frontier Architectures &amp; Scaling</a>; <a href="https://llmbook.apartsin.com/part-15-llm-agentic-ai-research-frontiers/module-76-frontier-theory/index.html">Ch.&nbsp;76, Frontier Theory &amp; Cognition</a>; <a href="https://llmbook.apartsin.com/part-15-llm-agentic-ai-research-frontiers/module-77-agi-trajectories/index.html">Ch.&nbsp;77, AGI Trajectories &amp; Open Questions</a></div></td>    </tr>
+    <tr class="pres">
+      <td class="wk">13</td>
+      <td><span class="topic">Student Presentations III: Final Project Presentations</span><br>
+      Conference-style final talks with in-class feedback: contribution, method, experiments, results, and limitations. Project repositories (code, text, and documentation) due one week later.</td>    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Policies</h2>
+<h3>Use of AI tools</h3>
+<p>This is a course about LLMs; using LLMs and coding agents in your project work is encouraged and is itself a skill the course develops. Two rules apply. First, significant novelty: whatever tools are used, the submitted work must constitute a significant novel contribution by the team, in the problem formulation, the experimental design, and the findings; work whose substance could be produced by a single prompt to an off-the-shelf model does not meet the bar. Second, accountability: you are fully responsible for the correctness of every claim, number, and citation you submit, regardless of which tool produced it. Hallucinated references or unverified AI-generated results are treated as academic integrity violations.</p>
+<h3>Collaboration and integrity</h3>
+<p>Discussion across teams is encouraged; code, experiments, and writing must be the team's own. All experimental results reported in milestones and the repository documentation must be backed by runnable artifacts in the team's repository.</p>
+<hr class="hr">
+<h2 id="references">References</h2>
+<div class="refs">
+<p>[1] A. Apartsin and Y. Aperstein, <em>Building Language AI: From Tokens to Agents</em>, 16th ed., 2026. Open access online at <a href="https://llmbook.apartsin.com">https://llmbook.apartsin.com</a>; also available as an ebook at Amazon: <a href="https://www.amazon.com/dp/B0H1MQH23D">https://www.amazon.com/dp/B0H1MQH23D</a>.</p>
+<h3 style="font-size:9.5pt; margin:10px 0 4px;">Supplementary books</h3>
+<p>[2] S. Raschka, <em>Build a Large Language Model (From Scratch)</em>. Manning Publications, 2024. ISBN 978-1633437166. Available at <a href="https://www.amazon.com/dp/1633437167">Amazon</a>.</p>
+<p>[3] J. Alammar and M. Grootendorst, <em>Hands-On Large Language Models: Language Understanding and Generation</em>. O'Reilly Media, 2024. ISBN 978-1098150969. Available at <a href="https://www.amazon.com/dp/1098150961">Amazon</a>.</p>
+<p>[4] C. Huyen, <em>AI Engineering: Building Applications with Foundation Models</em>. O'Reilly Media, 2025. ISBN 978-1098166304. Available at <a href="https://www.amazon.com/dp/1098166302">Amazon</a>.</p>
+</div>
+<div class="footer">Large Language Models and Agentic AI · 13-week graduate course · Based on <a href="https://llmbook.apartsin.com">Building Language AI: From Tokens to Agents</a></div>
+
+</body>
+</html>
