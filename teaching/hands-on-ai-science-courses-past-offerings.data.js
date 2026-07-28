@@ -16,14 +16,14 @@ window.HOS_PAST_OFFERINGS = [
     years: "2026",
     institution: "bar-ilan-university",
     type: "vision-ai",
-    imageAlt: "Modern Image Processing",
+    imageAlt: "Images and Vision: From Pixels to Deep Learning",
     institutionLabel: "Bar-Ilan University",
-    title: "Modern Image Processing",
+    title: "Images and Vision: From Pixels to Deep Learning",
     meta: "B.Sc. in Electrical Engineering",
     desc: "2026, Spring",
     trackHref: "../courses/hos/series/vision-ai.html",
     trackLabel: "Vision AI",
-    links: [{ label: "Syllabus", href: "../teaching/images-and-vision-undergraduate-syllabus.html" }, { label: "Moodle", href: "https://lemida.biu.ac.il/course/view.php?id=107928" }]
+    links: [{ label: "Syllabus", href: "../teaching/images-and-vision-undergraduate-syllabus.html" }, { label: "Projects", href: "../teaching/vision-course-finals.html" }, { label: "Moodle", href: "https://lemida.biu.ac.il/course/view.php?id=107928" }]
   },
   {
     years: "2026",
