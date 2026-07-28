@@ -12,33 +12,28 @@
   <link rel="stylesheet" href="../shared/site-shell.css">
   <link rel="stylesheet" href="../shared/unified-theme.css">
 <style>
-  :root{ --ink:#16202a; --muted:#5b6470; --line:#e3e6ea; --accent:#114b7a; --chip:#eef2f7; --card:#fff; }
   .vcf-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin-top:16px; }
-  .pcard{ background:var(--card); border:1px solid var(--line); border-radius:16px; overflow:hidden;
-    display:flex; flex-direction:column; box-shadow:0 1px 2px rgba(20,30,45,.04); }
-  .pcard__media{ aspect-ratio:16/9; background:#0e1116; overflow:hidden; border-bottom:1px solid var(--line); }
+  .pcard{ background:#fff; border:1px solid var(--site-border); border-radius:16px; overflow:hidden;
+    display:flex; flex-direction:column; box-shadow:0 1px 2px rgba(24,32,42,.05); }
+  .pcard__media{ aspect-ratio:16/9; background:#eef1f4; overflow:hidden; border-bottom:1px solid var(--site-border); }
   .pcard__media img{ width:100%; height:100%; object-fit:cover; display:block; }
   .pcard__body{ padding:14px 15px 15px; display:flex; flex-direction:column; gap:7px; flex:1; }
   .pcard__top{ display:flex; gap:6px; }
   .pcard__chip{ font-size:0.66rem; font-weight:800; letter-spacing:.04em; text-transform:uppercase;
-    padding:3px 9px; border-radius:999px; background:var(--chip); color:var(--accent); }
-  .pcard__chip--type{ background:rgba(17,75,122,.1); }
-  .pcard__title{ font-size:1.02rem; line-height:1.25; margin:2px 0 0; }
-  .pcard__course{ margin:0; font-size:0.74rem; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.03em; }
-  .pcard__desc{ margin:2px 0 0; font-size:0.86rem; color:#39424e; }
-  .pcard__meta{ margin:4px 0 0; font-size:0.75rem; color:var(--muted); }
-  .pcard__meta b{ color:#39424e; }
-  .pcard__students{ margin:6px 0 0; font-size:0.78rem; font-weight:700; color:var(--ink); }
+    padding:3px 9px; border-radius:999px; background:var(--site-accent-soft); color:var(--site-accent); }
+  .pcard__chip--type{ background:var(--site-accent-soft); color:var(--site-accent); }
+  .pcard__title{ font-size:1.02rem; line-height:1.25; margin:2px 0 0; color:var(--site-text); }
+  .pcard__course{ margin:0; font-size:0.74rem; font-weight:700; color:var(--site-muted); text-transform:uppercase; letter-spacing:.03em; }
+  .pcard__desc{ margin:2px 0 0; font-size:0.86rem; color:var(--site-text); }
+  .pcard__meta{ margin:4px 0 0; font-size:0.75rem; color:var(--site-muted); }
+  .pcard__meta b{ color:var(--site-text); }
+  .pcard__students{ margin:6px 0 0; font-size:0.78rem; font-weight:700; color:var(--site-text); }
   .pcard__links{ margin-top:auto; padding-top:10px; }
   .pcard__link{ display:inline-flex; align-items:center; gap:7px; text-decoration:none; font-weight:800;
-    font-size:0.76rem; color:#fff; background:#1f2937; padding:7px 13px; border-radius:999px; }
+    font-size:0.76rem; color:#fff; background:var(--site-text); padding:7px 13px; border-radius:999px; }
   .pcard__link .gh{ width:14px; height:14px; background:currentColor;
     -webkit-mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.575.106.785-.25.785-.556 0-.274-.01-1-.015-1.965-3.196.695-3.87-1.54-3.87-1.54-.523-1.33-1.277-1.684-1.277-1.684-1.044-.714.08-.699.08-.699 1.154.081 1.76 1.185 1.76 1.185 1.026 1.758 2.693 1.25 3.35.955.104-.743.402-1.25.73-1.538-2.552-.29-5.236-1.276-5.236-5.68 0-1.255.448-2.28 1.183-3.084-.119-.29-.513-1.46.112-3.043 0 0 .965-.309 3.163 1.178a11 11 0 0 1 5.76 0c2.196-1.487 3.16-1.178 3.16-1.178.626 1.583.232 2.753.114 3.043.737.804 1.182 1.829 1.182 3.084 0 4.415-2.688 5.386-5.248 5.67.413.356.78 1.057.78 2.13 0 1.538-.014 2.778-.014 3.157 0 .308.207.667.79.554A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z'/></svg>") center/contain no-repeat;
     mask:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.575.106.785-.25.785-.556 0-.274-.01-1-.015-1.965-3.196.695-3.87-1.54-3.87-1.54-.523-1.33-1.277-1.684-1.277-1.684-1.044-.714.08-.699.08-.699 1.154.081 1.76 1.185 1.76 1.185 1.026 1.758 2.693 1.25 3.35.955.104-.743.402-1.25.73-1.538-2.552-.29-5.236-1.276-5.236-5.68 0-1.255.448-2.28 1.183-3.084-.119-.29-.513-1.46.112-3.043 0 0 .965-.309 3.163 1.178a11 11 0 0 1 5.76 0c2.196-1.487 3.16-1.178 3.16-1.178.626 1.583.232 2.753.114 3.043.737.804 1.182 1.829 1.182 3.084 0 4.415-2.688 5.386-5.248 5.67.413.356.78 1.057.78 2.13 0 1.538-.014 2.778-.014 3.157 0 .308.207.667.79.554A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z'/></svg>") center/contain no-repeat; }
-  @media (prefers-color-scheme: dark){
-    :root{ --ink:#e8eaed; --muted:#9aa3ad; --line:#2a2f36; --accent:#7fb0e6; --chip:#20262e; --card:#161a1f; }
-    body{ background:#0e1116; }
-  }
 </style>
 </head>
 <body class="apartsin-shell-active" data-site-section="teaching">
