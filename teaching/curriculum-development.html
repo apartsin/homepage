@@ -141,6 +141,40 @@
       border: 1px solid rgba(29, 78, 216, 0.28);
     }
     .curriculum-card__hos:hover { background: rgba(29, 78, 216, 0.16); }
+    .curriculum-card__insts {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      z-index: 2;
+      display: flex;
+      gap: 5px;
+    }
+    .curriculum-card__insts .curriculum-card__inst {
+      position: static;
+      bottom: auto;
+      right: auto;
+    }
+    .curriculum-card__badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-self: flex-start;
+    }
+    .curriculum-card__series {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font: 800 0.66rem/1.2 "Manrope", "Segoe UI", sans-serif;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid;
+    }
+    .curriculum-card__series--language { background: rgba(123, 47, 102, 0.1); color: #7b2f66; border-color: rgba(123, 47, 102, 0.28); }
+    .curriculum-card__series--language:hover { background: rgba(123, 47, 102, 0.16); }
+    .curriculum-card__series--vision { background: rgba(17, 75, 122, 0.1); color: #114b7a; border-color: rgba(17, 75, 122, 0.28); }
+    .curriculum-card__series--vision:hover { background: rgba(17, 75, 122, 0.16); }
     .curriculum-card__inst {
       position: absolute;
       bottom: 8px;
@@ -201,7 +235,10 @@
             </figure>
             <div class="curriculum-card__body">
               <h2>Generative AI: From Variational Autoencoders to World Models</h2>
-              <a class="curriculum-card__hos" href="./hands-on-ai-science-courses-courses.html">Hands-On AI Science</a>
+              <div class="curriculum-card__badges">
+                <a class="curriculum-card__hos" href="./hands-on-ai-science-courses-courses.html">Hands-On AI Science</a>
+                <a class="curriculum-card__series curriculum-card__series--vision" href="../courses/hos/series/vision-ai.html">Vision AI</a>
+              </div>
               <p>A 13-week graduate course on generative modeling, spanning variational autoencoders, diffusion models, and world models.</p>
               <nav class="hub-anchor-nav">
                 <a href="./generative-ai-vaes-to-world-models-graduate-syllabus.html">Syllabus</a>
@@ -213,11 +250,14 @@
             <span class="curriculum-card__level curriculum-card__level--graduate">Graduate</span>
             <figure class="curriculum-card__hero curriculum-card__hero--llm">
               <span class="curriculum-card__herotitle">LLMs &amp; Agentic AI</span>
-              <span class="curriculum-card__inst">HIT</span>
+              <span class="curriculum-card__insts"><span class="curriculum-card__inst">HIT</span><span class="curriculum-card__inst">BIU</span></span>
             </figure>
             <div class="curriculum-card__body">
               <h2>Large Language Models and Agentic AI</h2>
-              <a class="curriculum-card__hos" href="./hands-on-ai-science-courses-courses.html">Hands-On AI Science</a>
+              <div class="curriculum-card__badges">
+                <a class="curriculum-card__hos" href="./hands-on-ai-science-courses-courses.html">Hands-On AI Science</a>
+                <a class="curriculum-card__series curriculum-card__series--language" href="../courses/hos/series/language-ai.html">Language AI</a>
+              </div>
               <p>A 13-week graduate course on large language models and agentic AI, covering modern LLM architectures, alignment, tool use, and multi-agent systems.</p>
               <nav class="hub-anchor-nav">
                 <a href="./large-language-models-and-agentic-ai-graduate-syllabus.html">Syllabus</a>
@@ -233,7 +273,10 @@
             </figure>
             <div class="curriculum-card__body">
               <h2>Deep Generative Models for Audio-Visual Data</h2>
-              <a class="curriculum-card__hos" href="./hands-on-ai-science-courses-courses.html">Hands-On AI Science</a>
+              <div class="curriculum-card__badges">
+                <a class="curriculum-card__hos" href="./hands-on-ai-science-courses-courses.html">Hands-On AI Science</a>
+                <a class="curriculum-card__series curriculum-card__series--vision" href="../courses/hos/series/vision-ai.html">Vision AI</a>
+              </div>
               <p>A 13-week graduate course on deep generative models for audio-visual data, covering VAEs, GANs, diffusion and the Stable Diffusion family, and synthetic data generation.</p>
               <nav class="hub-anchor-nav">
                 <a href="./deep-generative-models-audio-visual-graduate-syllabus.html">Syllabus</a>
@@ -249,7 +292,10 @@
             </figure>
             <div class="curriculum-card__body">
               <h2>Large Language Model for Natural Language Processing</h2>
-              <a class="curriculum-card__hos" href="./hands-on-ai-science-courses-courses.html">Hands-On AI Science</a>
+              <div class="curriculum-card__badges">
+                <a class="curriculum-card__hos" href="./hands-on-ai-science-courses-courses.html">Hands-On AI Science</a>
+                <a class="curriculum-card__series curriculum-card__series--language" href="../courses/hos/series/language-ai.html">Language AI</a>
+              </div>
               <p>A 13-week undergraduate course applying large language models to NLP tasks with a code-first approach, spanning foundation models, fine-tuning, retrieval-augmented generation, and agentic AI.</p>
               <nav class="hub-anchor-nav">
                 <a href="./large-language-model-nlp-undergraduate-syllabus.html">Syllabus</a>
@@ -265,7 +311,10 @@
             </figure>
             <div class="curriculum-card__body">
               <h2>Deep Generative Models for Visual Data</h2>
-              <a class="curriculum-card__hos" href="./hands-on-ai-science-courses-courses.html">Hands-On AI Science</a>
+              <div class="curriculum-card__badges">
+                <a class="curriculum-card__hos" href="./hands-on-ai-science-courses-courses.html">Hands-On AI Science</a>
+                <a class="curriculum-card__series curriculum-card__series--vision" href="../courses/hos/series/vision-ai.html">Vision AI</a>
+              </div>
               <p>A 13-week undergraduate course on deep generative models for visual data, covering VAEs, GANs, diffusion and the Stable Diffusion family, and synthetic data generation.</p>
               <nav class="hub-anchor-nav">
                 <a href="./deep-generative-models-visual-undergraduate-syllabus.html">Syllabus</a>
@@ -281,7 +330,10 @@
             </figure>
             <div class="curriculum-card__body">
               <h2>Images and Vision: From Pixels to Deep Learning</h2>
-              <a class="curriculum-card__hos" href="./hands-on-ai-science-courses-courses.html">Hands-On AI Science</a>
+              <div class="curriculum-card__badges">
+                <a class="curriculum-card__hos" href="./hands-on-ai-science-courses-courses.html">Hands-On AI Science</a>
+                <a class="curriculum-card__series curriculum-card__series--vision" href="../courses/hos/series/vision-ai.html">Vision AI</a>
+              </div>
               <p>A 13-week undergraduate course tracing computer vision from image formation and classical image processing through classical vision and 3D reconstruction to deep learning for detection and segmentation, taught with a code-first approach.</p>
               <nav class="hub-anchor-nav">
                 <a href="./images-and-vision-undergraduate-syllabus.html">Syllabus</a>
