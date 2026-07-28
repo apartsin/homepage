@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <meta name="description" content="What a strong vision-course project must do: a robustness study of image-processing and vision algorithms across clean, distorted, restored, and fine-tuned conditions, with the requirements and anti-patterns for each stage and a suggested weekly plan.">
+  <title>Project Requirements for Vision Course | Sasha Apartsin</title>
+  <link rel="stylesheet" href="../../shared/site-shell.css">
+  <link rel="stylesheet" href="../../shared/unified-theme.css">
+  <style>
+    .crit-section-title { margin: 34px 0 2px; color: var(--site-text, #18202a); font: 800 0.82rem/1.2 "Manrope", sans-serif; letter-spacing: 0.06em; text-transform: uppercase; }
+    .crit-section-title:first-of-type { margin-top: 10px; }
+    .crit-section-lede { margin: 0 0 4px; color: var(--site-muted); font: 600 0.88rem/1.5 "Manrope", sans-serif; }
+    .crit-list { display: grid; grid-template-columns: 1fr; grid-auto-rows: 1fr; gap: 14px; margin-top: 14px; align-items: stretch; }
+    @media (min-width: 720px) { .crit-list { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1080px) { .crit-list { grid-template-columns: repeat(3, 1fr); } }
+    .crit-card { padding: 18px 20px; border: 1px solid var(--site-border); border-radius: 14px; background: #fff; position: relative; overflow: hidden; display: grid; grid-template-rows: auto auto 1fr auto; row-gap: 8px; }
+    .crit-card::before { content: ""; position: absolute; left: 0; top: 0; width: 4px; height: 100%; background: var(--cc-color, var(--site-accent)); }
+    .crit-list--scope .crit-card { --cc-color: #c2410c; }
+    .crit-list--baseline .crit-card { --cc-color: #164a83; }
+    .crit-list--recovery .crit-card { --cc-color: #7a3fa0; }
+    .crit-list--delivery .crit-card { --cc-color: #2e7d5a; }
+    .crit-card__index { display: inline-block; font: 900 0.78rem/1 "Manrope", sans-serif; letter-spacing: 0.08em; color: var(--cc-color, var(--site-accent)); text-transform: uppercase; margin: 0; }
+    .crit-card__title { margin: 0; font: 800 1.06rem/1.28 "Manrope", sans-serif; color: var(--site-text); min-height: calc(2 * 1.28 * 1.06rem); }
+    .crit-card__body { margin: 0; color: var(--site-text); font-size: 0.92rem; line-height: 1.5; }
+    .crit-antipatterns { margin: 0; padding: 10px 12px 10px 14px; border-radius: 8px; background: rgba(194, 65, 12, 0.06); border: 1px solid rgba(194, 65, 12, 0.22); color: #8a3309; }
+    .crit-antipatterns__label { display: block; font: 800 0.76rem/1.2 "Manrope", sans-serif; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 6px; color: #8a3309; }
+    .crit-antipatterns ul { margin: 0; padding-left: 16px; list-style: disc; }
+    .crit-antipatterns li { font: 500 0.83rem/1.45 "Manrope", sans-serif; margin: 0 0 3px; }
+    .crit-antipatterns li:last-child { margin-bottom: 0; }
+
+    /* Stage diagram: the four-part robustness pipeline. */
+    .vis-pipeline { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 16px 0 4px; }
+    .vis-stage { border: 1px solid var(--site-border); border-radius: 12px; padding: 12px 14px; background: #fff; position: relative; }
+    .vis-stage__n { font: 900 0.72rem/1 "Manrope", sans-serif; letter-spacing: .08em; text-transform: uppercase; color: var(--site-accent, #1d4ed8); }
+    .vis-stage__t { font: 800 0.95rem/1.25 "Manrope", sans-serif; margin: 5px 0 3px; color: var(--site-text); }
+    .vis-stage__d { font: 500 0.8rem/1.4 "Manrope", sans-serif; color: var(--site-muted); margin: 0; }
+
+    /* Weekly plan table. */
+    .plan-table { width: 100%; border-collapse: collapse; margin: 14px 0 4px; font: 500 0.85rem/1.45 "Manrope", sans-serif; }
+    .plan-table th, .plan-table td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--site-border); }
+    .plan-table thead th { font-weight: 800; color: var(--site-text); border-bottom: 2px solid var(--site-text); font-size: 0.78rem; text-transform: uppercase; letter-spacing: .04em; }
+    .plan-table td.wk { font-weight: 800; color: var(--site-accent, #1d4ed8); white-space: nowrap; width: 1%; }
+    .plan-wrap { overflow-x: auto; }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="teaching">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar">
+      <a class="apartsin-shell__brand" href="../../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../../index.html">About</a>
+        <a href="../../research/research-focus.html">Research</a>
+        <a href="../../teaching/overview.html">Teaching</a>
+        <a href="../../work/overview.html">Building</a>
+        <a href="../../work/innovation-overview.html">Innovations</a>
+        <a href="../../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="project-requirements-vision-overview">
+          <h1 class="apartsin-sr-only">Project Requirements for Vision Course</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="../overview.html">Teaching</a>
+              <span aria-hidden="true">/</span>
+              <a href="./index.html">Guides for Students</a>
+              <span aria-hidden="true">/</span>
+              <strong>Project Requirements for Vision Course</strong>
+            </nav>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../../assets/heroes/teaching-hos-student-projects.png" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">The vision course project is a <b>robustness study</b>: you measure how image-processing and vision algorithms behave as image quality degrades, and how much of the lost performance you can recover. This guide lists what the project has to do, stage by stage, with the anti-patterns that most often weaken each stage, and a suggested weekly plan. How the finished project is graded is a separate question, covered in the <a href="./project-assessment-criteria-vision.html">Project Assessment Criteria for Vision Course</a> guide.</p>
+          </div>
+        </section>
+
+        <h2 class="crit-section-title">The Study in Four Stages</h2>
+        <p class="crit-section-lede">Every task/dataset combination runs through the same pipeline. The project is the same experiment repeated across tasks and distortions.</p>
+        <div class="vis-pipeline">
+          <div class="vis-stage"><span class="vis-stage__n">Stage 1</span><p class="vis-stage__t">Clean baseline</p><p class="vis-stage__d">Run each method on clean images and measure performance against ground truth.</p></div>
+          <div class="vis-stage"><span class="vis-stage__n">Stage 2</span><p class="vis-stage__t">Distortion</p><p class="vis-stage__d">Apply distortions at calibrated severities and measure the degradation vs SNR.</p></div>
+          <div class="vis-stage"><span class="vis-stage__n">Stage 3</span><p class="vis-stage__t">Restoration</p><p class="vis-stage__d">Enhance the distorted images (denoise, de-rain, low-light) and re-measure.</p></div>
+          <div class="vis-stage"><span class="vis-stage__n">Stage 4</span><p class="vis-stage__t">Fine-tuning</p><p class="vis-stage__d">Adapt the deep models to the distortions and compare against restoration.</p></div>
+        </div>
+
+        <h2 class="crit-section-title">Stage A. Scope &amp; Selection</h2>
+        <p class="crit-section-lede">What you study and why. Fix these before writing code; document every choice, with links, in the README.</p>
+        <section class="crit-list crit-list--scope" aria-label="Scope and selection requirements">
+          <article class="crit-card" id="req-dataset">
+            <span class="crit-card__index">Requirement 1</span>
+            <h2 class="crit-card__title">A Public Dataset with Ground Truth</h2>
+            <p class="crit-card__body">Select a public dataset (KITTI, Cityscapes, COCO, ADE20K, Oxford-IIIT Pet, DOTA, a medical set, and so on) that carries ground-truth annotations for at least one of your tasks. Load a fixed, seeded subset so results are reproducible.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">Common anti-patterns</span>
+              <ul>
+                <li>No ground truth, so degradation cannot be measured.</li>
+                <li>An unseeded or shifting subset that changes between runs.</li>
+                <li>A toy dataset too small to show real trends.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="crit-card" id="req-tasks">
+            <span class="crit-card__index">Requirement 2</span>
+            <h2 class="crit-card__title">Three Tasks, Low- and High-Level</h2>
+            <p class="crit-card__body">Choose at least three vision tasks and deliberately span the abstraction range: a low-level classical task (edge/corner/keypoint detection, feature matching) and a high-level task (object detection, segmentation, classification, pose). This is what makes the robustness story interesting.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">Common anti-patterns</span>
+              <ul>
+                <li>Three variants of the same task.</li>
+                <li>Only deep models, with no classical low-level task.</li>
+                <li>Tasks with no ground-truth metric available.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="crit-card" id="req-distortions">
+            <span class="crit-card__index">Requirement 3</span>
+            <h2 class="crit-card__title">Three Distortion Methods</h2>
+            <p class="crit-card__body">Select at least three distortions that are realistic for your domain: noise (Gaussian, speckle, salt-and-pepper), low light, motion blur, rain, haze, JPEG compression, and the like. Each must be applied at several calibrated severity levels.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">Common anti-patterns</span>
+              <ul>
+                <li>A single severity, so no degradation curve exists.</li>
+                <li>Distortions irrelevant to the chosen domain.</li>
+                <li>Severity that is not quantified (see Requirement 6).</li>
+              </ul>
+            </div>
+          </article>
+          <article class="crit-card" id="req-models">
+            <span class="crit-card__index">Requirement 4</span>
+            <h2 class="crit-card__title">A Model or Algorithm per Task</h2>
+            <p class="crit-card__body">Assign a concrete method to each task, and include at least one deep-learning model (for example YOLO for detection, a SegFormer/DeepLab for segmentation, a ResNet for classification). Classical methods (ORB, Canny, Lucas-Kanade) cover the low-level tasks.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">Common anti-patterns</span>
+              <ul>
+                <li>No deep-learning model at all.</li>
+                <li>A model that cannot be fine-tuned later (blocks Stage 4).</li>
+                <li>Undocumented model version or weights.</li>
+              </ul>
+            </div>
+          </article>
+        </section>
+
+        <h2 class="crit-section-title">Stage B. Baseline &amp; Degradation</h2>
+        <p class="crit-section-lede">Establish the truth on clean images, then quantify how far each method falls as quality drops.</p>
+        <section class="crit-list crit-list--baseline" aria-label="Baseline and degradation requirements">
+          <article class="crit-card" id="req-baseline">
+            <span class="crit-card__index">Requirement 5</span>
+            <h2 class="crit-card__title">Clean-Image Baseline</h2>
+            <p class="crit-card__body">Run every method on clean images and record its performance against ground truth. This baseline is the reference every later number is compared to, so it must use the correct, task-appropriate metric (IoU/mAP for detection, mIoU/Dice for segmentation, match ratio for features).</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">Common anti-patterns</span>
+              <ul>
+                <li>Reporting a demo output instead of a measured metric.</li>
+                <li>A metric that does not match the task.</li>
+                <li>No baseline, so degradation is uninterpretable.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="crit-card" id="req-snr">
+            <span class="crit-card__index">Requirement 6</span>
+            <h2 class="crit-card__title">Degradation Measured vs SNR</h2>
+            <p class="crit-card__body">Map distortion severity onto a common physical axis (SNR or PSNR in dB) and report performance as a curve over that axis. This lets distortions of different kinds be compared on one scale and reveals where each method breaks.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">Common anti-patterns</span>
+              <ul>
+                <li>Severity reported as an arbitrary knob value.</li>
+                <li>A single before/after pair instead of a curve.</li>
+                <li>Different distortions plotted on incomparable axes.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="crit-card" id="req-perclass">
+            <span class="crit-card__index">Requirement 7</span>
+            <h2 class="crit-card__title">Per-Class and Per-SNR Reporting</h2>
+            <p class="crit-card__body">Break performance down per class and per SNR level, not just as a single aggregate. A mean hides that small or rare classes often collapse first under distortion; the per-class view is where the real findings live.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">Common anti-patterns</span>
+              <ul>
+                <li>One aggregate number for the whole dataset.</li>
+                <li>Averaging away per-class collapse.</li>
+                <li>No table linking metric to class and SNR.</li>
+              </ul>
+            </div>
+          </article>
+        </section>
+
+        <h2 class="crit-section-title">Stage C. Recovery</h2>
+        <p class="crit-section-lede">Two ways to fight degradation: fix the image, or adapt the model. Do both and compare them fairly.</p>
+        <section class="crit-list crit-list--recovery" aria-label="Recovery requirements">
+          <article class="crit-card" id="req-enhance">
+            <span class="crit-card__index">Requirement 8</span>
+            <h2 class="crit-card__title">Image Enhancement / Restoration</h2>
+            <p class="crit-card__body">For each distortion, apply a matched classical pre-processing step (non-local-means or bilateral denoising, gamma/CLAHE for low light, deblocking for JPEG, deconvolution for blur) and re-measure every task on the restored images.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">Common anti-patterns</span>
+              <ul>
+                <li>One generic filter applied to every distortion.</li>
+                <li>Judging enhancement by how the image looks, not by the downstream metric.</li>
+                <li>Not re-running the tasks after enhancement.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="crit-card" id="req-finetune">
+            <span class="crit-card__index">Requirement 9</span>
+            <h2 class="crit-card__title">Model Fine-Tuning</h2>
+            <p class="crit-card__body">For the deep-learning methods, fine-tune on distorted (or clean-plus-distorted) data and measure how much performance returns. Where clean labels exist, you may generate training labels from clean images and reuse them for the distorted set.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">Common anti-patterns</span>
+              <ul>
+                <li>Fine-tuning and evaluating on the same images.</li>
+                <li>No checkpoint or config saved, so it cannot be reproduced.</li>
+                <li>Claiming recovery without a clean-baseline comparison.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="crit-card" id="req-compare">
+            <span class="crit-card__index">Requirement 10</span>
+            <h2 class="crit-card__title">Fair Enhancement-vs-Fine-Tuning Comparison</h2>
+            <p class="crit-card__body">Put restoration and fine-tuning side by side on the same tasks, distortions, and SNR levels, and state which wins where. The interesting result is usually that the answer depends on the task's level of abstraction.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">Common anti-patterns</span>
+              <ul>
+                <li>Only trying one recovery strategy.</li>
+                <li>Comparing them on different subsets or metrics.</li>
+                <li>Hiding the cases where recovery failed.</li>
+              </ul>
+            </div>
+          </article>
+        </section>
+
+        <h2 class="crit-section-title">Stage D. Engineering &amp; Documentation</h2>
+        <p class="crit-section-lede">A reader should be able to understand and reproduce the study from the repository alone.</p>
+        <section class="crit-list crit-list--delivery" aria-label="Engineering and documentation requirements">
+          <article class="crit-card" id="req-repo">
+            <span class="crit-card__index">Requirement 11</span>
+            <h2 class="crit-card__title">Reproducible Repository</h2>
+            <p class="crit-card__body">Ship a GitHub repository with the distortion code, the model-application code, saved outputs and labels, checkpoints or configs, and a documented README recording every choice with links. See the <a href="./github-submission.html">GitHub Submission</a> guide for the full checklist.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">Common anti-patterns</span>
+              <ul>
+                <li>Results in the slides that no code in the repo produces.</li>
+                <li>Hard-coded local paths and no environment file.</li>
+                <li>A README that lists steps but not decisions.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="crit-card" id="req-viz">
+            <span class="crit-card__index">Requirement 12</span>
+            <h2 class="crit-card__title">Visualization: Before/After &amp; Curves</h2>
+            <p class="crit-card__body">Document the pipeline visually: images with annotations overlaid, before/after distortion and restoration grids, and measurement plots (bar charts, per-SNR curves, per-class comparisons). The visuals are how the finding is communicated, not decoration.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">Common anti-patterns</span>
+              <ul>
+                <li>Tables of numbers with no supporting figure.</li>
+                <li>Screenshots with no labels, axes, or captions.</li>
+                <li>No before/after to show what the distortion actually did.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="crit-card" id="req-submission">
+            <span class="crit-card__index">Requirement 13</span>
+            <h2 class="crit-card__title">Slides &amp; Final Submission</h2>
+            <p class="crit-card__body">Submit the full repository plus presentation slides (PPT and PDF). The slides tell the robustness story end to end: choices, clean baseline, degradation, recovery, and conclusions.</p>
+            <div class="crit-antipatterns">
+              <span class="crit-antipatterns__label">Common anti-patterns</span>
+              <ul>
+                <li>Slides that show outputs but never the measured story.</li>
+                <li>Numbers in the slides that disagree with the repo.</li>
+                <li>No conclusion on what recovers performance and when.</li>
+              </ul>
+            </div>
+          </article>
+        </section>
+
+        <h2 class="crit-section-title">Suggested Weekly Plan</h2>
+        <p class="crit-section-lede">A workable cadence from team formation to final submission. Each week produces a concrete artifact in the repository.</p>
+        <div class="plan-wrap">
+        <table class="plan-table">
+          <thead><tr><th class="wk">Week</th><th>Task</th><th>Artifact</th></tr></thead>
+          <tbody>
+            <tr><td class="wk">1</td><td>Form team, open Git, register</td><td>GitHub repo opened; entry in the course project table</td></tr>
+            <tr><td class="wk">2</td><td>Research and select dataset, distortions, tasks</td><td>A decision table with links, embedded in the README</td></tr>
+            <tr><td class="wk">3</td><td>Research and select methods and enhancements</td><td>A decision table with links, embedded in the README</td></tr>
+            <tr><td class="wk">4</td><td>Download data; visualize images and annotations</td><td>Download and EDA code; sample image grid with annotations in the README</td></tr>
+            <tr><td class="wk">5</td><td>Run methods/models on clean data; save outputs</td><td>Folder with outputs/labels in the repo</td></tr>
+            <tr><td class="wk">6</td><td>Measure clean performance using ground truth</td><td>Table of results; per-class visualization</td></tr>
+            <tr><td class="wk">7</td><td>Apply distortions; save data</td><td>Distortion code; distorted-image folder; before/after visualization</td></tr>
+            <tr><td class="wk">8</td><td>Run models; measure degradation</td><td>Application code; performance tables; annotated comparison visuals</td></tr>
+            <tr><td class="wk">9</td><td>Apply enhancements; measure performance</td><td>Side-by-side grids; performance-comparison visuals</td></tr>
+            <tr><td class="wk">10</td><td>Fine-tune model(s)</td><td>Fine-tuning code; checkpoints / model weights</td></tr>
+            <tr><td class="wk">11</td><td>Measure fine-tuned performance</td><td>Table of results in Git; visualization</td></tr>
+            <tr><td class="wk">12</td><td>Review README; improve visuals, text, tables</td><td>A rich, detailed README with all decisions and visualization</td></tr>
+            <tr><td class="wk">13</td><td>Prepare and upload slides; review repo</td><td>Full repo; slides (PPT and PDF)</td></tr>
+          </tbody>
+        </table>
+        </div>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../../shared/unified-enhance.js"></script>
+  <script defer src="../../shared/site-shell.js"></script>
+</body>
+</html>
