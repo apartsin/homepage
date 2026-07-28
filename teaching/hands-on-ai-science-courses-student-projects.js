@@ -461,6 +461,14 @@
     return article;
   });
 
+  // Show newest projects first: sort by year descending (unknown years last),
+  // keeping the original order within the same year (stable sort).
+  cards.sort((a, b) => {
+    const ya = parseInt(a.dataset.year, 10);
+    const yb = parseInt(b.dataset.year, 10);
+    return (isNaN(yb) ? -Infinity : yb) - (isNaN(ya) ? -Infinity : ya);
+  });
+
   cards.forEach((card) => grid.appendChild(card));
 
   const termSelect = document.getElementById('student-project-filter-term');
