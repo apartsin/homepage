@@ -32,13 +32,6 @@
       transform: translateY(-2px);
       box-shadow: 0 18px 36px rgba(15,23,42,0.1);
     }
-    .bot-card__eyebrow {
-      margin: 0 0 6px;
-      color: #164a83;
-      font: 800 0.72rem/1.2 "Manrope", sans-serif;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
     .bot-card__title {
       margin: 0 0 10px;
       color: var(--site-text, #18202a);
@@ -67,18 +60,45 @@
     .bot-card__link:hover {
       background: rgba(24,101,168,0.15);
     }
-    .bots-section-title {
-      margin: 30px 0 2px;
-      color: var(--site-text, #18202a);
-      font: 800 0.82rem/1.2 "Manrope", sans-serif;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
+    .bots-section {
+      margin-top: 38px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--site-border, rgba(24,32,42,0.1));
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px 14px;
     }
-    .bots-section-title:first-of-type { margin-top: 12px; }
+    .bots-section:first-of-type { margin-top: 14px; }
+    .bots-section-title {
+      position: relative;
+      margin: 0;
+      padding-left: 15px;
+      color: var(--site-text, #18202a);
+      font: 800 1.28rem/1.25 "Manrope", sans-serif;
+      letter-spacing: -0.015em;
+    }
+    .bots-section-title::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 2px;
+      bottom: 2px;
+      width: 5px;
+      border-radius: 3px;
+      background: linear-gradient(180deg, #2563eb, #164a83);
+    }
+    .bots-section-title__count {
+      margin-left: 2px;
+      color: var(--site-muted);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
     .bots-section-lede {
+      flex: 1 1 460px;
       margin: 0;
       color: var(--site-muted);
-      font: 600 0.88rem/1.5 "Manrope", sans-serif;
+      font: 600 0.9rem/1.5 "Manrope", sans-serif;
     }
     @media (max-width: 640px) {
       .bots-grid { grid-template-columns: 1fr; }
@@ -122,70 +142,64 @@
           </div>
         </section>
 
-        <h2 class="bots-section-title">LLM Course</h2>
-        <p class="bots-section-lede">Bots for preparing and validating your project submission in the LLM course, from the proposal through the midterm to the final presentation and repository.</p>
+        <div class="bots-section">
+          <h2 class="bots-section-title">LLM Course <span class="bots-section-title__count">5 bots</span></h2>
+          <p class="bots-section-lede">Bots for preparing and validating your project submission in the LLM course, from the proposal through the midterm to the final presentation and repository.</p>
+        </div>
         <section class="bots-grid" aria-label="LLM course bot cards">
           <article class="bot-card">
-            <p class="bot-card__eyebrow">Building Language AI with Large Language Models and Agents</p>
             <h2 class="bot-card__title">Student Project Advisor Bot</h2>
             <p class="bot-card__desc">Helps students brainstorm, scope, and structure project proposals for the <a href="../courses/hos/series/language-ai.html">Building Language AI</a> course. Covers topic selection around LLMs, conversational agents, retrieval-augmented generation, and tool-use pipelines.</p>
             <a class="bot-card__link external-indicator" href="https://chatgpt.com/g/g-69201c57ada48191bf28f6e74f51b4b0-llm-project-adviser" target="_blank" rel="noopener noreferrer">Open Bot</a>
           </article>
           <article class="bot-card">
-            <p class="bot-card__eyebrow">Building Language AI with Large Language Models and Agents</p>
             <h2 class="bot-card__title">Proposal Reviewer Bot</h2>
             <p class="bot-card__desc">Reviews your project proposal against the course requirements, the motivating use case, problem statement, novelty, planned models and data, and evaluation plan, and tells you what to strengthen before you start building. Pairs with the <a href="./guides/project-proposal-presentation.html">Project Proposal</a> guide.</p>
             <a class="bot-card__link external-indicator" href="https://chatgpt.com/g/g-6a68acab3d8c8191a88cc9d056c47b28-llm-course-proposal-reviewer" target="_blank" rel="noopener noreferrer">Open Bot</a>
           </article>
           <article class="bot-card">
-            <p class="bot-card__eyebrow">Building Language AI with Large Language Models and Agents</p>
             <h2 class="bot-card__title">Midterm Report Reviewer Bot</h2>
             <p class="bot-card__desc">Reviews your midterm report and presentation, the refined definition, previous-work review, dataset and exploratory analysis, baseline, and initial results, and flags gaps against the <a href="./guides/midterm-presentation.html">Midterm Presentation</a> guide.</p>
             <a class="bot-card__link external-indicator" href="https://chatgpt.com/g/g-6a68aec7d7a0819193fc8c0716ec5674-llm-course-midterm-report-reviewer" target="_blank" rel="noopener noreferrer">Open Bot</a>
           </article>
           <article class="bot-card">
-            <p class="bot-card__eyebrow">Building Language AI with Large Language Models and Agents</p>
             <h2 class="bot-card__title">Final Presentation Reviewer Bot</h2>
             <p class="bot-card__desc">Reviews your final presentation for a clear technical argument, the achievements, methodology, experimental results, interpretation, and conclusions, against the <a href="./guides/final-presentation.html">Final Presentation</a> guide.</p>
             <a class="bot-card__link external-indicator" href="https://chatgpt.com/g/g-6a68af5f6e9c8191a890a965e890259c-llm-course-review-your-final-presentation" target="_blank" rel="noopener noreferrer">Open Bot</a>
           </article>
           <article class="bot-card">
-            <p class="bot-card__eyebrow">Building Language AI with Large Language Models and Agents</p>
             <h2 class="bot-card__title">Repository Submission Validator Bot</h2>
             <p class="bot-card__desc">Validates your final GitHub submission, the structure, README, reproducibility, and aligned code, data, and slides, against the <a href="./guides/github-submission.html">GitHub Submission</a> guide before you hand it in.</p>
             <a class="bot-card__link external-indicator" href="https://chatgpt.com/g/g-6a68afd516088191af4236a0a55a333a-llm-course-repo-submission-validator" target="_blank" rel="noopener noreferrer">Open Bot</a>
           </article>
         </section>
 
-        <h2 class="bots-section-title">GenAI Course</h2>
-        <p class="bots-section-lede">Bots for preparing and validating your project submission in the GenAI course, from the proposal through the midterm to the final slides and repository.</p>
+        <div class="bots-section">
+          <h2 class="bots-section-title">GenAI Course <span class="bots-section-title__count">5 bots</span></h2>
+          <p class="bots-section-lede">Bots for preparing and validating your project submission in the GenAI course, from the proposal through the midterm to the final slides and repository.</p>
+        </div>
         <section class="bots-grid" aria-label="GenAI course bot cards">
           <article class="bot-card">
-            <p class="bot-card__eyebrow">Building Vision AI with Foundation and Generative Models</p>
             <h2 class="bot-card__title">Student Project Advisor Bot</h2>
             <p class="bot-card__desc">Helps students brainstorm, scope, and structure project proposals for the <a href="../courses/hos/series/vision-ai.html">Building Vision AI</a> course. Covers topic selection around foundation models, object detection, segmentation, diffusion models, and multimodal vision systems.</p>
             <a class="bot-card__link external-indicator" href="https://chatgpt.com/g/g-692081fc6a008191a20769ed5f9d7b6b-genai-project-adviser" target="_blank" rel="noopener noreferrer">Open Bot</a>
           </article>
           <article class="bot-card">
-            <p class="bot-card__eyebrow">Building Vision AI with Foundation and Generative Models</p>
             <h2 class="bot-card__title">Proposal Reviewer Bot</h2>
             <p class="bot-card__desc">Reviews your project proposal against the course requirements, the motivating use case, problem statement, novelty, planned models and data, and evaluation plan, and tells you what to strengthen before you start building. Pairs with the <a href="./guides/project-proposal-presentation.html">Project Proposal</a> guide.</p>
             <a class="bot-card__link external-indicator" href="https://chatgpt.com/g/g-6a68b7e79e7881919d6793716ffacd0a-genai-course-proposal-reviewer" target="_blank" rel="noopener noreferrer">Open Bot</a>
           </article>
           <article class="bot-card">
-            <p class="bot-card__eyebrow">Building Vision AI with Foundation and Generative Models</p>
             <h2 class="bot-card__title">Midterm Reviewer Bot</h2>
             <p class="bot-card__desc">Reviews your midterm, the refined definition, previous-work review, dataset and exploratory analysis, baseline, and initial results, and flags gaps against the <a href="./guides/midterm-presentation.html">Midterm Presentation</a> guide.</p>
             <a class="bot-card__link external-indicator" href="https://chatgpt.com/g/g-6a68b86a654c8191bebe4514fc2a3e31-genai-course-midterm-reviewer" target="_blank" rel="noopener noreferrer">Open Bot</a>
           </article>
           <article class="bot-card">
-            <p class="bot-card__eyebrow">Building Vision AI with Foundation and Generative Models</p>
             <h2 class="bot-card__title">Final Slides Reviewer Bot</h2>
             <p class="bot-card__desc">Reviews your final presentation slides for a clear technical argument, readable figures, and complete technical content, against the <a href="./guides/final-presentation.html">Final Presentation</a> and <a href="./guides/technical-presentations.html">Delivering a Technical Presentation</a> guides.</p>
             <a class="bot-card__link external-indicator" href="https://chatgpt.com/g/g-6a68b8dcf5688191b9fc0061fd9a05e4-genai-course-final-slides-reviewer" target="_blank" rel="noopener noreferrer">Open Bot</a>
           </article>
           <article class="bot-card">
-            <p class="bot-card__eyebrow">Building Vision AI with Foundation and Generative Models</p>
             <h2 class="bot-card__title">Final Repo Reviewer Bot</h2>
             <p class="bot-card__desc">Reviews your final GitHub repository, the structure, README, reproducibility, and aligned code, data, and slides, against the <a href="./guides/github-submission.html">GitHub Submission</a> guide before you hand it in.</p>
             <a class="bot-card__link external-indicator" href="https://chatgpt.com/g/g-6a68b996b1088191a8e0e93088c75b7b-genai-course-final-repo-reviewer" target="_blank" rel="noopener noreferrer">Open Bot</a>
