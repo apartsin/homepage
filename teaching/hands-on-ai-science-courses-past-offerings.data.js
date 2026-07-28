@@ -10,7 +10,7 @@ window.HOS_PAST_OFFERINGS = [
     desc: "2026, Spring",
     trackHref: "../courses/hos/series/vision-ai.html",
     trackLabel: "Vision AI",
-    links: [{ label: "Moodle", href: "https://lemida.biu.ac.il/course/view.php?id=110002" }, { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=vision-ai&institution=Bar-Ilan%20University&term=2026%20Spring" }]
+    links: [{ label: "Syllabus", href: "../teaching/deep-generative-models-audio-visual-graduate-syllabus.html" }, { label: "Moodle", href: "https://lemida.biu.ac.il/course/view.php?id=110002" }, { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=vision-ai&institution=Bar-Ilan%20University&term=2026%20Spring" }]
   },
   {
     years: "2026",
@@ -23,7 +23,7 @@ window.HOS_PAST_OFFERINGS = [
     desc: "2026, Spring",
     trackHref: "../courses/hos/series/vision-ai.html",
     trackLabel: "Vision AI",
-    links: [{ label: "Moodle", href: "https://lemida.biu.ac.il/course/view.php?id=107928" }]
+    links: [{ label: "Syllabus", href: "../teaching/images-and-vision-undergraduate-syllabus.html" }, { label: "Moodle", href: "https://lemida.biu.ac.il/course/view.php?id=107928" }]
   },
   {
     years: "2026",
@@ -49,7 +49,7 @@ window.HOS_PAST_OFFERINGS = [
     desc: "2026, Spring",
     trackHref: "../courses/hos/series/language-ai.html",
     trackLabel: "Language AI",
-    links: [{ label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=26295" }, { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=language-ai&institution=Holon%20Institute%20of%20Technology&term=2026%20Spring" }]
+    links: [{ label: "Syllabus", href: "../teaching/large-language-model-nlp-undergraduate-syllabus.html" }, { label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=26295" }, { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=language-ai&institution=Holon%20Institute%20of%20Technology&term=2026%20Spring" }]
   },
   {
     years: "2025,2026",
@@ -127,7 +127,7 @@ window.HOS_PAST_OFFERINGS = [
     trackHref: "../courses/hos/series/language-ai.html",
     trackLabel: "Language AI",
     links: [
-      { label: "Moodle", href: "https://lemida.biu.ac.il/course/view.php?id=106612" },
+      { label: "Syllabus", href: "../teaching/large-language-models-and-agentic-ai-graduate-syllabus.html" }, { label: "Moodle", href: "https://lemida.biu.ac.il/course/view.php?id=106612" },
       { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=language-ai&institution=Bar-Ilan%20University&term=2025%20Fall" }
     ]
   },
@@ -143,7 +143,7 @@ window.HOS_PAST_OFFERINGS = [
     trackHref: "../courses/hos/series/vision-ai.html",
     trackLabel: "Vision AI",
     links: [
-      { label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=25773" },
+      { label: "Syllabus", href: "../teaching/deep-generative-models-visual-undergraduate-syllabus.html" }, { label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=25773" },
       { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=vision-ai&institution=Holon%20Institute%20of%20Technology&term=2025%20Fall" }
     ]
   },
@@ -159,7 +159,7 @@ window.HOS_PAST_OFFERINGS = [
     trackHref: "../courses/hos/series/language-ai.html",
     trackLabel: "Language AI",
     links: [
-      { label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=25328" },
+      { label: "Syllabus", href: "../teaching/large-language-model-nlp-undergraduate-syllabus.html" }, { label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=25328" },
       { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=language-ai&institution=Holon%20Institute%20of%20Technology&term=2025%20Fall" }
     ]
   },
@@ -175,7 +175,7 @@ window.HOS_PAST_OFFERINGS = [
     trackHref: "../courses/hos/series/language-ai.html",
     trackLabel: "Language AI",
     links: [
-      { label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=24324" },
+      { label: "Syllabus", href: "../teaching/large-language-model-nlp-undergraduate-syllabus.html" }, { label: "Moodle", href: "https://md.hit.ac.il/course/view.php?id=24324" },
       { label: "Student Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=language-ai&institution=Holon%20Institute%20of%20Technology&term=2025%20Spring" }
     ]
   },
