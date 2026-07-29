@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <meta name="description" content="How to write to your instructor: try to answer it yourself first, include all the context, be brief and careful with wording, stay polite and professional, and expect links or an AI transcript in reply.">
+  <link rel="alternate" hreflang="he" href="./writing-to-your-instructor-he.html">
+  <link rel="alternate" hreflang="en" href="./writing-to-your-instructor.html">
+  <title>How to Write to Your Instructor | Sasha Apartsin</title>
+  <link rel="stylesheet" href="../../shared/site-shell.css">
+  <link rel="stylesheet" href="../../shared/unified-theme.css">
+  <style>
+    .sdg-heading {
+      margin: 34px 0 2px;
+      color: var(--site-text, #18202a);
+      font: 800 0.9rem/1.2 "Manrope", sans-serif;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .sdg-heading:first-of-type { margin-top: 12px; }
+    .sdg-heading-lede {
+      margin: 0;
+      color: var(--site-muted);
+      font: 600 0.92rem/1.5 "Manrope", sans-serif;
+    }
+    .sdg-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 12px;
+    }
+    .sdg-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: start;
+      column-gap: 18px;
+      row-gap: 8px;
+      padding: 18px 22px 18px 24px;
+      border: 1px solid var(--site-border);
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+      overflow: hidden;
+    }
+    .sdg-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5px;
+      background: linear-gradient(180deg, rgba(24, 101, 168, 0.9), rgba(122, 63, 160, 0.75));
+    }
+    .sdg-card__num {
+      grid-column: 1;
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      margin-top: 2px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(24, 101, 168, 0.16), rgba(122, 63, 160, 0.16));
+      color: #164a83;
+      font: 800 1.15rem/1 "Manrope", sans-serif;
+    }
+    .sdg-card__content {
+      grid-column: 2;
+      display: grid;
+      gap: 6px;
+      max-width: 92ch;
+    }
+    .sdg-card__content h2 {
+      margin: 0;
+      color: var(--site-text, #18202a);
+      font: 800 1.08rem/1.28 "Manrope", sans-serif;
+    }
+    .sdg-plain {
+      margin: 0;
+      color: var(--site-text);
+      font: 600 0.96rem/1.55 "Manrope", "Segoe UI", sans-serif;
+    }
+    /* Two-tab language switcher: shows both EN and HE, current one filled. */
+    .guide-lang-switch {
+      display: inline-flex;
+      align-items: stretch;
+      border: 1px solid var(--site-border, rgba(24,32,42,0.18));
+      border-radius: 999px;
+      background: #fff;
+      overflow: hidden;
+      font: 800 0.72rem/1 "Manrope", sans-serif;
+      letter-spacing: 0.04em;
+    }
+    .guide-lang-switch__btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 14px;
+      color: var(--site-muted, #5a626c);
+      text-decoration: none;
+      transition: background 120ms ease, color 120ms ease;
+    }
+    .guide-lang-switch__btn:hover,
+    .guide-lang-switch__btn:focus-visible {
+      background: rgba(0, 0, 0, 0.05);
+      color: var(--site-text, #18202a);
+    }
+    .guide-lang-switch__btn.is-active {
+      background: var(--site-text, #18202a);
+      color: #fff;
+      cursor: default;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="teaching">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar">
+      <a class="apartsin-shell__brand" href="../../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../../index.html">About</a>
+        <a href="../../research/research-focus.html">Research</a>
+        <a href="../../teaching/overview.html">Teaching</a>
+        <a href="../../work/overview.html">Building</a>
+        <a href="../../work/innovation-overview.html">Innovations</a>
+        <a href="../../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="writing-to-your-instructor-overview">
+          <h1 class="apartsin-sr-only">How to Write to Your Instructor</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="../overview.html">Teaching</a>
+              <span aria-hidden="true">/</span>
+              <a href="./index.html">Guides for Students</a>
+              <span aria-hidden="true">/</span>
+              <strong>How to Write to Your Instructor</strong>
+            </nav>
+            <div class="guide-lang-switch" role="group" aria-label="Language">
+              <a class="guide-lang-switch__btn is-active" href="./writing-to-your-instructor.html" lang="en" hreflang="en" aria-current="true">English</a>
+              <a class="guide-lang-switch__btn" href="./writing-to-your-instructor-he.html" lang="he" hreflang="he">עברית</a>
+            </div>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../../assets/heroes/teaching-course-bots.png" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">Writing a good message to your instructor is a skill worth practicing. A clear, self-contained, and respectful question earns a faster and better answer, and the effort of framing it often teaches you as much as the reply.</p>
+          </div>
+        </section>
+
+        <h2 class="sdg-heading">Five habits for a good message</h2>
+        <p class="sdg-heading-lede">Before you send, and what to expect back.</p>
+        <section class="sdg-list" aria-label="How to write to your instructor">
+          <article class="sdg-card" id="tip-1">
+            <span class="sdg-card__num">1</span>
+            <div class="sdg-card__content">
+              <h2>Try to answer it yourself first</h2>
+              <p class="sdg-plain">Treat each question as a chance to learn independently, including how to find and validate information. You can always ask the instructor, but if you ask before trying, you miss the learning that is the whole point of the course and the degree.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="tip-2">
+            <span class="sdg-card__num">2</span>
+            <div class="sdg-card__content">
+              <h2>Include everything needed to understand it</h2>
+              <p class="sdg-plain">Give all the information your question needs. Do not assume the instructor remembers an earlier conversation, and do not leave out the background that is critical to understanding what you are asking.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="tip-3">
+            <span class="sdg-card__num">3</span>
+            <div class="sdg-card__content">
+              <h2>Be brief, and word it with care</h2>
+              <p class="sdg-plain">You are asking for the instructor's time, so show that you invested your own in making the question clear and short. Aim for a single paragraph, choose your wording carefully, and add links for any background that is needed.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="tip-4">
+            <span class="sdg-card__num">4</span>
+            <div class="sdg-card__content">
+              <h2>Stay polite and professional</h2>
+              <p class="sdg-plain">Keep the language polite and professional, and reread the message for wording that could accidentally come across as disrespectful or inappropriate.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="tip-5">
+            <span class="sdg-card__num">5</span>
+            <div class="sdg-card__content">
+              <h2>Expect links or an AI transcript in reply</h2>
+              <p class="sdg-plain">Be ready to receive links to resources or a transcript of an AI conversation. It is often the easiest way for the instructor to give you a complete, well-structured answer.</p>
+            </div>
+          </article>
+        </section>
+
+      <section class="section-quick-links">
+        <h2 class="section-quick-links__title">Quick Links</h2>
+        <nav class="section-quick-links__grid" aria-label="Quick links">
+          <a class="section-quick-link" href="./how-to-use-ai.html">
+            <span class="section-quick-link__badge" style="background: #7a3fa0;">U</span>
+            How to Use AI
+          </a>
+          <a class="section-quick-link" href="./advice-to-students-2026.html">
+            <span class="section-quick-link__badge" style="background: #c2410c;">A</span>
+            Advice to CS Students in 2026
+          </a>
+          <a class="section-quick-link" href="./index.html">
+            <span class="section-quick-link__badge" style="background: #18202a;">G</span>
+            All Guides
+          </a>
+        </nav>
+      </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../../shared/unified-enhance.js"></script>
+  <script defer src="../../shared/site-shell.js"></script>
+</body>
+</html>
