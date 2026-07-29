@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <meta name="description" content="A guide for Medical Technology students taking the LLM course: choose a meaningful problem, develop deep domain understanding, maintain technological depth, and connect both worlds in your project.">
+  <link rel="alternate" hreflang="he" href="./medtech-llm-course-he.html">
+  <link rel="alternate" hreflang="en" href="./medtech-llm-course.html">
+  <title>Medical Technology Students in the LLM Course | Sasha Apartsin</title>
+  <link rel="stylesheet" href="../../shared/site-shell.css">
+  <link rel="stylesheet" href="../../shared/unified-theme.css">
+  <style>
+    .sdg-heading {
+      margin: 34px 0 2px;
+      color: var(--site-text, #18202a);
+      font: 800 0.9rem/1.2 "Manrope", sans-serif;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .sdg-heading:first-of-type { margin-top: 12px; }
+    .sdg-heading-lede {
+      margin: 0;
+      color: var(--site-muted);
+      font: 600 0.92rem/1.5 "Manrope", sans-serif;
+    }
+    .sdg-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 12px;
+    }
+    .sdg-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: start;
+      column-gap: 18px;
+      row-gap: 8px;
+      padding: 20px 22px 18px 24px;
+      border: 1px solid var(--site-border);
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+      overflow: hidden;
+    }
+    .sdg-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5px;
+      background: linear-gradient(180deg, rgba(24, 101, 168, 0.9), rgba(122, 63, 160, 0.75));
+    }
+    .sdg-card__num {
+      grid-column: 1;
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      margin-top: 2px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(24, 101, 168, 0.16), rgba(122, 63, 160, 0.16));
+      color: #164a83;
+      font: 800 1.15rem/1 "Manrope", sans-serif;
+    }
+    .sdg-card__content {
+      grid-column: 2;
+      display: grid;
+      gap: 8px;
+      max-width: 92ch;
+    }
+    .sdg-card__content h2 {
+      margin: 0;
+      color: var(--site-text, #18202a);
+      font: 800 1.08rem/1.28 "Manrope", sans-serif;
+    }
+    .sdg-lead {
+      margin: 0;
+      color: #164a83;
+      font: 800 1rem/1.45 "Manrope", sans-serif;
+    }
+    .sdg-plain {
+      margin: 0;
+      color: var(--site-text);
+      font: 600 0.95rem/1.6 "Manrope", "Segoe UI", sans-serif;
+    }
+    .sdg-points {
+      margin: 0;
+      padding-left: 20px;
+      display: grid;
+      gap: 4px;
+    }
+    .sdg-points li {
+      color: var(--site-text);
+      font: 600 0.95rem/1.55 "Manrope", "Segoe UI", sans-serif;
+    }
+    /* Two-tab language switcher: shows both EN and HE, current one filled. */
+    .guide-lang-switch {
+      display: inline-flex;
+      align-items: stretch;
+      border: 1px solid var(--site-border, rgba(24,32,42,0.18));
+      border-radius: 999px;
+      background: #fff;
+      overflow: hidden;
+      font: 800 0.72rem/1 "Manrope", sans-serif;
+      letter-spacing: 0.04em;
+    }
+    .guide-lang-switch__btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 14px;
+      color: var(--site-muted, #5a626c);
+      text-decoration: none;
+      transition: background 120ms ease, color 120ms ease;
+    }
+    .guide-lang-switch__btn:hover,
+    .guide-lang-switch__btn:focus-visible {
+      background: rgba(0, 0, 0, 0.05);
+      color: var(--site-text, #18202a);
+    }
+    .guide-lang-switch__btn.is-active {
+      background: var(--site-text, #18202a);
+      color: #fff;
+      cursor: default;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="teaching">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar">
+      <a class="apartsin-shell__brand" href="../../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../../index.html">About</a>
+        <a href="../../research/research-focus.html">Research</a>
+        <a href="../../teaching/overview.html">Teaching</a>
+        <a href="../../work/overview.html">Building</a>
+        <a href="../../work/innovation-overview.html">Innovations</a>
+        <a href="../../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="medtech-llm-course-overview">
+          <h1 class="apartsin-sr-only">Medical Technology Students in the LLM Course</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="../overview.html">Teaching</a>
+              <span aria-hidden="true">/</span>
+              <a href="./index.html">Guides for Students</a>
+              <span aria-hidden="true">/</span>
+              <strong>Medical Technology Students in the LLM Course</strong>
+            </nav>
+            <div class="guide-lang-switch" role="group" aria-label="Language">
+              <a class="guide-lang-switch__btn is-active" href="./medtech-llm-course.html" lang="en" hreflang="en" aria-current="true">English</a>
+              <a class="guide-lang-switch__btn" href="./medtech-llm-course-he.html" lang="he" hreflang="he">עברית</a>
+            </div>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../../assets/heroes/teaching-hos-student-projects.png" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">Your degree combines technological skills with medical and biomedical domain knowledge, and that combination is your main competitive advantage. Computer science students may have stronger general technical skills, and biomedical students deeper knowledge of medical problems, but your strength is connecting both worlds. The LLM course project sits at the intersection of large language models and healthcare, so do not waste it on a generic or superficial project.</p>
+          </div>
+        </section>
+
+        <h2 class="sdg-heading">Four ways to make the project count</h2>
+        <p class="sdg-heading-lede">Turn the intersection of your degree, medicine and AI, into a project only you could do well.</p>
+        <section class="sdg-list" aria-label="Guidance for Medical Technology students in the LLM course">
+          <article class="sdg-card" id="step-1">
+            <span class="sdg-card__num">1</span>
+            <div class="sdg-card__content">
+              <h2>Choose a meaningful problem</h2>
+              <p class="sdg-lead">Select your project task carefully.</p>
+              <p class="sdg-plain">Avoid problems that are already adequately solved, and tasks that are too simple, obvious, or superficial. Choose a problem whose successful solution requires substantial understanding of the medical or biomedical domain.</p>
+              <p class="sdg-plain">A good project should not rest on domain knowledge you could explain in a 15-minute introduction. It should involve real complexity: professional terminology, contextual nuances, practical constraints, or clinical considerations.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="step-2">
+            <span class="sdg-card__num">2</span>
+            <div class="sdg-card__content">
+              <h2>Develop deep domain understanding</h2>
+              <p class="sdg-lead">Study the problem before designing the solution.</p>
+              <p class="sdg-plain">Review the relevant biomedical literature, existing systems, datasets, clinical practices, regulations, and prior research. Identify the important distinctions, edge cases, risks, and limitations that someone without domain expertise would overlook.</p>
+              <p class="sdg-plain">This depth of understanding is what separates your work from a generic AI project.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="step-3">
+            <span class="sdg-card__num">3</span>
+            <div class="sdg-card__content">
+              <h2>Maintain technological depth</h2>
+              <p class="sdg-lead">Domain knowledge alone is not enough.</p>
+              <p class="sdg-plain">You also need to understand the capabilities and limits of LLMs, suitable architectures and methods, data requirements, evaluation strategies, reliability concerns, and alternative technical approaches.</p>
+              <p class="sdg-plain">The project should show that you can make informed technical decisions, not simply connect a medical topic to an existing LLM API.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="step-4">
+            <span class="sdg-card__num">4</span>
+            <div class="sdg-card__content">
+              <h2>Connect the two domains</h2>
+              <p class="sdg-lead">The strongest projects show a clear connection between:</p>
+              <ul class="sdg-points">
+                <li>a meaningful medical or biomedical need;</li>
+                <li>deep understanding of the problem and its nuances;</li>
+                <li>an appropriate and technically sound LLM-based solution;</li>
+                <li>rigorous evaluation using relevant criteria;</li>
+                <li>awareness of limitations, risks, and practical deployment conditions.</li>
+              </ul>
+              <p class="sdg-plain">This connection between domain expertise and technological depth is what lets your Medical Technology degree stand out.</p>
+            </div>
+          </article>
+        </section>
+
+      <section class="section-quick-links">
+        <h2 class="section-quick-links__title">Quick Links</h2>
+        <nav class="section-quick-links__grid" aria-label="Quick links">
+          <a class="section-quick-link" href="./project-requirements.html">
+            <span class="section-quick-link__badge" style="background: #164a83;">R</span>
+            Project Requirements
+          </a>
+          <a class="section-quick-link" href="./course-expectations.html">
+            <span class="section-quick-link__badge" style="background: #2e7d5a;">X</span>
+            What LLM and GenAI Courses Expect
+          </a>
+          <a class="section-quick-link" href="./synthetic-data-generation.html">
+            <span class="section-quick-link__badge" style="background: #1f5a40;">S</span>
+            Synthetic Data Generation
+          </a>
+        </nav>
+      </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../../shared/unified-enhance.js"></script>
+  <script defer src="../../shared/site-shell.js"></script>
+</body>
+</html>
