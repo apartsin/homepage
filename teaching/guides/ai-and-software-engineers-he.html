@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="he-IL" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <meta name="description" content="האם ה-AI ייתר מהנדסי תוכנה? נושאים נפוצים נכון ליולי 2026: התפקיד המשתנה, גבולות ה-vibe coding, כתיבת פחות קוד, מדוע עדיין מלמדים קוד, וכמה לא ודאי העתיד.">
+  <link rel="alternate" hreflang="he" href="./ai-and-software-engineers-he.html">
+  <link rel="alternate" hreflang="en" href="./ai-and-software-engineers.html">
+  <title>האם ה-AI ייתר מהנדסי תוכנה? | סשה אפרטסין</title>
+  <link rel="stylesheet" href="../../shared/site-shell.css">
+  <link rel="stylesheet" href="../../shared/unified-theme.css">
+  <style>
+    .sdg-heading {
+      margin: 34px 0 2px;
+      color: var(--site-text, #18202a);
+      font: 800 0.9rem/1.3 "Manrope", "Heebo", sans-serif;
+      letter-spacing: 0.04em;
+    }
+    .sdg-heading:first-of-type { margin-top: 12px; }
+    .sdg-heading-lede {
+      margin: 0;
+      color: var(--site-muted);
+      font: 600 0.92rem/1.6 "Manrope", "Heebo", sans-serif;
+    }
+    .faq-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 12px;
+    }
+    .faq-card {
+      position: relative;
+      display: grid;
+      gap: 8px;
+      padding: 20px 26px 18px 22px;
+      border: 1px solid var(--site-border);
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+      overflow: hidden;
+      max-width: 92ch;
+      text-align: right;
+    }
+    .faq-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 0 auto;
+      width: 5px;
+      background: linear-gradient(180deg, rgba(24, 101, 168, 0.9), rgba(122, 63, 160, 0.75));
+    }
+    .faq-card h2 {
+      margin: 0;
+      color: var(--site-text, #18202a);
+      font: 800 1.12rem/1.3 "Manrope", "Heebo", sans-serif;
+    }
+    .faq-card__answer {
+      margin: 0 0 2px;
+      color: #164a83;
+      font: 800 1rem/1.45 "Manrope", "Heebo", sans-serif;
+    }
+    .faq-card p {
+      margin: 0;
+      color: var(--site-text);
+      font: 600 0.95rem/1.6 "Manrope", "Heebo", "Segoe UI", sans-serif;
+    }
+    /* Two-tab language switcher: shows both EN and HE, current one filled. */
+    .guide-lang-switch {
+      display: inline-flex;
+      align-items: stretch;
+      border: 1px solid var(--site-border, rgba(24,32,42,0.18));
+      border-radius: 999px;
+      background: #fff;
+      overflow: hidden;
+      font: 800 0.72rem/1 "Manrope", sans-serif;
+      letter-spacing: 0.04em;
+    }
+    .guide-lang-switch__btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 14px;
+      color: var(--site-muted, #5a626c);
+      text-decoration: none;
+      transition: background 120ms ease, color 120ms ease;
+    }
+    .guide-lang-switch__btn:hover,
+    .guide-lang-switch__btn:focus-visible {
+      background: rgba(0, 0, 0, 0.05);
+      color: var(--site-text, #18202a);
+    }
+    .guide-lang-switch__btn.is-active {
+      background: var(--site-text, #18202a);
+      color: #fff;
+      cursor: default;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="teaching">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar" lang="en" dir="ltr">
+      <a class="apartsin-shell__brand" href="../../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../../index.html">About</a>
+        <a href="../../research/research-focus.html">Research</a>
+        <a href="../../teaching/overview.html">Teaching</a>
+        <a href="../../work/overview.html">Building</a>
+        <a href="../../work/innovation-overview.html">Innovations</a>
+        <a href="../../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="ai-and-software-engineers-overview">
+          <h1 class="apartsin-sr-only">האם ה-AI ייתר מהנדסי תוכנה?</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../../index.html">בית</a>
+              <span aria-hidden="true">/</span>
+              <a href="../overview.html">הוראה</a>
+              <span aria-hidden="true">/</span>
+              <a href="./index.html">מדריכים לסטודנטים</a>
+              <span aria-hidden="true">/</span>
+              <strong>האם ה-AI ייתר מהנדסי תוכנה?</strong>
+            </nav>
+            <div class="guide-lang-switch" role="group" aria-label="שפה">
+              <a class="guide-lang-switch__btn" href="./ai-and-software-engineers.html" lang="en" hreflang="en">English</a>
+              <a class="guide-lang-switch__btn is-active" href="./ai-and-software-engineers-he.html" lang="he" hreflang="he" aria-current="true">עברית</a>
+            </div>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../../assets/heroes/teaching-innovation-first.png" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">אף אחד לא יודע בדיוק מה צופן העתיד. מוצר חדש אחד מ-Claude, מ-ChatGPT או ממערכת AI אחרת עשוי לשנות משמעותית את תעשיית התוכנה. עשו מחקר משלכם, הישארו מעודכנים, ועדכנו את עמדותיכם ככל שמופיעות ראיות חדשות. כאן אני מסכם כמה נושאים נפוצים שנדונים נכון ליולי 2026.</p>
+          </div>
+        </section>
+
+        <h2 class="sdg-heading">חמש שאלות על ה-AI והמקצוע</h2>
+        <p class="sdg-heading-lede">התפקיד, ה-vibe coding, כתיבת הקוד, מדוע עדיין מלמדים קוד, וכמה הכול לא ודאי.</p>
+        <section class="faq-list" aria-label="שאלות על AI והנדסת תוכנה">
+          <article class="faq-card" id="q-obsolete">
+            <h2>האם ה-AI ייתר את מהנדסי התוכנה?</h2>
+            <p class="faq-card__answer">כנראה שלא, אך התפקיד עשוי להשתנות באופן מהותי.</p>
+            <p>כיום, משרדי רואי חשבון רבים משתמשים בתוכנה סטנדרטית דומה, מפני שפיתוח מערכת מותאמת אישית הוא יקר. אם ה-AI יוזיל משמעותית את בניית התוכנה הייעודית, ארגונים רבים עשויים להעדיף מערכות המתוכננות במיוחד לצרכים שלהם.</p>
+            <p>הדבר עשוי להגדיל את הביקוש לתוכנה, ובה בעת לשנות את המיומנויות הנדרשות ממהנדסי תוכנה. מהנדסים עשויים להשקיע פחות זמן במימוש ידני של תוכנה ויותר זמן בהפעלת כלי AI, בהגדרת דרישות, בקבלת החלטות ארכיטקטוניות, באימות תוצאות ובהפקה מהירה של מערכות מותאמות אישית.</p>
+          </article>
+
+          <article class="faq-card" id="q-vibe-coding">
+            <h2>האם כל אחד יכול לבנות תוכנה באמצעות vibe coding?</h2>
+            <p class="faq-card__answer">לפעמים.</p>
+            <p>ה-AI הפך לקל בהרבה עבור אנשים ללא ניסיון תכנותי נרחב ליצור יישומים ואבות טיפוס פשוטים. הוא יכול גם לסייע למפתחים להגיע במהירות רבה לכ-80% מהפונקציונליות הרצויה.</p>
+            <p>עם זאת, השלמת 20% הנותרים היא לעיתים קרובות קשה בהרבה. הפקה של מערכת אמינה, מאובטחת, ניתנת לתחזוקה ומורכבת עדיין נראית כדורשת ידע רחב בעקרונות הנדסה, ארכיטקטורות, כלים, בדיקות, הטמעה (deployment), אבטחה, ובתחום היישום עצמו.</p>
+            <p>ה-AI מוריד את רף הכניסה ליצירת תוכנה, אך אינו מסיר באופן אוטומטי את הקושי שבהנדסת מערכות באיכות גבוהה.</p>
+          </article>
+
+          <article class="faq-card" id="q-write-code">
+            <h2>האם מהנדסי תוכנה עדיין יצטרכו לכתוב קוד?</h2>
+            <p class="faq-card__answer">כנראה הרבה פחות מהיום.</p>
+            <p>מודל אפשרי לעתיד הוא שכל מהנדס תוכנה יהפוך לשילוב של מהנדס בכיר, ארכיטקט, מעצב מוצר ומפקח טכני, בעוד ש-AI מבצע חלק ניכר מהעבודה שהוקצתה באופן מסורתי למפתחים זוטרים.</p>
+            <p>מהנדסים עדיין יצטרכו להבין במהירות קוד שנוצר על ידי AI, מכיוון שהם יהיו אחראים על הכוונת ה-AI, על איתור טעויות, על הערכת בחירות עיצוב, ועל הבטחה שהמערכת מפיקה את התוצאה המבוקשת.</p>
+            <p>הדבר מעלה שאלה חינוכית חשובה: האם סטודנטים יכולים ללמוד להבין קוד מורכב מבלי שלמדו קודם לבנות מערכות מורכבות באופן ידני? נכון לעכשיו, אין לכך תשובה ברורה.</p>
+          </article>
+
+          <article class="faq-card" id="q-teach-code">
+            <h2>מדוע אני עדיין מלמד באמצעות קוד?</h2>
+            <p class="faq-card__answer">כפורמליזם מדויק להסבר מערכות ותהליכים.</p>
+            <p>בקורסים שלי אני משתמש בדוגמאות קוד כדרך מדויקת לתאר מערכות ותהליכים. חשבו על נוסחה בפיזיקה המתארת את מסלול הפגז הנורה מתותח. הנוסחה הופכת את הכוחות והיחסים העומדים בבסיס התופעה לברורים ומדויקים, ובכל זאת איש אינו מצפה שאדם יגזור ויפתור אותה ידנית בכל פעם שמשתמשים בתותח.</p>
+            <p>באופן דומה, קוד יכול לעזור לסטודנטים להבין אלגוריתמים, ארכיטקטורות, זרימות נתונים, הנחות יסוד והתנהגות של מערכות, גם כאשר ה-AI יבצע בסופו של דבר את רוב המימוש בפועל.</p>
+          </article>
+
+          <article class="faq-card" id="q-uncertainty">
+            <h2>כמה לא ודאי העתיד?</h2>
+            <p class="faq-card__answer">מאוד. הוא עשוי להיראות שונה לחלוטין מהיום.</p>
+            <p>אפשרות אחת היא שמערכות AI יפסיקו לייצר קוד בשפות תכנות שתוכננו הן לבני אדם והן למכונות, ובמקום זאת ישתמשו בייצוגים פנימיים הממוטבים בעיקר להבנה של מכונות. ייצוגים אלה עשויים שלא להיות קריאים לבני אדם או שלא לפעול לפי פרדיגמות התכנות של היום.</p>
+            <p>אפשרות נוספת היא שה-AI לא ייצר כלל תוכנה מסורתית. מערכת ה-AI עצמה עשויה להפוך לתוכנה: מערכת כללית, בדומה ל-ChatGPT, עשויה לפרש ישירות בקשות משתמש המובעות בשפה טבעית, בתמונות, בדיבור או בדוגמאות, ולבצע את המשימה מבלי לייצר יישום קונבנציונלי.</p>
+            <p>לכן לא סביר שהנדסת התוכנה תיעלם, אך הכלים שלה, התהליכים, המיומנויות הנדרשות, ואפילו משמעותה של תוכנה, עשויים להשתנות משמעותית.</p>
+          </article>
+        </section>
+
+      <section class="section-quick-links">
+        <h2 class="section-quick-links__title">קישורים מהירים</h2>
+        <nav class="section-quick-links__grid" aria-label="קישורים מהירים">
+          <a class="section-quick-link" href="./advice-to-students-2026-he.html">
+            <span class="section-quick-link__badge" style="background: #c2410c;">A</span>
+            עצות לסטודנטים למדעי המחשב ב-2026
+          </a>
+          <a class="section-quick-link" href="./honest-truth-about-learning-he.html">
+            <span class="section-quick-link__badge" style="background: #18202a;">H</span>
+            האמת הכנה והנוקבת על הלמידה
+          </a>
+          <a class="section-quick-link" href="./how-to-use-ai-he.html">
+            <span class="section-quick-link__badge" style="background: #7a3fa0;">U</span>
+            איך להשתמש ב-AI
+          </a>
+        </nav>
+      </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../../shared/unified-enhance.js"></script>
+  <script defer src="../../shared/site-shell.js"></script>
+</body>
+</html>

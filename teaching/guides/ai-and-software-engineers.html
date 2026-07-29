@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <meta name="description" content="Will AI make software engineers obsolete? Common themes as of July 2026: the changing role, the limits of vibe coding, writing less code, why code is still taught, and how uncertain the future is.">
+  <link rel="alternate" hreflang="he" href="./ai-and-software-engineers-he.html">
+  <link rel="alternate" hreflang="en" href="./ai-and-software-engineers.html">
+  <title>Will AI Make Software Engineers Obsolete? | Sasha Apartsin</title>
+  <link rel="stylesheet" href="../../shared/site-shell.css">
+  <link rel="stylesheet" href="../../shared/unified-theme.css">
+  <style>
+    .sdg-heading {
+      margin: 34px 0 2px;
+      color: var(--site-text, #18202a);
+      font: 800 0.9rem/1.2 "Manrope", sans-serif;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .sdg-heading:first-of-type { margin-top: 12px; }
+    .sdg-heading-lede {
+      margin: 0;
+      color: var(--site-muted);
+      font: 600 0.92rem/1.5 "Manrope", sans-serif;
+    }
+    .faq-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 12px;
+    }
+    .faq-card {
+      position: relative;
+      display: grid;
+      gap: 8px;
+      padding: 20px 22px 18px 26px;
+      border: 1px solid var(--site-border);
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+      overflow: hidden;
+      max-width: 92ch;
+    }
+    .faq-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5px;
+      background: linear-gradient(180deg, rgba(24, 101, 168, 0.9), rgba(122, 63, 160, 0.75));
+    }
+    .faq-card h2 {
+      margin: 0;
+      color: var(--site-text, #18202a);
+      font: 800 1.12rem/1.3 "Manrope", sans-serif;
+    }
+    .faq-card__answer {
+      margin: 0 0 2px;
+      color: #164a83;
+      font: 800 1rem/1.45 "Manrope", sans-serif;
+    }
+    .faq-card p {
+      margin: 0;
+      color: var(--site-text);
+      font: 600 0.95rem/1.6 "Manrope", "Segoe UI", sans-serif;
+    }
+    /* Two-tab language switcher: shows both EN and HE, current one filled. */
+    .guide-lang-switch {
+      display: inline-flex;
+      align-items: stretch;
+      border: 1px solid var(--site-border, rgba(24,32,42,0.18));
+      border-radius: 999px;
+      background: #fff;
+      overflow: hidden;
+      font: 800 0.72rem/1 "Manrope", sans-serif;
+      letter-spacing: 0.04em;
+    }
+    .guide-lang-switch__btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 14px;
+      color: var(--site-muted, #5a626c);
+      text-decoration: none;
+      transition: background 120ms ease, color 120ms ease;
+    }
+    .guide-lang-switch__btn:hover,
+    .guide-lang-switch__btn:focus-visible {
+      background: rgba(0, 0, 0, 0.05);
+      color: var(--site-text, #18202a);
+    }
+    .guide-lang-switch__btn.is-active {
+      background: var(--site-text, #18202a);
+      color: #fff;
+      cursor: default;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="teaching">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar">
+      <a class="apartsin-shell__brand" href="../../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../../index.html">About</a>
+        <a href="../../research/research-focus.html">Research</a>
+        <a href="../../teaching/overview.html">Teaching</a>
+        <a href="../../work/overview.html">Building</a>
+        <a href="../../work/innovation-overview.html">Innovations</a>
+        <a href="../../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="ai-and-software-engineers-overview">
+          <h1 class="apartsin-sr-only">Will AI Make Software Engineers Obsolete?</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="../overview.html">Teaching</a>
+              <span aria-hidden="true">/</span>
+              <a href="./index.html">Guides for Students</a>
+              <span aria-hidden="true">/</span>
+              <strong>Will AI Make Software Engineers Obsolete?</strong>
+            </nav>
+            <div class="guide-lang-switch" role="group" aria-label="Language">
+              <a class="guide-lang-switch__btn is-active" href="./ai-and-software-engineers.html" lang="en" hreflang="en" aria-current="true">English</a>
+              <a class="guide-lang-switch__btn" href="./ai-and-software-engineers-he.html" lang="he" hreflang="he">עברית</a>
+            </div>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../../assets/heroes/teaching-innovation-first.png" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">Nobody knows exactly what the future holds. A single new product from Claude, ChatGPT, or another AI system could significantly change the software industry. Do your own research, stay current, and update your beliefs as new evidence appears. Here I summarize several common themes being discussed as of July 2026.</p>
+          </div>
+        </section>
+
+        <h2 class="sdg-heading">Five questions about AI and the profession</h2>
+        <p class="sdg-heading-lede">The role, vibe coding, writing code, why code is still taught, and how uncertain it all is.</p>
+        <section class="faq-list" aria-label="Questions about AI and software engineering">
+          <article class="faq-card" id="q-obsolete">
+            <h2>Will AI make software engineers obsolete?</h2>
+            <p class="faq-card__answer">Probably not, but the role may change substantially.</p>
+            <p>Today, many accounting firms use similar standard software because developing a customized system is expensive. If AI makes specialized software much cheaper to build, many organizations may prefer systems designed specifically for their needs.</p>
+            <p>This could increase the demand for software while changing the skills expected from software engineers. Engineers may spend less time manually implementing software and more time operating AI tools, defining requirements, making architectural decisions, validating results, and rapidly producing customized systems.</p>
+          </article>
+
+          <article class="faq-card" id="q-vibe-coding">
+            <h2>Can everyone build software through vibe coding?</h2>
+            <p class="faq-card__answer">Sometimes.</p>
+            <p>AI has made it much easier for people without extensive programming experience to create simple applications and prototypes. It can also help developers reach roughly 80% of the desired functionality very quickly.</p>
+            <p>However, completing the remaining 20% is often much harder. Producing a reliable, secure, maintainable, and complex system still appears to require broad knowledge of engineering principles, architectures, tools, testing, deployment, security, and the application domain.</p>
+            <p>AI lowers the barrier to creating software, but it does not automatically remove the difficulty of engineering high-quality systems.</p>
+          </article>
+
+          <article class="faq-card" id="q-write-code">
+            <h2>Will software engineers still need to write code?</h2>
+            <p class="faq-card__answer">Probably much less than today.</p>
+            <p>A possible future model is that every software engineer becomes a combination of senior engineer, architect, product designer, and technical supervisor, while AI performs much of the work traditionally assigned to junior developers.</p>
+            <p>Engineers will still need to understand AI-generated code quickly, because they will be responsible for directing the AI, detecting mistakes, evaluating design choices, and ensuring the system produces the intended outcome.</p>
+            <p>This raises an important educational question: can students learn to understand complex code without first learning to build complex systems manually? At present, there is no clear answer.</p>
+          </article>
+
+          <article class="faq-card" id="q-teach-code">
+            <h2>Why do I still teach using code?</h2>
+            <p class="faq-card__answer">As a precise formalism for explaining systems and processes.</p>
+            <p>In my courses, I use code examples as an exact way to describe systems and processes. Consider a physics formula that describes the trajectory of a shell fired from a cannon. The formula makes the underlying forces and relationships clear and precise, yet nobody expects a person to derive and solve it by hand every time the cannon is used.</p>
+            <p>Similarly, code can help students understand algorithms, architectures, data flows, assumptions, and system behavior, even when AI eventually performs most of the actual implementation.</p>
+          </article>
+
+          <article class="faq-card" id="q-uncertainty">
+            <h2>How uncertain is the future?</h2>
+            <p class="faq-card__answer">Very. It may look nothing like today.</p>
+            <p>One possibility is that AI systems stop generating code in programming languages designed for both humans and machines, and instead use internal representations optimized primarily for machine understanding. These representations may not be readable by humans or follow today's programming paradigms.</p>
+            <p>Another possibility is that AI will not generate traditional software at all. The AI system itself may become the software: a general system, similar to ChatGPT, could directly interpret user requests expressed in natural language, images, speech, or examples and perform the task without producing a conventional application.</p>
+            <p>Software engineering is therefore unlikely to disappear, but its tools, processes, required skills, and even the meaning of software may change significantly.</p>
+          </article>
+        </section>
+
+      <section class="section-quick-links">
+        <h2 class="section-quick-links__title">Quick Links</h2>
+        <nav class="section-quick-links__grid" aria-label="Quick links">
+          <a class="section-quick-link" href="./advice-to-students-2026.html">
+            <span class="section-quick-link__badge" style="background: #c2410c;">A</span>
+            Advice to CS Students in 2026
+          </a>
+          <a class="section-quick-link" href="./honest-truth-about-learning.html">
+            <span class="section-quick-link__badge" style="background: #18202a;">H</span>
+            The Honest, Brutal Truth About Learning
+          </a>
+          <a class="section-quick-link" href="./how-to-use-ai.html">
+            <span class="section-quick-link__badge" style="background: #7a3fa0;">U</span>
+            How to Use AI
+          </a>
+        </nav>
+      </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../../shared/unified-enhance.js"></script>
+  <script defer src="../../shared/site-shell.js"></script>
+</body>
+</html>
