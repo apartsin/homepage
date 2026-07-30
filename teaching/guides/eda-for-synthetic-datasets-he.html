@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="he-IL" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <meta name="description" content="רשימת בדיקות EDA מעשית למאגרי נתונים סינתטיים, להרצה לפני אימון כל מודל: שפיות, כיסוי, ריאליזם, שונות, איכות תיוג, דליפה, הטיה ואיזון, ורמת קושי.">
+  <link rel="alternate" hreflang="he" href="./eda-for-synthetic-datasets-he.html">
+  <link rel="alternate" hreflang="en" href="./eda-for-synthetic-datasets.html">
+  <title>EDA מעשי למאגרי נתונים סינתטיים | סשה אפרטסין</title>
+  <link rel="stylesheet" href="../../shared/site-shell.css">
+  <link rel="stylesheet" href="../../shared/unified-theme.css">
+  <style>
+    .sdg-heading {
+      margin: 34px 0 2px;
+      color: var(--site-text, #18202a);
+      font: 800 0.9rem/1.3 "Manrope", "Heebo", sans-serif;
+      letter-spacing: 0.04em;
+    }
+    .sdg-heading:first-of-type { margin-top: 12px; }
+    .sdg-heading-lede {
+      margin: 0;
+      color: var(--site-muted);
+      font: 600 0.92rem/1.6 "Manrope", "Heebo", sans-serif;
+    }
+    .sdg-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 12px;
+    }
+    .sdg-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: start;
+      column-gap: 18px;
+      row-gap: 8px;
+      padding: 18px 24px 18px 22px;
+      border: 1px solid var(--site-border);
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+      overflow: hidden;
+      text-align: right;
+    }
+    .sdg-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 0 auto;
+      width: 5px;
+      background: linear-gradient(180deg, rgba(24, 101, 168, 0.9), rgba(122, 63, 160, 0.75));
+    }
+    .sdg-card__num {
+      grid-column: 1;
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      margin-top: 2px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(24, 101, 168, 0.16), rgba(122, 63, 160, 0.16));
+      color: #164a83;
+      font: 800 1.15rem/1 "Manrope", "Heebo", sans-serif;
+    }
+    .sdg-card__content {
+      grid-column: 2;
+      display: grid;
+      gap: 6px;
+      max-width: 92ch;
+    }
+    .sdg-card__content h2 {
+      margin: 0;
+      color: var(--site-text, #18202a);
+      font: 800 1.08rem/1.28 "Manrope", "Heebo", sans-serif;
+    }
+    .sdg-lead {
+      margin: 0;
+      color: #164a83;
+      font: 800 0.95rem/1.45 "Manrope", "Heebo", sans-serif;
+    }
+    .sdg-plain {
+      margin: 0;
+      color: var(--site-text);
+      font: 600 0.96rem/1.6 "Manrope", "Heebo", "Segoe UI", sans-serif;
+    }
+    .rot-list {
+      list-style: none;
+      margin: 12px 0 4px;
+      padding: 0;
+      display: grid;
+      gap: 8px;
+    }
+    .rot-list li {
+      display: grid;
+      grid-template-columns: minmax(120px, auto) 1fr;
+      gap: 12px;
+      align-items: baseline;
+      border: 1px solid var(--site-border);
+      border-radius: 10px;
+      padding: 9px 12px;
+      background: #fbfcfd;
+      text-align: right;
+    }
+    .rot-list b {
+      color: #164a83;
+      font: 800 0.85rem/1.4 "Manrope", "Heebo", sans-serif;
+    }
+    .rot-list span {
+      color: var(--site-text);
+      font: 600 0.9rem/1.5 "Manrope", "Heebo", "Segoe UI", sans-serif;
+    }
+    /* Two-tab language switcher: shows both EN and HE, current one filled. */
+    .guide-lang-switch {
+      display: inline-flex;
+      align-items: stretch;
+      border: 1px solid var(--site-border, rgba(24,32,42,0.18));
+      border-radius: 999px;
+      background: #fff;
+      overflow: hidden;
+      font: 800 0.72rem/1 "Manrope", sans-serif;
+      letter-spacing: 0.04em;
+    }
+    .guide-lang-switch__btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 14px;
+      color: var(--site-muted, #5a626c);
+      text-decoration: none;
+      transition: background 120ms ease, color 120ms ease;
+    }
+    .guide-lang-switch__btn:hover,
+    .guide-lang-switch__btn:focus-visible {
+      background: rgba(0, 0, 0, 0.05);
+      color: var(--site-text, #18202a);
+    }
+    .guide-lang-switch__btn.is-active {
+      background: var(--site-text, #18202a);
+      color: #fff;
+      cursor: default;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="teaching">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar" lang="en" dir="ltr">
+      <a class="apartsin-shell__brand" href="../../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../../index.html">About</a>
+        <a href="../../research/research-focus.html">Research</a>
+        <a href="../../teaching/overview.html">Teaching</a>
+        <a href="../../work/overview.html">Building</a>
+        <a href="../../work/innovation-overview.html">Innovations</a>
+        <a href="../../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="eda-for-synthetic-datasets-overview">
+          <h1 class="apartsin-sr-only">EDA מעשי למאגרי נתונים סינתטיים</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../../index.html">בית</a>
+              <span aria-hidden="true">/</span>
+              <a href="../overview.html">הוראה</a>
+              <span aria-hidden="true">/</span>
+              <a href="./index.html">מדריכים לסטודנטים</a>
+              <span aria-hidden="true">/</span>
+              <strong>EDA מעשי למאגרי נתונים סינתטיים</strong>
+            </nav>
+            <div class="guide-lang-switch" role="group" aria-label="שפה">
+              <a class="guide-lang-switch__btn" href="./eda-for-synthetic-datasets.html" lang="en" hreflang="en">English</a>
+              <a class="guide-lang-switch__btn is-active" href="./eda-for-synthetic-datasets-he.html" lang="he" hreflang="he" aria-current="true">עברית</a>
+            </div>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../../assets/heroes/teaching-hos-student-projects.png" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">הריצו את זה לפני אימון כל מודל על מאגר נתונים סינתטי. כל מטרה עונה על שאלה אחרת בנוגע לאיכות המאגר, החל מהשאלה אם הנתונים נכונים מבחינה טכנית ועד לשאלה אם הם יבחינו בין מודלים חלשים לחזקים. משתלב עם המדריך <a href="./synthetic-data-generation-he.html">יצירת נתונים סינתטיים</a>.</p>
+          </div>
+        </section>
+
+        <h2 class="sdg-heading">שמונה מטרות לבדיקה לפני האימון</h2>
+        <p class="sdg-heading-lede">כל כרטיס מציג מה המטרה מוודאת ואת ה-EDA המעשי שבודק אותה.</p>
+        <section class="sdg-list" aria-label="מטרות EDA למאגרי נתונים סינתטיים">
+          <article class="sdg-card" id="obj-sanity">
+            <span class="sdg-card__num">1</span>
+            <div class="sdg-card__content">
+              <h2>שפיות</h2>
+              <p class="sdg-lead">ודאו שהמאגר נכון מבחינה טכנית.</p>
+              <p class="sdg-plain">בדקו ערכים חסרים, כפילויות, רשומות לא תקינות, את התפלגות התיוג, את הסכימה וערכים בלתי אפשריים, וקראו ידנית מדגם אקראי של רשומות.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="obj-coverage">
+            <span class="sdg-card__num">2</span>
+            <div class="sdg-card__content">
+              <h2>כיסוי</h2>
+              <p class="sdg-lead">ודאו שכל תרחיש מתוכנן מיוצג.</p>
+              <p class="sdg-plain">ספרו דגימות לכל מחלקה ולכל תכונה, ודאו שכל תרחיש מתוכנן וכל מקרה קצה קיים, ובחנו טבלאות הצלבה של המשתנים החשובים.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="obj-realism">
+            <span class="sdg-card__num">3</span>
+            <div class="sdg-card__content">
+              <h2>ריאליזם</h2>
+              <p class="sdg-lead">ודאו שהנתונים הסינתטיים דומים לנתונים מהעולם האמיתי.</p>
+              <p class="sdg-plain">השוו את התפלגויות המאפיינים לנתונים אמיתיים היכן שהם זמינים, בחנו מדגמים אקראיים, המחישו הטמעות (embeddings) או אשכולות, ובקשו ממומחי תחום לסקור דוגמאות.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="obj-variability">
+            <span class="sdg-card__num">4</span>
+            <div class="sdg-card__content">
+              <h2>שונות (גיוון)</h2>
+              <p class="sdg-lead">מנעו נתונים חוזרניים או הסובלים מקריסת מודים (mode collapse).</p>
+              <p class="sdg-plain">אתרו כפילויות וכמעט-כפילויות, אשכלו הטמעות, מדדו את הגיוון של אוצר המילים, המאפיינים או התמונות, וודאו שקיימים סגנונות ותנאים מרובים.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="obj-label-quality">
+            <span class="sdg-card__num">5</span>
+            <div class="sdg-card__content">
+              <h2>איכות תיוג</h2>
+              <p class="sdg-lead">ודאו שהתיוגים מדויקים ועקביים.</p>
+              <p class="sdg-plain">סקרו ידנית מדגמים אקראיים, אמתו תיוגים באמצעות כללים או מודל שני, בחנו מקרים מבלבלים, ובדקו את עקביות התיוג.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="obj-leakage">
+            <span class="sdg-card__num">6</span>
+            <div class="sdg-card__content">
+              <h2>דליפה</h2>
+              <p class="sdg-lead">מנעו ממודלים ללמוד קיצורי דרך.</p>
+              <p class="sdg-plain">חפשו דגימות כפולות בין קבוצת האימון לקבוצת המבחן, בחנו מטא-נתונים ושמות קבצים, זהו מאפיינים בעלי מתאם גבוה עם התיוג, וודאו שלא ניתן להסיק את התיוג ממידע לא מכוון.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="obj-bias-balance">
+            <span class="sdg-card__num">7</span>
+            <div class="sdg-card__content">
+              <h2>הטיה ואיזון</h2>
+              <p class="sdg-lead">אתרו התפלגויות מוטות או לא הוגנות.</p>
+              <p class="sdg-plain">שרטטו את תדירויות המחלקות, השוו התפלגויות דמוגרפיות או של תת-קבוצות, וודאו שתכונות חשובות אינן מיוצגות ביתר או בחסר.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="obj-difficulty">
+            <span class="sdg-card__num">8</span>
+            <div class="sdg-card__content">
+              <h2>רמת קושי</h2>
+              <p class="sdg-lead">ודאו שמדד ההשוואה (benchmark) מעריך מודלים באופן משמעותי.</p>
+              <p class="sdg-plain">בחנו דוגמאות קלות מול קשות, ודאו את רמת העמימות, כללו מקרי קצה מאתגרים, והשוו קו בסיס מול מודל חזק יותר כדי לוודא שיש מקום לשיפור.</p>
+            </div>
+          </article>
+        </section>
+
+        <h2 class="sdg-heading">כלל אצבע</h2>
+        <p class="sdg-heading-lede">לפני האימון, שאלו את שמונה השאלות, כל אחת בשורה אחת.</p>
+        <ul class="rot-list">
+          <li><b>שפיות</b><span>האם הנתונים נכונים?</span></li>
+          <li><b>כיסוי</b><span>האם כל מה שחשוב נכלל?</span></li>
+          <li><b>ריאליזם</b><span>האם זה נראה אמיתי?</span></li>
+          <li><b>שונות</b><span>האם זה מגוון מספיק?</span></li>
+          <li><b>איכות תיוג</b><span>האם ניתן לסמוך על התיוגים?</span></li>
+          <li><b>דליפה</b><span>האם המודל יכול לרמות?</span></li>
+          <li><b>הטיה ואיזון</b><span>האם המאגר מייצג?</span></li>
+          <li><b>רמת קושי</b><span>האם המאגר הזה יבחין בין מודלים חלשים לחזקים?</span></li>
+        </ul>
+
+      <section class="section-quick-links">
+        <h2 class="section-quick-links__title">קישורים מהירים</h2>
+        <nav class="section-quick-links__grid" aria-label="קישורים מהירים">
+          <a class="section-quick-link" href="./synthetic-data-generation-he.html">
+            <span class="section-quick-link__badge" style="background: #1f5a40;">S</span>
+            יצירת נתונים סינתטיים
+          </a>
+          <a class="section-quick-link" href="./project-requirements-he.html">
+            <span class="section-quick-link__badge" style="background: #164a83;">R</span>
+            דרישות הפרויקט
+          </a>
+          <a class="section-quick-link" href="./project-assessment-criteria-he.html">
+            <span class="section-quick-link__badge" style="background: #2e7d5a;">E</span>
+            קריטריונים להערכה
+          </a>
+        </nav>
+      </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../../shared/unified-enhance.js"></script>
+  <script defer src="../../shared/site-shell.js"></script>
+</body>
+</html>

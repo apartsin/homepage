@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <meta name="description" content="A practical EDA checklist for synthetic datasets, to run before training any model: sanity, coverage, realism, variability, label quality, leakage, bias and balance, and difficulty.">
+  <link rel="alternate" hreflang="he" href="./eda-for-synthetic-datasets-he.html">
+  <link rel="alternate" hreflang="en" href="./eda-for-synthetic-datasets.html">
+  <title>Practical EDA for Synthetic Datasets | Sasha Apartsin</title>
+  <link rel="stylesheet" href="../../shared/site-shell.css">
+  <link rel="stylesheet" href="../../shared/unified-theme.css">
+  <style>
+    .sdg-heading { margin: 34px 0 2px; color: var(--site-text, #18202a); font: 800 0.9rem/1.2 "Manrope", sans-serif; letter-spacing: 0.04em; text-transform: uppercase; }
+    .sdg-heading:first-of-type { margin-top: 12px; }
+    .sdg-heading-lede { margin: 0; color: var(--site-muted); font: 600 0.92rem/1.5 "Manrope", sans-serif; }
+    .sdg-list { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 12px; }
+    .sdg-card { position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: start; column-gap: 18px; row-gap: 8px; padding: 20px 22px 18px 24px; border: 1px solid var(--site-border); border-radius: 16px; background: #fff; box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06); overflow: hidden; }
+    .sdg-card::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 5px; background: linear-gradient(180deg, rgba(24, 101, 168, 0.9), rgba(122, 63, 160, 0.75)); }
+    .sdg-card__num { grid-column: 1; display: grid; place-items: center; width: 44px; height: 44px; margin-top: 2px; border-radius: 50%; background: linear-gradient(135deg, rgba(24, 101, 168, 0.16), rgba(122, 63, 160, 0.16)); color: #164a83; font: 800 1.15rem/1 "Manrope", sans-serif; }
+    .sdg-card__content { grid-column: 2; display: grid; gap: 6px; max-width: 92ch; }
+    .sdg-card__content h2 { margin: 0; color: var(--site-text, #18202a); font: 800 1.08rem/1.28 "Manrope", sans-serif; }
+    .sdg-lead { margin: 0; color: #164a83; font: 800 0.95rem/1.45 "Manrope", sans-serif; }
+    .sdg-plain { margin: 0; color: var(--site-text); font: 600 0.95rem/1.6 "Manrope", "Segoe UI", sans-serif; }
+    .rot-list { list-style: none; margin: 12px 0 4px; padding: 0; display: grid; gap: 8px; }
+    .rot-list li { display: grid; grid-template-columns: minmax(120px, auto) 1fr; gap: 12px; align-items: baseline; border: 1px solid var(--site-border); border-radius: 10px; padding: 9px 12px; background: #fbfcfd; }
+    .rot-list b { color: #164a83; font: 800 0.85rem/1.4 "Manrope", sans-serif; }
+    .rot-list span { color: var(--site-text); font: 600 0.9rem/1.5 "Manrope", "Segoe UI", sans-serif; }
+    .guide-lang-switch { display: inline-flex; align-items: stretch; border: 1px solid var(--site-border, rgba(24,32,42,0.18)); border-radius: 999px; background: #fff; overflow: hidden; font: 800 0.72rem/1 "Manrope", sans-serif; letter-spacing: 0.04em; }
+    .guide-lang-switch__btn { display: inline-flex; align-items: center; padding: 6px 14px; color: var(--site-muted, #5a626c); text-decoration: none; transition: background 120ms ease, color 120ms ease; }
+    .guide-lang-switch__btn:hover, .guide-lang-switch__btn:focus-visible { background: rgba(0, 0, 0, 0.05); color: var(--site-text, #18202a); }
+    .guide-lang-switch__btn.is-active { background: var(--site-text, #18202a); color: #fff; cursor: default; pointer-events: none; }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="teaching">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar">
+      <a class="apartsin-shell__brand" href="../../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../../index.html">About</a>
+        <a href="../../research/research-focus.html">Research</a>
+        <a href="../../teaching/overview.html">Teaching</a>
+        <a href="../../work/overview.html">Building</a>
+        <a href="../../work/innovation-overview.html">Innovations</a>
+        <a href="../../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="eda-for-synthetic-datasets-overview">
+          <h1 class="apartsin-sr-only">Practical EDA for Synthetic Datasets</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="../overview.html">Teaching</a>
+              <span aria-hidden="true">/</span>
+              <a href="./index.html">Guides for Students</a>
+              <span aria-hidden="true">/</span>
+              <strong>Practical EDA for Synthetic Datasets</strong>
+            </nav>
+            <div class="guide-lang-switch" role="group" aria-label="Language">
+              <a class="guide-lang-switch__btn is-active" href="./eda-for-synthetic-datasets.html" lang="en" hreflang="en" aria-current="true">English</a>
+              <a class="guide-lang-switch__btn" href="./eda-for-synthetic-datasets-he.html" lang="he" hreflang="he">עברית</a>
+            </div>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../../assets/heroes/teaching-hos-student-projects.png" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">Run this before training any model on a synthetic dataset. Each objective answers a different question about dataset quality, from whether the data is technically correct to whether it will tell weak and strong models apart. Pairs with the <a href="./synthetic-data-generation.html">Synthetic Data Generation</a> guide.</p>
+          </div>
+        </section>
+
+        <h2 class="sdg-heading">Eight objectives to check before training</h2>
+        <p class="sdg-heading-lede">Each card gives what the objective verifies and the practical EDA that checks it.</p>
+        <section class="sdg-list" aria-label="EDA objectives for synthetic datasets">
+          <article class="sdg-card" id="obj-sanity">
+            <span class="sdg-card__num">1</span>
+            <div class="sdg-card__content">
+              <h2>Sanity</h2>
+              <p class="sdg-lead">Verify the dataset is technically correct.</p>
+              <p class="sdg-plain">Check for missing values, duplicates, invalid records, the label distribution, the schema, and impossible values, and read a random sample of records by hand.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="obj-coverage">
+            <span class="sdg-card__num">2</span>
+            <div class="sdg-card__content">
+              <h2>Coverage</h2>
+              <p class="sdg-lead">Ensure every intended scenario is represented.</p>
+              <p class="sdg-plain">Count samples per class and per attribute, verify that every planned scenario and edge case exists, and inspect cross-tabulations of the important variables.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="obj-realism">
+            <span class="sdg-card__num">3</span>
+            <div class="sdg-card__content">
+              <h2>Realism</h2>
+              <p class="sdg-lead">Confirm the synthetic data resembles real-world data.</p>
+              <p class="sdg-plain">Compare feature distributions with real data where available, inspect random samples, visualize embeddings or clusters, and ask domain experts to review examples.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="obj-variability">
+            <span class="sdg-card__num">4</span>
+            <div class="sdg-card__content">
+              <h2>Variability (diversity)</h2>
+              <p class="sdg-lead">Prevent repetitive or mode-collapsed data.</p>
+              <p class="sdg-plain">Detect duplicates and near-duplicates, cluster embeddings, measure the diversity of vocabulary, features, or images, and verify that multiple styles and conditions are present.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="obj-label-quality">
+            <span class="sdg-card__num">5</span>
+            <div class="sdg-card__content">
+              <h2>Label quality</h2>
+              <p class="sdg-lead">Ensure labels are accurate and consistent.</p>
+              <p class="sdg-plain">Manually review random samples, validate labels with rules or a second model, inspect confusing cases, and check annotation consistency.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="obj-leakage">
+            <span class="sdg-card__num">6</span>
+            <div class="sdg-card__content">
+              <h2>Leakage</h2>
+              <p class="sdg-lead">Prevent models from learning shortcuts.</p>
+              <p class="sdg-plain">Search for duplicate train and test samples, inspect metadata and filenames, identify features highly correlated with the label, and verify the label cannot be inferred from unintended information.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="obj-bias-balance">
+            <span class="sdg-card__num">7</span>
+            <div class="sdg-card__content">
+              <h2>Bias and balance</h2>
+              <p class="sdg-lead">Detect skewed or unfair distributions.</p>
+              <p class="sdg-plain">Plot class frequencies, compare demographic or subgroup distributions, and verify that important attributes are not over-represented or under-represented.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="obj-difficulty">
+            <span class="sdg-card__num">8</span>
+            <div class="sdg-card__content">
+              <h2>Difficulty</h2>
+              <p class="sdg-lead">Ensure the benchmark meaningfully evaluates models.</p>
+              <p class="sdg-plain">Inspect easy versus hard examples, verify the level of ambiguity, include challenging edge cases, and compare a baseline against a stronger model to confirm there is room for improvement.</p>
+            </div>
+          </article>
+        </section>
+
+        <h2 class="sdg-heading">Rule of thumb</h2>
+        <p class="sdg-heading-lede">Before training, ask the eight questions in one line each.</p>
+        <ul class="rot-list">
+          <li><b>Sanity</b><span>Is the data correct?</span></li>
+          <li><b>Coverage</b><span>Is everything important included?</span></li>
+          <li><b>Realism</b><span>Does it look real?</span></li>
+          <li><b>Variability</b><span>Is it diverse enough?</span></li>
+          <li><b>Label quality</b><span>Can the labels be trusted?</span></li>
+          <li><b>Leakage</b><span>Can the model cheat?</span></li>
+          <li><b>Bias and balance</b><span>Is the dataset representative?</span></li>
+          <li><b>Difficulty</b><span>Will this dataset tell weak and strong models apart?</span></li>
+        </ul>
+
+      <section class="section-quick-links">
+        <h2 class="section-quick-links__title">Quick Links</h2>
+        <nav class="section-quick-links__grid" aria-label="Quick links">
+          <a class="section-quick-link" href="./synthetic-data-generation.html">
+            <span class="section-quick-link__badge" style="background: #1f5a40;">S</span>
+            Synthetic Data Generation
+          </a>
+          <a class="section-quick-link" href="./project-requirements.html">
+            <span class="section-quick-link__badge" style="background: #164a83;">R</span>
+            Project Requirements
+          </a>
+          <a class="section-quick-link" href="./project-assessment-criteria.html">
+            <span class="section-quick-link__badge" style="background: #2e7d5a;">E</span>
+            Assessment Criteria
+          </a>
+        </nav>
+      </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../../shared/unified-enhance.js"></script>
+  <script defer src="../../shared/site-shell.js"></script>
+</body>
+</html>
