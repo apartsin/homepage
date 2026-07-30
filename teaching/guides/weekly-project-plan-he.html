@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="he-IL" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <meta name="description" content="תוכנית מוצעת בת 13 שבועות לביצוע פרויקט בקורס, הממפה את דרישות הפרויקט לשבועות, עם ההצעה, האמצע והגמר בשבועות 5, 8 ו-13, ובתוספת שבועות 14 ו-15 לליטוש והגשת המאגר.">
+  <link rel="alternate" hreflang="he" href="./weekly-project-plan-he.html">
+  <link rel="alternate" hreflang="en" href="./weekly-project-plan.html">
+  <title>תוכנית שבועית מוצעת לביצוע הפרויקט | סשה אפרטסין</title>
+  <link rel="stylesheet" href="../../shared/site-shell.css">
+  <link rel="stylesheet" href="../../shared/unified-theme.css">
+  <style>
+    .sdg-heading {
+      margin: 34px 0 2px;
+      color: var(--site-text, #18202a);
+      font: 800 0.9rem/1.3 "Manrope", "Heebo", sans-serif;
+      letter-spacing: 0.04em;
+    }
+    .sdg-heading:first-of-type { margin-top: 12px; }
+    .sdg-heading-lede {
+      margin: 0;
+      color: var(--site-muted);
+      font: 600 0.92rem/1.6 "Manrope", "Heebo", sans-serif;
+    }
+    .sdg-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 12px;
+    }
+    .sdg-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: start;
+      column-gap: 18px;
+      row-gap: 8px;
+      padding: 18px 24px 18px 22px;
+      border: 1px solid var(--site-border);
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+      overflow: hidden;
+      text-align: right;
+    }
+    .sdg-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 0 auto;
+      width: 5px;
+      background: linear-gradient(180deg, rgba(24, 101, 168, 0.9), rgba(122, 63, 160, 0.75));
+    }
+    .sdg-card--milestone::before { background: linear-gradient(180deg, #c2410c, #9c5a2e); }
+    .sdg-card__num {
+      grid-column: 1;
+      display: grid;
+      place-items: center;
+      width: 52px;
+      height: 44px;
+      margin-top: 2px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(24, 101, 168, 0.16), rgba(122, 63, 160, 0.16));
+      color: #164a83;
+      font: 800 0.72rem/1.1 "Manrope", "Heebo", sans-serif;
+      text-align: center;
+    }
+    .sdg-card--milestone .sdg-card__num {
+      background: linear-gradient(135deg, rgba(194,65,12,0.18), rgba(156,90,46,0.16));
+      color: #9a3309;
+    }
+    .sdg-card__content {
+      grid-column: 2;
+      display: grid;
+      gap: 4px;
+      max-width: 92ch;
+    }
+    .sdg-card__content h2 {
+      margin: 0;
+      color: var(--site-text, #18202a);
+      font: 800 1.05rem/1.28 "Manrope", "Heebo", sans-serif;
+    }
+    .sdg-lead {
+      margin: 0;
+      color: #164a83;
+      font: 800 0.8rem/1.4 "Manrope", "Heebo", sans-serif;
+      letter-spacing: 0.02em;
+    }
+    .sdg-card--milestone .sdg-lead { color: #9a3309; }
+    .sdg-plain {
+      margin: 0;
+      color: var(--site-text);
+      font: 600 0.93rem/1.55 "Manrope", "Heebo", "Segoe UI", sans-serif;
+    }
+    /* Two-tab language switcher: shows both EN and HE, current one filled. */
+    .guide-lang-switch {
+      display: inline-flex;
+      align-items: stretch;
+      border: 1px solid var(--site-border, rgba(24,32,42,0.18));
+      border-radius: 999px;
+      background: #fff;
+      overflow: hidden;
+      font: 800 0.72rem/1 "Manrope", sans-serif;
+      letter-spacing: 0.04em;
+    }
+    .guide-lang-switch__btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 14px;
+      color: var(--site-muted, #5a626c);
+      text-decoration: none;
+      transition: background 120ms ease, color 120ms ease;
+    }
+    .guide-lang-switch__btn:hover,
+    .guide-lang-switch__btn:focus-visible {
+      background: rgba(0, 0, 0, 0.05);
+      color: var(--site-text, #18202a);
+    }
+    .guide-lang-switch__btn.is-active {
+      background: var(--site-text, #18202a);
+      color: #fff;
+      cursor: default;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="teaching">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar" lang="en" dir="ltr">
+      <a class="apartsin-shell__brand" href="../../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../../index.html">About</a>
+        <a href="../../research/research-focus.html">Research</a>
+        <a href="../../teaching/overview.html">Teaching</a>
+        <a href="../../work/overview.html">Building</a>
+        <a href="../../work/innovation-overview.html">Innovations</a>
+        <a href="../../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="weekly-project-plan-overview">
+          <h1 class="apartsin-sr-only">תוכנית שבועית מוצעת לביצוע הפרויקט</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../../index.html">בית</a>
+              <span aria-hidden="true">/</span>
+              <a href="../overview.html">הוראה</a>
+              <span aria-hidden="true">/</span>
+              <a href="./index.html">מדריכים לסטודנטים</a>
+              <span aria-hidden="true">/</span>
+              <strong>תוכנית שבועית מוצעת לביצוע הפרויקט</strong>
+            </nav>
+            <div class="guide-lang-switch" role="group" aria-label="שפה">
+              <a class="guide-lang-switch__btn" href="./weekly-project-plan.html" lang="en" hreflang="en">English</a>
+              <a class="guide-lang-switch__btn is-active" href="./weekly-project-plan-he.html" lang="he" hreflang="he" aria-current="true">עברית</a>
+            </div>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../../assets/heroes/teaching-hos-offerings.png" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">תוכנית מוצעת להרצת הפרויקט לאורך סמסטר בן 13 שבועות, הממפה את <a href="./project-requirements-he.html">דרישות הפרויקט</a> לשבועות, עם ההצעה, האמצע והגמר בשבועות 5, 8 ו-13, ובתוספת שני שבועות לליטוש והגשת המאגר. התייחסו אליה כאל תבנית, והתאימו אותה ללוח הזמנים של הקורס שלכם.</p>
+          </div>
+        </section>
+
+        <h2 class="sdg-heading">התוכנית בת שלושה-עשר השבועות, ועוד שניים להגשה</h2>
+        <p class="sdg-heading-lede">כל שבוע מציין את המוקד, את הדרישות שהוא מקדם, ואת אבן הדרך היכן שרלוונטי.</p>
+        <section class="sdg-list" aria-label="תוכנית פרויקט שבועית">
+          <article class="sdg-card" id="wk-1">
+            <span class="sdg-card__num">שבוע 1</span>
+            <div class="sdg-card__content">
+              <h2>מסגרו את הבעיה</h2>
+              <p class="sdg-lead">דרישות 1 עד 3</p>
+              <p class="sdg-plain">בחרו בעיה אמיתית ובעלת ערך, הצדיקו מדוע היא חשובה באמצעות ראיות, והפכו אותה למשימת למידת מכונה מוגדרת היטב עם קלטים, פלטים ואילוצים.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="wk-2">
+            <span class="sdg-card__num">שבוע 2</span>
+            <div class="sdg-card__content">
+              <h2>חקרו עבודה קודמת וחדשנות</h2>
+              <p class="sdg-lead">דרישות 4 ו-5</p>
+              <p class="sdg-plain">סקרו מאמרים עדכניים ושיטות מתקדמות, מפו את הגישות והמאגרים הקיימים, ונסחו את הפער ואת החדשנות שהפרויקט שלכם יוסיף.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="wk-3">
+            <span class="sdg-card__num">שבוע 3</span>
+            <div class="sdg-card__content">
+              <h2>תכננו והתחילו את הנתונים</h2>
+              <p class="sdg-lead">דרישה 6</p>
+              <p class="sdg-plain">עצבו מתודולוגיה מוצקה לאיסוף או ליצירת נתונים והתחילו לבנות את המאגר. ראו את המדריכים <a href="./synthetic-data-generation-he.html">נתונים סינתטיים</a> ו-<a href="./eda-for-synthetic-datasets-he.html">EDA</a>.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="wk-4">
+            <span class="sdg-card__num">שבוע 4</span>
+            <div class="sdg-card__content">
+              <h2>EDA וקו הבסיס הראשון</h2>
+              <p class="sdg-lead">דרישה 7</p>
+              <p class="sdg-plain">הריצו ניתוח נתונים חוקר, תקנו את בעיות הנתונים שהוא חושף, ומַמְשׁוּ קו בסיס אמין ראשון. הכינו טיוטה לשקופיות ההצעה.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card sdg-card--milestone" id="wk-5">
+            <span class="sdg-card__num">שבוע 5</span>
+            <div class="sdg-card__content">
+              <h2>מצגת ההצעה</h2>
+              <p class="sdg-lead">אבן דרך &middot; הצעה</p>
+              <p class="sdg-plain">הציגו את מקרה השימוש, את הגדרת הבעיה, את החדשנות, את המודלים והנתונים המתוכננים, ואת תוכנית ההערכה. עקבו אחר המדריך <a href="./project-proposal-presentation-he.html">הצעת הפרויקט</a>.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="wk-6">
+            <span class="sdg-card__num">שבוע 6</span>
+            <div class="sdg-card__content">
+              <h2>בנו את המודלים</h2>
+              <p class="sdg-lead">דרישה 8</p>
+              <p class="sdg-plain">מַמְשׁוּ כמה גישות שונות באמת על אותם נתונים ומדדים, כולל מודל מאומן או מכוונן וגרסאות zero-shot או few-shot, ולא רק prompting.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="wk-7">
+            <span class="sdg-card__num">שבוע 7</span>
+            <div class="sdg-card__content">
+              <h2>ניסויים וקפדנות</h2>
+              <p class="sdg-lead">דרישות 8 ו-11</p>
+              <p class="sdg-plain">הריצו ניסויים מבוקרים, כווננו היפר-פרמטרים ובחירות עיצוב, והתחילו ניתוח שגיאות שיטתי. הכינו את מצגת האמצע.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card sdg-card--milestone" id="wk-8">
+            <span class="sdg-card__num">שבוע 8</span>
+            <div class="sdg-card__content">
+              <h2>מצגת האמצע</h2>
+              <p class="sdg-lead">אבן דרך &middot; אמצע</p>
+              <p class="sdg-plain">הציגו את המאגר וה-EDA, את קו הבסיס, תוצאות ראשוניות ומדידות, וניתוח שגיאות, יחד עם תוכנית השלמה כנה. עקבו אחר המדריך <a href="./midterm-presentation-he.html">אמצע</a>.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="wk-9">
+            <span class="sdg-card__num">שבוע 9</span>
+            <div class="sdg-card__content">
+              <h2>פעלו לפי המשוב וחזרו על התהליך</h2>
+              <p class="sdg-lead">דרישות 11 ו-12</p>
+              <p class="sdg-plain">התייחסו למשוב של המרצה, שפרו את הרכיבים החלשים, והריצו מחדש ניסויים מבוקרים כך שכל שינוי נמדד ולא מונח מראש.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="wk-10">
+            <span class="sdg-card__num">שבוע 10</span>
+            <div class="sdg-card__content">
+              <h2>העמיקו ובצעו אבלציות</h2>
+              <p class="sdg-lead">דרישות 11 ו-13</p>
+              <p class="sdg-plain">הוסיפו מחקרי אבלציה ובדיקות חסינות, והיו מוכנים להצדיק את החלטות העיצוב הלא-טריוויאליות ואת שיקולי התמורה שמאחוריהן.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="wk-11">
+            <span class="sdg-card__num">שבוע 11</span>
+            <div class="sdg-card__content">
+              <h2>גבשו את התוצאות</h2>
+              <p class="sdg-lead">דרישות 9 ו-10</p>
+              <p class="sdg-plain">השלימו את ההשוואה, כתבו טבלאות ואיורים ברורים של התוצאות, והביאו את המאגר לכדי סדר תוך כדי עבודה.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="wk-12">
+            <span class="sdg-card__num">שבוע 12</span>
+            <div class="sdg-card__content">
+              <h2>הקפיאו ושחזרו</h2>
+              <p class="sdg-lead">דרישות 10 ו-12</p>
+              <p class="sdg-plain">נעלו את התוצאות הסופיות, ודאו שהצינור משוחזר מקצה לקצה, ושמרו על התאמה בין הקוד, הנתונים והשקופיות. הכינו את ההרצאה הסופית.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card sdg-card--milestone" id="wk-13">
+            <span class="sdg-card__num">שבוע 13</span>
+            <div class="sdg-card__content">
+              <h2>המצגת הסופית</h2>
+              <p class="sdg-lead">אבן דרך &middot; גמר</p>
+              <p class="sdg-plain">העבירו את הטיעון הטכני המלא: הגדרה, הישגים, מתודולוגיה, תוצאות, פרשנות, מסקנות ומאמץ מוכח. עקבו אחר המדריך <a href="./final-presentation-he.html">המצגת הסופית</a>.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card" id="wk-14">
+            <span class="sdg-card__num">שבוע 14</span>
+            <div class="sdg-card__content">
+              <h2>לטשו את המאגר</h2>
+              <p class="sdg-lead">מאגר, חלק 1</p>
+              <p class="sdg-plain">נקו את ה-README, את המבנה ואת התיעוד; תעדו את הנתונים והמודלים; הפכו את האימון וההערכה לניתנים לשחזור עם פקודות מדויקות; והוסיפו את הדוגמאות המפורטות.</p>
+            </div>
+          </article>
+
+          <article class="sdg-card sdg-card--milestone" id="wk-15">
+            <span class="sdg-card__num">שבוע 15</span>
+            <div class="sdg-card__content">
+              <h2>ההגשה הסופית</h2>
+              <p class="sdg-lead">אבן דרך &middot; הגשה</p>
+              <p class="sdg-plain">הריצו את רשימת הבדיקות של <a href="./github-submission-he.html">הגשת GitHub</a>: הפריטים העדכניים והתואמים ביותר, שקופיות ב-PPT וב-PDF, ללא סודות, קישורים עובדים, ותוצאה שמישהו אחר יכול לשחזר. ואז הגישו.</p>
+            </div>
+          </article>
+        </section>
+
+      <section class="section-quick-links">
+        <h2 class="section-quick-links__title">קישורים מהירים</h2>
+        <nav class="section-quick-links__grid" aria-label="קישורים מהירים">
+          <a class="section-quick-link" href="./project-requirements-he.html">
+            <span class="section-quick-link__badge" style="background: #164a83;">R</span>
+            דרישות הפרויקט
+          </a>
+          <a class="section-quick-link" href="./project-proposal-presentation-he.html">
+            <span class="section-quick-link__badge" style="background: #c2410c;">P</span>
+            הצעת הפרויקט
+          </a>
+          <a class="section-quick-link" href="./github-submission-he.html">
+            <span class="section-quick-link__badge" style="background: #7a3fa0;">G</span>
+            הגשת GitHub
+          </a>
+        </nav>
+      </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../../shared/unified-enhance.js"></script>
+  <script defer src="../../shared/site-shell.js"></script>
+</body>
+</html>
