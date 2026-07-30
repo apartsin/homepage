@@ -317,10 +317,11 @@
           <article class="crit-card" id="comparative-evaluation">
             <span class="crit-card__index">Requirement 8</span>
             <h2 class="crit-card__title">Comparative Evaluation of Multiple Approaches</h2>
-            <p class="crit-card__body">Implement and compare several meaningful, non-trivial modeling approaches using fair experimental methodology and appropriate evaluation metrics. Analyze trade-offs between competing solutions.</p>
+            <p class="crit-card__body">Implement and compare several meaningful, non-trivial modeling approaches using fair experimental methodology and appropriate evaluation metrics, and analyze the trade-offs between them. At least one approach must be a trained or fine-tuned model: the project cannot rely only on zero-shot or few-shot prompting.</p>
             <div class="crit-antipatterns">
               <span class="crit-antipatterns__label">Common anti-patterns</span>
               <ul>
+                <li>Relying only on zero-shot or few-shot prompting, with no trained or fine-tuned model.</li>
                 <li>Evaluating only one model.</li>
                 <li>Comparing only minor parameter variations.</li>
                 <li>Unfair comparisons.</li>
