@@ -97,6 +97,12 @@
       color: var(--site-text, #18202a);
       font: 700 1.08rem/1.28 "Manrope", sans-serif;
     }
+    /* Make the "<Domain> AI" phrase pop: the title is already weight 700, so
+       bold alone adds no contrast; accent colour + heavier weight makes it stand out. */
+    .book-card__title b {
+      color: var(--site-accent, #9c5a2e);
+      font-weight: 800;
+    }
     .book-card__desc {
       margin: 0 0 14px;
       color: var(--site-muted, #586271);
