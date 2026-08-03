@@ -259,53 +259,6 @@
           {
             label: 'Online Textbooks',
             path: 'writing/books-overview.html',
-            collapsed: true,
-            secondary: [
-              {
-                label: 'Building Language AI: From Tokens to Agents',
-                path: 'http://llmbook.apartsin.com/',
-                cover: 'assets/writing/covers/llmbook-cover.jpg',
-              },
-              {
-                label: 'Building Vision AI: From Pixels to Generative Models',
-                path: 'https://visionbook.apartsin.com/',
-                cover: 'assets/writing/covers/visionbook-cover.jpg',
-              },
-              {
-                label: 'Building Scalable AI: From Big Data Algorithms to Distributed Intelligence',
-                path: 'https://scalablebook.apartsin.com/',
-                cover: 'assets/writing/covers/scalablebook-cover.jpg',
-              },
-              {
-                label: 'Building Temporal AI: From Forecasting to Sequential Decision Making',
-                path: 'http://temporalbook.apartsin.com/',
-                cover: 'assets/writing/covers/temporalbook-cover.jpg',
-              },
-              {
-                label: 'Building Embodied AI: From Perception to Autonomous Action',
-                path: 'https://embodiedbook.apartsin.com/',
-                cover: 'assets/writing/covers/embodiedbook-cover.jpg',
-                draft: true,
-              },
-              {
-                label: 'Building Discovery AI: From Vibe Coding to Autonomous Science',
-                path: 'https://discoverybook.apartsin.com/',
-                cover: 'assets/writing/covers/discoverybook-cover.jpg',
-                draft: true,
-              },
-              {
-                label: 'Building Neuromorphic AI: From Spiking Neurons to Edge Intelligence',
-                path: 'https://neuromorphicbook.apartsin.com/',
-                cover: 'assets/writing/covers/neuromorphicbook-cover.jpg',
-                draft: true,
-              },
-              {
-                label: 'Building Sensory AI: Machine Perception of the Physical World',
-                path: 'https://sensorbook.apartsin.com/',
-                cover: 'assets/writing/covers/sensorbook-cover.jpg',
-                draft: true,
-              },
-            ],
           },
         ],
       ),
