@@ -13,7 +13,6 @@
     { "title": "Building Quantum AI",      "disk_folder": "QuantumAI",      "repo": "ApartsinProjects/building-quantum-ai", "remote": "https://github.com/ApartsinProjects/building-quantum-ai.git",  "branch": "master", "site": "quantumbook.apartsin.com",     "on_textbooks_page": true },
     { "title": "Building Agentic AI",      "disk_folder": "AgenticAI",      "repo": "ApartsinProjects/AgenticAI",           "remote": "https://github.com/ApartsinProjects/AgenticAI.git",           "branch": "main",   "site": "agenticbook.apartsin.com",     "on_textbooks_page": true },
     { "title": "Building Tabular AI",      "disk_folder": "TabularAI",      "repo": "apartsin/tabular-ai-book",             "remote": "https://github.com/apartsin/tabular-ai-book.git",             "branch": "main",   "site": "tabularbook.apartsin.com",     "on_textbooks_page": true },
-    { "title": "Building Audio AI",        "disk_folder": "AudioAI",        "repo": "apartsin/audio-ai-book",               "remote": "https://github.com/apartsin/audio-ai-book.git",               "branch": "main",   "site": "audiobook.apartsin.com",       "on_textbooks_page": true },
-    { "title": "AI Engineering / AI Product (not on textbooks page)", "disk_folder": "AIEngineering", "repo": "ApartsinProjects/AIProductBook", "remote": "https://github.com/ApartsinProjects/AIProductBook.git", "branch": "master", "site": null, "on_textbooks_page": false }
+    { "title": "Building Audio AI",        "disk_folder": "AudioAI",        "repo": "apartsin/audio-ai-book",               "remote": "https://github.com/apartsin/audio-ai-book.git",               "branch": "main",   "site": "audiobook.apartsin.com",       "on_textbooks_page": true }
   ]
 }

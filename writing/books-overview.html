@@ -144,6 +144,22 @@
     @media (max-width: 640px) {
       .books-grid { grid-template-columns: 1fr; }
     }
+    .series-intro {
+      margin-top: 16px;
+      border: 1px solid var(--site-border);
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(139,107,61,0.1), rgba(255,255,255,0) 34%), rgba(255,255,255,0.95);
+      padding: clamp(16px, 2.2vw, 24px);
+      display: grid;
+      gap: 12px;
+    }
+    .series-intro p { margin: 0; color: var(--site-muted); font: 600 0.92rem/1.6 "Manrope", "Segoe UI", sans-serif; }
+    .series-intro p strong { color: var(--site-text, #18202a); }
+    .series-intro__more { font-weight: 800; color: var(--site-accent, #9c5a2e); text-decoration: none; white-space: nowrap; }
+    .series-intro__more:hover { text-decoration: underline; }
+    .agents-principles { list-style: none; margin: 2px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+    .agents-principles li { border: 1px solid var(--site-border); border-radius: 12px; background: rgba(255,255,255,0.7); padding: 11px 13px; color: var(--site-muted); font: 600 0.85rem/1.5 "Manrope", sans-serif; }
+    .agents-principles li b { display: block; margin-bottom: 3px; color: var(--site-accent, #9c5a2e); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
   </style>
 </head>
 <body class="apartsin-shell-active" data-site-section="writing">
@@ -179,6 +195,19 @@
             </figure>
             <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">These book manuscripts synthesize lessons from <a href="../research/research-focus.html">applied research</a>, <a href="../teaching/hands-on-ai-science-courses-courses.html">course design</a>, and <a href="../about/industry-experience.html">three decades of system building</a>. Each draft is open and continuously updated. Shorter writing lives under <a href="./blog-posts.html">blog posts</a>.</p>
           </div>
+        </section>
+
+        <section class="series-intro" aria-label="About the book series">
+          <p>Each volume aims to give a <strong>complete treatment of its subject</strong>, combining the theoretical concepts with the modern, practical tools a working practitioner actually uses. Every book is <strong>domain-focused</strong>: the AI theory and tooling for a single domain or data type, from language and vision to audio, tabular data, and quantum.</p>
+          <p>The books are <strong>not meant to be read cover to cover</strong>. Each is a focused, self-contained reference: a place <strong>students</strong> in the matching course can look things up, a resource <strong>instructors</strong> can build on when preparing a course, and a compact but complete treatment of a specific subject for <strong>practitioners</strong> who need one.</p>
+          <p>They are written by a <strong>company of AI agents under heavy human supervision and steering</strong>, working together so each book stays enjoyable and readable, with many worked examples, step-by-step explanations, and dense cross-references. <a class="series-intro__more" href="./book-writing-team.html">Meet the writing team &rarr;</a></p>
+          <ul class="agents-principles">
+            <li><b>Domain-focused</b>The AI theory and practical tools for one domain or data type.</li>
+            <li><b>Complete</b>Theory and modern practical tools, treated end to end.</li>
+            <li><b>Human-steered</b>AI agents draft and review; a human directs and approves.</li>
+            <li><b>Readable</b>Worked examples, step-by-step explanations, cross-references.</li>
+            <li><b>Checked</b>Dedicated agents for facts, figures, code, and consistency.</li>
+          </ul>
         </section>
 
         <h2 class="books-section-title">Published</h2>

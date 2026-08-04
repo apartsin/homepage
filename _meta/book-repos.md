@@ -19,4 +19,3 @@ public site. Machine-readable copy: [book-repos.json](book-repos.json).
 | Building Agentic AI | AgenticAI | ApartsinProjects/AgenticAI | main | agenticbook.apartsin.com |
 | Building Tabular AI | TabularAI | apartsin/tabular-ai-book | main | tabularbook.apartsin.com |
 | Building Audio AI | AudioAI | apartsin/audio-ai-book | main | audiobook.apartsin.com |
-| AI Engineering / AI Product (not on textbooks page) | AIEngineering | ApartsinProjects/AIProductBook | master | — |
