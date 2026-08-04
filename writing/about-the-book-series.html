@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <meta name="description" content="About the Hands-On AI Science book series: focused, complete reference volumes for students, instructors, and practitioners, written by a company of AI agents under heavy human supervision.">
+  <meta name="robots" content="noindex, follow">
+  <title>About the Hands-On AI Science Book Series | Sasha Apartsin</title>
+  <link rel="stylesheet" href="../shared/site-shell.css">
+  <link rel="stylesheet" href="../shared/unified-theme.css">
+  <style>
+    .agents-intro {
+      border: 1px solid var(--site-border);
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(139,107,61,0.1), rgba(255,255,255,0) 34%), rgba(255,255,255,0.95);
+      padding: clamp(16px, 2.4vw, 26px);
+      display: grid;
+      gap: 14px;
+    }
+    .agents-intro p { margin: 0; color: var(--site-muted, #586271); font: 600 0.94rem/1.62 "Manrope", "Segoe UI", sans-serif; }
+    .agents-intro p strong { color: var(--site-text, #18202a); }
+    .agents-principles {
+      list-style: none;
+      margin: 4px 0 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+    .agents-principles li {
+      border: 1px solid var(--site-border);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.7);
+      padding: 12px 14px;
+      color: var(--site-muted);
+      font: 600 0.86rem/1.5 "Manrope", sans-serif;
+    }
+    .agents-principles li b { display: block; margin-bottom: 3px; color: var(--site-accent, #9c5a2e); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; }
+    .agents-section-title {
+      margin: 30px 0 2px;
+      color: var(--site-text, #18202a);
+      font: 800 0.82rem/1.2 "Manrope", sans-serif;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .agents-section-lede { margin: 0; color: var(--site-muted); font: 600 0.88rem/1.5 "Manrope", sans-serif; }
+    .agents-grid {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 14px;
+    }
+    .agent-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 10px;
+      padding: 18px 16px 16px;
+      border: 1px solid var(--site-border, rgba(24,32,42,0.1));
+      border-radius: 16px;
+      background: rgba(255,255,255,0.95);
+      box-shadow: 0 10px 24px rgba(15,23,42,0.06);
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+    .agent-card:hover { transform: translateY(-2px); box-shadow: 0 16px 30px rgba(15,23,42,0.1); }
+    .agent-card__avatar {
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(156,90,46,0.35);
+      box-shadow: 0 6px 16px rgba(15,23,42,0.18);
+      background: #eef1f5;
+    }
+    .agent-card__avatar--placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(150deg, #2c3e5a, #5a6b80);
+      color: #fff;
+      font: 800 1.5rem/1 "Manrope", sans-serif;
+      letter-spacing: 0.04em;
+    }
+    .agent-card__body { display: flex; flex-direction: column; gap: 5px; }
+    .agent-card__index { color: var(--site-accent, #9c5a2e); font: 800 0.7rem/1 "Manrope", sans-serif; letter-spacing: 0.08em; }
+    .agent-card__name { margin: 0; color: var(--site-text, #18202a); font: 800 0.98rem/1.25 "Manrope", sans-serif; }
+    .agent-card__role { margin: 0; color: var(--site-muted, #586271); font: 600 0.82rem/1.5 "Manrope", "Segoe UI", sans-serif; }
+    @media (max-width: 520px) { .agents-grid { grid-template-columns: 1fr 1fr; } .agent-card__role { display: none; } }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="writing">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar">
+      <a class="apartsin-shell__brand" href="../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../index.html">About</a>
+        <a href="../research/research-focus.html">Research</a>
+        <a href="../teaching/overview.html">Teaching</a>
+        <a href="../work/overview.html">Building</a>
+        <a href="../work/innovation-overview.html">Innovations</a>
+        <a href="../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard">
+          <h1 class="apartsin-sr-only">About the Hands-On AI Science Book Series</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="./books-overview.html">Online Textbooks</a>
+              <span aria-hidden="true">/</span>
+              <strong>About the Series</strong>
+            </nav>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../assets/heroes/writing-books.png" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">About the <a href="./books-overview.html"><span class="hos-brand">Hands-On AI Science</span> book series</a>: what these volumes are for, and how a company of AI agents, under heavy human supervision, writes each one to be complete, accurate, and genuinely enjoyable to read.</p>
+          </div>
+        </section>
+
+        <section class="agents-intro" aria-label="About the book series">
+          <p>Each volume aims to give a <strong>complete treatment of its subject</strong>, combining the theoretical concepts with the modern, practical tools a working practitioner actually uses. They are written by a <strong>company of AI agents under heavy human supervision and steering</strong>, with a human setting the direction, making the judgment calls, and approving every chapter.</p>
+          <p>The books are <strong>not meant to be read cover to cover</strong>. Each is a focused, self-contained reference: a place <strong>students</strong> in the matching course can look things up, a resource <strong>instructors</strong> can build on when preparing a course, and a compact but complete treatment of a specific subject for <strong>practitioners</strong> who need one.</p>
+          <p>The agents work together so the book stays <strong>enjoyable and readable for humans</strong>: many worked examples, step-by-step explanations, and dense cross-references that tie the whole subject together. Each agent below owns one narrow concern, from deep explanations and code pedagogy to fact integrity, pacing, and final publication checks.</p>
+          <ul class="agents-principles">
+            <li><b>Complete</b>Theory and modern practical tools, treated end to end.</li>
+            <li><b>Human-steered</b>AI agents draft and review; a human directs and approves.</li>
+            <li><b>Readable</b>Worked examples, step-by-step explanations, cross-references.</li>
+            <li><b>Checked</b>Dedicated agents for facts, figures, code, and consistency.</li>
+          </ul>
+        </section>
+
+        <h2 class="agents-section-title">The Agent Team</h2>
+        <p class="agents-section-lede">More than forty specialized agents, each with a single job in the writing pipeline.</p>
+        <section class="agents-grid" aria-label="Book-writing agents">
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/00-chapter-lead.jpg" alt="Portrait of the Chapter Lead agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#00</span>
+              <h3 class="agent-card__name">Chapter Lead</h3>
+              <p class="agent-card__role">Are the Chapter Lead for a textbook chapter production team.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/01-curriculum-alignment.jpg" alt="Portrait of the Curriculum Alignment Reviewer agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#01</span>
+              <h3 class="agent-card__name">Curriculum Alignment Reviewer</h3>
+              <p class="agent-card__role">Are the Curriculum Alignment Reviewer.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/02-deep-explanation.jpg" alt="Portrait of the Deep Explanation Designer agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#02</span>
+              <h3 class="agent-card__name">Deep Explanation Designer</h3>
+              <p class="agent-card__role">Are the Deep Explanation Designer.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/03-teaching-flow.jpg" alt="Portrait of the Teaching Flow Reviewer agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#03</span>
+              <h3 class="agent-card__name">Teaching Flow Reviewer</h3>
+              <p class="agent-card__role">Are the Teaching Flow Reviewer.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/04-student-advocate.jpg" alt="Portrait of the Student Advocate agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#04</span>
+              <h3 class="agent-card__name">Student Advocate</h3>
+              <p class="agent-card__role">Represent the perspective of a capable but non-expert student encountering this material for the first time.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/05-cognitive-load.jpg" alt="Portrait of the Cognitive Load Optimizer agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#05</span>
+              <h3 class="agent-card__name">Cognitive Load Optimizer</h3>
+              <p class="agent-card__role">Control density and pacing so students can absorb material without overload.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/06-example-analogy.jpg" alt="Portrait of the Example and Analogy Designer agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#06</span>
+              <h3 class="agent-card__name">Example and Analogy Designer</h3>
+              <p class="agent-card__role">Design concrete examples, analogies, and recurring motifs that make abstract ideas memorable.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/07-exercise-designer.jpg" alt="Portrait of the Exercise Designer agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#07</span>
+              <h3 class="agent-card__name">Exercise Designer</h3>
+              <p class="agent-card__role">Create practice opportunities that directly reinforce the concepts in the chapter.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/08-code-pedagogy.jpg" alt="Portrait of the Code Pedagogy Engineer agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#08</span>
+              <h3 class="agent-card__name">Code Pedagogy Engineer</h3>
+              <p class="agent-card__role">Identify where code teaches better than prose and create technically correct, pedagogically effective code examples.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/09-visual-learning.jpg" alt="Portrait of the Visual Learning Designer agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#09</span>
+              <h3 class="agent-card__name">Visual Learning Designer</h3>
+              <p class="agent-card__role">Find places where visuals improve understanding, and you PRODUCE those visuals: as SVG, as generated images, or as runnable Python code that creates figures.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/10-misconception-analyst.jpg" alt="Portrait of the Misconception Analyst agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#10</span>
+              <h3 class="agent-card__name">Misconception Analyst</h3>
+              <p class="agent-card__role">Predict misunderstandings students are likely to have and help prevent them.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/11-fact-integrity.jpg" alt="Portrait of the Fact Integrity Reviewer agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#11</span>
+              <h3 class="agent-card__name">Fact Integrity Reviewer</h3>
+              <p class="agent-card__role">Are a rigorous skeptic focused on truth and technical reliability.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/12-terminology-keeper.jpg" alt="Portrait of the Terminology and Notation Keeper agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#12</span>
+              <h3 class="agent-card__name">Terminology and Notation Keeper</h3>
+              <p class="agent-card__role">Maintain consistent language, symbols, abbreviations, and naming across the chapter and book.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/13-cross-reference.jpg" alt="Portrait of the Cross-Reference Architect agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#13</span>
+              <h3 class="agent-card__name">Cross-Reference Architect</h3>
+              <p class="agent-card__role">Build the internal link structure that turns the book into a connected learning system.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/14-narrative-continuity.jpg" alt="Portrait of the Narrative Continuity Editor agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#14</span>
+              <h3 class="agent-card__name">Narrative Continuity Editor</h3>
+              <p class="agent-card__role">Ensure the chapter reads as one coherent story rather than a stack of disconnected sections.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/15-style-voice.jpg" alt="Portrait of the Style and Voice Editor agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#15</span>
+              <h3 class="agent-card__name">Style and Voice Editor</h3>
+              <p class="agent-card__role">Maintain a consistent voice and reading experience across all chapter content.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/16-engagement-designer.jpg" alt="Portrait of the Engagement Designer agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#16</span>
+              <h3 class="agent-card__name">Engagement Designer</h3>
+              <p class="agent-card__role">Ensure the chapter is lively, memorable, and pleasant to read without losing seriousness.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/17-senior-editor.jpg" alt="Portrait of the Senior Developmental Editor agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#17</span>
+              <h3 class="agent-card__name">Senior Developmental Editor</h3>
+              <p class="agent-card__role">Act like a highly experienced editor from a top educational publishing house (O&#x27;Reilly, Manning, Pearson).</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/18-research-scientist.jpg" alt="Portrait of the Research Scientist and Frontier Mapper agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#18</span>
+              <h3 class="agent-card__name">Research Scientist and Frontier Mapper</h3>
+              <p class="agent-card__role">Analyze each chapter from a researcher&#x27;s perspective, surfacing deeper scientific insights, open questions, and connections to the research frontier.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/19-structural-architect.jpg" alt="Portrait of the Structural Refactoring Architect agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#19</span>
+              <h3 class="agent-card__name">Structural Refactoring Architect</h3>
+              <p class="agent-card__role">Review the book at the chapter and section level and propose better structural organization.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/20-content-update-scout.jpg" alt="Portrait of the Content Update Scout agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#20</span>
+              <h3 class="agent-card__name">Content Update Scout</h3>
+              <p class="agent-card__role">Continuously look outward to ensure the book covers important current topics and does not miss major developments.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/21-self-containment-verifier.jpg" alt="Portrait of the Self-Containment Verifier agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#21</span>
+              <h3 class="agent-card__name">Self-Containment Verifier</h3>
+              <p class="agent-card__role">Ensure that every chapter can be understood using only the background material available in the book, either locally in the chapter, in earlier chapters, or through clearly connected appendices and prerequisite sections.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/22-title-hook-architect.jpg" alt="Portrait of the Opening and Hook Designer agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#22</span>
+              <h3 class="agent-card__name">Opening and Hook Designer</h3>
+              <p class="agent-card__role">Design chapter titles, section titles, openings, and framing devices that make students immediately feel the chapter is important, modern, and worth reading.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/23-project-catalyst.jpg" alt="Portrait of the Project Catalyst Designer agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#23</span>
+              <h3 class="agent-card__name">Project Catalyst Designer</h3>
+              <p class="agent-card__role">Turn chapter material into exciting project ideas, mini-builds, and &quot;you could create this&quot; moments that make the book feel action-oriented rather than purely academic.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/24-aha-moment-engineer.jpg" alt="Portrait of the Aha-Moment Engineer agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#24</span>
+              <h3 class="agent-card__name">Aha-Moment Engineer</h3>
+              <p class="agent-card__role">Search for places where one striking example, contrast, experiment, or visualization can suddenly make a concept click and become permanently memorable.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/25-visual-identity-director.jpg" alt="Portrait of the Visual Identity Director agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#25</span>
+              <h3 class="agent-card__name">Visual Identity Director</h3>
+              <p class="agent-card__role">Make the whole book look distinctive and recognizable through recurring figure styles, callout types, icon systems, layout patterns, and branded visual motifs.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/26-demo-simulation-designer.jpg" alt="Portrait of the Demo and Simulation Designer agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#26</span>
+              <h3 class="agent-card__name">Demo and Simulation Designer</h3>
+              <p class="agent-card__role">Propose interactive demos, tiny experiments, notebooks, sliders, or visual simulations that make ideas tangible and dramatically more engaging.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/27-memorability-designer.jpg" alt="Portrait of the Memorability Designer agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#27</span>
+              <h3 class="agent-card__name">Memorability Designer</h3>
+              <p class="agent-card__role">Deliberately add repeated patterns, mnemonics, memorable phrases, compact schemas, and recurring contrasts so students retain the material long after reading.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/28-skeptical-reader.jpg" alt="Portrait of the Skeptical Reader agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#28</span>
+              <h3 class="agent-card__name">Skeptical Reader</h3>
+              <p class="agent-card__role">Challenge whether the chapter is actually impressive, distinctive, and non-generic.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/29-prose-clarity-editor.jpg" alt="Portrait of the Prose Clarity Editor agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#29</span>
+              <h3 class="agent-card__name">Prose Clarity Editor</h3>
+              <p class="agent-card__role">Rewrite dense or technical passages into simpler, more direct language, improve sentence rhythm and flow, and detect unnecessary jargon, all without losing correctness.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/30-readability-pacing-editor.jpg" alt="Portrait of the Readability and Pacing Editor agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#30</span>
+              <h3 class="agent-card__name">Readability and Pacing Editor</h3>
+              <p class="agent-card__role">Restructure long explanations into smaller reading units and detect places where reader attention is likely to drop.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/31-illustrator.jpg" alt="Portrait of the Illustrator agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#31</span>
+              <h3 class="agent-card__name">Illustrator</h3>
+              <p class="agent-card__role">CREATE humorous, pedagogically useful illustrations using the Gemini image generation API, then embed them into chapter HTML.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/32-epigraph-writer.jpg" alt="Portrait of the Epigraph Writer agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#32</span>
+              <h3 class="agent-card__name">Epigraph Writer</h3>
+              <p class="agent-card__role">Craft a humorous, witty opening quote for each chapter that makes readers smile and want to keep reading.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/33-application-example.jpg" alt="Portrait of the Application Example agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#33</span>
+              <h3 class="agent-card__name">Application Example</h3>
+              <p class="agent-card__role">Find the best places in each chapter to insert short &quot;Practical Example&quot; boxes that ground abstract concepts in realistic mini-stories from industry practice.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/34-fun-injector.jpg" alt="Portrait of the Fun Injector agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#34</span>
+              <h3 class="agent-card__name">Fun Injector</h3>
+              <p class="agent-card__role">Look for opportunities to inject fun, humorous remarks, witty insights, or playful analogies related to the chapter&#x27;s content to make reading genuinely enjoyable.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/35-bibliography.jpg" alt="Portrait of the Bibliography agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#35</span>
+              <h3 class="agent-card__name">Bibliography</h3>
+              <p class="agent-card__role">Add a comprehensive, hyperlinked bibliography section to each chapter, giving readers direct access to the foundational papers, books, tools, and resources that underpin the material.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/36-meta-agent.jpg" alt="Portrait of the Meta Agent (Book Quality Auditor) agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#36</span>
+              <h3 class="agent-card__name">Meta Agent (Book Quality Auditor)</h3>
+              <p class="agent-card__role">Review the output of the entire book (or a single chapter) and identify where other agents failed, underperformed, or missed opportunities.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/37-controller.jpg" alt="Portrait of the Chapter Controller agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#37</span>
+              <h3 class="agent-card__name">Chapter Controller</h3>
+              <p class="agent-card__role">Are the Chapter Controller, the quality assurance orchestrator for the textbook production pipeline.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/38-publication-qa.jpg" alt="Portrait of the Publication Quality Assurance agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#38</span>
+              <h3 class="agent-card__name">Publication Quality Assurance</h3>
+              <p class="agent-card__role">Are the Publication QA Specialist, the final gatekeeper before a book goes live.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/39-figure-fact-checker.jpg" alt="Portrait of the Figure and Diagram Fact Checker agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#39</span>
+              <h3 class="agent-card__name">Figure and Diagram Fact Checker</h3>
+              <p class="agent-card__role">Verify that every figure, diagram, SVG, code output, and visual element in a chapter is factually correct, properly captioned, and referenced in the text.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/40-code-caption-agent.jpg" alt="Portrait of the Code Fragment Caption and Reference agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#40</span>
+              <h3 class="agent-card__name">Code Fragment Caption and Reference</h3>
+              <p class="agent-card__role">Ensure every code block (`&lt;pre&gt;` or `&lt;pre&gt;&lt;code&gt;`) in a chapter meets the three mandatory requirements: (1) a descriptive caption below, (2) opening comment lines inside the code, and (3) a prose reference before the code block.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <img class="agent-card__avatar" src="../assets/writing/book-agents/41-lab-designer.jpg" alt="Portrait of the Hands-On Lab Designer agent" loading="lazy" decoding="async">
+            <div class="agent-card__body">
+              <span class="agent-card__index">#41</span>
+              <h3 class="agent-card__name">Hands-On Lab Designer</h3>
+              <p class="agent-card__role">Design and insert structured, guided hands-on labs at the end of each chapter section.</p>
+            </div>
+          </article>
+
+          <article class="agent-card">
+            <div class="agent-card__avatar agent-card__avatar--placeholder" aria-hidden="true">CD</div>
+            <div class="agent-card__body">
+              <span class="agent-card__index">#42</span>
+              <h3 class="agent-card__name">Content Deduplication and Differentiation Specialist</h3>
+              <p class="agent-card__role">Are **Petra Novak**, the Content Deduplication and Differentiation Specialist.</p>
+            </div>
+          </article>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../shared/unified-enhance.js"></script>
+  <script defer src="../shared/site-shell.js"></script>
+</body>
+</html>
