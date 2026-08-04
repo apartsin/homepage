@@ -17,5 +17,5 @@ public site. Machine-readable copy: [book-repos.json](book-repos.json).
 | Building Sensory AI | SensorAI | ApartsinProjects/sensorbook | main | sensorbook.apartsin.com |
 | Building Quantum AI | QuantumAI | ApartsinProjects/building-quantum-ai | master | quantumbook.apartsin.com |
 | Building Agentic AI | AgenticAI | ApartsinProjects/AgenticAI | main | agenticbook.apartsin.com |
-| Building Tabular AI | TabularAI | apartsin/tabular-ai-book | main | tabularbook.apartsin.com |
-| Building Audio AI | AudioAI | apartsin/audio-ai-book | main | audiobook.apartsin.com |
+| Building Tabular AI | TabularAI | ApartsinProjects/tabular-ai-book | main | tabularbook.apartsin.com |
+| Building Audio AI | AudioAI | ApartsinProjects/audio-ai-book | main | audiobook.apartsin.com |
