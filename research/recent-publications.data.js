@@ -108,8 +108,8 @@ window.RECENT_PUBLICATIONS = [
   },
   {
     id: "pub-2025-chest-xray-rejection",
-    year: 2025,
-    type: "Submitted",
+    year: 2026,
+    type: "Journal",
     title: "Multi-pathology Chest X-ray Classification with Rejection Mechanisms",
     authors: [
       { name: "Y Aperstein", self: false },
