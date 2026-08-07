@@ -119,7 +119,7 @@ window.RECENT_PUBLICATIONS = [
       { name: "R Shagan Damti", self: false },
       { name: "A Apartsin", self: true }
     ],
-    venue: "arXiv preprint (arXiv:2509.10348)",
+    venue: "Scientific Reports (Nature)",
     venueHref: "https://arxiv.org/abs/2509.10348"
   },
   {
@@ -147,6 +147,18 @@ window.RECENT_PUBLICATIONS = [
     ],
     venue: "arXiv preprint (arXiv:2509.04370)",
     venueHref: "https://arxiv.org/abs/2509.04370"
+  },
+  {
+    id: "pub-2026-clinical-comm-synthetic-survey",
+    year: 2026,
+    type: "Preprint",
+    title: "Clinical Communication Processing with Models Trained on LLM-Generated Synthetic Data: A Structured Survey and Novel Application Case Studies",
+    authors: [
+      { name: "A Apartsin", self: true },
+      { name: "Y Aperstein", self: false }
+    ],
+    venue: "arXiv preprint (arXiv:2608.05993)",
+    venueHref: "https://arxiv.org/abs/2608.05993"
   },
   {
     id: "pub-2025-interjection-classification",
@@ -364,7 +376,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2026-normal-latent-clustering",
     year: 2026,
-    type: "InPreparation",
+    type: "Submitted",
     title: "Modeling Normal Is All You Need: Joint Latent Clustering for Anomaly Detection in Multimodal Cyber-Physical Systems",
     authors: [
       { name: "A Apartsin", self: true },
