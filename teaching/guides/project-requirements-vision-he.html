@@ -119,14 +119,14 @@
             <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
               <img src="../../assets/heroes/teaching-hos-student-projects.png" alt="" style="display: block; width: 100%; object-fit: cover;">
             </figure>
-            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">הפרויקט בקורס הראייה הוא <b>מחקר עמידוּת</b>: אתם מודדים כיצד אלגוריתמי עיבוד תמונה וראייה מתנהגים כשאיכות התמונה מתדרדרת, וכמה מהביצועים שאבדו ניתן לשחזר. המדריך הזה מפרט מה הפרויקט חייב לעשות, שלב אחר שלב, לצד האנטי-דפוסים שמחלישים לרוב כל שלב, ותוכנית שבועית מוצעת. כיצד הפרויקט המוגמר מדורג היא שאלה נפרדת, שנדונה במדריך <a href="./project-assessment-criteria-vision.html">קריטריונים להערכת הפרויקט בקורס הראייה</a>.</p>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">הפרויקט בקורס הראייה הוא <b>מחקר עמידוּת</b>: אתם מודדים כיצד אלגוריתמי עיבוד תמונה וראייה מתנהגים כשאיכות התמונה מתדרדרת, וכמה מהביצועים שאבדו ניתן לשחזר. המדריך הזה מפרט מה הפרויקט חייב לעשות, שלב אחר שלב, לצד האנטי-דפוסים שמחלישים לרוב כל שלב, ותוכנית שבועית מוצעת. אופן הדירוג של הפרויקט המוגמר הוא נושא נפרד, שנדון במדריך <a href="./project-assessment-criteria-vision.html">קריטריונים להערכת הפרויקט בקורס הראייה</a>.</p>
           </div>
         </section>
 
         <h2 class="crit-section-title">המחקר בארבעה שלבים</h2>
-        <p class="crit-section-lede">כל צירוף של משימה ומערך נתונים עובר דרך אותו pipeline. הפרויקט הוא אותו ניסוי החוזר על עצמו על פני משימות ועיוותים.</p>
+        <p class="crit-section-lede">כל צירוף של משימה ומאגר נתונים עובר דרך אותו pipeline. הפרויקט הוא אותו ניסוי החוזר על עצמו על פני משימות ועיוותים.</p>
         <div class="vis-pipeline">
-          <div class="vis-stage"><span class="vis-stage__n">שלב 1</span><p class="vis-stage__t">בסיס ייחוס נקי</p><p class="vis-stage__d">הריצו כל שיטה על תמונות נקיות ומדדו את הביצועים מול אמת הקרקע.</p></div>
+          <div class="vis-stage"><span class="vis-stage__n">שלב 1</span><p class="vis-stage__t">בסיס ייחוס נקי</p><p class="vis-stage__d">הריצו כל שיטה על תמונות נקיות ומדדו את הביצועים מול אמת המידה.</p></div>
           <div class="vis-stage"><span class="vis-stage__n">שלב 2</span><p class="vis-stage__t">עיוות</p><p class="vis-stage__d">הפעילו עיוותים בעוצמות מכוילות ומדדו את ההידרדרות מול ה-SNR.</p></div>
           <div class="vis-stage"><span class="vis-stage__n">שלב 3</span><p class="vis-stage__t">שחזור</p><p class="vis-stage__d">שפרו את התמונות המעוותות (הפחתת רעש, הסרת גשם, תאורה חלשה) ומדדו שוב.</p></div>
           <div class="vis-stage"><span class="vis-stage__n">שלב 4</span><p class="vis-stage__t">כיוונון עדין</p><p class="vis-stage__d">התאימו את המודלים העמוקים לעיוותים והשוו מול השחזור.</p></div>
@@ -137,21 +137,21 @@
         <section class="crit-list crit-list--scope" aria-label="דרישות היקף ובחירה">
           <article class="crit-card" id="req-dataset">
             <span class="crit-card__index">דרישה 1</span>
-            <h2 class="crit-card__title">מערך נתונים ציבורי עם אמת מידה (ground truth)</h2>
-            <p class="crit-card__body">בחרו מערך נתונים ציבורי (KITTI, Cityscapes, COCO, ADE20K, Oxford-IIIT Pet, DOTA, מערך רפואי וכדומה) שנושא תיוגי אמת מידה לפחות עבור אחת מהמשימות שלכם. טענו תת-קבוצה קבועה עם seed כך שהתוצאות יהיו ניתנות לשחזור.</p>
+            <h2 class="crit-card__title">מאגר נתונים ציבורי עם אמת מידה (ground truth)</h2>
+            <p class="crit-card__body">בחרו מאגר נתונים ציבורי (KITTI, Cityscapes, COCO, ADE20K, Oxford-IIIT Pet, DOTA, מאגר רפואי וכדומה) שנושא תיוגי אמת מידה לפחות עבור אחת מהמשימות שלכם. טענו תת-קבוצה קבועה עם seed כך שהתוצאות יהיו ניתנות לשחזור.</p>
             <div class="crit-antipatterns">
               <span class="crit-antipatterns__label">אנטי-דפוסים נפוצים</span>
               <ul>
                 <li>היעדר אמת מידה, כך שאי אפשר למדוד את ההידרדרות.</li>
                 <li>תת-קבוצה ללא seed או משתנה שמשתנה בין ריצות.</li>
-                <li>מערך נתונים קטן ופשוט מדי, קטן מכדי להראות מגמות אמיתיות.</li>
+                <li>מאגר נתונים קטן ופשוט מדי, קטן מכדי להראות מגמות אמיתיות.</li>
               </ul>
             </div>
           </article>
           <article class="crit-card" id="req-tasks">
             <span class="crit-card__index">דרישה 2</span>
             <h2 class="crit-card__title">שלוש משימות, ברמה נמוכה וגבוהה</h2>
-            <p class="crit-card__body">בחרו לפחות שלוש משימות ראייה בחרו משימות המכסות במכוון רמות הפשטה שונות: משימה קלאסית ברמה נמוכה (זיהוי קצוות/פינות/נקודות עניין, התאמת תכונות) ומשימה ברמה גבוהה (זיהוי עצמים, סגמנטציה, סיווג, תנוחה). זה מה שהופך את סיפור העמידוּת למעניין.</p>
+            <p class="crit-card__body">בחרו לפחות שלוש משימות ראייה שמכסות במכוון רמות הפשטה שונות: משימה קלאסית ברמה נמוכה (זיהוי קצוות/פינות/נקודות עניין, התאמת תכונות) ומשימה ברמה גבוהה (זיהוי עצמים, סגמנטציה, סיווג, תנוחה). זה מה שהופך את סיפור העמידוּת למעניין.</p>
             <div class="crit-antipatterns">
               <span class="crit-antipatterns__label">אנטי-דפוסים נפוצים</span>
               <ul>
@@ -195,7 +195,7 @@
           <article class="crit-card" id="req-baseline">
             <span class="crit-card__index">דרישה 5</span>
             <h2 class="crit-card__title">בסיס ייחוס על תמונות נקיות</h2>
-            <p class="crit-card__body">הריצו כל שיטה על תמונות נקיות ותעדו את ביצועיה מול אמת הקרקע. בסיס ייחוס זה הוא הרפרנס שכל מספר מאוחר יותר מושווה אליו, ולכן עליו להשתמש במדד הנכון והמתאים למשימה (IoU/mAP לזיהוי, mIoU/Dice לסגמנטציה, יחס התאמות לתכונות).</p>
+            <p class="crit-card__body">הריצו כל שיטה על תמונות נקיות ותעדו את ביצועיה מול אמת המידה. בסיס ייחוס זה הוא הרפרנס שכל מספר מאוחר יותר מושווה אליו, ולכן עליו להשתמש במדד הנכון והמתאים למשימה (IoU/mAP לזיהוי, mIoU/Dice לסגמנטציה, יחס התאמות לתכונות).</p>
             <div class="crit-antipatterns">
               <span class="crit-antipatterns__label">אנטי-דפוסים נפוצים</span>
               <ul>
@@ -225,7 +225,7 @@
             <div class="crit-antipatterns">
               <span class="crit-antipatterns__label">אנטי-דפוסים נפוצים</span>
               <ul>
-                <li>מספר מצרפי יחיד עבור כל מערך הנתונים.</li>
+                <li>מספר מצרפי יחיד עבור כל מאגר הנתונים.</li>
                 <li>מיצוע שמעלים את הקריסה לפי מחלקה.</li>
                 <li>היעדר טבלה שמקשרת בין המדד למחלקה ול-SNR.</li>
               </ul>
@@ -296,7 +296,7 @@
           <article class="crit-card" id="req-viz">
             <span class="crit-card__index">דרישה 12</span>
             <h2 class="crit-card__title">ויזואליזציה: לפני/אחרי ועקומות</h2>
-            <p class="crit-card__body">תעדו את הצנרת באופן חזותי: תמונות עם תיוגים מונחים מעליהן, רשתות של לפני/אחרי עיוות ושחזור, ותרשימי מדידה (תרשימי עמודות, עקומות לפי SNR, השוואות לפי מחלקה). החזותיים הם האופן שבו הממצא מתקשר, ולא קישוט.</p>
+            <p class="crit-card__body">תעדו את ה-pipeline באופן חזותי: תמונות עם תיוגים מונחים מעליהן, רשתות של לפני/אחרי עיוות ושחזור, ותרשימי מדידה (תרשימי עמודות, עקומות לפי SNR, השוואות לפי מחלקה). החזותיים הם האופן שבו הממצא מתקשר, ולא קישוט.</p>
             <div class="crit-antipatterns">
               <span class="crit-antipatterns__label">אנטי-דפוסים נפוצים</span>
               <ul>
@@ -328,7 +328,7 @@
           <thead><tr><th class="wk">שבוע</th><th>משימה</th><th>תוצר</th></tr></thead>
           <tbody>
             <tr><td class="wk">1</td><td>הרכבת צוות, פתיחת Git, רישום</td><td>ריפוזיטורי GitHub פתוח; שורה בטבלת פרויקטי הקורס</td></tr>
-            <tr><td class="wk">2</td><td>חקר ובחירה של מערך נתונים, עיוותים ומשימות</td><td>טבלת החלטות עם קישורים, משובצת ב-README</td></tr>
+            <tr><td class="wk">2</td><td>חקר ובחירה של מאגר נתונים, עיוותים ומשימות</td><td>טבלת החלטות עם קישורים, משובצת ב-README</td></tr>
             <tr><td class="wk">3</td><td>חקר ובחירה של שיטות ושיפורים</td><td>טבלת החלטות עם קישורים, משובצת ב-README</td></tr>
             <tr><td class="wk">4</td><td>הורדת נתונים; ויזואליזציה של תמונות ותיוגים</td><td>קוד הורדה ו-EDA; רשת תמונות לדוגמה עם תיוגים ב-README</td></tr>
             <tr><td class="wk">5</td><td>הרצת שיטות/מודלים על נתונים נקיים; שמירת פלטים</td><td>תיקייה עם פלטים/תיוגים בריפוזיטורי</td></tr>

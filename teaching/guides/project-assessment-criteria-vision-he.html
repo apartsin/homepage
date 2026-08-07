@@ -117,7 +117,7 @@
             <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
               <img src="../../assets/heroes/teaching-hos-offerings.png" alt="" style="display: block; width: 100%; object-fit: cover;">
             </figure>
-            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">חמשת הממדים שעל פיהם נשפט פרויקט עמידוּת בקורס הראייה. כל ממד מציב זה לצד זה את האותות המסמנים עבודה חזקה ואת אלה שמחלישים אותה. מה הפרויקט חייב לכלול היא שאלה נפרדת, הנדונה במדריך <a href="./project-requirements-vision.html">דרישות הפרויקט לקורס הראייה</a>.</p>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">חמשת הממדים שעל פיהם נשפט פרויקט עמידוּת בקורס הראייה. כל ממד מציב זה לצד זה את האותות המסמנים עבודה חזקה ואת אלה שמחלישים אותה. מה הפרויקט חייב לכלול הוא נושא נפרד, הנדון במדריך <a href="./project-requirements-vision.html">דרישות הפרויקט לקורס הראייה</a>.</p>
           </div>
         </section>
 
@@ -128,9 +128,9 @@
           <article class="crit-card" id="crit-design">
             <span class="crit-card__index">קריטריון 1</span>
             <h2 class="crit-card__title">תכנון המחקר ובחירתו</h2>
-            <p class="crit-card__body">האם מערך הנתונים, המשימות והעיוותים נבחרו במכוון ומנומקים: קיימת אמת יסוד (ground truth), המשימות משתרעות על פני ראייה ברמה נמוכה וגבוהה, והעיוותים ריאליסטיים לתחום.</p>
+            <p class="crit-card__body">האם מאגר הנתונים, המשימות והעיוותים נבחרו במכוון ומנומקים: קיימת אמת מידה (ground truth), המשימות משתרעות על פני ראייה ברמה נמוכה וגבוהה, והעיוותים ריאליסטיים לתחום.</p>
             <div class="crit-signals">
-              <div class="crit-signal crit-signal--strong"><span class="crit-signal__label">חזק</span><ul><li>המשימות משתרעות על שיטות קלאסיות ושיטות עומק.</li><li>עיוותים המתאימים לתחום, מנומקים עם קישורים.</li><li>תת-מערך נתונים קבוע עם seed.</li></ul></div>
+              <div class="crit-signal crit-signal--strong"><span class="crit-signal__label">חזק</span><ul><li>המשימות משתרעות על שיטות קלאסיות ושיטות עומק.</li><li>עיוותים המתאימים לתחום, מנומקים עם קישורים.</li><li>תת-מאגר נתונים קבוע עם seed.</li></ul></div>
               <div class="crit-signal crit-signal--weak"><span class="crit-signal__label">חלש</span><ul><li>שלושה וריאנטים של משימה אחת.</li><li>עיוותים שאינם קשורים לתחום.</li><li>בחירות שנטענות אך אינן מנומקות.</li></ul></div>
             </div>
           </article>
@@ -138,7 +138,7 @@
           <article class="crit-card" id="crit-rigor">
             <span class="crit-card__index">קריטריון 2</span>
             <h2 class="crit-card__title">קפדנות המדידה</h2>
-            <p class="crit-card__body">האם הביצועים נמדדים כראוי: בסיס ייחוס נקי מול אמת היסוד, מדדים המתאימים למשימה, עוצמת עיוות המכוילת ל-SNR/PSNR, ותוצאות המפורקות לפי מחלקה ולפי רמת עוצמה.</p>
+            <p class="crit-card__body">האם הביצועים נמדדים כראוי: בסיס ייחוס נקי מול אמת המידה, מדדים המתאימים למשימה, עוצמת עיוות המכוילת ל-SNR/PSNR, ותוצאות המפורקות לפי מחלקה ולפי רמת עוצמה.</p>
             <div class="crit-signals">
               <div class="crit-signal crit-signal--strong"><span class="crit-signal__label">חזק</span><ul><li>מדד נכון לכל משימה (mAP, mIoU, יחס התאמה).</li><li>שחיקת ביצועים המשורטטת מול SNR ביחידות dB.</li><li>טבלאות לפי מחלקה ולפי SNR.</li></ul></div>
               <div class="crit-signal crit-signal--weak"><span class="crit-signal__label">חלש</span><ul><li>פלטי הדגמה במקום מדדים.</li><li>מספר מצרפי יחיד שמסתיר קריסת מחלקה.</li><li>עוצמה כערך שרירותי של כפתור כוונון.</li></ul></div>
@@ -161,14 +161,14 @@
             <p class="crit-card__body">האם שיפור התמונה וה-fine-tuning מושווים באופן הוגן על אותן משימות ואותן עוצמות, והאם הפרויקט מסיק מסקנה הניתנת להגנה לגבי מתי כל אסטרטגיה עוזרת ומדוע.</p>
             <div class="crit-signals">
               <div class="crit-signal crit-signal--strong"><span class="crit-signal__label">חזק</span><ul><li>השוואה ישירה בתנאים זהים.</li><li>מסקנה ברורה של מתי כל גישה מנצחת.</li><li>קישור התוצאות לרמת ההפשטה של המשימה.</li></ul></div>
-              <div class="crit-signal crit-signal--weak"><span class="crit-signal__label">חלש</span><ul><li>אסטרטגיות שמושוות על תת-מערכים שונים.</li><li>מספרים ללא פרשנות.</li><li>טענת שחזור ללא הפרש מול בסיס הייחוס.</li></ul></div>
+              <div class="crit-signal crit-signal--weak"><span class="crit-signal__label">חלש</span><ul><li>אסטרטגיות שמושוות על תת-מאגרים שונים.</li><li>מספרים ללא פרשנות.</li><li>טענת שחזור ללא הפרש מול בסיס הייחוס.</li></ul></div>
             </div>
           </article>
 
           <article class="crit-card crit-card--wide" id="crit-viz">
             <span class="crit-card__index">קריטריון 5</span>
             <h2 class="crit-card__title">המחשה ותקשורת</h2>
-            <p class="crit-card__body">כמה בבירור העבודה מוצגת ומוגנת. פרויקטים חזקים הופכים את הממצא לגלוי: תמונות עם הערות (annotations) על גביהן, רשתות לפני/אחרי לאורך עיוות ושחזור, וגרפי מדידה (עקומות לפי SNR, עמודות לפי מחלקה). שלושת הפאנלים שלהלן הם אוצר המילים הוויזואלי המינימלי שדוח צריך לדבר בו.</p>
+            <p class="crit-card__body">כמה בבירור העבודה מוצגת ומוגנת. פרויקטים חזקים הופכים את הממצא לגלוי: תמונות עם הערות (annotations) על גביהן, רשתות לפני/אחרי לאורך עיוות ושחזור, וגרפי מדידה (עקומות לפי SNR, עמודות לפי מחלקה). שלושת הפאנלים שלהלן הם אוצר המילים הוויזואלי המינימלי שכל דוח צריך לדבר בו.</p>
             <div class="vexamples" aria-label="דוגמאות המחשה">
               <figure class="vex">
                 <svg viewBox="0 0 200 130" role="img" aria-label="תמונה עם הערות: תיבה תוחמת ותווית מחלקה">
