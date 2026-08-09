@@ -2,11 +2,11 @@ window.HOS_COURSE_SYLLABI = [
   {
     image: "../assets/courses/hos-series/llm-course/img-006-language-ai-gemini.png",
     imageAlt: "Building Language AI with Large Language Models and Agents",
-    bookLink: "http://llmbook.apartsin.com/",
+    bookLink: "http://llmbook.icsgen-ai.org/",
     titleHtml: "<span class=\"hos-course-title__line\">Building <span class=\"hos-course-title__focus\">Language AI</span> with</span><span class=\"hos-course-title__line\"><span class=\"hos-course-title__detail\">Large Language Models and Agents</span></span>",
     links: [
       { label: "Syllabus", href: "../courses/hos/series/language-ai.html" },
-      { label: "Textbook", href: "http://llmbook.apartsin.com/" },
+      { label: "Textbook", href: "http://llmbook.icsgen-ai.org/" },
       { label: "Course Offerings", href: "../teaching/hands-on-ai-science-courses-past-offerings.html?type=language-ai" },
       { label: "Student Course Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=language-ai" }
     ]
@@ -14,11 +14,11 @@ window.HOS_COURSE_SYLLABI = [
   {
     image: "../assets/courses/hos-series/embvision-course/img-008-vision-ai-gemini.png",
     imageAlt: "Building Vision AI with Foundation and Generative Models",
-    bookLink: "https://visionbook.apartsin.com/",
+    bookLink: "https://visionbook.icsgen-ai.org/",
     titleHtml: "<span class=\"hos-course-title__line\">Building <span class=\"hos-course-title__focus\">Vision AI</span> with</span><span class=\"hos-course-title__line\"><span class=\"hos-course-title__detail\">Foundation and Generative Models</span></span>",
     links: [
       { label: "Syllabus", href: "../courses/hos/series/vision-ai.html" },
-      { label: "Textbook", href: "https://visionbook.apartsin.com/" },
+      { label: "Textbook", href: "https://visionbook.icsgen-ai.org/" },
       { label: "Course Offerings", href: "../teaching/hands-on-ai-science-courses-past-offerings.html?type=vision-ai" },
       { label: "Student Course Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=vision-ai" }
     ]
@@ -27,11 +27,11 @@ window.HOS_COURSE_SYLLABI = [
     image: "../assets/courses/hos-series/bigdata-course/img-012-scalable-ai-gemini.png",
     imageAlt: "Building Scalable AI with Big Data and Distributed AI",
     badge: "Updated",
-    bookLink: "https://scalablebook.apartsin.com/",
+    bookLink: "https://scalablebook.icsgen-ai.org/",
     titleHtml: "<span class=\"hos-course-title__line\">Building <span class=\"hos-course-title__focus\">Scalable AI</span> with</span><span class=\"hos-course-title__line\"><span class=\"hos-course-title__detail\">Big Data and Distributed Intelligence</span></span>",
     links: [
       { label: "Syllabus", href: "../courses/hos/series/scalable-ai.html" },
-      { label: "Textbook", href: "https://scalablebook.apartsin.com/" },
+      { label: "Textbook", href: "https://scalablebook.icsgen-ai.org/" },
       { label: "Course Offerings", href: "../teaching/hands-on-ai-science-courses-past-offerings.html?type=scalable-ai" }
     ]
   },
@@ -39,11 +39,11 @@ window.HOS_COURSE_SYLLABI = [
     image: "../assets/courses/hos-series/temporalai-course/img-008-temporal-ai-gemini.png",
     imageAlt: "Building Temporal AI with Reinforcement Learning and Sequential Intelligence",
     badge: "New",
-    bookLink: "http://temporalbook.apartsin.com/",
+    bookLink: "http://temporalbook.icsgen-ai.org/",
     titleHtml: "<span class=\"hos-course-title__line\">Building <span class=\"hos-course-title__focus\">Temporal AI</span> with</span><span class=\"hos-course-title__line\"><span class=\"hos-course-title__detail\">Sequential Intelligence and Reinforcement Learning</span></span>",
     links: [
       { label: "Syllabus", href: "../courses/hos/series/temporal-ai.html" },
-      { label: "Textbook", href: "http://temporalbook.apartsin.com/" }
+      { label: "Textbook", href: "http://temporalbook.icsgen-ai.org/" }
     ]
   }
 ];
