@@ -130,6 +130,13 @@
       }
       li.appendChild(venue);
 
+      if (pub.summary) {
+        var summaryP = document.createElement("p");
+        summaryP.className = "pub-card__summary";
+        summaryP.appendChild(document.createTextNode(pub.summary));
+        li.appendChild(summaryP);
+      }
+
       var venueLower = (pub.venue || "").toLowerCase();
       var publisher = null;
       if (venueLower.indexOf("nature") !== -1) {
