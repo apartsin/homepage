@@ -187,6 +187,12 @@
       text-underline-offset: 2px;
       text-decoration-thickness: 1.2px;
     }
+    .thesis-pub-list .pub-card__summary {
+      margin: 2px 0 0;
+      color: var(--site-text);
+      font: 500 0.81rem/1.5 "Manrope", "Segoe UI", sans-serif;
+      opacity: 0.9;
+    }
     .thesis-publication__links {
       margin-top: 8px;
       display: flex;
@@ -289,6 +295,7 @@
               <h3 class="pub-card__title">A data fusion and multiple ping method for improving the resolution of low-power acoustic and seismic sensing</h3>
               <p class="pub-card__meta"><span class="pub-card__author-self">A. Apartsin</span>, N. Intrator</p>
               <p class="pub-card__venue"><a href="https://doi.org/10.1121/1.4783265" target="_blank" rel="noopener noreferrer">J. Acoustical Society of America, 124(4)</a></p>
+              <p class="pub-card__summary">Combines multiple low-power pings through data fusion to sharpen range resolution in acoustic and seismic sensing. Fusing repeated weak pulses recovers detail that would otherwise demand a single high-power ping, keeping the sensing covert and energy-efficient.</p>
             </li>
             <li class="pub-card">
               <div class="pub-card__top">
@@ -298,6 +305,7 @@
               <h3 class="pub-card__title">SNR-dependent filtering for Time Of Arrival estimation in high noise</h3>
               <p class="pub-card__meta"><span class="pub-card__author-self">A. Apartsin</span>, L.N. Cooper, N. Intrator</p>
               <p class="pub-card__venue"><a href="https://doi.org/10.1109/MLSP.2010.5588848" target="_blank" rel="noopener noreferrer">IEEE Workshop on Machine Learning for Signal Processing</a></p>
+              <p class="pub-card__summary">Adapts the filtering stage to the local signal-to-noise ratio when estimating a pulse's time of arrival. Tuning the filter to noise conditions keeps arrival-time estimates accurate even far below the classical detection threshold.</p>
             </li>
             <li class="pub-card">
               <div class="pub-card__top">
@@ -307,6 +315,7 @@
               <h3 class="pub-card__title">Biosonar-inspired source localization in low SNR</h3>
               <p class="pub-card__meta"><span class="pub-card__author-self">A. Apartsin</span>, L.N. Cooper, N. Intrator</p>
               <p class="pub-card__venue"><a href="https://doi.org/10.5220/0003126803990404" target="_blank" rel="noopener noreferrer">Int. Conf. Bio-inspired Systems and Signal Processing</a></p>
+              <p class="pub-card__summary">Draws on biological sonar strategies to localize a source under very low signal-to-noise ratios. The bio-inspired design pinpoints targets in regimes where conventional matched filtering breaks down under heavy noise.</p>
             </li>
             <li class="pub-card">
               <div class="pub-card__top">
@@ -316,6 +325,7 @@
               <h3 class="pub-card__title">Semi-coherent time of arrival estimation using regression</h3>
               <p class="pub-card__meta"><span class="pub-card__author-self">A. Apartsin</span>, L.N. Cooper, N. Intrator</p>
               <p class="pub-card__venue"><a href="https://doi.org/10.1121/1.4730885" target="_blank" rel="noopener noreferrer">J. Acoustical Society of America, 132(2)</a></p>
+              <p class="pub-card__summary">Estimates time of arrival with a semi-coherent regression method that blends coherent and incoherent processing. The regression formulation improves timing accuracy while staying robust to the phase uncertainty of noisy returns.</p>
             </li>
             <li class="pub-card">
               <div class="pub-card__top">
@@ -325,6 +335,7 @@
               <h3 class="pub-card__title">Time-of-flight estimation in the presence of outliers. Part I: Single echo processing</h3>
               <p class="pub-card__meta"><span class="pub-card__author-self">A. Apartsin</span>, L.N. Cooper, N. Intrator</p>
               <p class="pub-card__venue"><a href="https://doi.org/10.1109/TGRS.2013.2272737" target="_blank" rel="noopener noreferrer">IEEE Trans. Geoscience and Remote Sensing, 52(6)</a></p>
+              <p class="pub-card__summary">Estimates time of flight from a single echo while explicitly rejecting outlier measurements. Handling outliers directly keeps range estimates stable when stray reflections or noise spikes corrupt the signal.</p>
             </li>
             <li class="pub-card">
               <div class="pub-card__top">
@@ -334,6 +345,7 @@
               <h3 class="pub-card__title">Time-of-flight estimation in the presence of outliers. Part II: Multiple echo processing</h3>
               <p class="pub-card__meta"><span class="pub-card__author-self">A. Apartsin</span>, L.N. Cooper, N. Intrator</p>
               <p class="pub-card__venue"><a href="https://doi.org/10.1109/TGRS.2013.2276919" target="_blank" rel="noopener noreferrer">IEEE Trans. Geoscience and Remote Sensing, 52(7)</a></p>
+              <p class="pub-card__summary">Extends outlier-robust time-of-flight estimation to settings with multiple overlapping echoes. Jointly processing several echoes resolves closely spaced returns that single-echo methods cannot separate.</p>
             </li>
             <li class="pub-card">
               <div class="pub-card__top">
@@ -343,6 +355,7 @@
               <h3 class="pub-card__title">Energy-Efficient Time-of-Flight Estimation in the Presence of Outliers: A Machine Learning Approach</h3>
               <p class="pub-card__meta"><span class="pub-card__author-self">A. Apartsin</span>, L.N. Cooper, N. Intrator</p>
               <p class="pub-card__venue"><a href="https://doi.org/10.1109/JSTARS.2013.2295324" target="_blank" rel="noopener noreferrer">IEEE J. Selected Topics in Applied Earth Observations, 7(4)</a></p>
+              <p class="pub-card__summary">Casts robust, low-power time-of-flight estimation as a machine learning problem. Learning from data reaches accurate ranging with weak pulses, cutting energy use while tolerating outliers.</p>
             </li>
           </ol>
         </section>
