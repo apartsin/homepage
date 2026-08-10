@@ -16,6 +16,7 @@
           '<span class="patent-card__year">' + c.year + '</span>',
         '</div>',
         '<h3 class="patent-card__title">' + c.title + '</h3>',
+        (c.summary ? '<p class="patent-card__summary">' + c.summary + '</p>' : ''),
         '<p class="patent-card__meta">Inventors: ' + c.inventors + '</p>',
         '<div class="patent-card__company">',
           '<img class="patent-card__company-logo" src="' + c.companyLogo + '" alt="' + c.companyLogoAlt + '">',
