@@ -185,6 +185,20 @@ window.RECENT_PUBLICATIONS = [
     venueHref: "https://arxiv.org/abs/2608.05993"
   },
   {
+    id: "pub-2026-healthcare-it-computable-care",
+    year: 2026,
+    type: "Submitted",
+    title: "Three Generations of Healthcare IT: From the Digital Record to the Computable Care Process",
+    focus: "spec",
+    summary: "This work organizes healthcare IT by the unit of information that systems can compute, adding an intent layer whose atomic object, the Actionable Clinical Record, recovers clinical intent from natural communication. It frames care delivery as acting on an explicit specification, separating prescribed, observed, and intended processes so that intent becomes computable rather than lost.",
+    authors: [
+      { name: "A Apartsin", self: true },
+      { name: "Y Aperstein", self: false }
+    ],
+    venue: "arXiv preprint (arXiv:2608.08806)",
+    venueHref: "https://arxiv.org/abs/2608.08806"
+  },
+  {
     id: "pub-2025-interjection-classification",
     year: 2025,
     type: "Preprint",
