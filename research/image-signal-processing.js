@@ -209,9 +209,10 @@
     "X-Ray Image Detection in Live Video": "Detects and isolates X-ray images embedded within live video streams. Reliable separation of the X-ray content from surrounding video noise keeps the extracted frames clean for downstream inspection.",
     "Sensory Data Acquisition and Analysis for Physical Experiments": "Acquires and analyzes sensor data from physical laboratory experiments. Careful noise handling and outlier rejection turn raw, imperfect measurements into trustworthy experimental results."
   };
+  var INDUSTRY_EXCLUDE = { "Network Management and Optimization for Indoor Cellular Communications": 1 };
   (window.PAST_RESEARCH_TASK_CARDS || []).filter(function (c) {
     var dt = (c.dataTypes || []).join(" ");
-    return !/Text|Voice/.test(dt);
+    return !/Text|Voice/.test(dt) && !INDUSTRY_EXCLUDE[c.title];
   }).forEach(function (c) {
     items.push({
       type: "Industry Project", app: INDUSTRY_APP_TITLE[c.title] || INDUSTRY_APP[c.organization] || classifyApp(c.title),
