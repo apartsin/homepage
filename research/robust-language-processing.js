@@ -55,7 +55,9 @@
     "pub-inprep-imperfect-student": "Education",
     "pub-2025-review-recommendation": "Search & RecSys",
     "pub-2026-coeval": "LLM",
-    "pub-2026-spine-benchmark": "LLM"
+    "pub-2026-spine-benchmark": "LLM",
+    "pub-2026-promptforge": "LLM",
+    "pub-2025-semantic-text-relations": "LLM"
   };
   var TYPE_OVERRIDE = { "pub-2026-promptforge": "Research Project" };
   (window.RECENT_PUBLICATIONS || []).filter(function (p) { return PAPER_IDS[p.id]; }).forEach(function (p) {
