@@ -251,7 +251,7 @@
       desc: "A low-light image classifier that applies illumination-aware preprocessing before recognition. Compensating for darkness and sensor noise keeps classification accurate on the dim, low-contrast scenes where standard models fail." },
     { name: "Ben Kedarya & Yael Rikka", degree: "B.Sc.", app: SAFETY, year: 2024, data: SIGNALS, title: "Audio Alarm Detection",
       desc: "Detects critical sounds such as fire alarms and doorbells in real time and drives visual or haptic alerts for hearing-impaired users. Robust acoustic modeling picks the target sounds out of everyday background noise so alerts fire only when they should." },
-    { name: "Eyal Reis", degree: "B.Sc.", app: AUTO, year: 2023, title: "Recognition of Control Elements in Vehicle Dashboards",
+    { name: "Eyal Reis", degree: "B.Sc.", app: SAFETY, year: 2023, title: "Recognition of Control Elements in Vehicle Dashboards",
       desc: "A vision system that detects and classifies the controls and indicators on a vehicle dashboard for assistive and testing workflows. Robust recognition holds up across varied dashboard layouts, reflections, and uneven in-cabin lighting." },
     { name: "Aharon Sahalulu", degree: "B.Sc.", app: SAFETY, year: 2023, title: "Haze-Aware Object Detection",
       desc: "A haze-aware object detector that compensates for the visibility lost to fog and atmospheric scatter. Modeling the degradation explicitly keeps detection consistent in the adverse-weather scenes that defeat detectors trained on clear imagery." },
