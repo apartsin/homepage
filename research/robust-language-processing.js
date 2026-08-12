@@ -57,7 +57,9 @@
     "pub-2026-coeval": "LLM",
     "pub-2026-spine-benchmark": "LLM",
     "pub-2026-promptforge": "LLM",
-    "pub-2025-semantic-text-relations": "LLM"
+    "pub-2025-semantic-text-relations": "LLM",
+    "pub-2025-interjection-classification": "Media & Consumer",
+    "pub-2025-llm-intent-service": "Media & Consumer"
   };
   var TYPE_OVERRIDE = { "pub-2026-promptforge": "Research Project" };
   (window.RECENT_PUBLICATIONS || []).filter(function (p) { return PAPER_IDS[p.id]; }).forEach(function (p) {
@@ -132,7 +134,7 @@
     "Web2Comics Chrome Extension and Bot": "Converts web pages into comic-style visual summaries so dense information is faster to absorb and easier to share. Generative AI turns long articles into a sequential, illustrated storyboard on demand.",
     "PromptArt": "A graph-native system for crowdsourced generative-AI content transformation, attribution, and value circulation. It treats generation, provenance, and settlement as one connected graph so contributions stay traceable and rewardable."
   };
-  var PROJECT_APP = { "ModelMesh": "LLM" };
+  var PROJECT_APP = { "ModelMesh": "LLM", "PromptArt": "Media & Consumer" };
   (window.RECENT_PROJECT_CARDS || []).filter(function (c) { return PROJ_DESC[c.title]; }).forEach(function (c) {
     items.push({
       type: "Research Project", app: PROJECT_APP[c.title] || classifyApp(c.title + " " + (c.description || "")),
@@ -143,7 +145,7 @@
 
   /* ---------- Supervised thesis students (curated; excludes any that appear as a paper) ---------- */
   [
-    { name: "Ofek Gayero", degree: "B.Sc.", title: "LLM-Driven Autonomous Analytics Dashboard Generation", app: "IT & Software",
+    { name: "Ofek Gayero", degree: "B.Sc.", title: "LLM-Driven Autonomous Analytics Dashboard Generation", app: "Search & RecSys",
       desc: "Autonomously generates analytics dashboards from natural-language questions using large language models. The system infers the data schema, plans the right visualizations, and assembles them without manual dashboard building." },
     { name: "Ameen Assadi", degree: "B.Sc.", title: "Interactive Career Analytics and Resume Intelligence System", app: "Talent Management",
       desc: "Turns static resumes into structured, queryable career profiles with grounded question answering. Skill-based analytics let recruiters interrogate a candidate's experience directly instead of skimming free-form text." },
