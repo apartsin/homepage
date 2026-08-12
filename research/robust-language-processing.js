@@ -53,7 +53,9 @@
     "pub-2026-irc-bench": "Healthcare",
     "pub-2025-teaching-practice-platform": "Education",
     "pub-inprep-imperfect-student": "Education",
-    "pub-2025-review-recommendation": "Search & RecSys"
+    "pub-2025-review-recommendation": "Search & RecSys",
+    "pub-2026-coeval": "LLM",
+    "pub-2026-spine-benchmark": "LLM"
   };
   var TYPE_OVERRIDE = { "pub-2026-promptforge": "Research Project" };
   (window.RECENT_PUBLICATIONS || []).filter(function (p) { return PAPER_IDS[p.id]; }).forEach(function (p) {
@@ -128,9 +130,10 @@
     "Web2Comics Chrome Extension and Bot": "Converts web pages into comic-style visual summaries so dense information is faster to absorb and easier to share. Generative AI turns long articles into a sequential, illustrated storyboard on demand.",
     "PromptArt": "A graph-native system for crowdsourced generative-AI content transformation, attribution, and value circulation. It treats generation, provenance, and settlement as one connected graph so contributions stay traceable and rewardable."
   };
+  var PROJECT_APP = { "ModelMesh": "LLM" };
   (window.RECENT_PROJECT_CARDS || []).filter(function (c) { return PROJ_DESC[c.title]; }).forEach(function (c) {
     items.push({
-      type: "Research Project", app: classifyApp(c.title + " " + (c.description || "")),
+      type: "Research Project", app: PROJECT_APP[c.title] || classifyApp(c.title + " " + (c.description || "")),
       year: null, title: c.title, authorsHtml: "", venue: c.eyebrow || "",
       desc: PROJ_DESC[c.title], links: (c.links || []).map(function (l) { return { k: l.label, u: l.href }; })
     });
@@ -161,7 +164,7 @@
   var APP_CLASS = {
     "Healthcare": "a-health", "Public Safety": "a-safety", "Talent Management": "a-talent",
     "Education": "a-edu", "IT & Software": "a-it", "Media & Consumer": "a-media",
-    "Search & RecSys": "a-search"
+    "Search & RecSys": "a-search", "LLM": "a-llm"
   };
 
   function buildCard(it) {
