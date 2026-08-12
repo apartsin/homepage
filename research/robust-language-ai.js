@@ -1,5 +1,5 @@
-/* robust-language-processing.js
-   Unified, filterable view for the "Robust Language Processing" theme.
+/* robust-language-ai.js
+   Unified, filterable view for the "Robust Language AI" theme.
    Pulls from the site's data files (publications, patents, recent projects,
    past-project industry work) plus a curated set of supervised thesis students,
    tags each item by TYPE and APPLICATION, groups into application sections, and
@@ -66,7 +66,7 @@
     var links = [];
     if (p.venueHref) links.push({ k: /arxiv/i.test(p.venueHref) ? "arXiv" : (/github/i.test(p.venueHref) ? "Project" : "Paper"), u: p.venueHref });
     items.push({
-      type: TYPE_OVERRIDE[p.id] || (p.type === "Journal" ? "Paper" : "Preprint"),
+      type: TYPE_OVERRIDE[p.id] || "Papers and Preprints",
       app: APP_OVERRIDE[p.id] || classifyApp(p.title + " " + (p.summary || "")),
       year: p.year, title: p.title,
       authorsHtml: (p.authors || []).map(function (a) { return a.self ? "<b>" + a.name + "</b>" : a.name; }).join(", "),
@@ -161,10 +161,10 @@
 
   /* ---------- card builder (type + year badge; no application badge) ---------- */
   var TYPE_CLASS = {
-    "Paper": "t-paper", "Preprint": "t-preprint", "Patent": "t-patent",
+    "Papers and Preprints": "t-paper", "Patent": "t-patent",
     "Student Supervision": "t-supervised", "Industry Project": "t-industry", "Research Project": "t-project"
   };
-  var TYPE_ORDER = { "Paper": 1, "Preprint": 2, "Patent": 3, "Student Supervision": 4, "Industry Project": 5, "Research Project": 6 };
+  var TYPE_ORDER = { "Papers and Preprints": 1, "Patent": 3, "Student Supervision": 4, "Industry Project": 5, "Research Project": 6 };
   var APP_CLASS = {
     "Healthcare": "a-health", "Public Safety": "a-safety", "Talent Management": "a-talent",
     "Education": "a-edu", "IT & Software": "a-it", "Media & Consumer": "a-media",

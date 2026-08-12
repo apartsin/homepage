@@ -1,11 +1,11 @@
-/* image-signal-processing.js
-   Unified, filterable view for the "Image and Signal Processing under Noise,
-   Outliers, and Anomalies" theme. Pulls from the site's data files (recent
-   publications, patents, past industry projects, recent projects), adds a
-   curated set of classic/earlier papers and supervised thesis students, tags
-   each item by TYPE and APPLICATION, groups into application sections, and
-   filters via Type / Application / Year dropdowns. No duplicates: work that
-   already appears as a paper is not repeated as a student card. */
+/* robust-vision-ai.js
+   Unified, filterable view for the "Robust Vision AI" theme. Pulls from the
+   site's data files (recent publications, patents, past industry projects,
+   recent projects), adds a curated set of classic/earlier papers and supervised
+   thesis students, tags each item by TYPE and APPLICATION, groups into a single
+   grid, keeps only Vision-modality items, and filters via Application / Type /
+   Year dropdowns. No duplicates: work that already appears as a paper is not
+   repeated as a student card. */
 (function () {
   "use strict";
 
@@ -90,7 +90,7 @@
     var links = [];
     if (p.venueHref) links.push({ k: /arxiv/i.test(p.venueHref) ? "arXiv" : (/github/i.test(p.venueHref) ? "Project" : "Paper"), u: p.venueHref });
     items.push({
-      type: p.type === "Journal" ? "Paper" : "Preprint",
+      type: "Papers and Preprints",
       app: PUB_APP[p.id] || classifyApp(p.title + " " + (p.summary || "")),
       data: PUB_DATA[p.id] || classifyData(p.title + " " + (p.summary || "")),
       year: p.year, title: p.title,
@@ -134,7 +134,7 @@
       desc: "Joint stabilization and tracking that robustly compensates motion in shaky egocentric video for forensic analysis." }
   ].forEach(function (c) {
     items.push({
-      type: "Paper", app: c.app, data: c.data, year: c.year, title: c.title,
+      type: "Papers and Preprints", app: c.app, data: c.data, year: c.year, title: c.title,
       authorsHtml: "A. Apartsin et al.", venue: c.venue,
       desc: c.desc, links: [{ k: "Paper", u: c.doi }]
     });
@@ -273,12 +273,15 @@
     });
   });
 
+  /* ---------- keep only the Vision modality (this is the vision page) ---------- */
+  items = items.filter(function (it) { return it.data === "Vision"; });
+
   /* ---------- card builder (type + year badge; no application badge) ---------- */
   var TYPE_CLASS = {
-    "Paper": "t-paper", "Preprint": "t-preprint", "Patent": "t-patent",
+    "Papers and Preprints": "t-paper", "Patent": "t-patent",
     "Student Supervision": "t-supervised", "Industry Project": "t-industry", "Research Project": "t-project"
   };
-  var TYPE_ORDER = { "Paper": 1, "Preprint": 2, "Patent": 3, "Student Supervision": 4, "Industry Project": 5, "Research Project": 6 };
+  var TYPE_ORDER = { "Papers and Preprints": 1, "Patent": 3, "Student Supervision": 4, "Industry Project": 5, "Research Project": 6 };
   var APP_CLASS = {};
   APP_CLASS[AUTO] = "a-auto"; APP_CLASS[MED] = "a-med"; APP_CLASS[SAFETY] = "a-safety";
   APP_CLASS[CONSUMER] = "a-consumer"; APP_CLASS[SCI] = "a-sci";
@@ -289,12 +292,10 @@
     var li = el("li", "isp-card");
     li.setAttribute("data-type", it.type);
     li.setAttribute("data-app", it.app);
-    li.setAttribute("data-datatype", it.data || "");
     li.setAttribute("data-year", it.year || "");
     var tags = el("div", "isp-card__tags");
     tags.appendChild(el("span", "isp-tag " + (TYPE_CLASS[it.type] || ""), it.type));
     tags.appendChild(el("span", "isp-tag isp-tag--app " + (APP_CLASS[it.app] || "a-sci"), it.app));
-    if (it.data) tags.appendChild(el("span", "isp-tag isp-tag--data", it.data));
     if (it.year) tags.appendChild(el("span", "isp-tag isp-tag--year", String(it.year)));
     li.appendChild(tags);
     li.appendChild(el("h3", "isp-card__title", it.title));
@@ -323,16 +324,15 @@
       String(a.title || "").localeCompare(String(b.title || ""));
   }).forEach(function (it) { grid.appendChild(buildCard(it)); });
 
-  /* ---------- Type / Application / Year dropdown filters ---------- */
-  var activeType = "all", activeApp = "all", activeYear = "all", activeData = "all";
+  /* ---------- Application / Type / Year dropdown filters ---------- */
+  var activeType = "all", activeApp = "all", activeYear = "all";
   function apply() {
     var cards = grid.querySelectorAll(".isp-card");
     for (var i = 0; i < cards.length; i++) {
       var okT = activeType === "all" || cards[i].getAttribute("data-type") === activeType;
       var okA = activeApp === "all" || cards[i].getAttribute("data-app") === activeApp;
       var okY = activeYear === "all" || cards[i].getAttribute("data-year") === activeYear;
-      var okD = activeData === "all" || cards[i].getAttribute("data-datatype") === activeData;
-      cards[i].style.display = (okT && okA && okY && okD) ? "" : "none";
+      cards[i].style.display = (okT && okA && okY) ? "" : "none";
     }
   }
   function fillSelect(id, values, onChange) {
@@ -357,8 +357,7 @@
     keys.forEach(function (k) { out.push({ value: k, label: k + " (" + c[k] + ")" }); });
     return out;
   }
-  fillSelect("isp-sel-type", optionList("type", TYPE_ORDER), function (v) { activeType = v; });
   fillSelect("isp-sel-app", optionList("app"), function (v) { activeApp = v; });
+  fillSelect("isp-sel-type", optionList("type", TYPE_ORDER), function (v) { activeType = v; });
   fillSelect("isp-sel-year", optionList("year"), function (v) { activeYear = v; });
-  fillSelect("isp-sel-data", optionList("data", { "Vision": 1, "Signals": 2 }), function (v) { activeData = v; });
 })();
