@@ -249,7 +249,7 @@
       desc: "A vision system that detects and classifies the controls and indicators on a vehicle dashboard for assistive and testing workflows. Robust recognition holds up across varied dashboard layouts, reflections, and uneven in-cabin lighting." },
     { name: "Aharon Sahalulu", degree: "B.Sc.", app: SAFETY, year: 2023, title: "Haze-Aware Object Detection",
       desc: "A haze-aware object detector that compensates for the visibility lost to fog and atmospheric scatter. Modeling the degradation explicitly keeps detection consistent in the adverse-weather scenes that defeat detectors trained on clear imagery." },
-    { name: "Yael Galifat", degree: "B.Sc.", app: SCI, year: 2020, title: "Deep Model Optimization via Selective Inferencing",
+    { name: "Yael Galifat", degree: "B.Sc.", app: MODELOPT, year: 2020, title: "Deep Model Optimization via Selective Inferencing",
       desc: "Routes only the uncertain samples to heavier models while easy inputs exit early through a lightweight path. Concentrating compute on the genuinely hard, ambiguous cases cuts average cost while preserving accuracy." },
     { name: "Barak Katz", degree: "B.Sc.", app: SAFETY, year: 2020, title: "Detection of Human Interactions in Egocentric Video",
       desc: "A first-person video model that recognizes human interactions from egocentric footage using temporal and viewpoint-aware cues. Robust modeling absorbs the heavy motion and unstable framing typical of head-mounted cameras." },
