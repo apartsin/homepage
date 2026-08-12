@@ -49,7 +49,7 @@
     "pub-inprep-imperfect-student": 1, "pub-2025-review-recommendation": 1,
     "pub-2025-teaching-practice-platform": 1, "pub-2026-coreason": 1
   };
-  var APP_OVERRIDE = { "pub-2026-irc-bench": "Healthcare" };
+  var APP_OVERRIDE = { "pub-2026-irc-bench": "Healthcare", "pub-2025-teaching-practice-platform": "Education" };
   (window.RECENT_PUBLICATIONS || []).filter(function (p) { return PAPER_IDS[p.id]; }).forEach(function (p) {
     var links = [];
     if (p.venueHref) links.push({ k: /arxiv/i.test(p.venueHref) ? "arXiv" : (/github/i.test(p.venueHref) ? "Project" : "Paper"), u: p.venueHref });
@@ -119,8 +119,6 @@
 
   /* ---------- Supervised thesis students (curated; excludes any that appear as a paper) ---------- */
   [
-    { name: "Jolian Habib", degree: "B.Sc.", title: "TeacherSim: LLM-Based Teacher Training Simulator", app: "Education",
-      desc: "Multi-agent classroom simulations for deliberate teaching practice, with realistic student behavior and pedagogical feedback loops." },
     { name: "Ofek Gayero", degree: "B.Sc.", title: "LLM-Driven Autonomous Analytics Dashboard Generation", app: "IT & Software",
       desc: "Autonomous generation of analytics dashboards from natural-language queries, using LLMs, schema inference, and visualization planning." },
     { name: "Ameen Assadi", degree: "B.Sc.", title: "Interactive Career Analytics and Resume Intelligence System", app: "Talent Management",
