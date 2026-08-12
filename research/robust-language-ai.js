@@ -24,7 +24,7 @@
   var APP_RULES = [
     ["Healthcare", /clinical|patient|\bmedic|medication|health|diagnos|\bEMS\b|oncolog|\bPTSD\b|infection|\bSBAR\b|casualt|discharge|radiolog|\bADR\b|\bPMOS\b|c-sec|nurse|pharma|\bcare\b|trauma|symptom/i],
     ["Public Safety", /maritime|distress|public safety|body-?worn|body ?cam|weapon|firearm|\bincident\b|emergency|tactical|battlefield|combat|rescue|hazard|surveillance|311/i],
-    ["Talent Management", /resume|r[eé]sum|seniorit|\btalent\b|\bhiring\b|candidate|\bcv\b|recruit|career|\bskill/i],
+    ["Search & RecSys", /resume|r[eé]sum|seniorit|\btalent\b|\bhiring\b|candidate|\bcv\b|recruit|career|\bskill/i],
     ["Education", /student|teaching|educat|\bcourse\b|grading|grade|learner|rubric|classroom|pedagog|deliberate practice|tutor|lecture/i],
     ["IT & Software", /\bcode\b|\bapi\b|\blog\b|software|regulat|\bbank|support ticket|\brag\b|injection|devops|datasheet|\bsql\b|dashboard|document|search|handwriting|ocr|customer support|service assistant|intent|ticket|prompt|synthetic data|pipeline|analytics|automation|query|schema/i],
     ["Media & Consumer", /headline|clickbait|lyric|emotion|toxic|sentiment|social media|twitter|instagram|whatsapp|\bbias\b|\bnli\b|\bnews\b|\bmood\b|catering|flight|comic|advertis|reminiscen|bookmark/i]
@@ -147,7 +147,7 @@
   [
     { name: "Ofek Gayero", degree: "B.Sc.", title: "LLM-Driven Autonomous Analytics Dashboard Generation", app: "Search & RecSys",
       desc: "Autonomously generates analytics dashboards from natural-language questions using large language models. The system infers the data schema, plans the right visualizations, and assembles them without manual dashboard building." },
-    { name: "Ameen Assadi", degree: "B.Sc.", title: "Interactive Career Analytics and Resume Intelligence System", app: "Talent Management",
+    { name: "Ameen Assadi", degree: "B.Sc.", title: "Interactive Career Analytics and Resume Intelligence System", app: "Search & RecSys",
       desc: "Turns static resumes into structured, queryable career profiles with grounded question answering. Skill-based analytics let recruiters interrogate a candidate's experience directly instead of skimming free-form text." },
     { name: "Alex Gusin", degree: "B.Sc.", title: "Automatic Tagging of Browser Bookmarks", app: "Media & Consumer", year: 2013,
       desc: "Analyzes page text and metadata to assign tags to browser bookmarks automatically. Consistent automatic labeling keeps large bookmark collections organized and searchable without any manual effort." }
