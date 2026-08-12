@@ -272,7 +272,7 @@
       desc: "A single-pass model that performs segmentation and super-resolution jointly, sharing features between the two tasks. Solving them together recovers reliable detail and boundaries on low-resolution, noisy images that either task alone would miss." },
     { name: "Ozi Marom", degree: "B.Sc.", app: SCI, year: 2013, title: "3D Vision for Vegetation Root Monitoring",
       desc: "A stereo 3D imaging setup that reconstructs plant-root structures for non-destructive monitoring of morphology and growth. Careful handling of occlusion and imaging noise keeps the reconstructions accurate enough to track change over time." }
-  ].forEach(function (s) {
+  ].slice(0, 0).forEach(function (s) {
     items.push({
       type: "Student Supervision", app: s.app, data: s.data || VISION, year: s.year || null, title: s.title,
       authorsHtml: s.name + " &middot; " + s.degree, venue: "Supervised thesis (" + s.degree + ")",
