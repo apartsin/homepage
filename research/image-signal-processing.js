@@ -30,7 +30,8 @@
       PDM = "Predictive Maintenance",
       REMOTE = "Remote Sensing",
       FINANCE = "Finance and Trading",
-      MODELOPT = "Model Optimization";
+      MODELOPT = "Model Optimization",
+      STREAM = "Streaming and Media";
 
   var APP_RULES = [
     [AUTO, /vehicle|driver|fleet|telematics|automotive|\bDTC\b|malfunction|predictive maintenance|in-?cabin|license plate|fuel|engine|onboard|dashboard/i],
@@ -180,7 +181,11 @@
     "Pattern Mining for Vehicle Malfunction Sequences in Predictive Maintenance": PDM,
     "Vehicle Malfunction Classification via In-Cabin Audio": PDM,
     "Pipeline Distillation into a Single Onboard Model for Resource-Constrained Vehicle Computers": PDM,
-    "Sensory Data Acquisition and Analysis for Physical Experiments": REMOTE
+    "Sensory Data Acquisition and Analysis for Physical Experiments": REMOTE,
+    "A Synchronized Pen-Based Annotation Framework for Multimedia Presentations": STREAM,
+    "Background Modeling and Object Detection/Tracking for Projector-Camera Systems": STREAM,
+    "Efficient Encoding and Streaming of Object-Based Video": STREAM,
+    "Image Bundling for Low-Bandwidth Delivery": STREAM
   };
   var INDUSTRY_DESC = {
     "Generative-Based Evaluation Framework for Anomaly Detection Models": "A generative framework that stress-tests automotive anomaly-detection models by synthesizing realistic fault signals across rare operating conditions. Covering the failure modes real fleets seldom record exposes weak spots before a model ever meets genuine outliers in the field.",
@@ -240,7 +245,7 @@
       desc: "Selective super-resolution that concentrates enhancement on genuinely degraded image regions while leaving already-clean areas untouched. Adapting to where degradation actually occurs avoids the artifacts that uniform upscaling introduces on noisy inputs." },
     { name: "Adir Cohen", degree: "B.Sc.", app: CONSUMER, year: 2025, title: "Photo Tagging via Graph Knowledge Propagation",
       desc: "Propagates labels across an image-similarity graph to tag large photo collections consistently. Borrowing evidence from neighboring photos keeps tagging reliable when any single image is too noisy or ambiguous to classify on its own." },
-    { name: "Yuri Liziakin", degree: "B.Sc.", app: SAFETY, year: 2025, title: "Active Vision for Aerial Imaging",
+    { name: "Yuri Liziakin", degree: "M.Sc.", app: SAFETY, year: 2025, title: "Active Vision for Aerial Imaging",
       desc: "An active-vision pipeline that first scans an aerial scene coarsely, then revisits high-value regions at full resolution. Spending detail only where it matters saves bandwidth while keeping the important targets sharp despite noisy wide-area capture." },
     { name: "Rom Hirsch & Yarom Swisa", degree: "B.Sc.", app: SAFETY, year: 2024, title: "Classification of Dark Images",
       desc: "A low-light image classifier that applies illumination-aware preprocessing before recognition. Compensating for darkness and sensor noise keeps classification accurate on the dim, low-contrast scenes where standard models fail." },
@@ -250,11 +255,11 @@
       desc: "A vision system that detects and classifies the controls and indicators on a vehicle dashboard for assistive and testing workflows. Robust recognition holds up across varied dashboard layouts, reflections, and uneven in-cabin lighting." },
     { name: "Aharon Sahalulu", degree: "B.Sc.", app: SAFETY, year: 2023, title: "Haze-Aware Object Detection",
       desc: "A haze-aware object detector that compensates for the visibility lost to fog and atmospheric scatter. Modeling the degradation explicitly keeps detection consistent in the adverse-weather scenes that defeat detectors trained on clear imagery." },
-    { name: "Yael Galifat", degree: "B.Sc.", app: MODELOPT, year: 2020, title: "Deep Model Optimization via Selective Inferencing",
+    { name: "Yael Galifat", degree: "M.Sc.", app: MODELOPT, year: 2020, title: "Deep Model Optimization via Selective Inferencing",
       desc: "Routes only the uncertain samples to heavier models while easy inputs exit early through a lightweight path. Concentrating compute on the genuinely hard, ambiguous cases cuts average cost while preserving accuracy." },
     { name: "Barak Katz", degree: "B.Sc.", app: SAFETY, year: 2020, title: "Detection of Human Interactions in Egocentric Video",
       desc: "A first-person video model that recognizes human interactions from egocentric footage using temporal and viewpoint-aware cues. Robust modeling absorbs the heavy motion and unstable framing typical of head-mounted cameras." },
-    { name: "Dan Basson", degree: "B.Sc.", app: MODELOPT, year: 2019, title: "Curriculum Learning for Image Classification",
+    { name: "Dan Basson", degree: "M.Sc.", app: MODELOPT, year: 2019, title: "Curriculum Learning for Image Classification",
       desc: "Orders training samples from easy to hard so an image classifier learns on a structured curriculum. The schedule stabilizes training under limited budgets and reduces sensitivity to noisy or mislabeled examples." },
     { name: "Ran Mishael", degree: "B.Sc.", app: CONSUMER, year: 2018, title: "Joint Segmentation and Super-Resolution",
       desc: "A single-pass model that performs segmentation and super-resolution jointly, sharing features between the two tasks. Solving them together recovers reliable detail and boundaries on low-resolution, noisy images that either task alone would miss." },
@@ -278,7 +283,7 @@
   APP_CLASS[AUTO] = "a-auto"; APP_CLASS[MED] = "a-med"; APP_CLASS[SAFETY] = "a-safety";
   APP_CLASS[CONSUMER] = "a-consumer"; APP_CLASS[SCI] = "a-sci";
   APP_CLASS[PDM] = "a-pdm"; APP_CLASS[REMOTE] = "a-remote"; APP_CLASS[FINANCE] = "a-finance";
-  APP_CLASS[MODELOPT] = "a-modelopt";
+  APP_CLASS[MODELOPT] = "a-modelopt"; APP_CLASS[STREAM] = "a-stream";
 
   function buildCard(it) {
     var li = el("li", "isp-card");
