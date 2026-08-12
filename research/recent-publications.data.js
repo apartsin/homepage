@@ -123,6 +123,23 @@ window.RECENT_PUBLICATIONS = [
     venueHref: "https://arxiv.org/abs/2603.22459"
   },
   {
+    id: "pub-2025-clickbait-detection",
+    year: 2025,
+    type: "Preprint",
+    title: "An Interpretable Benchmark for Clickbait Detection and Tactic Attribution",
+    focus: "robust",
+    summary: "This benchmark detects clickbait headlines and attributes the specific rhetorical tactics each one uses, pairing the verdict with an interpretable account of why. It targets reliable judgment of manipulative language, separating genuine engagement cues from deception across real and synthetically augmented headlines.",
+    authors: [
+      { name: "L Nofar", self: false },
+      { name: "T Portal", self: false },
+      { name: "A Elbaz", self: false },
+      { name: "A Apartsin", self: true },
+      { name: "Y Aperstein", self: false }
+    ],
+    venue: "arXiv preprint (arXiv:2509.10937)",
+    venueHref: "https://arxiv.org/abs/2509.10937"
+  },
+  {
     id: "pub-2025-chest-xray-rejection",
     year: 2026,
     type: "Journal",

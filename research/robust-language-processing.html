@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <meta name="description" content="Robust Language Processing: Sasha Apartsin's papers, patents, industry projects, and supervised student work on reliable NLP, speech, and LLMs across healthcare, public safety, talent management, IT, and more.">
+  <title>Robust Language Processing | Sasha Apartsin</title>
+  <link rel="stylesheet" href="../shared/site-shell.css">
+  <link rel="stylesheet" href="../shared/unified-theme.css">
+  <style>
+    .pragmatic-ai { font-weight: 800; color: #1d4ed8; letter-spacing: -0.01em; }
+    .rlp-apps { margin: 16px 0 0; display: flex; flex-wrap: wrap; align-items: center; gap: 7px; }
+    .rlp-apps__label { font: 700 0.68rem/1.6 "Manrope", sans-serif; text-transform: uppercase; letter-spacing: 0.08em; color: var(--site-muted); margin-right: 4px; }
+    .rlp-app { padding: 4px 11px; border-radius: 999px; background: rgba(29,78,216,0.07); border: 1px solid rgba(29,78,216,0.2); color: #1d4ed8; font: 800 0.72rem/1.4 "Manrope", sans-serif; }
+
+    .rlp-filters { margin: 20px 0 6px; display: flex; flex-wrap: wrap; gap: 14px; }
+    .rlp-filter { display: inline-flex; align-items: center; gap: 7px; font: 700 0.7rem/1 "Manrope", sans-serif; text-transform: uppercase; letter-spacing: 0.06em; color: var(--site-muted); }
+    .rlp-filter select { font: 600 0.82rem/1 "Manrope", sans-serif; text-transform: none; letter-spacing: 0; color: var(--site-text); padding: 6px 26px 6px 10px; border: 1px solid var(--site-border); border-radius: 8px; background: var(--site-card, #fff); cursor: pointer; }
+    .rlp-section { margin-top: 26px; }
+    .rlp-section:first-child { margin-top: 8px; }
+    .rlp-section__head { margin: 0 0 10px; padding: 0 0 7px; border-bottom: 2px solid var(--site-accent, #9c5a2e); color: var(--site-text); font: 800 1.12rem/1.2 "Manrope", sans-serif; letter-spacing: -0.01em; }
+    .rlp-section__count { color: var(--site-muted); font-weight: 700; font-size: 0.9rem; }
+
+    .rlp-grid {
+      margin-top: 16px; display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 12px; list-style: none; padding: 0;
+    }
+    .rlp-card {
+      border: 1px solid var(--site-border); border-radius: 14px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(249,251,255,0.95) 100%);
+      box-shadow: 0 8px 20px rgba(35, 30, 23, 0.06);
+      padding: 13px 15px 14px; display: flex; flex-direction: column; gap: 6px;
+    }
+    .rlp-card__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1px; }
+    .rlp-tag { font: 800 0.66rem/1 "Manrope", sans-serif; text-transform: uppercase; letter-spacing: 0.03em; padding: 4px 8px; border-radius: 999px; border: 1px solid var(--site-border); color: var(--site-text); }
+    .rlp-tag--year { background: rgba(133,114,81,0.1); }
+    .rlp-tag--app { font-weight: 800; }
+    /* type colors */
+    .t-paper { background: rgba(21,128,61,0.12); color: #15803d; border-color: rgba(21,128,61,0.28); }
+    .t-preprint { background: rgba(29,78,216,0.1); color: #1d4ed8; border-color: rgba(29,78,216,0.26); }
+    .t-patent { background: rgba(122,63,160,0.12); color: #7a3fa0; border-color: rgba(122,63,160,0.28); }
+    .t-supervised { background: rgba(180,83,9,0.12); color: #b45309; border-color: rgba(180,83,9,0.26); }
+    .t-industry { background: rgba(15,118,110,0.12); color: #0f766e; border-color: rgba(15,118,110,0.26); }
+    .t-project { background: rgba(51,65,85,0.1); color: #334155; border-color: rgba(51,65,85,0.24); }
+    /* application colors (softer) */
+    .rlp-tag--app.a-health { color: #0e7490; border-color: rgba(14,116,144,0.3); background: rgba(14,116,144,0.08); }
+    .rlp-tag--app.a-safety { color: #b91c1c; border-color: rgba(185,28,28,0.28); background: rgba(185,28,28,0.07); }
+    .rlp-tag--app.a-talent { color: #9333ea; border-color: rgba(147,51,234,0.28); background: rgba(147,51,234,0.07); }
+    .rlp-tag--app.a-edu { color: #2563eb; border-color: rgba(37,99,235,0.28); background: rgba(37,99,235,0.07); }
+    .rlp-tag--app.a-it { color: #475569; border-color: rgba(71,85,105,0.28); background: rgba(71,85,105,0.07); }
+    .rlp-tag--app.a-media { color: #be185d; border-color: rgba(190,24,93,0.28); background: rgba(190,24,93,0.07); }
+    .rlp-tag--app.a-other { color: #57606a; border-color: var(--site-border); background: rgba(133,114,81,0.06); }
+    .rlp-card__title { margin: 1px 0 0; color: var(--site-text); font: 800 0.95rem/1.35 "Manrope", "Segoe UI", sans-serif; }
+    .rlp-card__meta { margin: 0; color: var(--site-muted); font: 600 0.78rem/1.45 "Manrope", sans-serif; }
+    .rlp-card__meta b { color: #164a83; }
+    .rlp-card__venue { margin: 0; color: #164a83; font: 700 0.76rem/1.4 "Manrope", sans-serif; }
+    .rlp-card__desc { margin: 3px 0 0; color: var(--site-muted); font: 400 0.86rem/1.5 "Source Serif 4", Georgia, serif; }
+    .rlp-card__links { margin: auto 0 0; padding-top: 6px; font: 700 0.77rem/1.4 "Manrope", sans-serif; }
+    .rlp-card__links a { color: #1d4ed8; text-decoration: underline; text-underline-offset: 2px; }
+    .rlp-count { color: var(--site-muted); font: 600 0.85rem/1.4 "Manrope", sans-serif; margin: 14px 0 0; }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="research">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar">
+      <a class="apartsin-shell__brand" href="../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../index.html">About</a>
+        <a href="../research/research-focus.html">Research</a>
+        <a href="../teaching/overview.html">Teaching</a>
+        <a href="../work/overview.html">Building</a>
+        <a href="../work/innovation-overview.html">Innovations</a>
+        <a href="../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="rlp-overview">
+          <h1 class="apartsin-sr-only">Robust Language Processing</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="./research-focus.html">Research</a>
+              <span aria-hidden="true">/</span>
+              <strong>Robust Language Processing</strong>
+            </nav>
+          </div>
+
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../assets/heroes/research-interests.png" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">Making language technology reliable when the input is noisy, informal, degraded, or ambiguous, the way real text and speech actually arrive. This work runs from three decades of industry systems (search, handwriting, speech, document understanding) to today's large language models (<strong class="pragmatic-ai">LLMs</strong>), across <strong>healthcare, public safety, talent management, IT, education</strong>, and more, spanning peer-reviewed papers, patents, industry projects, and supervised student research.</p>
+          </div>
+          <div class="rlp-apps">
+            <span class="rlp-apps__label">Applications</span>
+            <span class="rlp-app">Healthcare</span>
+            <span class="rlp-app">Public Safety</span>
+            <span class="rlp-app">Talent Management</span>
+            <span class="rlp-app">IT &amp; Software</span>
+            <span class="rlp-app">Education</span>
+            <span class="rlp-app">Media &amp; Consumer</span>
+          </div>
+        </section>
+
+        <section aria-label="Filters and works">
+          <div class="rlp-filters">
+            <label class="rlp-filter"><span>Type</span><select id="rlp-sel-type"></select></label>
+            <label class="rlp-filter"><span>Application</span><select id="rlp-sel-app"></select></label>
+            <label class="rlp-filter"><span>Year</span><select id="rlp-sel-year"></select></label>
+          </div>
+          <div id="rlp-sections"></div>
+        </section>
+
+        <section class="section-quick-links" style="margin-top: 22px;">
+          <h2 class="section-quick-links__title">Related</h2>
+          <nav class="section-quick-links__grid">
+            <a class="section-quick-link" href="./research-focus.html">
+              <span class="section-quick-link__badge" style="background: #1d4ed8;">R</span>
+              Research Focus
+            </a>
+            <a class="section-quick-link" href="./recent-publications.html">
+              <span class="section-quick-link__badge" style="background: #2e7d5a;">P</span>
+              Recent Publications
+            </a>
+            <a class="section-quick-link" href="../work/patents.html">
+              <span class="section-quick-link__badge" style="background: #7a3fa0;">P</span>
+              Patents
+            </a>
+          </nav>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script defer src="../shared/unified-enhance.js"></script>
+  <script defer src="../shared/site-shell.js"></script>
+  <script src="./recent-publications.data.js"></script>
+  <script src="../work/patents.data.js"></script>
+  <script src="../work/recent-projects.data.js"></script>
+  <script src="../work/past-research-tasks.data.js"></script>
+  <script src="./robust-language-processing.js"></script>
+</body>
+</html>
