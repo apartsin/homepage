@@ -52,7 +52,8 @@
   var APP_OVERRIDE = {
     "pub-2026-irc-bench": "Healthcare",
     "pub-2025-teaching-practice-platform": "Education",
-    "pub-inprep-imperfect-student": "Education"
+    "pub-inprep-imperfect-student": "Education",
+    "pub-2025-review-recommendation": "Search & RecSys"
   };
   var TYPE_OVERRIDE = { "pub-2026-promptforge": "Research Project" };
   (window.RECENT_PUBLICATIONS || []).filter(function (p) { return PAPER_IDS[p.id]; }).forEach(function (p) {
@@ -71,7 +72,7 @@
   /* ---------- Patents (language subset) ---------- */
   var PATENT_HREFS = {
     "https://patents.google.com/patent/US10825450B2/en": "Public Safety",
-    "https://patents.google.com/patent/US20090070321A1/en": "IT & Software"
+    "https://patents.google.com/patent/US20090070321A1/en": "Search & RecSys"
   };
   (window.PATENT_CARDS || []).filter(function (c) { return PATENT_HREFS[c.idHref]; }).forEach(function (c) {
     items.push({
@@ -86,6 +87,12 @@
     "Motorola Solutions": "Public Safety", "Harmon.AI": "IT & Software", "CloudTuner": "IT & Software",
     "SearchNG": "IT & Software", "Product Computers": "IT & Software", "Tegrity": "Education",
     "MPCode": "IT & Software"
+  };
+  var INDUSTRY_APP_TITLE = {
+    "Key Term Extraction and Result Fusion/Reranking": "Search & RecSys",
+    "Automatic Extraction of Query Interfaces and Result Schemas from Observed Search Interactions": "Search & RecSys",
+    "Rank-Based Query Routing and Result Fusion": "Search & RecSys",
+    "Group Recommendation for Email Classification with Office Graph Embeddings": "Search & RecSys"
   };
   var INDUSTRY_BLOCK = /content injection|content delivery|bundling|personalized web content/i;
   var INDUSTRY_DESC = {
@@ -107,7 +114,7 @@
     return /Text|Voice/.test(dt) && !INDUSTRY_BLOCK.test(c.title || "");
   }).forEach(function (c) {
     items.push({
-      type: "Industry Project", app: INDUSTRY_APP[c.organization] || classifyApp(c.title),
+      type: "Industry Project", app: INDUSTRY_APP_TITLE[c.title] || INDUSTRY_APP[c.organization] || classifyApp(c.title),
       year: parseInt(c.year, 10) || null, title: c.title, authorsHtml: c.organization, venue: c.organization,
       desc: INDUSTRY_DESC[c.title] || "",
       links: (c.links || []).map(function (l) { return { k: l.label, u: l.href }; })
@@ -117,7 +124,6 @@
   /* ---------- Recent GitHub projects (language subset) ---------- */
   var PROJ_DESC = {
     "EdgeLang": "A Chrome extension that turns any web page into contextual language-learning practice with adaptive cues and passive or active modes. Multi-provider AI routing through ModelMesh keeps the practice responsive and provider-agnostic.",
-    "AutoAnalytics": "An LLM-driven analytics platform that auto-generates SQL queries, KPIs, and visual dashboards from annotated data schemas. Built with FastHTML and OpenAI, it turns a described dataset into an explorable dashboard quickly.",
     "ModelMesh": "A unified integration layer across AI model providers that simplifies multi-provider routing, evaluation, and product integration. One consistent interface lets applications switch or combine models without rewriting their calls.",
     "Web2Comics Chrome Extension and Bot": "Converts web pages into comic-style visual summaries so dense information is faster to absorb and easier to share. Generative AI turns long articles into a sequential, illustrated storyboard on demand.",
     "PromptArt": "A graph-native system for crowdsourced generative-AI content transformation, attribution, and value circulation. It treats generation, provenance, and settlement as one connected graph so contributions stay traceable and rewardable."
@@ -154,7 +160,8 @@
   var TYPE_ORDER = { "Paper": 1, "Preprint": 2, "Patent": 3, "Student Supervision": 4, "Industry Project": 5, "Research Project": 6 };
   var APP_CLASS = {
     "Healthcare": "a-health", "Public Safety": "a-safety", "Talent Management": "a-talent",
-    "Education": "a-edu", "IT & Software": "a-it", "Media & Consumer": "a-media"
+    "Education": "a-edu", "IT & Software": "a-it", "Media & Consumer": "a-media",
+    "Search & RecSys": "a-search"
   };
 
   function buildCard(it) {
