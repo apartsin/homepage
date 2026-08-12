@@ -84,9 +84,10 @@
   /* ---------- Industry projects (language / voice subset of Past Projects) ---------- */
   var INDUSTRY_APP = {
     "Motorola Solutions": "Public Safety", "Harmon.AI": "IT & Software", "CloudTuner": "IT & Software",
-    "SearchNG": "IT & Software", "Product Computers": "IT & Software", "Tegrity": "Education"
+    "SearchNG": "IT & Software", "Product Computers": "IT & Software", "Tegrity": "Education",
+    "MPCode": "IT & Software"
   };
-  var INDUSTRY_BLOCK = /compression|content injection|content delivery|bundling|personalized web content/i;
+  var INDUSTRY_BLOCK = /content injection|content delivery|bundling|personalized web content/i;
   var INDUSTRY_DESC = {
     "Group Recommendation for Email Classification with Office Graph Embeddings": "Classifies and routes enterprise email by learning group patterns from an organization's Office collaboration graph.",
     "311 Call Request Classification": "Automatically categorizes citizen 311 service requests from free-text call descriptions to speed municipal routing.",
@@ -98,7 +99,8 @@
     "Rank-Based Query Routing and Result Fusion": "Routes each query to the most promising engines and fuses their ranked results into one unified list.",
     "Handwritten Digit Detection and Filtering for Scanned Document OCR": "Detects and isolates handwritten digits in scanned documents to improve downstream OCR accuracy.",
     "Online Cursive Trace Segmentation for Handwriting Recognition": "Segments continuous cursive pen strokes into recognizable units for online handwriting recognition.",
-    "Feature Space Design for Online Handwriting Recognition": "Designs the feature representation that makes online handwriting recognition robust across writing styles."
+    "Feature Space Design for Online Handwriting Recognition": "Designs the feature representation that makes online handwriting recognition robust across writing styles.",
+    "Streaming HTML Compression Algorithm": "Compresses HTML on the fly for low-bandwidth delivery, restructuring markup as it streams to speed page loads."
   };
   (window.PAST_RESEARCH_TASK_CARDS || []).filter(function (c) {
     var dt = (c.dataTypes || []).join(" ");
@@ -144,6 +146,10 @@
     "Supervised": "t-supervised", "Industry Project": "t-industry", "Research Project": "t-project"
   };
   var TYPE_ORDER = { "Paper": 1, "Preprint": 2, "Patent": 3, "Supervised": 4, "Industry Project": 5, "Research Project": 6 };
+  var APP_CLASS = {
+    "Healthcare": "a-health", "Public Safety": "a-safety", "Talent Management": "a-talent",
+    "Education": "a-edu", "IT & Software": "a-it", "Media & Consumer": "a-media"
+  };
 
   function buildCard(it) {
     var li = el("li", "rlp-card");
@@ -152,6 +158,7 @@
     li.setAttribute("data-year", it.year || "");
     var tags = el("div", "rlp-card__tags");
     tags.appendChild(el("span", "rlp-tag " + (TYPE_CLASS[it.type] || ""), it.type));
+    tags.appendChild(el("span", "rlp-tag rlp-tag--app " + (APP_CLASS[it.app] || "a-media"), it.app));
     if (it.year) tags.appendChild(el("span", "rlp-tag rlp-tag--year", String(it.year)));
     li.appendChild(tags);
     li.appendChild(el("h3", "rlp-card__title", it.title));
@@ -170,51 +177,27 @@
   }
 
   /* ---------- render into 4 application sections ---------- */
-  function sectionOf(app) {
-    if (app === "Healthcare") return "Healthcare";
-    if (app === "Public Safety") return "Public Safety";
-    if (app === "Education") return "Education";
-    return "Other";
-  }
-  var SECTION_ORDER = ["Healthcare", "Public Safety", "Education", "Other"];
-  var SECTION_LABEL = { "Healthcare": "Healthcare", "Public Safety": "Public Safety", "Education": "Education", "Other": "Other Applications" };
-
+  /* single grid, ordered by application (Healthcare, Education, Public Safety, then the rest) */
+  var APP_ORDER = { "Healthcare": 1, "Education": 2, "Public Safety": 3, "Talent Management": 4, "IT & Software": 5, "Media & Consumer": 6 };
   var container = document.getElementById("rlp-sections");
   if (!container) return;
-  SECTION_ORDER.forEach(function (sec) {
-    var secItems = items.filter(function (it) { return sectionOf(it.app) === sec; });
-    if (!secItems.length) return;
-    secItems.sort(function (a, b) {
-      return (TYPE_ORDER[a.type] || 9) - (TYPE_ORDER[b.type] || 9) ||
-        (b.year || 0) - (a.year || 0) || String(a.title || "").localeCompare(String(b.title || ""));
-    });
-    var section = el("section", "rlp-section");
-    section.setAttribute("data-section", sec);
-    var h = el("h2", "rlp-section__head");
-    h.appendChild(document.createTextNode(SECTION_LABEL[sec] + " "));
-    h.appendChild(el("span", "rlp-section__count", "(" + secItems.length + ")"));
-    section.appendChild(h);
-    var g = el("ol", "rlp-grid");
-    secItems.forEach(function (it) { g.appendChild(buildCard(it)); });
-    section.appendChild(g);
-    container.appendChild(section);
-  });
+  var grid = el("ol", "rlp-grid");
+  container.appendChild(grid);
+  items.slice().sort(function (a, b) {
+    return (APP_ORDER[a.app] || 9) - (APP_ORDER[b.app] || 9) ||
+      (TYPE_ORDER[a.type] || 9) - (TYPE_ORDER[b.type] || 9) ||
+      (b.year || 0) - (a.year || 0) || String(a.title || "").localeCompare(String(b.title || ""));
+  }).forEach(function (it) { grid.appendChild(buildCard(it)); });
 
   /* ---------- Type / Application / Year dropdown filters ---------- */
   var activeType = "all", activeApp = "all", activeYear = "all";
   function apply() {
-    var secs = container.querySelectorAll(".rlp-section");
-    for (var s = 0; s < secs.length; s++) {
-      var cards = secs[s].querySelectorAll(".rlp-card"), vis = 0;
-      for (var i = 0; i < cards.length; i++) {
-        var okT = activeType === "all" || cards[i].getAttribute("data-type") === activeType;
-        var okA = activeApp === "all" || cards[i].getAttribute("data-app") === activeApp;
-        var okY = activeYear === "all" || cards[i].getAttribute("data-year") === activeYear;
-        var show = okT && okA && okY;
-        cards[i].style.display = show ? "" : "none";
-        if (show) vis++;
-      }
-      secs[s].style.display = vis ? "" : "none";
+    var cards = grid.querySelectorAll(".rlp-card");
+    for (var i = 0; i < cards.length; i++) {
+      var okT = activeType === "all" || cards[i].getAttribute("data-type") === activeType;
+      var okA = activeApp === "all" || cards[i].getAttribute("data-app") === activeApp;
+      var okY = activeYear === "all" || cards[i].getAttribute("data-year") === activeYear;
+      cards[i].style.display = (okT && okA && okY) ? "" : "none";
     }
   }
   function fillSelect(id, values, onChange) {
