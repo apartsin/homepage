@@ -23,7 +23,7 @@
 
   /* ---------- application classifier (fallback = Scientific & Industrial) ---------- */
   var AUTO = "Automotive & Mobility",
-      MED = "Medical Imaging",
+      MED = "Biomedical Imaging",
       SAFETY = "Public Safety & Defense",
       CONSUMER = "Consumer & Everyday",
       SCI = "Scientific & Industrial",
@@ -243,7 +243,7 @@
   [
     { name: "Matan Chazanovitz", degree: "M.Sc.", app: SAFETY, title: "Degradation-Aware Selective Super-Resolution",
       desc: "Selective super-resolution that concentrates enhancement on genuinely degraded image regions while leaving already-clean areas untouched. Adapting to where degradation actually occurs avoids the artifacts that uniform upscaling introduces on noisy inputs." },
-    { name: "Adir Cohen", degree: "B.Sc.", app: CONSUMER, year: 2025, title: "Photo Tagging via Graph Knowledge Propagation",
+    { name: "Adir Cohen", degree: "B.Sc.", app: STREAM, year: 2025, title: "Photo Tagging via Graph Knowledge Propagation",
       desc: "Propagates labels across an image-similarity graph to tag large photo collections consistently. Borrowing evidence from neighboring photos keeps tagging reliable when any single image is too noisy or ambiguous to classify on its own." },
     { name: "Yuri Liziakin", degree: "M.Sc.", app: SAFETY, year: 2025, title: "Active Vision for Aerial Imaging",
       desc: "An active-vision pipeline that first scans an aerial scene coarsely, then revisits high-value regions at full resolution. Spending detail only where it matters saves bandwidth while keeping the important targets sharp despite noisy wide-area capture." },
@@ -263,7 +263,7 @@
       desc: "Orders training samples from easy to hard so an image classifier learns on a structured curriculum. The schedule stabilizes training under limited budgets and reduces sensitivity to noisy or mislabeled examples." },
     { name: "Ran Mishael", degree: "B.Sc.", app: CONSUMER, year: 2018, title: "Joint Segmentation and Super-Resolution",
       desc: "A single-pass model that performs segmentation and super-resolution jointly, sharing features between the two tasks. Solving them together recovers reliable detail and boundaries on low-resolution, noisy images that either task alone would miss." },
-    { name: "Ozi Marom", degree: "B.Sc.", app: SCI, year: 2013, title: "3D Vision for Vegetation Root Monitoring",
+    { name: "Ozi Marom", degree: "B.Sc.", app: MED, year: 2013, title: "3D Vision for Vegetation Root Monitoring",
       desc: "A stereo 3D imaging setup that reconstructs plant-root structures for non-destructive monitoring of morphology and growth. Careful handling of occlusion and imaging noise keeps the reconstructions accurate enough to track change over time." }
   ].forEach(function (s) {
     items.push({
