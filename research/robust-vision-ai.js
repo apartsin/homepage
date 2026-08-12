@@ -25,7 +25,7 @@
   var AUTO = "Automotive & Mobility",
       MED = "Biomedical Imaging",
       SAFETY = "Public Safety & Defense",
-      CONSUMER = "Image Enhancements",
+      CONSUMER = "Image Enhancement",
       SCI = "Scientific & Industrial",
       PDM = "Predictive Maintenance",
       REMOTE = "Remote Sensing",
