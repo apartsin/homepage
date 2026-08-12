@@ -73,7 +73,7 @@
     "pub-2026-normal-latent-clustering": 1
   };
   var PUB_APP = {
-    "pub-2026-license-plate-recoverability": CONSUMER,
+    "pub-2026-license-plate-recoverability": SAFETY,
     "pub-2025-chest-xray-rejection": MED,
     "pub-2026-calexnet": MODELOPT,
     "pub-2025-panoramic-incident-summaries": SAFETY,
