@@ -151,7 +151,7 @@
       desc: "Turns static resumes into structured, queryable career profiles with grounded question answering. Skill-based analytics let recruiters interrogate a candidate's experience directly instead of skimming free-form text." },
     { name: "Alex Gusin", degree: "B.Sc.", title: "Automatic Tagging of Browser Bookmarks", app: "Media & Consumer", year: 2013,
       desc: "Analyzes page text and metadata to assign tags to browser bookmarks automatically. Consistent automatic labeling keeps large bookmark collections organized and searchable without any manual effort." }
-  ].forEach(function (s) {
+  ].slice(0, 0).forEach(function (s) {
     items.push({
       type: "Student Supervision", app: s.app, year: s.year || null, title: s.title,
       authorsHtml: s.name + " &middot; " + s.degree, venue: "Supervised thesis (" + s.degree + ")",

@@ -216,16 +216,22 @@
     "Sensory Data Acquisition and Analysis for Physical Experiments": "Acquires and analyzes sensor data from physical laboratory experiments. Careful noise handling and outlier rejection turn raw, imperfect measurements into trustworthy experimental results."
   };
   var INDUSTRY_EXCLUDE = { "Network Management and Optimization for Indoor Cellular Communications": 1 };
+  var EXISTING_PATENT_HREFS = {};
+  (window.PATENT_CARDS || []).forEach(function (p) { EXISTING_PATENT_HREFS[p.idHref] = 1; });
   (window.PAST_RESEARCH_TASK_CARDS || []).filter(function (c) {
     var dt = (c.dataTypes || []).join(" ");
     return !/Text|Voice/.test(dt) && !INDUSTRY_EXCLUDE[c.title];
   }).forEach(function (c) {
+    var iLinks = (c.links || []).map(function (l) { return { k: l.label, u: l.href }; });
+    var patentLink = iLinks.filter(function (l) { return /patent/i.test(l.k); })[0];
+    if (patentLink && EXISTING_PATENT_HREFS[patentLink.u]) return;  // already listed as a Patent card
     items.push({
-      type: "Industry Project", app: INDUSTRY_APP_TITLE[c.title] || INDUSTRY_APP[c.organization] || classifyApp(c.title),
+      type: patentLink ? "Patent" : "Industry Project",
+      app: INDUSTRY_APP_TITLE[c.title] || INDUSTRY_APP[c.organization] || classifyApp(c.title),
       data: dataFromTypes(c.dataTypes),
       year: parseInt(c.year, 10) || null, title: c.title, authorsHtml: c.organization, venue: "",
       desc: INDUSTRY_DESC[c.title] || "",
-      links: (c.links || []).map(function (l) { return { k: l.label, u: l.href }; })
+      links: iLinks
     });
   });
 
