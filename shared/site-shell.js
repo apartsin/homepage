@@ -192,7 +192,7 @@
               { label: 'Spec-Driven GenAI', path: 'research/spec-driven-ai.html' },
               { label: 'Sparse Multi-Agent AI', path: 'research/sparse-multi-agent-ai.html' },
               { label: 'Robust Language Processing', path: 'research/robust-language-processing.html' },
-              { label: 'Image & Signal Processing', path: 'research/image-signal-processing.html' },
+              { label: 'Image and Signal Processing under Noise, Outliers, and Anomalies', path: 'research/image-signal-processing.html' },
             ],
           },
           { label: 'Recent Publications', path: 'research/recent-publications.html' },

@@ -26,7 +26,11 @@
       MED = "Medical Imaging",
       SAFETY = "Public Safety & Defense",
       CONSUMER = "Consumer & Everyday",
-      SCI = "Scientific & Industrial";
+      SCI = "Scientific & Industrial",
+      PDM = "Predictive Maintenance",
+      REMOTE = "Remote Sensing",
+      FINANCE = "Finance and Trading",
+      MODELOPT = "Model Optimization";
 
   var APP_RULES = [
     [AUTO, /vehicle|driver|fleet|telematics|automotive|\bDTC\b|malfunction|predictive maintenance|in-?cabin|license plate|fuel|engine|onboard|dashboard/i],
@@ -70,9 +74,9 @@
   var PUB_APP = {
     "pub-2026-license-plate-recoverability": AUTO,
     "pub-2025-chest-xray-rejection": MED,
-    "pub-2026-calexnet": SCI,
+    "pub-2026-calexnet": MODELOPT,
     "pub-2025-panoramic-incident-summaries": SAFETY,
-    "pub-2026-normal-latent-clustering": SCI
+    "pub-2026-normal-latent-clustering": PDM
   };
   var PUB_DATA = {
     "pub-2026-license-plate-recoverability": VISION,
@@ -97,25 +101,25 @@
 
   /* ---------- Classic / earlier papers (hardcoded thematic core) ---------- */
   [
-    { year: 2014, app: SCI, data: SIGNALS, title: "Energy-Efficient Time-of-Flight Estimation in the Presence of Outliers: A Machine Learning Approach",
+    { year: 2014, app: REMOTE, data: SIGNALS, title: "Energy-Efficient Time-of-Flight Estimation in the Presence of Outliers: A Machine Learning Approach",
       venue: "IEEE J-STARS", doi: "https://doi.org/10.1109/JSTARS.2013.2295324",
       desc: "A machine-learning approach to time-of-flight estimation that stays accurate and energy-efficient even when the range measurements are corrupted by heavy outliers." },
-    { year: 2013, app: SCI, data: SIGNALS, title: "Time-of-flight estimation in the presence of outliers. Part II: Multiple echo processing",
+    { year: 2013, app: REMOTE, data: SIGNALS, title: "Time-of-flight estimation in the presence of outliers. Part II: Multiple echo processing",
       venue: "IEEE TGRS", doi: "https://doi.org/10.1109/TGRS.2013.2276919",
       desc: "Outlier-robust time-of-flight estimation extended to disentangle and process multiple overlapping echoes in noisy returns." },
-    { year: 2013, app: SCI, data: SIGNALS, title: "Time-of-flight estimation in the presence of outliers. Part I: Single echo processing",
+    { year: 2013, app: REMOTE, data: SIGNALS, title: "Time-of-flight estimation in the presence of outliers. Part I: Single echo processing",
       venue: "IEEE TGRS", doi: "https://doi.org/10.1109/TGRS.2013.2272737",
       desc: "Outlier-robust time-of-flight estimation for the single-echo case, recovering reliable range from noise-corrupted returns." },
-    { year: 2012, app: SCI, data: SIGNALS, title: "Semi-coherent time of arrival estimation using regression",
+    { year: 2012, app: REMOTE, data: SIGNALS, title: "Semi-coherent time of arrival estimation using regression",
       venue: "J. Acoust. Soc. Am. (JASA)", doi: "https://doi.org/10.1121/1.4730885",
       desc: "A regression-based semi-coherent estimator that recovers time of arrival reliably from noisy acoustic signals." },
-    { year: 2011, app: SCI, data: SIGNALS, title: "Biosonar-inspired source localization in low SNR",
+    { year: 2011, app: REMOTE, data: SIGNALS, title: "Biosonar-inspired source localization in low SNR",
       venue: "BIOSIGNALS", doi: "https://doi.org/10.5220/0003126803990404",
       desc: "A biosonar-inspired method that localizes sources robustly under very low signal-to-noise conditions." },
-    { year: 2010, app: SCI, data: SIGNALS, title: "SNR-dependent filtering for Time Of Arrival estimation in high noise",
+    { year: 2010, app: REMOTE, data: SIGNALS, title: "SNR-dependent filtering for Time Of Arrival estimation in high noise",
       venue: "IEEE MLSP", doi: "https://doi.org/10.1109/MLSP.2010.5588848",
       desc: "SNR-adaptive filtering that keeps time-of-arrival estimation accurate under high-noise regimes." },
-    { year: 2008, app: SAFETY, data: SIGNALS, title: "A data fusion and multiple ping method for improving the resolution of low-power acoustic and seismic sensing",
+    { year: 2008, app: REMOTE, data: SIGNALS, title: "A data fusion and multiple ping method for improving the resolution of low-power acoustic and seismic sensing",
       venue: "J. Acoust. Soc. Am. (JASA)", doi: "https://doi.org/10.1121/1.4783265",
       desc: "A data-fusion and multi-ping scheme that lifts the resolution of low-power acoustic and seismic sensing for covert underground detection." },
     { year: 2005, app: CONSUMER, data: VISION, title: "Multiscale Segmentation by Combining Motion and Intensity Cues",
@@ -142,12 +146,12 @@
   };
   var PATENT_APP = {
     "https://patents.google.com/patent/IL308506A/en": AUTO,
-    "https://patents.google.com/patent/US20240338980A1/en": AUTO,
-    "https://patents.google.com/patent/US20220382939A1/en": AUTO,
-    "https://patents.google.com/patent/US11868899B2/en": SCI,
-    "https://patents.google.com/patent/US20240013095A1/en": SCI,
-    "https://patents.google.com/patent/EP4270251A1/en": SCI,
-    "https://patents.google.com/patent/EP4099623A1/en": SCI,
+    "https://patents.google.com/patent/US20240338980A1/en": PDM,
+    "https://patents.google.com/patent/US20220382939A1/en": PDM,
+    "https://patents.google.com/patent/US11868899B2/en": MODELOPT,
+    "https://patents.google.com/patent/US20240013095A1/en": PDM,
+    "https://patents.google.com/patent/EP4270251A1/en": PDM,
+    "https://patents.google.com/patent/EP4099623A1/en": MODELOPT,
     "https://patents.google.com/patent/US8175412B2/en": CONSUMER
   };
   var PATENT_DATA = {
@@ -166,8 +170,17 @@
   /* ---------- Industry projects (Signals / Images / Video / Audio subset) ---------- */
   var INDUSTRY_APP = {
     "Questar Automotive": AUTO, "Motorola Solutions": SAFETY, "Smartlight": MED,
-    "Citi": SCI, "Amdocs": SCI, "Tegrity": SCI, "MPCode": SCI,
+    "Citi": FINANCE, "Amdocs": SCI, "Tegrity": SCI, "MPCode": SCI,
     "Moldat Wireless": SCI, "Solid State Institute": SCI
+  };
+  var INDUSTRY_APP_TITLE = {
+    "Generative-Based Evaluation Framework for Anomaly Detection Models": PDM,
+    "Anomaly Detection for Automotive Predictive Maintenance via Telematics": PDM,
+    "Usage-Based Component Models for Vehicle Predictive Maintenance": PDM,
+    "Pattern Mining for Vehicle Malfunction Sequences in Predictive Maintenance": PDM,
+    "Vehicle Malfunction Classification via In-Cabin Audio": PDM,
+    "Pipeline Distillation into a Single Onboard Model for Resource-Constrained Vehicle Computers": PDM,
+    "Sensory Data Acquisition and Analysis for Physical Experiments": REMOTE
   };
   var INDUSTRY_DESC = {
     "Generative-Based Evaluation Framework for Anomaly Detection Models": "A generative framework that stress-tests automotive anomaly-detection models by synthesizing realistic fault signals across rare operating conditions. Covering the failure modes real fleets seldom record exposes weak spots before a model ever meets genuine outliers in the field.",
@@ -201,7 +214,7 @@
     return !/Text|Voice/.test(dt);
   }).forEach(function (c) {
     items.push({
-      type: "Industry Project", app: INDUSTRY_APP[c.organization] || classifyApp(c.title),
+      type: "Industry Project", app: INDUSTRY_APP_TITLE[c.title] || INDUSTRY_APP[c.organization] || classifyApp(c.title),
       data: dataFromTypes(c.dataTypes),
       year: parseInt(c.year, 10) || null, title: c.title, authorsHtml: c.organization, venue: "",
       desc: INDUSTRY_DESC[c.title] || "",
@@ -210,10 +223,8 @@
   });
 
   /* ---------- Recent projects (vision / signal subset) ---------- */
-  var PROJ_APP = { "Music2World": CONSUMER };
-  var PROJ_DESC = {
-    "Music2World": "Generates music-synchronized visual augmentation embedded directly into existing video, detecting scene structure and modulating it with audio-driven signals. Grounding the effects in the native scene keeps them minimally obstructive and stable across varied, noisy footage."
-  };
+  var PROJ_APP = {};
+  var PROJ_DESC = {};
   (window.RECENT_PROJECT_CARDS || []).filter(function (c) { return PROJ_APP[c.title]; }).forEach(function (c) {
     items.push({
       type: "Research Project", app: PROJ_APP[c.title], data: VISION,
@@ -224,15 +235,15 @@
 
   /* ---------- Supervised thesis students (curated; excludes any with a paper) ---------- */
   [
-    { name: "Matan Chazanovitz", degree: "M.Sc.", app: CONSUMER, title: "Degradation-Aware Selective Super-Resolution",
+    { name: "Matan Chazanovitz", degree: "M.Sc.", app: SAFETY, title: "Degradation-Aware Selective Super-Resolution",
       desc: "Selective super-resolution that concentrates enhancement on genuinely degraded image regions while leaving already-clean areas untouched. Adapting to where degradation actually occurs avoids the artifacts that uniform upscaling introduces on noisy inputs." },
     { name: "Adir Cohen", degree: "B.Sc.", app: CONSUMER, year: 2025, title: "Photo Tagging via Graph Knowledge Propagation",
       desc: "Propagates labels across an image-similarity graph to tag large photo collections consistently. Borrowing evidence from neighboring photos keeps tagging reliable when any single image is too noisy or ambiguous to classify on its own." },
-    { name: "Yuri Liziakin", degree: "B.Sc.", app: SCI, year: 2025, title: "Active Vision for Aerial Imaging",
+    { name: "Yuri Liziakin", degree: "B.Sc.", app: SAFETY, year: 2025, title: "Active Vision for Aerial Imaging",
       desc: "An active-vision pipeline that first scans an aerial scene coarsely, then revisits high-value regions at full resolution. Spending detail only where it matters saves bandwidth while keeping the important targets sharp despite noisy wide-area capture." },
-    { name: "Rom Hirsch & Yarom Swisa", degree: "B.Sc.", app: CONSUMER, year: 2024, title: "Classification of Dark Images",
+    { name: "Rom Hirsch & Yarom Swisa", degree: "B.Sc.", app: SAFETY, year: 2024, title: "Classification of Dark Images",
       desc: "A low-light image classifier that applies illumination-aware preprocessing before recognition. Compensating for darkness and sensor noise keeps classification accurate on the dim, low-contrast scenes where standard models fail." },
-    { name: "Ben Kedarya & Yael Rikka", degree: "B.Sc.", app: CONSUMER, year: 2024, data: SIGNALS, title: "Audio Alarm Detection",
+    { name: "Ben Kedarya & Yael Rikka", degree: "B.Sc.", app: SAFETY, year: 2024, data: SIGNALS, title: "Audio Alarm Detection",
       desc: "Detects critical sounds such as fire alarms and doorbells in real time and drives visual or haptic alerts for hearing-impaired users. Robust acoustic modeling picks the target sounds out of everyday background noise so alerts fire only when they should." },
     { name: "Eyal Reis", degree: "B.Sc.", app: AUTO, year: 2023, title: "Recognition of Control Elements in Vehicle Dashboards",
       desc: "A vision system that detects and classifies the controls and indicators on a vehicle dashboard for assistive and testing workflows. Robust recognition holds up across varied dashboard layouts, reflections, and uneven in-cabin lighting." },
@@ -242,7 +253,7 @@
       desc: "Routes only the uncertain samples to heavier models while easy inputs exit early through a lightweight path. Concentrating compute on the genuinely hard, ambiguous cases cuts average cost while preserving accuracy." },
     { name: "Barak Katz", degree: "B.Sc.", app: SAFETY, year: 2020, title: "Detection of Human Interactions in Egocentric Video",
       desc: "A first-person video model that recognizes human interactions from egocentric footage using temporal and viewpoint-aware cues. Robust modeling absorbs the heavy motion and unstable framing typical of head-mounted cameras." },
-    { name: "Dan Basson", degree: "B.Sc.", app: SCI, year: 2019, title: "Curriculum Learning for Image Classification",
+    { name: "Dan Basson", degree: "B.Sc.", app: MODELOPT, year: 2019, title: "Curriculum Learning for Image Classification",
       desc: "Orders training samples from easy to hard so an image classifier learns on a structured curriculum. The schedule stabilizes training under limited budgets and reduces sensitivity to noisy or mislabeled examples." },
     { name: "Ran Mishael", degree: "B.Sc.", app: CONSUMER, year: 2018, title: "Joint Segmentation and Super-Resolution",
       desc: "A single-pass model that performs segmentation and super-resolution jointly, sharing features between the two tasks. Solving them together recovers reliable detail and boundaries on low-resolution, noisy images that either task alone would miss." },
@@ -265,6 +276,8 @@
   var APP_CLASS = {};
   APP_CLASS[AUTO] = "a-auto"; APP_CLASS[MED] = "a-med"; APP_CLASS[SAFETY] = "a-safety";
   APP_CLASS[CONSUMER] = "a-consumer"; APP_CLASS[SCI] = "a-sci";
+  APP_CLASS[PDM] = "a-pdm"; APP_CLASS[REMOTE] = "a-remote"; APP_CLASS[FINANCE] = "a-finance";
+  APP_CLASS[MODELOPT] = "a-modelopt";
 
   function buildCard(it) {
     var li = el("li", "isp-card");
