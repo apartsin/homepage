@@ -17,7 +17,8 @@
     .rlp-apps__label { font: 700 0.68rem/1.6 "Manrope", sans-serif; text-transform: uppercase; letter-spacing: 0.08em; color: var(--site-muted); margin-right: 4px; }
     .rlp-app { padding: 4px 11px; border-radius: 999px; background: rgba(29,78,216,0.07); border: 1px solid rgba(29,78,216,0.2); color: #1d4ed8; font: 800 0.72rem/1.4 "Manrope", sans-serif; }
 
-    .rlp-filters { margin: 20px 0 6px; display: flex; flex-wrap: wrap; gap: 14px; }
+    .rlp-filters { margin: 20px 0 6px; padding-left: 8px; display: flex; flex-wrap: wrap; gap: 14px; }
+    .rlp-grid { padding-left: 8px; }
     .rlp-filter { display: inline-flex; align-items: center; gap: 7px; font: 700 0.7rem/1 "Manrope", sans-serif; text-transform: uppercase; letter-spacing: 0.06em; color: var(--site-muted); }
     .rlp-filter select { font: 600 0.82rem/1 "Manrope", sans-serif; text-transform: none; letter-spacing: 0; color: var(--site-text); padding: 6px 26px 6px 10px; border: 1px solid var(--site-border); border-radius: 8px; background: var(--site-card, #fff); cursor: pointer; }
     .rlp-section { margin-top: 26px; }
@@ -103,8 +104,8 @@
 
         <section aria-label="Filters and works">
           <div class="rlp-filters">
-            <label class="rlp-filter"><span>Type</span><select id="rlp-sel-type"></select></label>
             <label class="rlp-filter"><span>Application</span><select id="rlp-sel-app"></select></label>
+            <label class="rlp-filter"><span>Type</span><select id="rlp-sel-type"></select></label>
             <label class="rlp-filter"><span>Year</span><select id="rlp-sel-year"></select></label>
           </div>
           <div id="rlp-sections"></div>

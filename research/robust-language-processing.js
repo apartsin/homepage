@@ -89,18 +89,18 @@
   };
   var INDUSTRY_BLOCK = /content injection|content delivery|bundling|personalized web content/i;
   var INDUSTRY_DESC = {
-    "Group Recommendation for Email Classification with Office Graph Embeddings": "Classifies and routes enterprise email by learning group patterns from an organization's Office collaboration graph.",
-    "311 Call Request Classification": "Automatically categorizes citizen 311 service requests from free-text call descriptions to speed municipal routing.",
-    "Coded Speech Restoration and ASR Error Correction": "Restores degraded coded speech and corrects automatic-speech-recognition errors in public-safety radio traffic.",
-    "Key Term Extraction and Result Fusion/Reranking": "Extracts key query terms and fuses and reranks results from multiple sources to sharpen search relevance.",
-    "Multipoint Voice Conferencing with AGC, VAD, and Audio Mixing": "Real-time multipoint voice conferencing with automatic gain control, voice-activity detection, and audio mixing for online lectures.",
-    "Segmentation, Search, and Indexing of Educational Content": "Segments, indexes, and makes recorded lectures searchable across speech, audio, and on-screen text.",
-    "Automatic Extraction of Query Interfaces and Result Schemas from Observed Search Interactions": "Learns how third-party search sites accept queries and structure results by observing real search interactions.",
-    "Rank-Based Query Routing and Result Fusion": "Routes each query to the most promising engines and fuses their ranked results into one unified list.",
-    "Handwritten Digit Detection and Filtering for Scanned Document OCR": "Detects and isolates handwritten digits in scanned documents to improve downstream OCR accuracy.",
-    "Online Cursive Trace Segmentation for Handwriting Recognition": "Segments continuous cursive pen strokes into recognizable units for online handwriting recognition.",
-    "Feature Space Design for Online Handwriting Recognition": "Designs the feature representation that makes online handwriting recognition robust across writing styles.",
-    "Streaming HTML Compression Algorithm": "Compresses HTML on the fly for low-bandwidth delivery, restructuring markup as it streams to speed page loads."
+    "Group Recommendation for Email Classification with Office Graph Embeddings": "Classifies and routes enterprise email by learning group patterns from an organization's Office collaboration graph. Modeling who works with whom lets the system predict recipients and categories without hand-written rules.",
+    "311 Call Request Classification": "Automatically categorizes citizen 311 service requests from free-text call descriptions. Turning unstructured complaints into consistent categories speeds municipal routing and keeps response times predictable at scale.",
+    "Coded Speech Restoration and ASR Error Correction": "Restores degraded coded speech and corrects automatic-speech-recognition errors in public-safety radio traffic. Recovering intelligible transcripts from compressed, noisy channels keeps dispatch and field communication usable under pressure.",
+    "Key Term Extraction and Result Fusion/Reranking": "Extracts the key terms from a query and fuses and reranks results drawn from multiple sources. Combining evidence across engines sharpens relevance where any single ranking would miss the best answers.",
+    "Multipoint Voice Conferencing with AGC, VAD, and Audio Mixing": "Provides real-time multipoint voice conferencing with automatic gain control, voice-activity detection, and audio mixing. Balancing and gating many live microphones keeps online lectures clear as participants and conditions vary.",
+    "Segmentation, Search, and Indexing of Educational Content": "Segments, indexes, and makes recorded lectures searchable across speech, audio, and on-screen text. Aligning the modalities lets learners jump to the exact moment they need instead of scrubbing whole recordings.",
+    "Automatic Extraction of Query Interfaces and Result Schemas from Observed Search Interactions": "Learns how third-party search sites accept queries and structure their results by observing real search interactions. Inferring these interfaces automatically lets a meta-search layer add new sources without manual configuration.",
+    "Rank-Based Query Routing and Result Fusion": "Routes each query to the engines most likely to answer it, then fuses their ranked results into one list. Sending questions where they are best answered and merging the returns improves both coverage and precision.",
+    "Handwritten Digit Detection and Filtering for Scanned Document OCR": "Detects and isolates handwritten digits within scanned documents so they read separately from printed text. Filtering the handwriting cleanly upstream removes a major source of errors for downstream OCR.",
+    "Online Cursive Trace Segmentation for Handwriting Recognition": "Segments continuous cursive pen strokes into individually recognizable units for online handwriting recognition. Finding the right boundaries in unbroken writing is the step that makes reliable character recognition possible.",
+    "Feature Space Design for Online Handwriting Recognition": "Designs the feature representation that drives online handwriting recognition across many writing styles. A well-chosen feature space makes the recognizer robust to the natural variation between different writers.",
+    "Streaming HTML Compression Algorithm": "Compresses HTML on the fly for low-bandwidth delivery, restructuring the markup as it streams to the client. Shrinking pages during transmission speeds load times on slow connections without waiting for the whole document."
   };
   (window.PAST_RESEARCH_TASK_CARDS || []).filter(function (c) {
     var dt = (c.dataTypes || []).join(" ");
@@ -115,26 +115,32 @@
   });
 
   /* ---------- Recent GitHub projects (language subset) ---------- */
-  var PROJ_TITLES = { "EdgeLang": 1, "AutoAnalytics": 1, "ModelMesh": 1, "Web2Comics Chrome Extension and Bot": 1, "PromptArt": 1 };
-  (window.RECENT_PROJECT_CARDS || []).filter(function (c) { return PROJ_TITLES[c.title]; }).forEach(function (c) {
+  var PROJ_DESC = {
+    "EdgeLang": "A Chrome extension that turns any web page into contextual language-learning practice with adaptive cues and passive or active modes. Multi-provider AI routing through ModelMesh keeps the practice responsive and provider-agnostic.",
+    "AutoAnalytics": "An LLM-driven analytics platform that auto-generates SQL queries, KPIs, and visual dashboards from annotated data schemas. Built with FastHTML and OpenAI, it turns a described dataset into an explorable dashboard quickly.",
+    "ModelMesh": "A unified integration layer across AI model providers that simplifies multi-provider routing, evaluation, and product integration. One consistent interface lets applications switch or combine models without rewriting their calls.",
+    "Web2Comics Chrome Extension and Bot": "Converts web pages into comic-style visual summaries so dense information is faster to absorb and easier to share. Generative AI turns long articles into a sequential, illustrated storyboard on demand.",
+    "PromptArt": "A graph-native system for crowdsourced generative-AI content transformation, attribution, and value circulation. It treats generation, provenance, and settlement as one connected graph so contributions stay traceable and rewardable."
+  };
+  (window.RECENT_PROJECT_CARDS || []).filter(function (c) { return PROJ_DESC[c.title]; }).forEach(function (c) {
     items.push({
       type: "Research Project", app: classifyApp(c.title + " " + (c.description || "")),
       year: null, title: c.title, authorsHtml: "", venue: c.eyebrow || "",
-      desc: c.description || "", links: (c.links || []).map(function (l) { return { k: l.label, u: l.href }; })
+      desc: PROJ_DESC[c.title], links: (c.links || []).map(function (l) { return { k: l.label, u: l.href }; })
     });
   });
 
   /* ---------- Supervised thesis students (curated; excludes any that appear as a paper) ---------- */
   [
     { name: "Ofek Gayero", degree: "B.Sc.", title: "LLM-Driven Autonomous Analytics Dashboard Generation", app: "IT & Software",
-      desc: "Autonomous generation of analytics dashboards from natural-language queries, using LLMs, schema inference, and visualization planning." },
+      desc: "Autonomously generates analytics dashboards from natural-language questions using large language models. The system infers the data schema, plans the right visualizations, and assembles them without manual dashboard building." },
     { name: "Ameen Assadi", degree: "B.Sc.", title: "Interactive Career Analytics and Resume Intelligence System", app: "Talent Management",
-      desc: "Turns static resumes into structured, queryable career profiles with grounded question answering and skill-based analytics." },
+      desc: "Turns static resumes into structured, queryable career profiles with grounded question answering. Skill-based analytics let recruiters interrogate a candidate's experience directly instead of skimming free-form text." },
     { name: "Alex Gusin", degree: "B.Sc.", title: "Automatic Tagging of Browser Bookmarks", app: "Media & Consumer", year: 2013,
-      desc: "Analyzes page text and metadata to assign bookmark tags automatically for better organization and retrieval." }
+      desc: "Analyzes page text and metadata to assign tags to browser bookmarks automatically. Consistent automatic labeling keeps large bookmark collections organized and searchable without any manual effort." }
   ].forEach(function (s) {
     items.push({
-      type: "Supervised", app: s.app, year: s.year || null, title: s.title,
+      type: "Student Supervision", app: s.app, year: s.year || null, title: s.title,
       authorsHtml: s.name + " &middot; " + s.degree, venue: "Supervised thesis (" + s.degree + ")",
       desc: s.desc, links: s.links || []
     });
@@ -143,9 +149,9 @@
   /* ---------- card builder (type + year badge; no application badge) ---------- */
   var TYPE_CLASS = {
     "Paper": "t-paper", "Preprint": "t-preprint", "Patent": "t-patent",
-    "Supervised": "t-supervised", "Industry Project": "t-industry", "Research Project": "t-project"
+    "Student Supervision": "t-supervised", "Industry Project": "t-industry", "Research Project": "t-project"
   };
-  var TYPE_ORDER = { "Paper": 1, "Preprint": 2, "Patent": 3, "Supervised": 4, "Industry Project": 5, "Research Project": 6 };
+  var TYPE_ORDER = { "Paper": 1, "Preprint": 2, "Patent": 3, "Student Supervision": 4, "Industry Project": 5, "Research Project": 6 };
   var APP_CLASS = {
     "Healthcare": "a-health", "Public Safety": "a-safety", "Talent Management": "a-talent",
     "Education": "a-edu", "IT & Software": "a-it", "Media & Consumer": "a-media"
@@ -177,16 +183,15 @@
   }
 
   /* ---------- render into 4 application sections ---------- */
-  /* single grid, ordered by application (Healthcare, Education, Public Safety, then the rest) */
-  var APP_ORDER = { "Healthcare": 1, "Education": 2, "Public Safety": 3, "Talent Management": 4, "IT & Software": 5, "Media & Consumer": 6 };
+  /* single grid, sorted by year (newest first) */
   var container = document.getElementById("rlp-sections");
   if (!container) return;
   var grid = el("ol", "rlp-grid");
   container.appendChild(grid);
   items.slice().sort(function (a, b) {
-    return (APP_ORDER[a.app] || 9) - (APP_ORDER[b.app] || 9) ||
+    return (b.year || 0) - (a.year || 0) ||
       (TYPE_ORDER[a.type] || 9) - (TYPE_ORDER[b.type] || 9) ||
-      (b.year || 0) - (a.year || 0) || String(a.title || "").localeCompare(String(b.title || ""));
+      String(a.title || "").localeCompare(String(b.title || ""));
   }).forEach(function (it) { grid.appendChild(buildCard(it)); });
 
   /* ---------- Type / Application / Year dropdown filters ---------- */
@@ -208,6 +213,7 @@
       o.value = v.value; o.textContent = v.label;
       sel.appendChild(o);
     });
+    sel.selectedIndex = 0;
     sel.addEventListener("change", function () { onChange(sel.value); apply(); });
   }
   function optionList(key, order) {
