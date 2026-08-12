@@ -49,12 +49,17 @@
     "pub-inprep-imperfect-student": 1, "pub-2025-review-recommendation": 1,
     "pub-2025-teaching-practice-platform": 1, "pub-2026-coreason": 1
   };
-  var APP_OVERRIDE = { "pub-2026-irc-bench": "Healthcare", "pub-2025-teaching-practice-platform": "Education" };
+  var APP_OVERRIDE = {
+    "pub-2026-irc-bench": "Healthcare",
+    "pub-2025-teaching-practice-platform": "Education",
+    "pub-inprep-imperfect-student": "Education"
+  };
+  var TYPE_OVERRIDE = { "pub-2026-promptforge": "Research Project" };
   (window.RECENT_PUBLICATIONS || []).filter(function (p) { return PAPER_IDS[p.id]; }).forEach(function (p) {
     var links = [];
     if (p.venueHref) links.push({ k: /arxiv/i.test(p.venueHref) ? "arXiv" : (/github/i.test(p.venueHref) ? "Project" : "Paper"), u: p.venueHref });
     items.push({
-      type: p.type === "Journal" ? "Paper" : "Preprint",
+      type: TYPE_OVERRIDE[p.id] || (p.type === "Journal" ? "Paper" : "Preprint"),
       app: APP_OVERRIDE[p.id] || classifyApp(p.title + " " + (p.summary || "")),
       year: p.year, title: p.title,
       authorsHtml: (p.authors || []).map(function (a) { return a.self ? "<b>" + a.name + "</b>" : a.name; }).join(", "),
