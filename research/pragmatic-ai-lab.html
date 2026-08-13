@@ -46,10 +46,10 @@
       color: var(--site-muted); font: 600 0.95rem/1.6 "Manrope", "Segoe UI", sans-serif;
     }
     .lab-students { margin: 16px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 9px; }
-    .lab-students a {
+    .lab-students a, .lab-students span {
       display: inline-flex; align-items: center; padding: 7px 14px; border-radius: 999px;
       border: 1px solid var(--site-border); background: #fff; text-decoration: none;
-      color: var(--site-text); font: 700 0.84rem/1 "Manrope", "Segoe UI", sans-serif;
+      color: var(--site-text); font: 700 0.84rem/1 "Manrope", "Heebo", "Segoe UI", sans-serif;
       transition: background 120ms ease, border-color 120ms ease;
     }
     .lab-students a:hover { background: rgba(29,78,216,0.06); border-color: rgba(29,78,216,0.4); color: #1d4ed8; }
@@ -113,6 +113,12 @@
           </li>
 
           <li class="lab-card">
+            <h3 class="lab-card__title">Automatic Detection of Image Distortions</h3>
+            <p class="lab-card__meta"><span lang="he" dir="rtl">מנוס דביר, פורטל תומר, רבוח יהונתן, בולשינסקי ענבל, ששון אלמוג</span></p>
+            <p class="lab-card__desc">An industry collaboration with Samsung on automatically detecting distortions and quality defects in captured images, so degraded frames can be identified and flagged before they reach downstream processing.</p>
+          </li>
+
+          <li class="lab-card">
             <h3 class="lab-card__title">Synthetic-Data-Driven Information Extraction from Technical Documents</h3>
             <p class="lab-card__meta">Niv Saban</p>
             <p class="lab-card__desc">Pulling structured specs from electronics PDF datasheets breaks traditional OCR on multi-column tables. This data-centric pipeline generates synthetic datasheets and fine-tunes DeBERTa-v3 for joint entity and relation extraction, reaching 0.59 F1 on real annotated datasheets.</p>
@@ -163,6 +169,11 @@
           <li><a href="https://github.com/nivsab" target="_blank" rel="noopener noreferrer">Niv Saban</a></li>
           <li><a href="https://github.com/itaym26" target="_blank" rel="noopener noreferrer">Itay Matana</a></li>
           <li><a href="https://github.com/guy-yo" target="_blank" rel="noopener noreferrer">Guy Yogev</a></li>
+          <li><span lang="he" dir="rtl">מנוס דביר</span></li>
+          <li><span lang="he" dir="rtl">פורטל תומר</span></li>
+          <li><span lang="he" dir="rtl">רבוח יהונתן</span></li>
+          <li><span lang="he" dir="rtl">בולשינסקי ענבל</span></li>
+          <li><span lang="he" dir="rtl">ששון אלמוג</span></li>
         </ul>
 
         <section class="section-quick-links" style="margin-top: 30px;">
