@@ -67,6 +67,30 @@
       color: var(--site-text);
       font: 600 0.95rem/1.6 "Manrope", "Segoe UI", sans-serif;
     }
+    .faq-card p.faq-card__answer {
+      margin: 0 0 2px;
+      color: #164a83;
+      font: 800 1rem/1.45 "Manrope", "Segoe UI", sans-serif;
+    }
+    .faq-card ul {
+      margin: 0;
+      padding-left: 20px;
+      display: grid;
+      gap: 5px;
+    }
+    .faq-card li {
+      color: var(--site-text);
+      font: 600 0.93rem/1.55 "Manrope", "Segoe UI", sans-serif;
+    }
+    .faq-card p.faq-card__takeaway {
+      margin: 4px 0 0;
+      padding: 9px 13px;
+      border-radius: 10px;
+      background: rgba(24, 101, 168, 0.07);
+      color: #164a83;
+      font: 700 0.9rem/1.5 "Manrope", "Segoe UI", sans-serif;
+    }
+    .faq-card p.faq-card__takeaway b { color: #123a67; letter-spacing: 0.02em; }
     /* Two-tab language switcher: shows both EN and HE, current one filled. */
     .guide-lang-switch {
       display: inline-flex;
@@ -141,44 +165,58 @@
         </section>
 
         <h2 class="sdg-heading">Five questions about AI and the profession</h2>
-        <p class="sdg-heading-lede">The role, vibe coding, writing code, why code is still taught, and how uncertain it all is.</p>
+        <p class="sdg-heading-lede">The role, vibe coding, writing code, why code is still taught, and how uncertain it all is. Each with a one-line take-away.</p>
         <section class="faq-list" aria-label="Questions about AI and software engineering">
           <article class="faq-card" id="q-obsolete">
             <h2>Will AI make software engineers obsolete?</h2>
             <p class="faq-card__answer">Probably not, but the role may change substantially.</p>
-            <p>Today, many accounting firms use similar standard software because developing a customized system is expensive. If AI makes specialized software much cheaper to build, many organizations may prefer systems designed specifically for their needs.</p>
-            <p>This could increase the demand for software while changing the skills expected from software engineers. Engineers may spend less time manually implementing software and more time operating AI tools, defining requirements, making architectural decisions, validating results, and rapidly producing customized systems.</p>
+            <ul>
+              <li>Custom software is expensive today, so many organizations settle for similar off-the-shelf systems.</li>
+              <li>If AI makes specialized software cheap to build, many will prefer systems designed for their exact needs, raising overall demand for software.</li>
+              <li>Engineers then spend less time hand-implementing and more on operating AI tools, defining requirements, making architecture decisions, validating results, and shipping custom systems fast.</li>
+            </ul>
+            <p class="faq-card__takeaway"><b>Take-away:</b> the job does not vanish, it moves up the stack, from writing code to directing and validating it.</p>
           </article>
 
           <article class="faq-card" id="q-vibe-coding">
             <h2>Can everyone build software through vibe coding?</h2>
             <p class="faq-card__answer">Sometimes.</p>
-            <p>AI has made it much easier for people without extensive programming experience to create simple applications and prototypes. It can also help developers reach roughly 80% of the desired functionality very quickly.</p>
-            <p>However, completing the remaining 20% is often much harder. Producing a reliable, secure, maintainable, and complex system still appears to require broad knowledge of engineering principles, architectures, tools, testing, deployment, security, and the application domain.</p>
-            <p>AI lowers the barrier to creating software, but it does not automatically remove the difficulty of engineering high-quality systems.</p>
+            <ul>
+              <li>Non-programmers can now build simple apps and prototypes, and developers can reach roughly 80% of the functionality very quickly.</li>
+              <li>The last 20% is much harder: a reliable, secure, maintainable, complex system still needs broad knowledge of engineering principles, architectures, tools, testing, deployment, security, and the application domain.</li>
+            </ul>
+            <p class="faq-card__takeaway"><b>Take-away:</b> AI lowers the barrier to creating software, not the difficulty of engineering it well.</p>
           </article>
 
           <article class="faq-card" id="q-write-code">
             <h2>Will software engineers still need to write code?</h2>
             <p class="faq-card__answer">Probably much less than today.</p>
-            <p>A possible future model is that every software engineer becomes a combination of senior engineer, architect, product designer, and technical supervisor, while AI performs much of the work traditionally assigned to junior developers.</p>
-            <p>Engineers will still need to understand AI-generated code quickly, because they will be responsible for directing the AI, detecting mistakes, evaluating design choices, and ensuring the system produces the intended outcome.</p>
-            <p>This raises an important educational question: can students learn to understand complex code without first learning to build complex systems manually? At present, there is no clear answer.</p>
+            <ul>
+              <li>One likely model: each engineer becomes a mix of senior engineer, architect, product designer, and technical supervisor, while AI does much of the work once assigned to junior developers.</li>
+              <li>You still have to understand AI-generated code fast, because you direct the AI, catch mistakes, weigh design choices, and ensure the system does what was intended.</li>
+              <li>Open question: can students learn to understand complex code without first building complex systems by hand? There is no clear answer yet.</li>
+            </ul>
+            <p class="faq-card__takeaway"><b>Take-away:</b> you will write less code, but you are more responsible for understanding it.</p>
           </article>
 
           <article class="faq-card" id="q-teach-code">
             <h2>Why do I still teach using code?</h2>
             <p class="faq-card__answer">As a precise formalism for explaining systems and processes.</p>
-            <p>In my courses, I use code examples as an exact way to describe systems and processes. Consider a physics formula that describes the trajectory of a shell fired from a cannon. The formula makes the underlying forces and relationships clear and precise, yet nobody expects a person to derive and solve it by hand every time the cannon is used.</p>
-            <p>Similarly, code can help students understand algorithms, architectures, data flows, assumptions, and system behavior, even when AI eventually performs most of the actual implementation.</p>
+            <ul>
+              <li>Like a physics formula for a shell fired from a cannon: it makes the underlying forces and relationships exact, yet nobody derives and solves it by hand every time.</li>
+              <li>Code likewise makes algorithms, architectures, data flows, assumptions, and system behavior clear, even when AI eventually performs most of the implementation.</li>
+            </ul>
+            <p class="faq-card__takeaway"><b>Take-away:</b> code is taught to build understanding, even when AI writes most of it.</p>
           </article>
 
           <article class="faq-card" id="q-uncertainty">
             <h2>How uncertain is the future?</h2>
             <p class="faq-card__answer">Very. It may look nothing like today.</p>
-            <p>One possibility is that AI systems stop generating code in programming languages designed for both humans and machines, and instead use internal representations optimized primarily for machine understanding. These representations may not be readable by humans or follow today's programming paradigms.</p>
-            <p>Another possibility is that AI will not generate traditional software at all. The AI system itself may become the software: a general system, similar to ChatGPT, could directly interpret user requests expressed in natural language, images, speech, or examples and perform the task without producing a conventional application.</p>
-            <p>Software engineering is therefore unlikely to disappear, but its tools, processes, required skills, and even the meaning of software may change significantly.</p>
+            <ul>
+              <li>AI might stop generating code in languages meant for both humans and machines, and instead use internal representations optimized for machine understanding, not readable by humans or bound to today&rsquo;s paradigms.</li>
+              <li>Or AI stops producing traditional software at all: the system itself becomes the software, a general system like ChatGPT interpreting requests in natural language, images, speech, or examples and doing the task with no conventional app in between.</li>
+            </ul>
+            <p class="faq-card__takeaway"><b>Take-away:</b> software engineering will not disappear, but its tools, processes, skills, and even the meaning of software may change beyond recognition, so keep updating your beliefs.</p>
           </article>
         </section>
 
