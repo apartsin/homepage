@@ -3,7 +3,7 @@ window.RESEARCH_PROJECT_CARDS = [
     image: "../assets/research/research-projects/implicit-entities-hero.png",
     imageAlt: "Contextual text fragments connected by glowing lines converging on a hidden entity silhouette",
     theme: "Robust Language",
-    title: "ImplicitEntities",
+    title: "ImplicitEntities: Recognizing Entities from Context Without Explicit Mentions",
     status: "past",
     description: "IRC-Bench: a benchmark for recognizing named entities from contextual cues alone in first-person reminiscence narratives, without explicit mentions. Covers 25K samples across 12K Wikidata-linked entities, with baselines spanning embedding retrieval, LLM prompting, DPR fine-tuning, and QLoRA adaptation.",
     links: [
@@ -15,7 +15,7 @@ window.RESEARCH_PROJECT_CARDS = [
     image: "https://raw.githubusercontent.com/ApartsinProjects/ZKDroneSwarm/master/docs/hero.png",
     imageAlt: "ZK drone swarm engaging distributed targets",
     theme: "Sparse Multi-Agent AI",
-    title: "ZKDroneSwarm",
+    title: "ZKDroneSwarm: Decentralized Drone Task Allocation Under Zero-Knowledge Constraints",
     status: "past",
     description: "Decentralized drone task allocation under zero-knowledge constraints: no communication, no priors, no shared state. Each drone independently runs a matrix-factorization policy updated from a public interaction broadcast, recovering emergent coordination from interaction outcomes alone.",
     links: [
@@ -27,7 +27,7 @@ window.RESEARCH_PROJECT_CARDS = [
     image: "https://raw.githubusercontent.com/ApartsinProjects/DGLD4Energetic/master/figures/readme_hero.png",
     imageAlt: "Domain-gated latent diffusion: from a Gaussian latent cloud to the converged headline lead 3,4,5-trinitro-1,2-isoxazole",
     theme: "Spec-Driven GenAI",
-    title: "DGLD4Energetic",
+    title: "DGLD4Energetic: Domain-Gated Latent Diffusion for Energetic Material Discovery",
     status: "past",
     description: "Domain-gated latent diffusion for novel energetic material discovery, yielding 12 DFT-confirmed CHNO leads. Headline compound reaches density 2.09 g/cm³ and detonation velocity 8.25 km/s with max-Tanimoto 0.27 to all training molecules; reproducible end-to-end on commodity hardware.",
     links: [
@@ -40,7 +40,7 @@ window.RESEARCH_PROJECT_CARDS = [
     image: "https://raw.githubusercontent.com/ApartsinProjects/NewsReWrite/master/assets/hero.png",
     imageAlt: "NewsReWrite: a neutral headline being steered along a controllable engagement spectrum with dual BERT discriminators guiding decoding away from clickbait",
     theme: "Spec-Driven GenAI",
-    title: "NewsReWrite",
+    title: "NewsReWrite: Controllable Headline Rewriting to Curb Clickbait",
     status: "past",
     description: "Controllable headline rewriting that treats clickbait not as a discrete category but as over-amplification on a continuous engagement spectrum. A frozen LLM is steered at inference time by two prefix-aware BERT discriminators: a multi-label engagement-attribute model (10 attributes) and a binary clickbait scorer, combined via FUDGE-style per-token rescoring. Engagement level and fidelity are controlled by two inference-time weights, with no retraining of the base model.",
     links: [
@@ -62,24 +62,12 @@ window.RESEARCH_PROJECT_CARDS = [
     image: "../assets/research/research-projects/calexnet-hero.png",
     imageAlt: "CalexNet cascade: a CNN backbone with three early-exit branches; easy samples exit at branch 1, harder samples flow deeper",
     theme: "Robust Vision",
-    title: "CalexNet",
+    title: "CalexNet: Cascade-Aligned Training for CNN Early-Exit Networks",
     status: "past",
     description: "Training-recipe modification for CNN early-exit cascades that closes three train-inference mismatches via cascade-aligned importance weighting, CPM calibration, and knowledge distillation. Matches or improves the accuracy-FLOPs Pareto frontier over PTEEnet, ZTW, and BoostNet on ResNet18/50 across CIFAR-100 and CINIC-10.",
     links: [
       { label: "GitHub", href: "https://github.com/ApartsinProjects/CalexNet" },
       { label: "Paper", href: "https://www.mdpi.com/2079-9292/15/10/2149" }
-    ]
-  },
-  {
-    image: "https://raw.githubusercontent.com/ApartsinProjects/ImperfectStudent/master/figures/fig01_architecture.svg",
-    imageAlt: "ImperfectStudent architecture: a skill vector controls which competencies an LLM-simulated student retains or suppresses in a structured mathematics setting",
-    theme: "Sparse Multi-Agent AI",
-    title: "ImperfectStudent",
-    status: "past",
-    description: "A benchmark framework for controllable simulation of imperfect students with LLMs. The simulated student is represented as an explicit skill vector specifying which competencies are retained and which are suppressed. Prompt-based control induces selective partial mastery in a structured mathematics setting, enabling deliberate teacher-training practice with measurable, model-dependent controllability.",
-    links: [
-      { label: "GitHub", href: "https://github.com/ApartsinProjects/ImperfectStudent" },
-      { label: "arXiv", href: "https://arxiv.org/abs/2605.25601" }
     ]
   },
   {
