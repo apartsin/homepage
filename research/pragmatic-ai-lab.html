@@ -30,7 +30,9 @@
       box-shadow: 0 8px 20px rgba(35, 30, 23, 0.06);
       padding: 15px 17px 16px; overflow: hidden;
     }
-    .lab-card::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 5px; background: linear-gradient(180deg, rgba(29,78,216,0.9), rgba(14,116,144,0.75)); }
+    .lab-card::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 5px; background: linear-gradient(180deg, rgba(29,78,216,0.9), rgba(14,116,144,0.75)); z-index: 1; }
+    .lab-card__media { margin: 0 0 10px; aspect-ratio: 16 / 9; border-radius: 10px; overflow: hidden; border: 1px solid var(--site-border); background: #eef2f7; }
+    .lab-card__media img { display: block; width: 100%; height: 100%; object-fit: cover; }
     .lab-card__tags { display: flex; flex-wrap: wrap; gap: 6px; }
     .lab-tag { font: 800 0.66rem/1 "Manrope", sans-serif; text-transform: uppercase; letter-spacing: 0.03em; padding: 4px 8px; border-radius: 999px; border: 1px solid rgba(29,78,216,0.24); color: #1d4ed8; background: rgba(29,78,216,0.07); }
     .lab-card__title { margin: 1px 0 0; color: var(--site-text); font: 800 1rem/1.32 "Manrope", "Segoe UI", sans-serif; }
@@ -99,6 +101,7 @@
         <p class="lab-heading-lede">Projects by HIT students in the lab, several extending the lab&rsquo;s CoEval and StableSteering platforms. Each is open to student participation.</p>
         <ul class="lab-grid" aria-label="Student projects">
           <li class="lab-card">
+            <figure class="lab-card__media"><img src="../assets/heroes/labcard-weather.jpg" alt="Synthetic Adverse-Weather Data for Robust Object Detection illustration" loading="lazy"></figure>
             <h3 class="lab-card__title">Synthetic Adverse-Weather Data for Robust Object Detection</h3>
             <p class="lab-card__meta">Noam Hadad</p>
             <p class="lab-card__desc">Driving detectors trained only on clear weather fail in rain, fog, and snow. This project generates realistic synthetic harsh-weather images with SDXL and dual ControlNet (depth and edges) to augment KITTI and train a more robust YOLOv8 detector. A model trained on 50% synthetic data cut the harsh-weather accuracy drop from 72% to 12%.</p>
@@ -106,6 +109,7 @@
           </li>
 
           <li class="lab-card">
+            <figure class="lab-card__media"><img src="../assets/heroes/labcard-animals.jpg" alt="Synthetic Rare-Object Insertion for Robust Driving Perception illustration" loading="lazy"></figure>
             <h3 class="lab-card__title">Synthetic Rare-Object Insertion for Robust Driving Perception</h3>
             <p class="lab-card__meta">Tomer Atia</p>
             <p class="lab-card__desc">Driving datasets rarely contain animals, a safety-critical blind spot. This project inpaints photorealistic animals onto real KITTI scenes with SDXL and ControlNet depth, then trains a YOLOv11 detector; animal detection rose from 0% to 99.5% AP50 with under 2.5% regression on standard classes.</p>
@@ -113,12 +117,14 @@
           </li>
 
           <li class="lab-card">
+            <figure class="lab-card__media"><img src="../assets/heroes/labcard-samsung-detect.jpg" alt="Automatic Detection of Image Distortions illustration" loading="lazy"></figure>
             <h3 class="lab-card__title">Automatic Detection of Image Distortions</h3>
             <p class="lab-card__meta"><span lang="he" dir="rtl">מנוס דביר, פורטל תומר, רבוח יהונתן, בולשינסקי ענבל, ששון אלמוג</span></p>
             <p class="lab-card__desc">An industry collaboration with Samsung on automatically detecting distortions and quality defects in captured images, so degraded frames can be identified and flagged before they reach downstream processing.</p>
           </li>
 
           <li class="lab-card">
+            <figure class="lab-card__media"><img src="../assets/heroes/labcard-samsung-classify.jpg" alt="Classification of Image Distortion Types illustration" loading="lazy"></figure>
             <h3 class="lab-card__title">Classification of Image Distortion Types</h3>
             <p class="lab-card__meta">Linoy Avraham, Yanun Zruk, Boaz Atya</p>
             <p class="lab-card__desc">An industry collaboration with Samsung on identifying which type of distortion is present in a degraded image, so each frame can be routed to the right correction rather than a one-size-fits-all fix.</p>
@@ -126,6 +132,7 @@
           </li>
 
           <li class="lab-card">
+            <figure class="lab-card__media"><img src="../assets/heroes/labcard-datasheet.jpg" alt="Synthetic-Data-Driven Information Extraction from Technical Documents illustration" loading="lazy"></figure>
             <h3 class="lab-card__title">Synthetic-Data-Driven Information Extraction from Technical Documents</h3>
             <p class="lab-card__meta">Niv Saban</p>
             <p class="lab-card__desc">Pulling structured specs from electronics PDF datasheets breaks traditional OCR on multi-column tables. This data-centric pipeline generates synthetic datasheets and fine-tunes DeBERTa-v3 for joint entity and relation extraction, reaching 0.59 F1 on real annotated datasheets.</p>
@@ -133,6 +140,7 @@
           </li>
 
           <li class="lab-card">
+            <figure class="lab-card__media"><img src="../assets/heroes/labcard-steer-feedback.jpg" alt="StableSteering: Human-Preference Feedback for Interactive Image Generation illustration" loading="lazy"></figure>
             <h3 class="lab-card__title">StableSteering: Human-Preference Feedback for Interactive Image Generation</h3>
             <p class="lab-card__meta">Noam Hadad</p>
             <p class="lab-card__desc">Extends the lab&rsquo;s StableSteering image-generation platform with richer human feedback: style calibration from a few chosen images, per-dimension quality ratings, drag-to-rank priority weighting, and transparent preference analytics, so the system learns a user&rsquo;s taste faster and more legibly.</p>
@@ -140,6 +148,7 @@
           </li>
 
           <li class="lab-card">
+            <figure class="lab-card__media"><img src="../assets/heroes/labcard-steer-convergence.jpg" alt="StableSteering: Convergence Detection and Critique-Based Feedback illustration" loading="lazy"></figure>
             <h3 class="lab-card__title">StableSteering: Convergence Detection and Critique-Based Feedback</h3>
             <p class="lab-card__meta">Tomer Atia</p>
             <p class="lab-card__desc">The lab&rsquo;s StableSteering platform could not tell why a user preferred an output, or when steering had converged. This project adds convergence detection and a critique-tagging feedback mode; critique mode reached 38% higher accuracy than scalar ratings across 54 synthetic sessions.</p>
@@ -147,6 +156,7 @@
           </li>
 
           <li class="lab-card">
+            <figure class="lab-card__media"><img src="../assets/heroes/labcard-llm-judge.jpg" alt="Robust LLM-as-Judge Evaluation via Self-Distrust Mechanisms illustration" loading="lazy"></figure>
             <h3 class="lab-card__title">Robust LLM-as-Judge Evaluation via Self-Distrust Mechanisms</h3>
             <p class="lab-card__meta">Itay Matana</p>
             <p class="lab-card__desc">LLM graders hallucinate praise for wrong code and crash on messy JSON. This teacher-student-judge pipeline is built to distrust its own judge, adding a Truth Gate that overrides false praise, ensemble consensus to catch erratic judges, and robust recovery from noisy model output.</p>
@@ -154,6 +164,7 @@
           </li>
 
           <li class="lab-card">
+            <figure class="lab-card__media"><img src="../assets/heroes/labcard-mailrank.jpg" alt="CoEval: On-Demand Benchmark Generation for Ranking LLMs in Phishing Detection illustration" loading="lazy"></figure>
             <h3 class="lab-card__title">CoEval: On-Demand Benchmark Generation for Ranking LLMs in Phishing Detection</h3>
             <p class="lab-card__meta">Guy Yogev</p>
             <p class="lab-card__desc">Phishing-detection benchmarks are old and likely leaked into training data. MailRank generates a fresh three-way phishing benchmark on demand with the CoEval framework and validates it against real data; the small, free gemini-2.5-flash-lite ranked best, beating larger paid models.</p>
@@ -161,6 +172,7 @@
           </li>
 
           <li class="lab-card">
+            <figure class="lab-card__media"><img src="../assets/heroes/labcard-coeval-clinical.jpg" alt="CoEval: Reference-Free LLM Ranking for Specialized Clinical Domains illustration" loading="lazy"></figure>
             <h3 class="lab-card__title">CoEval: Reference-Free LLM Ranking for Specialized Clinical Domains</h3>
             <p class="lab-card__meta">Niv Saban</p>
             <p class="lab-card__desc">General English benchmarks cannot rank models for Israeli special-education speech-language pathology. Using CoEval with no pre-labeled data and 40 Hebrew clinical scenarios, this project produces clinically grounded, task-specific rankings validated by a certified SLP.</p>
