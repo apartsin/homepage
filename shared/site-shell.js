@@ -242,6 +242,7 @@
           { label: 'Guides for Students', path: 'teaching/guides/index.html' },
           { label: 'Computer Science Courses', path: 'teaching/other-cs-courses.html' },
           { label: 'Projects for B.Sc. Students', path: 'teaching/undergrad-ai-projects.html' },
+          { label: 'H.I.T. Pragmatic AI Lab', path: 'research/pragmatic-ai-lab.html' },
           { label: 'Former Students', path: 'teaching/former-students.html' },
           { label: 'Current Students', path: 'teaching/current-students.html' },
           { label: 'Innovation-First Learning', path: 'work/innovation-first-learning.html' },
