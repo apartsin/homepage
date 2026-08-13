@@ -130,11 +130,11 @@
   /* ---------- Recent GitHub projects (language subset) ---------- */
   var PROJ_DESC = {
     "EdgeLang": "A Chrome extension that turns any web page into contextual language-learning practice with adaptive cues and passive or active modes. Multi-provider AI routing through ModelMesh keeps the practice responsive and provider-agnostic.",
-    "ModelMesh": "A unified integration layer across AI model providers that simplifies multi-provider routing, evaluation, and product integration. One consistent interface lets applications switch or combine models without rewriting their calls.",
+    "ModelMesh: Open-Source Multi-Provider AI Routing": "A unified integration layer across AI model providers that simplifies multi-provider routing, evaluation, and product integration. One consistent interface lets applications switch or combine models without rewriting their calls.",
     "Web2Comics Chrome Extension and Bot": "Converts web pages into comic-style visual summaries so dense information is faster to absorb and easier to share. Generative AI turns long articles into a sequential, illustrated storyboard on demand.",
     "PromptArt": "A graph-native system for crowdsourced generative-AI content transformation, attribution, and value circulation. It treats generation, provenance, and settlement as one connected graph so contributions stay traceable and rewardable."
   };
-  var PROJECT_APP = { "ModelMesh": "LLM", "PromptArt": "Media & Consumer" };
+  var PROJECT_APP = { "ModelMesh: Open-Source Multi-Provider AI Routing": "LLM", "PromptArt": "Media & Consumer" };
   (window.RECENT_PROJECT_CARDS || []).filter(function (c) { return PROJ_DESC[c.title]; }).forEach(function (c) {
     items.push({
       type: "Research Project", app: PROJECT_APP[c.title] || classifyApp(c.title + " " + (c.description || "")),

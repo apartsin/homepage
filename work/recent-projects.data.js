@@ -37,7 +37,7 @@ window.RECENT_PROJECT_CARDS = [
     image: "../assets/work/projects/img-005-d899c3be44.png",
     imageAlt: "ModelMesh project visual",
     eyebrow: "",
-    title: "ModelMesh",
+    title: "ModelMesh: Open-Source Multi-Provider AI Routing",
     description: "A unified integration point across AI model providers, aimed at simplifying multi-provider routing, evaluation, and product integration.",
     links: [
       { label: "GitHub", href: "https://github.com/ApartsinProjects/ModelMesh" },

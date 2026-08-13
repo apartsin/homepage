@@ -33,7 +33,7 @@
         },
         {
           eyebrow: 'Projects',
-          title: 'ModelMesh',
+          title: 'ModelMesh: Open-Source Multi-Provider AI Routing',
           meta: 'One integration point for all your AI providers.',
           image: '/onesite/assets/work/projects/img-005-d899c3be44.png',
           links: [{ label: 'GitHub', href: 'https://github.com/ApartsinProjects/ModelMesh' }],
