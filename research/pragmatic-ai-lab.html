@@ -56,13 +56,22 @@
     .student-card__avatar { flex: 0 0 auto; width: 34px; height: 34px; border-radius: 50%; background: rgba(29,78,216,0.08); border: 1px solid var(--site-border); display: grid; place-items: center; color: #1d4ed8; }
     .student-card__avatar svg { width: 20px; height: 20px; }
     .student-card__name { font: 700 0.84rem/1.25 "Manrope", "Segoe UI", sans-serif; color: var(--site-text); }
-    .lab-pubs { margin: 16px 0 0; padding: 0; list-style: none; display: grid; gap: 12px; }
-    .lab-pub { position: relative; padding: 14px 16px 15px 18px; border: 1px solid var(--site-border); border-radius: 12px; background: #fff; box-shadow: 0 6px 16px rgba(35,30,23,0.05); overflow: hidden; }
-    .lab-pub::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 5px; background: linear-gradient(180deg, rgba(46,125,90,0.9), rgba(14,116,144,0.75)); }
-    .lab-pub__title { margin: 0; font: 800 0.98rem/1.35 "Manrope", "Segoe UI", sans-serif; }
-    .lab-pub__title a { color: var(--site-text); text-decoration: none; }
-    .lab-pub__title a:hover { color: #1d4ed8; text-decoration: underline; }
-    .lab-pub__meta { margin: 4px 0 0; color: var(--site-muted); font: 600 0.8rem/1.45 "Manrope", sans-serif; }
+    .pub-list { margin: 16px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 12px; list-style: none; padding: 0; }
+    .pub-card { position: relative; border: 1px solid var(--site-border); border-radius: 15px; border-left: 4px solid rgba(24, 101, 168, 0.65); background: linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(249,251,255,0.94) 100%); box-shadow: 0 9px 22px rgba(35,30,23,0.06); padding: 13px 16px 14px 18px; display: grid; gap: 6px; }
+    .pub-card--with-publisher { padding-bottom: 42px; }
+    .pub-card__publisher { position: absolute; bottom: 10px; right: 12px; display: inline-flex; align-items: center; justify-content: center; height: 26px; padding: 0 8px; border-radius: 6px; background: #fff; border: 1px solid var(--site-border); box-shadow: 0 2px 6px rgba(0,0,0,0.08); text-decoration: none; transition: transform 150ms ease, box-shadow 150ms ease; }
+    .pub-card__publisher:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.16); }
+    .pub-card__publisher img { display: block; height: 18px; width: auto; object-fit: contain; }
+    .pub-card__top { display: flex; align-items: center; justify-content: flex-start; gap: 8px; margin-bottom: 2px; }
+    .pub-card__year { display: inline-flex; align-items: center; justify-content: center; min-width: 58px; min-height: 25px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--site-border); background: rgba(133,114,81,0.11); color: var(--site-text); font: 800 0.72rem/1 "Manrope", "Segoe UI", sans-serif; letter-spacing: 0.05em; }
+    .pub-card__type { display: inline-flex; align-items: center; justify-content: center; min-height: 25px; padding: 2px 9px; border-radius: 999px; border: 1px solid var(--site-border); background: rgba(24,101,168,0.08); color: #164a83; font: 800 0.68rem/1 "Manrope", "Segoe UI", sans-serif; letter-spacing: 0.04em; text-transform: uppercase; }
+    .pub-card__title { margin: 0; color: var(--site-text); font: 800 0.96rem/1.42 "Manrope", "Segoe UI", sans-serif; }
+    .pub-card__meta { margin: 0; color: var(--site-muted); font: 600 0.82rem/1.52 "Manrope", "Segoe UI", sans-serif; }
+    .pub-card__author-self { display: inline-flex; align-items: center; padding: 0 6px; border: 1px solid rgba(24,101,168,0.26); border-radius: 999px; background: rgba(24,101,168,0.09); color: #164a83; font-weight: 800; line-height: 1.35; white-space: nowrap; }
+    .pub-card__venue { margin: 0; color: #164a83; font: 700 0.79rem/1.45 "Manrope", "Segoe UI", sans-serif; }
+    .pub-card__venue a { color: #164a83; text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.2px; }
+    .pub-card__venue a:hover { color: #123a67; }
+    .pub-card__summary { margin: 4px 0 0; color: var(--site-muted); font: 400 0.9rem/1.5 "Source Serif 4", Georgia, serif; }
     /* Evolving Research Systems shows only current systems, with no Current/Past subheadings. */
     #research-projects-grid .repo-grid__section-heading { display: none; }
     #research-projects-grid .repo-card--past { display: none; }
@@ -129,20 +138,20 @@
           </li>
 
           <li class="lab-card">
-            <figure class="lab-card__media"><img src="../assets/heroes/labcard-samsung-detect.jpg" alt="Automatic Detection of Image Distortions illustration" loading="lazy"></figure>
-            <h3 class="lab-card__title">Automatic Detection of Image Distortions</h3>
+            <figure class="lab-card__media"><img src="../assets/heroes/labcard-samsung-detect.jpg" alt="Perceived Quality of Pixel Interpolation illustration" loading="lazy"></figure>
+            <h3 class="lab-card__title">A Deep Learning Model for the Perceived Quality of Pixel Interpolation (QPI)</h3>
             <p class="lab-card__meta">Dvir Manos, Tomer Portal, Yehonatan Rabuah, Inbal Bolshinsky, Almog Sasson</p>
             <p class="lab-samsung">🤝 Samsung R&amp;D Center collaboration</p>
-            <p class="lab-card__desc">An industry collaboration with Samsung R&amp;D Center on automatically detecting distortions and quality defects in captured images, so degraded frames can be identified and flagged before they reach downstream processing.</p>
+            <p class="lab-card__desc">An industry collaboration with Samsung R&amp;D Center: a deep learning model that mimics human raters, assigning perceived-quality labels to interpolated pixel patches in camera ISP pipelines, so new interpolation methods can be evaluated automatically and development cycles shortened.</p>
             <p class="lab-card__links"><a href="https://drive.google.com/file/d/1qBp_HnEWmnhr-QNYuJ1nzM9HEAoGCW0p/view?usp=sharing" target="_blank" rel="noopener noreferrer">Presentation</a></p>
           </li>
 
           <li class="lab-card">
-            <figure class="lab-card__media"><img src="../assets/heroes/labcard-samsung-classify.jpg" alt="Classification of Image Distortion Types illustration" loading="lazy"></figure>
-            <h3 class="lab-card__title">Classification of Image Distortion Types</h3>
+            <figure class="lab-card__media"><img src="../assets/heroes/labcard-samsung-classify.jpg" alt="Detecting and classifying image distortions illustration" loading="lazy"></figure>
+            <h3 class="lab-card__title">Detecting and Classifying Image Distortions from Sensor Capture and ISP Pipelines</h3>
             <p class="lab-card__meta">Linoy Avraham, Yanun Zruk, Boaz Atya</p>
             <p class="lab-samsung">🤝 Samsung R&amp;D Center collaboration</p>
-            <p class="lab-card__desc">An industry collaboration with Samsung R&amp;D Center on identifying which type of distortion is present in a degraded image, so each frame can be routed to the right correction rather than a one-size-fits-all fix.</p>
+            <p class="lab-card__desc">An industry collaboration with Samsung R&amp;D Center: generating synthetic sensor and ISP distortions (blur, banding, moir&eacute;, color shifts) and training a model to detect and classify the distortion present, so degraded frames can be flagged and routed to the right correction.</p>
             <p class="lab-card__links"><a href="https://docs.google.com/presentation/d/1A-_i3A284kQrajo-q5dSvWSyeyRjVPJc/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Presentation</a></p>
           </li>
 
@@ -197,16 +206,24 @@
 
         <h2 class="lab-heading" style="margin-top: 36px;">Publications</h2>
         <p class="lab-heading-lede">Papers from the lab and the frameworks its student projects build on.</p>
-        <ul class="lab-pubs" aria-label="Publications">
-          <li class="lab-pub">
-            <p class="lab-pub__title"><a href="https://apartsinprojects.github.io/CoEval/paper/" target="_blank" rel="noopener noreferrer">CoEval: Ranking Language Models for Custom Tasks Without Labeled Data or Trustworthy Benchmarks</a></p>
-            <p class="lab-pub__meta">Alexander Apartsin, Yehudit Aperstein &middot; Preprint</p>
+        <ol class="pub-list" aria-label="Publications">
+          <li class="pub-card pub-card--with-publisher" id="pub-2026-coeval">
+            <div class="pub-card__top"><span class="pub-card__year">2026</span><span class="pub-card__type">Preprint</span></div>
+            <h3 class="pub-card__title">CoEval: Ranking Language Models for Custom Tasks Without Labeled Data or Trustworthy Benchmarks</h3>
+            <p class="pub-card__meta"><span class="pub-card__author-self">A Apartsin</span>, Y Aperstein</p>
+            <p class="pub-card__venue"><a href="https://arxiv.org/abs/2606.03650" target="_blank" rel="noopener noreferrer">arXiv preprint (arXiv:2606.03650)</a></p>
+            <p class="pub-card__summary">CoEval ranks language models for a custom task without labeled data or a trusted benchmark, deriving a reliable ordering from the models&rsquo; mutual agreement and cross-evaluation. It evaluates capability with no ground-truth supervision, extracting a trustworthy verdict from consensus rather than labels.</p>
+            <a class="pub-card__publisher" aria-label="arXiv" href="https://arxiv.org/abs/2606.03650" target="_blank" rel="noopener noreferrer"><img src="../assets/publishers/arxiv.jpg" alt="arXiv" loading="lazy" decoding="async"></a>
           </li>
-          <li class="lab-pub">
-            <p class="lab-pub__title"><a href="https://arxiv.org/abs/2606.05983" target="_blank" rel="noopener noreferrer">Framing, Judging, Steering: An Assessable Competency Model for Teaching Students to Reason With Generative AI</a></p>
-            <p class="lab-pub__meta">Alexander Apartsin, Yehudit Aperstein &middot; arXiv, 2026</p>
+          <li class="pub-card pub-card--with-publisher" id="pub-2026-coreason">
+            <div class="pub-card__top"><span class="pub-card__year">2026</span><span class="pub-card__type">Preprint</span></div>
+            <h3 class="pub-card__title">Framing, Judging, Steering: An Assessable Competency Model for Teaching Students to Reason With Generative AI</h3>
+            <p class="pub-card__meta"><span class="pub-card__author-self">A Apartsin</span>, Y Aperstein</p>
+            <p class="pub-card__venue"><a href="https://arxiv.org/abs/2606.05983" target="_blank" rel="noopener noreferrer">arXiv preprint (arXiv:2606.05983)</a></p>
+            <p class="pub-card__summary">This work defines an assessable competency model, framing, judging, and steering, for teaching students to reason effectively with generative AI. It formalizes how a person evaluates and directs a model&rsquo;s reasoning without full visibility into its internal state, coordinating with an opaque collaborator.</p>
+            <a class="pub-card__publisher" aria-label="arXiv" href="https://arxiv.org/abs/2606.05983" target="_blank" rel="noopener noreferrer"><img src="../assets/publishers/arxiv.jpg" alt="arXiv" loading="lazy" decoding="async"></a>
           </li>
-        </ul>
+        </ol>
 
         <h2 class="lab-heading" style="margin-top: 36px;">Students</h2>
         <p class="lab-heading-lede">Students who contributed to the projects above.</p>
