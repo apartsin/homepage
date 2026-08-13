@@ -5,7 +5,7 @@
       cards: [
         {
           eyebrow: 'Projects',
-          title: 'CoEval',
+          title: 'CoEval: Reference-Free LLM Ranking via Teacher-Student-Judge Consensus',
           meta: 'Ensemble-based self-evaluation for LLMs.',
           image: '/onesite/shared-media/www-apartsin-com/assets/projects/img-001-fb77b1216b-8eb56d64b6.jpg',
           links: [{ label: 'GitHub', href: 'https://github.com/ApartsinProjects/CoEval' }],

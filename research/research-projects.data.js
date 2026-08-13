@@ -62,7 +62,7 @@ window.RESEARCH_PROJECT_CARDS = [
     image: "https://raw.githubusercontent.com/ApartsinProjects/PromptForge/main/assets/hero.png",
     imageAlt: "AttrForge: a prompt being shaped on a forge anvil with three critic agents (attribute verifier, diversity auditor, realism discriminator) sending structured feedback in a closed loop",
     theme: "Spec-Driven GenAI",
-    title: "AttrForge",
+    title: "AttrForge: Multi-Objective Prompt Optimization for Synthetic Data",
     description: "Multi-objective prompt optimization for synthetic data generation. A generator LLM produces samples conditioned on explicit attribute vectors; three independent LLM critics (attribute verifier, realism discriminator, diversity auditor) score each batch; a prompt updater rewrites the generator prompt from their structured feedback. The optimized variable is the prompt, not the weights, targeting attribute fidelity, realism, and diversity simultaneously.",
     links: [
       { label: "GitHub", href: "https://github.com/ApartsinProjects/PromptForge" }
@@ -107,7 +107,7 @@ window.RESEARCH_PROJECT_CARDS = [
     image: "../assets/research/research-projects/coreason-readme-hero.png",
     imageAlt: "CoReason README hero visual",
     theme: "Sparse Multi-Agent AI",
-    title: "CoReason",
+    title: "CoReason: An AI-Native Platform for Practicing Reasoning with LLMs",
     description: "AI-native learning platform where students practice reasoning with LLMs through iterative critique-and-improvement loops. Supports structured assessment, multilingual content, and course-integrated reporting.",
     links: [
       { label: "GitHub", href: "https://github.com/ApartsinProjects/CoReason" }
@@ -117,7 +117,7 @@ window.RESEARCH_PROJECT_CARDS = [
     image: "../assets/research/research-projects/coeval-banner.jpg",
     imageAlt: "CoEval project visual",
     theme: "Sparse Multi-Agent AI",
-    title: "CoEval",
+    title: "CoEval: Reference-Free LLM Ranking via Teacher-Student-Judge Consensus",
     description: "Ensemble-based LLM evaluation framework where models rotate through teacher, student, and judge roles to build synthetic benchmarks. Generates interactive analysis reports with multi-provider support.",
     links: [
       { label: "GitHub", href: "https://github.com/ApartsinProjects/CoEval" }
@@ -127,7 +127,7 @@ window.RESEARCH_PROJECT_CARDS = [
     image: "../assets/research/research-projects/stablesteering-banner.png",
     imageAlt: "StableSteering project visual",
     theme: "Spec-Driven GenAI",
-    title: "StableSteering",
+    title: "StableSteering: Preference-Guided Interactive Diffusion Steering",
     description: "Interactive diffusion steering system that moves from a text prompt into preference-guided image refinement loops. Ships with a FastAPI runtime, session tracing, and GPU-backed Diffusers integration.",
     links: [
       { label: "GitHub", href: "https://github.com/ApartsinProjects/StableSteering" }
@@ -137,7 +137,7 @@ window.RESEARCH_PROJECT_CARDS = [
     image: "../assets/research/vigor-hero.png",
     imageAlt: "VIGOR speculative code generation visual",
     theme: "Spec-Driven GenAI",
-    title: "VIGOR",
+    title: "VIGOR: Forward-Only Incremental Code Generation with Gating",
     description: "Incremental code generation under a forward-only commit protocol with structured gating. Each step commits one line to an immutable prefix and records machine-readable traces for process-level analysis.",
     links: [
       { label: "GitHub", href: "https://github.com/ApartsinProjects/SpeculativeCodeGeneration" }
