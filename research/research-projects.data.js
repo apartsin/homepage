@@ -1,15 +1,5 @@
 window.RESEARCH_PROJECT_CARDS = [
   {
-    image: "https://raw.githubusercontent.com/ApartsinProjects/EMR-ACH/master/paper/figures/hero_emr_ach.png",
-    imageAlt: "EMR-ACH evidence matrix diagram showing articles decomposed across competing hypotheses",
-    theme: "Robust Language",
-    title: "EMR-ACH",
-    description: "LLM geopolitical forecasting reframed as a structured evidence matrix using Heuer's Analysis of Competing Hypotheses. Covers contrastive indicator generation, diagnostic weighting, and a multi-agent adversarial variant, benchmarked on leakage-clean forecasting, GDELT, and earnings tracks.",
-    links: [
-      { label: "GitHub", href: "https://github.com/ApartsinProjects/EMR-ACH" }
-    ]
-  },
-  {
     image: "../assets/research/research-projects/implicit-entities-hero.png",
     imageAlt: "Contextual text fragments connected by glowing lines converging on a hidden entity silhouette",
     theme: "Robust Language",
@@ -66,17 +56,6 @@ window.RESEARCH_PROJECT_CARDS = [
     description: "Multi-objective prompt optimization for synthetic data generation. A generator LLM produces samples conditioned on explicit attribute vectors; three independent LLM critics (attribute verifier, realism discriminator, diversity auditor) score each batch; a prompt updater rewrites the generator prompt from their structured feedback. The optimized variable is the prompt, not the weights, targeting attribute fidelity, realism, and diversity simultaneously.",
     links: [
       { label: "GitHub", href: "https://github.com/ApartsinProjects/PromptForge" }
-    ]
-  },
-  {
-    image: "https://raw.githubusercontent.com/ApartsinProjects/AutoAD/main/assets/hero.png",
-    imageAlt: "Leave-cluster-out validation on a normal-data manifold: clusters held out as pseudo-anomalies to rank anomaly detectors without labels",
-    theme: "Robust Signals",
-    title: "AutoAD",
-    description: "Unsupervised model selection for anomaly detection when no anomaly labels exist. Introduces Leave-Cluster-Out (LCO) validation: hold out a normal-data cluster as a pseudo-anomaly and rank detectors by how well they separate it. Combined with structured synthetic perturbations and prediction-residual consistency via an anomaly-type-aware rank-fusion combiner, targeting sub-0.05 VUS-PR regret on the TSB-AD benchmark.",
-    links: [
-      { label: "GitHub", href: "https://github.com/ApartsinProjects/AutoAD" },
-      { label: "Paper blueprint", href: "https://apartsinprojects.github.io/AutoAD/" }
     ]
   },
   {
