@@ -40,6 +40,7 @@
     .lab-card__desc { margin: 3px 0 0; color: var(--site-muted); font: 400 0.88rem/1.55 "Source Serif 4", Georgia, serif; }
     .lab-card__links { margin: auto 0 0; padding-top: 8px; font: 700 0.78rem/1.4 "Manrope", sans-serif; }
     .lab-card__links a { color: #1d4ed8; text-decoration: underline; text-underline-offset: 2px; }
+    .lab-samsung { margin: 1px 0 0; align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; padding: 4px 11px; border-radius: 999px; border: 1px solid rgba(20,64,160,0.28); background: rgba(20,64,160,0.07); color: #1428a0; font: 800 0.68rem/1.15 "Manrope", "Segoe UI", sans-serif; letter-spacing: 0.02em; }
 
     .lab-empty {
       margin-top: 16px; padding: 26px 24px; text-align: center;
@@ -47,14 +48,23 @@
       background: rgba(29,78,216,0.03);
       color: var(--site-muted); font: 600 0.95rem/1.6 "Manrope", "Segoe UI", sans-serif;
     }
-    .lab-students { margin: 16px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 9px; }
-    .lab-students a, .lab-students span {
-      display: inline-flex; align-items: center; padding: 7px 14px; border-radius: 999px;
-      border: 1px solid var(--site-border); background: #fff; text-decoration: none;
-      color: var(--site-text); font: 700 0.84rem/1 "Manrope", "Heebo", "Segoe UI", sans-serif;
-      transition: background 120ms ease, border-color 120ms ease;
-    }
-    .lab-students a:hover { background: rgba(29,78,216,0.06); border-color: rgba(29,78,216,0.4); color: #1d4ed8; }
+    .lab-student-grid { margin: 16px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(165px, 1fr)); gap: 10px; }
+    .student-card { border: 1px solid var(--site-border); border-radius: 12px; background: #fff; box-shadow: 0 4px 12px rgba(35,30,23,0.04); transition: border-color 120ms ease, background 120ms ease; }
+    .student-card:hover { border-color: rgba(29,78,216,0.4); background: rgba(29,78,216,0.03); }
+    .student-card__inner { display: flex; align-items: center; gap: 10px; padding: 9px 12px; text-decoration: none; color: inherit; }
+    .student-card__avatar { flex: 0 0 auto; width: 34px; height: 34px; border-radius: 50%; background: rgba(29,78,216,0.08); border: 1px solid var(--site-border); display: grid; place-items: center; color: #1d4ed8; }
+    .student-card__avatar svg { width: 20px; height: 20px; }
+    .student-card__name { font: 700 0.84rem/1.25 "Manrope", "Segoe UI", sans-serif; color: var(--site-text); }
+    .lab-pubs { margin: 16px 0 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+    .lab-pub { position: relative; padding: 14px 16px 15px 18px; border: 1px solid var(--site-border); border-radius: 12px; background: #fff; box-shadow: 0 6px 16px rgba(35,30,23,0.05); overflow: hidden; }
+    .lab-pub::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 5px; background: linear-gradient(180deg, rgba(46,125,90,0.9), rgba(14,116,144,0.75)); }
+    .lab-pub__title { margin: 0; font: 800 0.98rem/1.35 "Manrope", "Segoe UI", sans-serif; }
+    .lab-pub__title a { color: var(--site-text); text-decoration: none; }
+    .lab-pub__title a:hover { color: #1d4ed8; text-decoration: underline; }
+    .lab-pub__meta { margin: 4px 0 0; color: var(--site-muted); font: 600 0.8rem/1.45 "Manrope", sans-serif; }
+    /* Evolving Research Systems shows only current systems, with no Current/Past subheadings. */
+    #research-projects-grid .repo-grid__section-heading { display: none; }
+    #research-projects-grid .repo-card--past { display: none; }
   </style>
 </head>
 <body class="apartsin-shell-active" data-site-section="research">
@@ -119,15 +129,17 @@
           <li class="lab-card">
             <figure class="lab-card__media"><img src="../assets/heroes/labcard-samsung-detect.jpg" alt="Automatic Detection of Image Distortions illustration" loading="lazy"></figure>
             <h3 class="lab-card__title">Automatic Detection of Image Distortions</h3>
-            <p class="lab-card__meta"><span lang="he" dir="rtl">מנוס דביר, פורטל תומר, רבוח יהונתן, בולשינסקי ענבל, ששון אלמוג</span></p>
-            <p class="lab-card__desc">An industry collaboration with Samsung on automatically detecting distortions and quality defects in captured images, so degraded frames can be identified and flagged before they reach downstream processing.</p>
+            <p class="lab-card__meta">Dvir Manos, Tomer Portal, Yehonatan Rabuah, Inbal Bolshinsky, Almog Sasson</p>
+            <p class="lab-samsung">🤝 Samsung R&amp;D Center collaboration</p>
+            <p class="lab-card__desc">An industry collaboration with Samsung R&amp;D Center on automatically detecting distortions and quality defects in captured images, so degraded frames can be identified and flagged before they reach downstream processing.</p>
           </li>
 
           <li class="lab-card">
             <figure class="lab-card__media"><img src="../assets/heroes/labcard-samsung-classify.jpg" alt="Classification of Image Distortion Types illustration" loading="lazy"></figure>
             <h3 class="lab-card__title">Classification of Image Distortion Types</h3>
             <p class="lab-card__meta">Linoy Avraham, Yanun Zruk, Boaz Atya</p>
-            <p class="lab-card__desc">An industry collaboration with Samsung on identifying which type of distortion is present in a degraded image, so each frame can be routed to the right correction rather than a one-size-fits-all fix.</p>
+            <p class="lab-samsung">🤝 Samsung R&amp;D Center collaboration</p>
+            <p class="lab-card__desc">An industry collaboration with Samsung R&amp;D Center on identifying which type of distortion is present in a degraded image, so each frame can be routed to the right correction rather than a one-size-fits-all fix.</p>
             <p class="lab-card__links"><a href="https://docs.google.com/presentation/d/1A-_i3A284kQrajo-q5dSvWSyeyRjVPJc/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Presentation</a></p>
           </li>
 
@@ -144,7 +156,7 @@
             <h3 class="lab-card__title">StableSteering: Human-Preference Feedback for Interactive Image Generation</h3>
             <p class="lab-card__meta">Noam Hadad</p>
             <p class="lab-card__desc">Extends the lab&rsquo;s StableSteering image-generation platform with richer human feedback: style calibration from a few chosen images, per-dimension quality ratings, drag-to-rank priority weighting, and transparent preference analytics, so the system learns a user&rsquo;s taste faster and more legibly.</p>
-            <p class="lab-card__links"><a href="https://github.com/NoamHadad2/StableSteering" target="_blank" rel="noopener noreferrer">Student fork</a> &middot; <a href="https://github.com/ApartsinProjects/StableSteering" target="_blank" rel="noopener noreferrer">Base platform</a> &middot; <a href="https://github.com/NoamHadad2/StableSteering/blob/main/taste_profile_presentation.pptx" target="_blank" rel="noopener noreferrer">Presentation</a></p>
+            <p class="lab-card__links"><a href="https://github.com/NoamHadad2/StableSteering" target="_blank" rel="noopener noreferrer">Repo</a> &middot; <a href="https://github.com/NoamHadad2/StableSteering/blob/main/taste_profile_presentation.pptx" target="_blank" rel="noopener noreferrer">Presentation</a></p>
           </li>
 
           <li class="lab-card">
@@ -152,7 +164,7 @@
             <h3 class="lab-card__title">StableSteering: Convergence Detection and Critique-Based Feedback</h3>
             <p class="lab-card__meta">Tomer Atia</p>
             <p class="lab-card__desc">The lab&rsquo;s StableSteering platform could not tell why a user preferred an output, or when steering had converged. This project adds convergence detection and a critique-tagging feedback mode; critique mode reached 38% higher accuracy than scalar ratings across 54 synthetic sessions.</p>
-            <p class="lab-card__links"><a href="https://github.com/Tomeratia/StableSteering/tree/feature/convergence-and-critique-feedback" target="_blank" rel="noopener noreferrer">Student fork</a> &middot; <a href="https://github.com/ApartsinProjects/StableSteering" target="_blank" rel="noopener noreferrer">Base platform</a></p>
+            <p class="lab-card__links"><a href="https://github.com/Tomeratia/StableSteering/tree/feature/convergence-and-critique-feedback" target="_blank" rel="noopener noreferrer">Repo</a></p>
           </li>
 
           <li class="lab-card">
@@ -168,7 +180,7 @@
             <h3 class="lab-card__title">CoEval: On-Demand Benchmark Generation for Ranking LLMs in Phishing Detection</h3>
             <p class="lab-card__meta">Guy Yogev</p>
             <p class="lab-card__desc">Phishing-detection benchmarks are old and likely leaked into training data. MailRank generates a fresh three-way phishing benchmark on demand with the CoEval framework and validates it against real data; the small, free gemini-2.5-flash-lite ranked best, beating larger paid models.</p>
-            <p class="lab-card__links"><a href="https://github.com/guy-yo/MailRank" target="_blank" rel="noopener noreferrer">Repository</a> &middot; <a href="https://github.com/ApartsinProjects/CoEval" target="_blank" rel="noopener noreferrer">CoEval framework</a></p>
+            <p class="lab-card__links"><a href="https://github.com/guy-yo/MailRank" target="_blank" rel="noopener noreferrer">Repository</a></p>
           </li>
 
           <li class="lab-card">
@@ -176,26 +188,40 @@
             <h3 class="lab-card__title">CoEval: Reference-Free LLM Ranking for Specialized Clinical Domains</h3>
             <p class="lab-card__meta">Niv Saban</p>
             <p class="lab-card__desc">General English benchmarks cannot rank models for Israeli special-education speech-language pathology. Using CoEval with no pre-labeled data and 40 Hebrew clinical scenarios, this project produces clinically grounded, task-specific rankings validated by a certified SLP.</p>
-            <p class="lab-card__links"><a href="https://github.com/nivsab/CoEval-special_ed" target="_blank" rel="noopener noreferrer">Repository</a> &middot; <a href="https://apartsinprojects.github.io/CoEval/paper/" target="_blank" rel="noopener noreferrer">CoEval paper</a></p>
+            <p class="lab-card__links"><a href="https://github.com/nivsab/CoEval-special_ed" target="_blank" rel="noopener noreferrer">Repository</a></p>
+          </li>
+        </ul>
+
+        <h2 class="lab-heading" style="margin-top: 36px;">Publications</h2>
+        <p class="lab-heading-lede">Papers from the lab and the frameworks its student projects build on.</p>
+        <ul class="lab-pubs" aria-label="Publications">
+          <li class="lab-pub">
+            <p class="lab-pub__title"><a href="https://apartsinprojects.github.io/CoEval/paper/" target="_blank" rel="noopener noreferrer">CoEval: Ranking Language Models for Custom Tasks Without Labeled Data or Trustworthy Benchmarks</a></p>
+            <p class="lab-pub__meta">Alexander Apartsin, Yehudit Aperstein &middot; Preprint</p>
+          </li>
+          <li class="lab-pub">
+            <p class="lab-pub__title"><a href="https://arxiv.org/abs/2606.05983" target="_blank" rel="noopener noreferrer">Framing, Judging, Steering: An Assessable Competency Model for Teaching Students to Reason With Generative AI</a></p>
+            <p class="lab-pub__meta">Alexander Apartsin, Yehudit Aperstein &middot; arXiv, 2026</p>
           </li>
         </ul>
 
         <h2 class="lab-heading" style="margin-top: 36px;">Students</h2>
         <p class="lab-heading-lede">Students who contributed to the projects above.</p>
-        <ul class="lab-students" aria-label="Participating students">
-          <li><a href="https://github.com/NoamHadad2" target="_blank" rel="noopener noreferrer">Noam Hadad</a></li>
-          <li><a href="https://github.com/Tomeratia" target="_blank" rel="noopener noreferrer">Tomer Atia</a></li>
-          <li><a href="https://github.com/nivsab" target="_blank" rel="noopener noreferrer">Niv Saban</a></li>
-          <li><a href="https://github.com/itaym26" target="_blank" rel="noopener noreferrer">Itay Matana</a></li>
-          <li><a href="https://github.com/guy-yo" target="_blank" rel="noopener noreferrer">Guy Yogev</a></li>
-          <li><span lang="he" dir="rtl">מנוס דביר</span></li>
-          <li><span lang="he" dir="rtl">פורטל תומר</span></li>
-          <li><span lang="he" dir="rtl">רבוח יהונתן</span></li>
-          <li><span lang="he" dir="rtl">בולשינסקי ענבל</span></li>
-          <li><span lang="he" dir="rtl">ששון אלמוג</span></li>
-          <li><span>Linoy Avraham</span></li>
-          <li><span>Yanun Zruk</span></li>
-          <li><span>Boaz Atya</span></li>
+        <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="lab-ava" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="1.6"></circle><path d="M4.5 20c0-4 3.4-6.5 7.5-6.5s7.5 2.5 7.5 6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></symbol></svg>
+        <ul class="lab-student-grid" aria-label="Participating students">
+          <li class="student-card"><a class="student-card__inner" href="https://github.com/NoamHadad2" target="_blank" rel="noopener noreferrer"><span class="student-card__avatar"><svg aria-hidden="true"><use href="#lab-ava"></use></svg></span><span class="student-card__name">Noam Hadad</span></a></li>
+          <li class="student-card"><a class="student-card__inner" href="https://github.com/Tomeratia" target="_blank" rel="noopener noreferrer"><span class="student-card__avatar"><svg aria-hidden="true"><use href="#lab-ava"></use></svg></span><span class="student-card__name">Tomer Atia</span></a></li>
+          <li class="student-card"><a class="student-card__inner" href="https://github.com/nivsab" target="_blank" rel="noopener noreferrer"><span class="student-card__avatar"><svg aria-hidden="true"><use href="#lab-ava"></use></svg></span><span class="student-card__name">Niv Saban</span></a></li>
+          <li class="student-card"><a class="student-card__inner" href="https://github.com/itaym26" target="_blank" rel="noopener noreferrer"><span class="student-card__avatar"><svg aria-hidden="true"><use href="#lab-ava"></use></svg></span><span class="student-card__name">Itay Matana</span></a></li>
+          <li class="student-card"><a class="student-card__inner" href="https://github.com/guy-yo" target="_blank" rel="noopener noreferrer"><span class="student-card__avatar"><svg aria-hidden="true"><use href="#lab-ava"></use></svg></span><span class="student-card__name">Guy Yogev</span></a></li>
+          <li class="student-card"><span class="student-card__inner"><span class="student-card__avatar"><svg aria-hidden="true"><use href="#lab-ava"></use></svg></span><span class="student-card__name">Dvir Manos</span></span></li>
+          <li class="student-card"><span class="student-card__inner"><span class="student-card__avatar"><svg aria-hidden="true"><use href="#lab-ava"></use></svg></span><span class="student-card__name">Tomer Portal</span></span></li>
+          <li class="student-card"><span class="student-card__inner"><span class="student-card__avatar"><svg aria-hidden="true"><use href="#lab-ava"></use></svg></span><span class="student-card__name">Yehonatan Rabuah</span></span></li>
+          <li class="student-card"><span class="student-card__inner"><span class="student-card__avatar"><svg aria-hidden="true"><use href="#lab-ava"></use></svg></span><span class="student-card__name">Inbal Bolshinsky</span></span></li>
+          <li class="student-card"><span class="student-card__inner"><span class="student-card__avatar"><svg aria-hidden="true"><use href="#lab-ava"></use></svg></span><span class="student-card__name">Almog Sasson</span></span></li>
+          <li class="student-card"><span class="student-card__inner"><span class="student-card__avatar"><svg aria-hidden="true"><use href="#lab-ava"></use></svg></span><span class="student-card__name">Linoy Avraham</span></span></li>
+          <li class="student-card"><span class="student-card__inner"><span class="student-card__avatar"><svg aria-hidden="true"><use href="#lab-ava"></use></svg></span><span class="student-card__name">Yanun Zruk</span></span></li>
+          <li class="student-card"><span class="student-card__inner"><span class="student-card__avatar"><svg aria-hidden="true"><use href="#lab-ava"></use></svg></span><span class="student-card__name">Boaz Atya</span></span></li>
         </ul>
 
         <section class="section-quick-links" style="margin-top: 30px;">
@@ -225,6 +251,16 @@
   </div>
   <script defer src="./research-projects.data.js"></script>
   <script defer src="./research-projects.js"></script>
+  <script>
+    // Page-scoped: hide selected research-project cards from this lab page only.
+    document.addEventListener("DOMContentLoaded", function () {
+      var drop = ["EMR-ACH", "AutoAD"];
+      document.querySelectorAll("#research-projects-grid .repo-card").forEach(function (c) {
+        var t = c.querySelector(".repo-card__title");
+        if (t && drop.indexOf(t.textContent.trim()) !== -1) { c.remove(); }
+      });
+    });
+  </script>
   <script defer src="../shared/unified-enhance.js"></script>
   <script defer src="../shared/site-shell.js"></script>
 </body>
