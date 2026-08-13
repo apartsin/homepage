@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <meta name="description" content="The H.I.T. Pragmatic AI Lab hosts research projects in state-of-the-art artificial intelligence and gives HIT students the opportunity to take part directly in research, contribute to experiments and publications, and gain hands-on experience with emerging AI methods beyond standard coursework.">
+  <title>H.I.T. Pragmatic AI Lab | Alexander (Sasha) Apartsin</title>
+  <link rel="stylesheet" href="../shared/site-shell.css">
+  <link rel="stylesheet" href="../shared/unified-theme.css">
+  <link rel="stylesheet" href="../shared/research-projects-cards.css">
+  <style>
+    .pragmatic-ai { font-weight: 800; color: #1d4ed8; letter-spacing: -0.01em; }
+
+    .lab-heading { margin: 30px 0 2px; color: var(--site-text); font: 800 1.12rem/1.2 "Manrope", sans-serif; letter-spacing: -0.01em; padding-bottom: 7px; border-bottom: 2px solid var(--site-accent, #9c5a2e); }
+    .lab-heading-lede { margin: 8px 0 0; color: var(--site-muted); font: 600 0.92rem/1.55 "Manrope", sans-serif; }
+
+    .lab-grid {
+      margin-top: 16px; display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 14px; list-style: none; padding: 0;
+    }
+    .lab-card {
+      position: relative; display: flex; flex-direction: column; gap: 7px;
+      border: 1px solid var(--site-border); border-radius: 14px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(249,251,255,0.95) 100%);
+      box-shadow: 0 8px 20px rgba(35, 30, 23, 0.06);
+      padding: 15px 17px 16px; overflow: hidden;
+    }
+    .lab-card::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 5px; background: linear-gradient(180deg, rgba(29,78,216,0.9), rgba(14,116,144,0.75)); }
+    .lab-card__tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .lab-tag { font: 800 0.66rem/1 "Manrope", sans-serif; text-transform: uppercase; letter-spacing: 0.03em; padding: 4px 8px; border-radius: 999px; border: 1px solid rgba(29,78,216,0.24); color: #1d4ed8; background: rgba(29,78,216,0.07); }
+    .lab-card__title { margin: 1px 0 0; color: var(--site-text); font: 800 1rem/1.32 "Manrope", "Segoe UI", sans-serif; }
+    .lab-card__meta { margin: 0; color: var(--site-muted); font: 600 0.78rem/1.45 "Manrope", sans-serif; }
+    .lab-card__desc { margin: 3px 0 0; color: var(--site-muted); font: 400 0.88rem/1.55 "Source Serif 4", Georgia, serif; }
+    .lab-card__links { margin: auto 0 0; padding-top: 8px; font: 700 0.78rem/1.4 "Manrope", sans-serif; }
+    .lab-card__links a { color: #1d4ed8; text-decoration: underline; text-underline-offset: 2px; }
+
+    .lab-empty {
+      margin-top: 16px; padding: 26px 24px; text-align: center;
+      border: 1px dashed var(--site-border, rgba(24,32,42,0.22)); border-radius: 14px;
+      background: rgba(29,78,216,0.03);
+      color: var(--site-muted); font: 600 0.95rem/1.6 "Manrope", "Segoe UI", sans-serif;
+    }
+    .lab-students { margin: 16px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 9px; }
+    .lab-students a {
+      display: inline-flex; align-items: center; padding: 7px 14px; border-radius: 999px;
+      border: 1px solid var(--site-border); background: #fff; text-decoration: none;
+      color: var(--site-text); font: 700 0.84rem/1 "Manrope", "Segoe UI", sans-serif;
+      transition: background 120ms ease, border-color 120ms ease;
+    }
+    .lab-students a:hover { background: rgba(29,78,216,0.06); border-color: rgba(29,78,216,0.4); color: #1d4ed8; }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="research">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar">
+      <a class="apartsin-shell__brand" href="../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../index.html">About</a>
+        <a href="../research/research-focus.html">Research</a>
+        <a href="../teaching/overview.html">Teaching</a>
+        <a href="../work/overview.html">Building</a>
+        <a href="../work/innovation-overview.html">Innovations</a>
+        <a href="../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+
+        <section class="apartsin-page-header apartsin-page-header--standard">
+          <h1 class="apartsin-sr-only">H.I.T. Pragmatic AI Lab</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="./research-focus.html">Research</a>
+              <span aria-hidden="true">/</span>
+              <strong>H.I.T. Pragmatic AI Lab</strong>
+            </nav>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../assets/heroes/research-projects.png" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">The <strong class="pragmatic-ai">H.I.T. Pragmatic AI Lab</strong> hosts research projects in state-of-the-art artificial intelligence and gives HIT students the opportunity to take part directly in research: contributing to experiments and publications, and gaining hands-on experience with emerging AI methods beyond standard coursework.</p>
+          </div>
+        </section>
+
+        <h2 class="lab-heading">Research Projects</h2>
+        <p class="lab-heading-lede">Working implementations from the lab&rsquo;s research program: robust perception, spec-driven generation, and sparse multi-agent coordination. Each links to source and documentation.</p>
+        <section class="repo-grid" id="research-projects-grid" aria-label="Research project cards"></section>
+
+        <h2 class="lab-heading" style="margin-top: 36px;">Student Projects</h2>
+        <p class="lab-heading-lede">Projects by HIT students in the lab, several extending the lab&rsquo;s CoEval and StableSteering platforms. Each is open to student participation.</p>
+        <ul class="lab-grid" aria-label="Student projects">
+          <li class="lab-card">
+            <h3 class="lab-card__title">Synthetic Adverse-Weather Data for Robust Object Detection</h3>
+            <p class="lab-card__meta">Noam Hadad</p>
+            <p class="lab-card__desc">Driving detectors trained only on clear weather fail in rain, fog, and snow. This project generates realistic synthetic harsh-weather images with SDXL and dual ControlNet (depth and edges) to augment KITTI and train a more robust YOLOv8 detector. A model trained on 50% synthetic data cut the harsh-weather accuracy drop from 72% to 12%.</p>
+            <p class="lab-card__links"><a href="https://github.com/NoamHadad2/SyntheticImageData/tree/main/Weather" target="_blank" rel="noopener noreferrer">Repository</a></p>
+          </li>
+
+          <li class="lab-card">
+            <h3 class="lab-card__title">Synthetic Rare-Object Insertion for Robust Driving Perception</h3>
+            <p class="lab-card__meta">Tomer Atia</p>
+            <p class="lab-card__desc">Driving datasets rarely contain animals, a safety-critical blind spot. This project inpaints photorealistic animals onto real KITTI scenes with SDXL and ControlNet depth, then trains a YOLOv11 detector; animal detection rose from 0% to 99.5% AP50 with under 2.5% regression on standard classes.</p>
+            <p class="lab-card__links"><a href="https://github.com/HITProjects/SyntheticImageData/tree/main/ObjectsOrAnimals" target="_blank" rel="noopener noreferrer">Repository</a></p>
+          </li>
+
+          <li class="lab-card">
+            <h3 class="lab-card__title">Synthetic-Data-Driven Information Extraction from Technical Documents</h3>
+            <p class="lab-card__meta">Niv Saban</p>
+            <p class="lab-card__desc">Pulling structured specs from electronics PDF datasheets breaks traditional OCR on multi-column tables. This data-centric pipeline generates synthetic datasheets and fine-tunes DeBERTa-v3 for joint entity and relation extraction, reaching 0.59 F1 on real annotated datasheets.</p>
+            <p class="lab-card__links"><a href="https://github.com/HITProjects/SyntheticTextData/tree/main/embedded" target="_blank" rel="noopener noreferrer">Repository</a></p>
+          </li>
+
+          <li class="lab-card">
+            <h3 class="lab-card__title">StableSteering: Human-Preference Feedback for Interactive Image Generation</h3>
+            <p class="lab-card__meta">Noam Hadad</p>
+            <p class="lab-card__desc">Extends the lab&rsquo;s StableSteering image-generation platform with richer human feedback: style calibration from a few chosen images, per-dimension quality ratings, drag-to-rank priority weighting, and transparent preference analytics, so the system learns a user&rsquo;s taste faster and more legibly.</p>
+            <p class="lab-card__links"><a href="https://github.com/NoamHadad2/StableSteering" target="_blank" rel="noopener noreferrer">Student fork</a> &middot; <a href="https://github.com/ApartsinProjects/StableSteering" target="_blank" rel="noopener noreferrer">Base platform</a></p>
+          </li>
+
+          <li class="lab-card">
+            <h3 class="lab-card__title">StableSteering: Convergence Detection and Critique-Based Feedback</h3>
+            <p class="lab-card__meta">Tomer Atia</p>
+            <p class="lab-card__desc">The lab&rsquo;s StableSteering platform could not tell why a user preferred an output, or when steering had converged. This project adds convergence detection and a critique-tagging feedback mode; critique mode reached 38% higher accuracy than scalar ratings across 54 synthetic sessions.</p>
+            <p class="lab-card__links"><a href="https://github.com/Tomeratia/StableSteering/tree/feature/convergence-and-critique-feedback" target="_blank" rel="noopener noreferrer">Student fork</a> &middot; <a href="https://github.com/ApartsinProjects/StableSteering" target="_blank" rel="noopener noreferrer">Base platform</a></p>
+          </li>
+
+          <li class="lab-card">
+            <h3 class="lab-card__title">Robust LLM-as-Judge Evaluation via Self-Distrust Mechanisms</h3>
+            <p class="lab-card__meta">Itay Matana</p>
+            <p class="lab-card__desc">LLM graders hallucinate praise for wrong code and crash on messy JSON. This teacher-student-judge pipeline is built to distrust its own judge, adding a Truth Gate that overrides false praise, ensemble consensus to catch erratic judges, and robust recovery from noisy model output.</p>
+            <p class="lab-card__links"><a href="https://github.com/itaym26/llm-exam-board" target="_blank" rel="noopener noreferrer">Repository</a></p>
+          </li>
+
+          <li class="lab-card">
+            <h3 class="lab-card__title">CoEval: On-Demand Benchmark Generation for Ranking LLMs in Phishing Detection</h3>
+            <p class="lab-card__meta">Guy Yogev</p>
+            <p class="lab-card__desc">Phishing-detection benchmarks are old and likely leaked into training data. MailRank generates a fresh three-way phishing benchmark on demand with the CoEval framework and validates it against real data; the small, free gemini-2.5-flash-lite ranked best, beating larger paid models.</p>
+            <p class="lab-card__links"><a href="https://github.com/guy-yo/MailRank" target="_blank" rel="noopener noreferrer">Repository</a> &middot; <a href="https://github.com/ApartsinProjects/CoEval" target="_blank" rel="noopener noreferrer">CoEval framework</a></p>
+          </li>
+
+          <li class="lab-card">
+            <h3 class="lab-card__title">CoEval: Reference-Free LLM Ranking for Specialized Clinical Domains</h3>
+            <p class="lab-card__meta">Niv Saban</p>
+            <p class="lab-card__desc">General English benchmarks cannot rank models for Israeli special-education speech-language pathology. Using CoEval with no pre-labeled data and 40 Hebrew clinical scenarios, this project produces clinically grounded, task-specific rankings validated by a certified SLP.</p>
+            <p class="lab-card__links"><a href="https://github.com/nivsab/CoEval-special_ed" target="_blank" rel="noopener noreferrer">Repository</a> &middot; <a href="https://apartsinprojects.github.io/CoEval/paper/" target="_blank" rel="noopener noreferrer">CoEval paper</a></p>
+          </li>
+        </ul>
+
+        <h2 class="lab-heading" style="margin-top: 36px;">Students</h2>
+        <p class="lab-heading-lede">Students who contributed to the projects above.</p>
+        <ul class="lab-students" aria-label="Participating students">
+          <li><a href="https://github.com/NoamHadad2" target="_blank" rel="noopener noreferrer">Noam Hadad</a></li>
+          <li><a href="https://github.com/Tomeratia" target="_blank" rel="noopener noreferrer">Tomer Atia</a></li>
+          <li><a href="https://github.com/nivsab" target="_blank" rel="noopener noreferrer">Niv Saban</a></li>
+          <li><a href="https://github.com/itaym26" target="_blank" rel="noopener noreferrer">Itay Matana</a></li>
+          <li><a href="https://github.com/guy-yo" target="_blank" rel="noopener noreferrer">Guy Yogev</a></li>
+        </ul>
+
+        <section class="section-quick-links" style="margin-top: 30px;">
+          <h2 class="section-quick-links__title">Related</h2>
+          <nav class="section-quick-links__grid" aria-label="Quick links">
+            <a class="section-quick-link" href="./research-focus.html">
+              <span class="section-quick-link__badge" style="background: #1d4ed8;">R</span>
+              Research Focus
+            </a>
+            <a class="section-quick-link" href="./research-projects.html">
+              <span class="section-quick-link__badge" style="background: #2e7d5a;">P</span>
+              Research Projects
+            </a>
+            <a class="section-quick-link" href="./grad-opportunities.html">
+              <span class="section-quick-link__badge" style="background: #7a3fa0;">M</span>
+              Projects for M.Sc. Students
+            </a>
+            <a class="section-quick-link" href="./recent-publications.html">
+              <span class="section-quick-link__badge" style="background: #0e7490;">P</span>
+              Recent Publications
+            </a>
+          </nav>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="./research-projects.data.js"></script>
+  <script defer src="./research-projects.js"></script>
+  <script defer src="../shared/unified-enhance.js"></script>
+  <script defer src="../shared/site-shell.js"></script>
+</body>
+</html>
