@@ -40,6 +40,7 @@
     .lab-card__desc { margin: 3px 0 0; color: var(--site-muted); font: 400 0.88rem/1.55 "Source Serif 4", Georgia, serif; }
     .lab-card__links { margin: auto 0 0; padding-top: 8px; font: 700 0.78rem/1.4 "Manrope", sans-serif; }
     .lab-card__links a { color: #1d4ed8; text-decoration: underline; text-underline-offset: 2px; }
+    .lab-card__links a svg { width: 14px; height: 14px; vertical-align: -2px; margin-right: 5px; fill: currentColor; }
     .lab-samsung { margin: 1px 0 0; align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; padding: 4px 11px; border-radius: 999px; border: 1px solid rgba(20,64,160,0.28); background: rgba(20,64,160,0.07); color: #1428a0; font: 800 0.68rem/1.15 "Manrope", "Segoe UI", sans-serif; letter-spacing: 0.02em; }
 
     .lab-empty {
@@ -109,13 +110,14 @@
 
         <h2 class="lab-heading" style="margin-top: 36px;">Student Projects</h2>
         <p class="lab-heading-lede">Projects by HIT students in the lab, several extending the lab&rsquo;s CoEval and StableSteering platforms. Each is open to student participation.</p>
+        <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="lab-gh" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.01.08-2.1 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.09.16 1.9.08 2.1.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path></symbol></svg>
         <ul class="lab-grid" aria-label="Student projects">
           <li class="lab-card">
             <figure class="lab-card__media"><img src="../assets/heroes/labcard-weather.jpg" alt="Synthetic Adverse-Weather Data for Robust Object Detection illustration" loading="lazy"></figure>
             <h3 class="lab-card__title">Synthetic Adverse-Weather Data for Robust Object Detection</h3>
             <p class="lab-card__meta">Noam Hadad</p>
             <p class="lab-card__desc">Driving detectors trained only on clear weather fail in rain, fog, and snow. This project generates realistic synthetic harsh-weather images with SDXL and dual ControlNet (depth and edges) to augment KITTI and train a more robust YOLOv8 detector. A model trained on 50% synthetic data cut the harsh-weather accuracy drop from 72% to 12%.</p>
-            <p class="lab-card__links"><a href="https://github.com/NoamHadad2/SyntheticImageData/tree/main/Weather" target="_blank" rel="noopener noreferrer">Repository</a></p>
+            <p class="lab-card__links"><a href="https://github.com/NoamHadad2/SyntheticImageData/tree/main/Weather" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#lab-gh"></use></svg>GitHub</a></p>
           </li>
 
           <li class="lab-card">
@@ -123,7 +125,7 @@
             <h3 class="lab-card__title">Synthetic Rare-Object Insertion for Robust Driving Perception</h3>
             <p class="lab-card__meta">Tomer Atia</p>
             <p class="lab-card__desc">Driving datasets rarely contain animals, a safety-critical blind spot. This project inpaints photorealistic animals onto real KITTI scenes with SDXL and ControlNet depth, then trains a YOLOv11 detector; animal detection rose from 0% to 99.5% AP50 with under 2.5% regression on standard classes.</p>
-            <p class="lab-card__links"><a href="https://github.com/HITProjects/SyntheticImageData/tree/main/ObjectsOrAnimals" target="_blank" rel="noopener noreferrer">Repository</a></p>
+            <p class="lab-card__links"><a href="https://github.com/HITProjects/SyntheticImageData/tree/main/ObjectsOrAnimals" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#lab-gh"></use></svg>GitHub</a></p>
           </li>
 
           <li class="lab-card">
@@ -148,7 +150,7 @@
             <h3 class="lab-card__title">Synthetic-Data-Driven Information Extraction from Technical Documents</h3>
             <p class="lab-card__meta">Niv Saban</p>
             <p class="lab-card__desc">Pulling structured specs from electronics PDF datasheets breaks traditional OCR on multi-column tables. This data-centric pipeline generates synthetic datasheets and fine-tunes DeBERTa-v3 for joint entity and relation extraction, reaching 0.59 F1 on real annotated datasheets.</p>
-            <p class="lab-card__links"><a href="https://github.com/HITProjects/SyntheticTextData/tree/main/embedded" target="_blank" rel="noopener noreferrer">Repository</a> &middot; <a href="https://github.com/HITProjects/SyntheticTextData/blob/main/embedded/assets/Project_Overview.pptx" target="_blank" rel="noopener noreferrer">Presentation</a></p>
+            <p class="lab-card__links"><a href="https://github.com/HITProjects/SyntheticTextData/tree/main/embedded" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#lab-gh"></use></svg>GitHub</a> &middot; <a href="https://github.com/HITProjects/SyntheticTextData/blob/main/embedded/assets/Project_Overview.pptx" target="_blank" rel="noopener noreferrer">Presentation</a></p>
           </li>
 
           <li class="lab-card">
@@ -156,7 +158,7 @@
             <h3 class="lab-card__title">StableSteering: Human-Preference Feedback for Interactive Image Generation</h3>
             <p class="lab-card__meta">Noam Hadad</p>
             <p class="lab-card__desc">Extends the lab&rsquo;s StableSteering image-generation platform with richer human feedback: style calibration from a few chosen images, per-dimension quality ratings, drag-to-rank priority weighting, and transparent preference analytics, so the system learns a user&rsquo;s taste faster and more legibly.</p>
-            <p class="lab-card__links"><a href="https://github.com/NoamHadad2/StableSteering" target="_blank" rel="noopener noreferrer">Repo</a> &middot; <a href="https://github.com/NoamHadad2/StableSteering/blob/main/taste_profile_presentation.pptx" target="_blank" rel="noopener noreferrer">Presentation</a></p>
+            <p class="lab-card__links"><a href="https://github.com/NoamHadad2/StableSteering" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#lab-gh"></use></svg>GitHub</a> &middot; <a href="https://github.com/NoamHadad2/StableSteering/blob/main/taste_profile_presentation.pptx" target="_blank" rel="noopener noreferrer">Presentation</a></p>
           </li>
 
           <li class="lab-card">
@@ -164,7 +166,7 @@
             <h3 class="lab-card__title">StableSteering: Convergence Detection and Critique-Based Feedback</h3>
             <p class="lab-card__meta">Tomer Atia</p>
             <p class="lab-card__desc">The lab&rsquo;s StableSteering platform could not tell why a user preferred an output, or when steering had converged. This project adds convergence detection and a critique-tagging feedback mode; critique mode reached 38% higher accuracy than scalar ratings across 54 synthetic sessions.</p>
-            <p class="lab-card__links"><a href="https://github.com/Tomeratia/StableSteering/tree/feature/convergence-and-critique-feedback" target="_blank" rel="noopener noreferrer">Repo</a></p>
+            <p class="lab-card__links"><a href="https://github.com/Tomeratia/StableSteering/tree/feature/convergence-and-critique-feedback" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#lab-gh"></use></svg>GitHub</a></p>
           </li>
 
           <li class="lab-card">
@@ -172,7 +174,7 @@
             <h3 class="lab-card__title">Robust LLM-as-Judge Evaluation via Self-Distrust Mechanisms</h3>
             <p class="lab-card__meta">Itay Matana</p>
             <p class="lab-card__desc">LLM graders hallucinate praise for wrong code and crash on messy JSON. This teacher-student-judge pipeline is built to distrust its own judge, adding a Truth Gate that overrides false praise, ensemble consensus to catch erratic judges, and robust recovery from noisy model output.</p>
-            <p class="lab-card__links"><a href="https://github.com/itaym26/llm-exam-board" target="_blank" rel="noopener noreferrer">Repository</a></p>
+            <p class="lab-card__links"><a href="https://github.com/itaym26/llm-exam-board" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#lab-gh"></use></svg>GitHub</a></p>
           </li>
 
           <li class="lab-card">
@@ -180,7 +182,7 @@
             <h3 class="lab-card__title">CoEval: On-Demand Benchmark Generation for Ranking LLMs in Phishing Detection</h3>
             <p class="lab-card__meta">Guy Yogev</p>
             <p class="lab-card__desc">Phishing-detection benchmarks are old and likely leaked into training data. MailRank generates a fresh three-way phishing benchmark on demand with the CoEval framework and validates it against real data; the small, free gemini-2.5-flash-lite ranked best, beating larger paid models.</p>
-            <p class="lab-card__links"><a href="https://github.com/guy-yo/MailRank" target="_blank" rel="noopener noreferrer">Repository</a></p>
+            <p class="lab-card__links"><a href="https://github.com/guy-yo/MailRank" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#lab-gh"></use></svg>GitHub</a></p>
           </li>
 
           <li class="lab-card">
@@ -188,7 +190,7 @@
             <h3 class="lab-card__title">CoEval: Reference-Free LLM Ranking for Specialized Clinical Domains</h3>
             <p class="lab-card__meta">Niv Saban</p>
             <p class="lab-card__desc">General English benchmarks cannot rank models for Israeli special-education speech-language pathology. Using CoEval with no pre-labeled data and 40 Hebrew clinical scenarios, this project produces clinically grounded, task-specific rankings validated by a certified SLP.</p>
-            <p class="lab-card__links"><a href="https://github.com/nivsab/CoEval-special_ed" target="_blank" rel="noopener noreferrer">Repository</a></p>
+            <p class="lab-card__links"><a href="https://github.com/nivsab/CoEval-special_ed" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#lab-gh"></use></svg>GitHub</a></p>
           </li>
         </ul>
 
