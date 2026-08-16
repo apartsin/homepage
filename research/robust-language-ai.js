@@ -67,6 +67,7 @@
     if (p.venueHref) links.push({ k: /arxiv/i.test(p.venueHref) ? "arXiv" : (/github/i.test(p.venueHref) ? "Project" : "Paper"), u: p.venueHref });
     items.push({
       type: TYPE_OVERRIDE[p.id] || "Papers and Preprints",
+      pubrank: (p.type === "Journal") ? 0 : 1,
       app: APP_OVERRIDE[p.id] || classifyApp(p.title + " " + (p.summary || "")),
       year: p.year, title: p.title,
       authorsHtml: (p.authors || []).map(function (a) { return a.self ? "<b>" + a.name + "</b>" : a.name; }).join(", "),
@@ -205,6 +206,7 @@
   items.slice().sort(function (a, b) {
     return (b.year || 0) - (a.year || 0) ||
       (TYPE_ORDER[a.type] || 9) - (TYPE_ORDER[b.type] || 9) ||
+      ((a.pubrank || 0) - (b.pubrank || 0)) ||
       String(a.title || "").localeCompare(String(b.title || ""));
   }).forEach(function (it) { grid.appendChild(buildCard(it)); });
 
