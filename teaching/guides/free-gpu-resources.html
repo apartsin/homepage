@@ -25,6 +25,9 @@
     .gpu-card__name a:hover { text-decoration: underline; }
     .gpu-card__name .local { color: var(--site-text); }
     .gpu-card__desc { margin: 0; color: var(--site-text); font: 600 0.93rem/1.55 "Manrope", "Segoe UI", sans-serif; }
+    .gpu-card__link { margin: 4px 0 0; font: 700 0.8rem/1.4 "Manrope", "Segoe UI", sans-serif; }
+    .gpu-card__link a { color: #1d4ed8; text-decoration: underline; text-underline-offset: 2px; }
+
     .gpu-card__free { align-self: flex-start; margin-top: 2px; padding: 3px 9px; border-radius: 999px; border: 1px solid rgba(46,125,90,0.28); background: rgba(46,125,90,0.08); color: #2e7d5a; font: 800 0.66rem/1.2 "Manrope", sans-serif; letter-spacing: 0.03em; text-transform: uppercase; }
     .gpu-note { margin-top: 16px; padding: 14px 18px; border-radius: 12px; border: 1px solid rgba(24,101,168,0.22); background: rgba(24,101,168,0.06); color: #164a83; font: 700 0.95rem/1.55 "Manrope", "Segoe UI", sans-serif; }
     .gpu-note b { color: #123a67; }
@@ -89,24 +92,32 @@
             <p class="gpu-card__name"><a href="https://colab.research.google.com/" target="_blank" rel="noopener noreferrer">Google Colab</a></p>
             <span class="gpu-card__free">Free GPU/TPU</span>
             <p class="gpu-card__desc">The simplest option. Runs Jupyter notebooks in the browser and provides free GPU/TPU access, subject to availability and usage limits.</p>
+            <p class="gpu-card__link"><a href="https://colab.research.google.com/" target="_blank" rel="noopener noreferrer">Visit Google Colab ↗</a></p>
+          
           </li>
 
           <li class="gpu-card">
             <p class="gpu-card__name"><a href="https://www.kaggle.com/code" target="_blank" rel="noopener noreferrer">Kaggle Notebooks</a></p>
             <span class="gpu-card__free">~30 GPU hrs/week</span>
             <p class="gpu-card__desc">Free cloud notebooks with GPU access. Kaggle currently documents a GPU quota of about 30 hours per week, although quotas may vary.</p>
+            <p class="gpu-card__link"><a href="https://www.kaggle.com/code" target="_blank" rel="noopener noreferrer">Visit Kaggle ↗</a></p>
+          
           </li>
 
           <li class="gpu-card">
             <p class="gpu-card__name"><a href="https://lightning.ai/" target="_blank" rel="noopener noreferrer">Lightning AI</a></p>
             <span class="gpu-card__free">Monthly credits</span>
             <p class="gpu-card__desc">Cloud development environment for AI projects. The free academic tier includes monthly credits for GPUs; Lightning states these can provide roughly 35&ndash;80 GPU hours, depending on the machine and pricing.</p>
+            <p class="gpu-card__link"><a href="https://lightning.ai/" target="_blank" rel="noopener noreferrer">Visit Lightning AI ↗</a></p>
+          
           </li>
 
           <li class="gpu-card">
             <p class="gpu-card__name"><a href="https://modal.com/" target="_blank" rel="noopener noreferrer">Modal</a></p>
             <span class="gpu-card__free">$30 credit/month</span>
             <p class="gpu-card__desc">Good when you need to run Python jobs on GPUs rather than work only inside notebooks. The Starter plan costs $0/month and includes $30 of compute credit each month for GPU workloads.</p>
+            <p class="gpu-card__link"><a href="https://modal.com/" target="_blank" rel="noopener noreferrer">Visit Modal ↗</a></p>
+          
           </li>
         </ul>
 
