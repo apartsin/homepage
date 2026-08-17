@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="he-IL" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <meta name="description" content="גישה למודלי שפה לסטודנטים: לכל פרויקט מוקצה בדרך כלל תקציב OpenRouter קטן, אבל אפשר גם להשתמש ב-LLM בחינם עם המודלים החינמיים של OpenRouter או עם Ollama מקומית. כולל כללים מעשיים לשמירה על עלויות נמוכות.">
+  <link rel="alternate" hreflang="he" href="./llm-access-he.html">
+  <link rel="alternate" hreflang="en" href="./llm-access.html">
+  <title>גישה למודלי שפה לסטודנטים | סשה אפרטסין</title>
+  <link rel="stylesheet" href="../../shared/site-shell.css">
+  <link rel="stylesheet" href="../../shared/unified-theme.css">
+  <style>
+    .sdg-heading { margin: 34px 0 2px; color: var(--site-text, #18202a); font: 800 0.9rem/1.3 "Manrope", "Heebo", sans-serif; letter-spacing: 0.04em; }
+    .sdg-heading:first-of-type { margin-top: 12px; }
+    .sdg-heading-lede { margin: 0; color: var(--site-muted); font: 600 0.92rem/1.6 "Manrope", "Heebo", sans-serif; }
+    .acc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; margin-top: 14px; list-style: none; padding: 0; }
+    .acc-card { position: relative; display: flex; flex-direction: column; gap: 6px; padding: 16px 22px 16px 18px; border: 1px solid var(--site-border); border-radius: 14px; background: #fff; box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05); overflow: hidden; text-align: right; }
+    .acc-card::before { content: ""; position: absolute; inset: 0 0 0 auto; width: 5px; background: linear-gradient(180deg, rgba(24, 101, 168, 0.9), rgba(122, 63, 160, 0.75)); }
+    .acc-card__name { margin: 0; font: 800 1.05rem/1.3 "Manrope", "Heebo", "Segoe UI", sans-serif; }
+    .acc-card__name a { color: #164a83; text-decoration: none; }
+    .acc-card__name a:hover { text-decoration: underline; }
+    .acc-card__free { align-self: flex-start; margin-top: 2px; padding: 3px 9px; border-radius: 999px; border: 1px solid rgba(46,125,90,0.28); background: rgba(46,125,90,0.08); color: #2e7d5a; font: 800 0.66rem/1.2 "Manrope", "Heebo", sans-serif; letter-spacing: 0.03em; }
+    .acc-card__desc { margin: 0; color: var(--site-text); font: 600 0.93rem/1.55 "Manrope", "Heebo", "Segoe UI", sans-serif; }
+    .tip-list { margin: 14px 0 0; padding-right: 20px; padding-left: 0; display: grid; gap: 8px; }
+    .tip-list li { color: var(--site-text); font: 600 0.95rem/1.55 "Manrope", "Heebo", "Segoe UI", sans-serif; }
+    .tip-list li b { color: #164a83; }
+    .tip-list a { color: #1d4ed8; text-decoration: underline; text-underline-offset: 2px; }
+    .llm-note { margin-top: 16px; padding: 14px 18px; border-radius: 12px; border: 1px solid rgba(24,101,168,0.22); background: rgba(24,101,168,0.06); color: #164a83; font: 700 0.95rem/1.55 "Manrope", "Heebo", "Segoe UI", sans-serif; }
+    .llm-note b { color: #123a67; }
+    .guide-lang-switch { display: inline-flex; align-items: stretch; border: 1px solid var(--site-border, rgba(24,32,42,0.18)); border-radius: 999px; background: #fff; overflow: hidden; font: 800 0.72rem/1 "Manrope", sans-serif; letter-spacing: 0.04em; }
+    .guide-lang-switch__btn { display: inline-flex; align-items: center; padding: 6px 14px; color: var(--site-muted, #5a626c); text-decoration: none; transition: background 120ms ease, color 120ms ease; }
+    .guide-lang-switch__btn:hover, .guide-lang-switch__btn:focus-visible { background: rgba(0, 0, 0, 0.05); color: var(--site-text, #18202a); }
+    .guide-lang-switch__btn.is-active { background: var(--site-text, #18202a); color: #fff; cursor: default; pointer-events: none; }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="teaching">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar" lang="en" dir="ltr">
+      <a class="apartsin-shell__brand" href="../../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../../index.html">About</a>
+        <a href="../../research/research-focus.html">Research</a>
+        <a href="../../teaching/overview.html">Teaching</a>
+        <a href="../../work/overview.html">Building</a>
+        <a href="../../work/innovation-overview.html">Innovations</a>
+        <a href="../../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="llm-access-overview">
+          <h1 class="apartsin-sr-only">גישה למודלי שפה לסטודנטים</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../../index.html">בית</a>
+              <span aria-hidden="true">/</span>
+              <a href="../overview.html">הוראה</a>
+              <span aria-hidden="true">/</span>
+              <a href="./index.html">מדריכים לסטודנטים</a>
+              <span aria-hidden="true">/</span>
+              <strong>גישה למודלי שפה לסטודנטים</strong>
+            </nav>
+            <div class="guide-lang-switch" role="group" aria-label="שפה">
+              <a class="guide-lang-switch__btn" href="./llm-access.html" lang="en" hreflang="en">English</a>
+              <a class="guide-lang-switch__btn is-active" href="./llm-access-he.html" lang="he" hreflang="he" aria-current="true">עברית</a>
+            </div>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../../assets/heroes/guidecard-llm-access.jpg" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">לפרויקטי הקורס מוקצה בדרך כלל תקציב OpenRouter קטן לכל פרויקט, אבל אפשר גם לעבוד עם מודלי שפה בחינם. הנה מאיפה לקבל גישה, ואיך לשמור על עלויות נמוכות.</p>
+          </div>
+        </section>
+
+        <h2 class="sdg-heading">מאיפה לגשת למודלי שפה</h2>
+        <p class="sdg-heading-lede">API אחד למודלי ענן רבים, או הרצת מודלים מקומית ללא עלות.</p>
+        <ul class="acc-grid" aria-label="אפשרויות גישה למודלי שפה">
+          <li class="acc-card">
+            <p class="acc-card__name"><a href="https://openrouter.ai/" target="_blank" rel="noopener noreferrer">OpenRouter</a></p>
+            <span class="acc-card__free">מומלץ &middot; מודלים חינמיים</span>
+            <p class="acc-card__desc">מומלץ לגישה למודלי שפה בענן. API אחד למודלים מסחריים ופתוחים רבים, כך שאפשר להחליף מודלים בלי לשנות את היישום. הוא גם מספק מודלים חינמיים לפיתוח ולניסויים.</p>
+          </li>
+
+          <li class="acc-card">
+            <p class="acc-card__name"><a href="https://ollama.com/" target="_blank" rel="noopener noreferrer">Ollama</a></p>
+            <span class="acc-card__free">מקומי &middot; ללא עלות API</span>
+            <p class="acc-card__desc">הריצו מודלים כמו Llama, Qwen, Gemma ואחרים מקומית על המחשב שלכם, ללא עלות API. שימושי במיוחד לפיתוח ולבדיקות.</p>
+          </li>
+        </ul>
+
+        <h2 class="sdg-heading">שמרו על עלויות ה-LLM נמוכות</h2>
+        <p class="sdg-heading-lede">עלויות ה-API יכולות לצמוח במהירות בעיבוד מאגרי נתונים גדולים. כמה כללים פשוטים עוזרים.</p>
+        <ul class="tip-list">
+          <li><b>נפו באגים קודם על מדגם קטן.</b> אל תריצו 10,000 דוגמאות לפני שווידאתם שה-pipeline עובד נכון על 10&ndash;50.</li>
+          <li><b>השתמשו במודלים זולים או חינמיים בשלב הפיתוח,</b> ובמודלים יקרים יותר רק כשצריך.</li>
+          <li><b>אגדו בקשות (batching)</b> בעיבוד מאגרי נתונים גדולים. ל-OpenRouter יש <a href="https://openrouter.ai/docs/batch-quickstart" target="_blank" rel="noopener noreferrer">Batch API</a> לשליחת בקשות רבות יחד.</li>
+          <li><b>השתמשו ב-prompt caching</b> כאשר בקשות רבות חולקות אותן הוראות או הקשר ארוכים. ראו את <a href="https://openrouter.ai/docs/guides/best-practices/prompt-caching" target="_blank" rel="noopener noreferrer">מדריך ה-Prompt Caching של OpenRouter</a>.</li>
+          <li><b>שמרו על פרומפטים ופלטים קצרים ככל האפשר.</b> בדרך כלל משלמים גם על טוקני קלט וגם על טוקני פלט.</li>
+          <li><b>עקבו אחר השימוש והעלות תוך כדי פיתוח,</b> במקום לגלות את העלות אחרי ניסוי גדול.</li>
+        </ul>
+
+        <p class="llm-note"><b>כלל אצבע:</b> פתחו ונפו באגים בקטן ובזול, והגדילו את ההיקף רק אחרי שהכול עובד.</p>
+
+      <section class="section-quick-links">
+        <h2 class="section-quick-links__title">קישורים מהירים</h2>
+        <nav class="section-quick-links__grid" aria-label="קישורים מהירים">
+          <a class="section-quick-link" href="./free-gpu-resources-he.html">
+            <span class="section-quick-link__badge" style="background: #2e7d5a;">G</span>
+            משאבי GPU חינמיים לסטודנטים
+          </a>
+          <a class="section-quick-link" href="./synthetic-data-generation-he.html">
+            <span class="section-quick-link__badge" style="background: #1f5a40;">S</span>
+            יצירת נתונים סינתטיים
+          </a>
+          <a class="section-quick-link" href="./index.html">
+            <span class="section-quick-link__badge" style="background: #18202a;">G</span>
+            כל המדריכים
+          </a>
+        </nav>
+      </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../../shared/unified-enhance.js"></script>
+  <script defer src="../../shared/site-shell.js"></script>
+</body>
+</html>

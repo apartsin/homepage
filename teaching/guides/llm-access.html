@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <meta name="description" content="LLM access for students: each project usually gets a small OpenRouter budget, but you can also use LLMs for free with OpenRouter free models or Ollama locally. Plus practical rules to keep LLM API costs low.">
+  <link rel="alternate" hreflang="he" href="./llm-access-he.html">
+  <link rel="alternate" hreflang="en" href="./llm-access.html">
+  <title>LLM Access for Students | Sasha Apartsin</title>
+  <link rel="stylesheet" href="../../shared/site-shell.css">
+  <link rel="stylesheet" href="../../shared/unified-theme.css">
+  <style>
+    .sdg-heading { margin: 34px 0 2px; color: var(--site-text, #18202a); font: 800 0.9rem/1.2 "Manrope", sans-serif; letter-spacing: 0.04em; text-transform: uppercase; }
+    .sdg-heading:first-of-type { margin-top: 12px; }
+    .sdg-heading-lede { margin: 0; color: var(--site-muted); font: 600 0.92rem/1.5 "Manrope", sans-serif; }
+    .acc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; margin-top: 14px; list-style: none; padding: 0; }
+    .acc-card { position: relative; display: flex; flex-direction: column; gap: 6px; padding: 16px 18px 16px 22px; border: 1px solid var(--site-border); border-radius: 14px; background: #fff; box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05); overflow: hidden; }
+    .acc-card::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 5px; background: linear-gradient(180deg, rgba(24, 101, 168, 0.9), rgba(122, 63, 160, 0.75)); }
+    .acc-card__name { margin: 0; font: 800 1.05rem/1.3 "Manrope", "Segoe UI", sans-serif; }
+    .acc-card__name a { color: #164a83; text-decoration: none; }
+    .acc-card__name a:hover { text-decoration: underline; }
+    .acc-card__free { align-self: flex-start; margin-top: 2px; padding: 3px 9px; border-radius: 999px; border: 1px solid rgba(46,125,90,0.28); background: rgba(46,125,90,0.08); color: #2e7d5a; font: 800 0.66rem/1.2 "Manrope", sans-serif; letter-spacing: 0.03em; text-transform: uppercase; }
+    .acc-card__desc { margin: 0; color: var(--site-text); font: 600 0.93rem/1.55 "Manrope", "Segoe UI", sans-serif; }
+    .tip-list { margin: 14px 0 0; padding-left: 20px; display: grid; gap: 8px; }
+    .tip-list li { color: var(--site-text); font: 600 0.95rem/1.55 "Manrope", "Segoe UI", sans-serif; }
+    .tip-list li b { color: #164a83; }
+    .tip-list a { color: #1d4ed8; text-decoration: underline; text-underline-offset: 2px; }
+    .llm-note { margin-top: 16px; padding: 14px 18px; border-radius: 12px; border: 1px solid rgba(24,101,168,0.22); background: rgba(24,101,168,0.06); color: #164a83; font: 700 0.95rem/1.55 "Manrope", "Segoe UI", sans-serif; }
+    .llm-note b { color: #123a67; }
+    .guide-lang-switch { display: inline-flex; align-items: stretch; border: 1px solid var(--site-border, rgba(24,32,42,0.18)); border-radius: 999px; background: #fff; overflow: hidden; font: 800 0.72rem/1 "Manrope", sans-serif; letter-spacing: 0.04em; }
+    .guide-lang-switch__btn { display: inline-flex; align-items: center; padding: 6px 14px; color: var(--site-muted, #5a626c); text-decoration: none; transition: background 120ms ease, color 120ms ease; }
+    .guide-lang-switch__btn:hover, .guide-lang-switch__btn:focus-visible { background: rgba(0, 0, 0, 0.05); color: var(--site-text, #18202a); }
+    .guide-lang-switch__btn.is-active { background: var(--site-text, #18202a); color: #fff; cursor: default; pointer-events: none; }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="teaching">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar">
+      <a class="apartsin-shell__brand" href="../../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../../index.html">About</a>
+        <a href="../../research/research-focus.html">Research</a>
+        <a href="../../teaching/overview.html">Teaching</a>
+        <a href="../../work/overview.html">Building</a>
+        <a href="../../work/innovation-overview.html">Innovations</a>
+        <a href="../../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="llm-access-overview">
+          <h1 class="apartsin-sr-only">LLM Access for Students</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="../overview.html">Teaching</a>
+              <span aria-hidden="true">/</span>
+              <a href="./index.html">Guides for Students</a>
+              <span aria-hidden="true">/</span>
+              <strong>LLM Access for Students</strong>
+            </nav>
+            <div class="guide-lang-switch" role="group" aria-label="Language">
+              <a class="guide-lang-switch__btn is-active" href="./llm-access.html" lang="en" hreflang="en" aria-current="true">English</a>
+              <a class="guide-lang-switch__btn" href="./llm-access-he.html" lang="he" hreflang="he">עברית</a>
+            </div>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../../assets/heroes/guidecard-llm-access.jpg" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">For course projects, a small OpenRouter budget is usually allocated to each project, but you can also work with LLMs for free. Here is where to get access, and how to keep your costs low.</p>
+          </div>
+        </section>
+
+        <h2 class="sdg-heading">Where to access LLMs</h2>
+        <p class="sdg-heading-lede">One API for many cloud models, or run models locally at no cost.</p>
+        <ul class="acc-grid" aria-label="LLM access options">
+          <li class="acc-card">
+            <p class="acc-card__name"><a href="https://openrouter.ai/" target="_blank" rel="noopener noreferrer">OpenRouter</a></p>
+            <span class="acc-card__free">Recommended &middot; free models</span>
+            <p class="acc-card__desc">Recommended for cloud LLM access. One API for many commercial and open models, so you can switch models without changing your application. It also provides free models for development and experimentation.</p>
+          </li>
+
+          <li class="acc-card">
+            <p class="acc-card__name"><a href="https://ollama.com/" target="_blank" rel="noopener noreferrer">Ollama</a></p>
+            <span class="acc-card__free">Local &middot; no API cost</span>
+            <p class="acc-card__desc">Run models such as Llama, Qwen, Gemma, and others locally on your computer, with no API cost. Particularly useful for development and testing.</p>
+          </li>
+        </ul>
+
+        <h2 class="sdg-heading">Keep your LLM costs low</h2>
+        <p class="sdg-heading-lede">API costs can grow quickly when processing large datasets. A few simple rules help.</p>
+        <ul class="tip-list">
+          <li><b>Debug on a small sample first.</b> Do not run 10,000 examples before confirming that your pipeline works correctly on 10&ndash;50.</li>
+          <li><b>Use cheaper or free models during development,</b> and use more expensive models only when necessary.</li>
+          <li><b>Batch requests</b> when processing large datasets. OpenRouter provides a <a href="https://openrouter.ai/docs/batch-quickstart" target="_blank" rel="noopener noreferrer">Batch API</a> for submitting many inference requests together.</li>
+          <li><b>Use prompt caching</b> when many requests share the same long instructions or context. See the <a href="https://openrouter.ai/docs/guides/best-practices/prompt-caching" target="_blank" rel="noopener noreferrer">OpenRouter Prompt Caching guide</a>.</li>
+          <li><b>Keep prompts and outputs as short as practical.</b> You normally pay for both input and output tokens.</li>
+          <li><b>Monitor usage and cost while developing,</b> rather than discovering the cost after a large experiment.</li>
+        </ul>
+
+        <p class="llm-note"><b>Rule of thumb:</b> develop and debug small and cheap, then scale up only after everything works.</p>
+
+      <section class="section-quick-links">
+        <h2 class="section-quick-links__title">Quick Links</h2>
+        <nav class="section-quick-links__grid" aria-label="Quick links">
+          <a class="section-quick-link" href="./free-gpu-resources.html">
+            <span class="section-quick-link__badge" style="background: #2e7d5a;">G</span>
+            Free GPU Resources for Students
+          </a>
+          <a class="section-quick-link" href="./synthetic-data-generation.html">
+            <span class="section-quick-link__badge" style="background: #1f5a40;">S</span>
+            Synthetic Data Generation
+          </a>
+          <a class="section-quick-link" href="./index.html">
+            <span class="section-quick-link__badge" style="background: #18202a;">G</span>
+            All Guides
+          </a>
+        </nav>
+      </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../../shared/unified-enhance.js"></script>
+  <script defer src="../../shared/site-shell.js"></script>
+</body>
+</html>
