@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="he-IL" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <meta name="description" content="משאבי GPU חינמיים לסטודנטים: לרוב פרויקטי הקורס אין צורך לשלם על GPU. האפשרויות כוללות את המחשב שלכם או מחשבי המעבדה של HIT, וכן Google Colab, Kaggle, Lightning AI ו-Modal.">
+  <link rel="alternate" hreflang="he" href="./free-gpu-resources-he.html">
+  <link rel="alternate" hreflang="en" href="./free-gpu-resources.html">
+  <title>משאבי GPU חינמיים לסטודנטים | סשה אפרטסין</title>
+  <link rel="stylesheet" href="../../shared/site-shell.css">
+  <link rel="stylesheet" href="../../shared/unified-theme.css">
+  <style>
+    .sdg-heading { margin: 34px 0 2px; color: var(--site-text, #18202a); font: 800 0.9rem/1.3 "Manrope", "Heebo", sans-serif; letter-spacing: 0.04em; }
+    .sdg-heading:first-of-type { margin-top: 12px; }
+    .sdg-heading-lede { margin: 0; color: var(--site-muted); font: 600 0.92rem/1.6 "Manrope", "Heebo", sans-serif; }
+    .gpu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; margin-top: 14px; list-style: none; padding: 0; }
+    .gpu-card { position: relative; display: flex; flex-direction: column; gap: 6px; padding: 16px 22px 16px 18px; border: 1px solid var(--site-border); border-radius: 14px; background: #fff; box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05); overflow: hidden; text-align: right; }
+    .gpu-card::before { content: ""; position: absolute; inset: 0 0 0 auto; width: 5px; background: linear-gradient(180deg, rgba(24, 101, 168, 0.9), rgba(46, 125, 90, 0.75)); }
+    .gpu-card__name { margin: 0; font: 800 1.05rem/1.3 "Manrope", "Heebo", "Segoe UI", sans-serif; }
+    .gpu-card__name a { color: #164a83; text-decoration: none; }
+    .gpu-card__name a:hover { text-decoration: underline; }
+    .gpu-card__name .local { color: var(--site-text); }
+    .gpu-card__desc { margin: 0; color: var(--site-text); font: 600 0.93rem/1.55 "Manrope", "Heebo", "Segoe UI", sans-serif; }
+    .gpu-card__free { align-self: flex-start; margin-top: 2px; padding: 3px 9px; border-radius: 999px; border: 1px solid rgba(46,125,90,0.28); background: rgba(46,125,90,0.08); color: #2e7d5a; font: 800 0.66rem/1.2 "Manrope", "Heebo", sans-serif; letter-spacing: 0.03em; }
+    .gpu-note { margin-top: 16px; padding: 14px 18px; border-radius: 12px; border: 1px solid rgba(24,101,168,0.22); background: rgba(24,101,168,0.06); color: #164a83; font: 700 0.95rem/1.55 "Manrope", "Heebo", "Segoe UI", sans-serif; }
+    .gpu-note b { color: #123a67; }
+    .gpu-caveat { margin: 12px 0 0; color: var(--site-muted); font: 600 0.88rem/1.55 "Manrope", "Heebo", "Segoe UI", sans-serif; }
+    .guide-lang-switch { display: inline-flex; align-items: stretch; border: 1px solid var(--site-border, rgba(24,32,42,0.18)); border-radius: 999px; background: #fff; overflow: hidden; font: 800 0.72rem/1 "Manrope", sans-serif; letter-spacing: 0.04em; }
+    .guide-lang-switch__btn { display: inline-flex; align-items: center; padding: 6px 14px; color: var(--site-muted, #5a626c); text-decoration: none; transition: background 120ms ease, color 120ms ease; }
+    .guide-lang-switch__btn:hover, .guide-lang-switch__btn:focus-visible { background: rgba(0, 0, 0, 0.05); color: var(--site-text, #18202a); }
+    .guide-lang-switch__btn.is-active { background: var(--site-text, #18202a); color: #fff; cursor: default; pointer-events: none; }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="teaching">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar" lang="en" dir="ltr">
+      <a class="apartsin-shell__brand" href="../../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../../index.html">About</a>
+        <a href="../../research/research-focus.html">Research</a>
+        <a href="../../teaching/overview.html">Teaching</a>
+        <a href="../../work/overview.html">Building</a>
+        <a href="../../work/innovation-overview.html">Innovations</a>
+        <a href="../../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="free-gpu-resources-overview">
+          <h1 class="apartsin-sr-only">משאבי GPU חינמיים לסטודנטים</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../../index.html">בית</a>
+              <span aria-hidden="true">/</span>
+              <a href="../overview.html">הוראה</a>
+              <span aria-hidden="true">/</span>
+              <a href="./index.html">מדריכים לסטודנטים</a>
+              <span aria-hidden="true">/</span>
+              <strong>משאבי GPU חינמיים לסטודנטים</strong>
+            </nav>
+            <div class="guide-lang-switch" role="group" aria-label="שפה">
+              <a class="guide-lang-switch__btn" href="./free-gpu-resources.html" lang="en" hreflang="en">English</a>
+              <a class="guide-lang-switch__btn is-active" href="./free-gpu-resources-he.html" lang="he" hreflang="he" aria-current="true">עברית</a>
+            </div>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../../assets/heroes/guidecard-free-gpu.jpg" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">לרוב פרויקטי הקורס אין צורך לשלם על GPU. בין המחשב שלכם, מחשבי המעבדה של HIT, וכמה פלטפורמות ענן חינמיות, אפשר לאמן ולהריץ את רוב המודלים ללא עלות.</p>
+          </div>
+        </section>
+
+        <h2 class="sdg-heading">מאיפה להשיג GPU בחינם</h2>
+        <p class="sdg-heading-lede">התחילו מקומית, ועברו לענן כשצריך יותר כוח חישוב.</p>
+        <ul class="gpu-grid" aria-label="אפשרויות GPU חינמיות">
+          <li class="gpu-card">
+            <p class="gpu-card__name"><span class="local">המחשב שלכם או מחשבי המעבדה של HIT</span></p>
+            <span class="gpu-card__free">לא נדרש חשבון</span>
+            <p class="gpu-card__desc">אם למחשב שלכם יש GPU, או שאתם משתמשים במחשבי המעבדה של HIT (שיש להם כרטיס GPU של 6&nbsp;ג&rsquo;יגה), אפשר להריץ רבים מעומסי הקורס מקומית, בלי מכסה ובלי הרשמה. כרטיס של 6&nbsp;ג&rsquo;יגה מתאים למודלים קטנים, לכיוונון עדין של מודלים קומפקטיים ולרוב ניסויי הקורס; לכל דבר גדול יותר, עברו לענן.</p>
+          </li>
+
+          <li class="gpu-card">
+            <p class="gpu-card__name"><a href="https://colab.research.google.com/" target="_blank" rel="noopener noreferrer">Google Colab</a></p>
+            <span class="gpu-card__free">GPU/TPU חינם</span>
+            <p class="gpu-card__desc">האפשרות הפשוטה ביותר. מריץ מחברות Jupyter בדפדפן ומספק גישה חינמית ל-GPU/TPU, בכפוף לזמינות ולמגבלות שימוש.</p>
+          </li>
+
+          <li class="gpu-card">
+            <p class="gpu-card__name"><a href="https://www.kaggle.com/code" target="_blank" rel="noopener noreferrer">Kaggle Notebooks</a></p>
+            <span class="gpu-card__free">כ-30 שעות GPU בשבוע</span>
+            <p class="gpu-card__desc">מחברות ענן חינמיות עם גישת GPU. Kaggle מתעד כיום מכסת GPU של כ-30 שעות בשבוע, אם כי המכסות עשויות להשתנות.</p>
+          </li>
+
+          <li class="gpu-card">
+            <p class="gpu-card__name"><a href="https://lightning.ai/" target="_blank" rel="noopener noreferrer">Lightning AI</a></p>
+            <span class="gpu-card__free">קרדיטים חודשיים</span>
+            <p class="gpu-card__desc">סביבת פיתוח בענן לפרויקטי AI. השכבה האקדמית החינמית כוללת קרדיטים חודשיים ל-GPU; לפי Lightning הם יכולים לספק בערך 35&ndash;80 שעות GPU, תלוי במכונה ובתמחור.</p>
+          </li>
+
+          <li class="gpu-card">
+            <p class="gpu-card__name"><a href="https://modal.com/" target="_blank" rel="noopener noreferrer">Modal</a></p>
+            <span class="gpu-card__free">$30 קרדיט בחודש</span>
+            <p class="gpu-card__desc">טוב כשצריך להריץ משימות Python על GPU ולא רק לעבוד בתוך מחברות. תוכנית ה-Starter עולה $0 לחודש וכוללת קרדיט חישוב של $30 בכל חודש לעומסי GPU.</p>
+          </li>
+        </ul>
+
+        <p class="gpu-note"><b>המלצה:</b> התחילו מהמחשב שלכם או מהמעבדה, אחר כך Colab או Kaggle. עברו ל-Lightning AI או Modal כשצריך יותר כוח חישוב, כרטיסי GPU אחרים, או סביבת הרצה גמישה יותר.</p>
+        <p class="gpu-caveat">השכבות החינמיות, סוגי ה-GPU והמכסות משתנים לעיתים קרובות, אז בדקו את המגבלות הנוכחיות לפני שמתחילים ניסוי גדול.</p>
+
+      <section class="section-quick-links">
+        <h2 class="section-quick-links__title">קישורים מהירים</h2>
+        <nav class="section-quick-links__grid" aria-label="קישורים מהירים">
+          <a class="section-quick-link" href="./synthetic-data-generation-he.html">
+            <span class="section-quick-link__badge" style="background: #1f5a40;">S</span>
+            יצירת נתונים סינתטיים
+          </a>
+          <a class="section-quick-link" href="./project-requirements-he.html">
+            <span class="section-quick-link__badge" style="background: #164a83;">R</span>
+            דרישות פרויקט ב-LLM/GenAI
+          </a>
+          <a class="section-quick-link" href="./index.html">
+            <span class="section-quick-link__badge" style="background: #18202a;">G</span>
+            כל המדריכים
+          </a>
+        </nav>
+      </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../../shared/unified-enhance.js"></script>
+  <script defer src="../../shared/site-shell.js"></script>
+</body>
+</html>
