@@ -45,15 +45,13 @@
       li.className = "pub-card";
       li.id = pub.id;
 
-      // Top-right lifecycle-status badge. Published papers are out; a submitted
-      // paper shows "Accepted" once it clears peer review (accepted, not yet
-      // published) and "Submitted" while still under review.
+      // Top-right lifecycle-status badge. An accepted paper (cleared peer review
+      // but not yet published) shows "Accepted" regardless of type; otherwise a
+      // Journal paper is "Published" and a Submitted one is "Submitted".
       var statusText = null, statusMod = null;
-      if (pub.type === "Journal") { statusText = "Published"; statusMod = "published"; }
-      else if (pub.type === "Submitted") {
-        statusText = pub.accepted ? "Accepted" : "Submitted";
-        statusMod = pub.accepted ? "accepted" : "submitted";
-      }
+      if (pub.accepted) { statusText = "Accepted"; statusMod = "accepted"; }
+      else if (pub.type === "Journal") { statusText = "Published"; statusMod = "published"; }
+      else if (pub.type === "Submitted") { statusText = "Submitted"; statusMod = "submitted"; }
       if (statusText) {
         var statusEl = document.createElement("span");
         statusEl.className = "pub-card__status pub-card__status--" + statusMod;
@@ -84,12 +82,6 @@
       typeSpan.textContent = badgeText;
       top.appendChild(typeSpan);
 
-      if (pub.accepted) {
-        var acceptedBadge = document.createElement("span");
-        acceptedBadge.className = "pub-card__badge--accepted";
-        acceptedBadge.textContent = "Accepted";
-        top.appendChild(acceptedBadge);
-      }
 
       li.appendChild(top);
 

@@ -143,6 +143,7 @@ window.RECENT_PUBLICATIONS = [
     id: "pub-2025-chest-xray-rejection",
     year: 2026,
     type: "Journal",
+    accepted: true,
     title: "Multi-pathology Chest X-ray Classification with Rejection Mechanisms",
     focus: "robust",
     summary: "This work adds rejection mechanisms to multi-pathology chest X-ray classification, letting the model abstain on cases it cannot classify confidently instead of forcing an unreliable label. It prioritizes operational reliability under ambiguous or degraded scans, trading coverage for trustworthy decisions in clinical deployment.",
@@ -448,7 +449,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-inprep-imperfect-student",
     year: 2026,
-    type: "Submitted",
+    type: "Preprint",
     title: "Toward a Benchmark for Controllable Simulation of Imperfect Students with Large Language Models",
     focus: "spec",
     summary: "This work develops a benchmark for controllably simulating imperfect students with large language models, generating learner behavior at specified levels of misconception and skill. Generation obeys an explicit control specification, so each simulated student exhibits the precise, targeted deficiencies the scenario requires rather than generic errors.",
