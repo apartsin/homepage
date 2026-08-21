@@ -45,6 +45,22 @@
       li.className = "pub-card";
       li.id = pub.id;
 
+      // Top-right lifecycle-status badge. Published papers are out; a submitted
+      // paper shows "Accepted" once it clears peer review (accepted, not yet
+      // published) and "Submitted" while still under review.
+      var statusText = null, statusMod = null;
+      if (pub.type === "Journal") { statusText = "Published"; statusMod = "published"; }
+      else if (pub.type === "Submitted") {
+        statusText = pub.accepted ? "Accepted" : "Submitted";
+        statusMod = pub.accepted ? "accepted" : "submitted";
+      }
+      if (statusText) {
+        var statusEl = document.createElement("span");
+        statusEl.className = "pub-card__status pub-card__status--" + statusMod;
+        statusEl.textContent = statusText;
+        li.appendChild(statusEl);
+      }
+
       var top = document.createElement("div");
       top.className = "pub-card__top";
 

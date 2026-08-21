@@ -112,6 +112,26 @@
       letter-spacing: 0.04em;
       text-transform: uppercase;
     }
+    .pub-card__status {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font: 800 0.62rem/1.2 "Manrope", "Segoe UI", sans-serif;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .pub-card__status--published { color: #166534; background: rgba(22, 101, 52, 0.1); border-color: rgba(22, 101, 52, 0.28); }
+    .pub-card__status--accepted { color: #1d4ed8; background: rgba(29, 78, 216, 0.1); border-color: rgba(29, 78, 216, 0.28); }
+    .pub-card__status--submitted { color: #9c5a2e; background: rgba(156, 90, 46, 0.11); border-color: rgba(156, 90, 46, 0.3); }
+    /* Reserve the top-right corner so the card's first row never runs under the badge. */
+    .pub-card__top { padding-right: 78px; }
     .pub-card__title {
       margin: 0;
       color: var(--site-text);
