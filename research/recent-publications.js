@@ -7,11 +7,11 @@
     return;
   }
 
-  // Two sections: published journals, then a merged section with submitted
-  // papers first (they keep a status badge), followed by reports (no badge).
+  // Two sections: published journals, then all preprints with the submitted
+  // ones first (they keep a status badge); the rest carry no badge.
   var sections = [
     { label: "Published: 2025-2026", types: ["Journal"] },
-    { label: "Submitted & Reports", types: ["Submitted", "Preprint"] }
+    { label: "Preprints: 2025-2026", types: ["Submitted", "Preprint"] }
   ];
 
   var grouped = { Journal: [], Submitted: [], Preprint: [] };
@@ -66,20 +66,15 @@
       yearSpan.textContent = pub.year;
       top.appendChild(yearSpan);
 
-      var typeLabels = { Journal: "Journal", Submitted: "Preprint", Preprint: "Report", InPreparation: "Draft" };
-      // Within the Preprints (InPreparation) section, cards that link to an
-      // arXiv preprint show "Preprint"; cards without an arXiv link show "Draft".
-      var hasArxiv = /arxiv\.org/i.test(pub.venueHref || "");
-      var badgeText;
-      if (pub.type === "InPreparation") {
-        badgeText = hasArxiv ? "Preprint" : "Draft";
-      } else {
-        badgeText = typeLabels[pub.type] || pub.type;
+      // Only journals keep a type badge. Preprints/reports show none (the section
+      // heading already says "Preprints"); submitted papers are marked instead by
+      // their "Submitted" status badge.
+      if (pub.type === "Journal") {
+        var typeSpan = document.createElement("span");
+        typeSpan.className = "pub-card__type";
+        typeSpan.textContent = "Journal";
+        top.appendChild(typeSpan);
       }
-      var typeSpan = document.createElement("span");
-      typeSpan.className = "pub-card__type";
-      typeSpan.textContent = badgeText;
-      top.appendChild(typeSpan);
 
 
       li.appendChild(top);
