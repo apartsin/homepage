@@ -11,7 +11,7 @@
   // ones first (they keep a status badge); the rest carry no badge.
   var sections = [
     { label: "Published: 2025-2026", types: ["Journal"] },
-    { label: "Preprints: 2025-2026", types: ["Submitted", "Preprint"] }
+    { label: "Preprints and Reports: 2025-2026", types: ["Submitted", "Preprint"] }
   ];
 
   var grouped = { Journal: [], Submitted: [], Preprint: [] };
@@ -45,12 +45,10 @@
       li.className = "pub-card";
       li.id = pub.id;
 
-      // Top-right status badge only where it disambiguates: submitted papers get
-      // "Submitted", an accepted-but-unpublished paper gets "Accepted". Published
-      // journals and reports carry no badge (their section already says so).
+      // The only status badge is "Accepted" (cleared peer review, not yet
+      // published). Everything else relies on its section heading.
       var statusText = null, statusMod = null;
       if (pub.accepted) { statusText = "Accepted"; statusMod = "accepted"; }
-      else if (pub.type === "Submitted") { statusText = "Submitted"; statusMod = "submitted"; }
       if (statusText) {
         var statusEl = document.createElement("span");
         statusEl.className = "pub-card__status pub-card__status--" + statusMod;
