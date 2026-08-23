@@ -64,15 +64,7 @@
       yearSpan.textContent = pub.year;
       top.appendChild(yearSpan);
 
-      // Only journals keep a type badge. Preprints/reports show none (the section
-      // heading already says "Preprints"); submitted papers are marked instead by
-      // their "Submitted" status badge.
-      if (pub.type === "Journal") {
-        var typeSpan = document.createElement("span");
-        typeSpan.className = "pub-card__type";
-        typeSpan.textContent = "Journal";
-        top.appendChild(typeSpan);
-      }
+      // No type badge on any card; the section heading carries the distinction.
 
 
       li.appendChild(top);
