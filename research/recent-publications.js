@@ -7,29 +7,29 @@
     return;
   }
 
-  var sectionLabels = {
-    Journal: "Published: 2025-2026",
-    Submitted: "Submitted for Peer Review",
-    Preprint: "Reports",
-    InPreparation: "In Preparation"
-  };
-  var typeOrder = ["Journal", "Submitted", "Preprint"];
+  // Two sections: published journals, then a merged section with submitted
+  // papers first (they keep a status badge), followed by reports (no badge).
+  var sections = [
+    { label: "Published: 2025-2026", types: ["Journal"] },
+    { label: "Submitted & Reports", types: ["Submitted", "Preprint"] }
+  ];
 
-  var grouped = {};
-  typeOrder.forEach(function (t) { grouped[t] = []; });
+  var grouped = { Journal: [], Submitted: [], Preprint: [] };
   pubs.forEach(function (p) {
     if (grouped[p.type]) {
       grouped[p.type].push(p);
     }
   });
 
-  typeOrder.forEach(function (type) {
-    var items = grouped[type].slice().sort(function (a, b) {
-      var yearDiff = (b.year || 0) - (a.year || 0);
-      if (yearDiff !== 0) {
-        return yearDiff;
-      }
-      return String(a.title || "").localeCompare(String(b.title || ""));
+  function sortByYear(a, b) {
+    return (b.year || 0) - (a.year || 0) ||
+      String(a.title || "").localeCompare(String(b.title || ""));
+  }
+
+  sections.forEach(function (section) {
+    var items = [];
+    section.types.forEach(function (t) {
+      items = items.concat(grouped[t].slice().sort(sortByYear));
     });
     if (items.length === 0) {
       return;
@@ -37,7 +37,7 @@
 
     var heading = document.createElement("li");
     heading.className = "pub-section-heading";
-    heading.textContent = sectionLabels[type] || type;
+    heading.textContent = section.label;
     grid.appendChild(heading);
 
     items.forEach(function (pub) {
@@ -45,12 +45,11 @@
       li.className = "pub-card";
       li.id = pub.id;
 
-      // Top-right lifecycle-status badge. An accepted paper (cleared peer review
-      // but not yet published) shows "Accepted" regardless of type; otherwise a
-      // Journal paper is "Published" and a Submitted one is "Submitted".
+      // Top-right status badge only where it disambiguates: submitted papers get
+      // "Submitted", an accepted-but-unpublished paper gets "Accepted". Published
+      // journals and reports carry no badge (their section already says so).
       var statusText = null, statusMod = null;
       if (pub.accepted) { statusText = "Accepted"; statusMod = "accepted"; }
-      else if (pub.type === "Journal") { statusText = "Published"; statusMod = "published"; }
       else if (pub.type === "Submitted") { statusText = "Submitted"; statusMod = "submitted"; }
       if (statusText) {
         var statusEl = document.createElement("span");
