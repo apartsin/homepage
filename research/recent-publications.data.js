@@ -143,7 +143,6 @@ window.RECENT_PUBLICATIONS = [
     id: "pub-2025-chest-xray-rejection",
     year: 2026,
     type: "Journal",
-    accepted: true,
     title: "Multi-pathology Chest X-ray Classification with Rejection Mechanisms",
     focus: "robust",
     summary: "This work adds rejection mechanisms to multi-pathology chest X-ray classification, letting the model abstain on cases it cannot classify confidently instead of forcing an unreliable label. It prioritizes operational reliability under ambiguous or degraded scans, trading coverage for trustworthy decisions in clinical deployment.",
@@ -156,7 +155,7 @@ window.RECENT_PUBLICATIONS = [
       { name: "A Apartsin", self: true }
     ],
     venue: "Scientific Reports (Nature)",
-    venueHref: "https://arxiv.org/abs/2509.10348"
+    venueHref: "https://www.nature.com/articles/s41598-026-66294-7"
   },
   {
     id: "pub-2026-calexnet",
