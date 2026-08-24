@@ -41,8 +41,8 @@ window.RECENT_PUBLICATIONS = [
       { name: "G Shapira", self: false },
       { name: "A Apartsin", self: true }
     ],
-    venue: "Harvard Dataverse (doi:10.7910/DVN/CG9X6D)",
-    venueHref: "https://doi.org/10.7910/DVN/CG9X6D"
+    venue: "OpenReview",
+    venueHref: "https://openreview.net/pdf?id=1jRM1hx5GA"
   },
   {
     id: "pub-2026-diagnostic-questioning",
