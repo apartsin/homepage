@@ -257,6 +257,7 @@
           /\/writing\/blog-posts\.html$/i,
           /\/writing\/books-overview\.html$/i,
           /\/writing\/books\.html$/i,
+          /\/writing\/talks\.html$/i,
         ],
         [
           {
@@ -272,6 +273,10 @@
           {
             label: 'Online Textbooks',
             path: 'writing/books-overview.html',
+          },
+          {
+            label: 'Talks',
+            path: 'writing/talks.html',
           },
         ],
       ),

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <meta name="description" content="Talks and public presentations by Sasha Apartsin on AI in education, curriculum development, and industry-academia bridging.">
+  <title>Talks | Sasha Apartsin</title>
+  <link rel="stylesheet" href="../shared/site-shell.css">
+  <link rel="stylesheet" href="../shared/unified-theme.css">
+  <style>
+    .talks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .talk-card {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid var(--site-border);
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: 0 8px 20px rgba(35, 30, 23, 0.06);
+    }
+    .talk-card__year {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 2;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(17, 20, 24, 0.78);
+      color: #fff;
+      font: 800 0.72rem/1 "Manrope", "Segoe UI", sans-serif;
+      letter-spacing: 0.02em;
+      backdrop-filter: blur(2px);
+    }
+    .talk-card__media {
+      display: block;
+      border-bottom: 1px solid var(--site-border);
+      background: rgba(255, 255, 255, 0.98);
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      margin: 0;
+    }
+    .talk-card__media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .talk-card__body {
+      padding: 14px 16px 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+    .talk-card__body h2 {
+      margin: 0;
+      font: 800 1.05rem/1.28 "Manrope", "Segoe UI", sans-serif;
+      color: var(--site-text);
+    }
+    .talk-card__body p {
+      margin: 0;
+      color: var(--site-muted);
+      font: 600 0.9rem/1.55 "Manrope", "Segoe UI", sans-serif;
+      flex: 1;
+    }
+    .talk-card__links { margin-top: auto; padding-top: 4px; display: flex; flex-wrap: wrap; gap: 8px 14px; font: 700 0.85rem/1.4 "Manrope", "Segoe UI", sans-serif; }
+    .talk-card__links a { color: #1d4ed8; text-decoration: underline; text-underline-offset: 2px; }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="writing">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar">
+      <a class="apartsin-shell__brand" href="../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../index.html">About</a>
+        <a href="../research/research-focus.html">Research</a>
+        <a href="../teaching/overview.html">Teaching</a>
+        <a href="../work/overview.html">Building</a>
+        <a href="../work/innovation-overview.html">Innovations</a>
+        <a href="../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="talks-overview">
+          <h1 class="apartsin-sr-only">Talks</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="./overview.html">Writing</a>
+              <span aria-hidden="true">/</span>
+              <strong>Talks</strong>
+            </nav>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../assets/heroes/writing-blog-posts.png" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">Selected talks and public presentations on AI in education, curriculum development, and bridging academia with industry.</p>
+          </div>
+        </section>
+
+        <section class="talks-grid" aria-label="Talks">
+          <article class="talk-card" id="teaching-to-hire-talk">
+            <span class="talk-card__year">2026</span>
+            <figure class="talk-card__media">
+              <img src="../assets/teaching/teaching-and-curriculum-development/Logo_hit+50.jpg" alt="Would I Hire My Own Graduates? talk visual">
+            </figure>
+            <div class="talk-card__body">
+              <h2>Would I Hire My Own Graduates?</h2>
+              <p>A talk on Innovation-First Learning for job-ready CS graduates in the AI era. Drawing on three decades spent on parallel academia and industry tracks, it traces the growing disconnect between the two, how the software engineering role is shifting, and what over 100 student projects show about the response.</p>
+              <div class="talk-card__links">
+                <a href="../assets/teaching/curriculum-development/teaching-to-hire-talk.pdf" target="_blank" rel="noopener noreferrer">Slides (PDF)</a>
+                <a href="../assets/teaching/curriculum-development/teaching-to-hire-talk.pptx">Slides (PPTX)</a>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="section-quick-links" style="margin-top: 24px;">
+          <h2 class="section-quick-links__title">Related</h2>
+          <nav class="section-quick-links__grid" aria-label="Quick links">
+            <a class="section-quick-link" href="./blog-posts.html">
+              <span class="section-quick-link__badge" style="background: #1d4ed8;">B</span>
+              Blog Posts
+            </a>
+            <a class="section-quick-link" href="./books-overview.html">
+              <span class="section-quick-link__badge" style="background: #2e7d5a;">B</span>
+              Online Textbooks
+            </a>
+            <a class="section-quick-link" href="../teaching/curriculum-development.html">
+              <span class="section-quick-link__badge" style="background: #9c5a2e;">C</span>
+              Curriculum Development
+            </a>
+          </nav>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../shared/unified-enhance.js"></script>
+  <script defer src="../shared/site-shell.js"></script>
+</body>
+</html>
