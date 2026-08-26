@@ -14,6 +14,27 @@
   <link rel="stylesheet" href="../shared/cards.css">
   <link rel="stylesheet" href="../shared/card-types/course.css">
   <link rel="stylesheet" href="../shared/hos-courses.css">
+  <style>
+    /* Course syllabi grid: make the four cards more compact.
+       Overrides the sitewide .cards-grid--2x2 (which forces two large cards
+       per row) and tightens media/body padding for this page only. */
+    #hos-course-syllabi-grid.cards-grid--2x2 {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+    }
+    #hos-course-syllabi-grid .content-card { border-radius: 14px; }
+    #hos-course-syllabi-grid .content-card__media { aspect-ratio: 16 / 9; }
+    #hos-course-syllabi-grid .content-card__body {
+      gap: 6px;
+      padding: 12px 14px 14px;
+    }
+    #hos-course-syllabi-grid .hos-course-title {
+      min-height: 3.1em;
+      font-size: 0.95rem;
+    }
+    #hos-course-syllabi-grid .content-card__link,
+    #hos-course-syllabi-grid .content-card__links a { font-size: 0.82rem; }
+  </style>
 </head>
 <body class="apartsin-shell-active" data-site-section="teaching" data-card-type="course">
   <div class="apartsin-shell">
