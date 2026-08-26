@@ -23,7 +23,7 @@ window.FORMER_STUDENTS = [
     meta: "Igor Adamenko, Orpaz Ben-Aharon \u00b7 2025",
     tags: ["Images"],
     text: "Explored diffusion-based de-warping for images with severe geometric distortion. Iterative restoration recovered structure and detail beyond traditional correction pipelines.",
-    links: [{ label: "Report", href: "https://arxiv.org/pdf/2604.23814?" }]
+    links: [{ label: "Paper", href: "https://www.mdpi.com/2673-2688/7/7/237" }]
   },
   {
     id: "project-graph-photo-tagging",
