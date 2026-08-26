@@ -32,8 +32,31 @@
       min-height: 3.1em;
       font-size: 0.95rem;
     }
-    #hos-course-syllabi-grid .content-card__link,
-    #hos-course-syllabi-grid .content-card__links a { font-size: 0.82rem; }
+    /* Tighter action buttons for the compact card. */
+    #hos-course-syllabi-grid .content-card__links { gap: 5px; margin-top: 6px; }
+    #hos-course-syllabi-grid .content-card__link {
+      min-height: 26px;
+      padding: 4px 8px;
+      font-size: 0.66rem;
+      letter-spacing: 0.02em;
+      border-radius: 8px;
+    }
+    /* Smaller, better-positioned corner badges (Updated/New + Textbook). */
+    #hos-course-syllabi-grid .content-card__badge {
+      top: 6px; right: 6px;
+      padding: 2px 8px;
+      font-size: 0.6rem;
+      letter-spacing: 0.03em;
+    }
+    #hos-course-syllabi-grid .content-card__book-badge {
+      top: 6px; right: 6px;
+      padding: 3px 8px;
+      font-size: 0.6rem;
+      letter-spacing: 0.03em;
+      border-width: 1.5px;
+      gap: 4px;
+    }
+    #hos-course-syllabi-grid .content-card__book-badge svg { width: 11px; height: 11px; }
   </style>
 </head>
 <body class="apartsin-shell-active" data-site-section="teaching" data-card-type="course">
