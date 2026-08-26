@@ -7,7 +7,7 @@ window.CURRENT_STUDENTS = [
     name: "Eden Moran",
     degree: "M.Sc.",
     description: "Implicit entity recognition in text using contextual inference and discourse-level cues.",
-    links: [{ label: "Report", href: "https://arxiv.org/pdf/2605.06142?" }]
+    links: [{ label: "Paper", href: "https://www.mdpi.com/2504-4990/8/7/186" }]
   },
   {
     id: "niv-cohen",
