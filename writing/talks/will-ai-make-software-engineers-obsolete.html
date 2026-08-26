@@ -164,6 +164,16 @@
   .dots button.on{background:var(--accent);transform:scale(1.5)}
   @media(max-width:820px){.dots,.hint{display:none}}
 
+  /* mobile: stack rows that carry inline column styles; desktop untouched */
+  @media(max-width:820px){
+    .two,.two[style],.grid[style*="grid-template-columns"]{grid-template-columns:1fr !important}
+    ul[style*="columns:2"]{columns:1 !important}
+    .slide{padding:5vh 6vw 12vh}
+    .fig svg{max-width:100%;height:auto}
+    .ghost{font-size:5.5rem}
+    .credit{display:none}
+  }
+
   /* language switch */
   .langswitch{
     position:fixed;top:14px;right:16px;z-index:25;
@@ -428,7 +438,7 @@
     </div>
   </section>
 
-  <!-- 9 PHOTOGRAPHY -->
+  <!-- PHOTOGRAPHY -->
   <section class="slide">
     <div class="inner">
       <div class="kicker a1" data-en="Another precedent: photography" data-he="עוד דוגמה מהעבר: הצילום">Another precedent: photography</div>
