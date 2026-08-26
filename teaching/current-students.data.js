@@ -59,7 +59,7 @@ window.CURRENT_STUDENTS = [
     id: "linoy-halifa",
     image: "../assets/heroes/labcard-datasheet.jpg",
     imageAlt: "Project image for Linoy Halifa",
-    project: "Socio-Economic Aspect-Based Sentiment Analysis on Synthetic Data",
+    project: "Socio-Economic Aspect-Based Sentiment Analysis",
     name: "Linoy Halifa",
     degree: "M.Sc.",
     description: "Aspect-based sentiment analysis of socio-economic discourse, trained and evaluated on controllably generated synthetic data."
