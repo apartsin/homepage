@@ -56,6 +56,15 @@ window.CURRENT_STUDENTS = [
     description: "Autonomous generation of analytics dashboards from natural language queries using large language models, data schema inference, and visualization planning."
   },
   {
+    id: "linoy-halifa",
+    image: "../assets/heroes/labcard-datasheet.jpg",
+    imageAlt: "Project image for Linoy Halifa",
+    project: "Socio-Economic Aspect-Based Sentiment Analysis on Synthetic Data",
+    name: "Linoy Halifa",
+    degree: "M.Sc.",
+    description: "Aspect-based sentiment analysis of socio-economic discourse, trained and evaluated on controllably generated synthetic data."
+  },
+  {
     id: "ameen-assadi",
     image: "../shared-media/www-apartsin-com/assets/ai-engineering-projects-open-for-students/img-001-5fdd85fe4a-7c202b62da.png",
     imageAlt: "Project image for Ameen Assadi",
