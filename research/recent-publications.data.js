@@ -133,7 +133,7 @@ window.RECENT_PUBLICATIONS = [
       { name: "A Apartsin", self: true },
       { name: "Y Aperstein", self: false }
     ],
-    venue: "Zenodo (doi:10.5281/zenodo.22058568)",
+    venue: "Project page (apartsinprojects.github.io/JoulePoint)",
     venueHref: "https://apartsinprojects.github.io/JoulePoint/docs/GPTEnergy.html"
   },
   {
@@ -147,7 +147,7 @@ window.RECENT_PUBLICATIONS = [
       { name: "A Apartsin", self: true },
       { name: "Y Aperstein", self: false }
     ],
-    venue: "Zenodo (doi:10.5281/zenodo.22058593)",
+    venue: "Project page (apartsin.github.io/CIRCA)",
     venueHref: "https://apartsin.github.io/CIRCA/circa.html"
   },
   {
