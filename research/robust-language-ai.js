@@ -47,9 +47,11 @@
     "pub-2025-clickbait-detection": 1, "pub-2026-clinical-comm-synthetic-survey": 1,
     "pub-2026-healthcare-it-computable-care": 1, "pub-2026-promptforge": 1, "pub-inprep-absa-courses": 1,
     "pub-inprep-imperfect-student": 1, "pub-2025-review-recommendation": 1,
+    "pub-2026-circa": 1,
     "pub-2025-teaching-practice-platform": 1, "pub-2026-coreason": 1
   };
   var APP_OVERRIDE = {
+    "pub-2026-circa": "Healthcare",
     "pub-2026-irc-bench": "Healthcare",
     "pub-2025-teaching-practice-platform": "Education",
     "pub-inprep-imperfect-student": "Education",
