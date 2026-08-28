@@ -123,6 +123,20 @@ window.RECENT_PUBLICATIONS = [
     venueHref: "https://arxiv.org/abs/2603.22459"
   },
   {
+    id: "pub-2026-circa",
+    year: 2026,
+    type: "Preprint",
+    title: "Clinical Intent Extraction: A FHIR-Aligned Representation and the CIRCA Benchmark",
+    focus: "spec",
+    summary: "This work introduces Clinical Intent Extraction: recovering prospective clinical actions as complete structured records rather than free-text mentions. It defines a FHIR-aligned Clinical Intent Representation with verb, type, coded target, timing, condition, request-intent, and modality, and releases CIRCA, 10,011 annotated intents across 1,185 notes harmonized from five corpora via three-model consensus with human validation. Benchmarking five LLMs, coarse type classification reaches 85–91% accuracy, but recovering all structured fields simultaneously remains hard at 18–35%.",
+    authors: [
+      { name: "A Apartsin", self: true },
+      { name: "Y Aperstein", self: false }
+    ],
+    venue: "Zenodo (doi:10.5281/zenodo.22058593)",
+    venueHref: "https://apartsin.github.io/CIRCA/circa.html"
+  },
+  {
     id: "pub-2025-clickbait-detection",
     year: 2025,
     type: "Preprint",
