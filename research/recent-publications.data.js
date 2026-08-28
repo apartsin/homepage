@@ -123,6 +123,20 @@ window.RECENT_PUBLICATIONS = [
     venueHref: "https://arxiv.org/abs/2603.22459"
   },
   {
+    id: "pub-2026-joule-point",
+    year: 2026,
+    type: "Preprint",
+    title: "The Joule Point: an Energy-Optimal Operating Point for AI Inference",
+    focus: "sparse",
+    summary: "Data centers running AI inference typically pin GPUs at full power, which is energy-inefficient. This work shows that energy per inference is U-shaped in the operating point, driven by a fixed power floor combined with superlinear power scaling, and identifies the Joule Point: an optimal power cap at 43–46% of TDP on large GPUs that cuts energy per inference by roughly 29–31% at a modest 1.2x latency cost. Findings are validated with ELF, a dataset of power-cap sweeps across 20 inference models on four GPUs.",
+    authors: [
+      { name: "A Apartsin", self: true },
+      { name: "Y Aperstein", self: false }
+    ],
+    venue: "Zenodo (doi:10.5281/zenodo.22058568)",
+    venueHref: "https://apartsinprojects.github.io/JoulePoint/docs/GPTEnergy.html"
+  },
+  {
     id: "pub-2026-circa",
     year: 2026,
     type: "Preprint",
