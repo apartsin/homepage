@@ -65,6 +65,14 @@
     title.textContent = card.title || "";
     article.appendChild(title);
 
+    /* optional note */
+    if (card.note) {
+      var note = document.createElement("p");
+      note.className = "prt-card__note";
+      note.textContent = card.note;
+      article.appendChild(note);
+    }
+
     /* footer: tags left, links right */
     var footer = document.createElement("div");
     footer.className = "prt-card__footer";
