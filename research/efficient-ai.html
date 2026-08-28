@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <meta name="description" content="Efficient AI research: finding the operating point where AI systems produce the best result per unit of energy, compute, or cost. Covers energy-optimal inference, early-exit cascades, and unified inference pipelines. Part of the Pragmatic AI research program.">
+  <title>Efficient AI | Alexander (Sasha) Apartsin</title>
+  <link rel="stylesheet" href="../shared/site-shell.css">
+  <link rel="stylesheet" href="../shared/unified-theme.css">
+  <style>
+    .pragmatic-ai {
+      font-weight: 800;
+      color: #b45309;
+      letter-spacing: -0.01em;
+    }
+    .direction-body {
+      margin-top: 24px;
+      padding: 22px 26px 26px;
+      border: 1px solid var(--site-border, rgba(24,32,42,0.1));
+      border-radius: 14px;
+      border-top: 3px solid #b45309;
+      background: #fff;
+    }
+    .direction-area {
+      overflow: auto;
+      margin-top: 22px;
+    }
+    .direction-area:first-child { margin-top: 0; }
+    .direction-area + .direction-area {
+      padding-top: 20px;
+      border-top: 1px solid var(--site-border, rgba(24,32,42,0.08));
+    }
+    .direction-area__label {
+      display: block;
+      margin-bottom: 8px;
+      font: 700 0.68rem/1 "Manrope", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .direction-area--energy   .direction-area__label { color: #b45309; }
+    .direction-area--cascade  .direction-area__label { color: #1d4ed8; }
+    .direction-area--pipeline .direction-area__label { color: #2e7d5a; }
+    .direction-area p {
+      margin: 0;
+      font: 400 0.9rem/1.75 "Source Serif 4", Georgia, serif;
+      color: var(--site-muted, #586271);
+    }
+    .direction-area p + p { margin-top: 10px; }
+    .direction-area p a {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+    .direction-area--energy   p a { color: #b45309; }
+    .direction-area--cascade  p a { color: #1d4ed8; }
+    .direction-area--pipeline p a { color: #2e7d5a; }
+    .direction-area p a:hover { opacity: 0.8; }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="research">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar">
+      <a class="apartsin-shell__brand" href="../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../index.html">About</a>
+        <a href="../research/research-focus.html">Research</a>
+        <a href="../teaching/overview.html">Teaching</a>
+        <a href="../work/overview.html">Building</a>
+        <a href="../work/innovation-overview.html">Innovations</a>
+        <a href="../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+
+        <section class="apartsin-page-header apartsin-page-header--standard">
+          <h1 class="apartsin-sr-only">Efficient AI</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="./research-focus.html">Research</a>
+              <span aria-hidden="true">/</span>
+              <strong>Efficient AI</strong>
+            </nav>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../assets/heroes/research-interests.png" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">The <strong class="pragmatic-ai">pragmatic</strong> test for an AI system is not peak accuracy at any price but the operating point where the useful result is largest per unit of energy, compute, or cost. This direction studies where that point sits and how to reach it, from GPU power caps to early-exit inference to unified execution across many models.</p>
+          </div>
+        </section>
+
+        <div class="direction-body">
+
+          <div class="direction-area direction-area--energy">
+            <span class="direction-area__label">Energy-Optimal Inference</span>
+            <p>Data centers commonly run inference at full GPU power, treating maximum utilization as the goal. Energy per inference, though, is not monotone in power: a fixed power floor combined with superlinear power scaling makes the energy-per-inference curve U-shaped, so both under- and over-powered operating points waste joules. The right question is not "how much power" but "where is the bottom of the U".</p>
+            <p><a href="https://apartsinprojects.github.io/JoulePoint/docs/GPTEnergy.html" target="_blank" rel="noopener noreferrer">The Joule Point: an Energy-Optimal Operating Point for AI Inference</a> characterizes that point. On large GPUs it sits at 43&ndash;46% of TDP, cutting energy per inference by roughly 29&ndash;31% at a modest 1.2&times; latency cost. The claim is supported by ELF, a dataset of power-cap sweeps across 20 inference models on four GPUs, and reframes serving-time throughput as a Pareto trade-off rather than a maximization.</p>
+          </div>
+
+          <div class="direction-area direction-area--cascade">
+            <span class="direction-area__label">Compute-Aware Cascades</span>
+            <p>A second lever on efficiency is to spend compute per input, not per model. Most inputs are easy; a small fraction is hard. An architecture that lets easy inputs exit early and only escalates the difficult ones to deeper computation can preserve accuracy while cutting average FLOPs. The catch is that early exits need to know when to trust themselves; an overconfident intermediate classifier makes the cascade unsafe.</p>
+            <p><a href="https://www.mdpi.com/2079-9292/15/10/2149" target="_blank" rel="noopener noreferrer">CalexNet: Soft Cascade-Aligned Training and Calibration for Lightweight Early-Exit Branches</a> (Electronics, MDPI) addresses this by training early-exit branches with soft cascade-aligned supervision and calibration, so intermediate classifiers produce well-calibrated confidence rather than false certainty. The result is inference that stays dependable under tight compute budgets rather than degrading silently as the budget shrinks.</p>
+          </div>
+
+          <div class="direction-area direction-area--pipeline">
+            <span class="direction-area__label">Unified Inference Pipelines</span>
+            <p>In production, the same input often feeds many models, and each model runs its own detector, feature extractor, and post-processor. The result is a stack of pipelines that redo the same work: cost and latency scale with the number of deployed models rather than with the amount of unique computation actually needed. Merging the shared parts turns a fleet of pipelines into a single, optimized execution path.</p>
+            <p><a href="https://patents.google.com/patent/US20240013095A1/en" target="_blank" rel="noopener noreferrer">A system and method for the unification and optimization of machine learning inference pipelines</a> (US20240013095A1) captures that consolidation as a deployable pattern: many ML pipelines are unified into one shared path, sharing common computation to cut redundant work and lower the latency and cost of running many models together in production.</p>
+          </div>
+
+        </div>
+
+        <section class="section-quick-links">
+          <h2 class="section-quick-links__title">Related</h2>
+          <nav class="section-quick-links__grid" aria-label="Quick links">
+            <a class="section-quick-link" href="./robust-ai.html">
+              <span class="section-quick-link__badge" style="background: #1d4ed8;">R</span>
+              Robust AI
+            </a>
+            <a class="section-quick-link" href="./spec-driven-ai.html">
+              <span class="section-quick-link__badge" style="background: #2e7d5a;">S</span>
+              Spec-Driven GenAI
+            </a>
+            <a class="section-quick-link" href="./sparse-multi-agent-ai.html">
+              <span class="section-quick-link__badge" style="background: #7a3fa0;">S</span>
+              Sparse Multi-Agent AI
+            </a>
+            <a class="section-quick-link" href="./pragmatic-ai-lab.html">
+              <span class="section-quick-link__badge" style="background: #0e7490;">L</span>
+              H.I.T. Pragmatic AI Lab
+            </a>
+          </nav>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../shared/unified-enhance.js"></script>
+  <script defer src="../shared/site-shell.js"></script>
+</body>
+</html>
