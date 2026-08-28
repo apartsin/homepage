@@ -40,7 +40,7 @@ window.ACHIEVEMENT_CARDS = [
     text: "I designed a statistical model used to predict load on large distributed billing systems. It supported more accurate sizing of system installations and ultimately saved the company $10 million in unnecessary hardware costs.",
     image: { src: "../assets/work/innovation-and-entrepreneurship/img-002-648941b496.jpg", alt: "Amdocs project visual" },
     badge: "Contributed to $10M savings",
-    links: [{ label: "Article", href: "../assets/work/amdocs-cat-article.pdf", icon: "doc" }],
+    links: [{ label: "Report", href: "https://apartsinprojects.github.io/cpu-capacity-analysis/cpu-capacity-report.html", icon: "doc" }, { label: "Article", href: "../assets/work/amdocs-cat-article.pdf", icon: "doc" }],
     logo: { src: "../assets/about/industry-experience/img-012-72ed9ea6d4.png", alt: "Amdocs logo" }
   }
 ];

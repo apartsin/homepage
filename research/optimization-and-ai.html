@@ -7,8 +7,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
-  <meta name="description" content="Efficient AI research: finding the operating point where AI systems produce the best result per unit of energy, compute, or cost. Covers energy-optimal inference, early-exit cascades, and unified inference pipelines. Part of the Pragmatic AI research program.">
-  <title>Efficient AI | Alexander (Sasha) Apartsin</title>
+  <meta name="description" content="Optimization and AI: two directions under one roof. Making AI systems themselves run at their optimal operating point (energy, compute, cost), and using AI to decide the operating point of other systems (capacity sizing, ad-impression allocation, pricing). Part of the Pragmatic AI research program.">
+  <title>Optimization and AI | Alexander (Sasha) Apartsin</title>
   <link rel="stylesheet" href="../shared/site-shell.css">
   <link rel="stylesheet" href="../shared/unified-theme.css">
   <style>
@@ -44,6 +44,8 @@
     .direction-area--energy   .direction-area__label { color: #b45309; }
     .direction-area--cascade  .direction-area__label { color: #1d4ed8; }
     .direction-area--pipeline .direction-area__label { color: #2e7d5a; }
+    .direction-area--sizing   .direction-area__label { color: #7a3fa0; }
+    .direction-area--adops    .direction-area__label { color: #0e7490; }
     .direction-area p {
       margin: 0;
       font: 400 0.9rem/1.75 "Source Serif 4", Georgia, serif;
@@ -58,6 +60,8 @@
     .direction-area--energy   p a { color: #b45309; }
     .direction-area--cascade  p a { color: #1d4ed8; }
     .direction-area--pipeline p a { color: #2e7d5a; }
+    .direction-area--sizing   p a { color: #7a3fa0; }
+    .direction-area--adops    p a { color: #0e7490; }
     .direction-area p a:hover { opacity: 0.8; }
   </style>
 </head>
@@ -79,21 +83,21 @@
       <main class="apartsin-shell__main">
 
         <section class="apartsin-page-header apartsin-page-header--standard">
-          <h1 class="apartsin-sr-only">Efficient AI</h1>
+          <h1 class="apartsin-sr-only">Optimization and AI</h1>
           <div class="apartsin-page-header__top">
             <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
               <a href="../index.html">Home</a>
               <span aria-hidden="true">/</span>
               <a href="./research-focus.html">Research</a>
               <span aria-hidden="true">/</span>
-              <strong>Efficient AI</strong>
+              <strong>Optimization and AI</strong>
             </nav>
           </div>
           <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
             <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
               <img src="../assets/heroes/research-interests.png" alt="" style="display: block; width: 100%; object-fit: cover;">
             </figure>
-            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">The <strong class="pragmatic-ai">pragmatic</strong> test for an AI system is not peak accuracy at any price but the operating point where the useful result is largest per unit of energy, compute, or cost. This direction studies where that point sits and how to reach it, from GPU power caps to early-exit inference to unified execution across many models.</p>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">Two questions live under one roof here. The first is where an AI system's own operating point sits so the useful result is largest per unit of energy, compute, or cost, GPU power caps, early-exit cascades, unified inference pipelines. The second is where the operating point of another system, a fleet, a service, a market, sits when an AI model is what decides it, from sizing a distributed platform to allocating scarce ad impressions across channels.</p>
           </div>
         </section>
 
@@ -115,6 +119,20 @@
             <span class="direction-area__label">Unified Inference Pipelines</span>
             <p>In production, the same input often feeds many models, and each model runs its own detector, feature extractor, and post-processor. The result is a stack of pipelines that redo the same work: cost and latency scale with the number of deployed models rather than with the amount of unique computation actually needed. Merging the shared parts turns a fleet of pipelines into a single, optimized execution path.</p>
             <p><a href="https://patents.google.com/patent/US20240013095A1/en" target="_blank" rel="noopener noreferrer">A system and method for the unification and optimization of machine learning inference pipelines</a> (US20240013095A1) captures that consolidation as a deployable pattern: many ML pipelines are unified into one shared path, sharing common computation to cut redundant work and lower the latency and cost of running many models together in production.</p>
+          </div>
+
+
+
+          <div class="direction-area direction-area--sizing">
+            <span class="direction-area__label">Capacity Sizing for Distributed Services</span>
+            <p>The second direction turns the lens outward: instead of tuning the AI system itself, an AI model decides the operating point of another system. Sizing a distributed platform is a canonical case, provisioning too little hardware breaks the service under load, provisioning too much wastes capital every quarter. The useful decision is model-based: predict load and its bottlenecks per component, then choose the smallest configuration that meets the service-level target.</p>
+            <p><a href="https://apartsinprojects.github.io/cpu-capacity-analysis/cpu-capacity-report.html" target="_blank" rel="noopener noreferrer">Distributed Billing System Load Modeling</a> (Amdocs, 2011) does this for a distributed billing platform. Modeling CPU capacity and load per component turned procurement from a rule-of-thumb into a controlled optimization; the resulting model-based capacity planning contributed to roughly $10M in hardware-cost savings at Amdocs.</p>
+          </div>
+
+          <div class="direction-area direction-area--adops">
+            <span class="direction-area__label">Ad-Impression Allocation Across Channels</span>
+            <p>Media and ad delivery pose the same operating-point question in a market rather than a data center: many campaigns compete for a fixed inventory of impressions, and each channel, IPTV, mobile, personalized push, has its own cost, reach, and conversion structure. The right allocation is again a decision the AI makes, subject to a budget: place the marginal impression where its marginal contribution to the objective is largest.</p>
+            <p><a href="https://apartsinprojects.github.io/optimal-impression-allocation/" target="_blank" rel="noopener noreferrer">Optimal Impression Allocation for Personalized Content Delivery across IPTV and Cellular Platforms</a> (Comverse, 2006) treats cross-channel personalized delivery as a constrained allocation problem, choosing how many impressions of which content to route through each channel so overall utility is maximized under channel and campaign constraints.</p>
           </div>
 
         </div>
