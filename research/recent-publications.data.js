@@ -109,7 +109,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2026-headline-rewriting",
     year: 2026,
-    type: "Submitted",
+    type: "Journal",
     title: "LLM-guided headline rewriting for clickability enhancement without clickbait",
     focus: "spec",
     summary: "This method uses large language models to rewrite headlines for higher click appeal while enforcing a strict no-clickbait constraint on the rewritten text. Generation is governed by a hard specification: the output must raise clickability yet provably avoid sensationalism, satisfying a contract rather than a soft preference.",
@@ -119,8 +119,8 @@ window.RECENT_PUBLICATIONS = [
       { name: "S Bar", self: false },
       { name: "A Apartsin", self: true }
     ],
-    venue: "arXiv preprint (arXiv:2603.22459)",
-    venueHref: "https://arxiv.org/abs/2603.22459"
+    venue: "Scientific Reports (Nature)",
+    venueHref: "https://www.nature.com/articles/s41598-026-71420-6"
   },
   {
     id: "pub-2026-joule-point",
