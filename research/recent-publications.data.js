@@ -411,7 +411,7 @@ window.RECENT_PUBLICATIONS = [
       { name: "Y Aperstein", self: false },
       { name: "A Apartsin", self: true }
     ],
-    venue: "Transactions on Machine Learning Research (TMLR) (arXiv:2605.25502)",
+    venue: "Transactions on Machine Learning Research (TMLR)",
     venueHref: "https://arxiv.org/abs/2605.25502"
   },
   {
