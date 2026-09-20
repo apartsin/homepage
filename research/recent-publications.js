@@ -137,6 +137,8 @@
         publisher = { src: "../assets/publishers/mdpi.png", alt: "MDPI" };
       } else if (venueLower.indexOf("ieee access") !== -1 || venueLower.indexOf("ieee") !== -1) {
         publisher = { src: "../assets/publishers/ieee.svg", alt: "IEEE" };
+      } else if (venueLower.indexOf("tmlr") !== -1) {
+        publisher = { src: "../assets/publishers/tmlr.png", alt: "TMLR" };
       } else if (venueLower.indexOf("arxiv") !== -1) {
         publisher = { src: "../assets/publishers/arxiv.jpg", alt: "arXiv" };
       } else if (venueLower.indexOf("draft") !== -1) {
