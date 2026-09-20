@@ -403,7 +403,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-inprep-absa-courses",
     year: 2026,
-    type: "Submitted",
+    type: "Journal",
     title: "A Controlled Synthetic Benchmark for Educational Aspect-Based Sentiment Analysis",
     focus: "spec",
     summary: "This work builds a controlled synthetic benchmark for educational aspect-based sentiment analysis, generating course-feedback examples with known aspect and sentiment labels. Generation follows an explicit specification so each synthetic instance carries the precise, controllable annotations the benchmark requires, guaranteeing ground truth by construction.",
@@ -411,7 +411,7 @@ window.RECENT_PUBLICATIONS = [
       { name: "Y Aperstein", self: false },
       { name: "A Apartsin", self: true }
     ],
-    venue: "arXiv preprint (arXiv:2605.25502)",
+    venue: "TMLR (arXiv:2605.25502)",
     venueHref: "https://arxiv.org/abs/2605.25502"
   },
   {
