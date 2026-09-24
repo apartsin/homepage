@@ -70,6 +70,35 @@
       font: 600 clamp(1.1rem, 2vw, 1.4rem)/1.4 "Source Serif 4", Georgia, serif;
       letter-spacing: 0;
     }
+    .home-pub-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 10px 0 0;
+      padding: 6px 12px 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(24, 101, 168, 0.28);
+      background: rgba(24, 101, 168, 0.08);
+      color: #164a83;
+      font: 700 0.82rem/1.2 "Manrope", "Segoe UI", sans-serif;
+      text-decoration: none;
+      transition: background 150ms ease, border-color 150ms ease;
+    }
+    .home-pub-badge:hover {
+      background: rgba(24, 101, 168, 0.16);
+      border-color: rgba(24, 101, 168, 0.5);
+    }
+    .home-pub-badge__dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #16a34a;
+      box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.18);
+    }
+    .home-pub-badge__arrow {
+      font-weight: 800;
+      opacity: 0.75;
+    }
     .home-quick-panel {
       margin-top: 24px;
       padding: 18px 20px 20px;
@@ -138,6 +167,11 @@
             <div class="home-hero-copy">
               <h1>Sasha Apartsin</h1>
               <p class="home-tagline">Applied AI researcher, educator, and builder.</p>
+              <a class="home-pub-badge" href="./research/recent-publications.html">
+                <span class="home-pub-badge__dot" aria-hidden="true"></span>
+                Recent publications
+                <span class="home-pub-badge__arrow" aria-hidden="true">→</span>
+              </a>
               <p class="home-welcome-text">
                 <a href="./about/industry-experience.html">Three decades</a> of building intelligent systems and applied AI, spanning <a href="./about/education.html">academia</a>, <a href="./work/past-projects.html">industry teams</a>, and the <a href="./teaching/hands-on-ai-science-courses-courses.html">classroom</a>.
               </p>
