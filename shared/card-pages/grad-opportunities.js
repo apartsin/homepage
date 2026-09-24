@@ -37,25 +37,19 @@
       tags: 'LLM, NLP, Healthcare, Sentiment Analysis',
     },
     {
-      title: '7. LLM That Learns Clinical Experience',
-      image: '../assets/teaching/research-projects-open-for-students/img-012-2cc36273a2.png',
-      summary: 'Constructs an incremental clinical reasoning system that turns observed patterns into executable and auditable rules.',
-      tags: 'LLM, Healthcare, Chain of Code, RAG',
-    },
-    {
-      title: '8. Generative AI for Infrared Counter-Drone Detection',
+      title: '7. Generative AI for Infrared Counter-Drone Detection',
       image: '../assets/teaching/research-projects-open-for-students/img-013-infrared-counter-drone.png',
       summary: 'Explores generative models that synthesize realistic infrared drone imagery from optical sources, addressing the scarcity of real thermal datasets, and evaluates whether the synthetic data improves the accuracy and robustness of counter-drone detection and tracking.',
       tags: 'Generative AI, Computer Vision, Infrared Imaging, Defense AI',
     },
     {
-      title: '9. Generative AI for Discovery of Novel Battery Electrolytes',
+      title: '8. Generative AI for Discovery of Novel Battery Electrolytes',
       image: '../assets/teaching/research-projects-open-for-students/img-014-battery-electrolyte-discovery.png',
       summary: 'Uses diffusion-based generative models to propose novel electrolyte molecules optimized for ionic conductivity, electrochemical stability, and safety, then screens candidates with ML property predictors and physics-based validation to identify promising materials for rechargeable batteries.',
       tags: 'Generative AI, Diffusion Models, Molecular Design, Materials, Energy',
     },
     {
-      title: '10. CareerLens: Evidence-Based Professional Profile Inference',
+      title: '9. CareerLens: Evidence-Based Professional Profile Inference',
       image: '../assets/teaching/research-projects-open-for-students/img-015-careerlens.png',
       summary: 'Jointly infers implicit competencies, proficiency levels, and seniority from career evidence (job history, responsibilities, projects, skills), grounding each inference in supporting text and structured taxonomies (JobHop, ESCO, O*NET, CMap); evaluates robustness to resume wording and predictive value for career progression against direct LLM assessment.',
       tags: 'LLM, NLP, HR Tech, Taxonomies, Structured Inference',
