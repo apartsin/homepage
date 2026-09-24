@@ -48,6 +48,12 @@
       summary: 'Explores generative models that synthesize realistic infrared drone imagery from optical sources, addressing the scarcity of real thermal datasets, and evaluates whether the synthetic data improves the accuracy and robustness of counter-drone detection and tracking.',
       tags: 'Generative AI, Computer Vision, Infrared Imaging, Defense AI',
     },
+    {
+      title: '9. Generative AI for Discovery of Novel Battery Electrolytes',
+      image: '../assets/teaching/research-projects-open-for-students/img-014-battery-electrolyte-discovery.png',
+      summary: 'Uses diffusion-based generative models to propose novel electrolyte molecules optimized for ionic conductivity, electrochemical stability, and safety, then screens candidates with ML property predictors and physics-based validation to identify promising materials for rechargeable batteries.',
+      tags: 'Generative AI, Diffusion Models, Molecular Design, Materials, Energy',
+    },
   ];
 
   function createCard(project) {
