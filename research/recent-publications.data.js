@@ -2,6 +2,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2026-irc-bench",
     year: 2026,
+    date: "2026-07-01",
     type: "Journal",
     title: "IRC-Bench: Recognizing Entities from Contextual Cues in First-Person Reminiscences",
     focus: "sparse",
@@ -17,6 +18,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2026-license-plate-recoverability",
     year: 2026,
+    date: "2026-06-25",
     type: "Journal",
     title: "Mapping License Plate Recoverability Under Extreme Viewing Angles for Opportunistic Urban Sensing",
     focus: "robust",
@@ -47,6 +49,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2026-diagnostic-questioning",
     year: 2026,
+    date: "2026-01-24",
     type: "Journal",
     title: "A benchmark for evaluating diagnostic questioning efficiency of LLMs in patient conversations",
     focus: "sparse",
@@ -63,6 +66,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2025-semantic-text-relations",
     year: 2025,
+    date: "2025-12-08",
     type: "Journal",
     title: "Explainable Semantic Text Relations: A Question-Answering Framework for Comparing Document Content",
     focus: "sparse",
@@ -79,6 +83,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2025-teaching-practice-platform",
     year: 2025,
+    date: "2025-03-24",
     type: "Journal",
     title: "Generative AI-Based Platform for Deliberate Teaching Practice: A Review and a Suggested Framework",
     focus: "spec",
@@ -94,6 +99,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2026-sea-alert",
     year: 2026,
+    date: "2026-07-01",
     type: "Journal",
     title: "SeaAlert: Critical Information Extraction From Maritime Distress Communications with Large Language Models",
     focus: "robust",
@@ -109,6 +115,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2026-headline-rewriting",
     year: 2026,
+    date: "2026-09-13",
     type: "Journal",
     title: "LLM-guided headline rewriting for clickability enhancement without clickbait",
     focus: "spec",
@@ -153,6 +160,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2025-clickbait-detection",
     year: 2025,
+    date: "2025-09-13",
     type: "Preprint",
     title: "An Interpretable Benchmark for Clickbait Detection and Tactic Attribution",
     focus: "robust",
@@ -170,6 +178,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2025-chest-xray-rejection",
     year: 2026,
+    date: "2026-08-24",
     type: "Journal",
     title: "Multi-pathology Chest X-ray Classification with Rejection Mechanisms",
     focus: "robust",
@@ -188,6 +197,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2026-calexnet",
     year: 2026,
+    date: "2026-05-16",
     type: "Journal",
     title: "CalexNet: Soft Cascade-Aligned Training and Calibration for Lightweight Early-Exit Branches",
     focus: "robust",
@@ -202,6 +212,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2025-panoramic-incident-summaries",
     year: 2025,
+    date: "2025-09-04",
     type: "Preprint",
     title: "Stitching the Story: Creating Panoramic Incident Summaries from Body-Worn Footage",
     focus: "robust",
@@ -218,6 +229,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2026-clinical-comm-synthetic-survey",
     year: 2026,
+    date: "2026-08-06",
     type: "Submitted",
     title: "Clinical Communication Processing with Models Trained on LLM-Generated Synthetic Data: A Structured Survey and Novel Application Case Studies",
     focus: "spec",
@@ -232,6 +244,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2026-healthcare-it-computable-care",
     year: 2026,
+    date: "2026-08-09",
     type: "Submitted",
     title: "Three Generations of Healthcare IT: From the Digital Record to the Computable Care Process",
     focus: "spec",
@@ -246,6 +259,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2025-interjection-classification",
     year: 2025,
+    date: "2025-09-03",
     type: "Preprint",
     title: "Beyond Words: Interjection Classification for Improved Human-Computer Interaction",
     focus: "robust",
@@ -262,6 +276,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2025-review-recommendation",
     year: 2025,
+    date: "2025-09-05",
     type: "Preprint",
     title: "Code Review Without Borders: Evaluating Synthetic vs. Real Data for Review Recommendation",
     focus: "spec",
@@ -279,6 +294,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2025-resume-seniority",
     year: 2025,
+    date: "2025-09-11",
     type: "Preprint",
     title: "Reading Between the Lines: Classifying Resume Seniority with Large Language Models",
     focus: "robust",
@@ -296,6 +312,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2025-health-crises-medication",
     year: 2025,
+    date: "2025-09-15",
     type: "Preprint",
     title: "When Curiosity Signals Danger: Predicting Health Crises Through Online Medication Inquiries",
     focus: "robust",
@@ -312,6 +329,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2025-fuzzy-speech-medical",
     year: 2025,
+    date: "2025-09-15",
     type: "Preprint",
     title: "From Fuzzy Speech to Medical Insight: Benchmarking LLMs on Noisy Patient Narratives",
     focus: "robust",
@@ -328,6 +346,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2025-emotion-pop-lyrics",
     year: 2025,
+    date: "2025-09-06",
     type: "Preprint",
     title: "From Joy to Fear: A Benchmark of Emotion Estimation in Pop Song Lyrics",
     focus: "robust",
@@ -344,6 +363,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2025-llm-intent-service",
     year: 2025,
+    date: "2025-09-05",
     type: "Preprint",
     title: "Do Large Language Models Need Intent? Revisiting Response Generation Strategies for Service Assistant",
     focus: "sparse",
@@ -375,6 +395,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2026-coeval",
     year: 2026,
+    date: "2026-06-02",
     type: "Submitted",
     title: "CoEval: Ranking Language Models for Custom Tasks Without Labeled Data or Trustworthy Benchmarks",
     focus: "sparse",
@@ -389,6 +410,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2026-coreason",
     year: 2026,
+    date: "2026-06-04",
     type: "Submitted",
     title: "Framing, Judging, Steering: An Assessable Competency Model for Teaching Students to Reason With Generative AI",
     focus: "sparse",
@@ -417,6 +439,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-inprep-medfollow",
     year: 2026,
+    date: "2026-05-26",
     type: "Submitted",
     title: "Reliable Extraction of Clinical Follow-Up Instructions: A Hybrid Neural-Symbolic Pipeline",
     focus: "spec",
@@ -447,6 +470,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-inprep-zkdroneswarm",
     year: 2026,
+    date: "2026-05-25",
     type: "Submitted",
     title: "Acting on the Unseen: Communication-Free Collaborative Filtering for Decentralized Multi-Robot Task Allocation",
     focus: "sparse",
@@ -462,6 +486,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-inprep-dgld4energetic",
     year: 2026,
+    date: "2026-05-26",
     type: "Submitted",
     title: "DGLD: Domain-Gated Latent Diffusion for the Discovery of Novel Energetic Materials",
     focus: "spec",
@@ -476,6 +501,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-inprep-imperfect-student",
     year: 2026,
+    date: "2026-05-25",
     type: "Preprint",
     title: "Toward a Benchmark for Controllable Simulation of Imperfect Students with Large Language Models",
     focus: "spec",
@@ -491,6 +517,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2026-normal-latent-clustering",
     year: 2026,
+    date: "2026-07-07",
     type: "Submitted",
     title: "Modeling Normal Is All You Need: Joint Latent Clustering for Anomaly Detection in Multimodal Cyber-Physical Systems",
     focus: "robust",

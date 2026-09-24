@@ -21,10 +21,17 @@
     }
   });
 
-  // Sort recent first: newest year first, then the item that appears earlier
-  // in the source data file (author-controlled recency order within a year).
+  // Sort recent first: prefer explicit date (YYYY-MM-DD) when present,
+  // then year, then source-file order for ties.
+  function dateKey(p) {
+    if (p.date) {
+      var m = String(p.date).match(/^(\d{4})-(\d{2})(?:-(\d{2}))?/);
+      if (m) return (+m[1]) * 10000 + (+m[2]) * 100 + (+(m[3] || 1));
+    }
+    return (p.year || 0) * 10000;
+  }
   function sortByTime(a, b) {
-    return (b.pub.year || 0) - (a.pub.year || 0) || a.idx - b.idx;
+    return dateKey(b.pub) - dateKey(a.pub) || a.idx - b.idx;
   }
 
   sections.forEach(function (section) {
