@@ -425,6 +425,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-inprep-absa-courses",
     year: 2026,
+    date: "2026-09-23",
     type: "Journal",
     title: "A Controlled Synthetic Benchmark for Educational Aspect-Based Sentiment Analysis",
     focus: "spec",
