@@ -42,6 +42,12 @@
       summary: 'Constructs an incremental clinical reasoning system that turns observed patterns into executable and auditable rules.',
       tags: 'LLM, Healthcare, Chain of Code, RAG',
     },
+    {
+      title: '8. Generative AI for Infrared Counter-Drone Detection',
+      image: '../assets/teaching/research-projects-open-for-students/img-013-infrared-counter-drone.png',
+      summary: 'Explores generative models that synthesize realistic infrared drone imagery from optical sources, addressing the scarcity of real thermal datasets, and evaluates whether the synthetic data improves the accuracy and robustness of counter-drone detection and tracking.',
+      tags: 'Generative AI, Computer Vision, Infrared Imaging, Defense AI',
+    },
   ];
 
   function createCard(project) {
