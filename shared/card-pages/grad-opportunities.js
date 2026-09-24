@@ -54,6 +54,12 @@
       summary: 'Uses diffusion-based generative models to propose novel electrolyte molecules optimized for ionic conductivity, electrochemical stability, and safety, then screens candidates with ML property predictors and physics-based validation to identify promising materials for rechargeable batteries.',
       tags: 'Generative AI, Diffusion Models, Molecular Design, Materials, Energy',
     },
+    {
+      title: '10. CareerLens: Evidence-Based Professional Profile Inference',
+      image: '../assets/teaching/research-projects-open-for-students/img-015-careerlens.png',
+      summary: 'Jointly infers implicit competencies, proficiency levels, and seniority from career evidence (job history, responsibilities, projects, skills), grounding each inference in supporting text and structured taxonomies (JobHop, ESCO, O*NET, CMap); evaluates robustness to resume wording and predictive value for career progression against direct LLM assessment.',
+      tags: 'LLM, NLP, HR Tech, Taxonomies, Structured Inference',
+    },
   ];
 
   function createCard(project) {
