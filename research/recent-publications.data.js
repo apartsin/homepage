@@ -412,7 +412,7 @@ window.RECENT_PUBLICATIONS = [
       { name: "A Apartsin", self: true }
     ],
     venue: "Transactions on Machine Learning Research (TMLR)",
-    venueHref: "https://arxiv.org/abs/2605.25502"
+    venueHref: "https://openreview.net/attachment?id=tmNAKpmSaF&name=pdf"
   },
   {
     id: "pub-inprep-medfollow",
