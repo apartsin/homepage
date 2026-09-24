@@ -15,22 +15,24 @@
   ];
 
   var grouped = { Journal: [], Submitted: [], Preprint: [] };
-  pubs.forEach(function (p) {
+  pubs.forEach(function (p, idx) {
     if (grouped[p.type]) {
-      grouped[p.type].push(p);
+      grouped[p.type].push({ pub: p, idx: idx });
     }
   });
 
-  function sortByYear(a, b) {
-    return (b.year || 0) - (a.year || 0) ||
-      String(a.title || "").localeCompare(String(b.title || ""));
+  // Sort recent first: newest year first, then the item that appears earlier
+  // in the source data file (author-controlled recency order within a year).
+  function sortByTime(a, b) {
+    return (b.pub.year || 0) - (a.pub.year || 0) || a.idx - b.idx;
   }
 
   sections.forEach(function (section) {
     var items = [];
     section.types.forEach(function (t) {
-      items = items.concat(grouped[t].slice().sort(sortByYear));
+      items = items.concat(grouped[t].slice().sort(sortByTime));
     });
+    items = items.map(function (x) { return x.pub; });
     if (items.length === 0) {
       return;
     }
