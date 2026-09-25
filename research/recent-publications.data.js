@@ -132,6 +132,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2026-joule-point",
     year: 2026,
+    date: "2026-08-23",
     type: "Preprint",
     title: "The Joule Point: an Energy-Optimal Operating Point for AI Inference",
     focus: "sparse",
@@ -146,6 +147,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2026-circa",
     year: 2026,
+    date: "2026-08-24",
     type: "Preprint",
     title: "Clinical Intent Extraction: A FHIR-Aligned Representation and the CIRCA Benchmark",
     focus: "spec",
