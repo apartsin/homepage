@@ -140,8 +140,8 @@ window.RECENT_PUBLICATIONS = [
       { name: "A Apartsin", self: true },
       { name: "Y Aperstein", self: false }
     ],
-    venue: "Project page (apartsinprojects.github.io/JoulePoint)",
-    venueHref: "https://apartsinprojects.github.io/JoulePoint/docs/GPTEnergy.html"
+    venue: "arXiv preprint (arXiv:2609.27926)",
+    venueHref: "https://arxiv.org/abs/2609.27926"
   },
   {
     id: "pub-2026-circa",
