@@ -154,8 +154,8 @@ window.RECENT_PUBLICATIONS = [
       { name: "A Apartsin", self: true },
       { name: "Y Aperstein", self: false }
     ],
-    venue: "Project page (apartsin.github.io/CIRCA)",
-    venueHref: "https://apartsin.github.io/CIRCA/circa.html"
+    venue: "arXiv preprint (arXiv:2609.29479)",
+    venueHref: "https://arxiv.org/abs/2609.29479"
   },
   {
     id: "pub-2025-clickbait-detection",
