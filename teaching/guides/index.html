@@ -7,6 +7,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <link rel="alternate" hreflang="he" href="./index-he.html">
+  <link rel="alternate" hreflang="en" href="./index.html">
   <meta name="description" content="Guides for students: advice, project misconceptions, project requirements, assessment criteria, past projects, course bots, and online textbooks.">
   <title>Guides for Students | Sasha Apartsin</title>
   <link rel="stylesheet" href="../../shared/site-shell.css">
@@ -101,6 +103,11 @@
       text-align: right;
       opacity: 0.85;
     }
+  
+    .guides-lang-switch { display: inline-flex; align-items: stretch; border: 1px solid var(--site-border, rgba(24,32,42,0.18)); border-radius: 999px; background: #fff; overflow: hidden; font: 800 0.72rem/1 "Manrope", sans-serif; letter-spacing: 0.04em; }
+    .guides-lang-switch__btn { display: inline-flex; align-items: center; padding: 6px 14px; color: var(--site-muted, #5a626c); text-decoration: none; transition: background 120ms ease, color 120ms ease; }
+    .guides-lang-switch__btn:hover, .guides-lang-switch__btn:focus-visible { background: rgba(0, 0, 0, 0.05); color: var(--site-text, #18202a); }
+    .guides-lang-switch__btn.is-active { background: var(--site-text, #18202a); color: #fff; cursor: default; pointer-events: none; }
   </style>
 </head>
 <body class="apartsin-shell-active" data-site-section="teaching">
@@ -296,21 +303,6 @@
             </div>
           </article>
 
-          <article class="hub-card guide-card" id="guide-3b1b-neural-networks">
-            <figure class="guide-card__media">
-              <img src="../../assets/heroes/guidecard-3b1b-neural-networks.jpg" alt="See It Before You Code It cartoon illustration">
-            </figure>
-            <div class="guide-card__body">
-              <h2>See It Before You Code It</h2>
-              <p class="guide-card__he" lang="he" dir="rtl">ראו לפני שאתם מקודדים</p>
-              <p>A curated list of 3Blue1Brown's visual explainer videos on neural networks, transformers, and how LLMs actually work. Each video as its own card, watched in order they build a strong mental model before the code.</p>
-              <nav class="hub-anchor-nav">
-                <a href="./3b1b-neural-networks.html">Read the guide</a>
-                <a href="./3b1b-neural-networks-he.html" lang="he">עברית (AI)</a>
-              </nav>
-            </div>
-          </article>
-
           <article class="hub-card guide-card" id="guide-smart-beats-long">
             <figure class="guide-card__media">
               <img src="../../assets/heroes/guidecard-smart-beats-long.jpg" alt="Smart Beats Long cartoon illustration">
@@ -410,7 +402,6 @@
         <p class="guides-section-lede">What a vision-robustness project has to demonstrate and how it is judged. Use these while the work is still taking shape.</p>
         <section class="guides-grid" aria-label="Vision project standards">
           <article class="hub-card guide-card" id="guide-requirements-vision">
-            <span class="guide-card__tag">Vision</span>
             <figure class="guide-card__media">
               <img src="../../assets/heroes/guidecard-requirements-vision.jpg" alt="Project Requirements for Vision Course cartoon illustration">
             </figure>
@@ -426,7 +417,6 @@
           </article>
 
           <article class="hub-card guide-card" id="guide-assessment-vision">
-            <span class="guide-card__tag">Vision</span>
             <figure class="guide-card__media">
               <img src="../../assets/heroes/guidecard-assessment-vision.jpg" alt="Project Assessment Criteria for Vision Course cartoon illustration">
             </figure>
@@ -567,7 +557,6 @@
             </div>
           </article>
           <article class="hub-card guide-card" id="guide-innovation-first">
-            <span class="guide-card__tag">Methodology</span>
             <figure class="guide-card__media">
               <img src="../../assets/heroes/guidecard-innovation-first.jpg" alt="Innovation-First Learning cartoon illustration">
             </figure>
@@ -582,7 +571,6 @@
             </div>
           </article>
           <article class="hub-card guide-card" id="guide-past-projects">
-            <span class="guide-card__tag">Examples</span>
             <figure class="guide-card__media">
               <img src="../../assets/heroes/guidecard-past-projects.jpg" alt="Past Projects cartoon illustration">
             </figure>
@@ -597,7 +585,6 @@
           </article>
 
           <article class="hub-card guide-card" id="guide-bots">
-            <span class="guide-card__tag">Assistants</span>
             <figure class="guide-card__media">
               <img src="../../assets/heroes/guidecard-bots.jpg" alt="Course Bots cartoon illustration">
             </figure>
@@ -611,8 +598,22 @@
             </div>
           </article>
 
+          <article class="hub-card guide-card" id="guide-3b1b-neural-networks">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/guidecard-3b1b-neural-networks.jpg" alt="See It Before You Code It cartoon illustration">
+            </figure>
+            <div class="guide-card__body">
+              <h2>See It Before You Code It</h2>
+              <p class="guide-card__he" lang="he" dir="rtl">ראו לפני שאתם מקודדים</p>
+              <p>A curated list of 3Blue1Brown's visual explainer videos on neural networks, transformers, and how LLMs actually work. Each video as its own card, watched in order they build a strong mental model before the code.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./3b1b-neural-networks.html">Read the guide</a>
+                <a href="./3b1b-neural-networks-he.html" lang="he">עברית (AI)</a>
+              </nav>
+            </div>
+          </article>
+
           <article class="hub-card guide-card" id="guide-textbooks">
-            <span class="guide-card__tag">Reference</span>
             <figure class="guide-card__media">
               <img src="../../assets/heroes/guidecard-textbooks.jpg" alt="Online Textbooks cartoon illustration">
             </figure>

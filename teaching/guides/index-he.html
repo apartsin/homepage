@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="he-IL" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <link rel="alternate" hreflang="he" href="./index-he.html">
+  <link rel="alternate" hreflang="en" href="./index.html">
+  <meta name="description" content="מדריכים לסטודנטים: עצות, טעויות נפוצות בפרויקטים, דרישות פרויקט, קריטריוני הערכה, פרויקטים לדוגמה, בוטים לקורס וספרי לימוד מקוונים.">
+  <title>מדריכים לסטודנטים | סשה אפרטסין</title>
+  <link rel="stylesheet" href="../../shared/site-shell.css">
+  <link rel="stylesheet" href="../../shared/unified-theme.css">
+  <style>
+    .guides-section-title {
+      margin: 30px 0 4px;
+      color: var(--site-text, #18202a);
+      font: 800 0.82rem/1.2 "Manrope", sans-serif;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .guides-section-title:first-of-type { margin-top: 10px; }
+    .guides-section-lede {
+      margin: 0 0 4px;
+      color: var(--site-muted);
+      font: 600 0.88rem/1.5 "Manrope", sans-serif;
+    }
+    .guides-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .guide-card {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      overflow: hidden;
+      position: relative;
+    }
+    .guide-card__media {
+      display: block;
+      border-bottom: 1px solid var(--site-border);
+      background: rgba(255, 255, 255, 0.98);
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      margin: 0;
+    }
+    .guide-card__media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      background: #fff;
+    }
+    .guide-card__body {
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+    .guide-card__body h2 {
+      margin: 0;
+      font-size: 1.04rem;
+      line-height: 1.25;
+    }
+    .guide-card__body p {
+      margin: 0;
+      color: var(--site-muted);
+      font: 600 0.87rem/1.55 "Manrope", "Segoe UI", sans-serif;
+      /* Push the link row to the bottom so every card's footer aligns. */
+      flex: 1;
+    }
+    .guide-card__body .hub-anchor-nav {
+      margin-top: auto;
+      padding-top: 4px;
+    }
+    /* Small tag in the corner marking guides that live off this section. */
+    .guide-card__tag {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 2;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(17, 20, 24, 0.78);
+      color: #fff;
+      font: 800 0.7rem/1 "Manrope", "Segoe UI", sans-serif;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      backdrop-filter: blur(2px);
+    }
+    .guide-card__body p.guide-card__he {
+      margin: -4px 0 0;
+      flex: 0 0 auto;
+      color: var(--site-muted, #6b7280);
+      font: 700 0.84rem/1.35 "Heebo", "Manrope", sans-serif;
+      direction: rtl;
+      text-align: right;
+      opacity: 0.85;
+    }
+  
+    .guides-lang-switch { display: inline-flex; align-items: stretch; border: 1px solid var(--site-border, rgba(24,32,42,0.18)); border-radius: 999px; background: #fff; overflow: hidden; font: 800 0.72rem/1 "Manrope", sans-serif; letter-spacing: 0.04em; }
+    .guides-lang-switch__btn { display: inline-flex; align-items: center; padding: 6px 14px; color: var(--site-muted, #5a626c); text-decoration: none; transition: background 120ms ease, color 120ms ease; }
+    .guides-lang-switch__btn:hover, .guides-lang-switch__btn:focus-visible { background: rgba(0, 0, 0, 0.05); color: var(--site-text, #18202a); }
+    .guides-lang-switch__btn.is-active { background: var(--site-text, #18202a); color: #fff; cursor: default; pointer-events: none; }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="teaching">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar" lang="en" dir="ltr">
+      <a class="apartsin-shell__brand" href="../../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../../index.html">About</a>
+        <a href="../../research/research-focus.html">Research</a>
+        <a href="../../teaching/overview.html">הוראה</a>
+        <a href="../../work/overview.html">Building</a>
+        <a href="../../work/innovation-overview.html">Innovations</a>
+        <a href="../../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="guides-overview">
+          <h1 class="apartsin-sr-only">מדריכים לסטודנטים</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../../index.html">בית</a>
+              <span aria-hidden="true">/</span>
+              <a href="../overview.html">Teaching</a>
+              <span aria-hidden="true">/</span>
+              <strong>מדריכים לסטודנטים</strong>
+            </nav>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../../assets/heroes/teaching-overview.png" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">כל מה שסטודנט או סטודנטית באחד מהקורסים שלי צריכים לקרוא לפני ההתחלה, ולהשאיר פתוח בזמן העבודה. איך לגשת ללימודים, אילו הנחות להוריד, מה פרויקט חזק חייב להראות, ואיפה למצוא דוגמאות עבודה, עוזרי קורס וספרי הלימוד שמאחורי <a href="../hands-on-ai-science-courses-courses.html">הקורסים</a>. למסות עומק על AI בהנדסת תוכנה ובאקדמיה, ראו את <a href="../../writing/blog-posts.html">פוסטי הבלוג</a> שלי.</p>
+          </div>
+        </section>
+
+        <h2 class="guides-section-title">התחילו כאן</h2>
+        <p class="guides-section-lede">קראו את אלה מוקדם. הם מעצבים איך תעבדו בתוצאות התואר ואיך יישפט כל מה שאתם מייצרים.</p>
+        <section class="guides-grid" aria-label="Orientation guides">
+          <article class="hub-card guide-card" id="guide-advice">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/guidecard-advice.jpg" alt="Advice to CS Students in 2026 cartoon illustration">
+            </figure>
+            <div class="guide-card__body">
+              <h2 lang="he" dir="rtl">עצות לסטודנטים למדעי המחשב ב-2026</h2>
+              <p class="guide-card__he" lang="en" dir="ltr">Advice to CS Students in 2026</p>
+              <p lang="en" dir="ltr">Six pieces of advice for navigating a degree in the AI era, each with a pattern to adopt, an anti-pattern to avoid, and the inner statement that gives the anti-pattern away. Available in English and Hebrew.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./advice-to-students-2026-he.html">לקריאת המדריך</a>
+                <a href="./advice-to-students-2026.html" lang="en">English</a>
+              </nav>
+            </div>
+          </article>
+
+          <article class="hub-card guide-card" id="guide-how-to-use-ai">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/guidecard-how-to-use-ai.jpg" alt="AI Does Far More Than Write Your Code cartoon illustration">
+            </figure>
+            <div class="guide-card__body">
+              <h2 lang="he" dir="rtl">AI עושה הרבה יותר מלכתוב לכם קוד</h2>
+              <p class="guide-card__he" lang="en" dir="ltr">AI Does Far More Than Write Your Code</p>
+              <p lang="en" dir="ltr">Five ways to get real value from AI in your projects: invent new uses beyond generating code and slides, own every result, treat AI as a utility, and meet the higher bar it now sets. Each idea comes with a good and a bad example.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./how-to-use-ai-he.html">לקריאת המדריך</a>
+                <a href="./how-to-use-ai.html" lang="en">English</a>
+              </nav>
+            </div>
+          </article>
+
+          <article class="hub-card guide-card" id="guide-technical-presentations">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/guidecard-technical-presentations.jpg" alt="Don&rsquo;t Let a Bad Talk Sink a Good Project cartoon illustration">
+            </figure>
+            <div class="guide-card__body">
+              <h2 lang="he" dir="rtl">אל תיתנו למצגת גרועה להטביע פרויקט טוב</h2>
+              <p class="guide-card__he" lang="en" dir="ltr">Don&rsquo;t Let a Bad Talk Sink a Good Project</p>
+              <p lang="en" dir="ltr">Ten tips for presenting technical work: build a narrative, justify only the choices that had real alternatives, keep slides clean, speak in precise technical language, rehearse on camera, and spend your time where the information is.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./technical-presentations-he.html">לקריאת המדריך</a>
+                <a href="./technical-presentations.html" lang="en">English</a>
+              </nav>
+            </div>
+          </article>
+
+          <article class="hub-card guide-card" id="guide-writing-to-instructor">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/guidecard-writing-to-instructor.jpg" alt="How to Write to Your Instructor cartoon illustration">
+            </figure>
+            <div class="guide-card__body">
+              <h2 lang="he" dir="rtl">איך לכתוב למרצה שלכם</h2>
+              <p class="guide-card__he" lang="en" dir="ltr">How to Write to Your Instructor</p>
+              <p lang="en" dir="ltr">Five habits for a good message: try to answer it yourself first, include all the context, be brief and careful with wording, stay polite and professional, and expect links or an AI transcript in reply.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./writing-to-your-instructor-he.html">לקריאת המדריך</a>
+                <a href="./writing-to-your-instructor.html" lang="en">English</a>
+              </nav>
+            </div>
+          </article>
+
+          <article class="hub-card guide-card" id="guide-honest-truth">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/guidecard-honest-truth.jpg" alt="The Honest, Brutal Truth About Learning cartoon illustration">
+            </figure>
+            <div class="guide-card__body">
+              <h2 lang="he" dir="rtl">האמת הכנה והברוטלית על למידה</h2>
+              <p class="guide-card__he" lang="en" dir="ltr">The Honest, Brutal Truth About Learning</p>
+              <p lang="en" dir="ltr">Decide and shape your skillset, then face five hard truths: aim for skills over passive knowledge, practice relentlessly, do not trust the illusion of mastery school leaves you with, and use AI as your honest mirror.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./honest-truth-about-learning-he.html">לקריאת המדריך</a>
+                <a href="./honest-truth-about-learning.html" lang="en">English</a>
+              </nav>
+            </div>
+          </article>
+
+          <article class="hub-card guide-card" id="guide-ai-and-engineers">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/guidecard-ai-and-engineers.jpg" alt="Will AI Make Software Engineers Obsolete? cartoon illustration">
+            </figure>
+            <div class="guide-card__body">
+              <h2 lang="he" dir="rtl">האם AI ייתר מהנדסי תוכנה?</h2>
+              <p class="guide-card__he" lang="en" dir="ltr">Will AI Make Software Engineers Obsolete?</p>
+              <p lang="en" dir="ltr">Common themes as of July 2026: the changing role of the engineer, where vibe coding reaches its limits, writing much less code, why code is still taught, and how uncertain the future really is.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./ai-and-software-engineers-he.html">לקריאת המדריך</a>
+                <a href="./ai-and-software-engineers.html" lang="en">English</a>
+              </nav>
+            </div>
+          </article>
+
+          <article class="hub-card guide-card" id="guide-english">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/guidecard-english-studies.jpg" alt="English in Your Studies cartoon illustration">
+            </figure>
+            <div class="guide-card__body">
+              <h2 lang="he" dir="rtl">אנגלית בלימודים שלכם</h2>
+              <p class="guide-card__he" lang="en" dir="ltr">English in Your Studies</p>
+              <p lang="en" dir="ltr">The field runs on English. You do not need perfect English, but you do need a basic working level, the standard technical terms, and the habit of working in English from the start.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./english-in-your-studies-he.html">לקריאת המדריך</a>
+                <a href="./english-in-your-studies.html" lang="en">English</a>
+              </nav>
+            </div>
+          </article>
+
+        </section>
+
+        <h2 class="guides-section-title">על קורסי GenAI ו-LLM</h2>
+        <p class="guides-section-lede">התמצאות לסטודנטים בקורסי LLM, GenAI וקורסי AI קרובים: מה מצופה בקורסים האלה, אילו הנחות כדאי להוריד, ואיך להפיק את המרב מהחיבור שבין התואר שלכם ל-AI.</p>
+        <section class="guides-grid" aria-label="AI courses">
+          <article class="hub-card guide-card" id="guide-course-expectations">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/guidecard-course-expectations.jpg" alt="The One Kind of Innovation These Courses Require cartoon illustration">
+            </figure>
+            <div class="guide-card__body">
+              <h2 lang="he" dir="rtl">סוג החדשנות היחיד שהקורסים האלה דורשים</h2>
+              <p class="guide-card__he" lang="en" dir="ltr">The One Kind of Innovation These Courses Require</p>
+              <p lang="en" dir="ltr">The three questions behind any project (research, engineering, product) and the three kinds of innovation that answer them. Explains why these courses target scientific innovation, with product value as a floor.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./course-expectations-he.html">לקריאת המדריך</a>
+                <a href="./course-expectations.html" lang="en">English</a>
+              </nav>
+            </div>
+          </article>
+
+          <article class="hub-card guide-card" id="guide-misconceptions">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/guidecard-misconceptions.jpg" alt="Ten Things Students Get Wrong About Projects cartoon illustration">
+            </figure>
+            <div class="guide-card__body">
+              <h2 lang="he" dir="rtl">עשרה דברים שסטודנטים טועים בהם בפרויקטים</h2>
+              <p class="guide-card__he" lang="en" dir="ltr">Ten Things Students Get Wrong About Projects</p>
+              <p lang="en" dir="ltr">Ten beliefs that quietly limit what students get out of a project-based course, from mistaking a working demo for engineering skill to treating a course as content to consume. Each comes with the sentence that gives it away.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./common-misconceptions-he.html">לקריאת המדריך</a>
+                <a href="./common-misconceptions.html" lang="en">English</a>
+              </nav>
+            </div>
+          </article>
+
+          <article class="hub-card guide-card" id="guide-medtech-llm">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/guidecard-medtech-llm.jpg" alt="Medical Technology Students: Don&rsquo;t Waste Your Cross-Domain Advantage cartoon illustration">
+            </figure>
+            <div class="guide-card__body">
+              <h2 lang="he" dir="rtl">סטודנטים לרפואה דיגיטלית: אל תבזבזו את היתרון הבין-תחומי שלכם</h2>
+              <p class="guide-card__he" lang="en" dir="ltr">Medical Technology Students: Don&rsquo;t Waste Your Cross-Domain Advantage</p>
+              <p lang="en" dir="ltr">How to turn the intersection of your degree, medicine and AI, into a standout LLM project: choose a meaningful problem, develop deep domain understanding, keep technological depth, and connect both worlds.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./medtech-llm-course-he.html">לקריאת המדריך</a>
+                <a href="./medtech-llm-course.html" lang="en">English</a>
+              </nav>
+            </div>
+          </article>
+
+          <article class="hub-card guide-card" id="guide-smart-beats-long">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/guidecard-smart-beats-long.jpg" alt="Smart Beats Long cartoon illustration">
+            </figure>
+            <div class="guide-card__body">
+              <h2 lang="he" dir="rtl">חכם מנצח ארוך</h2>
+              <p class="guide-card__he" lang="en" dir="ltr">Smart Beats Long</p>
+              <p lang="en" dir="ltr">You are graded on the quality of the result, not on hours invested. Five habits that make the same time produce a better project: work smart, start early, reuse aggressively, use the course material, and validate continuously.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./smart-beats-long-he.html">לקריאת המדריך</a>
+                <a href="./smart-beats-long.html" lang="en">English</a>
+              </nav>
+            </div>
+          </article>
+
+          <article class="hub-card guide-card" id="guide-course-participation">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/guidecard-course-participation.jpg" alt="The Recordings Are Not the Course cartoon illustration">
+            </figure>
+            <div class="guide-card__body">
+              <h2 lang="he" dir="rtl">ההקלטות הן לא הקורס</h2>
+              <p class="guide-card__he" lang="en" dir="ltr">The Recordings Are Not the Course</p>
+              <p lang="en" dir="ltr">I record the sessions, but watching lectures is the least important part. The value is live interaction and three required project presentations, so the course is not a fit if you only plan to watch the recordings.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./course-participation-he.html">לקריאת המדריך</a>
+                <a href="./course-participation.html" lang="en">English</a>
+              </nav>
+            </div>
+          </article>
+        </section>
+
+        <h2 class="guides-section-title">סטנדרטים לפרויקטים בקורסי GenAI ו-LLM</h2>
+        <p class="guides-section-lede">מה פרויקט GenAI או LLM צריך להראות, ואיך בונים את הנתונים שמאחוריו. השתמשו בהם בזמן שהעבודה עדיין מתגבשת.</p>
+        <section class="guides-grid" aria-label="GenAI and LLM project standards">
+          <article class="hub-card guide-card" id="guide-requirements">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/guidecard-requirements.jpg" alt="LLM/GenAI Project Requirements cartoon illustration">
+            </figure>
+            <div class="guide-card__body">
+              <h2 lang="he" dir="rtl">דרישות פרויקט ב-LLM/GenAI</h2>
+              <p class="guide-card__he" lang="en" dir="ltr">LLM/GenAI Project Requirements</p>
+              <p lang="en" dir="ltr">Twelve requirements a strong course project is expected to satisfy, grouped into four phases from framing the problem through to engineering rigor, each paired with the anti-patterns that most often weaken it.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./project-requirements-he.html">לקריאת המדריך</a>
+                <a href="./project-requirements.html" lang="en">English</a>
+              </nav>
+            </div>
+          </article>
+
+          <article class="hub-card guide-card" id="guide-assessment">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/guidecard-assessment.jpg" alt="LLM/GenAI Project Assessment Criteria cartoon illustration">
+            </figure>
+            <div class="guide-card__body">
+              <h2 lang="he" dir="rtl">קריטריונים להערכת פרויקט ב-LLM/GenAI</h2>
+              <p class="guide-card__he" lang="en" dir="ltr">LLM/GenAI Project Assessment Criteria</p>
+              <p lang="en" dir="ltr">The five dimensions a project is judged on: domain understanding, depth of solution-space exploration, novelty and reuse, methodological rigor, and how clearly the work is presented and defended.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./project-assessment-criteria-he.html">לקריאת המדריך</a>
+                <a href="./project-assessment-criteria.html" lang="en">English</a>
+              </nav>
+            </div>
+          </article>
+
+          <article class="hub-card guide-card" id="guide-synthetic-data">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/guidecard-synthetic-data.jpg" alt="Synthetic Data Generation for LLM/GenAI Courses cartoon illustration">
+            </figure>
+            <div class="guide-card__body">
+              <h2 lang="he" dir="rtl">יצירת נתונים סינתטיים לקורסי LLM/GenAI</h2>
+              <p class="guide-card__he" lang="en" dir="ltr">Synthetic Data Generation for LLM/GenAI Courses</p>
+              <p lang="en" dir="ltr">A do-and-don't guide to generating synthetic data for LLM and GenAI projects: research real data first, control what you produce, prototype and debug small, inspect by hand, and compare strategies before scaling.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./synthetic-data-generation-he.html">לקריאת המדריך</a>
+                <a href="./synthetic-data-generation.html" lang="en">English</a>
+              </nav>
+            </div>
+          </article>
+
+          <article class="hub-card guide-card" id="guide-eda">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/guidecard-eda.jpg" alt="Practical EDA for Synthetic Datasets cartoon illustration">
+            </figure>
+            <div class="guide-card__body">
+              <h2 lang="he" dir="rtl">EDA מעשי למאגרי נתונים סינתטיים</h2>
+              <p class="guide-card__he" lang="en" dir="ltr">Practical EDA for Synthetic Datasets</p>
+              <p lang="en" dir="ltr">An eight-objective checklist to run before training: sanity, coverage, realism, variability, label quality, leakage, bias and balance, and difficulty, each with the practical EDA that verifies it.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./eda-for-synthetic-datasets-he.html">לקריאת המדריך</a>
+                <a href="./eda-for-synthetic-datasets.html" lang="en">English</a>
+              </nav>
+            </div>
+          </article>
+        </section>
+
+        <h2 class="guides-section-title">סטנדרטים לפרויקטים בקורס ראייה ממוחשבת</h2>
+        <p class="guides-section-lede">מה פרויקט חוסן בראייה ממוחשבת צריך להראות ואיך הוא נשפט. השתמשו בהם בזמן שהעבודה עדיין מתגבשת.</p>
+        <section class="guides-grid" aria-label="Vision project standards">
+          <article class="hub-card guide-card" id="guide-requirements-vision">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/guidecard-requirements-vision.jpg" alt="Project Requirements for Vision Course cartoon illustration">
+            </figure>
+            <div class="guide-card__body">
+              <h2 lang="he" dir="rtl">דרישות פרויקט לקורס הראייה הממוחשבת</h2>
+              <p class="guide-card__he" lang="en" dir="ltr">Project Requirements for Vision Course</p>
+              <p lang="en" dir="ltr">What the vision robustness project must do, stage by stage: dataset and task selection, clean baseline, distortion and degradation, restoration and fine-tuning, and documentation, each with its anti-patterns and a suggested weekly plan.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./project-requirements-vision-he.html">לקריאת המדריך</a>
+                <a href="./project-requirements-vision.html" lang="en">English</a>
+              </nav>
+            </div>
+          </article>
+
+          <article class="hub-card guide-card" id="guide-assessment-vision">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/guidecard-assessment-vision.jpg" alt="Project Assessment Criteria for Vision Course cartoon illustration">
+            </figure>
+            <div class="guide-card__body">
+              <h2 lang="he" dir="rtl">קריטריונים להערכת פרויקט לקורס הראייה הממוחשבת</h2>
+              <p class="guide-card__he" lang="en" dir="ltr">Project Assessment Criteria for Vision Course</p>
+              <p lang="en" dir="ltr">The five dimensions a vision robustness project is judged on: study design, measurement rigor, depth of exploration, recovery analysis, and visualization, each with the strong and weak signals graders look for.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./project-assessment-criteria-vision-he.html">לקריאת המדריך</a>
+                <a href="./project-assessment-criteria-vision.html" lang="en">English</a>
+              </nav>
+            </div>
+          </article>
+        </section>
+
+        <h2 class="guides-section-title">אבני דרך של פרויקט בקורסי GenAI ו-LLM</h2>
+        <p class="guides-section-lede">מה כל אבן דרך משמעותית צריכה להראות: לא רק שנעשתה עבודה, אלא שהצוות מבין את הבעיה, קיבל החלטות טכניות מנומקות, העריך את הפתרון נכון ויכול להעביר את התוצאות בבירור.</p>
+        <section class="guides-grid" aria-label="Project milestone guides">
+          <article class="hub-card guide-card" id="guide-weekly-plan">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/guidecard-weekly-plan.jpg" alt="Suggested Weekly Plan for Project Execution cartoon illustration">
+            </figure>
+            <div class="guide-card__body">
+              <h2 lang="he" dir="rtl">תוכנית שבועית מוצעת לביצוע הפרויקט</h2>
+              <p class="guide-card__he" lang="en" dir="ltr">Suggested Weekly Plan for Project Execution</p>
+              <p lang="en" dir="ltr">A week-by-week roadmap for a 13-week semester: which requirements to advance each week, with the proposal, midterm, and final at weeks 5, 8, and 13, plus weeks 14 and 15 to polish and submit the repository.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./weekly-project-plan-he.html">לקריאת המדריך</a>
+                <a href="./weekly-project-plan.html" lang="en">English</a>
+              </nav>
+            </div>
+          </article>
+          <article class="hub-card guide-card" id="guide-proposal">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/guidecard-proposal.jpg" alt="Project Proposal Presentation cartoon illustration">
+            </figure>
+            <div class="guide-card__body">
+              <h2 lang="he" dir="rtl">מצגת הצעת הפרויקט</h2>
+              <p class="guide-card__he" lang="en" dir="ltr">Project Proposal Presentation</p>
+              <p lang="en" dir="ltr">Six parts a strong proposal must cover: motivating use case, problem statement, novelty, models and methods, data specification, and an evaluation plan, each with its requirements and the anti-patterns to avoid.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./project-proposal-presentation-he.html">לקריאת המדריך</a>
+                <a href="./project-proposal-presentation.html" lang="en">English</a>
+              </nav>
+            </div>
+          </article>
+
+          <article class="hub-card guide-card" id="guide-midterm">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/guidecard-midterm.jpg" alt="Midterm Presentation cartoon illustration">
+            </figure>
+            <div class="guide-card__body">
+              <h2 lang="he" dir="rtl">מצגת אמצע</h2>
+              <p class="guide-card__he" lang="en" dir="ltr">Midterm Presentation</p>
+              <p lang="en" dir="ltr">Six parts that show the project has moved from planning to validated work: refinement, previous work, dataset and exploratory analysis, a baseline, initial results with error analysis, and a completion plan.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./midterm-presentation-he.html">לקריאת המדריך</a>
+                <a href="./midterm-presentation.html" lang="en">English</a>
+              </nav>
+            </div>
+          </article>
+
+          <article class="hub-card guide-card" id="guide-final">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/guidecard-final.jpg" alt="Final Presentation cartoon illustration">
+            </figure>
+            <div class="guide-card__body">
+              <h2 lang="he" dir="rtl">מצגת הגמר</h2>
+              <p class="guide-card__he" lang="en" dir="ltr">Final Presentation</p>
+              <p lang="en" dir="ltr">Seven parts that make the final technical argument: the refined definition, achievements and contributions, methodology, experimental results, interpretation, conclusions, and demonstrated effort.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./final-presentation-he.html">לקריאת המדריך</a>
+                <a href="./final-presentation.html" lang="en">English</a>
+              </nav>
+            </div>
+          </article>
+
+          <article class="hub-card guide-card" id="guide-github">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/guidecard-github.jpg" alt="GitHub Submission cartoon illustration">
+            </figure>
+            <div class="guide-card__body">
+              <h2 lang="he" dir="rtl">הגשה ב-GitHub</h2>
+              <p class="guide-card__he" lang="en" dir="ltr">GitHub Submission</p>
+              <p lang="en" dir="ltr">Fifteen parts for a professional repository: naming, structure, a complete README, documented data and models, reproducible training and evaluation, code quality, and a final submission checklist.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./github-submission-he.html">לקריאת המדריך</a>
+                <a href="./github-submission.html" lang="en">English</a>
+              </nav>
+            </div>
+          </article>
+
+          <article class="hub-card guide-card" id="guide-in-class-prep">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/guidecard-in-class-prep.jpg" alt="Preparing for Your In-Class Presentation cartoon illustration">
+            </figure>
+            <div class="guide-card__body">
+              <h2 lang="he" dir="rtl">הכנה למצגת בכיתה</h2>
+              <p class="guide-card__he" lang="en" dir="ltr">Preparing for Your In-Class Presentation</p>
+              <p lang="en" dir="ltr">A six-step checklist for the days before you present: set up and register your repository, review the guides, self-evaluate with the course bot, rehearse and time your talk, and act on the instructor's feedback afterwards.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./in-class-presentation-prep-he.html">לקריאת המדריך</a>
+                <a href="./in-class-presentation-prep.html" lang="en">English</a>
+              </nav>
+            </div>
+          </article>
+        </section>
+
+        <h2 class="guides-section-title">משאבי עבודה</h2>
+        <p class="guides-section-lede">מתודולוגיית ההוראה, דוגמאות עבודה, עוזרי קורס וספרי הלימוד שעליהם הקורסים בנויים.</p>
+        <section class="guides-grid" aria-label="Working resources">
+          <article class="hub-card guide-card" id="guide-free-gpu">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/guidecard-free-gpu.jpg" alt="Free GPU Resources for Students cartoon illustration">
+            </figure>
+            <div class="guide-card__body">
+              <h2 lang="he" dir="rtl">משאבי GPU חינמיים לסטודנטים</h2>
+              <p class="guide-card__he" lang="en" dir="ltr">Free GPU Resources for Students</p>
+              <p lang="en" dir="ltr">For most course projects you do not need to pay for a GPU. Your own machine, the HIT lab computers, and free cloud platforms (Colab, Kaggle, Lightning AI, Modal) cover most of what a project needs.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./free-gpu-resources-he.html">לקריאת המדריך</a>
+                <a href="./free-gpu-resources.html" lang="en">English</a>
+              </nav>
+            </div>
+          </article>
+          <article class="hub-card guide-card" id="guide-llm-access">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/guidecard-llm-access.jpg" alt="LLM Access for Students cartoon illustration">
+            </figure>
+            <div class="guide-card__body">
+              <h2 lang="he" dir="rtl">גישה למודלי שפה לסטודנטים</h2>
+              <p class="guide-card__he" lang="en" dir="ltr">LLM Access for Students</p>
+              <p lang="en" dir="ltr">Each project gets a small OpenRouter budget, but you can also use LLMs for free: OpenRouter&rsquo;s free models or Ollama locally. Plus practical rules to keep your API costs low.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./llm-access-he.html">לקריאת המדריך</a>
+                <a href="./llm-access.html" lang="en">English</a>
+              </nav>
+            </div>
+          </article>
+          <article class="hub-card guide-card" id="guide-innovation-first">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/guidecard-innovation-first.jpg" alt="Innovation-First Learning cartoon illustration">
+            </figure>
+            <div class="guide-card__body">
+              <h2 lang="he" dir="rtl">למידה מבוססת חדשנות</h2>
+              <p class="guide-card__he" lang="en" dir="ltr">Innovation-First Learning</p>
+              <p lang="en" dir="ltr">The teaching methodology behind the Hands-On AI Science courses, in ten principles that put building, state-of-the-art tools, and student innovation before formalization.</p>
+              <nav class="hub-anchor-nav">
+                <a href="../../work/innovation-first-learning.html">Read the principles</a>
+                <a href="../../work/innovation-first-learning-he.html" lang="he">עברית (AI)</a>
+              </nav>
+            </div>
+          </article>
+          <article class="hub-card guide-card" id="guide-past-projects">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/guidecard-past-projects.jpg" alt="Past Projects cartoon illustration">
+            </figure>
+            <div class="guide-card__body">
+              <h2 lang="he" dir="rtl">פרויקטים קודמים</h2>
+              <p class="guide-card__he" lang="en" dir="ltr">Past Projects</p>
+              <p lang="en" dir="ltr">Completed student course projects with their repositories and write-ups. The most reliable way to calibrate scope and quality before committing to your own proposal.</p>
+              <nav class="hub-anchor-nav">
+                <a href="../hands-on-ai-science-courses-student-projects.html">עיין בפרויקטים</a>
+              </nav>
+            </div>
+          </article>
+
+          <article class="hub-card guide-card" id="guide-bots">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/guidecard-bots.jpg" alt="Course Bots cartoon illustration">
+            </figure>
+            <div class="guide-card__body">
+              <h2 lang="he" dir="rtl">בוטים לקורסים</h2>
+              <p class="guide-card__he" lang="en" dir="ltr">Course Bots</p>
+              <p lang="en" dir="ltr">Course-specific AI assistants grounded in the syllabus and materials. Use them to close knowledge gaps the week they appear, and to challenge your own reasoning rather than to generate work.</p>
+              <nav class="hub-anchor-nav">
+                <a href="../course-bots.html">צפייה בבוטים</a>
+              </nav>
+            </div>
+          </article>
+
+          <article class="hub-card guide-card" id="guide-3b1b-neural-networks">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/guidecard-3b1b-neural-networks.jpg" alt="See It Before You Code It cartoon illustration">
+            </figure>
+            <div class="guide-card__body">
+              <h2 lang="he" dir="rtl">ראו לפני שאתם מקודדים</h2>
+              <p class="guide-card__he" lang="en" dir="ltr">See It Before You Code It</p>
+              <p lang="en" dir="ltr">A curated list of 3Blue1Brown's visual explainer videos on neural networks, transformers, and how LLMs actually work. Each video as its own card, watched in order they build a strong mental model before the code.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./3b1b-neural-networks-he.html">לקריאת המדריך</a>
+                <a href="./3b1b-neural-networks.html" lang="en">English</a>
+              </nav>
+            </div>
+          </article>
+
+          <article class="hub-card guide-card" id="guide-textbooks">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/guidecard-textbooks.jpg" alt="Online Textbooks cartoon illustration">
+            </figure>
+            <div class="guide-card__body">
+              <h2>Online Textbooks</h2>
+              <p class="guide-card__he" lang="he" dir="rtl">ספרי לימוד מקוונים</p>
+              <p>The open textbooks behind the course series: Language AI, Vision AI, Scalable AI, Temporal AI, and Embodied AI. Readable online, with companion Android builds.</p>
+              <nav class="hub-anchor-nav">
+                <a href="../../writing/books-overview.html">לפתיחה</a>
+              </nav>
+            </div>
+          </article>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../../shared/unified-enhance.js"></script>
+  <script defer src="../../shared/site-shell.js"></script>
+</body>
+</html>
