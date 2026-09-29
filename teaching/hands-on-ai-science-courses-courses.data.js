@@ -32,7 +32,8 @@ window.HOS_COURSE_SYLLABI = [
     links: [
       { label: "Syllabus", href: "../courses/hos/series/scalable-ai.html" },
       { label: "Textbook", href: "https://scalablebook.icsgen-ai.org/" },
-      { label: "Course Offerings", href: "../teaching/hands-on-ai-science-courses-past-offerings.html?type=scalable-ai" }
+      { label: "Course Offerings", href: "../teaching/hands-on-ai-science-courses-past-offerings.html?type=scalable-ai" },
+      { label: "Student Course Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=scalable-ai" }
     ]
   },
   {
@@ -43,7 +44,9 @@ window.HOS_COURSE_SYLLABI = [
     titleHtml: "<span class=\"hos-course-title__line\">Building <span class=\"hos-course-title__focus\">Temporal AI</span> with</span><span class=\"hos-course-title__line\"><span class=\"hos-course-title__detail\">Sequential Intelligence and Reinforcement Learning</span></span>",
     links: [
       { label: "Syllabus", href: "../courses/hos/series/temporal-ai.html" },
-      { label: "Textbook", href: "http://temporalbook.icsgen-ai.org/" }
+      { label: "Textbook", href: "http://temporalbook.icsgen-ai.org/" },
+      { label: "Course Offerings", href: "../teaching/hands-on-ai-science-courses-past-offerings.html?type=temporal-ai" },
+      { label: "Student Course Projects", href: "../teaching/hands-on-ai-science-courses-student-projects.html?type=temporal-ai" }
     ]
   }
 ];
