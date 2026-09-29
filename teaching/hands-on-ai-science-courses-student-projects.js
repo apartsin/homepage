@@ -270,10 +270,25 @@
     });
   }
 
+  const usedIds = new Set();
+  const slugify = (s) => String(s || '')
+    .toLowerCase()
+    .normalize('NFKD').replace(/[̀-ͯ]/g, '')
+    .replace(/&/g, ' and ')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 80);
+
   const cards = projects.map((project) => {
     const courseMeta = parseCourseMeta(project.c);
     const article = document.createElement('article');
     article.className = 'content-card content-card--collection student-project-card';
+    // Stable, human-readable id for deep-linking (#project-my-title).
+    let baseId = 'project-' + (slugify(project.t) || 'card');
+    let uniqueId = baseId, n = 2;
+    while (usedIds.has(uniqueId)) { uniqueId = baseId + '-' + n; n += 1; }
+    usedIds.add(uniqueId);
+    article.id = uniqueId;
     article.dataset.type = courseMeta.typeSlug;
     article.dataset.institution = courseMeta.institution;
     article.dataset.year = courseMeta.year;
@@ -508,6 +523,22 @@
     courseSelect.value = presetCourse;
   }
 
+  function syncUrl() {
+    // Reflect the current filter state into the URL query string so the page
+    // is deep-linkable (share this URL, land on the same view).
+    const url = new URL(window.location.href);
+    const set = (key, value) => {
+      if (value && value !== 'all') url.searchParams.set(key, value);
+      else url.searchParams.delete(key);
+    };
+    set('type', typeSelect.value);
+    set('institution', institutionSelect.value);
+    if (termSelect) set('term', termSelect.value);
+    if (courseSelect) set('course', courseSelect.value);
+    // Preserve any existing hash (deep link to a specific card).
+    window.history.replaceState(null, '', url.pathname + url.search + url.hash);
+  }
+
   function applyFilters() {
     const type = typeSelect.value;
     const institution = institutionSelect.value;
@@ -528,6 +559,7 @@
     });
 
     status.textContent = `Showing ${visible} of ${cards.length} projects`;
+    syncUrl();
   }
 
   [typeSelect, institutionSelect, termSelect, courseSelect].filter(Boolean).forEach((selectEl) => {
@@ -541,6 +573,56 @@
     if (courseSelect) courseSelect.value = 'all';
     applyFilters();
   });
+
+  // Copy-link button: grabs the current URL (with filters + optional #card).
+  const copyBtn = document.getElementById('student-project-copy-link');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', async () => {
+      const link = window.location.href;
+      const originalLabel = copyBtn.textContent;
+      const done = (msg) => {
+        copyBtn.textContent = msg;
+        setTimeout(() => { copyBtn.textContent = originalLabel; }, 1600);
+      };
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(link);
+          done('Link copied');
+        } else {
+          const ta = document.createElement('textarea');
+          ta.value = link;
+          ta.style.position = 'fixed';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+          done('Link copied');
+        }
+      } catch (_) {
+        done('Copy failed');
+      }
+    });
+  }
+
+  // If the URL has a #project-slug hash, scroll it into view and briefly highlight.
+  const targetHash = (window.location.hash || '').replace(/^#/, '');
+  if (targetHash) {
+    const target = document.getElementById(targetHash);
+    if (target && target.classList.contains('student-project-card')) {
+      // Clear any filter that would hide the linked card so it is always visible.
+      typeSelect.value = 'all';
+      institutionSelect.value = 'all';
+      if (termSelect) termSelect.value = 'all';
+      if (courseSelect) courseSelect.value = 'all';
+      applyFilters();
+      setTimeout(() => {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        target.classList.add('student-project-card--linked');
+        setTimeout(() => target.classList.remove('student-project-card--linked'), 2400);
+      }, 60);
+    }
+  }
 
   applyFilters();
 })();

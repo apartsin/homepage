@@ -78,6 +78,31 @@
   color: var(--site-accent);
 }
 
+.student-projects-toolbar__copy {
+  height: 34px;
+  padding: 0 12px;
+  border: 1px solid rgba(24, 101, 168, 0.35);
+  border-radius: 10px;
+  background: rgba(24, 101, 168, 0.08);
+  color: #164a83;
+  font: 700 0.78rem/1 "Manrope", sans-serif;
+  cursor: pointer;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+.student-projects-toolbar__copy:hover {
+  background: rgba(24, 101, 168, 0.16);
+  border-color: rgba(24, 101, 168, 0.55);
+}
+
+.student-project-card--linked {
+  animation: student-project-linked-flash 2.2s ease-out;
+  box-shadow: 0 0 0 3px rgba(24, 101, 168, 0.35), 0 12px 28px rgba(24, 101, 168, 0.18);
+}
+@keyframes student-project-linked-flash {
+  0%   { box-shadow: 0 0 0 3px rgba(24, 101, 168, 0.55), 0 14px 32px rgba(24, 101, 168, 0.28); }
+  100% { box-shadow: 0 0 0 3px rgba(24, 101, 168, 0.00), 0 12px 28px rgba(24, 101, 168, 0.00); }
+}
+
 .student-projects-toolbar__status {
   margin: 4px 0 0;
   padding: 6px 10px;
