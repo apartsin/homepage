@@ -12,7 +12,7 @@ window.RECENT_PUBLICATIONS = [
       { name: "E Moran", self: false },
       { name: "A Apartsin", self: true }
     ],
-    venue: "Machine Learning and Knowledge Extraction (MAKE) (MDPI)",
+    venue: "Machine Learning and Knowledge Extraction (MAKE) · MDPI",
     venueHref: "https://www.mdpi.com/2504-4990/8/7/186"
   },
   {
@@ -29,7 +29,7 @@ window.RECENT_PUBLICATIONS = [
       { name: "Y Aperstein", self: false },
       { name: "A Apartsin", self: true }
     ],
-    venue: "AI (MDPI)",
+    venue: "AI · MDPI",
     venueHref: "https://www.mdpi.com/2673-2688/7/7/237"
   },
   {
@@ -60,7 +60,7 @@ window.RECENT_PUBLICATIONS = [
       { name: "A Apartsin", self: true },
       { name: "Y Aperstein", self: false }
     ],
-    venue: "Scientific Reports (Nature)",
+    venue: "Scientific Reports · Springer Nature",
     venueHref: "https://www.nature.com/articles/s41598-026-37022-y"
   },
   {
@@ -77,7 +77,7 @@ window.RECENT_PUBLICATIONS = [
       { name: "G Benita", self: false },
       { name: "A Apartsin", self: true }
     ],
-    venue: "Information (MDPI)",
+    venue: "Information · MDPI",
     venueHref: "https://www.mdpi.com/2078-2489/16/12/1090"
   },
   {
@@ -93,7 +93,7 @@ window.RECENT_PUBLICATIONS = [
       { name: "Y Cohen", self: false },
       { name: "A Apartsin", self: true }
     ],
-    venue: "Education Sciences (MDPI)",
+    venue: "Education Sciences · MDPI",
     venueHref: "https://www.mdpi.com/2227-7102/15/4/405"
   },
   {
@@ -126,7 +126,7 @@ window.RECENT_PUBLICATIONS = [
       { name: "S Bar", self: false },
       { name: "A Apartsin", self: true }
     ],
-    venue: "Scientific Reports (Nature)",
+    venue: "Scientific Reports · Springer Nature",
     venueHref: "https://www.nature.com/articles/s41598-026-71420-6"
   },
   {
@@ -193,7 +193,7 @@ window.RECENT_PUBLICATIONS = [
       { name: "R Shagan Damti", self: false },
       { name: "A Apartsin", self: true }
     ],
-    venue: "Scientific Reports (Nature)",
+    venue: "Scientific Reports · Springer Nature",
     venueHref: "https://www.nature.com/articles/s41598-026-66294-7"
   },
   {
@@ -208,7 +208,7 @@ window.RECENT_PUBLICATIONS = [
       { name: "Y Aperstein", self: false },
       { name: "A Apartsin", self: true }
     ],
-    venue: "Electronics (MDPI)",
+    venue: "Electronics · MDPI",
     venueHref: "https://www.mdpi.com/2079-9292/15/10/2149"
   },
   {
