@@ -35,10 +35,13 @@
   }
 
   sections.forEach(function (section) {
+    // Pool every type this section covers, THEN sort by date across the pool,
+    // so a newer Preprint outranks an older Submitted (and vice versa).
     var items = [];
     section.types.forEach(function (t) {
-      items = items.concat(grouped[t].slice().sort(sortByTime));
+      items = items.concat(grouped[t]);
     });
+    items.sort(sortByTime);
     items = items.map(function (x) { return x.pub; });
     if (items.length === 0) {
       return;
