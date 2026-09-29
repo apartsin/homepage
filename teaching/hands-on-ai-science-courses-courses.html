@@ -57,6 +57,58 @@
       gap: 4px;
     }
     #hos-course-syllabi-grid .content-card__book-badge svg { width: 11px; height: 11px; }
+
+    /* Embedded past-offerings list under each course card. */
+    .hos-offerings {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed rgba(24, 32, 42, 0.12);
+    }
+    .hos-offerings__label {
+      margin: 0 0 6px;
+      color: var(--site-muted, #5a626c);
+      font: 800 0.62rem/1 "Manrope", sans-serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .hos-offerings__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 4px;
+    }
+    .hos-offerings__item {
+      display: grid;
+      grid-template-columns: 74px 1fr;
+      gap: 8px;
+      align-items: baseline;
+      font: 600 0.72rem/1.35 "Manrope", "Segoe UI", sans-serif;
+      color: var(--site-text, #18202a);
+    }
+    .hos-offerings__when {
+      color: var(--site-muted, #5a626c);
+      font-weight: 800;
+      font-size: 0.66rem;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+    .hos-offerings__where a {
+      color: var(--site-text, #18202a);
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(24, 32, 42, 0.35);
+    }
+    .hos-offerings__where a:hover { border-bottom-color: currentColor; }
+    .hos-offerings__inst {
+      color: var(--site-muted, #5a626c);
+      font-weight: 600;
+    }
+    .hos-offerings__empty {
+      margin: 0;
+      color: var(--site-muted, #5a626c);
+      font: 600 0.72rem/1.35 "Manrope", sans-serif;
+      font-style: italic;
+    }
   </style>
 </head>
 <body class="apartsin-shell-active" data-site-section="teaching" data-card-type="course">
@@ -126,6 +178,7 @@
       </main>
     </div>
   </div>
+  <script defer src="./hands-on-ai-science-courses-past-offerings.data.js"></script>
   <script defer src="./hands-on-ai-science-courses-courses.data.js"></script>
   <script defer src="./hands-on-ai-science-courses-courses.js"></script>
   <script defer src="../shared/unified-enhance.js"></script>
