@@ -141,8 +141,12 @@
         li.appendChild(summaryP);
       }
 
+      // Publisher icons are shown on preprints/reports (arXiv, GitHub) as a
+      // quick visual cue, but hidden on published journal cards where the
+      // venue name in the byline already carries the identity.
       var venueLower = (pub.venue || "").toLowerCase();
-      var publisher = null;
+      var publisher = pub.type === "Journal" ? null : null;
+      if (pub.type !== "Journal") {
       if (venueLower.indexOf("nature") !== -1) {
         publisher = { src: "../assets/publishers/springer-nature.svg", alt: "Springer Nature" };
       } else if (venueLower.indexOf("mdpi") !== -1) {
@@ -155,6 +159,7 @@
         publisher = { src: "../assets/publishers/arxiv.jpg", alt: "arXiv" };
       } else if (venueLower.indexOf("draft") !== -1) {
         publisher = { src: "../assets/publishers/github.svg", alt: "GitHub" };
+      }
       }
       if (publisher) {
         li.classList.add("pub-card--with-publisher");
