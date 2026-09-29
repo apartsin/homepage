@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <meta name="description" content="A curated list of 3Blue1Brown's visual explainer videos on neural networks, transformers, and how LLMs work. Watch in order to build strong intuition before writing code.">
+  <link rel="alternate" hreflang="he" href="./3b1b-neural-networks-he.html">
+  <link rel="alternate" hreflang="en" href="./3b1b-neural-networks.html">
+  <title>See It Before You Code It | Sasha Apartsin</title>
+  <link rel="stylesheet" href="../../shared/site-shell.css">
+  <link rel="stylesheet" href="../../shared/unified-theme.css">
+  <style>
+    .sdg-heading { margin: 34px 0 2px; color: var(--site-text, #18202a); font: 800 0.9rem/1.2 "Manrope", sans-serif; letter-spacing: 0.04em; text-transform: uppercase; }
+    .sdg-heading:first-of-type { margin-top: 12px; }
+    .sdg-heading-lede { margin: 0; color: var(--site-muted); font: 600 0.92rem/1.5 "Manrope", sans-serif; }
+
+    .vid-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; margin-top: 14px; list-style: none; padding: 0; }
+    .vid-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 16px 18px 16px 22px;
+      border: 1px solid var(--site-border);
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
+      overflow: hidden;
+    }
+    .vid-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5px;
+      background: linear-gradient(180deg, #1d4ed8 0%, #7a3fa0 100%);
+    }
+    .vid-card__chapter {
+      align-self: flex-start;
+      padding: 3px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(24,101,168,0.28);
+      background: rgba(24,101,168,0.08);
+      color: #164a83;
+      font: 800 0.66rem/1.2 "Manrope", sans-serif;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    .vid-card__title { margin: 2px 0 0; font: 800 1.05rem/1.3 "Manrope", "Segoe UI", sans-serif; }
+    .vid-card__title a { color: #164a83; text-decoration: none; }
+    .vid-card__title a:hover { text-decoration: underline; }
+    .vid-card__desc { margin: 0; color: var(--site-text); font: 600 0.9rem/1.55 "Manrope", "Segoe UI", sans-serif; }
+    .vid-card__link { margin: 4px 0 0; font: 700 0.78rem/1.3 "Manrope", sans-serif; }
+    .vid-card__link a { color: #1d4ed8; text-decoration: underline; text-underline-offset: 2px; }
+
+    .llm-note { margin-top: 16px; padding: 14px 18px; border-radius: 12px; border: 1px solid rgba(24,101,168,0.22); background: rgba(24,101,168,0.06); color: #164a83; font: 700 0.95rem/1.55 "Manrope", "Segoe UI", sans-serif; }
+    .llm-note b { color: #123a67; }
+
+    .guide-lang-switch { display: inline-flex; align-items: stretch; border: 1px solid var(--site-border, rgba(24,32,42,0.18)); border-radius: 999px; background: #fff; overflow: hidden; font: 800 0.72rem/1 "Manrope", sans-serif; letter-spacing: 0.04em; }
+    .guide-lang-switch__btn { display: inline-flex; align-items: center; padding: 6px 14px; color: var(--site-muted, #5a626c); text-decoration: none; transition: background 120ms ease, color 120ms ease; }
+    .guide-lang-switch__btn:hover, .guide-lang-switch__btn:focus-visible { background: rgba(0, 0, 0, 0.05); color: var(--site-text, #18202a); }
+    .guide-lang-switch__btn.is-active { background: var(--site-text, #18202a); color: #fff; cursor: default; pointer-events: none; }
+  </style>
+</head>
+<body class="apartsin-shell-active" data-site-section="teaching">
+  <div class="apartsin-shell">
+    <aside class="apartsin-shell__sidebar">
+      <a class="apartsin-shell__brand" href="../../index.html">Alexander (Sasha) Apartsin</a>
+      <div class="apartsin-shell__divider"></div>
+      <nav class="apartsin-shell__nav">
+        <a href="../../index.html">About</a>
+        <a href="../../research/research-focus.html">Research</a>
+        <a href="../../teaching/overview.html">Teaching</a>
+        <a href="../../work/overview.html">Building</a>
+        <a href="../../work/innovation-overview.html">Innovations</a>
+        <a href="../../writing/overview.html">Writing</a>
+      </nav>
+    </aside>
+    <div class="apartsin-shell__content">
+      <main class="apartsin-shell__main">
+        <section class="apartsin-page-header apartsin-page-header--standard" id="threeb1b-overview">
+          <h1 class="apartsin-sr-only">See It Before You Code It: 3Blue1Brown on Neural Networks</h1>
+          <div class="apartsin-page-header__top">
+            <nav class="apartsin-page-header__crumbs" aria-label="Breadcrumb">
+              <a href="../../index.html">Home</a>
+              <span aria-hidden="true">/</span>
+              <a href="../overview.html">Teaching</a>
+              <span aria-hidden="true">/</span>
+              <a href="./index.html">Guides for Students</a>
+              <span aria-hidden="true">/</span>
+              <strong>See It Before You Code It</strong>
+            </nav>
+            <div class="guide-lang-switch" role="group" aria-label="Language">
+              <a class="guide-lang-switch__btn is-active" href="./3b1b-neural-networks.html" lang="en" hreflang="en" aria-current="true">English</a>
+              <a class="guide-lang-switch__btn" href="./3b1b-neural-networks-he.html" lang="he" hreflang="he">עברית</a>
+            </div>
+          </div>
+          <div style="display: flex; gap: clamp(16px, 3vw, 24px); align-items: flex-start; margin-top: clamp(16px, 2.4vw, 24px);">
+            <figure style="flex: 0 0 clamp(80px, 12vw, 120px); margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--site-border);">
+              <img src="../../assets/heroes/guidecard-3b1b-neural-networks.jpg" alt="" style="display: block; width: 100%; object-fit: cover;">
+            </figure>
+            <p class="apartsin-page-header__lede" style="margin: 0; flex: 1;">Grant Sanderson's <a href="https://www.3blue1brown.com/topics/neural-networks" target="_blank" rel="noopener noreferrer">3Blue1Brown</a> series on deep learning is the best visual introduction I know to how neural networks, transformers, and LLMs actually work. Watch these in order before you fight with the code; the intuition will save you hours later.</p>
+          </div>
+        </section>
+
+        <h2 class="sdg-heading">The Deep Learning series, in order</h2>
+        <p class="sdg-heading-lede">Each video stands on its own, but they build on each other from the ground up.</p>
+        <ul class="vid-grid" aria-label="3Blue1Brown neural-network videos">
+
+          <li class="vid-card">
+            <span class="vid-card__chapter">Intro</span>
+            <h2 class="vid-card__title"><a href="https://www.3blue1brown.com/lessons/mini-llm" target="_blank" rel="noopener noreferrer">Large Language Models explained briefly</a></h2>
+            <p class="vid-card__desc">A lightweight, high-level intro to what LLMs are and what they do. Good starting point that sets the stage for everything below.</p>
+            <p class="vid-card__link"><a href="https://www.3blue1brown.com/lessons/mini-llm" target="_blank" rel="noopener noreferrer">Watch on 3Blue1Brown ↗</a></p>
+          </li>
+
+          <li class="vid-card">
+            <span class="vid-card__chapter">Chapter 1</span>
+            <h2 class="vid-card__title"><a href="https://www.3blue1brown.com/lessons/neural-networks" target="_blank" rel="noopener noreferrer">But what is a Neural Network?</a></h2>
+            <p class="vid-card__desc">An overview of what a neural network is, introduced in the context of recognizing hand-written digits. The one to send someone who has never seen a network before.</p>
+            <p class="vid-card__link"><a href="https://www.3blue1brown.com/lessons/neural-networks" target="_blank" rel="noopener noreferrer">Watch on 3Blue1Brown ↗</a></p>
+          </li>
+
+          <li class="vid-card">
+            <span class="vid-card__chapter">Chapter 2</span>
+            <h2 class="vid-card__title"><a href="https://www.3blue1brown.com/lessons/gradient-descent" target="_blank" rel="noopener noreferrer">Gradient descent, how neural networks learn</a></h2>
+            <p class="vid-card__desc">An overview of gradient descent in the context of neural networks; a method used widely throughout machine learning to optimize how a computer performs on a task.</p>
+            <p class="vid-card__link"><a href="https://www.3blue1brown.com/lessons/gradient-descent" target="_blank" rel="noopener noreferrer">Watch on 3Blue1Brown ↗</a></p>
+          </li>
+
+          <li class="vid-card">
+            <span class="vid-card__chapter">Chapter 3</span>
+            <h2 class="vid-card__title"><a href="https://www.3blue1brown.com/lessons/backpropagation" target="_blank" rel="noopener noreferrer">What is backpropagation really doing?</a></h2>
+            <p class="vid-card__desc">An overview of backpropagation, the algorithm behind how neural networks learn. Builds real intuition for what the gradient signal is telling each weight to do.</p>
+            <p class="vid-card__link"><a href="https://www.3blue1brown.com/lessons/backpropagation" target="_blank" rel="noopener noreferrer">Watch on 3Blue1Brown ↗</a></p>
+          </li>
+
+          <li class="vid-card">
+            <span class="vid-card__chapter">Chapter 4</span>
+            <h2 class="vid-card__title"><a href="https://www.3blue1brown.com/lessons/backpropagation-calculus" target="_blank" rel="noopener noreferrer">Backpropagation calculus</a></h2>
+            <p class="vid-card__desc">The math behind backpropagation: chain rule, partial derivatives, and how the error propagates back through the network. Watch if you want the formalism behind the picture from chapter 3.</p>
+            <p class="vid-card__link"><a href="https://www.3blue1brown.com/lessons/backpropagation-calculus" target="_blank" rel="noopener noreferrer">Watch on 3Blue1Brown ↗</a></p>
+          </li>
+
+          <li class="vid-card">
+            <span class="vid-card__chapter">Follow-up</span>
+            <h2 class="vid-card__title"><a href="https://www.3blue1brown.com/lessons/neural-network-analysis" target="_blank" rel="noopener noreferrer">Analyzing our neural network</a></h2>
+            <p class="vid-card__desc">A closer look at what the trained network from the earlier chapters actually learned; what the neurons represent and where the pretty story starts to break.</p>
+            <p class="vid-card__link"><a href="https://www.3blue1brown.com/lessons/neural-network-analysis" target="_blank" rel="noopener noreferrer">Watch on 3Blue1Brown ↗</a></p>
+          </li>
+
+          <li class="vid-card">
+            <span class="vid-card__chapter">Chapter 5</span>
+            <h2 class="vid-card__title"><a href="https://www.3blue1brown.com/lessons/gpt" target="_blank" rel="noopener noreferrer">Transformers, the tech behind LLMs</a></h2>
+            <p class="vid-card__desc">A visual introduction to transformers. Focuses on the overall structure and word embeddings, the pieces you need before attention makes sense.</p>
+            <p class="vid-card__link"><a href="https://www.3blue1brown.com/lessons/gpt" target="_blank" rel="noopener noreferrer">Watch on 3Blue1Brown ↗</a></p>
+          </li>
+
+          <li class="vid-card">
+            <span class="vid-card__chapter">Chapter 6</span>
+            <h2 class="vid-card__title"><a href="https://www.3blue1brown.com/lessons/attention" target="_blank" rel="noopener noreferrer">Attention in transformers, step-by-step</a></h2>
+            <p class="vid-card__desc">Demystifies attention, the key mechanism inside transformers and LLMs. This is the video to rewatch until Q, K, V click.</p>
+            <p class="vid-card__link"><a href="https://www.3blue1brown.com/lessons/attention" target="_blank" rel="noopener noreferrer">Watch on 3Blue1Brown ↗</a></p>
+          </li>
+
+          <li class="vid-card">
+            <span class="vid-card__chapter">Chapter 7</span>
+            <h2 class="vid-card__title"><a href="https://www.3blue1brown.com/lessons/mlp" target="_blank" rel="noopener noreferrer">How might LLMs store facts?</a></h2>
+            <p class="vid-card__desc">Unpacks the multilayer perceptrons inside a transformer and how they may store facts. Where "the model knows things" starts to become a mechanical picture.</p>
+            <p class="vid-card__link"><a href="https://www.3blue1brown.com/lessons/mlp" target="_blank" rel="noopener noreferrer">Watch on 3Blue1Brown ↗</a></p>
+          </li>
+
+        </ul>
+
+        <p class="llm-note"><b>How to use these:</b> watch the video that matches whatever you are struggling with in the course, then read the equivalent chapter in the course notes or a textbook. Video builds the intuition, text nails down the details.</p>
+
+      <section class="section-quick-links">
+        <h2 class="section-quick-links__title">Quick Links</h2>
+        <nav class="section-quick-links__grid" aria-label="Quick links">
+          <a class="section-quick-link" href="./llm-access.html">
+            <span class="section-quick-link__badge" style="background: #1d4ed8;">L</span>
+            LLM Access for Students
+          </a>
+          <a class="section-quick-link" href="./free-gpu-resources.html">
+            <span class="section-quick-link__badge" style="background: #2e7d5a;">G</span>
+            Free GPU Resources for Students
+          </a>
+          <a class="section-quick-link" href="./index.html">
+            <span class="section-quick-link__badge" style="background: #18202a;">G</span>
+            All Guides
+          </a>
+        </nav>
+      </section>
+
+      </main>
+    </div>
+  </div>
+  <script defer src="../../shared/unified-enhance.js"></script>
+  <script defer src="../../shared/site-shell.js"></script>
+</body>
+</html>
