@@ -108,6 +108,26 @@
     .guides-lang-switch__btn { display: inline-flex; align-items: center; padding: 6px 14px; color: var(--site-muted, #5a626c); text-decoration: none; transition: background 120ms ease, color 120ms ease; }
     .guides-lang-switch__btn:hover, .guides-lang-switch__btn:focus-visible { background: rgba(0, 0, 0, 0.05); color: var(--site-text, #18202a); }
     .guides-lang-switch__btn.is-active { background: var(--site-text, #18202a); color: #fff; cursor: default; pointer-events: none; }
+    .guides-section-title { position: relative; scroll-margin-top: 16px; }
+    .guides-section-title .section-anchor {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      margin-right: 8px;
+      color: var(--site-muted, #5a626c);
+      font: 800 0.9rem/1 "Manrope", sans-serif;
+      text-decoration: none;
+      opacity: 0;
+      transition: opacity 120ms ease, color 120ms ease;
+    }
+    .guides-section-title:hover .section-anchor,
+    .guides-section-title:focus-within .section-anchor,
+    .section-anchor:focus-visible { opacity: 1; }
+    .section-anchor:hover { color: var(--site-text, #18202a); }
+    .section-anchor--copied { color: #2e7d5a; opacity: 1; }
+
   </style>
 </head>
 <body class="apartsin-shell-active" data-site-section="teaching">
@@ -149,24 +169,9 @@
           </div>
         </section>
 
-        <h2 class="guides-section-title">התחילו כאן</h2>
+        <h2 class="guides-section-title" id="section-start-here">התחילו כאן<a class="section-anchor" href="#section-start-here" aria-label="Copy link to this section" onclick="(function(a){try{navigator.clipboard.writeText(location.origin+location.pathname+a.getAttribute('href'));a.classList.add('section-anchor--copied');setTimeout(function(){a.classList.remove('section-anchor--copied')},1400);}catch(e){}})(this)">#</a></h2>
         <p class="guides-section-lede">קראו את אלה מוקדם. הם מעצבים איך תעבדו בתוצאות התואר ואיך יישפט כל מה שאתם מייצרים.</p>
         <section class="guides-grid" aria-label="Orientation guides">
-          <article class="hub-card guide-card" id="guide-work-backward-from-the-job">
-            <figure class="guide-card__media">
-              <img src="../../assets/heroes/guidecard-work-backward-from-the-job.jpg" alt="Work Backward From the Job cartoon illustration">
-            </figure>
-            <div class="guide-card__body">
-              <h2 lang="he" dir="rtl">תתחילו מהתפקיד ולכו אחורה</h2>
-              <p class="guide-card__he" lang="en" dir="ltr">Work Backward From the Job</p>
-              <p lang="en" dir="ltr">Employers hire for specific roles, not for &ldquo;CS graduates.&rdquo; Five steps to prepare for the job market before you graduate: pick target roles, learn what employers actually expect, build a learning plan, build a convincing portfolio, and practice defending your work.</p>
-              <nav class="hub-anchor-nav">
-                <a href="./work-backward-from-the-job-he.html">לקריאת המדריך</a>
-                <a href="./work-backward-from-the-job.html" lang="en">English</a>
-              </nav>
-            </div>
-          </article>
-
           <article class="hub-card guide-card" id="guide-advice">
             <figure class="guide-card__media">
               <img src="../../assets/heroes/guidecard-advice.jpg" alt="Advice to CS Students in 2026 cartoon illustration">
@@ -272,9 +277,24 @@
             </div>
           </article>
 
+          <article class="hub-card guide-card" id="guide-work-backward-from-the-job">
+            <figure class="guide-card__media">
+              <img src="../../assets/heroes/guidecard-work-backward-from-the-job.jpg" alt="Work Backward From the Job cartoon illustration">
+            </figure>
+            <div class="guide-card__body">
+              <h2 lang="he" dir="rtl">תתחילו מהתפקיד ולכו אחורה</h2>
+              <p class="guide-card__he" lang="en" dir="ltr">Work Backward From the Job</p>
+              <p lang="en" dir="ltr">Employers hire for specific roles, not for &ldquo;CS graduates.&rdquo; Five steps to prepare for the job market before you graduate: pick target roles, learn what employers actually expect, build a learning plan, build a convincing portfolio, and practice defending your work.</p>
+              <nav class="hub-anchor-nav">
+                <a href="./work-backward-from-the-job-he.html">לקריאת המדריך</a>
+                <a href="./work-backward-from-the-job.html" lang="en">English</a>
+              </nav>
+            </div>
+          </article>
+
         </section>
 
-        <h2 class="guides-section-title">על קורסי GenAI ו-LLM</h2>
+        <h2 class="guides-section-title" id="section-about-genai-llm-courses">על קורסי GenAI ו-LLM<a class="section-anchor" href="#section-about-genai-llm-courses" aria-label="Copy link to this section" onclick="(function(a){try{navigator.clipboard.writeText(location.origin+location.pathname+a.getAttribute('href'));a.classList.add('section-anchor--copied');setTimeout(function(){a.classList.remove('section-anchor--copied')},1400);}catch(e){}})(this)">#</a></h2>
         <p class="guides-section-lede">התמצאות לסטודנטים בקורסי LLM, GenAI וקורסי AI קרובים: מה מצופה בקורסים האלה, אילו הנחות כדאי להוריד, ואיך להפיק את המרב מהחיבור שבין התואר שלכם ל-AI.</p>
         <section class="guides-grid" aria-label="AI courses">
           <article class="hub-card guide-card" id="guide-course-expectations">
@@ -353,7 +373,7 @@
           </article>
         </section>
 
-        <h2 class="guides-section-title">סטנדרטים לפרויקטים בקורסי GenAI ו-LLM</h2>
+        <h2 class="guides-section-title" id="section-project-standards-genai-llm">סטנדרטים לפרויקטים בקורסי GenAI ו-LLM<a class="section-anchor" href="#section-project-standards-genai-llm" aria-label="Copy link to this section" onclick="(function(a){try{navigator.clipboard.writeText(location.origin+location.pathname+a.getAttribute('href'));a.classList.add('section-anchor--copied');setTimeout(function(){a.classList.remove('section-anchor--copied')},1400);}catch(e){}})(this)">#</a></h2>
         <p class="guides-section-lede">מה פרויקט GenAI או LLM צריך להראות, ואיך בונים את הנתונים שמאחוריו. השתמשו בהם בזמן שהעבודה עדיין מתגבשת.</p>
         <section class="guides-grid" aria-label="GenAI and LLM project standards">
           <article class="hub-card guide-card" id="guide-requirements">
@@ -417,7 +437,7 @@
           </article>
         </section>
 
-        <h2 class="guides-section-title">סטנדרטים לפרויקטים בקורס ראייה ממוחשבת</h2>
+        <h2 class="guides-section-title" id="section-project-standards-vision">סטנדרטים לפרויקטים בקורס ראייה ממוחשבת<a class="section-anchor" href="#section-project-standards-vision" aria-label="Copy link to this section" onclick="(function(a){try{navigator.clipboard.writeText(location.origin+location.pathname+a.getAttribute('href'));a.classList.add('section-anchor--copied');setTimeout(function(){a.classList.remove('section-anchor--copied')},1400);}catch(e){}})(this)">#</a></h2>
         <p class="guides-section-lede">מה פרויקט חוסן בראייה ממוחשבת צריך להראות ואיך הוא נשפט. השתמשו בהם בזמן שהעבודה עדיין מתגבשת.</p>
         <section class="guides-grid" aria-label="Vision project standards">
           <article class="hub-card guide-card" id="guide-requirements-vision">
@@ -451,7 +471,7 @@
           </article>
         </section>
 
-        <h2 class="guides-section-title">אבני דרך של פרויקט בקורסי GenAI ו-LLM</h2>
+        <h2 class="guides-section-title" id="section-project-milestones">אבני דרך של פרויקט בקורסי GenAI ו-LLM<a class="section-anchor" href="#section-project-milestones" aria-label="Copy link to this section" onclick="(function(a){try{navigator.clipboard.writeText(location.origin+location.pathname+a.getAttribute('href'));a.classList.add('section-anchor--copied');setTimeout(function(){a.classList.remove('section-anchor--copied')},1400);}catch(e){}})(this)">#</a></h2>
         <p class="guides-section-lede">מה כל אבן דרך משמעותית צריכה להראות: לא רק שנעשתה עבודה, אלא שהצוות מבין את הבעיה, קיבל החלטות טכניות מנומקות, העריך את הפתרון נכון ויכול להעביר את התוצאות בבירור.</p>
         <section class="guides-grid" aria-label="Project milestone guides">
           <article class="hub-card guide-card" id="guide-weekly-plan">
@@ -544,7 +564,7 @@
           </article>
         </section>
 
-        <h2 class="guides-section-title">משאבי עבודה</h2>
+        <h2 class="guides-section-title" id="section-working-resources">משאבי עבודה<a class="section-anchor" href="#section-working-resources" aria-label="Copy link to this section" onclick="(function(a){try{navigator.clipboard.writeText(location.origin+location.pathname+a.getAttribute('href'));a.classList.add('section-anchor--copied');setTimeout(function(){a.classList.remove('section-anchor--copied')},1400);}catch(e){}})(this)">#</a></h2>
         <p class="guides-section-lede">מתודולוגיית ההוראה, דוגמאות עבודה, עוזרי קורס וספרי הלימוד שעליהם הקורסים בנויים.</p>
         <section class="guides-grid" aria-label="Working resources">
           <article class="hub-card guide-card" id="guide-free-gpu">
