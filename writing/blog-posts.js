@@ -1,6 +1,6 @@
 (function () {
   const THEME_LABELS = {
-    'vibe-coding': 'Vibe-Coding',
+    'vibe-coding': 'AI-Guided Software Engineering',
     'ai-product-strategy': 'AI Product Strategy',
     'ai-in-academia': 'AI in Academia',
     'project-brief': 'Project Write-Ups',

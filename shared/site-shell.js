@@ -266,7 +266,7 @@
             label: 'Blog Posts',
             path: 'writing/blog-posts.html',
             secondary: [
-              { label: 'Vibe-Coding', path: 'writing/blog-posts.html?theme=vibe-coding' },
+              { label: 'AI-Guided Software Engineering', path: 'writing/blog-posts.html?theme=vibe-coding' },
               { label: 'AI Product Strategy', path: 'writing/blog-posts.html?theme=ai-product-strategy' },
               { label: 'AI in Academia', path: 'writing/blog-posts.html?theme=ai-in-academia' },
               { label: 'Project Write-Ups', path: 'writing/blog-posts.html?theme=project-brief' },

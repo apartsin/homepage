@@ -2,7 +2,7 @@ window.ApartsinCardData = window.ApartsinCardData || {};
 window.ApartsinCardData.essays = [
   {
     eyebrow: "Essays",
-    title: "On Vibe-Coding",
+    title: "On AI-Guided Software Engineering",
     meta: "5 essays",
     description: "Software-building, AI-written code, and the shift from implementation to steering.",
     links: [
