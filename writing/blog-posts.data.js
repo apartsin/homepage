@@ -1,6 +1,24 @@
 window.BLOG_POSTS_DATA = [
   {
     tags: ["vibe-coding", "ai-product-strategy"],
+    image: "./blog/correction-driven-development/images/hero.jpg",
+    imageAlt: "Don't Specify What You Can Correct",
+    venue: "apartsin.com",
+    title: "Don't Specify What You Can Correct",
+    href: "./blog/correction-driven-development/index.html",
+    description: "Correction-Driven Development: when AI makes change cheap, recognizing what is wrong beats predicting what is right. A development model for the AI era."
+  },
+  {
+    tags: ["ai-in-academia", "ai-product-strategy"],
+    image: "./blog/inverted-cs/img/hero.jpg",
+    imageAlt: "Are We Teaching Computer Science Backward?",
+    venue: "apartsin.com",
+    title: "Are We Teaching Computer Science Backward?",
+    href: "./blog/inverted-cs/index.html",
+    description: "We hand students the answers years before they meet the questions. AI makes it possible to flip the order: build first, then go deep when the problems demand it."
+  },
+  {
+    tags: ["vibe-coding", "ai-product-strategy"],
     image: "../assets/writing/blog-posts/blog-01.png",
     imageAlt: "The End of Software Engineering as We Know It",
     venue: "Design Bootcamp",

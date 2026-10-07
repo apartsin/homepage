@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teaching CS Backward</title>
+<meta name="description" content="We teach computer science students the answers years before they meet the questions. AI makes it possible to flip the order: build first, then go deep when the problems demand it.">
+<meta name="author" content="Alexander Apartsin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Are We Teaching Computer Science Backward?">
+<meta property="og:description" content="We hand students the answers years before they meet the questions. AI just made that impossible to ignore.">
+<meta property="og:image" content="img/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="img/hero.jpg">
+<meta name="twitter:title" content="Are We Teaching Computer Science Backward?">
+<meta name="twitter:description" content="We hand students the answers years before they meet the questions. AI just made that impossible to ignore.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --surface: #ffffff;
+    --ink: #1c1b19;
+    --ink-soft: #55524c;
+    --muted: #8a867e;
+    --line: #e7e3da;
+    --accent: #d9480f;
+    --accent-soft: #fff1e8;
+    --cool: #1f6feb;
+    --cool-soft: #eaf2ff;
+    --shadow: 0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.05);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141413;
+      --surface: #1c1c1a;
+      --ink: #eeebe4;
+      --ink-soft: #bdb8ad;
+      --muted: #8a867e;
+      --line: #2e2d2a;
+      --accent: #ff8a4c;
+      --accent-soft: #2a1d15;
+      --cool: #6ea8ff;
+      --cool-soft: #16202e;
+      --shadow: none;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #141413;
+    --surface: #1c1c1a;
+    --ink: #eeebe4;
+    --ink-soft: #bdb8ad;
+    --muted: #8a867e;
+    --line: #2e2d2a;
+    --accent: #ff8a4c;
+    --accent-soft: #2a1d15;
+    --cool: #6ea8ff;
+    --cool-soft: #16202e;
+    --shadow: none;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 400 19px/1.7 Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .progress {
+    position: fixed; top: 0; left: 0; height: 3px; width: 0;
+    background: var(--accent); z-index: 10; transition: width .1s linear;
+  }
+  main { max-width: 700px; margin: 0 auto; padding: 72px 16px 96px; }
+
+  .kicker {
+    font: 600 13px/1 Inter, sans-serif; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 20px;
+  }
+  h1 {
+    font: 700 clamp(38px, 7vw, 60px)/1.05 Fraunces, Georgia, serif;
+    letter-spacing: -.02em; margin: 0 0 20px; text-wrap: balance;
+  }
+  .dek {
+    font: 500 clamp(20px, 3vw, 24px)/1.45 Fraunces, Georgia, serif;
+    color: var(--ink-soft); margin: 0 0 28px; text-wrap: pretty;
+  }
+  .byline {
+    display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center;
+    font-size: 15px; color: var(--muted);
+    padding-bottom: 32px; border-bottom: 1px solid var(--line); margin-bottom: 40px;
+  }
+  .byline strong { color: var(--ink); font-weight: 600; }
+
+  h2 {
+    font: 700 clamp(26px, 4vw, 32px)/1.2 Fraunces, Georgia, serif;
+    letter-spacing: -.01em; margin: 64px 0 16px; text-wrap: balance;
+  }
+  p { margin: 0 0 22px; text-wrap: pretty; }
+  .lead::first-letter {
+    float: left; font: 700 76px/.82 Fraunces, Georgia, serif;
+    padding: 8px 10px 0 0; color: var(--accent);
+  }
+  em { font-style: italic; }
+  strong { font-weight: 600; }
+
+  .pull {
+    margin: 48px 0; padding: 4px 0 4px 24px;
+    border-left: 4px solid var(--accent);
+    font: 600 clamp(24px, 4vw, 30px)/1.3 Fraunces, Georgia, serif;
+    color: var(--ink); text-wrap: balance;
+  }
+  .pull small {
+    display: block; margin-top: 12px;
+    font: 500 14px/1 Inter, sans-serif; color: var(--muted);
+  }
+  .pull a { color: var(--accent); text-decoration: none; }
+  .pull a:hover { text-decoration: underline; }
+
+  .callout {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+    padding: 22px 24px; margin: 32px 0; box-shadow: var(--shadow);
+  }
+  .callout p:last-child { margin-bottom: 0; }
+
+  /* Problem -> subject cards */
+  .cards { display: grid; gap: 14px; margin: 32px 0 40px; }
+  .card {
+    display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 14px;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+    padding: 18px 20px; box-shadow: var(--shadow);
+  }
+  .card .problem { font-size: 16px; line-height: 1.45; color: var(--ink); }
+  .card .arrow { color: var(--accent); font-size: 22px; font-weight: 600; }
+  .card .subject {
+    font: 600 14px/1.4 "JetBrains Mono", ui-monospace, monospace;
+    color: var(--cool); background: var(--cool-soft);
+    border-radius: 8px; padding: 8px 12px; text-align: center;
+  }
+  @media (max-width: 560px) {
+    .card { grid-template-columns: 1fr; gap: 10px; }
+    .card .arrow { transform: rotate(90deg); justify-self: start; line-height: 1; }
+    .card .subject { justify-self: start; }
+  }
+
+  /* Two paths diagram */
+  .flip { display: grid; gap: 18px; margin: 36px 0 44px; }
+  @media (min-width: 760px) { .flip { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 900px) { .flip.wide { margin-left: -80px; margin-right: -80px; } }
+  .flip-panel {
+    margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+    padding: 20px 18px 18px; box-shadow: var(--shadow);
+  }
+  .flip-panel.new { border-color: var(--accent); }
+  .flip-panel h3 {
+    margin: 0 0 6px; font: 600 13px/1 Inter, sans-serif;
+    letter-spacing: .1em; text-transform: uppercase; color: var(--muted);
+  }
+  .flip-panel.new h3 { color: var(--accent); }
+  .flip-panel svg { display: block; width: 100%; height: auto; }
+  .flip-panel figcaption { text-align: center; font: 600 16px/1.4 Fraunces, Georgia, serif; color: var(--ink); margin-top: 4px; }
+  .flip-panel text { font-family: Inter, sans-serif; text-anchor: middle; fill: var(--ink); }
+  .flip-panel .dg-left { text-anchor: start; }
+  .dg-years text { text-anchor: end; font-size: 13px; fill: var(--muted); }
+  .dg-bar { fill: var(--line); }
+  .dg-div { stroke: var(--surface); stroke-width: 3; }
+  .dg-bar-accent { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 2; }
+  .dg-bar-ghost { fill: none; stroke: var(--muted); stroke-width: 2; stroke-dasharray: 5 5; }
+  .dg-label { font-size: 15px; font-weight: 600; }
+  .dg-sub { font-size: 13px; fill: var(--muted) !important; }
+  .dg-accent-text { fill: var(--accent) !important; }
+  .dg-step { font-size: 10px; font-weight: 600; letter-spacing: .08em; fill: var(--accent) !important; }
+  .dg-track { fill: none; stroke: var(--line); stroke-width: 2; stroke-dasharray: 2 6; }
+  .dg-arc { fill: none; stroke: var(--accent); stroke-width: 3; stroke-linecap: round; }
+  .dg-head { fill: var(--accent); }
+  .dg-node rect { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 2; }
+  .dg-hot rect { fill: var(--accent); }
+  .dg-hot text { fill: #fff !important; }
+  .dg-loop { font-size: 44px; fill: var(--accent) !important; }
+
+  .ending {
+    margin-top: 64px; padding: 36px 28px; border-radius: 18px;
+    background: var(--ink); color: var(--bg); text-align: center;
+  }
+  .ending p { margin: 0; }
+  .ending .big {
+    font: 700 clamp(24px, 4.5vw, 34px)/1.25 Fraunces, Georgia, serif; text-wrap: balance;
+  }
+  .ending .ask { margin-top: 18px; font-size: 16px; opacity: .8; }
+
+  .share {
+    display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 28px;
+  }
+  .share a, .share button {
+    font: 600 14px/1 Inter, sans-serif; padding: 12px 16px; border-radius: 999px;
+    border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+    text-decoration: none; cursor: pointer;
+  }
+  .share a:hover, .share button:hover { border-color: var(--accent); color: var(--accent); }
+
+  figure.cartoon { margin: 40px 0; }
+  figure.cartoon.hero { margin: 0 0 40px; }
+  figure.cartoon img {
+    display: block; width: 100%; height: auto; border-radius: 14px;
+    border: 1px solid var(--line); box-shadow: var(--shadow);
+  }
+  figure.cartoon figcaption {
+    margin-top: 10px; font-size: 14px; line-height: 1.5; color: var(--muted); text-align: center;
+  }
+  @media (min-width: 900px) {
+    figure.cartoon.wide { margin-left: -80px; margin-right: -80px; }
+  }
+
+  footer {
+    margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line);
+    font-size: 14px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<main>
+  <article>
+    <div class="kicker">Education &middot; AI &middot; Software</div>
+    <h1>Are We Teaching Computer Science Backward?</h1>
+    <p class="dek">We hand students the answers years before they meet the questions. AI just made that impossible to ignore.</p>
+    <div class="byline">
+      <span>By <strong>Alexander Apartsin</strong></span>
+      <span>&middot;</span>
+      <span id="readtime">4 min read</span>
+    </div>
+
+    <figure class="cartoon hero wide">
+      <img src="img/hero.jpg" alt="A professor at a blackboard says 'First, three years of foundations' while a student with an AI robot holds up a laptop: 'I already shipped it.'" loading="lazy">
+      <figcaption>Two clocks running at different speeds.</figcaption>
+    </figure>
+
+    <p class="lead">Give a first-year student an AI assistant, Python, a few APIs, a database, and a cloud account. Within weeks, they can have something real running: an app with users, data, and a URL they can send to their friends. A few years ago, that took a lot more experience.</p>
+
+    <p>Then the same student walks into a lecture hall and hears the old message: <em>learn the foundations first, and only then build something serious.</em></p>
+
+    <p>One of these two worlds is out of date. And it isn't the student's.</p>
+
+    <h2>The pyramid we inherited</h2>
+
+    <p>Computer science education is built like a pyramid. At the base: programming, mathematics, algorithms, data structures. Next level up: databases, operating systems, networks, software engineering. Practical technologies and specialized subjects sit near the top, reached only by those who climbed the rest.</p>
+
+    <figure class="cartoon">
+      <img src="img/pyramid.jpg" alt="A student climbs a stone pyramid of Math, Algorithms, Data Structures, OS, Networks and Databases to reach a tiny 'Build Stuff' block at the top in Year 4." loading="lazy">
+      <figcaption>The traditional curriculum: building is the reward at the summit.</figcaption>
+    </figure>
+
+    <p>For a long time this was the right design. Even simple software demanded serious technical knowledge. You had to understand a lot before you could build much.</p>
+
+    <h2>The ground moved</h2>
+
+    <p>For decades, we have been hiding complexity: better languages, then libraries, frameworks, cloud services, APIs, open source. AI is the next step on the same ladder, and a big one. More and more, you <em>describe</em> what you need instead of implementing every part yourself.</p>
+
+    <figure class="cartoon wide">
+      <img src="img/ladder.jpg" alt="A ladder of abstraction with rungs Assembly, C, Libraries, Frameworks, Cloud, AI. At the bottom an old programmer wrestles with wires; at the top a developer on a cloud tells a robot 'Make me an app.'" loading="lazy">
+      <figcaption>Every generation climbs a rung higher. AI is the newest one.</figcaption>
+    </figure>
+
+    <div class="callout">
+      <p>This does not mean we need less knowledge. It means the knowledge we need <strong>first</strong> has changed.</p>
+    </div>
+
+    <h2>The interview question nobody trained you for</h2>
+
+    <p>Look at entry-level job ads. Almost none ask for someone who "knows computer science." They ask for a front-end developer who works in React, a data engineer who builds pipelines, an AI engineer who can wire models, APIs, and data together.</p>
+
+    <p>A graduate may have mastered algorithms, operating systems, and discrete mathematics. The first interview can still come down to one blunt question:</p>
+
+    <figure class="cartoon">
+      <img src="img/interview.jpg" alt="A nervous graduate holding a diploma and textbooks on Discrete Math and Operating Systems; an interviewer in a hoodie asks 'Cool. Can you build something?'" loading="lazy">
+      <figcaption>The diploma says one thing. The interview asks another.</figcaption>
+    </figure>
+
+    <blockquote class="pull">"Can you actually build something with the tools we use?"</blockquote>
+
+    <p>That is the mismatch. The job market starts with capability. The university starts with foundations. Graduates are left to bridge the gap on their own.</p>
+
+    <h2>Teach the question before the answer</h2>
+
+    <p>So let's experiment with a different order. Let students build useful things early. Teach them just enough modern tooling, APIs, databases, AI, testing, and deployment to ship real systems. Then let the problems they hit pull them into the deep material.</p>
+
+    <p>Watch what happens to the "boring" courses when they arrive at the right moment:</p>
+
+    <div class="cards" role="list">
+      <div class="card" role="listitem">
+        <div class="problem">Your app gets slow as the data grows.</div>
+        <div class="arrow" aria-hidden="true">&rarr;</div>
+        <div class="subject">Algorithms &amp; complexity</div>
+      </div>
+      <div class="card" role="listitem">
+        <div class="problem">It breaks when hundreds of users show up at once.</div>
+        <div class="arrow" aria-hidden="true">&rarr;</div>
+        <div class="subject">Concurrency, networks, OS</div>
+      </div>
+      <div class="card" role="listitem">
+        <div class="problem">Your model shines in the demo and fails on new data.</div>
+        <div class="arrow" aria-hidden="true">&rarr;</div>
+        <div class="subject">Statistics &amp; evaluation</div>
+      </div>
+      <div class="card" role="listitem">
+        <div class="problem">AI writes code that looks perfect and hides a subtle bug.</div>
+        <div class="arrow" aria-hidden="true">&rarr;</div>
+        <div class="subject">Knowing what code really does</div>
+      </div>
+    </div>
+
+    <figure class="cartoon wide">
+      <img src="img/bugs.jpg" alt="Four comic panels: a slow app covered in cobwebs, a crowd of users setting a server on fire, a prize-winning model slipping on a 'new data' banana peel, and an AI handing over clean code with a bug hiding behind it. In each, the student gets a lightbulb and a textbook." loading="lazy">
+      <figcaption>Every failure is a syllabus in disguise.</figcaption>
+    </figure>
+
+    <p>None of these subjects is abstract anymore. Each one is the answer to a problem the student already owns.</p>
+
+    <blockquote class="pull">We teach students answers before they have met the questions.</blockquote>
+
+    <p>The alternative is a loop: <strong>build something, hit a limit, understand why, learn what you need, build something harder.</strong></p>
+
+    <h2>Theory matters more, not less</h2>
+
+    <p>This is not a case for dropping algorithms, mathematics, systems, or theory. As AI takes over routine implementation, those become <em>more</em> valuable. The hard problems stay: performance, scale, reliability, security, strange edge cases, and problems no library has solved yet. That is exactly where deep knowledge wins.</p>
+
+    <p>The real question is narrower and sharper: <strong>must all of it come first?</strong></p>
+
+    <p>Perhaps a first-year student does not need a deep understanding of computer science before being allowed to build useful software. Perhaps building useful software is the best way to discover why deep computer science is worth learning.</p>
+
+    <h2>Flip the order</h2>
+
+    <div class="flip wide">
+      <figure class="flip-panel">
+        <h3>The traditional path</h3>
+        <svg viewBox="0 0 400 390" role="img" aria-label="Traditional path as a timeline: Knowledge in years 1 to 3, Capability in year 4, Experience after graduation.">
+          <g class="dg-years">
+            <text x="112" y="70">Year 1</text><text x="112" y="140">Year 2</text><text x="112" y="210">Year 3</text>
+            <text x="112" y="280">Year 4</text><text x="112" y="345">Job</text>
+          </g>
+          <rect class="dg-bar" x="125" y="30" width="50" height="210" rx="10"/>
+          <line class="dg-div" x1="125" y1="100" x2="175" y2="100"/><line class="dg-div" x1="125" y1="170" x2="175" y2="170"/>
+          <rect class="dg-bar-accent" x="125" y="246" width="50" height="64" rx="10"/>
+          <rect class="dg-bar-ghost" x="125" y="316" width="50" height="54" rx="10"/>
+          <text class="dg-label dg-left" x="192" y="128">Knowledge</text>
+          <text class="dg-sub dg-left" x="192" y="148">Courses and exams</text>
+          <text class="dg-label dg-left dg-accent-text" x="192" y="274">Capability</text>
+          <text class="dg-sub dg-left" x="192" y="294">First real project</text>
+          <text class="dg-label dg-left" x="192" y="339">Experience</text>
+          <text class="dg-sub dg-left" x="192" y="359">After graduation</text>
+        </svg>
+        <figcaption>One pass. Building comes last.</figcaption>
+      </figure>
+      <figure class="flip-panel new">
+        <h3>The inverted path</h3>
+        <svg viewBox="0 0 400 390" role="img" aria-label="Inverted path as a loop: Capability (build), Experience (hit a limit), Deeper Knowledge (learn why), Greater Capability (build harder), then around again.">
+          <defs><marker id="dg-head" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="dg-head" d="M1 1 L9 5 L1 9 z"/></marker></defs>
+          <circle class="dg-track" cx="200" cy="195" r="120"/>
+          <path class="dg-arc" d="M268.8 96.7 A120 120 0 0 1 314.1 157.9" marker-end="url(#dg-head)"/><path class="dg-arc" d="M314.1 232.1 A120 120 0 0 1 268.8 293.3" marker-end="url(#dg-head)"/><path class="dg-arc" d="M131.2 293.3 A120 120 0 0 1 85.9 232.1" marker-end="url(#dg-head)"/><path class="dg-arc" d="M85.9 157.9 A120 120 0 0 1 131.2 96.7" marker-end="url(#dg-head)"/>
+          <g class="dg-node"><rect x="136.0" y="45" width="128" height="50" rx="25"/><text class="dg-step" x="200" y="64">1 · BUILD</text><text class="dg-label" x="200" y="83">Capability</text></g>
+          <g class="dg-node"><rect x="256.0" y="170" width="128" height="50" rx="25"/><text class="dg-step" x="320" y="189">2 · HIT A LIMIT</text><text class="dg-label" x="320" y="208">Experience</text></g>
+          <g class="dg-node"><rect x="122.0" y="295" width="156" height="50" rx="25"/><text class="dg-step" x="200" y="314">3 · LEARN WHY</text><text class="dg-label" x="200" y="333">Deeper Knowledge</text></g>
+          <g class="dg-node dg-hot"><rect x="2.0" y="170" width="156" height="50" rx="25"/><text class="dg-step" x="80" y="189">4 · BUILD HARDER</text><text class="dg-label" x="80" y="208">Greater Capability</text></g>
+          <text class="dg-loop" x="200" y="200">&#8635;</text>
+          <text class="dg-sub" x="200" y="228">one level higher</text>
+          <text class="dg-sub" x="200" y="245">every lap</text>
+        </svg>
+        <figcaption>A loop that starts in week one.</figcaption>
+      </figure>
+    </div>
+
+    <figure class="cartoon wide">
+      <img src="img/loop.jpg" alt="A spiral staircase with signs Build, Hit a limit, Learn why, Build harder. A student skateboards up, carrying more books on each lap." loading="lazy">
+      <figcaption>The learning spiral: each lap starts one level higher.</figcaption>
+    </figure>
+
+    <div class="ending">
+      <p class="big">That is not less computer science. It is computer science in the order you actually need it.</p>
+      <p class="ask">If you teach, hire, or recently graduated: which course would you move, and where? I would love to hear.</p>
+    </div>
+
+    <div class="share">
+      <a id="share-x" href="#" target="_blank" rel="noopener">Share on X</a>
+      <a id="share-li" href="#" target="_blank" rel="noopener">Share on LinkedIn</a>
+      <button id="copy" type="button">Copy link</button>
+    </div>
+  </article>
+
+  <footer>&copy; 2026 Alexander Apartsin</footer>
+</main>
+
+<script>
+  (function () {
+    var bar = document.getElementById('progress');
+    function onScroll() {
+      var h = document.documentElement;
+      var max = h.scrollHeight - h.clientHeight;
+      bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+    }
+    document.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    var words = document.querySelector('article').innerText.split(/\s+/).length;
+    document.getElementById('readtime').textContent = Math.max(1, Math.round(words / 230)) + ' min read';
+
+    var url = encodeURIComponent(location.href);
+    var text = encodeURIComponent('Are we teaching computer science backward? We hand students the answers years before they meet the questions.');
+    document.getElementById('share-x').href = 'https://twitter.com/intent/tweet?url=' + url + '&text=' + text;
+    document.getElementById('share-li').href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + url;
+    var copy = document.getElementById('copy');
+    copy.addEventListener('click', function () {
+      try {
+        navigator.clipboard.writeText(location.href).then(function () {
+          copy.textContent = 'Copied!';
+          setTimeout(function () { copy.textContent = 'Copy link'; }, 1600);
+        });
+      } catch (e) {}
+    });
+  })();
+</script>
+</body>
+</html>

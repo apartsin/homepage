@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Don’t Specify What You Can Correct</title>
+<meta name="description" content="Correction-Driven Development (CDD): when AI makes change cheap, recognizing what is wrong beats predicting what is right.">
+<meta name="author" content="Alexander Apartsin">
+<meta property="og:title" content="Don’t Specify What You Can Correct">
+<meta property="og:description" content="Correction-Driven Development: when AI makes change cheap, recognizing what is wrong beats predicting what is right.">
+<meta property="og:image" content="images/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fbf7ef; --surface:#ffffff; --ink:#1c2340; --muted:#5b6175;
+  --coral:#e8664f; --teal:#2f9e8f; --rule:#e6dfd1; --quote-bg:#f4ede0;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#12162a; --surface:#1a1f38; --ink:#ece6da; --muted:#a6abbd;
+    --coral:#f07e69; --teal:#4cc0ae; --rule:#2c3253; --quote-bg:#1d2340;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#12162a; --surface:#1a1f38; --ink:#ece6da; --muted:#a6abbd;
+  --coral:#f07e69; --teal:#4cc0ae; --rule:#2c3253; --quote-bg:#1d2340;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Source Serif 4",Georgia,serif;font-size:1.16rem;line-height:1.7}
+article{max-width:720px;margin:0 auto;padding:56px 16px 96px}
+.kicker{font-family:Inter,system-ui,sans-serif;font-weight:600;font-size:.78rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--coral);margin:0 0 14px}
+h1{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:clamp(2.2rem,6.5vw,3.5rem);
+  line-height:1.06;margin:0 0 14px;letter-spacing:-.01em}
+.dek{font-size:1.3rem;color:var(--muted);margin:0 0 22px;font-style:italic}
+.byline{font-family:Inter,system-ui,sans-serif;font-size:.88rem;color:var(--muted);
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:10px 0;margin-bottom:34px}
+.byline strong{color:var(--ink);font-weight:600}
+h2{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:1.65rem;line-height:1.2;margin:2.4em 0 .6em}
+p{margin:0 0 1.1em}
+strong{font-weight:600}
+.lead{font-size:1.28rem}
+.big{font-family:Fraunces,Georgia,serif;font-size:1.9rem;line-height:1.2;font-weight:700;margin:1.2em 0}
+.big span{color:var(--coral)}
+figure{margin:2em -40px}
+figure img{width:100%;height:auto;display:block;border-radius:10px}
+figcaption{font-family:Inter,system-ui,sans-serif;font-size:.84rem;color:var(--muted);
+  margin-top:10px;padding:0 40px;text-align:center}
+figure.hero{margin-top:0}
+.pull{font-family:Fraunces,Georgia,serif;font-size:1.45rem;line-height:1.35;color:var(--coral);
+  border-left:4px solid var(--coral);padding:4px 0 4px 20px;margin:1.6em 0}
+blockquote{margin:1.2em 0;padding:18px 22px;background:var(--quote-bg);border-radius:8px;
+  font-family:Fraunces,Georgia,serif;font-size:1.3rem;line-height:1.35}
+blockquote p{margin:0}
+.loop{background:var(--surface);border:1px solid var(--rule);border-radius:12px;padding:18px 12px}
+.loop svg{width:100%;height:auto;display:block}
+.loop text{font-family:Inter,system-ui,sans-serif;font-size:15px;font-weight:600;fill:var(--ink)}
+.loop .sub{font-size:12px;font-weight:500;fill:var(--muted)}
+/* session log */
+.session{background:var(--surface);border:1px solid var(--rule);border-radius:12px;padding:20px 20px 8px;margin:1.6em 0}
+.session h3{font-family:Inter,system-ui,sans-serif;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);margin:0 0 4px;font-weight:600}
+.session .intent{font-style:italic;margin:0 0 14px;font-size:1.05rem}
+.session ol{list-style:none;margin:0;padding:0}
+.session li{display:grid;grid-template-columns:52px 92px 1fr;gap:10px;padding:10px 0;border-top:1px solid var(--rule);
+  font-size:1rem;line-height:1.5}
+.session .t{font-family:Inter,system-ui,sans-serif;font-size:.82rem;color:var(--muted);padding-top:2px}
+.tag{font-family:Inter,system-ui,sans-serif;font-size:.72rem;font-weight:600;border-radius:999px;padding:3px 9px;
+  align-self:start;text-align:center;white-space:nowrap}
+.tag.human{background:var(--coral);color:#fff}
+.tag.machine{background:var(--teal);color:#fff}
+.tag.gen{border:1px solid var(--teal);color:var(--teal)}
+.session .fix{color:var(--muted)}
+.session .fix::before{content:"→ "}
+@media (max-width:520px){.session li{grid-template-columns:44px 1fr}.session li .tag{grid-column:2;justify-self:start}.session li .body{grid-column:1 / -1}}
+/* comparison table */
+.compare{width:100%;border-collapse:collapse;margin:1.4em 0 1.8em;font-size:1rem;line-height:1.45}
+.compare th{font-family:Inter,system-ui,sans-serif;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;
+  text-align:left;padding:10px 12px;border-bottom:2px solid var(--ink)}
+.compare th:last-child{color:var(--coral)}
+.compare td{padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+.compare td:first-child{color:var(--muted)}
+.compare td:last-child{font-weight:600}
+.rules{counter-reset:r;list-style:none;padding:0;margin:1.2em 0 1.6em}
+.rules li{counter-increment:r;position:relative;padding:14px 0 14px 56px;border-top:1px solid var(--rule)}
+.rules li:last-child{border-bottom:1px solid var(--rule)}
+.rules li::before{content:counter(r);position:absolute;left:0;top:12px;width:38px;height:38px;border-radius:50%;
+  background:var(--coral);color:#fff;font-family:Fraunces,Georgia,serif;font-weight:700;font-size:1.2rem;
+  display:flex;align-items:center;justify-content:center}
+.spec-list{padding-left:1.2em}
+.spec-list li{margin-bottom:.6em}
+.closer{text-align:center;font-family:Fraunces,Georgia,serif;font-size:1.9rem;font-weight:700;
+  margin:2.2em 0 0;color:var(--ink)}
+.closer span{color:var(--coral)}
+footer{font-family:Inter,system-ui,sans-serif;font-size:.8rem;color:var(--muted);text-align:center;
+  margin-top:60px;border-top:1px solid var(--rule);padding-top:18px}
+@media (max-width:820px){figure{margin:1.8em 0} figcaption{padding:0}}
+</style>
+</head>
+<body>
+<article>
+
+<p class="kicker">Correction-Driven Development</p>
+<h1>Don’t Specify What You Can Correct</h1>
+<p class="dek">A development model for the AI era: when change is cheap, recognizing what is wrong beats predicting what is right.</p>
+<div class="byline">By <strong>Alexander Apartsin</strong> · October 2026</div>
+
+<figure class="hero">
+  <img src="images/hero.jpg" alt="Cartoon: an angry client next to a 300-page requirements binder tells a tired developer, It's exactly what I asked for. It's not what I want.">
+</figure>
+
+<p class="lead">Ask a manager to describe the perfect expense-approval workflow and you get a page of reasonable, vague prose. Put a working version in front of the same person and within thirty seconds you hear: this step is pointless, the total belongs at the top, why do I approve every line separately?</p>
+
+<p>Same person. Same knowledge. A completely different quality of input.</p>
+
+<p class="big">Prediction is hard. <span>Recognition is easy.</span></p>
+
+<p>Software development is built on the hard one. We write requirements, define interfaces, choose an architecture and set acceptance criteria before anything exists. Even Agile opens each sprint by deciding in advance what to build. The hidden assumption: people can imagine a system that does not exist yet and describe it precisely enough for someone else, now an AI, to build it.</p>
+
+<p>Generative AI breaks the economics behind that assumption. Turning a correction into a new version of the software now takes minutes. That makes a different model practical: <strong>Correction-Driven Development, or CDD</strong>.</p>
+
+<p class="pull">TDD put tests first. BDD put behavior first. CDD puts the working artifact first.</p>
+
+<figure>
+  <img src="images/recognition.jpg" alt="Two-panel cartoon: a manager at a blank whiteboard says Uh... fast? Nice?; the same manager covers a working app with sticky notes shouting Too many clicks! Where's the total?!">
+  <figcaption>Blank page: vague. Working app: a flood of precise corrections.</figcaption>
+</figure>
+
+<h2>The loop</h2>
+
+<p>In CDD you provide just enough intent to get a first working version. Then the loop takes over:</p>
+
+<figure>
+  <img src="images/loop.jpg" alt="Cartoon cycle: a robot generates an app, the app runs, a developer observes it with a magnifying glass and a test checklist, then corrects it with a giant marker; a coral regenerate arrow closes the loop. In the center: the spec emerges here.">
+  <figcaption>Generate, run, observe, correct, regenerate. Each pass writes a little more of the specification.</figcaption>
+</figure>
+
+<p>Each version is run, inspected, tested and used. Its behavior becomes evidence. The evidence drives the next correction, and the AI produces the next version. The specification still gets written; it is written progressively, one correction at a time, instead of all at once at the start.</p>
+
+<p>The question you answer changes from “What exactly should the final system be?” to “Given what I see now, what should change next?” People answer the second question well.</p>
+
+<h2>What a CDD session looks like</h2>
+
+<p>Here is an illustrative forty-minute session building an internal tool that flags duplicate invoices.</p>
+
+<div class="session">
+  <h3>Starting intent</h3>
+  <p class="intent">“A page where I upload invoice CSVs and see likely duplicates.”</p>
+  <ol>
+    <li><span class="t">0:03</span><span class="tag gen">generate</span><span class="body">First version runs: upload works, a table of suspected pairs appears.</span></li>
+    <li><span class="t">0:06</span><span class="tag human">human</span><span class="body">“Same vendor, one cent apart, and it misses them.” <span class="fix">fuzzy amount matching</span></span></li>
+    <li><span class="t">0:09</span><span class="tag human">human</span><span class="body">“I need to see why each pair was flagged.” <span class="fix">reason column</span></span></li>
+    <li><span class="t">0:12</span><span class="tag machine">tests</span><span class="body">3 of 14 tests fail on DD/MM vs MM/DD dates. <span class="fix">date normalization</span></span></li>
+    <li><span class="t">0:17</span><span class="tag machine">benchmark</span><span class="body">40 seconds on a 50,000-row file. <span class="fix">index by vendor before comparing</span></span></li>
+    <li><span class="t">0:22</span><span class="tag human">human</span><span class="body">“Let me dismiss a false match and never see it again.” <span class="fix">persistent dismiss list</span></span></li>
+    <li><span class="t">0:28</span><span class="tag machine">security</span><span class="body">Uploaded filename used unsanitized in a file path. <span class="fix">sanitize, add a regression test</span></span></li>
+    <li><span class="t">0:35</span><span class="tag human">human</span><span class="body">“The flat list is unreadable. Group it by vendor.” <span class="fix">grouped view</span></span></li>
+  </ol>
+</div>
+
+<p>None of these seven corrections was in the starting intent, and most of them could not have been. Nobody knew about the date formats until a test hit them. Nobody knew the flat list was unreadable until they saw it. Three of the seven signals came from machines, not people.</p>
+
+<p>That is the whole method in miniature.</p>
+
+<h2>Vibe coding is CDD without discipline</h2>
+
+<p>Much of what is now called vibe coding already follows this pattern. A developer asks an AI to build something, runs it, looks at the result and asks for changes: simplify this screen, make the table sortable, move that action earlier, undo the last change. The developer interacts mostly with the behavior of the evolving artifact and spends little time in the code.</p>
+
+<p>The criticism of vibe coding as careless is often justified. The interaction pattern, though, is right. When generation is cheap, people abandon exhaustive upfront specification and steer by correction.</p>
+
+<p class="pull">Vibe coding is the primitive form. CDD is the mature practice.</p>
+
+<p>CDD adds what vibe coding lacks: systematic observation, automated evaluation, explicit constraints and continuous verification.</p>
+
+<h2>Tests are part of the steering</h2>
+
+<p>Correction does not rely on human judgment alone. A test is a structured observation of the current artifact.</p>
+
+<p>A unit test observes whether a function still behaves correctly. An integration test observes whether components work together. A benchmark observes latency. A security scanner observes vulnerabilities. A visual regression test observes unintended interface changes. Telemetry observes what real users do.</p>
+
+<figure>
+  <img src="images/observations.jpg" alt="Cartoon: a printer spewing 12 FAILED, a stopwatch yelling TOO SLOW, a security guard yelling LEAK and a user asking Where's the button surround a calm robot who says Noted. Version 47 coming up.">
+  <figcaption>Every signal is a correction: tests, benchmarks, security scans and users all steer the next version.</figcaption>
+</figure>
+
+<p>A person saying “this workflow feels awkward” and a test suite reporting twelve failures are different signals playing the same role: each reveals something about the current artifact and steers the next change. In a mature CDD setup, the AI receives a continuous stream of these observations from developers, users, tests and monitoring. The next revision is driven by what the developer asks for and by what the artifact reveals about itself.</p>
+
+<p>Testing becomes more important in this world. If AI can change software in minutes, you need equally fast ways to tell whether each change helped or hurt.</p>
+
+<h2>Architecture becomes a hypothesis</h2>
+
+<p>Traditional engineering rewards anticipation. Architects predict which abstractions will survive, where responsibilities should split and which requirements will matter later. Experience improves these predictions, but reality still wins: requirements change, interfaces get redesigned, features get dropped, architectures get refactored. CDD treats this as a normal property of complex development.</p>
+
+<p>Architecture serves reliability, security, performance, comprehensibility and team coordination, and those roles stay. It also has an economic role: much of good architecture exists to make future change affordable. We build modules so parts can evolve independently, stable interfaces so implementations can be swapped, and separated concerns so changes stay local. We pay for architecture because we expect change to be expensive.</p>
+
+<p>When AI can refactor large parts of a codebase, update interfaces, rewrite callers, repair tests and validate the result in minutes, that bet changes.</p>
+
+<figure>
+  <img src="images/architecture.jpg" alt="Cartoon: three architects argue over a blueprint in week 6 while a robot with a toy crane rebuilds a block building, saying Try it as a pyramid? Done.">
+  <figcaption>Debating the structure for weeks, or trying three of them before lunch.</figcaption>
+</figure>
+
+<p class="pull">The value of architecture as insurance against expensive change goes down.</p>
+
+<p>A design decision becomes a hypothesis instead of a permanent commitment. Build a structure, watch how it behaves under real use, revise it when its limits show. The same applies at smaller scale: instead of debating two data models for an afternoon, build one, observe the consequences, and replace it if needed. Reasoning still matters; it moves from speculation to evidence.</p>
+
+<p>The question shifts from “Which architecture will protect us from future change?” to “Which structure best fits what we understand today?” When understanding changes, the structure changes with it.</p>
+
+<h2>Agile, with sprints measured in minutes</h2>
+
+<p>CDD extends one of Agile’s central insights. A sprint produces functionality, and it also produces information. Users discover that a reasonable-sounding workflow is confusing. Developers discover that an elegant design is awkward to build. Product owners discover requirements they could not articulate until they saw the feature working. The next sprint is planned better because the team has touched the artifact.</p>
+
+<p>Agile’s limit has always been the cost of that learning cycle. A sprint lasts one or two weeks, and even a small experiment needs design, coding, review, testing, integration and deployment. Expensive iterations reward careful planning before each one.</p>
+
+<figure>
+  <img src="images/microsprints.jpg" alt="Cartoon: a scrum master proudly points at a calendar labeled Sprint 1 while an exhausted developer high-fives a robot: That was sprint 38. Today.">
+  <figcaption>Same two weeks. Very different number of learning cycles.</figcaption>
+</figure>
+
+<p>Generative AI compresses the cycle. The learning that Agile spreads across weeks now happens many times in one working session. CDD is <strong>Agile with continuous micro-sprints</strong>: form an intention, build it, experience it, learn, adjust, in minutes.</p>
+
+<p>When an experiment takes two weeks, careful planning is rational. When it takes two minutes, running the experiment is cheaper than discussing it.</p>
+
+<h2>Development becomes navigation</h2>
+
+<p>Traditional development resembles construction from a blueprint: the better the blueprint, the fewer expensive changes during construction. CDD resembles navigation. The team knows the destination and adjusts the route continuously from what it observes. The current artifact is both the product of past decisions and the instrument for the next one.</p>
+
+<figure>
+  <img src="images/navigation.jpg" alt="Cartoon: one ship is stranded on a rock, its captain waving a plan and shouting The plan said NO rock!; a second ship sails past, its captain saying Rock. Turn left.">
+  <figcaption>Blueprints assume the rock is not there. Navigators look.</figcaption>
+</figure>
+
+<p>Requirements surface through use of the current system. Architectural weaknesses surface through implementation. Failure modes surface through tests and telemetry. The quality of the process depends less on predicting everything correctly and more on keeping a fast, reliable and informative correction loop.</p>
+
+<h2>The developer becomes the judge</h2>
+
+<p>As AI takes over the mechanical work of generating and transforming code, the human role shifts to evaluation. The most valuable skill becomes assessing the current artifact: recognizing what is wrong, separating important problems from noise, comparing alternatives, spotting hidden constraints and deciding what changes next.</p>
+
+<figure>
+  <img src="images/role.jpg" alt="Cartoon: on a talent-show stage a nervous robot juggles code windows while a developer judge in sunglasses holds up a sign saying AGAIN; the robot says Version 12, coming right up!">
+  <figcaption>The human judges. The AI performs, again and again.</figcaption>
+</figure>
+
+<p>This is the more demanding job. Deciding whether a system is correct, useful, understandable, safe and heading in the right direction takes judgment that code generation does not supply.</p>
+
+<p class="pull">AI performs more of the transformation. Humans provide more of the direction.</p>
+
+<h2>When to specify first</h2>
+
+<p>CDD reduces upfront specification; it keeps the specifications that earn their place. Decide these before the first line is generated:</p>
+
+<ul class="spec-list">
+  <li><strong>Hard constraints.</strong> Safety, privacy, regulatory and security requirements become guardrails for the loop: written once, checked on every pass.</li>
+  <li><strong>Contracts others depend on.</strong> Public APIs, data formats and protocols are cheap for you to change and expensive for everyone downstream.</li>
+  <li><strong>Irreversible actions.</strong> Data migrations, payments, anything sent to the outside world. The loop runs in a sandbox; production is outside it.</li>
+</ul>
+
+<p>The rule of thumb follows directly: <strong>specify what is expensive to correct; correct everything else.</strong></p>
+
+<h2>Two ways to build software</h2>
+
+<table class="compare">
+  <thead><tr><th></th><th>Specification-driven</th><th>Correction-driven</th></tr></thead>
+  <tbody>
+    <tr><td>Core skill</td><td>Predicting</td><td>Recognizing</td></tr>
+    <tr><td>Specification</td><td>Written up front</td><td>Emerges from corrections</td></tr>
+    <tr><td>Metaphor</td><td>Blueprint</td><td>Navigation</td></tr>
+    <tr><td>Architecture</td><td>Insurance against change</td><td>Hypothesis under test</td></tr>
+    <tr><td>Tests</td><td>Acceptance gate</td><td>Steering signal</td></tr>
+    <tr><td>Iteration</td><td>Weeks</td><td>Minutes</td></tr>
+    <tr><td>Human role</td><td>Author</td><td>Judge</td></tr>
+  </tbody>
+</table>
+
+<h2>The five rules of CDD</h2>
+
+<ol class="rules">
+  <li><strong>Get to a working artifact early.</strong> The first version exists to be corrected.</li>
+  <li><strong>Treat every signal as an observation.</strong> Human reactions, tests, benchmarks, scans and telemetry all steer the next change.</li>
+  <li><strong>Specify only what is expensive to correct.</strong> Constraints, contracts and irreversible actions up front; everything else through the loop.</li>
+  <li><strong>Hold designs as hypotheses.</strong> Build, observe, revise. Architecture follows understanding.</li>
+  <li><strong>Invest in the loop.</strong> Its speed and the quality of its signals determine the quality of the software.</li>
+</ol>
+
+<h2>From building software to evolving software</h2>
+
+<p>Specification-driven development treats software as something described, designed and then constructed. Correction-Driven Development treats software as an evolving artifact: created early, exposed to human judgment, tests, benchmarks, telemetry and real users, and transformed by AI in response to what those observations reveal.</p>
+
+<p>Vibe coding shows what the interaction feels like. Agile supplies the iterative philosophy. Automated testing supplies machine observation. Generative AI supplies rapid transformation. Together they make a new practice possible.</p>
+
+<p>The deeper change is economic. As the cost of modifying software falls, so does the value of predicting every modification in advance. The central question moves from</p>
+
+<blockquote><p>Can we describe the right system before we build it?</p></blockquote>
+
+<p>to</p>
+
+<blockquote><p>Can we recognize the wrong direction quickly enough to correct it?</p></blockquote>
+
+<p>That is the natural way for humans and AI to build software together.</p>
+
+<p class="closer">Don’t specify what you <span>can correct.</span></p>
+
+<footer>© 2026 Alexander Apartsin · Illustrations generated with Google Gemini</footer>
+</article>
+</body>
+</html>
