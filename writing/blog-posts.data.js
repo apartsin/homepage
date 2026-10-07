@@ -1,6 +1,15 @@
 window.BLOG_POSTS_DATA = [
   {
     tags: ["vibe-coding"],
+    image: "./blog/software-manufacturing/images/hero.jpg",
+    imageAlt: "The Future of Software Is Not Better Code. It Is More Code.",
+    venue: "apartsin.com",
+    title: "The Future of Software Is Not Better Code. It Is More Code.",
+    href: "./blog/software-manufacturing/index.html",
+    description: "AI will not industrialize software by writing the perfect program. It will do it by making programs so cheap that we stop trusting any single one, and let a population of them argue."
+  },
+  {
+    tags: ["vibe-coding"],
     image: "./blog/correction-driven-development/images/hero.jpg",
     imageAlt: "Don't Specify What You Can Correct",
     venue: "apartsin.com",

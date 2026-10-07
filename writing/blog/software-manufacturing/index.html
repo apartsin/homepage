@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Future of Software Is Not Better Code. It Is More Code.</title>
+<meta name="description" content="AI won't industrialize software by writing the perfect program. It will do it by making programs so cheap that we stop trusting any single one.">
+<meta name="author" content="Alexander Apartsin">
+<meta property="og:title" content="The Future of Software Is Not Better Code. It Is More Code.">
+<meta property="og:description" content="Why are we still asking AI for one program? Generate a thousand, and let them argue.">
+<meta property="og:image" content="images/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Inter:wght@500;700&display=swap" rel="stylesheet">
+<!--
+  Medium-ready structure: only h1, h2, h3, p, blockquote, figure/img/figcaption,
+  ul/li, strong, em. The CSS below is for reading this page in a browser;
+  Medium's importer ignores it and keeps the structure.
+-->
+<style>
+:root{--bg:#ffffff;--ink:#18202a;--muted:#586271;--accent:#9c5a2e;--gold:#c99a3a;--quote:#f6f2eb;--rule:rgba(24,32,42,0.14)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.18rem/1.72 "Source Serif 4",Georgia,serif}
+article{max-width:700px;margin:0 auto;padding:48px 16px 80px}
+h1{font:800 clamp(2rem,6vw,3.2rem)/1.08 Fraunces,Georgia,serif;margin:0 0 .3em}
+h2{font:800 1.7rem/1.25 Fraunces,Georgia,serif;margin:2em 0 .5em}
+article>h2:first-of-type{font:400 1.3rem/1.5 "Source Serif 4",Georgia,serif;color:var(--muted);margin:0 0 1.5em}
+p{margin:0 0 1.05em}
+figure{margin:2em 0}
+figure img{display:block;width:100%;height:auto;border-radius:12px;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--gold)}
+figcaption{font:500 .88rem/1.45 Inter,system-ui,sans-serif;color:var(--muted);margin-top:.8em;text-align:center}
+blockquote{font:600 1.4rem/1.4 Fraunces,Georgia,serif;background:var(--quote);border-left:6px solid var(--accent);margin:1.6em 0;padding:16px 20px;border-radius:0 10px 10px 0}
+blockquote p{margin:0}
+ul{padding-left:1.3em;margin:0 0 1.2em}
+li{margin:.35em 0}
+li::marker{color:var(--accent)}
+hr{border:0;border-top:1px solid var(--rule);margin:2.5em 0 1em}
+.note{font:500 .85rem/1.5 Inter,system-ui,sans-serif;color:var(--muted)}
+</style>
+</head>
+<body>
+<article>
+
+<h1>The Future of Software Is Not Better Code. It Is More Code.</h1>
+<h2>Everyone is waiting for AI to write the perfect program. The real revolution starts when programs get so cheap that we stop trusting any single one.</h2>
+
+<figure>
+  <img src="images/hero.jpg" alt="A factory conveyor belt floods the floor with hundreds of cheerful little program creatures while an old craftsman programmer stares at his single hand-carved program through a magnifying glass.">
+  <figcaption>Forty years of careful craftsmanship meets one Tuesday afternoon of compute.</figcaption>
+</figure>
+
+<p>For decades, we have talked about software like it was a factory. Software factories. Production pipelines. Quality control. Continuous delivery.</p>
+<p>Then we went back to our desks and hand-carved one program at a time.</p>
+<p>We build one system. We try to make it correct. We inspect it, test it, patch it, and ship <em>that one artifact</em>. Even with modern tools, writing software looks less like running a factory and more like building a custom grandfather clock.</p>
+<p>AI could finally change this. Just not in the way most people expect.</p>
+<p>The popular prediction is simple. AI gets so good at programming that requirements go in and flawless code comes out. Human programmers quietly fade from the picture.</p>
+<p>There is another possibility, and it is far more interesting.</p>
+
+<blockquote><p>AI may industrialize software not by becoming perfectly reliable, but by making software so cheap that we no longer need to trust any single implementation.</p></blockquote>
+
+<h2>1. Factories Don't Need Perfect Workers</h2>
+<p>Generative AI has an awkward personality trait: it is probabilistic.</p>
+<p>Ask the same model to build the same component five times and you get five different answers. One is elegant. One is slow. One is subtly, creatively wrong. Even very capable models make mistakes that look embarrassingly obvious in hindsight.</p>
+<p>So most of today's AI engineering tries to tame that randomness. Better models. More context. Sharper specs. Verification. Longer reasoning. All good things, and we should keep doing them.</p>
+<p>But the goal hides an assumption. We are forcing a probabilistic technology into an old workflow whose whole purpose is to produce <strong>one implementation we can trust</strong>.</p>
+<p>That workflow existed for an excellent reason: software was expensive. If twenty engineers spent six months on a component, building fifty alternatives would have been financial madness. The rational move was to pour everything into the one version.</p>
+<p>AI changes the math. When another implementation costs seconds of compute instead of months of salaries, the question flips.</p>
+
+<blockquote><p>Stop asking "How do we force the AI to write the right program?" Start asking "Why are we only writing one?"</p></blockquote>
+
+<h2>2. Generate a Population, Not a Program</h2>
+<p>Picture asking an AI to implement a payment calculation. Or a data transformation, a scheduling algorithm, a gnarly business rule.</p>
+<p>Today we keep the best answer and throw the rest away. A future software factory would do the opposite. It would generate hundreds or thousands of implementations.</p>
+<p>Not cosmetic rewrites. Genuinely different solutions: different algorithms, different designs, different libraries, maybe even different languages.</p>
+<p>Then it would put them all through the wringer. Historical cases, synthetic data, adversarial examples, fuzzing, edge cases, simulated failures, auto-generated tests.</p>
+<p>And one signal would be worth more than all the others: <strong>disagreement.</strong></p>
+
+<figure>
+  <img src="images/vote.jpg" alt="Ninety-nine identical robots in a jury box all point one way while a single nervous robot points the other way; an owl judge leans in with a magnifying glass, fascinated by the lone dissenter.">
+  <figcaption>The jury is 99 to 1. The judge only wants to talk to the one.</figcaption>
+</figure>
+
+<p>Suppose ninety-nine implementations give one answer and the hundredth gives another. We don't automatically know the majority is right. But we have learned something precious: <em>this input exposes uncertainty.</em> That case deserves a spotlight.</p>
+<p>The system can generate more tests around it. It can ask more implementations. It can bring in formal checks or a stronger model. It can even breed new implementations designed specifically to settle the argument.</p>
+<p>Instead of hunting only for bugs, the factory hunts for <strong>disagreement</strong>. That is a whole new way to think about quality.</p>
+
+<h2>3. Reliability Through Abundance</h2>
+<p>This sounds wasteful. We are used to thinking of writing software as expensive and running it as cheap. AI flips part of that. When another program is nearly free, <strong>quantity becomes an engineering resource.</strong></p>
+<p>Other fields figured this out long ago. Aircraft carry redundant sensors. Data centers copy everything. Networks resend lost packets. Biology gets its toughness from massive redundancy, not from perfect cells.</p>
+<p>Software never had much of this, because independent versions cost a fortune. The idea itself is old. <em>N-version programming</em> proposed building several independent versions of a component and comparing their outputs. It made sense for safety-critical systems and was far too expensive for everything else.</p>
+<p>AI removes exactly the constraint that held it back. For the first time, we can manufacture variety at scale. That gives us two levers for reliability:</p>
+<ul>
+  <li>Make every single implementation as likely as possible to be correct.</li>
+  <li>Cover the remaining risk with many implementations whose errors are <strong>different</strong>.</li>
+</ul>
+<p>That last word is the whole game. A hundred programs that make the same mistake are just one mistake with a bigger cloud bill.</p>
+<p>The real engineering challenge is not code generation. It is <strong>making sure the programs fail in different ways</strong>.</p>
+
+<h2>4. We'll Start Engineering Different Mistakes</h2>
+
+<figure>
+  <img src="images/diversity.jpg" alt="Five very different robots, one made of toy bricks, one steampunk, one a floating sphere, one made of spaghetti and one made of books, each fail at hammering a nail in its own comic way, yet the nail ends up driven in.">
+  <figcaption>Every one of them is bad at this. Crucially, they are bad at it in different ways.</figcaption>
+</figure>
+
+<p>Here is a strange but important prediction: future systems will build in variety <em>on purpose</em>.</p>
+<p>One version uses one algorithm, another uses something completely different. They come from different models, different prompts, different libraries. Some are deliberately given different information.</p>
+<p>One generator aims for simplicity. Another for mathematical rigor. Another for weird inputs. Another for speed.</p>
+<p>The goal is not for them to <em>look</em> different. It is for them to <strong>fail in different places</strong>. And that creates a brand-new software metric. Today we ask whether a component is accurate, fast, secure, maintainable. Tomorrow we will also ask:</p>
+
+<blockquote><p>How independently does it fail?</p></blockquote>
+
+<p>A version that is slightly worse on average might be the most valuable member of the team. All it takes is catching the exact cases where all the others fall over.</p>
+<p>Variety becomes something we measure, optimize, and manufacture.</p>
+
+<h2>5. Testing Never Stops</h2>
+<p>Now drop the idea that shipping is the end of development.</p>
+<p>Today a program passes its tests, goes live, and monitoring waits nervously for something to break. In a population-based system, several versions keep running after launch.</p>
+<p>Usually they agree and nothing happens. When they disagree, that disagreement is a <strong>live alarm</strong>.</p>
+<p>Maybe one main version answers while a few others run quietly in the background. If they agree, carry on. If not, the system escalates. It can run more versions, call a more expensive model, fall back to a safe default, or simply pause when the stakes are high.</p>
+<p>The disputed case flies straight back to the factory, where new tests and new implementations are born.</p>
+<p>The wall between building software and running it starts to dissolve. The system doesn't just run its software. <strong>It keeps testing its software while running it.</strong></p>
+
+<h2>6. We May Need a Different Kind of Computer</h2>
+
+<figure>
+  <img src="images/computer.jpg" alt="A giant friendly retro computer with many arms runs tiny robot programs in cubicles; a dial on its chest swings from calm to alarm as a crowd of reinforcement robots bursts through the door.">
+  <figcaption>The needle hits "alarm." Ten more implementations arrive, still finishing their coffee.</figcaption>
+</figure>
+
+<p>Today's computers are built around one simple idea: load a program and run it fast.</p>
+<p>A future machine might be built around <em>populations</em> of programs instead. It would run several versions on the same input and compare the results automatically. Whenever it gets less sure, it throws more compute at the problem:</p>
+<ul>
+  <li>Ordinary case: one trusted version runs.</li>
+  <li>Unusual case: three run.</li>
+  <li>They disagree: ten more join the party.</li>
+  <li>Life-or-death decision: dozens weigh in before anything happens.</li>
+</ul>
+<p>Compute scales with how unsure we are. The basic model of computing shifts from this:</p>
+<p><strong>program + input → output</strong></p>
+<p>to something closer to this:</p>
+<p><strong>population + input → candidate outputs + confidence</strong></p>
+<p>Wasteful? Only if compute stays expensive. We keep trading extra computation for simpler, more reliable systems. Machine learning itself is one giant example of that trade. AI-generated software could push it much further.</p>
+
+<h2>7. Code Becomes Disposable</h2>
+<p>The deepest consequence isn't about reliability. It's about what we consider valuable.</p>
+<p>Today a codebase is a treasure. Companies spend years building it, documenting it, and guarding it from careless changes, because it holds an enormous pile of human effort.</p>
+<p>But what happens when code itself becomes cheap?</p>
+
+<figure>
+  <img src="images/disposable.jpg" alt="A robot chef tosses used little program creatures into a recycling bin while fresh ones pop out of a toaster; on the wall, a golden frame holds a locked treasure chest with a scroll and trophy, guarded by a small bulldog in a chef's hat.">
+  <figcaption>Code: fresh daily, recycled nightly. The spec gets a gold frame and a bodyguard.</figcaption>
+</figure>
+
+<p>A future software factory would regenerate implementations all the time. Strong versions survive. Weak ones vanish. New ones appear whenever something fails or the requirements change. An implementation might live for a day, an hour, or a single job.</p>
+<p>The lasting value moves elsewhere:</p>
+<ul>
+  <li>the <strong>intent</strong> behind the system,</li>
+  <li>the <strong>rules</strong> it must respect,</li>
+  <li>the <strong>tests</strong> it must pass,</li>
+  <li>the <strong>history</strong> of cases it has seen,</li>
+  <li>and the <strong>evidence</strong> about what actually works.</li>
+</ul>
+<p>That flips one of software engineering's oldest assumptions. Today, source code is permanent and execution is temporary.</p>
+
+<blockquote><p>Tomorrow, the specification and the evidence are permanent. The code is temporary.</p></blockquote>
+
+<h2>8. From Software Engineering to Software Manufacturing</h2>
+<p>This may be what real industrialization of software looks like.</p>
+<p>Not an AI that imitates an exceptionally careful human programmer. Not a pipeline that spits out one supposedly perfect codebase. Instead:</p>
+<p><strong>intent → mass generation → testing → selection → parallel execution → disagreement detection → regeneration</strong></p>
+<p>There may never be a final version. Only a living, shifting population of programs competing, checking one another, and piling up evidence.</p>
+<p>That turns AI's randomness from an embarrassing defect into a load-bearing part of the design.</p>
+<p>We should still make every generated program as good as we can. Better models, stronger verification, formal methods, and smarter testing all still matter. But perfection may no longer be the only road to reliability.</p>
+<p>For seventy years, software engineering has asked one question: <em>how do we write the correct program?</em></p>
+<p>AI lets us ask a very different one.</p>
+
+<blockquote><p>What if programs become so cheap that we never have to trust any single one?</p></blockquote>
+
+<hr>
+<p class="note">Illustrations created with AI.</p>
+
+</article>
+</body>
+</html>
