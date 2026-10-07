@@ -1,6 +1,6 @@
 window.BLOG_POSTS_DATA = [
   {
-    tags: ["vibe-coding", "ai-product-strategy"],
+    tags: ["vibe-coding"],
     image: "./blog/correction-driven-development/images/hero.jpg",
     imageAlt: "Don't Specify What You Can Correct",
     venue: "apartsin.com",
