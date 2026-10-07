@@ -21,6 +21,7 @@
     'towards ai': '../assets/venues/towards-ai.png',
     'design bootcamp': '../assets/venues/design-bootcamp.webp',
     'educreate': '../assets/venues/educreate.png',
+    'ai advances': '../assets/venues/ai-advances.png',
   };
 
   function normalizeTheme(theme) {
