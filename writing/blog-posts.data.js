@@ -9,7 +9,7 @@ window.BLOG_POSTS_DATA = [
     description: "Correction-Driven Development: when AI makes change cheap, recognizing what is wrong beats predicting what is right. A development model for the AI era."
   },
   {
-    tags: ["ai-in-academia", "ai-product-strategy"],
+    tags: ["ai-in-academia"],
     image: "./blog/inverted-cs/img/hero.jpg",
     imageAlt: "Are We Teaching Computer Science Backward?",
     venue: "apartsin.com",
