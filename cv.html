@@ -386,19 +386,42 @@
     }
 
     .pub-list {
-      margin: 0.03in 0 0;
-      padding-left: 0.18in;
-      color: #344050;
-      font-size: 7.55pt;
-      line-height: 1.24;
+      list-style: none;
+      counter-reset: pub;
+      margin: 0.04in 0 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 0.14in;
+      row-gap: 0.05in;
     }
     .pub-list li {
-      margin: 0 0 0.015in;
-      padding-left: 0.02in;
+      counter-increment: pub;
+      display: grid;
+      grid-template-columns: 0.18in 1fr;
+      column-gap: 0.04in;
+      break-inside: avoid;
     }
-    .pub-list li::marker { color: var(--accent2); font-size: 6.5pt; }
-    .pub-list b { color: var(--ink); font-weight: 720; }
-    .pub-list i { color: #263040; font-style: italic; }
+    .pub-list li::before {
+      content: counter(pub) ".";
+      color: var(--accent2);
+      font: 740 6.6pt/1.35 inherit;
+    }
+    .pub-title {
+      color: var(--ink);
+      font-size: 7.1pt;
+      line-height: 1.26;
+      font-weight: 650;
+    }
+    .pub-meta {
+      margin-top: 0.012in;
+      color: #4a5565;
+      font-size: 6.6pt;
+      line-height: 1.25;
+    }
+    .pub-meta b { color: var(--ink); font-weight: 760; }
+    .pub-meta i { color: #273041; font-style: italic; }
+    .pub-meta .pub-year { color: var(--accent2); font-weight: 720; }
 
     .tagline {
       margin: 0.035in 0 0;
@@ -529,29 +552,30 @@
       <section class="section wide-box">
         <h2>Selected Journal Publications (2025-2026)</h2>
         <ol class="pub-list">
-          <li>Aperstein, Y., &amp; <b>Apartsin, A.</b> (2026). A Controlled Synthetic Benchmark for Educational Aspect-Based Sentiment Analysis. <i>Transactions on Machine Learning Research (TMLR).</i></li>
-          <li>Aperstein, Y., Halifa, L., Bar, S., &amp; <b>Apartsin, A.</b> (2026). LLM-guided headline rewriting for clickability enhancement without clickbait. <i>Scientific Reports</i> (Springer Nature).</li>
-          <li>Aperstein, Y., Tzahar, A., Gottlib, A., Verber, T., Shagan Damti, R., &amp; <b>Apartsin, A.</b> (2026). Multi-pathology Chest X-ray Classification with Rejection Mechanisms. <i>Scientific Reports</i> (Springer Nature).</li>
-          <li>Aperstein, Y., Moran, E., &amp; <b>Apartsin, A.</b> (2026). IRC-Bench: Recognizing Entities from Contextual Cues in First-Person Reminiscences. <i>Machine Learning and Knowledge Extraction</i> (MDPI).</li>
-          <li>Atia, T., Aperstein, Y., &amp; <b>Apartsin, A.</b> (2026). SeaAlert: Critical Information Extraction from Maritime Distress Communications with Large Language Models. <i>IEEE Access.</i></li>
-          <li>Adamenko, I., Ben Aharon, O., Aperstein, Y., &amp; <b>Apartsin, A.</b> (2026). Mapping License Plate Recoverability Under Extreme Viewing Angles for Opportunistic Urban Sensing. <i>AI</i> (MDPI).</li>
-          <li>Aperstein, Y., &amp; <b>Apartsin, A.</b> (2026). CalexNet: Soft Cascade-Aligned Training and Calibration for Lightweight Early-Exit Branches. <i>Electronics</i> (MDPI).</li>
-          <li>Werthaim, M., Kimhi, M., <b>Apartsin, A.</b>, &amp; Aperstein, Y. (2026). A benchmark for evaluating diagnostic questioning efficiency of LLMs in patient conversations. <i>Scientific Reports</i> (Springer Nature).</li>
-          <li>Aperstein, Y., Gottlib, A., Benita, G., &amp; <b>Apartsin, A.</b> (2025). Explainable Semantic Text Relations: A Question-Answering Framework for Comparing Document Content. <i>Information</i> (MDPI).</li>
-          <li>Aperstein, Y., Cohen, Y., &amp; <b>Apartsin, A.</b> (2025). Generative AI-Based Platform for Deliberate Teaching Practice: A Review and a Suggested Framework. <i>Education Sciences</i> (MDPI).</li>
+          <li><div><div class="pub-title">A Controlled Synthetic Benchmark for Educational Aspect-Based Sentiment Analysis</div><div class="pub-meta">Aperstein, <b>Apartsin</b> · <i>Transactions on Machine Learning Research (TMLR)</i> · <span class="pub-year">2026</span></div></div></li>
+          <li><div><div class="pub-title">LLM-guided headline rewriting for clickability enhancement without clickbait</div><div class="pub-meta">Aperstein, Halifa, Bar, <b>Apartsin</b> · <i>Scientific Reports</i> (Springer Nature) · <span class="pub-year">2026</span></div></div></li>
+          <li><div><div class="pub-title">Multi-pathology Chest X-ray Classification with Rejection Mechanisms</div><div class="pub-meta">Aperstein, Tzahar, Gottlib, Verber, Shagan Damti, <b>Apartsin</b> · <i>Scientific Reports</i> (Springer Nature) · <span class="pub-year">2026</span></div></div></li>
+          <li><div><div class="pub-title">IRC-Bench: Recognizing Entities from Contextual Cues in First-Person Reminiscences</div><div class="pub-meta">Aperstein, Moran, <b>Apartsin</b> · <i>Machine Learning and Knowledge Extraction</i> (MDPI) · <span class="pub-year">2026</span></div></div></li>
+          <li><div><div class="pub-title">SeaAlert: Critical Information Extraction from Maritime Distress Communications with LLMs</div><div class="pub-meta">Atia, Aperstein, <b>Apartsin</b> · <i>IEEE Access</i> · <span class="pub-year">2026</span></div></div></li>
+          <li><div><div class="pub-title">Mapping License Plate Recoverability Under Extreme Viewing Angles for Opportunistic Urban Sensing</div><div class="pub-meta">Adamenko, Ben Aharon, Aperstein, <b>Apartsin</b> · <i>AI</i> (MDPI) · <span class="pub-year">2026</span></div></div></li>
+          <li><div><div class="pub-title">CalexNet: Soft Cascade-Aligned Training and Calibration for Lightweight Early-Exit Branches</div><div class="pub-meta">Aperstein, <b>Apartsin</b> · <i>Electronics</i> (MDPI) · <span class="pub-year">2026</span></div></div></li>
+          <li><div><div class="pub-title">A benchmark for evaluating diagnostic questioning efficiency of LLMs in patient conversations</div><div class="pub-meta">Werthaim, Kimhi, <b>Apartsin</b>, Aperstein · <i>Scientific Reports</i> (Springer Nature) · <span class="pub-year">2026</span></div></div></li>
+          <li><div><div class="pub-title">Explainable Semantic Text Relations: A Question-Answering Framework for Comparing Document Content</div><div class="pub-meta">Aperstein, Gottlib, Benita, <b>Apartsin</b> · <i>Information</i> (MDPI) · <span class="pub-year">2025</span></div></div></li>
+          <li><div><div class="pub-title">Generative AI-Based Platform for Deliberate Teaching Practice: A Review and a Suggested Framework</div><div class="pub-meta">Aperstein, Cohen, <b>Apartsin</b> · <i>Education Sciences</i> (MDPI) · <span class="pub-year">2025</span></div></div></li>
         </ol>
       </section>
 
       <section class="section wide-box">
         <h2>Selected Preprints and Reports (2025-2026)</h2>
         <ol class="pub-list">
-          <li><b>arXiv, 2026.</b> Clinical Intent Extraction: A FHIR-Aligned Representation and the CIRCA Benchmark.</li>
-          <li><b>arXiv, 2026.</b> The Joule Point: an Energy-Optimal Operating Point for AI Inference.</li>
-          <li><b>arXiv, 2026.</b> Three Generations of Healthcare IT: From the Digital Record to the Computable Care Process.</li>
-          <li><b>arXiv, 2026.</b> Clinical Communication Processing with Models Trained on LLM-Generated Synthetic Data.</li>
-          <li><b>arXiv, 2026.</b> Modeling Normal Is All You Need: Joint Latent Clustering for Anomaly Detection.</li>
-          <li><b>arXiv, 2026.</b> CoReason: An Assessable Competency Model for Teaching with LLM-Based Reasoning.</li>
-          <li><b>arXiv, 2026.</b> CoEval: Ranking Language Models for Custom Tasks Without Labeled Data or Trustworthy Benchmarks.</li>
+          <li><div><div class="pub-title">Clinical Intent Extraction: A FHIR-Aligned Representation and the CIRCA Benchmark</div><div class="pub-meta"><b>Apartsin</b>, Aperstein · <i>arXiv</i>:2609.29479 · <span class="pub-year">2026</span></div></div></li>
+          <li><div><div class="pub-title">The Joule Point: an Energy-Optimal Operating Point for AI Inference</div><div class="pub-meta"><b>Apartsin</b>, Aperstein · <i>arXiv</i>:2609.27926 · <span class="pub-year">2026</span></div></div></li>
+          <li><div><div class="pub-title">Three Generations of Healthcare IT: From the Digital Record to the Computable Care Process</div><div class="pub-meta"><b>Apartsin</b>, Aperstein · <i>arXiv</i>:2608.08806 · <span class="pub-year">2026</span></div></div></li>
+          <li><div><div class="pub-title">Clinical Communication Processing with Models Trained on LLM-Generated Synthetic Data</div><div class="pub-meta"><b>Apartsin</b>, Aperstein · <i>arXiv</i>:2608.05993 · <span class="pub-year">2026</span></div></div></li>
+          <li><div><div class="pub-title">Modeling Normal Is All You Need: Joint Latent Clustering for Anomaly Detection</div><div class="pub-meta"><b>Apartsin</b>, Aperstein · <i>arXiv</i>:2607.06094 · <span class="pub-year">2026</span></div></div></li>
+          <li><div><div class="pub-title">Framing, Judging, Steering: An Assessable Competency Model for Teaching</div><div class="pub-meta"><b>Apartsin</b>, Aperstein · <i>arXiv</i>:2606.05983 · <span class="pub-year">2026</span></div></div></li>
+          <li><div><div class="pub-title">CoEval: Ranking Language Models for Custom Tasks Without Labeled Data</div><div class="pub-meta"><b>Apartsin</b>, Aperstein · <i>arXiv</i>:2606.03650 · <span class="pub-year">2026</span></div></div></li>
+          <li><div><div class="pub-title">SPINE: A Benchmark for Measuring the Epistemic Backbone of Large Language Models</div><div class="pub-meta">Shapira, <b>Apartsin</b> · <i>OpenReview</i> · <span class="pub-year">2026</span></div></div></li>
         </ol>
       </section>
     </main>
