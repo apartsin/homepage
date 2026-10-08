@@ -319,30 +319,37 @@
 
     .edu-main-list {
       list-style: none;
-      margin: 0.025in 0 0;
+      margin: 0.035in 0 0;
       padding: 0;
       display: grid;
-      row-gap: 0.03in;
+      row-gap: 0.055in;
     }
     .edu-main-list li {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: 0.42in 1fr;
+      column-gap: 0.13in;
       align-items: baseline;
-      gap: 0.08in;
+      padding-left: 0.08in;
+      border-left: 2px solid var(--line);
+    }
+    .edu-year {
+      color: var(--accent);
+      font: 760 8.3pt/1.25 inherit;
+      text-align: right;
+      letter-spacing: 0.01em;
+    }
+    .edu-body {
       color: var(--muted);
       font-size: 8.3pt;
-      line-height: 1.3;
+      line-height: 1.28;
     }
-    .edu-main-list li b {
-      color: var(--ink);
-      font-weight: 720;
-    }
-    .edu-main-list li span {
-      margin-left: auto;
-      color: var(--accent);
+    .edu-body b { color: var(--ink); font-weight: 720; }
+    .edu-body .edu-sub {
+      display: block;
+      margin-top: 0.012in;
+      color: #6a7585;
       font-size: 7.5pt;
-      font-weight: 680;
-      white-space: nowrap;
+      font-style: italic;
     }
 
     .tag-list {
@@ -607,11 +614,26 @@
       <section class="section">
         <h2>Education</h2>
         <ul class="edu-main-list">
-          <li><b>Postdoctoral Fellowship,</b> Weizmann Institute of Science <span>2013 · computer vision and ML</span></li>
-          <li><b>Ph.D., Computer Science,</b> Tel Aviv University <span>2012 · ML and signal processing</span></li>
-          <li><b>M.Sc., Technology Management,</b> Polytechnic Institute of NYU <span>2006</span></li>
-          <li><b>M.Sc., Computer Science,</b> Weizmann Institute of Science <span>2004 · computer vision</span></li>
-          <li><b>B.Sc., Computer Science,</b> Technion <span>1995</span></li>
+          <li>
+            <span class="edu-year">2013</span>
+            <div class="edu-body"><b>Postdoctoral Fellowship</b> &middot; Weizmann Institute of Science<span class="edu-sub">Computer vision and machine learning</span></div>
+          </li>
+          <li>
+            <span class="edu-year">2012</span>
+            <div class="edu-body"><b>Ph.D., Computer Science</b> &middot; Tel Aviv University<span class="edu-sub">Machine learning and signal processing</span></div>
+          </li>
+          <li>
+            <span class="edu-year">2006</span>
+            <div class="edu-body"><b>M.Sc., Technology Management</b> &middot; Polytechnic Institute of NYU</div>
+          </li>
+          <li>
+            <span class="edu-year">2004</span>
+            <div class="edu-body"><b>M.Sc., Computer Science</b> &middot; Weizmann Institute of Science<span class="edu-sub">Computer vision</span></div>
+          </li>
+          <li>
+            <span class="edu-year">1995</span>
+            <div class="edu-body"><b>B.Sc., Computer Science</b> &middot; Technion</div>
+          </li>
         </ul>
       </section>
 
