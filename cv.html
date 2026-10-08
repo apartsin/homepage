@@ -317,6 +317,52 @@
       line-height: 1.3;
     }
 
+    .edu-main-list {
+      list-style: none;
+      margin: 0.025in 0 0;
+      padding: 0;
+      display: grid;
+      row-gap: 0.03in;
+    }
+    .edu-main-list li {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.08in;
+      color: var(--muted);
+      font-size: 8.3pt;
+      line-height: 1.3;
+    }
+    .edu-main-list li b {
+      color: var(--ink);
+      font-weight: 720;
+    }
+    .edu-main-list li span {
+      margin-left: auto;
+      color: var(--accent);
+      font-size: 7.5pt;
+      font-weight: 680;
+      white-space: nowrap;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.03in 0.055in;
+      margin: 0.025in 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .tag-list li {
+      font-size: 7.4pt;
+      line-height: 1;
+      color: var(--ink);
+      padding: 0.025in 0.055in;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: #fafbfd;
+    }
+
     .compact-list {
       margin: 0.035in 0 0;
       padding: 0;
@@ -468,15 +514,6 @@
       </div>
 
       <section class="side-section">
-        <h2>Education</h2>
-        <p class="edu-item"><b>Postdoctoral Fellowship</b><span>Weizmann Institute of Science, 2013 - computer vision and ML</span></p>
-        <p class="edu-item"><b>Ph.D., Computer Science</b><span>Tel Aviv University, 2012 - ML and signal processing</span></p>
-        <p class="edu-item"><b>M.Sc., Technology Management</b><span>Polytechnic Institute of NYU, 2006</span></p>
-        <p class="edu-item"><b>M.Sc., Computer Science</b><span>Weizmann Institute of Science, 2004 - computer vision</span></p>
-        <p class="edu-item"><b>B.Sc., Computer Science</b><span>Technion, 1995</span></p>
-      </section>
-
-      <section class="side-section">
         <h2>Selected Recognition &amp; Achievements</h2>
         <p><b>AI Product of the Year</b> recognition for SafeRide automotive AI product work.</p>
         <p><b>$250K Citi LabLink grant</b> for a financial data science collaboration platform.</p>
@@ -499,6 +536,32 @@
       <section class="side-section">
         <h2>Teaching &amp; Mentorship</h2>
         <p><b>24+ supervised B.Sc. / M.Sc. final projects</b> since 2012, with teaching across HIT, Afeka, TAU, and BIU; 3 project-based course series (Language, Vision, Scalable AI) over 16 past offerings; 28 written student guides.</p>
+      </section>
+
+      <section class="side-section">
+        <h2>Tech &amp; Tools</h2>
+        <ul class="tag-list">
+          <li>Python</li>
+          <li>PyTorch</li>
+          <li>Hugging Face</li>
+          <li>LLMs</li>
+          <li>Agents / MCP</li>
+          <li>RAG</li>
+          <li>Diffusion</li>
+          <li>Transformers</li>
+          <li>Classical ML</li>
+          <li>C / C++</li>
+          <li>SQL</li>
+          <li>Pandas / NumPy</li>
+          <li>Streaming / Real-time</li>
+          <li>Signal processing</li>
+          <li>Computer vision</li>
+          <li>NLP</li>
+          <li>Docker</li>
+          <li>Linux</li>
+          <li>Git / GitHub</li>
+          <li>AWS / GCP / Azure</li>
+        </ul>
       </section>
     </aside>
 
@@ -547,19 +610,14 @@
       </section>
 
       <section class="section">
-        <h2>Selected Journal Publications (2025-2026)</h2>
-        <ol class="pub-list">
-          <li><div><div class="pub-title">A Controlled Synthetic Benchmark for Educational Aspect-Based Sentiment Analysis</div><div class="pub-meta">Aperstein, <b>Apartsin</b> · <i>Transactions on Machine Learning Research (TMLR)</i> · <span class="pub-year">2026</span></div></div></li>
-          <li><div><div class="pub-title">LLM-guided headline rewriting for clickability enhancement without clickbait</div><div class="pub-meta">Aperstein, Halifa, Bar, <b>Apartsin</b> · <i>Scientific Reports</i> · <span class="pub-year">2026</span></div></div></li>
-          <li><div><div class="pub-title">Multi-pathology Chest X-ray Classification with Rejection Mechanisms</div><div class="pub-meta">Aperstein, Tzahar, Gottlib, Verber, Shagan Damti, <b>Apartsin</b> · <i>Scientific Reports</i> · <span class="pub-year">2026</span></div></div></li>
-          <li><div><div class="pub-title">IRC-Bench: Recognizing Entities from Contextual Cues in First-Person Reminiscences</div><div class="pub-meta">Aperstein, Moran, <b>Apartsin</b> · <i>Machine Learning and Knowledge Extraction</i> · <span class="pub-year">2026</span></div></div></li>
-          <li><div><div class="pub-title">SeaAlert: Critical Information Extraction from Maritime Distress Communications with LLMs</div><div class="pub-meta">Atia, Aperstein, <b>Apartsin</b> · <i>IEEE Access</i> · <span class="pub-year">2026</span></div></div></li>
-          <li><div><div class="pub-title">Mapping License Plate Recoverability Under Extreme Viewing Angles for Opportunistic Urban Sensing</div><div class="pub-meta">Adamenko, Ben Aharon, Aperstein, <b>Apartsin</b> · <i>AI</i> · <span class="pub-year">2026</span></div></div></li>
-          <li><div><div class="pub-title">CalexNet: Soft Cascade-Aligned Training and Calibration for Lightweight Early-Exit Branches</div><div class="pub-meta">Aperstein, <b>Apartsin</b> · <i>Electronics</i> · <span class="pub-year">2026</span></div></div></li>
-          <li><div><div class="pub-title">A benchmark for evaluating diagnostic questioning efficiency of LLMs in patient conversations</div><div class="pub-meta">Werthaim, Kimhi, <b>Apartsin</b>, Aperstein · <i>Scientific Reports</i> · <span class="pub-year">2026</span></div></div></li>
-          <li><div><div class="pub-title">Explainable Semantic Text Relations: A Question-Answering Framework for Comparing Document Content</div><div class="pub-meta">Aperstein, Gottlib, Benita, <b>Apartsin</b> · <i>Information</i> · <span class="pub-year">2025</span></div></div></li>
-          <li><div><div class="pub-title">Generative AI-Based Platform for Deliberate Teaching Practice: A Review and a Suggested Framework</div><div class="pub-meta">Aperstein, Cohen, <b>Apartsin</b> · <i>Education Sciences</i> · <span class="pub-year">2025</span></div></div></li>
-        </ol>
+        <h2>Education</h2>
+        <ul class="edu-main-list">
+          <li><b>Postdoctoral Fellowship,</b> Weizmann Institute of Science <span>2013 · computer vision and ML</span></li>
+          <li><b>Ph.D., Computer Science,</b> Tel Aviv University <span>2012 · ML and signal processing</span></li>
+          <li><b>M.Sc., Technology Management,</b> Polytechnic Institute of NYU <span>2006</span></li>
+          <li><b>M.Sc., Computer Science,</b> Weizmann Institute of Science <span>2004 · computer vision</span></li>
+          <li><b>B.Sc., Computer Science,</b> Technion <span>1995</span></li>
+        </ul>
       </section>
 
     </main>
