@@ -385,6 +385,20 @@
       line-height: 1.23;
     }
 
+    .pub-list {
+      margin: 0.04in 0 0;
+      padding-left: 0.2in;
+      color: #344050;
+      font-size: 8pt;
+      line-height: 1.28;
+    }
+    .pub-list li {
+      margin: 0 0 0.03in;
+      padding-left: 0.03in;
+    }
+    .pub-list li::marker { color: var(--accent2); font-size: 7pt; }
+    .pub-list b { color: var(--ink); font-weight: 720; }
+
     .tagline {
       margin: 0.035in 0 0;
       color: var(--muted);
@@ -425,10 +439,10 @@
         <a href="https://medium.com/@sashaapartsin"><span class="contact-badge" style="--badge:#111827;">M</span><span>Medium: @sashaapartsin</span></a>
       </div>
 
-      <ul class="brand" aria-label="Recent journal publications">
-        <li style="--tone: var(--accent);"><b>TMLR, 2026</b><span>A Controlled Synthetic Benchmark for Educational Aspect-Based Sentiment Analysis.</span></li>
-        <li style="--tone: var(--accent-2);"><b>Scientific Reports (Nature), 2026</b><span>LLM-guided headline rewriting for clickability enhancement without clickbait.</span></li>
-        <li style="--tone: var(--accent-3);"><b>Scientific Reports (Nature), 2026</b><span>A benchmark for evaluating diagnostic questioning efficiency of LLMs in patient conversations.</span></li>
+      <ul class="brand" aria-label="Research leadership brand">
+        <li style="--tone: var(--accent);"><b>Research breadth</b><span>Language, vision, signals, generative AI, and multi-agent systems.</span></li>
+        <li style="--tone: var(--accent-2);"><b>Industry depth</b><span>Automotive, public safety, finance, telecom, media, and document AI.</span></li>
+        <li style="--tone: var(--accent-3);"><b>Builder-leader</b><span>Built teams, prototypes, papers, patents, and product-facing AI systems.</span></li>
       </ul>
 
       <section class="side-section">
@@ -451,6 +465,13 @@
       <section class="side-section">
         <h2>Innovation &amp; Entrepreneurship</h2>
         <p><b>Founder / CTO experience</b> across search, multimedia, cloud optimization, and applied AI ventures; corporate innovation through AI labs, grants, patents, and prototypes.</p>
+      </section>
+
+      <section class="side-section">
+        <h2>Research &amp; Impact</h2>
+        <p><b>Publications:</b> 31 recent (2025-2026): 10 journal, 21 preprints and reports. 40+ Scholar-indexed works, 470+ citations across ML, vision, NLP, deep learning, and signal processing.</p>
+        <p><b>Patents:</b> 10 granted/filed across vehicle diagnostics, driver monitoring, model configuration, onboard inference, public-safety audio, and search/image matching.</p>
+        <p><b>Industry projects:</b> 39 projects across signals, vision, language, and audio; hands-on model integration, agent automation, runtime tracing, diffusion steering, evaluation, and reasoning platforms.</p>
       </section>
 
       <section class="side-section">
@@ -511,40 +532,32 @@
       </section>
 
       <section class="section wide-box">
-          <h2>Research Themes</h2>
-          <p class="tagline"><span class="selected">Pragmatic AI:</span> methods for inference, generation, and coordination when clean benchmark assumptions do not hold.</p>
-          <div class="evidence-grid">
-            <div class="evidence-block">
-              <h3>Robust AI</h3>
-              <p>Vision, language, and signals under degraded or ambiguous inputs.</p>
-            </div>
-            <div class="evidence-block">
-              <h3>Spec-driven GenAI</h3>
-              <p>Generation of materials, text, images, and signals constrained by verifiable targets.</p>
-            </div>
-            <div class="evidence-block">
-              <h3>Multi-agent AI</h3>
-              <p>Evaluation and coordination without trusted benchmarks or shared state.</p>
-            </div>
-          </div>
+        <h2>Selected Journal Publications (2025-2026)</h2>
+        <ol class="pub-list">
+          <li><b>Transactions on Machine Learning Research (TMLR), 2026.</b> A Controlled Synthetic Benchmark for Educational Aspect-Based Sentiment Analysis.</li>
+          <li><b>Scientific Reports (Springer Nature), 2026.</b> LLM-guided headline rewriting for clickability enhancement without clickbait.</li>
+          <li><b>Scientific Reports (Springer Nature), 2026.</b> Multi-pathology Chest X-ray Classification with Rejection Mechanisms.</li>
+          <li><b>Machine Learning and Knowledge Extraction (MDPI), 2026.</b> IRC-Bench: Recognizing Entities from Contextual Cues in First-Person Reminiscences.</li>
+          <li><b>IEEE Access, 2026.</b> SeaAlert: Critical Information Extraction from Maritime Distress Communications with LLMs.</li>
+          <li><b>AI (MDPI), 2026.</b> Mapping License Plate Recoverability Under Extreme Viewing Angles for Opportunistic Urban Sensing.</li>
+          <li><b>Electronics (MDPI), 2026.</b> CalexNet: Soft Cascade-Aligned Training and Calibration for Lightweight Early-Exit Branches.</li>
+          <li><b>Scientific Reports (Springer Nature), 2026.</b> A benchmark for evaluating diagnostic questioning efficiency of LLMs in patient conversations.</li>
+          <li><b>Information (MDPI), 2025.</b> Explainable Semantic Text Relations: A Question-Answering Framework for Comparing Document Content.</li>
+          <li><b>Education Sciences (MDPI), 2025.</b> Generative AI-Based Platform for Deliberate Teaching Practice: A Review and a Suggested Framework.</li>
+        </ol>
       </section>
 
       <section class="section wide-box">
-          <h2>Research, Patents &amp; Systems</h2>
-          <div class="evidence-grid">
-            <div class="evidence-block">
-              <h3>Publications</h3>
-              <p>31 recent (2025-2026): 10 journal, 21 preprints and reports. 40+ Scholar-indexed works and 470+ citations across ML, vision, NLP, deep learning, and signal processing.</p>
-            </div>
-            <div class="evidence-block">
-              <h3>Patents</h3>
-              <p>10 granted/filed patents across vehicle diagnostics, driver monitoring, model configuration, onboard inference, public-safety audio, and search/image matching.</p>
-            </div>
-            <div class="evidence-block">
-              <h3>Systems</h3>
-              <p>39 industry research projects across signals, vision, language, and audio; hands-on building of model integration, agent automation, runtime tracing, diffusion steering, evaluation, and reasoning platforms.</p>
-            </div>
-          </div>
+        <h2>Selected Preprints and Reports (2025-2026)</h2>
+        <ol class="pub-list">
+          <li><b>arXiv, 2026.</b> Clinical Intent Extraction: A FHIR-Aligned Representation and the CIRCA Benchmark.</li>
+          <li><b>arXiv, 2026.</b> The Joule Point: an Energy-Optimal Operating Point for AI Inference.</li>
+          <li><b>arXiv, 2026.</b> Three Generations of Healthcare IT: From the Digital Record to the Computable Care Process.</li>
+          <li><b>arXiv, 2026.</b> Clinical Communication Processing with Models Trained on LLM-Generated Synthetic Data.</li>
+          <li><b>arXiv, 2026.</b> Modeling Normal Is All You Need: Joint Latent Clustering for Anomaly Detection.</li>
+          <li><b>arXiv, 2026.</b> CoReason: An Assessable Competency Model for Teaching with LLM-Based Reasoning.</li>
+          <li><b>arXiv, 2026.</b> CoEval: Ranking Language Models for Custom Tasks Without Labeled Data or Trustworthy Benchmarks.</li>
+        </ol>
       </section>
     </main>
   </article>
