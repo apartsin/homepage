@@ -12,9 +12,9 @@ window.BLOG_POSTS_DATA = [
     tags: ["vibe-coding"],
     image: "./blog/correction-driven-development/images/hero.jpg",
     imageAlt: "Don't Specify What You Can Correct",
-    venue: "apartsin.com",
+    venue: "Design Bootcamp",
     title: "Don't Specify What You Can Correct",
-    href: "./blog/correction-driven-development/index.html",
+    href: "https://medium.com/design-bootcamp/correction-driven-development-9224c775cbff",
     description: "Correction-Driven Development: when AI makes change cheap, recognizing what is wrong beats predicting what is right. A development model for the AI era."
   },
   {
