@@ -252,6 +252,30 @@
       hyphens: auto;
     }
 
+    .summary-bullets {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 0.065in;
+    }
+    .summary-bullets li {
+      position: relative;
+      padding-left: 0.18in;
+      line-height: 1.45;
+    }
+    .summary-bullets li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.085in;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .summary-bullets b { color: var(--ink); font-weight: 740; }
+
     .summary ul {
       margin: 0;
       padding-left: 0.2in;
@@ -605,7 +629,11 @@
 
     <main class="main">
       <section class="summary">
-        <p>AI researcher and technology leader with 30+ years of experience spanning machine learning, signal processing, computer vision, NLP, and generative AI. Combines original scientific research with extensive experience leading applied AI research, developing technologies from algorithms to production systems, and translating research into commercial products. Active in academic research, teaching, and student supervision, with applications across healthcare, automotive, public safety, finance, and enterprise AI.</p>
+        <ul class="summary-bullets">
+          <li><b>AI researcher and technology leader</b> with 30+ years of experience across machine learning, signal processing, computer vision, NLP, and generative AI.</li>
+          <li><b>Research and delivery, end to end:</b> combines original scientific research with leading applied AI, taking technologies from algorithms through production systems to commercial products.</li>
+          <li><b>Academic and applied impact</b> through research, teaching, and student supervision, with applications across healthcare, automotive, public safety, finance, and enterprise AI.</li>
+        </ul>
       </section>
 
       <section class="section">
