@@ -499,68 +499,6 @@
       }
     }
 
-    /* --------- Mobile rendering (phones + narrow tablets, excludes print) --------- */
-    @media screen and (max-width: 900px) {
-      body { font-size: 15px; }
-      .page {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        min-height: 100vh;
-        padding: 20px 18px 44px;
-        grid-template-columns: 1fr;
-        column-gap: 0;
-        overflow: visible;
-      }
-      .page::before { height: 4px; }
-      .page::after { height: 2px; }
-
-      .main { order: 1; }
-      .sidebar {
-        order: 2;
-        padding-right: 0;
-        padding-top: 18px;
-        margin-top: 18px;
-        border-right: 0;
-        border-top: 1px solid var(--line);
-      }
-
-      .name { font-size: 20pt; line-height: 1.15; }
-      .name .name-credential { font-size: 11pt; }
-
-      .contact { font-size: 10.5pt; line-height: 1.5; gap: 4px; }
-      .contact-badge { flex: 0 0 22px; width: 22px; height: 22px; font-size: 8.2pt; }
-
-      .side-section h2, .section h2 { font-size: 10.5pt; margin-bottom: 6px; }
-      .side-section p { font-size: 10pt; line-height: 1.45; margin-bottom: 6px; }
-
-      .summary { padding: 14px 16px; font-size: 11.5pt; line-height: 1.5; }
-      .summary-bullets { gap: 8px; }
-      .summary-bullets li { padding-left: 20px; line-height: 1.5; }
-      .summary-bullets li::before { left: 2px; top: 10px; width: 7px; height: 7px; }
-
-      .section { margin-top: 14px; }
-      .item { padding: 8px 0 10px; }
-      .row { flex-direction: column; align-items: flex-start; gap: 2px; }
-      .role { font-size: 11.5pt; line-height: 1.25; }
-      .role small { font-size: 10pt; display: block; margin-top: 2px; }
-      .dates { font-size: 10pt; }
-      .detail { font-size: 10.5pt; line-height: 1.5; margin-top: 6px; text-align: left; }
-
-      .item--edu { padding: 6px 0 7px; }
-      .item--edu .role { font-size: 11pt; }
-      .item--edu .role small { font-size: 9.6pt; }
-      .item--edu .dates { font-size: 9.6pt; }
-
-      .section--boxed { padding: 12px 14px 14px; }
-      .section--boxed h2 { margin-bottom: 6px; }
-
-      .tag-list { gap: 6px 7px; }
-      .tag-list li { font-size: 9.5pt; padding: 4px 8px; }
-
-      .evidence-grid { grid-template-columns: 1fr; gap: 10px; }
-      .brand { display: block; }
-    }
   </style>
 </head>
 <body>
