@@ -21,9 +21,9 @@ window.BLOG_POSTS_DATA = [
     tags: ["ai-in-academia"],
     image: "./blog/inverted-cs/img/hero.jpg",
     imageAlt: "Are We Teaching Computer Science Backward?",
-    venue: "apartsin.com",
+    venue: "Design Bootcamp",
     title: "Are We Teaching Computer Science Backward?",
-    href: "./blog/inverted-cs/index.html",
+    href: "https://medium.com/design-bootcamp/are-we-teaching-computer-science-backwards-7eaf677f0498",
     description: "We hand students the answers years before they meet the questions. AI makes it possible to flip the order: build first, then go deep when the problems demand it."
   },
   {
