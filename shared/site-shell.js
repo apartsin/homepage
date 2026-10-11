@@ -320,6 +320,7 @@
           { label: 'Consulting', path: 'work/consulting.html' },
         ],
       ),
+      link('CV', 'cv.html', [/\/cv\.html$/i], []),
     ],
   };
 
