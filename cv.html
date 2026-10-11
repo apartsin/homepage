@@ -515,12 +515,14 @@
       .page::before { height: 4px; }
       .page::after { height: 2px; }
 
+      .main { order: 1; }
       .sidebar {
+        order: 2;
         padding-right: 0;
-        padding-bottom: 18px;
-        margin-bottom: 18px;
+        padding-top: 18px;
+        margin-top: 18px;
         border-right: 0;
-        border-bottom: 1px solid var(--line);
+        border-top: 1px solid var(--line);
       }
 
       .name { font-size: 20pt; line-height: 1.15; }
