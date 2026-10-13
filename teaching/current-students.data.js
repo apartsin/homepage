@@ -1,15 +1,5 @@
 window.CURRENT_STUDENTS = [
-  {
-    id: "eden-moran",
-    image: "../assets/teaching/current-students/img-001-0eae3c6824-cee5ba1e66.png",
-    imageAlt: "Project image for Eden Moran",
-    project: "IRC-Bench: Recognizing Entities from Contextual Cues in First-Person Reminiscences",
-    name: "Eden Moran",
-    degree: "M.Sc.",
-    description: "Implicit entity recognition in text using contextual inference and discourse-level cues.",
-    links: [{ label: "Paper", href: "https://www.mdpi.com/2504-4990/8/7/186" }]
-  },
-  {
+{
     id: "niv-cohen",
     image: "../assets/teaching/current-students/img-003-bbb86d2fc4.png",
     imageAlt: "Project image for Niv Cohen",
@@ -47,7 +37,7 @@ window.CURRENT_STUDENTS = [
   },
   {
     id: "dor-halevy",
-    image: "../assets/heroes/labcard-datasheet.jpg",
+    image: "../assets/teaching/current-students/img-009-dor-halevy.png",
     imageAlt: "Project image for Dor Halevy",
     project: "AI-Powered Discovery of New Brain Imaging Tracers for Parkinson’s Disease",
     name: "Dor Halevy",
@@ -56,7 +46,7 @@ window.CURRENT_STUDENTS = [
   },
   {
     id: "tal-verber",
-    image: "../assets/teaching/research-projects-open-for-students/img-013-infrared-counter-drone.png",
+    image: "../assets/teaching/current-students/img-008-tal-verber.png",
     imageAlt: "Project image for Tal Verber",
     project: "Generative AI for Infrared Counter-Drone Detection",
     name: "Tal Verber",
@@ -65,7 +55,7 @@ window.CURRENT_STUDENTS = [
   },
   {
     id: "tzach-sidi",
-    image: "../assets/heroes/labcard-datasheet.jpg",
+    image: "../assets/teaching/current-students/img-007-tzach-sidi.png",
     imageAlt: "Project image for Tzach Sidi",
     project: "Multi-Prior Adaptive ASR for Severely Degraded Radio Speech",
     name: "Tzach Sidi",

@@ -1,5 +1,18 @@
 window.FORMER_STUDENTS = [
   {
+    id: "project-eden-moran",
+    year: "2026",
+    types: "Text",
+    mediaHref: "../assets/teaching/current-students/img-001-0eae3c6824-cee5ba1e66.png",
+    imgSrc: "../assets/teaching/current-students/img-001-0eae3c6824-cee5ba1e66.png",
+    imgAlt: "Project image for Eden Moran",
+    title: "IRC-Bench: Recognizing Entities from Contextual Cues in First-Person Reminiscences",
+    meta: "Eden Moran · 2026",
+    tags: ["Text"],
+    text: "Implicit entity recognition in text using contextual inference and discourse-level cues.",
+    links: [{ label: "Paper", href: "https://www.mdpi.com/2504-4990/8/7/186" }]
+  },
+  {
     id: "project-yigal-meshulam",
     year: "2026",
     types: "Agents",
