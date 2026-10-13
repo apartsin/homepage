@@ -1,7 +1,15 @@
 (function () {
   var students = Array.isArray(window.CURRENT_STUDENTS)
-    ? window.CURRENT_STUDENTS
+    ? window.CURRENT_STUDENTS.slice()
     : [];
+  var DEGREE_ORDER = { "M.Sc.": 0, "MSc": 0, "B.Sc.": 1, "BSc": 1 };
+  students.sort(function (a, b) {
+    var ao = DEGREE_ORDER[a.degree];
+    var bo = DEGREE_ORDER[b.degree];
+    if (ao == null) ao = 99;
+    if (bo == null) bo = 99;
+    return ao - bo;
+  });
   var grid = document.getElementById("current-students-grid");
   if (!grid || students.length === 0) {
     return;

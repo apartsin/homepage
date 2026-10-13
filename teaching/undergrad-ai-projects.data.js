@@ -40,5 +40,12 @@ window.UNDERGRAD_AI_PROJECTS = [
     eyebrow: "",
     title: "AI-Driven Wikitization and Hierarchical Study Assistant",
     description: "Transform long technical texts into linked topic maps with layered summaries to support navigation-based learning and cross-document reasoning."
+  },
+  {
+    image: "../assets/teaching/research-projects-open-for-students/img-015-careerlens.png",
+    imageAlt: "CareerLens evidence-based professional profile inference visual",
+    eyebrow: "",
+    title: "CareerLens: Evidence-Based Professional Profile Inference",
+    description: "Infer implicit competencies, proficiency levels, and seniority from career evidence, grounding each inference in supporting text and structured taxonomies (ESCO, O*NET)."
   }
 ];
