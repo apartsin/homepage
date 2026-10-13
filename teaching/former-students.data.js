@@ -1,5 +1,31 @@
 window.FORMER_STUDENTS = [
   {
+    id: "project-yigal-meshulam",
+    year: "2026",
+    types: "Agents",
+    mediaHref: "../assets/teaching/current-students/img-004-ee314172bc.png",
+    imgSrc: "../assets/teaching/current-students/img-004-ee314172bc.png",
+    imgAlt: "Project image for Yigal Meshulam",
+    title: "Acting on the Unseen: Communication-Free Collaborative Filtering for Decentralized Multi-Robot Task Allocation",
+    meta: "Yigal Meshulam · 2026",
+    tags: ["Agents"],
+    text: "Decentralized multi-robot task allocation under zero-knowledge constraints and minimal signal sharing.",
+    links: [{ label: "Report", href: "https://arxiv.org/pdf/2605.25584?" }]
+  },
+  {
+    id: "project-matan-chazanovitz",
+    year: "2026",
+    types: "Images",
+    mediaHref: "../assets/teaching/current-students/img-005-efcf14eafa.png",
+    imgSrc: "../assets/teaching/current-students/img-005-efcf14eafa.png",
+    imgAlt: "Project image for Matan Chazanovitz",
+    title: "Degradation-Aware Selective Super-Resolution (DASSR)",
+    meta: "Matan Chazanovitz · 2026",
+    tags: ["Images"],
+    text: "Selective super-resolution that boosts degraded regions while preserving clean image areas.",
+    links: []
+  },
+  {
     id: "project-imperfect-student-sim",
     year: "2025",
     types: "Text",

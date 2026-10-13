@@ -18,26 +18,7 @@ window.CURRENT_STUDENTS = [
     degree: "M.Sc.",
     description: "Adaptive diagnostic questioning with LLMs for high-value information acquisition in clinical settings."
   },
-  {
-    id: "yigal-meshulam",
-    image: "../assets/teaching/current-students/img-004-ee314172bc.png",
-    imageAlt: "Project image for Yigal Meshulam",
-    project: "Acting on the Unseen: Communication-Free Collaborative Filtering for Decentralized Multi-Robot Task Allocation",
-    name: "Yigal Meshulam",
-    degree: "M.Sc.",
-    description: "Decentralized multi-robot task allocation under zero-knowledge constraints and minimal signal sharing.",
-    links: [{ label: "Report", href: "https://arxiv.org/pdf/2605.25584?" }]
-  },
-  {
-    id: "matan-chazanovitz",
-    image: "../assets/teaching/current-students/img-005-efcf14eafa.png",
-    imageAlt: "Project image for Matan Chazanovitz",
-    project: "Degradation-Aware Selective Super-Resolution (DASSR)",
-    name: "Matan Chazanovitz",
-    degree: "M.Sc.",
-    description: "Selective super-resolution that boosts degraded regions while preserving clean image areas."
-  },
-  {
+{
     id: "jolian-habib",
     image: "../assets/teaching/ai-engineering-projects-open-for-students/img-003-edb01fa52d.png",
     imageAlt: "Project image for Jolian Habib",
@@ -63,6 +44,33 @@ window.CURRENT_STUDENTS = [
     name: "Linoy Halifa",
     degree: "M.Sc.",
     description: "Aspect-based sentiment analysis of socio-economic discourse, trained and evaluated on controllably generated synthetic data."
+  },
+  {
+    id: "dor-halevy",
+    image: "../assets/heroes/labcard-datasheet.jpg",
+    imageAlt: "Project image for Dor Halevy",
+    project: "AI-Powered Discovery of New Brain Imaging Tracers for Parkinson’s Disease",
+    name: "Dor Halevy",
+    degree: "M.Sc.",
+    description: "AI-driven discovery and screening of candidate PET tracer molecules for improved brain imaging in Parkinson’s disease."
+  },
+  {
+    id: "tal-verber",
+    image: "../assets/teaching/research-projects-open-for-students/img-013-infrared-counter-drone.png",
+    imageAlt: "Project image for Tal Verber",
+    project: "Generative AI for Infrared Counter-Drone Detection",
+    name: "Tal Verber",
+    degree: "M.Sc.",
+    description: "Generative models that synthesize infrared drone imagery from optical sources to overcome scarce thermal data and improve counter-drone detection and tracking."
+  },
+  {
+    id: "tzach-sidi",
+    image: "../assets/heroes/labcard-datasheet.jpg",
+    imageAlt: "Project image for Tzach Sidi",
+    project: "Multi-Prior Adaptive ASR for Severely Degraded Radio Speech",
+    name: "Tzach Sidi",
+    degree: "M.Sc.",
+    description: "Adaptive automatic speech recognition for severely degraded radio audio, combining multiple acoustic and language priors."
   },
   {
     id: "ameen-assadi",
