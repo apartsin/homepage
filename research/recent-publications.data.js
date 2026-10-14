@@ -504,7 +504,7 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2026-imperfect-student",
     year: 2026,
-    date: "2026-05-25",
+    date: "2026-10-14",
     type: "Journal",
     title: "Toward a Benchmark for Controllable Simulation of Imperfect Students with Large Language Models",
     focus: "spec",
