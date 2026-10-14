@@ -502,10 +502,10 @@ window.RECENT_PUBLICATIONS = [
     venueHref: "https://arxiv.org/abs/2605.26540"
   },
   {
-    id: "pub-inprep-imperfect-student",
+    id: "pub-2026-imperfect-student",
     year: 2026,
     date: "2026-05-25",
-    type: "Preprint",
+    type: "Journal",
     title: "Toward a Benchmark for Controllable Simulation of Imperfect Students with Large Language Models",
     focus: "spec",
     summary: "This work develops a benchmark for controllably simulating imperfect students with large language models, generating learner behavior at specified levels of misconception and skill. Generation obeys an explicit control specification, so each simulated student exhibits the precise, targeted deficiencies the scenario requires rather than generic errors.",
@@ -514,7 +514,7 @@ window.RECENT_PUBLICATIONS = [
       { name: "O Sason", self: false },
       { name: "Y Aperstein", self: false }
     ],
-    venue: "arXiv preprint (arXiv:2605.25601)",
+    venue: "Education Sciences · MDPI",
     venueHref: "https://arxiv.org/abs/2605.25601"
   },
   {
