@@ -515,7 +515,7 @@ window.RECENT_PUBLICATIONS = [
       { name: "Y Aperstein", self: false }
     ],
     venue: "Education Sciences · MDPI",
-    venueHref: "https://arxiv.org/abs/2605.25601"
+    venueHref: "https://www.mdpi.com/2227-7102/16/10/1752"
   },
   {
     id: "pub-2026-normal-latent-clustering",
