@@ -504,14 +504,14 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2026-imperfect-student",
     year: 2026,
-    date: "2026-10-14",
+    date: "2026-10-19",
     type: "Journal",
-    title: "Toward a Benchmark for Controllable Simulation of Imperfect Students with Large Language Models",
+    title: "Toward Controllable Learner Simulation for Teacher Education: Benchmarking Skill-Profile Control in LLM Answer Behavior",
     focus: "spec",
     summary: "This work develops a benchmark for controllably simulating imperfect students with large language models, generating learner behavior at specified levels of misconception and skill. Generation obeys an explicit control specification, so each simulated student exhibits the precise, targeted deficiencies the scenario requires rather than generic errors.",
     authors: [
+      { name: "O Sasson", self: false },
       { name: "A Apartsin", self: true },
-      { name: "O Sason", self: false },
       { name: "Y Aperstein", self: false }
     ],
     venue: "Education Sciences · MDPI",
