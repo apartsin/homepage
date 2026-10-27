@@ -520,8 +520,8 @@ window.RECENT_PUBLICATIONS = [
   {
     id: "pub-2026-normal-latent-clustering",
     year: 2026,
-    date: "2026-07-07",
-    type: "Submitted",
+    date: "2026-10-27",
+    type: "Journal",
     title: "Modeling Normal Is All You Need: Joint Latent Clustering for Anomaly Detection in Multimodal Cyber-Physical Systems",
     focus: "robust",
     summary: "This method detects anomalies in multimodal cyber-physical systems by jointly clustering the latent representations of normal operation, flagging deviations without needing labeled faults. It sustains reliable monitoring of noisy real-world sensor and control streams, identifying failures against a learned model of normality alone.",
@@ -529,7 +529,7 @@ window.RECENT_PUBLICATIONS = [
       { name: "A Apartsin", self: true },
       { name: "Y Aperstein", self: false }
     ],
-    venue: "arXiv preprint (arXiv:2607.06094)",
+    venue: "IoT · MDPI",
     venueHref: "https://arxiv.org/abs/2607.06094"
   }
 ];
