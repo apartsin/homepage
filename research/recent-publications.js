@@ -108,6 +108,10 @@
       // Drop the trailing publisher tag (MDPI/Nature) from the visible link
       // text; the publisher icon below still keys off the full pub.venue.
       var displayVenue = (pub.venue || "").replace(/\s*\((?:MDPI|Nature)\)\s*$/i, "");
+      // Journal cards show only the journal name, not the " · Publisher" suffix.
+      if (pub.type === "Journal") {
+        displayVenue = displayVenue.replace(/\s*·\s*[^·]*$/, "");
+      }
       if (pub.draftHref && pub.venueHref) {
         var repoA = document.createElement("a");
         repoA.href = pub.venueHref;
