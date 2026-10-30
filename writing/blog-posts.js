@@ -100,7 +100,8 @@
         return;
       }
 
-      const venue = String(meta.textContent || '').trim();
+      const venueEl = meta.querySelector('.blog-post-card__meta-venue');
+      const venue = String((venueEl ? venueEl.textContent : meta.textContent) || '').trim();
       const venueToken = normalizeVenue(venue);
       const iconSrc = LOCAL_VENUE_ICONS[venueToken] || '';
       if (!venue || !iconSrc) {
@@ -123,7 +124,13 @@
 
       const text = document.createElement('span');
       text.className = 'blog-post-card__meta-text';
-      text.textContent = venue;
+      const prefix = document.createElement('span');
+      prefix.className = 'blog-post-card__meta-prefix';
+      prefix.textContent = 'Published in ';
+      const name = document.createElement('span');
+      name.className = 'blog-post-card__meta-venue';
+      name.textContent = venue;
+      text.append(prefix, name);
 
       wrap.append(icon, text);
       meta.textContent = '';
@@ -166,7 +173,15 @@
 
         const venue = document.createElement('p');
         venue.className = 'blog-post-card__meta';
-        venue.textContent = post.venue || '';
+        if (post.venue) {
+          const prefix = document.createElement('span');
+          prefix.className = 'blog-post-card__meta-prefix';
+          prefix.textContent = 'Published in ';
+          const name = document.createElement('span');
+          name.className = 'blog-post-card__meta-venue';
+          name.textContent = post.venue;
+          venue.append(prefix, name);
+        }
         body.appendChild(venue);
 
         const heading = document.createElement('h2');
