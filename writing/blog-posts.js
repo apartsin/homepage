@@ -22,6 +22,7 @@
     'design bootcamp': '../assets/venues/design-bootcamp.webp',
     'educreate': '../assets/venues/educreate.png',
     'ai advances': '../assets/venues/ai-advances.png',
+    'level up coding': '../assets/venues/level-up-coding.jpg',
   };
 
   function normalizeTheme(theme) {

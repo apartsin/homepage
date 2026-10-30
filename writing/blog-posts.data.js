@@ -1,6 +1,15 @@
 window.BLOG_POSTS_DATA = [
   {
     tags: ["vibe-coding"],
+    image: "./blog/spec-driven-development-harmful/images/hero.jpg",
+    imageAlt: "Spec-Driven Development Considered Harmful",
+    venue: "Level Up Coding",
+    title: "Spec-Driven Development Considered Harmful",
+    href: "https://medium.com/gitconnected/spec-driven-development-considered-harmful-76b2d2d90c8e",
+    description: "AI makes trying cheaper than guessing, yet spec-driven development still asks you to guess first. Meet Hindsight-Driven Development."
+  },
+  {
+    tags: ["vibe-coding"],
     image: "./blog/software-manufacturing/images/hero.jpg",
     imageAlt: "The Future of Software Is Not Better Code. It Is More Code.",
     venue: "AI Advances",
