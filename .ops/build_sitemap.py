@@ -48,6 +48,7 @@ def main() -> int:
         if p.name not in EXCLUDE_NAMES
         and "node_modules" not in p.parts
         and ".ops" not in p.parts
+        and "drafts" not in p.parts
     )
 
     lines = [
