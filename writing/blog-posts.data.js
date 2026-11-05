@@ -1,5 +1,14 @@
 window.BLOG_POSTS_DATA = [
   {
+    tags: ["ai-product-strategy"],
+    image: "./blog/post-content-era/images/hero.png",
+    imageAlt: "AI Just Pushed Us Into the Post-Content Era",
+    venue: "Design Bootcamp",
+    title: "AI Just Pushed Us Into the Post-Content Era",
+    href: "https://medium.com/design-bootcamp/ai-just-pushed-us-into-the-post-content-era-313b853d0263",
+    description: "Content creation got cheap. Ideas did not. Time the web noticed the difference."
+  },
+  {
     tags: ["vibe-coding"],
     image: "./blog/spec-driven-development-harmful/images/hero.jpg",
     imageAlt: "Spec-Driven Development Considered Harmful",
