@@ -1,5 +1,14 @@
 window.BLOG_POSTS_DATA = [
   {
+    tags: ["vibe-coding", "ai-product-strategy"],
+    image: "./blog/ai-delegation-ladder/images/hero.png",
+    imageAlt: "The AI Delegation Ladder for Software Development",
+    venue: "Level Up Coding",
+    title: "The AI Delegation Ladder for Software Development",
+    href: "https://medium.com/gitconnected/the-ai-delegation-ladder-for-software-development-e38b7e01e64e",
+    description: "From code assistant to requirements compiler to universal backend: as we delegate more to AI, the developer's role and required skills shift up the ladder."
+  },
+  {
     tags: ["ai-product-strategy"],
     image: "./blog/post-content-era/images/hero.png",
     imageAlt: "AI Just Pushed Us Into the Post-Content Era",
