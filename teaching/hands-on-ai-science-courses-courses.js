@@ -11,8 +11,8 @@
     ? window.HOS_PAST_OFFERINGS
     : [];
 
-  // Derive the course "type" slug (language-ai / vision-ai / scalable-ai /
-  // temporal-ai) from the card's Course Offerings link — the same slug used
+  // Derive the course "type" slug (language-ai / vision-ai /
+  // scalable-ai) from the card's Course Offerings link — the same slug used
   // by the offerings page for filtering — so no data-schema change is needed.
   function courseTypeSlug(card) {
     if (card.type) return String(card.type).toLowerCase();

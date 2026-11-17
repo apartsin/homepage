@@ -202,7 +202,7 @@
       '/hos-home/embvision-course.html': '/onesite/courses/hos/series/vision-ai.html',
       '/hos-home/genai-course.html': '/onesite/courses/hos/series/genai-course.html',
       '/hos-home/llm-course.html': '/onesite/courses/hos/series/language-ai.html',
-      '/hos-home/temporalai-course.html': '/onesite/courses/hos/series/temporal-ai.html',
+      '/hos-home/temporalai-course.html': '/onesite/teaching/hands-on-ai-science-courses-courses.html',
     };
 
     if (host === 'www.apartsin.com') {

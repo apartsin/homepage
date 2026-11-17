@@ -17,8 +17,7 @@
   const typeLabels = {
     "language-ai": "Language AI",
     "vision-ai": "Vision AI",
-    "scalable-ai": "Scalable AI",
-    "temporal-ai": "Temporal AI"
+    "scalable-ai": "Scalable AI"
   };
   const semesterLabels = {
     "fall-spring": "Fall-Spring",
@@ -55,14 +54,12 @@
   const imageByType = {
     "language-ai": "../assets/courses/hos-series/llm-course/img-006-language-ai-gemini.png",
     "vision-ai": "../assets/courses/hos-series/embvision-course/img-008-vision-ai-gemini.png",
-    "scalable-ai": "../assets/courses/hos-series/bigdata-course/img-012-scalable-ai-gemini.png",
-    "temporal-ai": "../assets/courses/hos-series/temporalai-course/img-008-temporal-ai-gemini.png"
+    "scalable-ai": "../assets/courses/hos-series/bigdata-course/img-012-scalable-ai-gemini.png"
   };
   const syllabusByType = {
     "language-ai": "../courses/hos/series/language-ai.html",
     "vision-ai": "../courses/hos/series/vision-ai.html",
-    "scalable-ai": "../courses/hos/series/scalable-ai.html",
-    "temporal-ai": "../courses/hos/series/temporal-ai.html"
+    "scalable-ai": "../courses/hos/series/scalable-ai.html"
   };
   const normalizeSemester = (value) => {
     const normalized = (value || "").trim().toLowerCase().replace(/\s+/g, "-");
@@ -109,16 +106,14 @@
     var typeColors = {
       "language-ai": { bg1: "#1d3557", bg2: "#457b9d", accent: "#a8dadc" },
       "vision-ai":   { bg1: "#2d6a4f", bg2: "#52b788", accent: "#d8f3dc" },
-      "scalable-ai": { bg1: "#7a3f16", bg2: "#c2844a", accent: "#fde8d0" },
-      "temporal-ai": { bg1: "#5a189a", bg2: "#9d4edd", accent: "#e0aaff" }
+      "scalable-ai": { bg1: "#7a3f16", bg2: "#c2844a", accent: "#fde8d0" }
     };
     var tc = typeColors[item.type] || typeColors["language-ai"];
     var rawTitle = (item.title || "Course");
     var courseSubtitles = {
       "Language AI": "A HoS AI Course: Building Language AI with LLMs and Agents",
       "Vision AI": "A HoS AI Course: Building Vision AI with Foundation and Generative Models",
-      "Scalable AI": "A HoS AI Course: Building Scalable AI with Big Data",
-      "Temporal AI": "A HoS AI Course: Building Temporal AI with RL and World Models"
+      "Scalable AI": "A HoS AI Course: Building Scalable AI with Big Data"
     };
     var svgSubtitle = courseSubtitles[item.trackLabel] || item.trackLabel || "";
     /* Word-wrap title */
@@ -252,8 +247,7 @@
     var courseNames = {
       "Language AI": { prefix: "Building ", focus: "Language AI", suffix: " with LLMs and Agents", color: "#60a5fa" },
       "Vision AI": { prefix: "Building ", focus: "Vision AI", suffix: " with Foundation and Generative Models", color: "#4ade80" },
-      "Scalable AI": { prefix: "Building ", focus: "Scalable AI", suffix: " with Big Data", color: "#fb923c" },
-      "Temporal AI": { prefix: "Building ", focus: "Temporal AI", suffix: " with RL and World Models", color: "#c084fc" }
+      "Scalable AI": { prefix: "Building ", focus: "Scalable AI", suffix: " with Big Data", color: "#fb923c" }
     };
     var cn = courseNames[item.trackLabel] || { prefix: "", focus: item.trackLabel || "", suffix: "", color: "#fff" };
 

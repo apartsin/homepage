@@ -151,9 +151,6 @@
     if (/scalable|big data|distributed|cloud|data science/.test(value)) {
       return 'Scalable AI';
     }
-    if (/temporal|sequential|reinforcement/.test(value)) {
-      return 'Temporal AI';
-    }
     return 'AI Systems';
   }
 
@@ -162,7 +159,6 @@
     if (normalized === 'conversation ai' || normalized === 'language ai') return 'language-ai';
     if (normalized === 'vision ai') return 'vision-ai';
     if (normalized === 'scalable ai') return 'scalable-ai';
-    if (normalized === 'temporal ai') return 'temporal-ai';
     return 'ai-systems';
   }
 
@@ -171,7 +167,6 @@
     if (normalized === 'language-ai' || normalized === 'conversation-ai') return 'Language AI';
     if (normalized === 'vision-ai') return 'Vision AI';
     if (normalized === 'scalable-ai') return 'Scalable AI';
-    if (normalized === 'temporal-ai') return 'Temporal AI';
     if (normalized === 'ai-systems') return 'AI Systems';
     return '';
   }
@@ -340,8 +335,7 @@
     var syllabusHrefs = {
       'language-ai': '../courses/hos/series/language-ai.html',
       'vision-ai': '../courses/hos/series/vision-ai.html',
-      'scalable-ai': '../courses/hos/series/scalable-ai.html',
-      'temporal-ai': '../courses/hos/series/temporal-ai.html'
+      'scalable-ai': '../courses/hos/series/scalable-ai.html'
     };
     var syllabusHref = syllabusHrefs[courseMeta.typeSlug];
 
@@ -358,8 +352,7 @@
     var courseIcons = {
       'language-ai': '../assets/courses/hos-series/llm-course/img-006-language-ai-gemini.png',
       'vision-ai': '../assets/courses/hos-series/embvision-course/img-008-vision-ai-gemini.png',
-      'scalable-ai': '../assets/courses/hos-series/bigdata-course/img-012-scalable-ai-gemini.png',
-      'temporal-ai': '../assets/courses/hos-series/temporalai-course/img-008-temporal-ai-gemini.png'
+      'scalable-ai': '../assets/courses/hos-series/bigdata-course/img-012-scalable-ai-gemini.png'
     };
     var courseIconSrc = courseIcons[courseMeta.typeSlug];
     if (courseIconSrc) {
