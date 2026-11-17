@@ -92,68 +92,6 @@
     });
     body.appendChild(links);
 
-    // Embed past offerings for this course track, if any.
-    const slug = courseTypeSlug(card);
-    if (slug) {
-      const matches = offerings
-        .filter((o) => String(o.type || "").toLowerCase() === slug)
-        .sort((a, b) => firstYear(b) - firstYear(a) || termRank(b) - termRank(a));
-
-      const wrap = document.createElement("div");
-      wrap.className = "hos-offerings";
-      const label = document.createElement("p");
-      label.className = "hos-offerings__label";
-      label.textContent = matches.length
-        ? "Past Offerings"
-        : "Past Offerings";
-      wrap.appendChild(label);
-
-      if (matches.length === 0) {
-        const empty = document.createElement("p");
-        empty.className = "hos-offerings__empty";
-        empty.textContent = "First offering coming soon.";
-        wrap.appendChild(empty);
-      } else {
-        const list = document.createElement("ul");
-        list.className = "hos-offerings__list";
-        matches.forEach((off) => {
-          const li = document.createElement("li");
-          li.className = "hos-offerings__item";
-
-          const when = document.createElement("span");
-          when.className = "hos-offerings__when";
-          when.textContent = off.desc || off.years || "";
-          li.appendChild(when);
-
-          const where = document.createElement("span");
-          where.className = "hos-offerings__where";
-          const syllabusLink = (Array.isArray(off.links) ? off.links : [])
-            .find((l) => l && /syllab/i.test(String(l.label || "")));
-          const titleHref = syllabusLink && syllabusLink.href;
-          if (titleHref) {
-            const a = document.createElement("a");
-            a.href = titleHref;
-            a.textContent = off.title || "Course";
-            where.appendChild(a);
-          } else {
-            where.appendChild(document.createTextNode(off.title || "Course"));
-          }
-          if (off.institutionLabel) {
-            const inst = document.createElement("span");
-            inst.className = "hos-offerings__inst";
-            inst.textContent = " · " + off.institutionLabel;
-            where.appendChild(inst);
-          }
-          li.appendChild(where);
-
-          list.appendChild(li);
-        });
-        wrap.appendChild(list);
-      }
-
-      body.appendChild(wrap);
-    }
-
     article.appendChild(body);
     grid.appendChild(article);
   });
